@@ -6,17 +6,18 @@
 }
 
 .skill {
-  width: 90%;
+  width: 95%;
   margin: 0.1rem auto;
   display: flex;
   flex-direction: row;
   border-radius: 0.25rem;
+  border-width: 0;
   color: var(--color-primary);
 }
 .skill:hover,
 .skill:focus {
   background-color: var(--highlight-background-color-1);
-  width: 95%;
+  border: 1px solid var(--color-primary);
 }
 
 .skill-name {

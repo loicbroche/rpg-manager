@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+
 import './CharacterInput.css'
 
 class CharacterInput extends Component {
@@ -8,7 +9,7 @@ class CharacterInput extends Component {
   render() {
     const { error } = this.state
     return (
-      <form className="characterInput" onSubmit={this.persistCharacter}>
+      <form className="characterInput" onSubmit={this.submitCharacterName}>
         <input  type="text"
                 autoComplete="given-name"
                 value={this.state.name}
@@ -26,7 +27,7 @@ class CharacterInput extends Component {
     }
 
   // Arrow fx for binding
-  persistCharacter = (event) => {
+  submitCharacterName = (event) => {
     event.preventDefault()
     const newCharacter= { Name: this.state.name }
     this.setState({ error: this.props.onSubmit(newCharacter) });

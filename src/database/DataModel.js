@@ -2,30 +2,77 @@ export const DATA_MODEL = {
     RACES:
         {
             name: 'Races',
+            columns: {
+                NAME: { name: "Name" },
+                OV: { name: "OV" },
+                STRENGTH: { name: "Strength" },
+                CONSTITUTION: { name: "Consitution" },
+                DEXTERITY: { name: "Dexterity" },
+                INTELLIGENCE: { name: "Intelligence" },
+                WISDOM: { name: "Wisdom" },
+                CHARISMA: { name: "Charisma" }
+            }
         },
     CLASSES:
         {
             name: 'Classes',
+            columns: {
+                NAME: { name: "Name" },
+                OV: { name: "OV" },
+                STRENGTH: { name: "Strength" },
+                CONSTITUTION: { name: "Consitution" },
+                DEXTERITY: { name: "Dexterity" },
+                INTELLIGENCE: { name: "Intelligence" },
+                WISDOM: { name: "Wisdom" },
+                CHARISMA: { name: "Charisma" }
+            }
         },
     WEAPON_CATEGORIES:
         {
-            name: 'Weapon-categories',
+            name: 'WeaponCategories',
+            columns: {
+                CODE: { name: "Code" },
+                NAME: { name: "Name" }
+            }
         },
     WEAPONS:
         {
             name: 'Weapons',
+            columns: {
+                NAME: { name: "Name" },
+                OV: { name: "OV" },
+                CATEGORY_CODE: { name: "Category" },
+                DAMAGE: { name: "Damage" },
+                WEIGHT: { name: "Weight" },
+                PRICE: { name: "Price" },
+                PROPERTIES: { name: "Properties" }
+            }
         },
     LEVELS:
         {
             name: 'Levels',
+            columns: {
+                LEVEL: { name: "Level" },
+                XP: { name: "XP" },
+                MASTERY_BONUS: { name: "MasteryBonus" }
+            }
         },
     CARACTERISTICS:
         {
             name: 'Caracteristics',
+            columns: {
+                CODE: { name: "Code" },
+                NAME: { name: "Name" },
+                OV: { name: "OV" }
+            }
         },
     SKILLS:
         {
             name: 'Skills',
+            columns: {
+                CARACTERISTIC_CODE: { name: "Caracteristic" },
+                NAME: { name: "Name" }
+            }
         },
     CHARACTERS:
         {

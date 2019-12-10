@@ -38,7 +38,7 @@ button {
 button:hover,
 button:focus {
   font-size: 1.02rem;
-  background: var(--background-color-2);
+  background: var(--highlight-background-color-1);
 }
 
 .menu {

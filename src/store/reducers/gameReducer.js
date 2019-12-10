@@ -1,3 +1,6 @@
+import PropTypes from 'prop-types'
+import { RacePropType } from '../../PropTypes';
+
 import { ActionTypes } from '../actions/ActionTypes';
 
 const initialState = {
@@ -22,9 +25,9 @@ function gameReducer(state = initialState, action) {
                 return nextState;
         case ActionTypes.CHARACTERS.TOGGLE_SKILL:
             const { characters } = state;
-            const { characterId, skillId } = action.value;
-            if (characters && 0 <= characterId && characterId < characters.length) {
-                const character = characters[characterId];
+            const { name, skillId } = action.value;
+            if (characters && name) {
+                const character = characters[name];
                 if (character.Skills && 0 <= skillId && skillId < character.Skills.length) {
                     const index = character.Skills.findIndex((id) => id === skillId);
                     if (index === -1) {
@@ -42,6 +45,16 @@ function gameReducer(state = initialState, action) {
         default:
             return state;
     }
+}
+
+gameReducer.PropTypes = {
+    state: PropTypes.shape({
+        characters: PropTypes.arrayOf(RacePropType).isRequired,
+    }),
+    action: PropTypes.shape({
+        type: PropTypes.string.isRequired,
+        value: PropTypes.any.isRequired
+    })
 }
 
 export default gameReducer;

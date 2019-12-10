@@ -11,8 +11,8 @@ class GameMaster extends Component {
             <div className="game-master">
                 <span className="intro narrative">Bienvenu grand maître du jeu ! Ici tu gardera un oeil sur tous les personnages jouables</span>
                 <div className="characters-overview">
-                    {characters && characters.map(({ Name: name}, index) => (
-                        <div key={index} className="character-overview">
+                    {characters && Object.values(characters).map(({ Name: name}) => (
+                        <div key={name} className="character-overview">
                             <span>{name}</span>
                         </div>
                     ))}

@@ -1,12 +1,12 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 import './CharacterMenuItem.css'
 import { ROUTE_CHARACTER } from '../../App'
 
 const deleteImage = require('../../images/delete-character-icone.png');
-const CharacterMenuItem = ({ name, onRemove}) => (
+const CharacterMenuItem = ({ name, onRemove }) => (
       <div className="character-menu-item">
         <Link to={`${ROUTE_CHARACTER}/${name}`}>
           {name}
