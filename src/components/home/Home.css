@@ -1,0 +1,29 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  margin: auto;
+  user-select: none;
+  font-size: 2rem;
+}
+
+.menu-item {
+  width: 90%;
+  margin: 0.5rem auto;
+  text-align: center;
+  border-radius: 0.25rem;
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+.menu-item:hover,
+.menu-item:focus {
+  background-color: var(--highlight-background-color-1);
+  width: 95%;
+}
+
+.menu-item a {
+  flex-grow: 1;
+  color: var(--color-primary);
+}

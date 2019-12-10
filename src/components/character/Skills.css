@@ -1,0 +1,25 @@
+.skills {
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  width: 40%;
+}
+
+.skill {
+  width: 90%;
+  margin: 0.1rem auto;
+  display: flex;
+  flex-direction: row;
+  border-radius: 0.25rem;
+  color: var(--color-primary);
+}
+.skill:hover,
+.skill:focus {
+  background-color: var(--highlight-background-color-1);
+  width: 95%;
+}
+
+.skill-name {
+  flex-grow: 1;
+  margin: 0 0.5rem;
+}

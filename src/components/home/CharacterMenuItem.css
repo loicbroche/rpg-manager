@@ -1,0 +1,25 @@
+.character-menu-item {
+  display: flex;
+  justify-content: center;
+}
+
+.character-menu-item a {
+  flex-grow: 1;
+  color: var(--color-primary); 
+}
+
+.delete-button {
+  width: 1rem;
+  padding: 0;
+  border: 0;
+  background: var(--background-color-2);
+}
+.delete-button:hover,
+.delete-button:focus {
+  width: 1.25rem;
+  background: var(--highlight-background-color-2);
+}
+
+.delete-image {
+  width: inherit;
+}
