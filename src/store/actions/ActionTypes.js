@@ -1,6 +1,7 @@
 export const ActionTypes = {
     REFERENTIAL: {
         LOAD_RACES: "LOAD_RACES",
+        LOAD_SUB_RACES: "LOAD_SUB_RACES",
         LOAD_CLASSES: "LOAD_CLASSES",
         LOAD_WEAPON_CATEGORIES: "LOAD_WEAPON_CATEGORIES",
         LOAD_WEAPONS: "LOAD_WEAPONS",
@@ -10,7 +11,6 @@ export const ActionTypes = {
     },
     CHARACTERS: {
         LOAD: 'LOAD_CHARACTERS',
-        LOAD_ONE: 'LOAD_ONE_CHARACTER',
-        TOGGLE_SKILL: 'TOGGLE_SKILL'
+        LOAD_ONE: 'LOAD_ONE_CHARACTER'
     }
 }

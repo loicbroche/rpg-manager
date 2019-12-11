@@ -1,4 +1,4 @@
-{
+export const referentialMock = {
   "Races" : {
 	"ELF": {
 	 "Name" : "Elfe",
@@ -1141,39 +1141,5 @@
 	"Vigilance": {  "Caracteristic": "SAG",
 	  "Name": "Vigilance"
 	 }
- },
-  "Characters": {
-	"Ash": {
-		"Id":"Ash",
-		"Name":"Ash",
-		"Race":"ELF",
-		"SubRace":"WOODEN_ELF",
-		"Class":"BARD",
-		"Skills": ["Eloquence", "Etiquette", "Narcotique", "Négociation", "Noblesse", "Représentation"],
-		"Weapons": [],
-		"WeaponRight": "Rapière",
-		"WeaponLeft": ""
-	},
-	"Saphir": {
-		"Id":"Saphir",
-		"Name":"Saphir",
-		"Race":"GENASI",
-		"SubRace":"AIR_GENASI",
-		"Class":"MONK",
-		"Skills": ["Acrobatie", "Discrétion", "Médecine", "Religion"],
-		"Weapons": [],
-		"WeaponRight": "Bâton",
-		"WeaponLeft": ""
-	},
-	"Sorwen": {
-		"Id":"Sorwen",
-		"Name":"Sorwen",
-		"Race":"ELF",
-		"Class":"WARRIOR",
-		"Skills": ["Acrobatie", "Discrétion", "Médecine", "Religion"],
-		"Weapons": [],
-		"WeaponRight": "Épée à deux mains",
-		"WeaponLeft": "Épée à deux mains"
-	}
-  }
+ }
 }

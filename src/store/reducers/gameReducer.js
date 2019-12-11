@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { RacePropType } from '../../PropTypes';
+import { CharacterPropType } from 'PropTypes';
 
 import { ActionTypes } from '../actions/ActionTypes';
 
@@ -17,31 +17,14 @@ function gameReducer(state = initialState, action) {
             }
             return nextState;
         case ActionTypes.CHARACTERS.LOAD_ONE:
-                const { character } = action.value
+                const character = action.value;
+                let characters = { ...state.characters };
+                characters[character.Id] = character;
                 nextState = {
                     ...state,
-                    characters: state.characters && state.characters.map((char) => char.Id === character.Id ? character : char)
+                    characters: characters
                 }
                 return nextState;
-        case ActionTypes.CHARACTERS.TOGGLE_SKILL:
-            const { characters } = state;
-            const { name, skillId } = action.value;
-            if (characters && name) {
-                const character = characters[name];
-                if (character.Skills && 0 <= skillId && skillId < character.Skills.length) {
-                    const index = character.Skills.findIndex((id) => id === skillId);
-                    if (index === -1) {
-                        character.Skills.push(skillId);
-                    } else {
-                        character.Skills.splice(index, 1);
-                    }
-                    nextState = {
-                        ...state,
-                        characters: characters
-                    }
-                }
-            }
-            return nextState
         default:
             return state;
     }
@@ -49,7 +32,7 @@ function gameReducer(state = initialState, action) {
 
 gameReducer.PropTypes = {
     state: PropTypes.shape({
-        characters: PropTypes.arrayOf(RacePropType).isRequired,
+        characters: PropTypes.arrayOf(CharacterPropType).isRequired,
     }),
     action: PropTypes.shape({
         type: PropTypes.string.isRequired,

@@ -1,9 +1,10 @@
-import { ActionTypes } from '../actions/ActionTypes';
 import PropTypes from 'prop-types'
-import { RacePropType, ClassPropType, WeaponCategoryPropType, WeaponPropType, SkillPropType, LevelPropType, CaracteristicPropType } from '../../PropTypes';
+import { RacePropType, ClassPropType, WeaponCategoryPropType, WeaponPropType, SkillPropType, LevelPropType, CaracteristicPropType } from 'PropTypes';
+import { ActionTypes } from '../actions/ActionTypes';
 
 const initialState = {
     races: null,
+    subRaces: null,
     classes: null,
     weaponCategories: null,
     weapons: null,
@@ -18,6 +19,12 @@ function referentialReducer(state = initialState, action) {
             nextState = {
                 ...state,
                 races: action.value
+            }
+            return nextState;
+        case ActionTypes.REFERENTIAL.LOAD_SUB_RACES:
+            nextState = {
+                ...state,
+                subRaces: action.value
             }
             return nextState;
         case ActionTypes.REFERENTIAL.LOAD_CLASSES:

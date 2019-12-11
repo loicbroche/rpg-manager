@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 
 export const CharacterPropType = PropTypes.shape({
+    Id: PropTypes.string.isRequired,
     Name: PropTypes.string.isRequired,
     Race: PropTypes.string.isRequired,
     Class: PropTypes.string.isRequired,

@@ -10,7 +10,24 @@ export const DATA_MODEL = {
                 DEXTERITY: { name: "Dexterity" },
                 INTELLIGENCE: { name: "Intelligence" },
                 WISDOM: { name: "Wisdom" },
-                CHARISMA: { name: "Charisma" }
+                CHARISMA: { name: "Charisma" },
+                SPEED: { name: "Speed" }
+            }
+        },
+    SUB_RACES:
+        {
+            name: 'SubRaces',
+            columns: {
+                RACE: { name: "Race" },
+                NAME: { name: "Name" },
+                OV: { name: "OV" },
+                STRENGTH: { name: "Strength" },
+                CONSTITUTION: { name: "Consitution" },
+                DEXTERITY: { name: "Dexterity" },
+                INTELLIGENCE: { name: "Intelligence" },
+                WISDOM: { name: "Wisdom" },
+                CHARISMA: { name: "Charisma" },
+                SPEED: { name: "Speed" }
             }
         },
     CLASSES:
@@ -78,11 +95,13 @@ export const DATA_MODEL = {
         {
             name: 'Characters',
             columns: {
+                ID: { name: "Id" },
                 NAME: { name: "Name" },
                 RACE: { name: "Race" },
+                SUB_RACE: { name: "SubRace", optional: true },
                 CLASS: { name: "Class" },
-                SKILLS: { name: "Skills" },
-                WEAPONS: { name: "Weapons" },
+                SKILLS: { name: "Skills", optional: true },
+                WEAPONS: { name: "Weapons", optional: true },
                 WEAPON_RIGHT: { name: "WeaponRight" },
                 WEAPON_LEFT: { name: "WeaponLeft" }
             }

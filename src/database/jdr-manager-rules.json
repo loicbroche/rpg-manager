@@ -1,151 +1,193 @@
 {
-	"rules": {
-	  ".read": true,
-	  ".write": true,
-	  "Races": {
-		  ".validate": "newData.child('Name').exists() && newData.child('OV').exists() && newData.child('Strength').exists() && newData.child('Consitution').exists() && newData.child('Dexterity').exists() && newData.child('Intelligence').exists() && newData.child('Wisdom').exists() && newData.child('Charisma').exists()",
-		  "Name": {
-			".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
-		  },
-		  "OV": {
-			".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
-		  },
-		  "Strength": {
-			".validate": "newData.isNumber() && 0 <= newData.val()"
-		  },
-		  "Consitution": {
-			".validate": "newData.isNumber() && 0 <= newData.val()"
-		  },
-		  "Dexterity": {
-			".validate": "newData.isNumber() && 0 <= newData.val()"
-		  },
-		  "Intelligence": {
-			".validate": "newData.isNumber() && 0 <= newData.val()"
-		  },
-		  "Wisdom": {
-			".validate": "newData.isNumber() && 0 <= newData.val()"
-		  },
-		  "Charisma": {
-			".validate": "newData.isNumber() && 0 <= newData.val()"
-		  }
-	  },
-	  "Classes": {
-		  ".validate": "newData.child('Name').exists() && newData.child('OV').exists() && newData.child('Strength').exists() && newData.child('Consitution').exists() && newData.child('Dexterity').exists() && newData.child('Intelligence').exists() && newData.child('Wisdom').exists() && newData.child('Charisma').exists()",
-		  "Name": {
-			".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
-		  },
-		  "OV": {
-			".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
-		  },
-		  "Strength": {
-			".validate": "newData.isNumber() && 0 <= newData.val()"
-		  },
-		  "Consitution": {
-			".validate": "newData.isNumber() && 0 <= newData.val()"
-		  },
-		  "Dexterity": {
-			".validate": "newData.isNumber() && 0 <= newData.val()"
-		  },
-		  "Intelligence": {
-			".validate": "newData.isNumber() && 0 <= newData.val()"
-		  },
-		  "Wisdom": {
-			".validate": "newData.isNumber() && 0 <= newData.val()"
-		  },
-		  "Charisma": {
-			".validate": "newData.isNumber() && 0 <= newData.val()"
-		  }
-	  },
-	  "WeaponCategories": {
-		  ".validate": "newData.child('Code').exists() && newData.child('Name').exists()",
-		  "Code": {
-			".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 5"
-		  },
-		  "Name": {
-			".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
-		  }
-	  },
-	  "Weapons": {
-		  ".validate": "newData.child('Name').exists() && newData.child('OV').exists() && newData.child('Category').exists() && newData.child('Damage').exists() && newData.child('Weight').exists() && newData.child('Price').exists() && newData.child('Properties').exists()",
-		  "Code": {
-			".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
-		  },
-		  "OV": {
-			".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
-		  },
-		  "Category": {
-			".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 5"
-		  },
-		  "Damage": {
-			".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
-		  },
-		  "Weight": {
-			".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 20000"
-		  },
-		  "Price": {
-			".validate": "newData.isNumber() && 0 <= newData.val().length && newData.val().length <= 100000"
-		  },
-		  "Properties": {
-			".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
-		  }
-	  },	
-	  "Levels": {
-		  ".validate": "newData.child('Level').exists() && newData.child('XP').exists() && newData.child('MasteryBonus').exists()",
-		  "Level": {
-			".validate": "newData.isNumber() && 1 <= newData.val().length && newData.val().length <= 20"
-		  },
-		  "XP": {
-			".validate": "newData.isNumber() && 0 <= newData.val().length"
-		  },
-		  "MasteryBonus": {
-			".validate": "newData.isNumber() && 0 <= newData.val().length && newData.val().length <= 20"
-		  }
-	  },
-	  "Caracteristics": {
-		  ".validate": "newData.child('Code').exists() && newData.child('Name').exists() && newData.child('OV').exists()",
-		  "Code": {
-			".validate": "newData.isString() && newData.val().length == 3"
-		  },
-		  "Name": {
-			".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
-		  },
-		  "OV": {
-			".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
-		  }
-	  },
-	  "Skills": {
-		  ".validate": "newData.child('Caracteristic').exists() && newData.child('Name').exists()",
-		  "Caracteristic": {
-			".validate": "newData.isString() && newData.val().length == 3"
-		  },
-		  "Name": {
-			".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
-		  }
-	  },
-	  "Characters": {
-		  ".validate": "newData.child('Name').exists() && newData.child('Race').exists() && newData.child('Class').exists() && newData.child('WeaponRight').exists() && newData.child('WeaponLeft').exists()",
-		  "Name": {
-			".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
-		  },
-		  "Race": {
-			".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
-		  },
-		  "Class": {
-			".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
-		  },
-		  "Skills": {
-			".validate": "!newData.isNumber() && !newData.isString() && !newData.isBoolean()"
-		  },
-		  "Weapons": {
-			".validate": "!newData.isNumber() && !newData.isString() && !newData.isBoolean()"
-		  },
-		  "WeaponRight": {
-			".validate": "newData.isString() && newData.val().length <= 50"
-		  },
-		  "WeaponLeft": {
-			".validate": "newData.isString() && newData.val().length <= 50"
-		  }
-	  }
-	}
+  "rules": {
+	".read": true,
+    ".write": true,
+	"Races": {
+		".validate": "newData.child('Name').exists() && newData.child('OV').exists() && newData.child('Strength').exists() && newData.child('Consitution').exists() && newData.child('Dexterity').exists() && newData.child('Intelligence').exists() && newData.child('Wisdom').exists() && newData.child('Charisma').exists() && newData.child('Speed').exists()",
+		"Name": {
+		  ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+		},
+		"OV": {
+		  ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+		},
+		"Strength": {
+		  ".validate": "newData.isNumber() && 0 <= newData.val()"
+		},
+		"Consitution": {
+		  ".validate": "newData.isNumber() && 0 <= newData.val()"
+		},
+		"Dexterity": {
+		  ".validate": "newData.isNumber() && 0 <= newData.val()"
+		},
+		"Intelligence": {
+		  ".validate": "newData.isNumber() && 0 <= newData.val()"
+		},
+		"Wisdom": {
+		  ".validate": "newData.isNumber() && 0 <= newData.val()"
+		},
+		"Charisma": {
+		  ".validate": "newData.isNumber() && 0 <= newData.val()"
+		},
+		"Speed": {
+		  ".validate": "newData.isNumber() && 0 <= newData.val()"
+		}
+    },
+	"SubRaces": {
+		".validate": "newData.child('Race').exists() && newData.child('Name').exists() && newData.child('OV').exists() && newData.child('Strength').exists() && newData.child('Consitution').exists() && newData.child('Dexterity').exists() && newData.child('Intelligence').exists() && newData.child('Wisdom').exists() && newData.child('Charisma').exists() && newData.child('Speed').exists()",
+		"Race": {
+		  ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+		},
+		"Name": {
+		  ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+		},
+		"OV": {
+		  ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+		},
+		"Strength": {
+		  ".validate": "newData.isNumber() && 0 <= newData.val()"
+		},
+		"Consitution": {
+		  ".validate": "newData.isNumber() && 0 <= newData.val()"
+		},
+		"Dexterity": {
+		  ".validate": "newData.isNumber() && 0 <= newData.val()"
+		},
+		"Intelligence": {
+		  ".validate": "newData.isNumber() && 0 <= newData.val()"
+		},
+		"Wisdom": {
+		  ".validate": "newData.isNumber() && 0 <= newData.val()"
+		},
+		"Charisma": {
+		  ".validate": "newData.isNumber() && 0 <= newData.val()"
+		},
+		"Speed": {
+		  ".validate": "newData.isNumber() && 0 <= newData.val()"
+		}
+    },
+	"Classes": {
+		".validate": "newData.child('Name').exists() && newData.child('OV').exists() && newData.child('Strength').exists() && newData.child('Consitution').exists() && newData.child('Dexterity').exists() && newData.child('Intelligence').exists() && newData.child('Wisdom').exists() && newData.child('Charisma').exists()",
+		"Name": {
+		  ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+		},
+		"OV": {
+		  ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+		},
+		"Strength": {
+		  ".validate": "newData.isNumber() && 0 <= newData.val()"
+		},
+		"Consitution": {
+		  ".validate": "newData.isNumber() && 0 <= newData.val()"
+		},
+		"Dexterity": {
+		  ".validate": "newData.isNumber() && 0 <= newData.val()"
+		},
+		"Intelligence": {
+		  ".validate": "newData.isNumber() && 0 <= newData.val()"
+		},
+		"Wisdom": {
+		  ".validate": "newData.isNumber() && 0 <= newData.val()"
+		},
+		"Charisma": {
+		  ".validate": "newData.isNumber() && 0 <= newData.val()"
+		}
+    },
+	"WeaponCategories": {
+		".validate": "newData.child('Code').exists() && newData.child('Name').exists()",
+		"Code": {
+		  ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 5"
+		},
+		"Name": {
+		  ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+		}
+    },
+	"Weapons": {
+		".validate": "newData.child('Name').exists() && newData.child('OV').exists() && newData.child('Category').exists() && newData.child('Damage').exists() && newData.child('Weight').exists() && newData.child('Price').exists() && newData.child('Properties').exists()",
+		".indexOn": ["Category"],
+		"Code": {
+		  ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+		},
+		"OV": {
+		  ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+		},
+		"Category": {
+		  ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 5"
+		},
+		"Damage": {
+		  ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+		},
+		"Weight": {
+		  ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 20000"
+		},
+		"Price": {
+		  ".validate": "newData.isNumber() && 0 <= newData.val().length && newData.val().length <= 100000"
+		},
+		"Properties": {
+		  ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+		}
+    },	
+	"Levels": {
+		".validate": "newData.child('Level').exists() && newData.child('XP').exists() && newData.child('MasteryBonus').exists()",
+		".indexOn": ["XP"],
+		"Level": {
+		  ".validate": "newData.isNumber() && 1 <= newData.val().length && newData.val().length <= 20"
+		},
+		"XP": {
+		  ".validate": "newData.isNumber() && 0 <= newData.val().length"
+		},
+		"MasteryBonus": {
+		  ".validate": "newData.isNumber() && 0 <= newData.val().length && newData.val().length <= 20"
+		}
+    },
+	"Caracteristics": {
+		".validate": "newData.child('Code').exists() && newData.child('Name').exists() && newData.child('OV').exists()",
+		".indexOn": ["Name"],
+		"Code": {
+		  ".validate": "newData.isString() && newData.val().length == 3"
+		},
+		"Name": {
+		  ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+		},
+		"OV": {
+		  ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+		}
+    },
+	"Skills": {
+		".validate": "newData.child('Caracteristic').exists() && newData.child('Name').exists()",
+		".indexOn": ["Caracteristic"],
+		"Caracteristic": {
+		  ".validate": "newData.isString() && newData.val().length == 3"
+		},
+		"Name": {
+		  ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+		}
+    },
+	"Characters": {
+		".validate": "newData.child('Id').exists() && newData.child('Name').exists() && newData.child('Race').exists() && newData.child('Class').exists() && newData.child('WeaponRight').exists() && newData.child('WeaponLeft').exists()",
+		"Id": {
+		  ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+		},
+		"Name": {
+		  ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+		},
+		"Race": {
+		  ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+		},
+		"Class": {
+		  ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+		},
+		"Skills": {
+		  ".validate": "!newData.isNumber() && !newData.isString() && !newData.isBoolean()"
+		},
+		"Weapons": {
+		  ".validate": "!newData.isNumber() && !newData.isString() && !newData.isBoolean()"
+		},
+		"WeaponRight": {
+		  ".validate": "newData.isString() && newData.val().length <= 50"
+		},
+		"WeaponLeft": {
+		  ".validate": "newData.isString() && newData.val().length <= 50"
+		}
+    }
   }
-  
+}
