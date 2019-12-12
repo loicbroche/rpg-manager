@@ -57,10 +57,35 @@ class Home extends Component {
     if (character.Name) {
         character.Race = "ELF";
         character.Class = "BARBARIAN";
+        character.ChargeCapacity = 2000;
+        character.MasterBonus = 2;
         character.Skills = [];
-        character.Weapons = [];
+        character.MasterWeapons = [];
+        character.MasterArmors = [];
+        character.MasterObjects = [];
+        character.Historic = "";
+        character.Alignment = "Neutre";
+        character.Age = 0;
+        character.Height = 0;
+        character.Width = 0;
+        character.Eyes = "";
+        character.Skin = "";
+        character.Hairs = "";
+        character.PersonnalityTraits = "";
+        character.Ideals = "";
+        character.Links = "";
+        character.Defects = "";
+        character.History = "";
+        character.Languages = "";
+        character.Level = 1;
+        character.MaxHP = 8;
+        character.HP = 8;
+        character.AC = 10;
         character.WeaponRight = "";
         character.WeaponLeft = "";
+        character.Armor = "";
+        character.Money = 1000;
+        character.Objects = [];
 
       insertCharacter(character);
       //characters.push(character);

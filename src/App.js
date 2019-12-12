@@ -52,10 +52,115 @@ class App extends Component {
       this.props.dispatch(action);
     });
 
+    this.armorCategoriesRef = database.ref(DATA_MODEL.ARMOR_CATEGORIES.name);
+    this.armorCategoriesRef.once('value', snapshot => {
+      //referentialReducer: state.referential.armorCategories
+      const action = { type: ActionTypes.REFERENTIAL.LOAD_ARMOR_CATEGORIES, value: objectToArray(snapshot.val()) }
+      this.props.dispatch(action);
+    });
+
+    this.armorsRef = database.ref(DATA_MODEL.ARMORS.name);
+    this.armorsRef.once('value', snapshot => {
+      //referentialReducer: state.referential.armors
+      const action = { type: ActionTypes.REFERENTIAL.LOAD_ARMORS, value: objectToArray(snapshot.val()) }
+      this.props.dispatch(action);
+    });
+
+    this.objectCategoriesRef = database.ref(DATA_MODEL.OBJECT_CATEGORIES.name);
+    this.objectCategoriesRef.once('value', snapshot => {
+      //referentialReducer: state.referential.objectCategories
+      const action = { type: ActionTypes.REFERENTIAL.LOAD_OBJECT_CATEGORIES, value: objectToArray(snapshot.val()) }
+      this.props.dispatch(action);
+    });
+
+    this.objectsRef = database.ref(DATA_MODEL.OBJECTS.name);
+    this.objectsRef.once('value', snapshot => {
+      //referentialReducer: state.referential.objects
+      const action = { type: ActionTypes.REFERENTIAL.LOAD_OBJECTS, value: objectToArray(snapshot.val()) }
+      this.props.dispatch(action);
+    });
+
+    this.equipmentCategoriesRef = database.ref(DATA_MODEL.EQUIPMENT_CATEGORIES.name);
+    this.equipmentCategoriesRef.once('value', snapshot => {
+      //referentialReducer: state.referential.equipmentCategories
+      const action = { type: ActionTypes.REFERENTIAL.LOAD_EQUIPMENT_CATEGORIES, value: objectToArray(snapshot.val()) }
+      this.props.dispatch(action);
+    });
+
+    this.equipmentsRef = database.ref(DATA_MODEL.EQUIPMENTS.name);
+    this.equipmentsRef.once('value', snapshot => {
+      //referentialReducer: state.referential.equipments
+      const action = { type: ActionTypes.REFERENTIAL.LOAD_EQUIPMENTS, value: objectToArray(snapshot.val()) }
+      this.props.dispatch(action);
+    });
+
+    this.hostelCategoriesRef = database.ref(DATA_MODEL.HOSTEL_CATEGORIES.name);
+    this.hostelCategoriesRef.once('value', snapshot => {
+      //referentialReducer: state.referential.hostelCategories
+      const action = { type: ActionTypes.REFERENTIAL.LOAD_HOSTEL_CATEGORIES, value: objectToArray(snapshot.val()) }
+      this.props.dispatch(action);
+    });
+
+    this.hostelServicesRef = database.ref(DATA_MODEL.HOSTEL_SERVICES.name);
+    this.hostelServicesRef.once('value', snapshot => {
+      //referentialReducer: state.referential.hostelServices
+      const action = { type: ActionTypes.REFERENTIAL.LOAD_HOSTEL_SERVICES, value: objectToArray(snapshot.val()) }
+      this.props.dispatch(action);
+    });
+
+    this.serviceCategoriesRef = database.ref(DATA_MODEL.SERVICE_CATEGORIES.name);
+    this.serviceCategoriesRef.once('value', snapshot => {
+      //referentialReducer: state.referential.serviceCategories
+      const action = { type: ActionTypes.REFERENTIAL.LOAD_SERVICE_CATEGORIES, value: objectToArray(snapshot.val()) }
+      this.props.dispatch(action);
+    });
+
+    this.servicesRef = database.ref(DATA_MODEL.SERVICES.name);
+    this.servicesRef.once('value', snapshot => {
+      //referentialReducer: state.referential.hostelServices
+      const action = { type: ActionTypes.REFERENTIAL.LOAD_SERVICES, value: objectToArray(snapshot.val()) }
+      this.props.dispatch(action);
+    });
+
+    this.mountsRef = database.ref(DATA_MODEL.MOUNTS.name);
+    this.mountsRef.once('value', snapshot => {
+      //referentialReducer: state.referential.mounts
+      const action = { type: ActionTypes.REFERENTIAL.LOAD_MOUNTS, value: objectToArray(snapshot.val()) }
+      this.props.dispatch(action);
+    });
+
+    this.shipsRef = database.ref(DATA_MODEL.SHIPS.name);
+    this.shipsRef.once('value', snapshot => {
+      //referentialReducer: state.referential.ships
+      const action = { type: ActionTypes.REFERENTIAL.LOAD_SHIPS, value: objectToArray(snapshot.val()) }
+      this.props.dispatch(action);
+    });
+
+    this.waresRef = database.ref(DATA_MODEL.WARES.name);
+    this.waresRef.once('value', snapshot => {
+      //referentialReducer: state.referential.wares
+      const action = { type: ActionTypes.REFERENTIAL.LOAD_WARES, value: objectToArray(snapshot.val()) }
+      this.props.dispatch(action);
+    });
+
+    this.trinketsRef = database.ref(DATA_MODEL.TRINKETS.name);
+    this.trinketsRef.once('value', snapshot => {
+      //referentialReducer: state.referential.trinkets
+      const action = { type: ActionTypes.REFERENTIAL.LOAD_TRINKETS, value: objectToArray(snapshot.val()) }
+      this.props.dispatch(action);
+    });
+
     this.skillsRef = database.ref(DATA_MODEL.SKILLS.name);
     this.skillsRef.once('value', snapshot => {
       //referentialReducer: state.referential.skills
       const action = { type: ActionTypes.REFERENTIAL.LOAD_SKILLS, value: objectToArray(snapshot.val()) }
+      this.props.dispatch(action);
+    });
+
+    this.levelsRef = database.ref(DATA_MODEL.LEVELS.name);
+    this.levelsRef.once('value', snapshot => {
+      //referentialReducer: state.referential.levels
+      const action = { type: ActionTypes.REFERENTIAL.LOAD_LEVELS, value: objectToArray(snapshot.val()) }
       this.props.dispatch(action);
     });
 
@@ -68,7 +173,6 @@ class App extends Component {
   }
 
   render () {
-    
     return (
       <BrowserRouter>
         <header role="banner">

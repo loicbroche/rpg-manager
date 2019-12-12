@@ -8,10 +8,25 @@ const initialState = {
     classes: null,
     weaponCategories: null,
     weapons: null,
+    armorCategories: null,
+    armors: null,
+    objectCategories: null,
+    objects: null,
+    equipmentCategories: null,
+    equipments: null,
+    mounts: null,
+    ships: null,
+    wares: null,
+    hostelCategories: null,
+    hostelServices: null,
+    serviceCategories: null,
+    services: null,
+    trinkets: null,
     levels: null,
     caracteristics: null,
     skills: null
 }
+
 function referentialReducer(state = initialState, action) {
     let nextState;
     switch (action.type) {
@@ -43,6 +58,90 @@ function referentialReducer(state = initialState, action) {
             nextState = {
                 ...state,
                 weapons: action.value
+            }
+            return nextState;
+        case ActionTypes.REFERENTIAL.LOAD_ARMOR_CATEGORIES:
+            nextState = {
+                ...state,
+                armorCategories: action.value
+            }
+            return nextState;
+        case ActionTypes.REFERENTIAL.LOAD_ARMORS:
+            nextState = {
+                ...state,
+                armors: action.value
+            }
+            return nextState;
+        case ActionTypes.REFERENTIAL.LOAD_OBJECT_CATEGORIES:
+            nextState = {
+                ...state,
+                objectCategories: action.value
+            }
+            return nextState;
+        case ActionTypes.REFERENTIAL.LOAD_OBJECTS:
+            nextState = {
+                ...state,
+                objects: action.value
+            }
+            return nextState;
+        case ActionTypes.REFERENTIAL.LOAD_EQUIPMENT_CATEGORIES:
+            nextState = {
+                ...state,
+                equipmentCategories: action.value
+            }
+            return nextState;
+        case ActionTypes.REFERENTIAL.LOAD_EQUIPMENTS:
+            nextState = {
+                ...state,
+                equipments: action.value
+            }
+            return nextState;
+        case ActionTypes.REFERENTIAL.LOAD_HOSTEL_CATEGORIES:
+            nextState = {
+                ...state,
+                hostelCategories: action.value
+            }
+            return nextState;
+        case ActionTypes.REFERENTIAL.LOAD_HOSTEL_SERVICES:
+            nextState = {
+                ...state,
+                hostelServices: action.value
+            }
+            return nextState;
+        case ActionTypes.REFERENTIAL.LOAD_SERVICE_CATEGORIES:
+            nextState = {
+                ...state,
+                serviceCategories: action.value
+            }
+            return nextState;
+        case ActionTypes.REFERENTIAL.LOAD_SERVICES:
+            nextState = {
+                ...state,
+                services: action.value
+            }
+            return nextState;
+        case ActionTypes.REFERENTIAL.LOAD_MOUNTS:
+            nextState = {
+                ...state,
+                mounts: action.value
+            }
+            return nextState;
+        case ActionTypes.REFERENTIAL.LOAD_SHIPS:
+            nextState = {
+                ...state,
+                ships: action.value
+            }
+            return nextState;
+        case ActionTypes.REFERENTIAL.LOAD_WARES:
+            nextState = {
+                ...state,
+                wares: action.value
+            }
+            return nextState;
+        case ActionTypes.REFERENTIAL.LOAD_TRINKETS:
+            nextState = {
+                ...state,
+                trinkets: action.value
             }
             return nextState;
         case ActionTypes.REFERENTIAL.LOAD_LEVELS:

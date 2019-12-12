@@ -1,16 +1,5 @@
 import PropTypes from 'prop-types'
 
-export const CharacterPropType = PropTypes.shape({
-    Id: PropTypes.string.isRequired,
-    Name: PropTypes.string.isRequired,
-    Race: PropTypes.string.isRequired,
-    Class: PropTypes.string.isRequired,
-    Skills: PropTypes.arrayOf(PropTypes.string),
-    Weapons: PropTypes.arrayOf(PropTypes.string),
-    WeaponRight: PropTypes.string,
-    WeaponLeft: PropTypes.string
-})
-
 export const RacePropType = PropTypes.shape({
     Name: PropTypes.string.isRequired,
     OV: PropTypes.string.isRequired,
@@ -19,7 +8,21 @@ export const RacePropType = PropTypes.shape({
     Dexterity: PropTypes.number.isRequired,
     Intelligence: PropTypes.number.isRequired,
     Wisdom: PropTypes.number.isRequired,
-    Charisma: PropTypes.number.isRequired
+    Charisma: PropTypes.number.isRequired,
+    Speed: PropTypes.number.isRequired
+})
+
+export const SubRacePropType = PropTypes.shape({
+    Race: PropTypes.string.isRequired,
+    Name: PropTypes.string.isRequired,
+    OV: PropTypes.string.isRequired,
+    Strength: PropTypes.number.isRequired,
+    Consitution: PropTypes.number.isRequired,
+    Dexterity: PropTypes.number.isRequired,
+    Intelligence: PropTypes.number.isRequired,
+    Wisdom: PropTypes.number.isRequired,
+    Charisma: PropTypes.number.isRequired,
+    Speed: PropTypes.number.isRequired
 })
 
 export const ClassPropType = PropTypes.shape({
@@ -48,6 +51,96 @@ export const WeaponPropType = PropTypes.shape({
     Properties: PropTypes.string.isRequired
 })
 
+export const ArmorCategoryPropType = PropTypes.shape({
+    Code: PropTypes.string.isRequired,
+    Name: PropTypes.string.isRequired
+})
+
+export const ArmorPropType = PropTypes.shape({
+    Name: PropTypes.string.isRequired,
+    OV: PropTypes.string.isRequired,
+    Category: PropTypes.string.isRequired,
+    AC: PropTypes.string.isRequired,
+    Weight: PropTypes.string.isRequired,
+    Price: PropTypes.string.isRequired,
+    Properties: PropTypes.string.isRequired,
+    Discretion: PropTypes.string.isRequired,
+    Strength: PropTypes.string.isRequired
+})
+
+export const ObjectCategoryPropType = PropTypes.shape({
+    Code: PropTypes.string.isRequired,
+    Name: PropTypes.string.isRequired,
+    OV: PropTypes.string.isRequired
+})
+
+export const ObjectPropType = PropTypes.shape({
+    Name: PropTypes.string.isRequired,
+    OV: PropTypes.string.isRequired,
+    Category: PropTypes.string.isRequired,
+    Weight: PropTypes.string.isRequired,
+    Price: PropTypes.string.isRequired
+})
+
+export const EquipmentCategoryPropType = PropTypes.shape({
+    Code: PropTypes.string.isRequired,
+    Name: PropTypes.string.isRequired
+})
+
+export const EquipmentPropType = PropTypes.shape({
+    Name: PropTypes.string.isRequired,
+    OV: PropTypes.string.isRequired,
+    Category: PropTypes.string.isRequired,
+    Weight: PropTypes.string.isRequired,
+    Price: PropTypes.string.isRequired
+})
+
+export const HostelCategoryPropType = PropTypes.shape({
+    Code: PropTypes.string.isRequired,
+    Name: PropTypes.string.isRequired
+})
+
+export const HostelServicePropType = PropTypes.shape({
+    Name: PropTypes.string.isRequired,
+    Category: PropTypes.string.isRequired,
+    Price: PropTypes.string.isRequired
+})
+
+export const ServiceCategoryPropType = PropTypes.shape({
+    Code: PropTypes.string.isRequired,
+    Name: PropTypes.string.isRequired
+})
+
+export const ServicePropType = PropTypes.shape({
+    Name: PropTypes.string.isRequired,
+    Category: PropTypes.string.isRequired,
+    Price: PropTypes.string.isRequired
+})
+
+export const MountPropType = PropTypes.shape({
+    Name: PropTypes.string.isRequired,
+    Speed: PropTypes.number.isRequired,
+    ChargeCapacity: PropTypes.number.isRequired,
+    Price: PropTypes.string.isRequired
+})
+
+export const ShipPropType = PropTypes.shape({
+    Name: PropTypes.string.isRequired,
+    OV: PropTypes.string.isRequired,
+    Speed: PropTypes.string.isRequired,
+    Price: PropTypes.string.isRequired
+})
+
+export const WarePropType = PropTypes.shape({
+    Name: PropTypes.string.isRequired,
+    Price: PropTypes.string.isRequired
+})
+
+export const TrinketPropType = PropTypes.shape({
+    d100: PropTypes.number.isRequired,
+    Trinket: PropTypes.string.isRequired
+})
+
 export const LevelPropType = PropTypes.shape({
     Level: PropTypes.number.isRequired,
     XP: PropTypes.number.isRequired,
@@ -63,4 +156,41 @@ export const CaracteristicPropType = PropTypes.shape({
 export const SkillPropType = PropTypes.shape({
     Caracteristic: PropTypes.string.isRequired,
     Name: PropTypes.string.isRequired
+})
+
+
+export const CharacterPropType = PropTypes.shape({
+    Id: PropTypes.string.isRequired,
+    Name: PropTypes.string.isRequired,
+    Race: PropTypes.string.isRequired,
+    Class: PropTypes.string.isRequired,
+    ChargeCapacity: PropTypes.number.isRequired,
+    MasterBonus: PropTypes.number.isRequired,
+    Skills: PropTypes.arrayOf(PropTypes.string),
+    MasterWeapons: PropTypes.arrayOf(PropTypes.string),
+    MasterArmors: PropTypes.arrayOf(PropTypes.string),
+    MasterObjects: PropTypes.arrayOf(PropTypes.string),
+    Historic: PropTypes.string.isRequired,
+    Alignment: PropTypes.string.isRequired,
+    Age: PropTypes.number.isRequired,
+    Height: PropTypes.number.isRequired,
+    Width: PropTypes.number.isRequired,
+    Eyes: PropTypes.string.isRequired,
+    Skin: PropTypes.string.isRequired,
+    Hairs: PropTypes.string.isRequired,
+    PersonnalityTraits: PropTypes.string.isRequired,
+    Ideals: PropTypes.string.isRequired,
+    Links: PropTypes.string.isRequired,
+    Defects: PropTypes.string.isRequired,
+    History: PropTypes.string.isRequired,
+    Languages: PropTypes.arrayOf(PropTypes.string),
+    Level: PropTypes.number.isRequired,
+    MaxHP: PropTypes.number.isRequired,
+    HP: PropTypes.number.isRequired,
+    AC: PropTypes.number.isRequired,
+    WeaponRight: PropTypes.string,
+    WeaponLeft: PropTypes.string,
+    Armor: PropTypes.string,
+    Money: PropTypes.number.isRequired,
+    Objects: PropTypes.arrayOf(PropTypes.string)
 })
