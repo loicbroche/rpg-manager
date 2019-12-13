@@ -46,3 +46,15 @@ deleteCharacterSkills.propTypes = {
 
 export { insertCharacterSkills };
 export { deleteCharacterSkills };
+
+const updateCharacterCaracteristic = (characterId, caracteristicName, value) => {
+    const url = DATA_MODEL.CHARACTERS.name + '/' + characterId + '/'+caracteristicName;
+    return database.ref(url).set(value);
+}
+updateCharacterCaracteristic.propTypes = {
+    characterId: PropTypes.string.isRequired,
+    caracteristicName: PropTypes.string.isRequired,
+    value: PropTypes.any.isRequired,
+}
+
+export { updateCharacterCaracteristic };

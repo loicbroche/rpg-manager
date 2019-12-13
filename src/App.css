@@ -8,6 +8,12 @@
   --color-primary: #DDD;
   --color-secondary: goldenrod;
   --color-error: #911;
+  --color-Strength: #60497A;
+  --color-Constitution: #963634;
+  --color-Dexterity: #4F6228;
+  --color-Intelligence: #244062;
+  --color-Wisdom: #31869B;
+  --color-Charisma: #974706;
   --font-family-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; 
   --font-family-secondary: "Algerian"; 
   --font-family-tertiary: "French Script MT";

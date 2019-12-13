@@ -17,10 +17,8 @@ class Caracteristic extends Component {
     const bonus = calculateBonus(value + raceBonus + subRaceBonus + classBonus, maxVal);
 
     return (
-      <div className='caracteristic'>
-        <label htmlFor={caracteristicName}>{caracteristicName}</label>&nbsp;
+      <div className={`caracteristic ${caracteristicName}`}>
         <span className="bonus-caracteristic">{(bonus>=0?"+":"")+bonus}</span>
-        <br />
         <input  type="number"
                 name={caracteristicName}  
                 autoComplete={`caracteristic-${caracteristicName}`}
@@ -28,11 +26,13 @@ class Caracteristic extends Component {
                 min={0}
                 max={maxVal}
                 step={1}
-                onChange={this.handleValueUpdate} />
-                <br />
-        <span className="race-bonus">+{ raceBonus }</span><br />
-        <span className="subRace-bonus">+{ subRaceBonus }</span><br />
-        <span className="class-bonus">+{ classBonus }</span><br />
+                onChange={this.handleValueUpdate}
+                className="caracteristic-value" />
+        <div className="character-bonus">
+          { (raceBonus !== 0) && <span className="race-bonus">+{ raceBonus }</span>}
+          { (subRaceBonus !== 0) && <span className="subRace-bonus">+{ subRaceBonus }</span>}
+          { (classBonus !== 0) && <span className="class-bonus">+{ classBonus }</span>}
+        </div>
       </div>
     )
   }

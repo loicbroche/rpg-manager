@@ -1,10 +1,11 @@
 import expect from 'expect';
 import { database } from 'database/InitializeDatabase'
 import { DATA_MODEL } from 'database/DataModel'
-import { insertCharacter, deleteCharacter, insertCharacterSkills, deleteCharacterSkills } from 'database/PersistCharacter';
+import { insertCharacter, deleteCharacter, insertCharacterSkills, deleteCharacterSkills, updateCharacterCaracteristic} from 'database/PersistCharacter';
 
 describe('database', () => {
   const skillField = DATA_MODEL.CHARACTERS.columns.SKILLS.name;
+  const strengthField = DATA_MODEL.CHARACTERS.columns.STRENGTH.name;
   const newCharacter = {
     Id: "NewCharacterForTests",
     Name: "New Character For Tests",
@@ -13,9 +14,11 @@ describe('database', () => {
     Skills: ["Acrobatie", "Ambidextrie"],
     Weapons: ["Bâton", "Dague"],
     WeaponRight: "Bâton",
-    WeaponLeft: ""
+    WeaponLeft: "",
+    Strength: 10
   }
   const newSkill = "new SkillForTest";
+  const newStrength = 15;
 
   it('insert character', done => {
     const testCharacterInserted = (snapshot) => {
@@ -56,5 +59,16 @@ describe('database', () => {
     }
     deleteCharacter(newCharacter.Id);
     database.ref(DATA_MODEL.CHARACTERS.name).once("value", testCharacterDeleted);
+  });
+
+  it('update caracteristic', done => {
+    const testCaracteristicUpdated = (snapshot) => {
+      expect(snapshot.exists()).toBe(true);
+      expect(snapshot.child(strengthField).exists()).toBe(true);
+      expect(snapshot.child(strengthField)).toBe(newStrength);
+      done();
+    }
+    updateCharacterCaracteristic(newCharacter.Id, strengthField, newStrength);
+    database.ref(DATA_MODEL.CHARACTERS.name + '/' + newCharacter.Id).once("value", testCaracteristicUpdated);
   });
 });

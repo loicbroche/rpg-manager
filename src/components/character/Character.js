@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { database } from 'database/InitializeDatabase'
 import { DATA_MODEL } from 'database/DataModel'
-import { insertCharacterSkills, deleteCharacterSkills } from 'database/PersistCharacter';
+import { insertCharacterSkills, deleteCharacterSkills, updateCharacterCaracteristic } from 'database/PersistCharacter';
 
 import './Character.css'
 import Skills from './Skills'
@@ -84,15 +84,18 @@ class Character extends Component {
                     <div className="caracteristics">
                         {
                             caracteristicsNames.map((caracteristicName) => (
-                                <Caracteristic
-                                    key={caracteristicName}
-                                    caracteristicName={caracteristicName}
-                                    value={this.state[caracteristicName]}
-                                    maxVal={MAX_CARACTERISTIC}
-                                    race={ race }
-                                    subRace={ subRace }
-                                    characterClass={ characterClass }
-                                    onChange={(value) =>{ this.updateCaracteristic(caracteristicName, value);}}/>)
+                                <div key={caracteristicName}>
+                                    <span className="caracteristic-name">{caracteristicName}</span>
+                                    <Caracteristic
+                                        caracteristicName={caracteristicName}
+                                        value={this.state[caracteristicName]}
+                                        maxVal={MAX_CARACTERISTIC}
+                                        race={ race }
+                                        subRace={ subRace }
+                                        characterClass={ characterClass }
+                                        onChange={(value) =>{ this.updateCaracteristic(caracteristicName, value);}}/>
+                                </div>
+                                )
                             )
                         }
                     </div>
@@ -115,10 +118,8 @@ class Character extends Component {
     }
 
     updateCaracteristic = (caracteristicName, value) => {
-        console.log("updateCaracteristic "+caracteristicName, value);
-        const newState = {};
-        newState[caracteristicName] = value
-        this.setState({ ...newState });
+        const { Id: characterId } = this.state;
+        updateCharacterCaracteristic(characterId, caracteristicName, value);
     }
 
     equals(character) {
