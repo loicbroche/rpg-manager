@@ -6,15 +6,15 @@ import { SkillPropType } from 'PropTypes';
 import './Skills.css'
 
 const Skills = ({ skills, master, onClick }) => (
-  <div className='skills'>
+  <ul className='skills'>
     {skills && Object.values(skills).map(({Caracteristic, Name}, index) => (
-      <div key={index} className="skill" onClick={() => onClick(Name)}>
+      <li key={index} className="skill" onClick={() => onClick(Name)}>
         <div className={"option "+((master && master.includes(Name))?"filled":"")}></div>
         <span className="skill-name">{Name}</span>
         <span>( {Caracteristic} )</span>
-      </div>
+      </li>
     ))}
-  </div>
+  </ul>
 )
 
 Skills.propTypes = {

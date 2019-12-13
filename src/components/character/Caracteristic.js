@@ -7,17 +7,9 @@ import { calculateBonus } from 'rules/Caracteristics.rules'
 import './Caracteristic.css'
 
 class Caracteristic extends Component {
-  constructor(props) {
-    super(props);
-    const { initialValue, maxVal } = this.props;
 
-    const value = initialValue ? initialValue : Math.floor(maxVal/2);
-    this.state = { value: value };
-  }
-  
   render() {
-    const { caracteristicName, race, subRace, characterClass, maxVal } = this.props;
-    const { value } = this.state;
+    const { caracteristicName, value, race, subRace, characterClass, maxVal } = this.props;
 
     const raceBonus = race && race[caracteristicName];
     const subRaceBonus = subRace && subRace[caracteristicName];
@@ -48,18 +40,18 @@ class Caracteristic extends Component {
   // Arrow fx for binding
   handleValueUpdate = (event) => {
     const value = parseInt(event.target.value) || 0;
-    this.setState({ value: value });
     this.props.onChange(value);
   }
 }
 
 Caracteristic.propTypes = {
   caracteristicName: PropTypes.string.isRequired,
-  maxVal: PropTypes.number,
+  value: PropTypes.number.isRequired,
+  maxVal: PropTypes.number.isRequired,
+  onChange: PropTypes.func.isRequired,
   race: RacePropType,
   subRace: SubRacePropType,
-  characterClass: ClassPropType,
-  onChange: PropTypes.func.isRequired
+  characterClass: ClassPropType
 }
 
 Caracteristic.defaultProps = {

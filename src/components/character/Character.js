@@ -87,7 +87,7 @@ class Character extends Component {
                                 <Caracteristic
                                     key={caracteristicName}
                                     caracteristicName={caracteristicName}
-                                    initialValue={this.state[caracteristicName]}
+                                    value={this.state[caracteristicName]}
                                     maxVal={MAX_CARACTERISTIC}
                                     race={ race }
                                     subRace={ subRace }
@@ -102,7 +102,6 @@ class Character extends Component {
         </div>
         )
     }
-
     toggleSkill = (skillId) => {
         const { Id: characterId, Skills } = this.state;
         if (characterId !== null) {
