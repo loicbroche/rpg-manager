@@ -10,7 +10,6 @@
   margin: 0.1rem auto;
   display: flex;
   flex-direction: row;
-  border-radius: 0.25rem;
   border-width: 0;
   color: var(--color-primary);
 }

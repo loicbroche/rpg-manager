@@ -3,7 +3,7 @@
 	".read": true,
     ".write": true,
 	"Races": {
-		".validate": "newData.child('Name').exists() && newData.child('OV').exists() && newData.child('Strength').exists() && newData.child('Consitution').exists() && newData.child('Dexterity').exists() && newData.child('Intelligence').exists() && newData.child('Wisdom').exists() && newData.child('Charisma').exists() && newData.child('Speed').exists()",
+		".validate": "newData.child('Name').exists() && newData.child('OV').exists() && newData.child('Strength').exists() && newData.child('Constitution').exists() && newData.child('Dexterity').exists() && newData.child('Intelligence').exists() && newData.child('Wisdom').exists() && newData.child('Charisma').exists() && newData.child('Speed').exists()",
 		"Name": {
 		  ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
 		},
@@ -13,7 +13,7 @@
 		"Strength": {
 		  ".validate": "newData.isNumber() && 0 <= newData.val()"
 		},
-		"Consitution": {
+		"Constitution": {
 		  ".validate": "newData.isNumber() && 0 <= newData.val()"
 		},
 		"Dexterity": {
@@ -33,7 +33,7 @@
 		}
     },
 	"SubRaces": {
-		".validate": "newData.child('Race').exists() && newData.child('Name').exists() && newData.child('OV').exists() && newData.child('Strength').exists() && newData.child('Consitution').exists() && newData.child('Dexterity').exists() && newData.child('Intelligence').exists() && newData.child('Wisdom').exists() && newData.child('Charisma').exists() && newData.child('Speed').exists()",
+		".validate": "newData.child('Race').exists() && newData.child('Name').exists() && newData.child('OV').exists() && newData.child('Strength').exists() && newData.child('Constitution').exists() && newData.child('Dexterity').exists() && newData.child('Intelligence').exists() && newData.child('Wisdom').exists() && newData.child('Charisma').exists() && newData.child('Speed').exists()",
 		"Race": {
 		  ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
 		},
@@ -46,7 +46,7 @@
 		"Strength": {
 		  ".validate": "newData.isNumber() && 0 <= newData.val()"
 		},
-		"Consitution": {
+		"Constitution": {
 		  ".validate": "newData.isNumber() && 0 <= newData.val()"
 		},
 		"Dexterity": {
@@ -66,7 +66,7 @@
 		}
     },
 	"Classes": {
-		".validate": "newData.child('Name').exists() && newData.child('OV').exists() && newData.child('Strength').exists() && newData.child('Consitution').exists() && newData.child('Dexterity').exists() && newData.child('Intelligence').exists() && newData.child('Wisdom').exists() && newData.child('Charisma').exists()",
+		".validate": "newData.child('Name').exists() && newData.child('OV').exists() && newData.child('Strength').exists() && newData.child('Constitution').exists() && newData.child('Dexterity').exists() && newData.child('Intelligence').exists() && newData.child('Wisdom').exists() && newData.child('Charisma').exists()",
 		"Name": {
 		  ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
 		},
@@ -76,7 +76,7 @@
 		"Strength": {
 		  ".validate": "newData.isNumber() && 0 <= newData.val()"
 		},
-		"Consitution": {
+		"Constitution": {
 		  ".validate": "newData.isNumber() && 0 <= newData.val()"
 		},
 		"Dexterity": {
@@ -376,6 +376,24 @@
 		},
 		"WeaponLeft": {
 		  ".validate": "newData.isString() && newData.val().length <= 50"
+		},
+		"Strength": {
+		  ".validate": "newData.isNumber() && 0 <= newData.val()"
+		},
+		"Constitution": {
+		  ".validate": "newData.isNumber() && 0 <= newData.val()"
+		},
+		"Dexterity": {
+		  ".validate": "newData.isNumber() && 0 <= newData.val()"
+		},
+		"Intelligence": {
+		  ".validate": "newData.isNumber() && 0 <= newData.val()"
+		},
+		"Wisdom": {
+		  ".validate": "newData.isNumber() && 0 <= newData.val()"
+		},
+		"Charisma": {
+		  ".validate": "newData.isNumber() && 0 <= newData.val()"
 		}
     }
   }

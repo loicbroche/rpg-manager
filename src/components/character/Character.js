@@ -6,6 +6,9 @@ import { insertCharacterSkills, deleteCharacterSkills } from 'database/PersistCh
 
 import './Character.css'
 import Skills from './Skills'
+import Caracteristic from './Caracteristic'
+
+const MAX_CARACTERISTIC = 20;
 
 class Character extends Component {
     constructor (props) {
@@ -36,6 +39,7 @@ class Character extends Component {
         Defects: null,
         History: null,
         Languages: null,
+        XP: null,
         Level: null,
         MaxHP: null,
         HP: null,
@@ -60,19 +64,39 @@ class Character extends Component {
 
     render() {
         const { races, subRaces, classes, weapons, skills } = this.props.referential;
-        const { Name, Race, SubRace, Class, Skills: masterSkills, WeaponRight, WeaponLeft } = this.state
+        const { Name, Race: raceId, SubRace: subRaceId, Class: classId, Historic,
+                Skills: masterSkills, WeaponRight, WeaponLeft
+            } = this.state
+        const race = races && races[raceId];
+        const subRace = subRaces && subRaces[subRaceId];
+        const characterClass = classes && classes[classId];
 
+        const caracteristicsNames = ["Strength", "Constitution", "Dexterity", "Intelligence", "Wisdom", "Charisma"];
         return (
         <div className="character">
             { Name !== null && (
                 <div>
                     <h1>{Name}</h1>
-                    <span>Race : { (SubRace && (subRaces && subRaces[SubRace].Name)) || (races && races[Race].Name) } </span><br />
-                    <span>Classe : {classes && classes[Class].Name}</span><br />
+                    <span>Race : { (subRace && subRace.Name) || (race && race.Name) } </span><br />
+                    <span>Classe : { characterClass && characterClass.Name }</span><br />
                     <span>Main droite : {weapons && WeaponRight && weapons[WeaponRight].Name}</span><br /> 
                     <span>Main gauche : {weapons && WeaponLeft && weapons[WeaponLeft].Name}</span><br />
-                    <br />
-                    { skills && <Skills skills={skills} master={masterSkills} onClick={this.toggleSkill} /> }
+                    <div className="caracteristics">
+                        {
+                            caracteristicsNames.map((caracteristicName) => (
+                                <Caracteristic
+                                    key={caracteristicName}
+                                    caracteristicName={caracteristicName}
+                                    initialValue={this.state[caracteristicName]}
+                                    maxVal={MAX_CARACTERISTIC}
+                                    race={ race }
+                                    subRace={ subRace }
+                                    characterClass={ characterClass }
+                                    onChange={(value) =>{ this.updateCaracteristic(caracteristicName, value);}}/>)
+                            )
+                        }
+                    </div>
+                    { skills && <Skills skills={skills} master={masterSkills} historic={Historic} onClick={this.toggleSkill} /> }
                 </div>
             )}
         </div>
@@ -89,6 +113,13 @@ class Character extends Component {
                 deleteCharacterSkills(characterId, index);
             }
         }
+    }
+
+    updateCaracteristic = (caracteristicName, value) => {
+        console.log("updateCaracteristic "+caracteristicName, value);
+        const newState = {};
+        newState[caracteristicName] = value
+        this.setState({ ...newState });
     }
 
     equals(character) {

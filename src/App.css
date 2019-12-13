@@ -41,6 +41,10 @@ button:focus {
   background: var(--highlight-background-color-1);
 }
 
+div {
+  border-radius: 0.25rem;
+}
+
 .menu {
   font-family: var(--font-family-secondary);
 }

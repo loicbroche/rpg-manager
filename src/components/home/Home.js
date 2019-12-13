@@ -77,6 +77,7 @@ class Home extends Component {
         character.Defects = "";
         character.History = "";
         character.Languages = "";
+        character.XP = 0;
         character.Level = 1;
         character.MaxHP = 8;
         character.HP = 8;
