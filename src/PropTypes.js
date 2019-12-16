@@ -164,7 +164,6 @@ export const SkillPropType = PropTypes.shape({
     Name: PropTypes.string.isRequired
 })
 
-
 export const CharacterPropType = PropTypes.shape({
     Id: PropTypes.string.isRequired,
     Name: PropTypes.string.isRequired,
@@ -180,7 +179,7 @@ export const CharacterPropType = PropTypes.shape({
     Alignment: PropTypes.string.isRequired,
     Age: PropTypes.number.isRequired,
     Height: PropTypes.number.isRequired,
-    Width: PropTypes.number.isRequired,
+    Weight: PropTypes.number.isRequired,
     Eyes: PropTypes.string.isRequired,
     Skin: PropTypes.string.isRequired,
     Hairs: PropTypes.string.isRequired,

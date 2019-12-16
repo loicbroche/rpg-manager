@@ -24,6 +24,10 @@
   margin: 0 0.5rem;
 }
 
+.skill-bonus {
+  width: 2.5rem;
+}
+
 .historic-master {
   border: 1px solid var(--color-primary);
 }

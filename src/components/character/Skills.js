@@ -7,9 +7,10 @@ import './Skills.css'
 class Skills extends Component {
 
   render() {
-    const { skills, historics, master, onClick, historicId } = this.props;
+    const { skills, historics, levels, master, onClick, historicId, level} = this.props;
     const historic = historics && historics[historicId];
     const historicSkills = historic?historic.Skills:[];
+    const masteryBonus = levels && levels[level] && levels[level].MasteryBonus;
 
     return (
     <ul className='skills'>
@@ -22,6 +23,7 @@ class Skills extends Component {
             <div className={"option "+((isHistoricMaster||isMaster)&&"filled")}></div>
             <span className="skill-name">{Name}</span>
             <span>( {Caracteristic} )</span>
+            <span className="skill-bonus">{ (isHistoricMaster||isMaster) && `+${masteryBonus}`}</span> 
           </li>
         )}
       )}
@@ -33,11 +35,13 @@ class Skills extends Component {
 Skills.propTypes = {
   master: PropTypes.arrayOf(PropTypes.string),
   historicId: PropTypes.string,
+  level: PropTypes.number,
   onClick: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = (state) => ({
   skills: state.referential.skills,
-  historics: state.referential.historics
+  historics: state.referential.historics,
+  levels: state.referential.levels
 })
 export default connect(mapStateToProps)(Skills)

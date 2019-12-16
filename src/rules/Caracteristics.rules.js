@@ -1,9 +1,10 @@
-const BONUS_STEP = 2;
+export const MAX_CARACTERISTIC = 20;
+export const BONUS_STEP = 2;
 
-export const calculateBonus = (value, maxVal) => {
-    return Math.floor((value-(maxVal/2))/BONUS_STEP);
+const calculateBonus = (value, maxVal = MAX_CARACTERISTIC, bonusStep = BONUS_STEP) => {
+    return Math.floor((value-(maxVal/2))/bonusStep);
 }
 
-export const calculateBonusOf = (caracteristicName, character) => {
-  return caracteristicName;
+export const calculateTotalBonus = (value, raceBonus, subRaceBonus, maxVal = MAX_CARACTERISTIC, bonusStep = BONUS_STEP) => {
+  return calculateBonus(value + raceBonus + subRaceBonus, maxVal, bonusStep);
 }

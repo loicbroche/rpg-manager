@@ -2,20 +2,20 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { calculateBonus } from 'rules/Caracteristics.rules'
+import { calculateTotalBonus, MAX_CARACTERISTIC, BONUS_STEP } from 'rules/Caracteristics.rules'
 import './Caracteristic.css'
 
 class Caracteristic extends Component {
 
   render() {
-    const { races, subRaces, caracteristicName, value, subRaceId, maxVal } = this.props;
+    const { races, subRaces, caracteristicName, value, subRaceId, maxVal, bonusStep } = this.props;
 
     const subRace = subRaces && subRaces[subRaceId];
     const race = subRace && races && races[subRace.Race];
 
     const raceBonus = race && race[caracteristicName];
     const subRaceBonus = subRace && subRace[caracteristicName];
-    const bonus = calculateBonus(value + raceBonus + subRaceBonus, maxVal);
+    const bonus = calculateTotalBonus(value, raceBonus, subRaceBonus, maxVal, bonusStep);
 
     return (
       <div className={`caracteristic ${caracteristicName}`}>
@@ -48,13 +48,14 @@ Caracteristic.propTypes = {
   caracteristicName: PropTypes.string.isRequired,
   value: PropTypes.number.isRequired,
   maxVal: PropTypes.number.isRequired,
+  bonusStep: PropTypes.number.isRequired,
   onChange: PropTypes.func.isRequired,
   subRaceId: PropTypes.string
 }
 
 Caracteristic.defaultProps = {
-  maxVal: 20,
-  bonusStep: 2
+  maxVal: MAX_CARACTERISTIC,
+  bonusStep: BONUS_STEP
 }
 
 const mapStateToProps = (state) => ({

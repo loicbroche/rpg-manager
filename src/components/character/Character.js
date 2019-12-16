@@ -11,8 +11,6 @@ import RaceSelector from './RaceSelector'
 import ClassSelector from './ClassSelector'
 import HistoricSelector from './HistoricSelector'
 
-const MAX_CARACTERISTIC = 20;
-
 class Character extends Component {
     constructor (props) {
       super(props);
@@ -66,8 +64,8 @@ class Character extends Component {
     }
 
     render() {
-        const { caracteristics } = this.props.referential;
-        const { Name, SubRace: subRaceId, Class: classId, Historic: historicId, Skills: masterSkills } = this.state
+        const { caracteristics } = this.props;
+        const { Name, SubRace: subRaceId, Class: classId, Historic: historicId, Skills: masterSkills, Level } = this.state
 
         return (
         <div className="character">
@@ -86,7 +84,6 @@ class Character extends Component {
                                     <Caracteristic
                                         caracteristicName={caracteristic.OV}
                                         value={this.state[caracteristic.OV]}
-                                        maxVal={MAX_CARACTERISTIC}
                                         subRaceId={ subRaceId }
                                         classId={ classId }
                                         onChange={(value) =>{ this.updateCaracteristic(caracteristic.OV, value);}}/>
@@ -95,7 +92,10 @@ class Character extends Component {
                             )
                         }
                     </div>
-                    <Skills master={masterSkills} historicId={historicId} onClick={this.toggleSkill} />
+                    <Skills master={masterSkills}
+                            historicId={historicId}
+                            level={Level}
+                            onClick={this.toggleSkill} />
                 </div>
             )}
         </div>
@@ -156,4 +156,7 @@ class Character extends Component {
     }
 }
 
-export default connect(state => state)(Character)
+const mapStateToProps = (state) => ({
+    caracteristics: state.referential.caracteristics
+});
+export default connect(mapStateToProps)(Character)
