@@ -1,0 +1,9 @@
+.race-selector {
+    display: flex;
+    flex-direction: row;
+}
+
+.main-race-selector,
+.subRace-selector {
+    flex-grow: 1;
+}

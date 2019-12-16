@@ -18,7 +18,7 @@
 
 .caracteristic-value {
   width: 75%;
-  margin: auto;
+  margin: 0.25rem auto;
 }
 
 .character-bonus {
@@ -32,12 +32,11 @@
 .class-bonus {
   border-radius: 50%;
   background-color: var(--color-primary);
-  padding: 0 0.1rem;
+  padding: 0 0.2rem 0 0.1rem;
 }
 
 .race-bonus,
-.subRace-bonus,
-.class-bonus {
+.subRace-bonus  {
   color: var(--background-color-1);
 }
 

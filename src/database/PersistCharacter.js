@@ -49,7 +49,7 @@ export { deleteCharacterSkills };
 
 const updateCharacterCaracteristic = (characterId, caracteristicName, value) => {
     const url = DATA_MODEL.CHARACTERS.name + '/' + characterId + '/'+caracteristicName;
-    return database.ref(url).set(value);
+    return database.ref(url).set(value||null);
 }
 updateCharacterCaracteristic.propTypes = {
     characterId: PropTypes.string.isRequired,

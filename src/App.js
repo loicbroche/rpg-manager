@@ -37,6 +37,13 @@ class App extends Component {
       const action = { type: ActionTypes.REFERENTIAL.LOAD_CLASSES, value: objectToArray(snapshot.val()) }
       this.props.dispatch(action);
     });
+    
+    this.historicsRef = database.ref(DATA_MODEL.HISTORICS.name);
+    this.historicsRef.once('value', snapshot => {
+      //referentialReducer: state.referential.historics
+      const action = { type: ActionTypes.REFERENTIAL.LOAD_HISTORICS, value: objectToArray(snapshot.val()) }
+      this.props.dispatch(action);
+    });
 
     this.weaponCategoriesRef = database.ref(DATA_MODEL.WEAPON_CATEGORIES.name);
     this.weaponCategoriesRef.once('value', snapshot => {

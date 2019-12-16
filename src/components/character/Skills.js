@@ -1,26 +1,43 @@
-import React from 'react'
+import React, {Component} from 'react'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { SkillPropType } from 'PropTypes';
-
 
 import './Skills.css'
 
-const Skills = ({ skills, master, onClick }) => (
-  <ul className='skills'>
-    {skills && Object.values(skills).map(({Caracteristic, Name}, index) => (
-      <li key={index} className="skill" onClick={() => onClick(Name)}>
-        <div className={"option "+((master && master.includes(Name))?"filled":"")}></div>
-        <span className="skill-name">{Name}</span>
-        <span>( {Caracteristic} )</span>
-      </li>
-    ))}
-  </ul>
-)
+class Skills extends Component {
+
+  render() {
+    const { skills, historics, master, onClick, historicId } = this.props;
+    const historic = historics && historics[historicId];
+    const historicSkills = historic?historic.Skills:[];
+
+    return (
+    <ul className='skills'>
+      {skills &&
+        Object.values(skills).map(({Caracteristic, Name}, index) => {
+          const isMaster = master && master.includes(Name);
+          const isHistoricMaster = historicSkills.includes(Name);
+          return (
+          <li key={index} className={"skill "+(isHistoricMaster&&"historic-master")} onClick={() => !isHistoricMaster && onClick(Name)}>
+            <div className={"option "+((isHistoricMaster||isMaster)&&"filled")}></div>
+            <span className="skill-name">{Name}</span>
+            <span>( {Caracteristic} )</span>
+          </li>
+        )}
+      )}
+    </ul>
+  )
+  }
+}
 
 Skills.propTypes = {
-  skills: PropTypes.arrayOf(SkillPropType).isRequired,
   master: PropTypes.arrayOf(PropTypes.string),
+  historicId: PropTypes.string,
   onClick: PropTypes.func.isRequired,
 }
 
-export default Skills
+const mapStateToProps = (state) => ({
+  skills: state.referential.skills,
+  historics: state.referential.historics
+})
+export default connect(mapStateToProps)(Skills)

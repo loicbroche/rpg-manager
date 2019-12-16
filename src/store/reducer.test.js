@@ -10,6 +10,7 @@ describe('reducers', () => {
     races: null,
     subRaces: null,
     classes: null,
+    historics: null,
     weaponCategories: null,
     weapons: null,
     armorCategories: null,
@@ -81,6 +82,14 @@ describe('reducers', () => {
         value: referentialMock.Classes
     };
     expect(reducers(undefined, action).referential.classes).toEqual(referentialMock.Classes);
+  });
+
+  it('should handle LOAD_HISTORICS', () => {
+    const action = {
+        type: ActionTypes.REFERENTIAL.LOAD_HISTORICS,
+        value: referentialMock.Historics
+    };
+    expect(reducers(undefined, action).referential.historics).toEqual(referentialMock.Historics);
   });
 
   it('should handle LOAD_WEAPON_CATEGORIES', () => {

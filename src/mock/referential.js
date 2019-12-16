@@ -1,6 +1,7 @@
 export const referentialMock = {
 	"Races" : {
 	  "ELF": {
+	   "Id" : "ELF",
 	   "Name" : "Elfe",
 	   "OV" : "Elf",
 	   "Strength" : 0,
@@ -12,6 +13,7 @@ export const referentialMock = {
 	   "Speed" : 9
 		},
 	  "HALFELIN": {
+	   "Id" : "HALFELIN",
 	   "Name" : "Halfelin",
 	   "OV" : "Halfelin",
 	   "Strength" : 0,
@@ -23,6 +25,7 @@ export const referentialMock = {
 	   "Speed" : 7.5
 		},
 	  "HUMAN": {
+	   "Id" : "HUMAN",
 	   "Name" : "Humain",
 	   "OV" : "Human",
 	   "Strength" : 1,
@@ -34,6 +37,7 @@ export const referentialMock = {
 	   "Speed" : 9
 		},
 	  "DWARF": {
+	   "Id" : "DWARF",
 	   "Name" : "Nain",
 	   "OV" : "Dwarf",
 	   "Strength" : 0,
@@ -45,6 +49,7 @@ export const referentialMock = {
 	   "Speed" : 7.5
 		},
 	  "HALF_ELF": {
+	   "Id" : "HALF_ELF",
 	   "Name" : "Demi-Elfe",
 	   "OV" : "Half-Elf",
 	   "Strength" : 0,
@@ -56,6 +61,7 @@ export const referentialMock = {
 	   "Speed" : 9
 		},
 	  "HALF_ORC": {
+	   "Id" : "HALF_ORC",
 	   "Name" : "Demi-Orque",
 	   "OV" : "Half-Orc",
 	   "Strength" : 2,
@@ -67,6 +73,7 @@ export const referentialMock = {
 	   "Speed" : 9
 		},
 	  "DRAGON_BORN": {
+	   "Id" : "DRAGON_BORN",
 	   "Name" : "Drakéide",
 	   "OV" : "Dragon Born",
 	   "Strength" : 2,
@@ -78,6 +85,7 @@ export const referentialMock = {
 	   "Speed" : 9
 		},
 	  "GNOME": {
+	   "Id" : "GNOME",
 	   "Name" : "Gnome",
 	   "OV" : "Gnome",
 	   "Strength" : 0,
@@ -89,6 +97,7 @@ export const referentialMock = {
 	   "Speed" : 7.5
 		},
 	  "TIEFFLING": {
+	   "Id" : "TIEFFLING",
 	   "Name" : "Tieffelin",
 	   "OV" : "Tieffling",
 	   "Strength" : 0,
@@ -100,6 +109,7 @@ export const referentialMock = {
 	   "Speed" : 9
 		},
 	  "AARAKOCRA": {
+	   "Id" : "AARAKOCRA",
 	   "Name" : "Aarakocra *",
 	   "OV" : "Aarakocra",
 	   "Strength" : 0,
@@ -111,28 +121,19 @@ export const referentialMock = {
 	   "Speed" : 7.5
 		},
 	  "GENASI": {
+	   "Id" : "GENASI",
 	   "Name" : "Génasi *",
 	   "OV" : "Genasi",
 	   "Strength" : 0,
 	   "Constitution" : 2,
-	   "Dexterity" : 1,
+	   "Dexterity" : 0,
 	   "Intelligence" : 0,
 	   "Wisdom" : 0,
 	   "Charisma" : 0,
 	   "Speed" : 9
 		},
-	  "DEPTH_GNOME": {
-	   "Name" : "Gnome des profondeurs *",
-	   "OV" : "Depth Gnome",
-	   "Strength" : 0,
-	   "Constitution" : 0,
-	   "Dexterity" : 1,
-	   "Intelligence" : 2,
-	   "Wisdom" : 0,
-	   "Charisma" : 0,
-	   "Speed" : 7.5
-		},
 	  "GOLIATH": {
+	   "Id" : "GOLIATH",
 	   "Name" : "Goliath *",
 	   "OV" : "Goliath",
 	   "Strength" : 2,
@@ -146,6 +147,7 @@ export const referentialMock = {
 	},
 	"SubRaces" : {
 	  "HIGH_ELF": {
+	   "Id" : "HIGH_ELF",
 	   "Race" : "ELF",
 	   "Name" : "Haut-Elfe",
 	   "OV" : "High-Elf",
@@ -158,6 +160,7 @@ export const referentialMock = {
 	   "Speed" : 0
 		},
 	  "WOODEN_ELF": {
+	   "Id" : "WOODEN_ELF",
 	   "Race" : "ELF",
 	   "Name" : "Elfe des bois",
 	   "OV" : "Wooden Elf",
@@ -170,6 +173,7 @@ export const referentialMock = {
 	   "Speed" : 10.5
 		},
 	  "DROW": {
+	   "Id" : "DROW",
 	   "Race" : "ELF",
 	   "Name" : "Elfe noir",
 	   "OV" : "Drow",
@@ -182,6 +186,7 @@ export const referentialMock = {
 	   "Speed" : 0
 		},
 	  "LIGHT_FOOT_HALFELIN": {
+	   "Id" : "LIGHT_FOOT_HALFELIN",
 	   "Race" : "HALFELIN",
 	   "Name" : "Halfelin pied-léger",
 	   "OV" : "Light-foot Halfelin",
@@ -194,6 +199,7 @@ export const referentialMock = {
 	   "Speed" : 0
 		},
 	  "ROBUST_HALFELIN": {
+	   "Id" : "ROBUST_HALFELIN",
 	   "Race" : "HALFELIN",
 	   "Name" : "Halfelin Robuste",
 	   "OV" : "Robust Halfelin",
@@ -206,6 +212,7 @@ export const referentialMock = {
 	   "Speed" : 0
 		},
 	  "HILLS_DWARF": {
+	   "Id" : "HILLS_DWARF",
 	   "Race" : "DWARF",
 	   "Name" : "Nain des collines",
 	   "OV" : "Hills Dwarf",
@@ -218,6 +225,7 @@ export const referentialMock = {
 	   "Speed" : 0
 		},
 	  "MONTAINS_DWARF": {
+	   "Id" : "MONTAINS_DWARF",
 	   "Race" : "DWARF",
 	   "Name" : "Nain des montagnes",
 	   "OV" : "Mountains Dwarf",
@@ -230,6 +238,7 @@ export const referentialMock = {
 	   "Speed" : 0
 		},
 	  "FORESTS_GNOME": {
+	   "Id" : "FORESTS_GNOME",
 	   "Race" : "GNOME",
 	   "Name" : "Gnome des forêts",
 	   "OV" : "Forests Gnome",
@@ -242,6 +251,7 @@ export const referentialMock = {
 	   "Speed" : 0
 		},
 	  "ROCKS_GNOME": {
+	   "Id" : "ROCKS_GNOME",
 	   "Race" : "GNOME",
 	   "Name" : "Gnome des roches",
 	   "OV" : "Rocks Gnome",
@@ -253,7 +263,21 @@ export const referentialMock = {
 	   "Charisma" : 0,
 	   "Speed" : 0
 		},
+	  "DEPTH_GNOME": {
+	   "Id" : "DEPTH_GNOME",
+	   "Race" : "GNOME",
+	   "Name" : "Gnome des profondeurs *",
+	   "OV" : "Depth Gnome",
+	   "Strength" : 0,
+	   "Constitution" : 0,
+	   "Dexterity" : 1,
+	   "Intelligence" : 0,
+	   "Wisdom" : 0,
+	   "Charisma" : 0,
+	   "Speed" : 0
+		},
 	  "AIR_GENASI": {
+	   "Id" : "AIR_GENASI",
 	   "Race" : "GENASI",
 	   "Name" : "Génasi de l'air",
 	   "OV" : "Air Genasi",
@@ -266,6 +290,7 @@ export const referentialMock = {
 	   "Speed" : 0
 		},
 	  "EARTH_GENASI": {
+	   "Id" : "EARTH_GENASI",
 	   "Race" : "GENASI",
 	   "Name" : "Génasi de la terre",
 	   "OV" : "Earth Genasi",
@@ -278,6 +303,7 @@ export const referentialMock = {
 	   "Speed" : 0
 		},
 	  "FIRE_GENASI": {
+	   "Id" : "FIRE_GENASI",
 	   "Race" : "GENASI",
 	   "Name" : "Génasi du feu",
 	   "OV" : "Fire Genasi",
@@ -290,6 +316,7 @@ export const referentialMock = {
 	   "Speed" : 0
 		},
 	  "WATER_GENASI": {
+	   "Id" : "WATER_GENASI",
 	   "Race" : "GENASI",
 	   "Name" : "Génasi de l'eau",
 	   "OV" : "Water Genasi",
@@ -298,6 +325,97 @@ export const referentialMock = {
 	   "Dexterity" : 0,
 	   "Intelligence" : 0,
 	   "Wisdom" : 1,
+	   "Charisma" : 0,
+	   "Speed" : 0
+		},
+	  "HUMAN": {
+	   "Id" : "HUMAN",
+	   "Race" : "HUMAN",
+	   "Name" : "Humain",
+	   "OV" : "Human",
+	   "Strength" : 0,
+	   "Constitution" : 0,
+	   "Dexterity" : 0,
+	   "Intelligence" : 0,
+	   "Wisdom" : 0,
+	   "Charisma" : 0,
+	   "Speed" : 0
+		},
+	  "HALF_ELF": {
+	   "Id" : "HALF_ELF",
+	   "Race" : "HALF_ELF",
+	   "Name" : "Demi-Elfe",
+	   "OV" : "Half-Elf",
+	   "Strength" : 0,
+	   "Constitution" : 0,
+	   "Dexterity" : 0,
+	   "Intelligence" : 0,
+	   "Wisdom" : 0,
+	   "Charisma" : 0,
+	   "Speed" : 0
+		},
+	  "HALF_ORC": {
+	   "Id" : "HALF_ORC",
+	   "Race" : "HALF_ORC",
+	   "Name" : "Demi-Orque",
+	   "OV" : "Half-Orc",
+	   "Strength" : 0,
+	   "Constitution" : 0,
+	   "Dexterity" : 0,
+	   "Intelligence" : 0,
+	   "Wisdom" : 0,
+	   "Charisma" : 0,
+	   "Speed" : 0
+		},
+	  "ELF": {
+	   "Id" : "ELF",
+	   "Race" : "ELF",
+	   "Name" : "Drakéide",
+	   "OV" : "Dragon Born",
+	   "Strength" : 0,
+	   "Constitution" : 0,
+	   "Dexterity" : 0,
+	   "Intelligence" : 0,
+	   "Wisdom" : 0,
+	   "Charisma" : 0,
+	   "Speed" : 0
+		},
+	  "DRAGON_BORN": {
+	   "Id" : "DRAGON_BORN",
+	   "Race" : "DRAGON_BORN",
+	   "Name" : "Tieffelin",
+	   "OV" : "Tieffling",
+	   "Strength" : 0,
+	   "Constitution" : 0,
+	   "Dexterity" : 0,
+	   "Intelligence" : 0,
+	   "Wisdom" : 0,
+	   "Charisma" : 0,
+	   "Speed" : 0
+		},
+	  "AARAKOCRA": {
+	   "Id" : "AARAKOCRA",
+	   "Race" : "AARAKOCRA",
+	   "Name" : "Aarakocra *",
+	   "OV" : "Aarakocra",
+	   "Strength" : 0,
+	   "Constitution" : 0,
+	   "Dexterity" : 0,
+	   "Intelligence" : 0,
+	   "Wisdom" : 0,
+	   "Charisma" : 0,
+	   "Speed" : 0
+		},
+	  "GOLIATH": {
+	   "Id" : "GOLIATH",
+	   "Race" : "GOLIATH",
+	   "Name" : "Goliath *",
+	   "OV" : "Goliath",
+	   "Strength" : 0,
+	   "Constitution" : 0,
+	   "Dexterity" : 0,
+	   "Intelligence" : 0,
+	   "Wisdom" : 0,
 	   "Charisma" : 0,
 	   "Speed" : 0
 		}
@@ -422,6 +540,80 @@ export const referentialMock = {
 	   "Intelligence" : 0,
 	   "Wisdom" : 0,
 	   "Charisma" : 0
+		}
+	},
+	"Historics": {
+	  "ACOLYTE":  {
+	   "Name" : "Acolyte",
+	   "Skills" : ["Perspicacité", "Religion"]
+		},
+	  "ARTISAN DE GUILDE":  {
+	   "Name" : "Artisan De Guilde",
+	   "Skills" : ["Perspicacité", "Persuasion"]
+		},
+	  "ARTISTE":  {
+	   "Name" : "Artiste",
+	   "Skills" : ["Acrobaties", "Représentation"]
+		},
+	  "CHARLATAN":  {
+	   "Name" : "Charlatan",
+	   "Skills" : ["Escamotage", "Tromperie"]
+		},
+	  "CRIMINEL":  {
+	   "Name" : "Criminel",
+	   "Skills" : ["Discrétion", "Tromperie"]
+		},
+	  "ENFANT DES RUES":  {
+	   "Name" : "Enfant Des Rues",
+	   "Skills" : ["Discrétion", "Escamotage"]
+		},
+	  "ERMITE":  {
+	   "Name" : "Ermite",
+	   "Skills" : ["Médecine", "Religion"]
+		},
+	  "HÉROS DU PEUPLE":  {
+	   "Name" : "Héros Du Peuple",
+	   "Skills" : ["Dressage", "Survie"]
+		},
+	  "MARIN":  {
+	   "Name" : "Marin",
+	   "Skills" : ["Athlétisme", "Perception"]
+		},
+	  "NOBLE":  {
+	   "Name" : "Noble",
+	   "Skills" : ["Histoire", "Persuasion"]
+		},
+	  "SAGE":  {
+	   "Name" : "Sage",
+	   "Skills" : ["Arcanes", "Histoire"]
+		},
+	  "SAUVAGEON":  {
+	   "Name" : "Sauvageon",
+	   "Skills" : ["Athlétisme", "Survie"]
+		},
+	  "SOLDAT":  {
+	   "Name" : "Soldat",
+	   "Skills" : ["Athlétisme", "Intimidation"]
+		},
+	  "CHASSEUR DE PRIMES":  {
+	   "Name" : "Chasseur De Primes",
+	   "Skills" : []
+		},
+	  "TOURMENTÉ":  {
+	   "Name" : "Tourmenté",
+	   "Skills" : []
+		},
+	  "VOYAGEUR":  {
+	   "Name" : "Voyageur *",
+	   "Skills" : ["Survie", "Persuasion"]
+		},
+	  "CAPTIF":  {
+	   "Name" : "Captif *",
+	   "Skills" : ["Nature", "Survie"]
+		},
+	  "IDIOT DU VILLAGE":  {
+	   "Name" : "Idiot Du Village *",
+	   "Skills" : ["Discrétion", "Représentation"]
 		}
 	},
 	"WeaponCategories" : {

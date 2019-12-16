@@ -44,6 +44,14 @@ export const DATA_MODEL = {
                 CHARISMA: { name: "Charisma" }
             }
         },
+    HISTORICS:
+        {
+            name: 'Historics',
+            columns: {
+                NAME: { name: "Name" },
+                SKILLS: { name: "Skills" }
+            }
+        },
     WEAPON_CATEGORIES:
         {
             name: 'WeaponCategories',
@@ -228,7 +236,6 @@ export const DATA_MODEL = {
             columns: {
                 ID: { name: "Id" },
                 NAME: { name: "Name" },
-                RACE: { name: "Race" },
                 SUB_RACE: { name: "SubRace", optional: true },
                 CLASS: { name: "Class" },
                 CHARGE_CAPACITY: { name: "ChargeCapacity" },

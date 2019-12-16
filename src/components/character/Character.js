@@ -7,6 +7,9 @@ import { insertCharacterSkills, deleteCharacterSkills, updateCharacterCaracteris
 import './Character.css'
 import Skills from './Skills'
 import Caracteristic from './Caracteristic'
+import RaceSelector from './RaceSelector'
+import ClassSelector from './ClassSelector'
+import HistoricSelector from './HistoricSelector'
 
 const MAX_CARACTERISTIC = 20;
 
@@ -63,43 +66,36 @@ class Character extends Component {
     }
 
     render() {
-        const { races, subRaces, classes, weapons, skills } = this.props.referential;
-        const { Name, Race: raceId, SubRace: subRaceId, Class: classId, Historic,
-                Skills: masterSkills, WeaponRight, WeaponLeft
-            } = this.state
-        const race = races && races[raceId];
-        const subRace = subRaces && subRaces[subRaceId];
-        const characterClass = classes && classes[classId];
+        const { caracteristics } = this.props.referential;
+        const { Name, SubRace: subRaceId, Class: classId, Historic: historicId, Skills: masterSkills } = this.state
 
-        const caracteristicsNames = ["Strength", "Constitution", "Dexterity", "Intelligence", "Wisdom", "Charisma"];
         return (
         <div className="character">
             { Name !== null && (
                 <div>
                     <h1>{Name}</h1>
-                    <span>Race : { (subRace && subRace.Name) || (race && race.Name) } </span><br />
-                    <span>Classe : { characterClass && characterClass.Name }</span><br />
-                    <span>Main droite : {weapons && WeaponRight && weapons[WeaponRight].Name}</span><br /> 
-                    <span>Main gauche : {weapons && WeaponLeft && weapons[WeaponLeft].Name}</span><br />
+                    <RaceSelector subRaceId={subRaceId} onChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SUB_RACE.name, value);}} />
+                    <ClassSelector  classId={classId}
+                                    onChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.CLASS.name, value);}} />
+                    <HistoricSelector historicId={historicId} onChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HISTORIC.name, value);}} />
                     <div className="caracteristics">
-                        {
-                            caracteristicsNames.map((caracteristicName) => (
-                                <div key={caracteristicName}>
-                                    <span className="caracteristic-name">{caracteristicName}</span>
+                        {   caracteristics && 
+                            Object.values(caracteristics).map((caracteristic) => (
+                                <div key={caracteristic.Name}>
+                                    <span className={`caracteristic-name ${caracteristic.OV}`}>{caracteristic.Name}</span>
                                     <Caracteristic
-                                        caracteristicName={caracteristicName}
-                                        value={this.state[caracteristicName]}
+                                        caracteristicName={caracteristic.OV}
+                                        value={this.state[caracteristic.OV]}
                                         maxVal={MAX_CARACTERISTIC}
-                                        race={ race }
-                                        subRace={ subRace }
-                                        characterClass={ characterClass }
-                                        onChange={(value) =>{ this.updateCaracteristic(caracteristicName, value);}}/>
+                                        subRaceId={ subRaceId }
+                                        classId={ classId }
+                                        onChange={(value) =>{ this.updateCaracteristic(caracteristic.OV, value);}}/>
                                 </div>
                                 )
                             )
                         }
                     </div>
-                    { skills && <Skills skills={skills} master={masterSkills} historic={Historic} onClick={this.toggleSkill} /> }
+                    <Skills master={masterSkills} historicId={historicId} onClick={this.toggleSkill} />
                 </div>
             )}
         </div>

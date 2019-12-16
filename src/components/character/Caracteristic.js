@@ -2,19 +2,20 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { RacePropType, SubRacePropType, ClassPropType }from 'PropTypes';
 import { calculateBonus } from 'rules/Caracteristics.rules'
 import './Caracteristic.css'
 
 class Caracteristic extends Component {
 
   render() {
-    const { caracteristicName, value, race, subRace, characterClass, maxVal } = this.props;
+    const { races, subRaces, caracteristicName, value, subRaceId, maxVal } = this.props;
+
+    const subRace = subRaces && subRaces[subRaceId];
+    const race = subRace && races && races[subRace.Race];
 
     const raceBonus = race && race[caracteristicName];
     const subRaceBonus = subRace && subRace[caracteristicName];
-    const classBonus = characterClass && characterClass[caracteristicName];
-    const bonus = calculateBonus(value + raceBonus + subRaceBonus + classBonus, maxVal);
+    const bonus = calculateBonus(value + raceBonus + subRaceBonus, maxVal);
 
     return (
       <div className={`caracteristic ${caracteristicName}`}>
@@ -31,7 +32,6 @@ class Caracteristic extends Component {
         <div className="character-bonus">
           { (raceBonus !== 0) && <span className="race-bonus">+{ raceBonus }</span>}
           { (subRaceBonus !== 0) && <span className="subRace-bonus">+{ subRaceBonus }</span>}
-          { (classBonus !== 0) && <span className="class-bonus">+{ classBonus }</span>}
         </div>
       </div>
     )
@@ -49,9 +49,7 @@ Caracteristic.propTypes = {
   value: PropTypes.number.isRequired,
   maxVal: PropTypes.number.isRequired,
   onChange: PropTypes.func.isRequired,
-  race: RacePropType,
-  subRace: SubRacePropType,
-  characterClass: ClassPropType
+  subRaceId: PropTypes.string
 }
 
 Caracteristic.defaultProps = {
@@ -59,4 +57,8 @@ Caracteristic.defaultProps = {
   bonusStep: 2
 }
 
-export default connect(state => state)(Caracteristic)
+const mapStateToProps = (state) => ({
+  races: state.referential.races,
+  subRaces: state.referential.subRaces
+})
+export default connect(mapStateToProps)(Caracteristic)
