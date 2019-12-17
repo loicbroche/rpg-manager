@@ -2,24 +2,31 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { calculateTotalBonus, MAX_CARACTERISTIC, BONUS_STEP } from 'rules/Caracteristics.rules'
+import { MAX_CARACTERISTIC, BONUS_STEP } from 'rules/Caracteristics.rules'
+
 import './Caracteristic.css'
+import CaracteristicBonus from 'components/shared/CaracteristicBonus'
 
 class Caracteristic extends Component {
 
   render() {
-    const { races, subRaces, caracteristicName, value, subRaceId, maxVal, bonusStep } = this.props;
+    const { races, subRaces, caracteristicName, value, subRaceId, maxVal, bonusStep} = this.props;
 
     const subRace = subRaces && subRaces[subRaceId];
     const race = subRace && races && races[subRace.Race];
 
     const raceBonus = race && race[caracteristicName];
     const subRaceBonus = subRace && subRace[caracteristicName];
-    const bonus = calculateTotalBonus(value, raceBonus, subRaceBonus, maxVal, bonusStep);
 
     return (
       <div className={`caracteristic ${caracteristicName}`}>
-        <span className="bonus-caracteristic">{(bonus>=0?"+":"")+bonus}</span>
+        <span className="bonus-caracteristic">
+        <CaracteristicBonus caracteristicName={caracteristicName}
+                            value={value}
+                            maxVal={maxVal}
+                            bonusStep={bonusStep}
+                            subRaceId={subRaceId} />
+        </span>
         <input  type="number"
                 name={caracteristicName}  
                 autoComplete={`caracteristic-${caracteristicName}`}

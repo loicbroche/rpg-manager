@@ -1,5 +1,4 @@
 .character-overview {
-    width : 200px;
     margin: 1rem;
     border: 1px solid var(--color-primary);
 }
@@ -7,4 +6,8 @@
 .caracteristics-overview {
     display: flex;
     flex-direction: column;
+}
+
+.caracteristics-overview {
+    margin-top: 1rem;
 }

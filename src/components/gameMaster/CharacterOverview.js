@@ -3,31 +3,38 @@ import { connect } from 'react-redux'
 import { CharacterPropType } from 'PropTypes';
 
 import './CharacterOverview.css'
-import { calculateTotalBonus } from 'rules/Caracteristics.rules'
+import CaracteristicBonus from 'components/shared/CaracteristicBonus'
+import SkillSelector from './SkillSelector';
 
 class CharacterOverview extends Component {
     render() {
-        const { caracteristics, races, subRaces, character } = this.props;
-        const subRace = subRaces && subRaces[character.SubRace];
-        const race = subRace && races && races[subRace.Race];
+        const { caracteristics, character } = this.props;
+        const caracteristicsBonus = caracteristics && Object.values(caracteristics).reduce((accum, caracteristic) => {
+            accum[caracteristic.Code] = character[caracteristic.OV];
+            return accum;
+        }, {});
 
         return (
             <div className="character-overview">
                 <h1>{character.Name}</h1>
                 <div className="caracteristics-overview">
                     {   caracteristics && 
-                        Object.values(caracteristics).map((caracteristic) => {
-                            const value = character[caracteristic.OV];                        
-                            const raceBonus = race && race[caracteristic.OV];
-                            const subRaceBonus = subRace && subRace[caracteristic.OV];
-                            const bonus = calculateTotalBonus(value, raceBonus, subRaceBonus);
-                            return (
-                            <div key={caracteristic.Name}>
-                        <span className={`${caracteristic.OV}`}>{caracteristic.Name} : {bonus>=0 && "+"}{ bonus }</span>
-                            </div>
-                            )}
-                        )
+                        Object.values(caracteristics).map((caracteristic) => (
+                            <span key={caracteristic.OV} className={caracteristic.OV}>
+                                {caracteristic.Name} :
+                                <CaracteristicBonus caracteristicName={caracteristic.OV}
+                                                    value={character[caracteristic.OV]}
+                                                    subRaceId={character.SubRace}/>
+                            </span>
+                        ))
                     }
+                </div>
+                <div className="caracteristics-overview">
+                    <SkillSelector  caracteristicsBonus={caracteristicsBonus}
+                                    subRaceId={character.SubRace}
+                                    master={character.Skills}
+                                    level={character.Level}
+                                    historicId={character.Historic} />
                 </div>
             </div>
         )
@@ -39,8 +46,6 @@ CharacterOverview.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-    caracteristics: state.referential.caracteristics,
-    races: state.referential.races,
-    subRaces: state.referential.subRaces
-  })
+    caracteristics: state.referential.caracteristics
+})
 export default connect(mapStateToProps)(CharacterOverview)

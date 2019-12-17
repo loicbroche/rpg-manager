@@ -66,6 +66,10 @@ class Character extends Component {
     render() {
         const { caracteristics } = this.props;
         const { Name, SubRace: subRaceId, Class: classId, Historic: historicId, Skills: masterSkills, Level } = this.state
+        const caracteristicsBonus = caracteristics && Object.values(caracteristics).reduce((accum, caracteristic) => {
+            accum[caracteristic.Code] = this.state[caracteristic.OV];
+            return accum;
+        }, {});
 
         return (
         <div className="character">
@@ -92,9 +96,12 @@ class Character extends Component {
                             )
                         }
                     </div>
+
                     <Skills master={masterSkills}
                             historicId={historicId}
                             level={Level}
+                            caracteristicsBonus={caracteristicsBonus}
+                            subRaceId={subRaceId}
                             onClick={this.toggleSkill} />
                 </div>
             )}

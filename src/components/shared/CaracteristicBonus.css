@@ -1,0 +1,18 @@
+.Strength {
+  color: var(--color-Strength);
+}
+.Constitution {
+  color: var(--color-Constitution);
+}
+.Dexterity {
+  color: var(--color-Dexterity);
+}
+.Intelligence {
+  color: var(--color-Intelligence);
+}
+.Wisdom{
+  color: var(--color-Wisdom);
+}
+.Charisma {
+  color: var(--color-Charisma);
+}

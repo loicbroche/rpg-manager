@@ -1,0 +1,4 @@
+.skill-selector {
+  display: flex;
+  flex-direction: row;
+}
