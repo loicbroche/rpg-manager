@@ -189,23 +189,25 @@ class App extends Component {
             </div>
           </Link>
         </header>
-        <Switch>
-          <Route
-            exact path={ROUTE_HOME}
-            render={props => ( <Page {...props} component={Home} title="JdR Manager" /> )}
-          />
-          <Route
-            exact path={ROUTE_GAME_MASTER}
-            render={props => ( <Page {...props} component={GameMaster} title="Maître du jeu - JdR Manager" /> )}
-          />
-          <Route
-            path={`${ROUTE_CHARACTER}/:characterId`}
-            render={props => ( <Page {...props} component={Character} title={`Fiche personnage de ${props.match.params.characterId} - JdR Manager`} /> )}
-          />
-          <Route
-            render={props => ( <Page {...props} component={NotFound} title="Page introuvable - JdR Manager" /> )}
-          />
-        </Switch>
+        <div className="body">
+          <Switch>
+            <Route
+              exact path={ROUTE_HOME}
+              render={props => ( <Page {...props} component={Home} title="JdR Manager" /> )}
+            />
+            <Route
+              exact path={ROUTE_GAME_MASTER}
+              render={props => ( <Page {...props} component={GameMaster} title="Maître du jeu - JdR Manager" /> )}
+            />
+            <Route
+              path={`${ROUTE_CHARACTER}/:characterId`}
+              render={props => ( <Page {...props} component={Character} title={`Fiche personnage de ${props.match.params.characterId} - JdR Manager`} /> )}
+            />
+            <Route
+              render={props => ( <Page {...props} component={NotFound} title="Page introuvable - JdR Manager" /> )}
+            />
+          </Switch>
+        </div>
       </BrowserRouter>
     )
   }

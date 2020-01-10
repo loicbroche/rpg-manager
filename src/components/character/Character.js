@@ -10,6 +10,8 @@ import Caracteristic from './Caracteristic'
 import RaceSelector from './RaceSelector'
 import ClassSelector from './ClassSelector'
 import HistoricSelector from './HistoricSelector'
+import HPComponent from './HPComponent';
+import XPComponent from './XPComponent';
 
 class Character extends Component {
     constructor (props) {
@@ -65,7 +67,8 @@ class Character extends Component {
 
     render() {
         const { caracteristics } = this.props;
-        const { Name, SubRace: subRaceId, Class: classId, Historic: historicId, Skills: masterSkills, Level } = this.state
+        const { Name, SubRace: subRaceId, Class: classId, Historic: historicId, Skills: masterSkills,
+                XP, Level: characterLevel, HP, MaxHP} = this.state
         const caracteristicsBonus = caracteristics && Object.values(caracteristics).reduce((accum, caracteristic) => {
             accum[caracteristic.Code] = this.state[caracteristic.OV];
             return accum;
@@ -75,12 +78,25 @@ class Character extends Component {
         <div className="character">
             { Name !== null && (
                 <div>
-                    <h1>{Name}</h1>
-                    <RaceSelector subRaceId={subRaceId} onChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SUB_RACE.name, value);}} />
-                    <ClassSelector  classId={classId}
+                    <div className="character-header">
+                        <span className="character-name">{Name}</span>
+                        <RaceSelector subRaceId={subRaceId} onChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SUB_RACE.name, value);}} />
+                        <ClassSelector  classId={classId}
                                     onChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.CLASS.name, value);}} />
-                    <HistoricSelector historicId={historicId} onChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HISTORIC.name, value);}} />
-                    <div className="caracteristics">
+                        <HistoricSelector historicId={historicId} onChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HISTORIC.name, value);}} />
+                        <XPComponent XP={XP}/>
+                    </div>
+
+                    <div className="character-body">
+                        <div className="status">
+                            <HPComponent val={HP} maxVal={MaxHP}
+                                            onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HP.name, value); }}
+                                            onMaxValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.MAX_HP.name, value); }} />
+                            <span>Ki</span>
+                            <span>Spells</span>
+                        </div>
+
+                        <div className="caracteristics">
                         {   caracteristics && 
                             Object.values(caracteristics).map((caracteristic) => (
                                 <div key={caracteristic.Name}>
@@ -95,11 +111,12 @@ class Character extends Component {
                                 )
                             )
                         }
+                        </div>
                     </div>
 
                     <Skills master={masterSkills}
                             historicId={historicId}
-                            level={Level}
+                            level={characterLevel}
                             caracteristicsBonus={caracteristicsBonus}
                             subRaceId={subRaceId}
                             onClick={this.toggleSkill} />

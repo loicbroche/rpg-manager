@@ -8,16 +8,38 @@ class RaceSelector extends Component {
 
   render() {
     const { races, subRaces, subRaceId } = this.props;
+    const genders = ["♂", "♀", "⚥", "⚧", "⚲"];
+    const raceBorderImage = require("images/races/race_border.png");
+    let raceImage;
+    try {
+      raceImage = require(`images/races/${subRaceId}.png`);
+    } catch (ex) {
+      raceImage = require("images/races/no_race.png");
+    }
 
     return (
-      <div className="race-selector">
-        <span>Race:&nbsp;</span>
-        { races && subRaces && (
-          <select value={subRaceId} onChange={this.handleValueUpdate}>
-            { Object.entries(races).map(([key, value]) => this.getSubRacesOptionElement(key))}
+      <div className="selector race-selector">
+        <div className="selector-icon race-icon">
+          <img src={raceImage} className="selector-image" alt="" />
+          <img src={raceBorderImage} className="selector-image" alt="" />
+        </div>
+        <div className="selector-value">
+          <span>Race</span>
+          { races && subRaces && (
+            <select className="selector-select" value={subRaceId} onChange={this.handleValueUpdate}>
+              <option value="" disabled>Choisissez une race</option>
+              { Object.entries(races).map(([key, value]) => this.getSubRacesOptionElement(key))}
+            </select>
+          )}
+        </div>
+        <div className="gender-value">
+          <select className="genders">
+            { genders.map((gender) => (
+              <option key={gender} className={`gender ${gender}`} value={gender}>{gender}</option>
+            ))}
           </select>
-        )}
-    </div>
+        </div>
+      </div>
     )
   }
 

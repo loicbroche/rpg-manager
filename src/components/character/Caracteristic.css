@@ -38,6 +38,8 @@
 .race-bonus,
 .subRace-bonus  {
   color: var(--background-color-1);
+  background-image: url("../../images/races/race_border.png");
+  background-size: 100% 100%;
 }
 
 .Strength {

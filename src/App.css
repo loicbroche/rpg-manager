@@ -14,6 +14,13 @@
   --color-Intelligence: #244062;
   --color-Wisdom: #31869B;
   --color-Charisma: #974706;
+  --color-XP: #000027;
+  --color-Health: #963634;
+  --color-genderless: #808080;
+  --color-male: #9777FF;
+  --color-female: #FF60C5;
+  --color-transgender: #A0419A;
+  --color-hermaphoditus: #D48B42;
   --font-family-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; 
   --font-family-secondary: "Algerian"; 
   --font-family-tertiary: "French Script MT";
@@ -47,7 +54,8 @@ button:focus {
   background: var(--highlight-background-color-1);
 }
 
-div {
+div,
+a {
   border-radius: 0.25rem;
 }
 
@@ -73,8 +81,12 @@ div {
   background: var(--background-color-1);
   border: 1px solid var(--color-secondary);
   color: var(--color-secondary);
-  font-family: "Algerian";
+  font-family: var(--font-family-secondary);
   font-size: 1.75rem;
+}
+
+.body {
+  margin: 1rem;
 }
 
 .option {
@@ -86,4 +98,34 @@ div {
 
 .option.filled {
  background-color: var(--color-primary);
+}
+
+.selector {
+  display: flex;
+  flex-direction: row;
+}
+
+.selector-icon {
+  z-index: 2;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+}
+
+.selector-icon > img {
+  height: 2.5rem;
+  width: 2.5rem;
+  position:absolute;
+}
+
+.selector-value {
+  display: flex;
+  flex-direction: column;
+}
+
+.selector-select {
+  position: relative;
+  left: -1.25rem;
+  padding-left: 1.25rem;
 }

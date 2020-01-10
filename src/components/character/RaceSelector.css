@@ -1,9 +1,28 @@
-.race-selector {
-    display: flex;
-    flex-direction: row;
+.gender-value {
+    display:flex;
 }
 
-.main-race-selector,
-.subRace-selector {
-    flex-grow: 1;
+.genders {
+    position: relative;
+    left: -0.5rem;
+    height: 75%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.⚲ {
+    background-color: var(--color-genderless);
+}
+.♀ {
+    background-color: var(--color-female);
+}
+.♂ {
+    background-color: var(--color-male);
+}
+.⚧ {
+    background-color: var(--color-transgender);
+}
+.⚥ {
+    background-color: var(--color-hermaphoditus);
 }
