@@ -1,6 +1,5 @@
 .hpComponent {
   display: flex;
-  border: 1px solid var(--color-primary);
 }
 
 .currentModifier,
@@ -19,11 +18,19 @@
 
 .hpBar {
   flex-grow: 1;
-  height: 100%;
+  height: var(--height-bars);
   text-align: center;
   font-weight: bold;
+  border: 1px solid var(--color-primary);
 }
 
-.hpBar:before {
-  content: attr(data-label);
+.hpProgressBar {
+  height: 100%;
+  background: linear-gradient(transparent, var(--color-Health), transparent);
+  
+}
+.label {
+  position: relative;
+  top: calc(-1 * var(--height-bars));
+  padding: 0 0.5rem;
 }

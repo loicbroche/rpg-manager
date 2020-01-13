@@ -13,11 +13,25 @@ class XPComponent extends Component {
 
     return (
       <div className="XPComponent">
-        <div className="XPBar">
-          <div className="XPProgressBar" style={{width:`${Math.ceil(XP/levelSupXp*100)}%`}}>&nbsp;</div>
-          <div className="label">{`${XP} XP / ${levelSupXp} XP`}</div>
+        <div className="selector-value">
+          <div className="XPBar">
+            <div className="XPProgressBar" style={{width:`${Math.ceil(XP/levelSupXp*100)}%`}}>&nbsp;</div>
+              <div className="label">
+                <div className="current-xp">
+                  <input type="number"
+                    name="XP"
+                    value={XP}
+                    min={0}
+                    step={10}
+                    className="xp-value"
+                    onChange={(event) => this.props.onChange(event.target.value)} />
+                  <span>{" XP"}</span>
+                </div>
+                <span className="max-hp">{` / ${levelSupXp} XP`}</span>
+              </div>
+          </div>
         </div>
-        <div className="level">
+        <div className="selector-icon level">
           <span>Niv.</span>
           <span>{level}</span>
         </div>
@@ -27,7 +41,8 @@ class XPComponent extends Component {
 }
 
 XPComponent.propTypes = {
-  XP: PropTypes.number.isRequired
+  XP: PropTypes.number.isRequired,
+  onChange: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => ({

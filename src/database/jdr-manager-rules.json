@@ -352,16 +352,19 @@
 		}
     },
 	"Characters": {
-		".validate": "newData.child('Id').exists() && newData.child('Name').exists() && newData.child('Race').exists() && newData.child('Class').exists() && newData.child('WeaponRight').exists() && newData.child('WeaponLeft').exists()",
+		".validate": "newData.child('Id').exists() && newData.child('Name').exists() && newData.child('SubRace').exists() && newData.child('Gender').exists() && newData.child('Class').exists() && newData.child('WeaponRight').exists() && newData.child('WeaponLeft').exists()",
 		"Id": {
 		  ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
 		},
 		"Name": {
 		  ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
 		},
-		"Race": {
+		"SubRace": {
 		  ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
 		},
+		"Gender": {
+			".validate": "newData.isString() && newData.val().length ==1"
+		  },
 		"Class": {
 		  ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
 		},

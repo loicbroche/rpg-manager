@@ -67,7 +67,7 @@ class Character extends Component {
 
     render() {
         const { caracteristics } = this.props;
-        const { Name, SubRace: subRaceId, Class: classId, Historic: historicId, Skills: masterSkills,
+        const { Name, SubRace: subRaceId, Gender, Class: classId, Historic: historicId, History, Skills: masterSkills,
                 XP, Level: characterLevel, HP, MaxHP} = this.state
         const caracteristicsBonus = caracteristics && Object.values(caracteristics).reduce((accum, caracteristic) => {
             accum[caracteristic.Code] = this.state[caracteristic.OV];
@@ -80,11 +80,17 @@ class Character extends Component {
                 <div>
                     <div className="character-header">
                         <span className="character-name">{Name}</span>
-                        <RaceSelector subRaceId={subRaceId} onChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SUB_RACE.name, value);}} />
+                        <RaceSelector   subRaceId={subRaceId}
+                                        gender={Gender}
+                                        onRaceChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SUB_RACE.name, value);}}
+                                        onGenderChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.GENDER.name, value);}} />
                         <ClassSelector  classId={classId}
                                     onChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.CLASS.name, value);}} />
-                        <HistoricSelector historicId={historicId} onChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HISTORIC.name, value);}} />
-                        <XPComponent XP={XP}/>
+                        <HistoricSelector   historicId={historicId}
+                                            history={History}
+                                            onHistoricChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HISTORIC.name, value);}}
+                                            onHistoryChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HISTORY.name, value);}} />
+                        <XPComponent XP={parseInt(XP)} onChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.XP.name, value);}}/>
                     </div>
 
                     <div className="character-body">

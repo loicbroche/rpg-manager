@@ -1,0 +1,27 @@
+.history-container {
+    position: absolute;
+    height: 1.5rem;
+    margin-top: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    background-image: url("parchment.png");
+}
+
+.history {
+    height: 100%;
+    padding: 1rem;
+    background-color: transparent;
+    border: 0;
+    visibility: collapse;
+}
+
+.show-history {
+    visibility: visible;
+    height: 100%;
+}
+
+.modify {
+    width: 1rem;
+    margin: 0.15rem;
+    align-self: flex-end;
+}

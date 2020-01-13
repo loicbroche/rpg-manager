@@ -1,28 +1,36 @@
 .gender-value {
     display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .genders {
     position: relative;
-    left: -0.5rem;
-    height: 75%;
+    left: -1rem;
+    height: 70%;
     text-align: center;
-    font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
+    appearance: none;
+    background: none;
+    border: 0;
+}
+
+.genders option {
+    background-color: var(--background-color-1);
 }
 
 .⚲ {
-    background-color: var(--color-genderless);
+    color: var(--color-genderless);
 }
 .♀ {
-    background-color: var(--color-female);
+    color: var(--color-female);
 }
 .♂ {
-    background-color: var(--color-male);
+    color: var(--color-male);
 }
 .⚧ {
-    background-color: var(--color-transgender);
+    color: var(--color-transgender);
 }
 .⚥ {
-    background-color: var(--color-hermaphoditus);
+    color: var(--color-hermaphoditus);
 }

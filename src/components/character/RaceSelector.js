@@ -7,7 +7,7 @@ import './RaceSelector.css'
 class RaceSelector extends Component {
 
   render() {
-    const { races, subRaces, subRaceId } = this.props;
+    const { races, subRaces, subRaceId, gender } = this.props;
     const genders = ["♂", "♀", "⚥", "⚧", "⚲"];
     const raceBorderImage = require("images/races/race_border.png");
     let raceImage;
@@ -26,14 +26,14 @@ class RaceSelector extends Component {
         <div className="selector-value">
           <span>Race</span>
           { races && subRaces && (
-            <select className="selector-select" value={subRaceId} onChange={this.handleValueUpdate}>
+            <select className="selector-select" value={subRaceId} onChange={(event) => this.props.onRaceChange(event.target.value)}>
               <option value="" disabled>Choisissez une race</option>
               { Object.entries(races).map(([key, value]) => this.getSubRacesOptionElement(key))}
             </select>
           )}
         </div>
         <div className="gender-value">
-          <select className="genders">
+          <select className={`genders ${gender}`} value={gender} onChange={(event) => this.props.onGenderChange(event.target.value)}>
             { genders.map((gender) => (
               <option key={gender} className={`gender ${gender}`} value={gender}>{gender}</option>
             ))}
@@ -41,12 +41,6 @@ class RaceSelector extends Component {
         </div>
       </div>
     )
-  }
-
-  // Arrow fx for binding
-  handleValueUpdate = (event) => {
-    const selectedSubRaceId = event.target.value;
-    this.props.onChange(selectedSubRaceId);
   }
 
   getSubRacesOptionElement(raceId) {
@@ -67,7 +61,9 @@ class RaceSelector extends Component {
 
 RaceSelector.propTypes = {
   subRaceId: PropTypes.string,
-  onChange: PropTypes.func.isRequired
+  gender: PropTypes.string,
+  onRaceChange: PropTypes.func.isRequired,
+  onGenderChange: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => ({

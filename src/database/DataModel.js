@@ -237,6 +237,7 @@ export const DATA_MODEL = {
                 ID: { name: "Id" },
                 NAME: { name: "Name" },
                 SUB_RACE: { name: "SubRace", optional: true },
+                GENDER: { name: "Gender" },
                 CLASS: { name: "Class" },
                 CHARGE_CAPACITY: { name: "ChargeCapacity" },
                 MASTER_BONUS: { name: "MasterBonus" },

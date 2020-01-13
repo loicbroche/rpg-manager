@@ -14,17 +14,20 @@
   --color-Intelligence: #244062;
   --color-Wisdom: #31869B;
   --color-Charisma: #974706;
-  --color-XP: #000027;
+  --color-XP: goldenrod;
   --color-Health: #963634;
-  --color-genderless: #808080;
-  --color-male: #9777FF;
-  --color-female: #FF60C5;
-  --color-transgender: #A0419A;
-  --color-hermaphoditus: #D48B42;
+  --color-genderless: #CECECE;
+  --color-male: #C6B5FF;
+  --color-female: #FFB2E4;
+  --color-transgender: #C691C4;
+  --color-hermaphoditus: #E2B58A;
   --font-family-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; 
   --font-family-secondary: "Algerian"; 
   --font-family-tertiary: "French Script MT";
   --font-family-error: "Calibri", "Arial", source-code-pro, Menlo, Monaco, Consolas, "Courier New";
+  --height-bars: 1.25rem;
+  --height-icons: 2.5rem;
+  --size-bars-font: 0.8rem;
 }
 
 body {
@@ -77,6 +80,8 @@ a {
 
 .header {
   height: 2rem;
+  width: fit-content;
+  margin: auto;
   text-align: center;
   background: var(--background-color-1);
   border: 1px solid var(--color-secondary);
@@ -107,25 +112,26 @@ a {
 
 .selector-icon {
   z-index: 2;
-  height: 2.5rem;
-  width: 2.5rem;
+  height: var(--height-icons);
+  width: var(--height-icons);
   border-radius: 50%;
-  background-color: var(--color-primary);
+  background-color: var(--background-color-1);
 }
 
 .selector-icon > img {
-  height: 2.5rem;
-  width: 2.5rem;
+  height: var(--height-icons);
+  width: var(--height-icons);
   position:absolute;
 }
 
 .selector-value {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
 }
 
 .selector-select {
   position: relative;
-  left: -1.25rem;
-  padding-left: 1.25rem;
+  left: calc(-1* var(--height-icons)/2);
+  padding-left: calc(var(--height-icons)/2);
 }

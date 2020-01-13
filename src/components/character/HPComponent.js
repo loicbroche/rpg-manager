@@ -10,11 +10,14 @@ class HPComponent extends Component {
     const {val, maxVal} = this.props;
     return (
       <div className="hpComponent">
-        <span className="maxModifier" onClick={(event) => {this.handleMaxValueChange(-1)}}>{"<"}</span>
-        <span className="currentModifier" onClick={(event) => {this.handleValueChange(-1)}}>{"<<"}</span>
-        <progress className="hpBar" value={val} min={0} max={maxVal} data-label={`${val} / ${maxVal}`} ></progress>
-        <span className="currentModifier" onClick={(event) => {this.handleValueChange(1)}}>{">>"}</span>
-        <span className="maxModifier" onClick={(event) => {this.handleMaxValueChange(1)}}>{">"}</span>
+        <span className="maxModifier" onClick={(event) => {this.handleMaxValueChange(-1)}}>{"⏮"}</span>
+        <span className="currentModifier" onClick={(event) => {this.handleValueChange(-1)}}>{"⏴"}</span>
+        <div className="hpBar">
+          <div className="hpProgressBar" style={{width:`${Math.ceil(val/maxVal*100)}%`}}>&nbsp;</div>
+          <div className="label">{`${val} / ${maxVal}`}</div>
+        </div>
+        <span className="currentModifier" onClick={(event) => {this.handleValueChange(1)}}>{"⏵"}</span>
+        <span className="maxModifier" onClick={(event) => {this.handleMaxValueChange(1)}}>{"⏭"}</span>
       </div>
     )
   }
