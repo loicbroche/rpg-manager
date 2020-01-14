@@ -41,7 +41,8 @@ export const DATA_MODEL = {
                 DEXTERITY: { name: "Dexterity" },
                 INTELLIGENCE: { name: "Intelligence" },
                 WISDOM: { name: "Wisdom" },
-                CHARISMA: { name: "Charisma" }
+                CHARISMA: { name: "Charisma" },
+                HEALTH_DICE: { name: "HD" }
             }
         },
     HISTORICS:

@@ -22,7 +22,7 @@
     flex-direction: column;
     width: 50%;
     margin-top: 1rem;
-    border: 1px solid purple;
+    border: 1px dashed purple;
 }
 
 .caracteristics {
@@ -30,6 +30,7 @@
     flex-direction: row;
     justify-content: space-between;
     margin-top: 1rem;
+    border: 1px dashed purple;
 }
 
 .caracteristic-name {

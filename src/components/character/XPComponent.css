@@ -16,7 +16,7 @@
   height: 100%;
   background: linear-gradient(transparent, var(--color-XP), transparent);
 }
-.label {
+.xp-label {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -28,10 +28,10 @@
   font-size: var(--size-bars-font);
 }
 
-.label .max-hp {
+.xp-label .max-hp {
   text-align: right;
 }
-.label .current-xp {
+.xp-label .current-xp {
   display: flex;
   flex-direction: row;
 }

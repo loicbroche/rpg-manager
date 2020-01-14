@@ -135,3 +135,31 @@ a {
   left: calc(-1* var(--height-icons)/2);
   padding-left: calc(var(--height-icons)/2);
 }
+
+.decrease-max::before {
+  content: "⏮";
+}
+.increase-max::before {
+  content: "⏭";
+}
+.decrease-value::before {
+  content: "⏴";
+}
+.increase-value::before {
+  content: "⏵";
+}
+
+.currentModifier,
+.maxModifier {
+  display: inline-block;
+  border: 1px solid var(--color-secondary);
+  color: var(--color-secondary);
+  font-weight: bold;
+}
+
+.currentModifier:hover,
+.currentModifier:focus,
+.maxModifier:hover,
+.maxModifier:focus {
+  background: var(--highlight-background-color-1);
+}

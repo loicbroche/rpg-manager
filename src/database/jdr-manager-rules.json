@@ -66,7 +66,7 @@
 		}
     },
 	"Classes": {
-		".validate": "newData.child('Name').exists() && newData.child('OV').exists() && newData.child('Strength').exists() && newData.child('Constitution').exists() && newData.child('Dexterity').exists() && newData.child('Intelligence').exists() && newData.child('Wisdom').exists() && newData.child('Charisma').exists()",
+		".validate": "newData.child('Name').exists() && newData.child('OV').exists() && newData.child('Strength').exists() && newData.child('Constitution').exists() && newData.child('Dexterity').exists() && newData.child('Intelligence').exists() && newData.child('Wisdom').exists() && newData.child('Charisma').exists() && newData.child('HD').exists()",
 		"Name": {
 		  ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
 		},

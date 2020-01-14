@@ -95,7 +95,7 @@ class Character extends Component {
 
                     <div className="character-body">
                         <div className="status">
-                            <HPComponent val={HP} maxVal={MaxHP}
+                            <HPComponent val={HP} maxVal={MaxHP} classId={classId}
                                             onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HP.name, value); }}
                                             onMaxValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.MAX_HP.name, value); }} />
                             <span>Ki</span>

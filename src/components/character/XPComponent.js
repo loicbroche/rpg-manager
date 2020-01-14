@@ -16,7 +16,7 @@ class XPComponent extends Component {
         <div className="selector-value">
           <div className="XPBar">
             <div className="XPProgressBar" style={{width:`${Math.ceil(XP/levelSupXp*100)}%`}}>&nbsp;</div>
-              <div className="label">
+              <div className="xp-label">
                 <div className="current-xp">
                   <input type="number"
                     name="XP"
