@@ -6,7 +6,7 @@ import { referentialMock } from 'mock/referential';
 import { gameMock } from 'mock/game';
 
 describe('reducers', () => {
-  const initialState = {
+  const referentialInitialState = {
     races: null,
     subRaces: null,
     classes: null,

@@ -3340,7 +3340,8 @@
 		  "WeaponLeft": "",
 		  "Armor": "",
 		  "Money": 1000,
-		  "Objects": ["Herboriste", "Cartographe"]
+		  "Objects": ["Herboriste", "Cartographe"],
+		  "Specials": 2
 	  },
 	  "Sorwen": {
 		  "Id":"Sorwen",

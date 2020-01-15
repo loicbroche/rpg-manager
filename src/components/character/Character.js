@@ -12,7 +12,7 @@ import ClassSelector from './ClassSelector'
 import HistoricSelector from './HistoricSelector'
 import XPComponent from './XPComponent';
 import HPComponent from './HPComponent';
-import KiComponent from './KiComponent';
+import SpecialsComponent from './SpecialsComponent';
 
 class Character extends Component {
     constructor (props) {
@@ -69,7 +69,7 @@ class Character extends Component {
     render() {
         const { caracteristics, capacities} = this.props;
         const { Name, SubRace: subRaceId, Gender, Class: classId, Historic: historicId, History, Skills: masterSkills,
-                XP, Level: characterLevel, HP, MaxHP} = this.state
+                XP, Level: characterLevel, HP, MaxHP, Specials} = this.state
         const caracteristicsBonus = caracteristics && Object.values(caracteristics).reduce((accum, caracteristic) => {
             accum[caracteristic.Code] = this.state[caracteristic.OV];
             return accum;
@@ -99,9 +99,8 @@ class Character extends Component {
                             <HPComponent val={HP} maxVal={MaxHP} classId={classId}
                                             onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HP.name, value); }}
                                             onMaxValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.MAX_HP.name, value); }} />
-                            <KiComponent val={2} maxVal={3} classId={classId}
-                                            onValChange={ (value) =>{ console.log("Set ki = "+value); }}
-                                            onMaxValChange={ (value) =>{ console.log("Set max ki = "+value); }} />
+                            <SpecialsComponent val={Specials} classId={classId}
+                                            onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPECIALS.name, value); }} />
                             <span>Spells</span>
                         </div>
 

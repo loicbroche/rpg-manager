@@ -1,0 +1,53 @@
+.specialsComponent {
+  display: flex;
+}
+
+.special-points {
+  display: flex;
+  align-items: center;
+}
+
+.specials-name {
+  margin-right: 1rem;
+}
+
+.special-point {
+  margin: 0 0.25rem;
+  border-radius: 50%;
+  height: calc(var(--height-bars)/2);
+  width: calc(var(--height-bars)/2);
+  border: 1px solid var(--color-primary);
+}
+
+.available {
+  height: var(--height-bars);
+  width: var(--height-bars);
+  border: 1px solid var(--color-primary);
+}
+
+.Ki:not(.available) {
+  border: 0;
+  background-image: radial-gradient(transparent, var(--color-Ki));
+}
+.Ki.available {
+  border: 0;
+  background-image: radial-gradient(var(--color-Ki), transparent);
+}
+
+.Rage:not(.available) {
+  border: 0;
+  background-image: radial-gradient(transparent, var(--color-Rage));
+}
+.Rage.available {
+  border: 0;
+  background-image: radial-gradient(var(--color-Rage), transparent);
+}
+
+.Sorcellerie:not(.available) {
+  border: 0;
+  background-image: radial-gradient(transparent, var(--color-Witchcraft));
+}
+.Sorcellerie.available {
+  border: 0;
+  background-image: radial-gradient(var(--color-Witchcraft), transparent);
+}

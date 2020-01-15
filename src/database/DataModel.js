@@ -291,9 +291,10 @@ export const DATA_MODEL = {
                 CHARISMA: { name: "Charisma" },
                 WEAPON_RIGHT: { name: "WeaponRight" },
                 WEAPON_LEFT: { name: "WeaponLeft" },
-                ARMOR: { name: "ARMOR" },
+                ARMOR: { name: "Armor" },
                 MONEY: { name: "Money" },
-                OBJECTS: { name: "OBJECTS" }
+                OBJECTS: { name: "Objects" },
+                SPECIALS: { name: "Specials", optional: true }
             }
         }
 }
