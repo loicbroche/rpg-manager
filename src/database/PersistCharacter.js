@@ -5,7 +5,6 @@ import { DATA_MODEL } from './DataModel'
 
 //Characters
 const insertCharacter = (character) => {
-    //console.log("Insert character", JSON.stringify(character));
     const url = DATA_MODEL.CHARACTERS.name + '/' + character.Id;
     return database.ref(url).set(character);
 }

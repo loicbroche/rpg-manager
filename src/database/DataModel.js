@@ -42,7 +42,26 @@ export const DATA_MODEL = {
                 INTELLIGENCE: { name: "Intelligence" },
                 WISDOM: { name: "Wisdom" },
                 CHARISMA: { name: "Charisma" },
-                HEALTH_DICE: { name: "HD" }
+                HEALTH_DICE: { name: "HD" },
+                SPECIALS_POINTS_NAME: { name: "SpecialsName" },
+                BONUS_ATTACK_NAME: { name: "BonusAttackName" }
+            }
+        },
+        CAPACITIES:
+        {
+            name: 'Capacities',
+            columns: {
+                CAPACITIES: { name: "Capacities" },
+                SPECIALS: { name: "Specials", optional: true },
+                BONUS_ATTACK: { name: "BonusAttack", optional: true },
+                DAMAGES: { name: "Damages", optional: true },
+                MINOR_SPELLS: { name: "MinorSpells", optional: true },
+                SPELLS: { name: "Spells", optional: true },
+                LOCATIONS: { name: "Locations", optional: true },
+                LOCATIONS_LEVEL: { name: "LocationLevel", optional: true },
+                INVOCATIONS: { name: "Invocations", optional: true },
+                ARMOURLESS_SPEED: { name: "ArmourlessSpeed", optional: true },
+                
             }
         },
     HISTORICS:

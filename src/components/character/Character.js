@@ -10,8 +10,9 @@ import Caracteristic from './Caracteristic'
 import RaceSelector from './RaceSelector'
 import ClassSelector from './ClassSelector'
 import HistoricSelector from './HistoricSelector'
-import HPComponent from './HPComponent';
 import XPComponent from './XPComponent';
+import HPComponent from './HPComponent';
+import KiComponent from './KiComponent';
 
 class Character extends Component {
     constructor (props) {
@@ -66,7 +67,7 @@ class Character extends Component {
     }
 
     render() {
-        const { caracteristics } = this.props;
+        const { caracteristics, capacities} = this.props;
         const { Name, SubRace: subRaceId, Gender, Class: classId, Historic: historicId, History, Skills: masterSkills,
                 XP, Level: characterLevel, HP, MaxHP} = this.state
         const caracteristicsBonus = caracteristics && Object.values(caracteristics).reduce((accum, caracteristic) => {
@@ -98,7 +99,9 @@ class Character extends Component {
                             <HPComponent val={HP} maxVal={MaxHP} classId={classId}
                                             onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HP.name, value); }}
                                             onMaxValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.MAX_HP.name, value); }} />
-                            <span>Ki</span>
+                            <KiComponent val={2} maxVal={3} classId={classId}
+                                            onValChange={ (value) =>{ console.log("Set ki = "+value); }}
+                                            onMaxValChange={ (value) =>{ console.log("Set max ki = "+value); }} />
                             <span>Spells</span>
                         </div>
 
@@ -187,6 +190,7 @@ class Character extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    caracteristics: state.referential.caracteristics
+    caracteristics: state.referential.caracteristics,
+    capacities: state.referential.capacities
 });
 export default connect(mapStateToProps)(Character)

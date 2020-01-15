@@ -367,9 +367,9 @@ export const referentialMock = {
 	   "Charisma" : 0,
 	   "Speed" : 0
 		},
-	  "ELF": {
-	   "Id" : "ELF",
-	   "Race" : "ELF",
+	  "DRAGON_BORN": {
+	   "Id" : "DRAGON_BORN",
+	   "Race" : "DRAGON_BORN",
 	   "Name" : "Drakéide",
 	   "OV" : "Dragon Born",
 	   "Strength" : 0,
@@ -380,9 +380,9 @@ export const referentialMock = {
 	   "Charisma" : 0,
 	   "Speed" : 0
 		},
-	  "DRAGON_BORN": {
-	   "Id" : "DRAGON_BORN",
-	   "Race" : "DRAGON_BORN",
+	  "TIEFFLING": {
+	   "Id" : "TIEFFLING",
+	   "Race" : "TIEFFLING",
 	   "Name" : "Tieffelin",
 	   "OV" : "Tieffling",
 	   "Strength" : 0,
@@ -421,126 +421,162 @@ export const referentialMock = {
 		}
 	},
 	"Classes" : {
-	  "BARBARIAN":  {
-	   "Name" : "Barbare",
-	   "OV" : "Barbarian",
-	   "Strength" : 0,
-	   "Constitution" : 0,
-	   "Dexterity" : 0,
-	   "Intelligence" : 0,
-	   "Wisdom" : 0,
-	   "Charisma" : 0
-		},
-	  "BARD":  {
-	   "Name" : "Barde",
-	   "OV" : "Bard",
-	   "Strength" : 0,
-	   "Constitution" : 0,
-	   "Dexterity" : 0,
-	   "Intelligence" : 0,
-	   "Wisdom" : 0,
-	   "Charisma" : 0
-		},
-	  "CLERK":  {
-	   "Name" : "Clerc",
-	   "OV" : "Clerk",
-	   "Strength" : 0,
-	   "Constitution" : 0,
-	   "Dexterity" : 0,
-	   "Intelligence" : 0,
-	   "Wisdom" : 0,
-	   "Charisma" : 0
-		},
-	  "DRUID":  {
-	   "Name" : "Druide",
-	   "OV" : "Druid",
-	   "Strength" : 0,
-	   "Constitution" : 0,
-	   "Dexterity" : 0,
-	   "Intelligence" : 0,
-	   "Wisdom" : 0,
-	   "Charisma" : 0
-		},
-	  "SORCERER":  {
-	   "Name" : "Ensorceleur",
-	   "OV" : "Sorcerer",
-	   "Strength" : 0,
-	   "Constitution" : 0,
-	   "Dexterity" : 0,
-	   "Intelligence" : 0,
-	   "Wisdom" : 0,
-	   "Charisma" : 0
-		},
-	  "WARRIOR":  {
-	   "Name" : "Guerrier",
-	   "OV" : "Warrior",
-	   "Strength" : 0,
-	   "Constitution" : 0,
-	   "Dexterity" : 0,
-	   "Intelligence" : 0,
-	   "Wisdom" : 0,
-	   "Charisma" : 0
-		},
-	  "MAGICIAN":  {
-	   "Name" : "Magicien",
-	   "OV" : "Magician",
-	   "Strength" : 0,
-	   "Constitution" : 0,
-	   "Dexterity" : 0,
-	   "Intelligence" : 0,
-	   "Wisdom" : 0,
-	   "Charisma" : 0
-		},
-	  "MONK":  {
-	   "Name" : "Moine",
-	   "OV" : "Monk",
-	   "Strength" : 0,
-	   "Constitution" : 0,
-	   "Dexterity" : 0,
-	   "Intelligence" : 0,
-	   "Wisdom" : 0,
-	   "Charisma" : 0
-		},
-	  "PALADIN":  {
-	   "Name" : "Paladin",
-	   "OV" : "Paladin",
-	   "Strength" : 0,
-	   "Constitution" : 0,
-	   "Dexterity" : 0,
-	   "Intelligence" : 0,
-	   "Wisdom" : 0,
-	   "Charisma" : 0
-		},
-	  "PROWLER":  {
-	   "Name" : "Rôdeur",
-	   "OV" : "Prowler",
-	   "Strength" : 0,
-	   "Constitution" : 0,
-	   "Dexterity" : 0,
-	   "Intelligence" : 0,
-	   "Wisdom" : 0,
-	   "Charisma" : 0
-		},
-	  "WILY":  {
-	   "Name" : "Roublard",
-	   "OV" : "Wily",
-	   "Strength" : 0,
-	   "Constitution" : 0,
-	   "Dexterity" : 0,
-	   "Intelligence" : 0,
-	   "Wisdom" : 0,
-	   "Charisma" : 0
-		},
-	  "WIZARD":  {
-	   "Name" : "Sorcier",
-	   "OV" : "Wizard",
-	   "Strength" : 0,
-	   "Constitution" : 0,
-	   "Dexterity" : 0,
-	   "Intelligence" : 0,
-	   "Wisdom" : 0,
-	   "Charisma" : 0
-		}
+	"BARBARIAN":  {
+	 "Name" : "Barbare",
+	 "OV" : "Barbarian",
+	 "Strength" : 0,
+	 "Constitution" : 0,
+	 "Dexterity" : 0,
+	 "Intelligence" : 0,
+	 "Wisdom" : 0,
+	 "Charisma" : 0,
+	 "HD" : 12,
+	 "SpecialsName" : "Rage",
+	 "BonusAttackName" : ""
+	  },
+	"BARD":  {
+	 "Name" : "Barde",
+	 "OV" : "Bard",
+	 "Strength" : 0,
+	 "Constitution" : 0,
+	 "Dexterity" : 0,
+	 "Intelligence" : 0,
+	 "Wisdom" : 0,
+	 "Charisma" : 0,
+	 "HD" : 8,
+	 "SpecialsName" : "",
+	 "BonusAttackName" : ""
+	  },
+	"CLERK":  {
+	 "Name" : "Clerc",
+	 "OV" : "Clerk",
+	 "Strength" : 0,
+	 "Constitution" : 0,
+	 "Dexterity" : 0,
+	 "Intelligence" : 0,
+	 "Wisdom" : 0,
+	 "Charisma" : 0,
+	 "HD" : 8,
+	 "SpecialsName" : "",
+	 "BonusAttackName" : ""
+	  },
+	"DRUID":  {
+	 "Name" : "Druide",
+	 "OV" : "Druid",
+	 "Strength" : 0,
+	 "Constitution" : 0,
+	 "Dexterity" : 0,
+	 "Intelligence" : 0,
+	 "Wisdom" : 0,
+	 "Charisma" : 0,
+	 "HD" : 8,
+	 "SpecialsName" : "",
+	 "BonusAttackName" : ""
+	  },
+	"SORCERER":  {
+	 "Name" : "Ensorceleur",
+	 "OV" : "Sorcerer",
+	 "Strength" : 0,
+	 "Constitution" : 0,
+	 "Dexterity" : 0,
+	 "Intelligence" : 0,
+	 "Wisdom" : 0,
+	 "Charisma" : 0,
+	 "HD" : 6,
+	 "SpecialsName" : "Sorcellerie",
+	 "BonusAttackName" : ""
+	  },
+	"WARRIOR":  {
+	 "Name" : "Guerrier",
+	 "OV" : "Warrior",
+	 "Strength" : 0,
+	 "Constitution" : 0,
+	 "Dexterity" : 0,
+	 "Intelligence" : 0,
+	 "Wisdom" : 0,
+	 "Charisma" : 0,
+	 "HD" : 10,
+	 "SpecialsName" : "",
+	 "BonusAttackName" : ""
+	  },
+	"MAGICIAN":  {
+	 "Name" : "Magicien",
+	 "OV" : "Magician",
+	 "Strength" : 0,
+	 "Constitution" : 0,
+	 "Dexterity" : 0,
+	 "Intelligence" : 0,
+	 "Wisdom" : 0,
+	 "Charisma" : 0,
+	 "HD" : 6,
+	 "SpecialsName" : "",
+	 "BonusAttackName" : ""
+	  },
+	"MONK":  {
+	 "Name" : "Moine",
+	 "OV" : "Monk",
+	 "Strength" : 0,
+	 "Constitution" : 0,
+	 "Dexterity" : 0,
+	 "Intelligence" : 0,
+	 "Wisdom" : 0,
+	 "Charisma" : 0,
+	 "HD" : 8,
+	 "SpecialsName" : "Ki",
+	 "BonusAttackName" : "Arts-Martiaux"
+	  },
+	"PALADIN":  {
+	 "Name" : "Paladin",
+	 "OV" : "Paladin",
+	 "Strength" : 0,
+	 "Constitution" : 0,
+	 "Dexterity" : 0,
+	 "Intelligence" : 0,
+	 "Wisdom" : 0,
+	 "Charisma" : 0,
+	 "HD" : 10,
+	 "SpecialsName" : "",
+	 "BonusAttackName" : ""
+	  },
+	"PROWLER":  {
+	 "Name" : "Rôdeur",
+	 "OV" : "Prowler",
+	 "Strength" : 0,
+	 "Constitution" : 0,
+	 "Dexterity" : 0,
+	 "Intelligence" : 0,
+	 "Wisdom" : 0,
+	 "Charisma" : 0,
+	 "HD" : 10,
+	 "SpecialsName" : "",
+	 "BonusAttackName" : ""
+	  },
+	"WILY":  {
+	 "Name" : "Roublard",
+	 "OV" : "Wily",
+	 "Strength" : 0,
+	 "Constitution" : 0,
+	 "Dexterity" : 0,
+	 "Intelligence" : 0,
+	 "Wisdom" : 0,
+	 "Charisma" : 0,
+	 "HD" : 8,
+	 "SpecialsName" : "",
+	 "BonusAttackName" : "Attaque sournoise"
+	  },
+	"WIZARD":  {
+	 "Name" : "Sorcier",
+	 "OV" : "Wizard",
+	 "Strength" : 0,
+	 "Constitution" : 0,
+	 "Dexterity" : 0,
+	 "Intelligence" : 0,
+	 "Wisdom" : 0,
+	 "Charisma" : 0,
+	 "HD" : 8,
+	 "SpecialsName" : "",
+	 "BonusAttackName" : ""
+	  }
 	},
 	"Historics": {
 	  "ACOLYTE":  {
@@ -553,7 +589,7 @@ export const referentialMock = {
 		},
 	  "ARTISTE":  {
 	   "Name" : "Artiste",
-	   "Skills" : ["Acrobaties", "Représentation"]
+	   "Skills" : ["Acrobatie", "Représentation"]
 		},
 	  "CHARLATAN":  {
 	   "Name" : "Charlatan",
@@ -3218,5 +3254,2139 @@ export const referentialMock = {
 	  "Vigilance": {  "Caracteristic": "SAG",
 		"Name": "Vigilance"
 	   }
-   }
+   },
+	"Capacities": {
+		"BARBARIAN-1": {
+		"Capacities": "Rage, Défense sans armure",
+		"Specials": 2,
+		"Damages": 2
+		},"BARBARIAN-2": {
+		"Capacities": "Attaque téméraire, Sens du danger",
+		"Specials": 2,
+		"Damages": 2
+		},"BARBARIAN-3": {
+		"Capacities": "Voie primitive",
+		"Specials": 3,
+		"Damages": 2
+		},"BARBARIAN-4": {
+		"Capacities": "Amélioration de caractéristiques",
+		"Specials": 3,
+		"Damages": 2
+		},"BARBARIAN-5": {
+		"Capacities": "Attaque supplémentaire, Déplacement rapide",
+		"Specials": 3,
+		"Damages": 2
+		},"BARBARIAN-6": {
+		"Capacities": "Capacité de voie",
+		"Specials": 4,
+		"Damages": 2
+		},"BARBARIAN-7": {
+		"Capacities": "Instinct sauvage",
+		"Specials": 4,
+		"Damages": 2
+		},"BARBARIAN-8": {
+		"Capacities": "Amélioration de caractéristiques",
+		"Specials": 4,
+		"Damages": 2
+		},"BARBARIAN-9": {
+		"Capacities": "Critique brutal (1 dé)",
+		"Specials": 4,
+		"Damages": 3
+		},"BARBARIAN-10": {
+		"Capacities": "Capacité de voie",
+		"Specials": 4,
+		"Damages": 3
+		},"BARBARIAN-11": {
+		"Capacities": "Rage implacable",
+		"Specials": 4,
+		"Damages": 3
+		},"BARBARIAN-12": {
+		"Capacities": "Amélioration de caractéristiques",
+		"Specials": 5,
+		"Damages": 3
+		},"BARBARIAN-13": {
+		"Capacities": "Critique brutal (2 dés)",
+		"Specials": 5,
+		"Damages": 3
+		},"BARBARIAN-14": {
+		"Capacities": "Capacité de voie",
+		"Specials": 5,
+		"Damages": 3
+		},"BARBARIAN-15": {
+		"Capacities": "Rage ininterrompue",
+		"Specials": 5,
+		"Damages": 3
+		},"BARBARIAN-16": {
+		"Capacities": "Amélioration de caractéristiques",
+		"Specials": 5,
+		"Damages": 4
+		},"BARBARIAN-17": {
+		"Capacities": "Critique brutal (3 dés)",
+		"Specials": 6,
+		"Damages": 4
+		},"BARBARIAN-18": {
+		"Capacities": "Puissance indomptable",
+		"Specials": 6,
+		"Damages": 4
+		},"BARBARIAN-19": {
+		"Capacities": "Amélioration de caractéristiques",
+		"Specials": 6,
+		"Damages": 4
+		},"BARBARIAN-20": {
+		"Capacities": "Champion primitif",
+		"Specials": -1,
+		"Damages": 4
+		},
+		"BARD-1" : {
+		"Capacities":"Incantations, Inspiration bardique (d6)",
+		"MinorSpells": 2,
+		"Spells": 4,
+		"Locations": {
+		"1":2,
+		"2":0,
+		"3":0,
+		"4":0,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"BARD-2" : {
+		"Capacities":"Touche-à-tout, Chant de repos (d6)",
+		"MinorSpells": 2,
+		"Spells": 5,
+		"Locations": {
+		"1":3,
+		"2":0,
+		"3":0,
+		"4":0,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"BARD-3" : {
+		"Capacities":"Collège bardique, Expertise",
+		"MinorSpells": 2,
+		"Spells": 6,
+		"Locations": {
+		"1":4,
+		"2":2,
+		"3":0,
+		"4":0,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"BARD-4" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"MinorSpells": 3,
+		"Spells": 7,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":0,
+		"4":0,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"BARD-5" : {
+		"Capacities":"Inspiration bardique (d8), Source d'inspiration",
+		"MinorSpells": 3,
+		"Spells": 8,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":2,
+		"4":0,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"BARD-6" : {
+		"Capacities":"Contre charme, Capacité de collège bardique",
+		"MinorSpells": 3,
+		"Spells": 9,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":0,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"BARD-7" : {
+		"Capacities":"-",
+		"MinorSpells": 3,
+		"Spells": 10,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":1,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"BARD-8" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"MinorSpells": 3,
+		"Spells": 11,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":2,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"BARD-9" : {
+		"Capacities":"Chant de repos (d8)",
+		"MinorSpells": 3,
+		"Spells": 12,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":1,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"BARD-10" : {
+		"Capacities":"Inspiration bardique (d10), Expertise, Secrets magiques",
+		"MinorSpells": 4,
+		"Spells": 14,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"BARD-11" : {
+		"Capacities":"-",
+		"MinorSpells": 4,
+		"Spells": 15,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"BARD-12" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"MinorSpells": 4,
+		"Spells": 15,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"BARD-13" : {
+		"Capacities":"Chant de repos (d10)",
+		"MinorSpells": 4,
+		"Spells": 16,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":1,
+		"8":0,
+		"9":0}
+		},"BARD-14" : {
+		"Capacities":"Secrets magiques, Capacité de collège bardique",
+		"MinorSpells": 4,
+		"Spells": 18,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":1,
+		"8":0,
+		"9":0}
+		},"BARD-15" : {
+		"Capacities":"Inspiration bardique (d12)",
+		"MinorSpells": 4,
+		"Spells": 19,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":1,
+		"8":1,
+		"9":0}
+		},"BARD-16" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"MinorSpells": 4,
+		"Spells": 19,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":1,
+		"8":1,
+		"9":0}
+		},"BARD-17" : {
+		"Capacities":"Chant de repos (d12)",
+		"MinorSpells": 4,
+		"Spells": 20,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":1,
+		"8":1,
+		"9":1}
+		},"BARD-18" : {
+		"Capacities":"Secrets magiques",
+		"MinorSpells": 4,
+		"Spells": 22,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":3,
+		"6":1,
+		"7":1,
+		"8":1,
+		"9":1}
+		},"BARD-19" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"MinorSpells": 4,
+		"Spells": 22,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":3,
+		"6":2,
+		"7":1,
+		"8":1,
+		"9":1}
+		},"BARD-20" : {
+		"Capacities":"Inspiration supérieure",
+		"MinorSpells": 4,
+		"Spells": 22,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":3,
+		"6":2,
+		"7":2,
+		"8":1,
+		"9":1}
+		},
+		"CLERK-1" : {
+		"Capacities":"Incantations, Domaine divin",
+		"MinorSpells": 3,
+		"Locations": {
+		"1":2,
+		"2":0,
+		"3":0,
+		"4":0,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"CLERK-2" : {
+		"Capacities":"Canalisation d’énergie divine (1), Capacité de domaine divin",
+		"MinorSpells": 3,
+		"Locations": {
+		"1":3,
+		"2":0,
+		"3":0,
+		"4":0,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"CLERK-3" : {
+		"Capacities":"-",
+		"MinorSpells": 3,
+		"Locations": {
+		"1":4,
+		"2":2,
+		"3":0,
+		"4":0,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"CLERK-4" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"MinorSpells": 4,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":0,
+		"4":0,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"CLERK-5" : {
+		"Capacities":"Destruction des morts-vivants (FP 1/2)",
+		"MinorSpells": 4,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":2,
+		"4":0,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"CLERK-6" : {
+		"Capacities":"Canalisation d’énergie divine (2), Capacité de domaine divin",
+		"MinorSpells": 4,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":0,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"CLERK-7" : {
+		"Capacities":"-",
+		"MinorSpells": 4,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":1,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"CLERK-8" : {
+		"Capacities":"Amélioration de caractéristiques, Capacité de domaine divin,Destruction des morts-vivants (FP 1)",
+		"MinorSpells": 4,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":2,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"CLERK-9" : {
+		"Capacities":"-",
+		"MinorSpells": 4,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":1,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"CLERK-10" : {
+		"Capacities":"Intervention divine",
+		"MinorSpells": 5,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"CLERK-11" : {
+		"Capacities":"Destruction des morts-vivants (FP 2)",
+		"MinorSpells": 5,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"CLERK-12" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"MinorSpells": 5,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"CLERK-13" : {
+		"Capacities":"-",
+		"MinorSpells": 5,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":1,
+		"8":0,
+		"9":0}
+		},"CLERK-14" : {
+		"Capacities":"Destruction des morts-vivants (FP 3)",
+		"MinorSpells": 5,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":1,
+		"8":0,
+		"9":0}
+		},"CLERK-15" : {
+		"Capacities":"-",
+		"MinorSpells": 5,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":1,
+		"8":1,
+		"9":0}
+		},"CLERK-16" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"MinorSpells": 5,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":1,
+		"8":1,
+		"9":0}
+		},"CLERK-17" : {
+		"Capacities":"Destruction des morts-vivants (FP 4), Capacité de domaine divin",
+		"MinorSpells": 5,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":1,
+		"8":1,
+		"9":1}
+		},"CLERK-18" : {
+		"Capacities":"Canalisation d’énergie divine (3)",
+		"MinorSpells": 5,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":3,
+		"6":1,
+		"7":1,
+		"8":1,
+		"9":1}
+		},"CLERK-19" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"MinorSpells": 5,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":3,
+		"6":2,
+		"7":1,
+		"8":1,
+		"9":1}
+		},"CLERK-20" : {
+		"Capacities":"Intervention divine améliorée",
+		"MinorSpells": 5,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":3,
+		"6":2,
+		"7":2,
+		"8":1,
+		"9":1}
+		},
+		"DRUID-1" : {
+		"Capacities":"Druidique, Incantations",
+		"MinorSpells": 2,
+		"Locations": {
+		"1":2,
+		"2":0,
+		"3":0,
+		"4":0,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"DRUID-2" : {
+		"Capacities":"Forme sauvage, Cercle druidique",
+		"MinorSpells": 2,
+		"Locations": {
+		"1":3,
+		"2":0,
+		"3":0,
+		"4":0,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"DRUID-3" : {
+		"Capacities":"-",
+		"MinorSpells": 2,
+		"Locations": {
+		"1":4,
+		"2":2,
+		"3":0,
+		"4":0,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"DRUID-4" : {
+		"Capacities":"Forme sauvage améliorée, Amélioration de caractéristiques",
+		"MinorSpells": 3,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":0,
+		"4":0,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"DRUID-5" : {
+		"Capacities":"-",
+		"MinorSpells": 3,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":2,
+		"4":0,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"DRUID-6" : {
+		"Capacities":"Capacité de cercle druidique",
+		"MinorSpells": 3,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":0,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"DRUID-7" : {
+		"Capacities":"-",
+		"MinorSpells": 3,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":1,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"DRUID-8" : {
+		"Capacities":"Forme sauvage améliorée, Amélioration de caractéristiques",
+		"MinorSpells": 3,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":2,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"DRUID-9" : {
+		"Capacities":"-",
+		"MinorSpells": 3,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":1,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"DRUID-10" : {
+		"Capacities":"Capacité de cercle druidique",
+		"MinorSpells": 4,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"DRUID-11" : {
+		"Capacities":"-",
+		"MinorSpells": 4,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"DRUID-12" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"MinorSpells": 4,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"DRUID-13" : {
+		"Capacities":"-",
+		"MinorSpells": 4,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":1,
+		"8":0,
+		"9":0}
+		},"DRUID-14" : {
+		"Capacities":"Capacité de cercle druidique",
+		"MinorSpells": 4,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":1,
+		"8":0,
+		"9":0}
+		},"DRUID-15" : {
+		"Capacities":"-",
+		"MinorSpells": 4,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":1,
+		"8":1,
+		"9":0}
+		},"DRUID-16" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"MinorSpells": 4,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":1,
+		"8":1,
+		"9":0}
+		},"DRUID-17" : {
+		"Capacities":"-",
+		"MinorSpells": 4,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":1,
+		"8":1,
+		"9":1}
+		},"DRUID-18" : {
+		"Capacities":"Jeunesse éternelle, Incantation animale",
+		"MinorSpells": 4,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":3,
+		"6":1,
+		"7":1,
+		"8":1,
+		"9":1}
+		},"DRUID-19" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"MinorSpells": 4,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":3,
+		"6":2,
+		"7":1,
+		"8":1,
+		"9":1}
+		},"DRUID-20" : {
+		"Capacities":"Archidruide",
+		"MinorSpells": 4,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":3,
+		"6":2,
+		"7":2,
+		"8":1,
+		"9":1}
+		},
+		"SORCERER-1" : {
+		"Capacities":"Incantations, Origine magique",
+		"MinorSpells": 4,
+		"Spells": 2,
+		"Specials": 0,
+		"Locations": {
+		"1":2,
+		"2":0,
+		"3":0,
+		"4":0,
+		"5":0,
+		"6":0,
+		"7":1,
+		"8":0,
+		"9":0}
+		},"SORCERER-2" : {
+		"Capacities":"Source de magie",
+		"MinorSpells": 4,
+		"Spells": 3,
+		"Specials": 2,
+		"Locations": {
+		"1":3,
+		"2":0,
+		"3":0,
+		"4":0,
+		"5":0,
+		"6":0,
+		"7":1,
+		"8":0,
+		"9":0}
+		},"SORCERER-3" : {
+		"Capacities":"Métamagie",
+		"MinorSpells": 4,
+		"Spells": 4,
+		"Specials": 3,
+		"Locations": {
+		"1":4,
+		"2":2,
+		"3":0,
+		"4":0,
+		"5":0,
+		"6":0,
+		"7":2,
+		"8":0,
+		"9":0}
+		},"SORCERER-4" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"MinorSpells": 5,
+		"Spells": 5,
+		"Specials": 4,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":0,
+		"4":0,
+		"5":0,
+		"6":0,
+		"7":2,
+		"8":0,
+		"9":0}
+		},"SORCERER-5" : {
+		"Capacities":"-",
+		"MinorSpells": 5,
+		"Spells": 6,
+		"Specials": 5,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":2,
+		"4":0,
+		"5":0,
+		"6":0,
+		"7":3,
+		"8":0,
+		"9":0}
+		},"SORCERER-6" : {
+		"Capacities":"Capacité de l'origine magique",
+		"MinorSpells": 5,
+		"Spells": 7,
+		"Specials": 6,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":0,
+		"5":0,
+		"6":0,
+		"7":3,
+		"8":0,
+		"9":0}
+		},"SORCERER-7" : {
+		"Capacities":"-",
+		"MinorSpells": 5,
+		"Spells": 8,
+		"Specials": 7,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":1,
+		"5":0,
+		"6":0,
+		"7":4,
+		"8":0,
+		"9":0}
+		},"SORCERER-8" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"MinorSpells": 5,
+		"Spells": 9,
+		"Specials": 8,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":2,
+		"5":0,
+		"6":0,
+		"7":4,
+		"8":0,
+		"9":0}
+		},"SORCERER-9" : {
+		"Capacities":"-",
+		"MinorSpells": 5,
+		"Spells": 10,
+		"Specials": 9,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":1,
+		"6":0,
+		"7":5,
+		"8":0,
+		"9":0}
+		},"SORCERER-10" : {
+		"Capacities":"Métamagie",
+		"MinorSpells": 6,
+		"Spells": 11,
+		"Specials": 10,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":0,
+		"7":5,
+		"8":0,
+		"9":0}
+		},"SORCERER-11" : {
+		"Capacities":"-",
+		"MinorSpells": 6,
+		"Spells": 12,
+		"Specials": 11,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":5,
+		"8":0,
+		"9":0}
+		},"SORCERER-12" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"MinorSpells": 6,
+		"Spells": 12,
+		"Specials": 12,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":5,
+		"8":0,
+		"9":0}
+		},"SORCERER-13" : {
+		"Capacities":"-",
+		"MinorSpells": 6,
+		"Spells": 13,
+		"Specials": 13,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":5,
+		"8":0,
+		"9":0}
+		},"SORCERER-14" : {
+		"Capacities":"Capacité de l'origine magique",
+		"MinorSpells": 6,
+		"Spells": 13,
+		"Specials": 14,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":5,
+		"8":0,
+		"9":0}
+		},"SORCERER-15" : {
+		"Capacities":"-",
+		"MinorSpells": 6,
+		"Spells": 14,
+		"Specials": 15,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":5,
+		"8":1,
+		"9":0}
+		},"SORCERER-16" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"MinorSpells": 6,
+		"Spells": 14,
+		"Specials": 16,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":5,
+		"8":1,
+		"9":0}
+		},"SORCERER-17" : {
+		"Capacities":"Métamagie",
+		"MinorSpells": 6,
+		"Spells": 15,
+		"Specials": 17,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":5,
+		"8":1,
+		"9":1}
+		},"SORCERER-18" : {
+		"Capacities":"Capacité de l'origine magique",
+		"MinorSpells": 6,
+		"Spells": 15,
+		"Specials": 18,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":3,
+		"6":1,
+		"7":5,
+		"8":1,
+		"9":1}
+		},"SORCERER-19" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"MinorSpells": 6,
+		"Spells": 15,
+		"Specials": 19,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":3,
+		"6":2,
+		"7":5,
+		"8":1,
+		"9":1}
+		},"SORCERER-20" : {
+		"Capacities":"Restauration magique",
+		"MinorSpells": 6,
+		"Spells": 15,
+		"Specials": 20,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":3,
+		"6":2,
+		"7":5,
+		"8":1,
+		"9":1}
+		},
+		"WARRIOR-1" : {
+		"Capacities":"Style de combat, Second souffle"
+		},"WARRIOR-2" : {
+		"Capacities":"Sursaut (1)"
+		},"WARRIOR-3" : {
+		"Capacities":"Archétype martial"
+		},"WARRIOR-4" : {
+		"Capacities":"Amélioration de caractéristiques"
+		},"WARRIOR-5" : {
+		"Capacities":"Attaque supplémentaire (1)"
+		},"WARRIOR-6" : {
+		"Capacities":"Amélioration de caractéristiques"
+		},"WARRIOR-7" : {
+		"Capacities":"Capacité de l'archétype martial"
+		},"WARRIOR-8" : {
+		"Capacities":"Amélioration de caractéristiques"
+		},"WARRIOR-9" : {
+		"Capacities":"Indomptable (1)"
+		},"WARRIOR-10" : {
+		"Capacities":"Capacité de l'archétype martial"
+		},"WARRIOR-11" : {
+		"Capacities":"Attaque supplémentaire (2)"
+		},"WARRIOR-12" : {
+		"Capacities":"Amélioration de caractéristiques"
+		},"WARRIOR-13" : {
+		"Capacities":"Indomptable (2)"
+		},"WARRIOR-14" : {
+		"Capacities":"Amélioration de caractéristiques"
+		},"WARRIOR-15" : {
+		"Capacities":"Capacité de l'archétype martial"
+		},"WARRIOR-16" : {
+		"Capacities":"Amélioration de caractéristiques"
+		},"WARRIOR-17" : {
+		"Capacities":"Sursaut (2), Indomptable (3)"
+		},"WARRIOR-18" : {
+		"Capacities":"Capacité de l'archétype martial"
+		},"WARRIOR-19" : {
+		"Capacities":"Amélioration de caractéristiques"
+		},"WARRIOR-20" : {
+		"Capacities":"Attaque supplémentaire (3)"
+		},
+		"MAGICIAN-1" : {
+		"Capacities":"Incantations, Récupération arcanique",
+		"MinorSpells": 3,
+		"Locations": {
+		"1":2,
+		"2":0,
+		"3":0,
+		"4":0,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"MAGICIAN-2" : {
+		"Capacities":"Tradition arcanique",
+		"MinorSpells": 3,
+		"Locations": {
+		"1":3,
+		"2":0,
+		"3":0,
+		"4":0,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"MAGICIAN-3" : {
+		"Capacities":"-",
+		"MinorSpells": 3,
+		"Locations": {
+		"1":4,
+		"2":2,
+		"3":0,
+		"4":0,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"MAGICIAN-4" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"MinorSpells": 4,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":0,
+		"4":0,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"MAGICIAN-5" : {
+		"Capacities":"-",
+		"MinorSpells": 4,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":2,
+		"4":0,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"MAGICIAN-6" : {
+		"Capacities":"Capacité de la tradition arcanique",
+		"MinorSpells": 4,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":0,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"MAGICIAN-7" : {
+		"Capacities":"-",
+		"MinorSpells": 4,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":1,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"MAGICIAN-8" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"MinorSpells": 4,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":2,
+		"5":0,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"MAGICIAN-9" : {
+		"Capacities":"-",
+		"MinorSpells": 4,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":1,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"MAGICIAN-10" : {
+		"Capacities":"Capacité de la tradition arcanique",
+		"MinorSpells": 5,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":0,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"MAGICIAN-11" : {
+		"Capacities":"-",
+		"MinorSpells": 5,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"MAGICIAN-12" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"MinorSpells": 5,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":0,
+		"8":0,
+		"9":0}
+		},"MAGICIAN-13" : {
+		"Capacities":"-",
+		"MinorSpells": 5,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":1,
+		"8":0,
+		"9":0}
+		},"MAGICIAN-14" : {
+		"Capacities":"Capacité de la tradition arcanique",
+		"MinorSpells": 5,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":1,
+		"8":0,
+		"9":0}
+		},"MAGICIAN-15" : {
+		"Capacities":"-",
+		"MinorSpells": 5,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":1,
+		"8":1,
+		"9":0}
+		},"MAGICIAN-16" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"MinorSpells": 5,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":1,
+		"8":1,
+		"9":0}
+		},"MAGICIAN-17" : {
+		"Capacities":"-",
+		"MinorSpells": 5,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2,
+		"6":1,
+		"7":1,
+		"8":1,
+		"9":1}
+		},"MAGICIAN-18" : {
+		"Capacities":"Maîtrise des sorts",
+		"MinorSpells": 5,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":3,
+		"6":1,
+		"7":1,
+		"8":1,
+		"9":1}
+		},"MAGICIAN-19" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"MinorSpells": 5,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":3,
+		"6":2,
+		"7":1,
+		"8":1,
+		"9":1}
+		},"MAGICIAN-20" : {
+		"Capacities":"Sorts de prédilection",
+		"MinorSpells": 5,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":3,
+		"6":2,
+		"7":2,
+		"8":1,
+		"9":1}
+		},
+		"MONK-1" : {
+		"Capacities":"Défense sans armure, Arts martiaux",
+		"Specials": 0,
+		"BonusAttack": "1d4",
+		"ArmourlessSpeed": "-"
+		},"MONK-2" : {
+		"Capacities":"Ki, Déplacement sans armure",
+		"Specials": 2,
+		"BonusAttack": "1d4",
+		"ArmourlessSpeed": "+ 3 m"
+		},"MONK-3" : {
+		"Capacities":"Tradition monastique, Parade de projectiles",
+		"Specials": 3,
+		"BonusAttack": "1d4",
+		"ArmourlessSpeed": "+ 3 m"
+		},"MONK-4" : {
+		"Capacities":"Amélioration de caractéristiques, Chute ralentie",
+		"Specials": 4,
+		"BonusAttack": "1d4",
+		"ArmourlessSpeed": "+ 3 m"
+		},"MONK-5" : {
+		"Capacities":"Attaque supplémentaire, Frappe étourdissante",
+		"Specials": 5,
+		"BonusAttack": "1d6",
+		"ArmourlessSpeed": "+ 3 m"
+		},"MONK-6" : {
+		"Capacities":"Frappes de ki, Capacité de la tradition monastique",
+		"Specials": 6,
+		"BonusAttack": "1d6",
+		"ArmourlessSpeed": "+ 4,50 m"
+		},"MONK-7" : {
+		"Capacities":"Dérobade, Tranquillité de l'esprit",
+		"Specials": 7,
+		"BonusAttack": "1d6",
+		"ArmourlessSpeed": "+ 4,50 m"
+		},"MONK-8" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"Specials": 8,
+		"BonusAttack": "1d6",
+		"ArmourlessSpeed": "+ 4,50 m"
+		},"MONK-9" : {
+		"Capacities":"Déplacement sans armure amélioré",
+		"Specials": 9,
+		"BonusAttack": "1d6",
+		"ArmourlessSpeed": "+ 4,50 m"
+		},"MONK-10" : {
+		"Capacities":"Pureté du corps",
+		"Specials": 10,
+		"BonusAttack": "1d6",
+		"ArmourlessSpeed": "+ 6 m"
+		},"MONK-11" : {
+		"Capacities":"Capacité de la tradition monastique",
+		"Specials": 11,
+		"BonusAttack": "1d8",
+		"ArmourlessSpeed": "+ 6 m"
+		},"MONK-12" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"Specials": 12,
+		"BonusAttack": "1d8",
+		"ArmourlessSpeed": "+ 6 m"
+		},"MONK-13" : {
+		"Capacities":"Langage du soleil et de la lune",
+		"Specials": 13,
+		"BonusAttack": "1d8",
+		"ArmourlessSpeed": "+ 6 m"
+		},"MONK-14" : {
+		"Capacities":"Âme de diamant",
+		"Specials": 14,
+		"BonusAttack": "1d8",
+		"ArmourlessSpeed": "+ 7,50 m"
+		},"MONK-15" : {
+		"Capacities":"Jeunesse éternelle",
+		"Specials": 15,
+		"BonusAttack": "1d8",
+		"ArmourlessSpeed": "+ 7,50 m"
+		},"MONK-16" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"Specials": 16,
+		"BonusAttack": "1d8",
+		"ArmourlessSpeed": "+ 7,50 m"
+		},"MONK-17" : {
+		"Capacities":"Capacité de la tradition monastique",
+		"Specials": 17,
+		"BonusAttack": "1d10",
+		"ArmourlessSpeed": "+ 7,50 m"
+		},"MONK-18" : {
+		"Capacities":"Corps vide",
+		"Specials": 18,
+		"BonusAttack": "1d10",
+		"ArmourlessSpeed": "+ 9 m"
+		},"MONK-19" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"Specials": 19,
+		"BonusAttack": "1d10",
+		"ArmourlessSpeed": "+ 9 m"
+		},"MONK-20" : {
+		"Capacities":"Perfection de l'être",
+		"Specials": 20,
+		"BonusAttack": "1d10",
+		"ArmourlessSpeed": "+ 9 m"
+		},
+		"PALADIN-1" : {
+		"Capacities":"Sens divin, Imposition des mains",
+		"Locations": {
+		"1":0,
+		"2":0,
+		"3":0,
+		"4":0,
+		"5":0}
+		},"PALADIN-2" : {
+		"Capacities":"Style de combat, Incantations, Châtiment divin",
+		"Locations": {
+		"1":2,
+		"2":0,
+		"3":0,
+		"4":0,
+		"5":0}
+		},"PALADIN-3" : {
+		"Capacities":"Santé divine, Serment sacré",
+		"Locations": {
+		"1":3,
+		"2":0,
+		"3":0,
+		"4":0,
+		"5":0}
+		},"PALADIN-4" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"Locations": {
+		"1":3,
+		"2":0,
+		"3":0,
+		"4":0,
+		"5":0}
+		},"PALADIN-5" : {
+		"Capacities":"Attaque supplémentaire",
+		"Locations": {
+		"1":4,
+		"2":2,
+		"3":0,
+		"4":0,
+		"5":0}
+		},"PALADIN-6" : {
+		"Capacities":"Aura de protection",
+		"Locations": {
+		"1":4,
+		"2":2,
+		"3":0,
+		"4":0,
+		"5":0}
+		},"PALADIN-7" : {
+		"Capacities":"Capacité de serment sacré",
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":0,
+		"4":0,
+		"5":0}
+		},"PALADIN-8" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":0,
+		"4":0,
+		"5":0}
+		},"PALADIN-9" : {
+		"Capacities":"-",
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":2,
+		"4":0,
+		"5":0}
+		},"PALADIN-10" : {
+		"Capacities":"Aura de courage",
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":2,
+		"4":0,
+		"5":0}
+		},"PALADIN-11" : {
+		"Capacities":"Châtiment divin amélioré",
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":0,
+		"5":0}
+		},"PALADIN-12" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":0,
+		"5":0}
+		},"PALADIN-13" : {
+		"Capacities":"-",
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":1,
+		"5":0}
+		},"PALADIN-14" : {
+		"Capacities":"Contact purifiant",
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":1,
+		"5":0}
+		},"PALADIN-15" : {
+		"Capacities":"Capacité de serment sacré",
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":2,
+		"5":0}
+		},"PALADIN-16" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":2,
+		"5":0}
+		},"PALADIN-17" : {
+		"Capacities":"-",
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":1}
+		},"PALADIN-18" : {
+		"Capacities":"Amélioration des auras",
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":1}
+		},"PALADIN-19" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2}
+		},"PALADIN-20" : {
+		"Capacities":"Capacité de serment sacré",
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2}
+		},
+		"PROWLER-1" : {
+		"Capacities":"Ennemi juré, Explorateur-né",
+		"Spells":0,
+		"Locations": {
+		"1":0,
+		"2":0,
+		"3":0,
+		"4":0,
+		"5":0}
+		},"PROWLER-2" : {
+		"Capacities":"Style de combat, Incantations",
+		"Spells":2,
+		"Locations": {
+		"1":2,
+		"2":0,
+		"3":0,
+		"4":0,
+		"5":0}
+		},"PROWLER-3" : {
+		"Capacities":"Archétype de rôdeur, Sens primitifs",
+		"Spells":3,
+		"Locations": {
+		"1":3,
+		"2":0,
+		"3":0,
+		"4":0,
+		"5":0}
+		},"PROWLER-4" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"Spells":3,
+		"Locations": {
+		"1":3,
+		"2":0,
+		"3":0,
+		"4":0,
+		"5":0}
+		},"PROWLER-5" : {
+		"Capacities":"Attaque supplémentaire",
+		"Spells":4,
+		"Locations": {
+		"1":4,
+		"2":2,
+		"3":0,
+		"4":0,
+		"5":0}
+		},"PROWLER-6" : {
+		"Capacities":"Amélioration de l'Ennemi juré et de l'Explorateur-né",
+		"Spells":4,
+		"Locations": {
+		"1":4,
+		"2":2,
+		"3":0,
+		"4":0,
+		"5":0}
+		},"PROWLER-7" : {
+		"Capacities":"Capacité de l'archétype de rôdeur",
+		"Spells":5,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":0,
+		"4":0,
+		"5":0}
+		},"PROWLER-8" : {
+		"Capacities":"Amélioration de caractéristiques, Traversée des terrains",
+		"Spells":5,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":0,
+		"4":0,
+		"5":0}
+		},"PROWLER-9" : {
+		"Capacities":"-",
+		"Spells":6,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":2,
+		"4":0,
+		"5":0}
+		},"PROWLER-10" : {
+		"Capacities":"Amélioration de l'Explorateur-né, Camouflage naturel",
+		"Spells":6,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":2,
+		"4":0,
+		"5":0}
+		},"PROWLER-11" : {
+		"Capacities":"Capacité de l'archétype de rôdeur",
+		"Spells":7,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":0,
+		"5":0}
+		},"PROWLER-12" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"Spells":7,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":0,
+		"5":0}
+		},"PROWLER-13" : {
+		"Capacities":"-",
+		"Spells":8,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":1,
+		"5":0}
+		},"PROWLER-14" : {
+		"Capacities":"Amélioration de l'Ennemi juré, Disparition",
+		"Spells":8,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":1,
+		"5":0}
+		},"PROWLER-15" : {
+		"Capacities":"Capacité de l'archétype de rôdeur",
+		"Spells":9,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":2,
+		"5":0}
+		},"PROWLER-16" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"Spells":9,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":2,
+		"5":0}
+		},"PROWLER-17" : {
+		"Capacities":"-",
+		"Spells":10,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":1}
+		},"PROWLER-18" : {
+		"Capacities":"Sens sauvages",
+		"Spells":10,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":1}
+		},"PROWLER-19" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"Spells":11,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2}
+		},"PROWLER-20" : {
+		"Capacities":"Tueur d'ennemis",
+		"Spells":11,
+		"Locations": {
+		"1":4,
+		"2":3,
+		"3":3,
+		"4":3,
+		"5":2}
+		},
+		"WILY-1" : {
+		"Capacities":"Expertise, Attaque sournoise, Jargon des voleurs",
+		"BonusAttack": "1d6"
+		},"WILY-2" : {
+		"Capacities":"Ruse",
+		"BonusAttack": "1d6"
+		},"WILY-3" : {
+		"Capacities":"Archétype de roublard",
+		"BonusAttack": "2d6"
+		},"WILY-4" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"BonusAttack": "2d6"
+		},"WILY-5" : {
+		"Capacities":"Esquive instinctive",
+		"BonusAttack": "3d6"
+		},"WILY-6" : {
+		"Capacities":"Expertise",
+		"BonusAttack": "3d6"
+		},"WILY-7" : {
+		"Capacities":"Dérobade",
+		"BonusAttack": "4d6"
+		},"WILY-8" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"BonusAttack": "4d6"
+		},"WILY-9" : {
+		"Capacities":"Capacité de l'archétype de roublard",
+		"BonusAttack": "5d6"
+		},"WILY-10" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"BonusAttack": "5d6"
+		},"WILY-11" : {
+		"Capacities":"Talent",
+		"BonusAttack": "6d6"
+		},"WILY-12" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"BonusAttack": "6d6"
+		},"WILY-13" : {
+		"Capacities":"Capacité de l'archétype de roublard",
+		"BonusAttack": "7d6"
+		},"WILY-14" : {
+		"Capacities":"Ouïe fine",
+		"BonusAttack": "7d6"
+		},"WILY-15" : {
+		"Capacities":"Esprit impénétrable",
+		"BonusAttack": "8d6"
+		},"WILY-16" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"BonusAttack": "8d6"
+		},"WILY-17" : {
+		"Capacities":"Capacité de l'archétype de roublard",
+		"BonusAttack": "9d6"
+		},"WILY-18" : {
+		"Capacities":"Insaisissable",
+		"BonusAttack": "9d6"
+		},"WILY-19" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"BonusAttack": "10d6"
+		},"WILY-20" : {
+		"Capacities":"Coup de chance",
+		"BonusAttack": "10d6"
+		},
+		"WIZARD-1" : {
+		"Capacities":"Patron d'Outremonde, Magie de pacte",
+		"MinorSpells": 2,
+		"Spells": 2,
+		"Locations": 1,
+		"LocationLevel": 1,
+		"Invocations": 0
+		},"WIZARD-2" : {
+		"Capacities":"Invocations occultes",
+		"MinorSpells": 2,
+		"Spells": 3,
+		"Locations": 2,
+		"LocationLevel": 1,
+		"Invocations": 2
+		},"WIZARD-3" : {
+		"Capacities":"Faveur de pacte",
+		"MinorSpells": 2,
+		"Spells": 4,
+		"Locations": 2,
+		"LocationLevel": 2,
+		"Invocations": 2
+		},"WIZARD-4" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"MinorSpells": 3,
+		"Spells": 5,
+		"Locations": 2,
+		"LocationLevel": 2,
+		"Invocations": 2
+		},"WIZARD-5" : {
+		"Capacities":"-",
+		"MinorSpells": 3,
+		"Spells": 6,
+		"Locations": 2,
+		"LocationLevel": 3,
+		"Invocations": 3
+		},"WIZARD-6" : {
+		"Capacities":"Capacité de patron d'Outremonde",
+		"MinorSpells": 3,
+		"Spells": 7,
+		"Locations": 2,
+		"LocationLevel": 3,
+		"Invocations": 3
+		},"WIZARD-7" : {
+		"Capacities":"-",
+		"MinorSpells": 3,
+		"Spells": 8,
+		"Locations": 2,
+		"LocationLevel": 4,
+		"Invocations": 4
+		},"WIZARD-8" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"MinorSpells": 3,
+		"Spells": 9,
+		"Locations": 2,
+		"LocationLevel": 4,
+		"Invocations": 4
+		},"WIZARD-9" : {
+		"Capacities":"-",
+		"MinorSpells": 3,
+		"Spells": 10,
+		"Locations": 2,
+		"LocationLevel": 5,
+		"Invocations": 5
+		},"WIZARD-10" : {
+		"Capacities":"Capacité de patron d'Outremonde",
+		"MinorSpells": 4,
+		"Spells": 10,
+		"Locations": 2,
+		"LocationLevel": 5,
+		"Invocations": 5
+		},"WIZARD-11" : {
+		"Capacities":"Arcanum mystique (niveau 6)",
+		"MinorSpells": 4,
+		"Spells": 11,
+		"Locations": 3,
+		"LocationLevel": 5,
+		"Invocations": 5
+		},"WIZARD-12" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"MinorSpells": 4,
+		"Spells": 11,
+		"Locations": 3,
+		"LocationLevel": 5,
+		"Invocations": 6
+		},"WIZARD-13" : {
+		"Capacities":"Arcanum mystique (niveau 7)",
+		"MinorSpells": 4,
+		"Spells": 12,
+		"Locations": 3,
+		"LocationLevel": 5,
+		"Invocations": 6
+		},"WIZARD-14" : {
+		"Capacities":"Capacité de patron d'Outremonde",
+		"MinorSpells": 4,
+		"Spells": 12,
+		"Locations": 3,
+		"LocationLevel": 5,
+		"Invocations": 6
+		},"WIZARD-15" : {
+		"Capacities":"Arcanum mystique (niveau 8)",
+		"MinorSpells": 4,
+		"Spells": 13,
+		"Locations": 3,
+		"LocationLevel": 5,
+		"Invocations": 7
+		},"WIZARD-16" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"MinorSpells": 4,
+		"Spells": 13,
+		"Locations": 3,
+		"LocationLevel": 5,
+		"Invocations": 7
+		},"WIZARD-17" : {
+		"Capacities":"Arcanum mystique (niveau 9)",
+		"MinorSpells": 4,
+		"Spells": 14,
+		"Locations": 4,
+		"LocationLevel": 5,
+		"Invocations": 7
+		},"WIZARD-18" : {
+		"Capacities":"-",
+		"MinorSpells": 4,
+		"Spells": 14,
+		"Locations": 4,
+		"LocationLevel": 5,
+		"Invocations": 8
+		},"WIZARD-19" : {
+		"Capacities":"Amélioration de caractéristiques",
+		"MinorSpells": 4,
+		"Spells": 15,
+		"Locations": 4,
+		"LocationLevel": 5,
+		"Invocations": 8
+		},"WIZARD-20" : {
+		"Capacities":"Maître de l'occulte",
+		"MinorSpells": 4,
+		"Spells": 15,
+		"Locations": 4,
+		"LocationLevel": 5,
+		"Invocations": 8
+		}
+	}
   }

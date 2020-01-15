@@ -3,29 +3,30 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
-import './HPComponent.css'
+import './KiComponent.css'
 
-class HPComponent extends Component {
+class KiComponent extends Component {
 
   render() {
     const {val, maxVal, classId, classes} = this.props;
     const characterClass = classes && classId && classes[classId];
-    const diceImage = characterClass && require(`images/dices/D${characterClass.HD}.png`);
+    const kiPoints = [];
+    for(let i = 0; i < maxVal; i++) {
+      kiPoints[i] = i < val;
+    }
     return (
-      <div className="hpComponent">
-        <span className="maxModifier decrease-max" onClick={(event) => {this.handleMaxValueChange(-1)}}></span>
-        <span className="currentModifier decrease-value" onClick={(event) => {this.handleValueChange(-1)}}></span>
-        <div className="hpBar">
-          <div className="hpProgressBar" style={{width:`${Math.ceil(val/maxVal*100)}%`}}>&nbsp;</div>
-          <div className="label">
-            {`${val} / ${maxVal}`}
-            <img src={diceImage} className="dice-image" alt={`D${characterClass && characterClass.HD}`} />
-          </div>
+      <div className="kiComponent">
+        { maxVal > 0 && <span className="maxModifier decrease-max" onClick={(event) => {this.handleMaxValueChange(-1)}}></span>}
+        { maxVal > 0 && <span className="currentModifier decrease-value" onClick={(event) => {this.handleValueChange(-1)}}></span>}
+        <div className="ki-points">
+          { 
+            maxVal > 0 &&  kiPoints.map((available, index) =>  <div key={index} className={`ki-point ${available&&"available"}`}></div>)
+          }
         </div>
-        <span className="currentModifier increase-value" onClick={(event) => {this.handleValueChange(1)}}></span>
-        <span className="maxModifier increase-max" onClick={(event) => {this.handleMaxValueChange(1)}}></span>
+        { maxVal > 0 && <span className="currentModifier increase-value" onClick={(event) => {this.handleValueChange(1)}}></span>}
+        { maxVal > 0 && <span className="maxModifier increase-max" onClick={(event) => {this.handleMaxValueChange(1)}}></span>}
       </div>
-    )
+      )
   }
 
   // Arrow fx for binding
@@ -49,7 +50,7 @@ class HPComponent extends Component {
   }
 }
 
-HPComponent.propTypes = {
+KiComponent.propTypes = {
   val: PropTypes.number.isRequired,
   maxVal: PropTypes.number.isRequired,
   classId: PropTypes.string,
@@ -60,4 +61,4 @@ HPComponent.propTypes = {
 const mapStateToProps = (state) => ({
   classes: state.referential.classes
 })
-export default connect(mapStateToProps)(HPComponent)
+export default connect(mapStateToProps)(KiComponent)
