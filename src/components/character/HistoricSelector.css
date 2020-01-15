@@ -4,7 +4,7 @@
     margin-top: calc(var(--height-icons)/2);
     display: flex;
     flex-direction: column;
-    background-image: url("parchment.png");
+    background-image: url("images/parchment.png");
 }
 
 .history {

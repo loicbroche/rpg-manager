@@ -17,15 +17,17 @@ class SpecialsComponent extends Component {
     }
     return (
       <div className="specialsComponent">
-        { maxVal > 0 &&  <span className="specials-name">{characterClass && characterClass.SpecialsName}</span> }
-        { maxVal > 0 && <span className="currentModifier decrease-value" onClick={(event) => {this.handleValueChange(-1, maxVal)}}></span>}
+        { maxVal > 0 && <span className={`currentModifier decrease-value ${val==0 &&"disabled"}`} onClick={(event) => {this.handleValueChange(-1, maxVal)}}
+                        title={`Utiliser un point ${characterClass && characterClass.SpecialsName && "de "+characterClass.SpecialsName}`}></span>}
         <div className="special-points">
           { 
             maxVal > 0 &&  specialPoints.map((available, index) => 
-              <div key={index} className={`special-point ${available&&"available"} ${characterClass && characterClass.SpecialsName}`}></div>)
+              <div key={index} className={`special-point ${available&&"available"} ${characterClass && characterClass.SpecialsName}`}
+                   title={characterClass && `Point de ${characterClass.SpecialsName} ${available?"disponible":"utilisé"}` }></div>)
           }
         </div>
-        { maxVal > 0 && <span className="currentModifier increase-value" onClick={(event) => {this.handleValueChange(1, maxVal)}}></span>}
+        { maxVal > 0 && <span className={`currentModifier increase-value ${val==maxVal &&"disabled"}`} onClick={(event) => {this.handleValueChange(1, maxVal)}}
+                        title={`Récupérer un point ${characterClass && characterClass.SpecialsName && "de "+characterClass.SpecialsName}`}></span>}
       </div>
       )
   }

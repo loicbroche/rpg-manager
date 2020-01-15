@@ -13,8 +13,8 @@ class HPComponent extends Component {
     const diceImage = characterClass && require(`images/dices/D${characterClass.HD}.png`);
     return (
       <div className="hpComponent">
-        <span className="maxModifier decrease-max" onClick={(event) => {this.handleMaxValueChange(-1)}}></span>
-        <span className="currentModifier decrease-value" onClick={(event) => {this.handleValueChange(-1)}}></span>
+        <span className={`maxModifier decrease-max ${maxVal==1 &&"disabled"}`} onClick={(event) => {this.handleMaxValueChange(-1)}} title="Réduire les points de vie maximum"></span>
+        <span className={`currentModifier decrease-value ${val==0 &&"disabled"}`} onClick={(event) => {this.handleValueChange(-1)}} title="Perdre un point de vie"></span>
         <div className="hpBar">
           <div className="hpProgressBar" style={{width:`${Math.ceil(val/maxVal*100)}%`}}>&nbsp;</div>
           <div className="label">
@@ -22,8 +22,8 @@ class HPComponent extends Component {
             <img src={diceImage} className="dice-image" alt={`D${characterClass && characterClass.HD}`} />
           </div>
         </div>
-        <span className="currentModifier increase-value" onClick={(event) => {this.handleValueChange(1)}}></span>
-        <span className="maxModifier increase-max" onClick={(event) => {this.handleMaxValueChange(1)}}></span>
+        <span className={`currentModifier increase-value ${val==maxVal &&"disabled"}`} onClick={(event) => {this.handleValueChange(1)}} title="Récupérer un point de vie"></span>
+        <span className="maxModifier increase-max" onClick={(event) => {this.handleMaxValueChange(1)}} title="Augmenter les points de vie maximum"></span>
       </div>
     )
   }

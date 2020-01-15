@@ -28,7 +28,7 @@ class HistoricSelector extends Component {
       <div >
         <div className="selector historic-selector">
         <div className={`history-container ${showHistory&&"show-history"}`}>
-            <img src={inkWellImage} className="modify" alt="Modifier l'historique" onClick={this.onHistoryUpdate}/>
+            <img src={inkWellImage} className="modify" alt="Lire/Modifier l'historique" title="Lire/modifier l'historique" onClick={this.onHistoryUpdate}/>
             <textarea className={`narrative history ${showHistory&&"show-history"}`} value={history} onChange={this.onHistoryChange}></textarea>
         </div>
           <div className="selector-icon historic-icon">

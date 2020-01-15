@@ -16,9 +16,9 @@
   --color-Charisma: #974706;
   --color-XP: goldenrod;
   --color-Health: #963634;
-  --color-Ki: #E587D8;
-  --color-Witchcraft: #80CE79;
-  --color-Rage: #CC4747;
+  --color-Ki: #C4006B;
+  --color-Witchcraft: #3A9E31;
+  --color-Rage: #330000;
   --color-genderless: #CECECE;
   --color-male: #C6B5FF;
   --color-female: #FFB2E4;
@@ -165,4 +165,11 @@ a {
 .maxModifier:hover,
 .maxModifier:focus {
   background: var(--highlight-background-color-1);
+}
+
+.currentModifier.disabled,
+.currentModifier.disabled,
+.maxModifier.disabled,
+.maxModifier.disabled {
+  visibility: hidden;
 }

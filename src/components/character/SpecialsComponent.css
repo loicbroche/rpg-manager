@@ -8,7 +8,7 @@
 }
 
 .specials-name {
-  margin-right: 1rem;
+  margin-right:
 }
 
 .special-point {
@@ -23,6 +23,7 @@
   height: var(--height-bars);
   width: var(--height-bars);
   border: 1px solid var(--color-primary);
+  background-size: 100%;
 }
 
 .Ki:not(.available) {
@@ -32,6 +33,7 @@
 .Ki.available {
   border: 0;
   background-image: radial-gradient(var(--color-Ki), transparent);
+  background-image: url("images/Ki.png");
 }
 
 .Rage:not(.available) {
@@ -41,6 +43,7 @@
 .Rage.available {
   border: 0;
   background-image: radial-gradient(var(--color-Rage), transparent);
+  background-image: url("images/Rage.png");
 }
 
 .Sorcellerie:not(.available) {
@@ -50,4 +53,5 @@
 .Sorcellerie.available {
   border: 0;
   background-image: radial-gradient(var(--color-Witchcraft), transparent);
+  background-image: url("images/Sorcellerie.png");
 }
