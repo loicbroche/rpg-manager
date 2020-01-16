@@ -11,7 +11,7 @@ class Skills extends Component {
     const { skills, caracteristics, historics, levels,
             master, onClick, historicId, caracteristicsBonus, subRaceId, level} = this.props;
     const historic = historics && historics[historicId];
-    const historicSkills = historic?historic.Skills:[];
+    const historicSkills = historic && historic.Skills?historic.Skills:[];
     const masteryBonus = levels && levels[level] && levels[level].MasteryBonus;
 
     return (

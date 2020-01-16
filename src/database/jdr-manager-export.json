@@ -583,11 +583,11 @@
 	   "Name" : "Acolyte",
 	   "Skills" : ["Perspicacité", "Religion"]
 		},
-	  "ARTISAN DE GUILDE":  {
+	  "GUILD_ARTISAN":  {
 	   "Name" : "Artisan De Guilde",
 	   "Skills" : ["Perspicacité", "Persuasion"]
 		},
-	  "ARTISTE":  {
+	  "ARTIST":  {
 	   "Name" : "Artiste",
 	   "Skills" : ["Acrobatie", "Représentation"]
 		},
@@ -595,23 +595,23 @@
 	   "Name" : "Charlatan",
 	   "Skills" : ["Escamotage", "Tromperie"]
 		},
-	  "CRIMINEL":  {
+	  "CRIMINAL":  {
 	   "Name" : "Criminel",
 	   "Skills" : ["Discrétion", "Tromperie"]
 		},
-	  "ENFANT DES RUES":  {
+	  "STREETS_CHILD":  {
 	   "Name" : "Enfant Des Rues",
 	   "Skills" : ["Discrétion", "Escamotage"]
 		},
-	  "ERMITE":  {
+	  "HERMIT":  {
 	   "Name" : "Ermite",
 	   "Skills" : ["Médecine", "Religion"]
 		},
-	  "HÉROS DU PEUPLE":  {
+	  "PEOPLE_HERO":  {
 	   "Name" : "Héros Du Peuple",
 	   "Skills" : ["Dressage", "Survie"]
 		},
-	  "MARIN":  {
+	  "MARINE":  {
 	   "Name" : "Marin",
 	   "Skills" : ["Athlétisme", "Perception"]
 		},
@@ -619,7 +619,7 @@
 	   "Name" : "Noble",
 	   "Skills" : ["Histoire", "Persuasion"]
 		},
-	  "SAGE":  {
+	  "WISE":  {
 	   "Name" : "Sage",
 	   "Skills" : ["Arcanes", "Histoire"]
 		},
@@ -627,27 +627,27 @@
 	   "Name" : "Sauvageon",
 	   "Skills" : ["Athlétisme", "Survie"]
 		},
-	  "SOLDAT":  {
+	  "SOLDIER":  {
 	   "Name" : "Soldat",
 	   "Skills" : ["Athlétisme", "Intimidation"]
 		},
-	  "CHASSEUR DE PRIMES":  {
+	  "BOUNTY_HUNTER":  {
 	   "Name" : "Chasseur De Primes",
 	   "Skills" : []
 		},
-	  "TOURMENTÉ":  {
+	  "TORMENTED":  {
 	   "Name" : "Tourmenté",
 	   "Skills" : []
 		},
-	  "VOYAGEUR":  {
+	  "TRAVELER":  {
 	   "Name" : "Voyageur *",
 	   "Skills" : ["Survie", "Persuasion"]
 		},
-	  "CAPTIF":  {
+	  "CAPTIVE":  {
 	   "Name" : "Captif *",
 	   "Skills" : ["Nature", "Survie"]
 		},
-	  "IDIOT DU VILLAGE":  {
+	  "VILLAGE_IDIOT":  {
 	   "Name" : "Idiot Du Village *",
 	   "Skills" : ["Discrétion", "Représentation"]
 		}
@@ -3268,7 +3268,7 @@
 		  "MasterWeapons": [],
 		  "MasterArmors": [],
 		  "MasterObjects": [],
-		  "Historic": "ERMITE",
+		  "Historic": "HERMIT",
 		  "Alignment": "Neutre",
 		  "Age": 26,
 		  "Height": 176,
@@ -3311,7 +3311,7 @@
 		  "MasterWeapons": [],
 		  "MasterArmors": [],
 		  "MasterObjects": [],
-		  "Historic": "ERMITE",
+		  "Historic": "HERMIT",
 		  "Alignment": "Neutre",
 		  "Age": 26,
 		  "Height": 176,
@@ -3365,7 +3365,7 @@
 		  "MasterWeapons": [],
 		  "MasterArmors": [],
 		  "MasterObjects": [],
-		  "Historic": "ERMITE",
+		  "Historic": "HERMIT",
 		  "Alignment": "Neutre",
 		  "Age": 26,
 		  "Height": 176,
