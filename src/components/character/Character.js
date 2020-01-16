@@ -5,14 +5,15 @@ import { DATA_MODEL } from 'database/DataModel'
 import { insertCharacterSkills, deleteCharacterSkills, updateCharacterCaracteristic } from 'database/PersistCharacter';
 
 import './Character.css'
-import Skills from './Skills'
-import Caracteristic from './Caracteristic'
-import RaceSelector from './RaceSelector'
-import ClassSelector from './ClassSelector'
-import HistoricSelector from './HistoricSelector'
-import XPComponent from './XPComponent';
-import HPComponent from './HPComponent';
-import SpecialsComponent from './SpecialsComponent';
+import Skills from './stats/Skills'
+import Caracteristic from './stats/Caracteristic'
+import RaceSelector from './general/RaceSelector'
+import ClassSelector from './general/ClassSelector'
+import HistoricSelector from './general/HistoricSelector'
+import XPComponent from './general/XPComponent';
+import HPComponent from './fight/HPComponent';
+import SpecialsComponent from './fight/SpecialsComponent';
+import SpellsComponent from './fight/SpellsComponent';
 
 class Character extends Component {
     constructor (props) {
@@ -67,13 +68,14 @@ class Character extends Component {
     }
 
     render() {
-        const { caracteristics, capacities} = this.props;
+        const { caracteristics, levels} = this.props;
         const { Name, SubRace: subRaceId, Gender, Class: classId, Historic: historicId, History, Skills: masterSkills,
-                XP, Level: characterLevel, HP, MaxHP, Specials} = this.state
+                XP, HP, MaxHP, Specials, Spells} = this.state
         const caracteristicsBonus = caracteristics && Object.values(caracteristics).reduce((accum, caracteristic) => {
             accum[caracteristic.Code] = this.state[caracteristic.OV];
             return accum;
         }, {});
+        const characterLevel = levels && Math.max(...levels.filter((lev) => lev && lev.XP <= XP).map((lev) => lev.Level));
 
         return (
         <div className="character">
@@ -99,35 +101,37 @@ class Character extends Component {
                             <HPComponent val={HP} maxVal={MaxHP} classId={classId}
                                             onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HP.name, value); }}
                                             onMaxValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.MAX_HP.name, value); }} />
-                            <SpecialsComponent val={Specials} classId={classId}
+                            <SpecialsComponent val={Specials} classId={classId} level={characterLevel}
                                             onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPECIALS.name, value); }} />
-                            <span>Spells</span>
+                            <SpellsComponent spells={Spells} classId={classId} level={characterLevel}
+                                            onValChange={ (value, level) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPELLS.name, value); }} />
                         </div>
 
-                        <div className="caracteristics">
-                        {   caracteristics && 
-                            Object.values(caracteristics).map((caracteristic) => (
-                                <div key={caracteristic.Name}>
-                                    <span className={`caracteristic-name ${caracteristic.OV}`}>{caracteristic.Name}</span>
-                                    <Caracteristic
-                                        caracteristicName={caracteristic.OV}
-                                        value={this.state[caracteristic.OV]}
-                                        subRaceId={ subRaceId }
-                                        classId={ classId }
-                                        onChange={(value) =>{ this.updateCaracteristic(caracteristic.OV, value);}}/>
-                                </div>
+                        <div className="stats">
+                            <div className="caracteristics">
+                            {   caracteristics && 
+                                Object.values(caracteristics).map((caracteristic) => (
+                                    <div key={caracteristic.Name}>
+                                        <span className={`caracteristic-name ${caracteristic.OV}`}>{caracteristic.Name}</span>
+                                        <Caracteristic
+                                            caracteristicName={caracteristic.OV}
+                                            value={this.state[caracteristic.OV]}
+                                            subRaceId={ subRaceId }
+                                            classId={ classId }
+                                            onChange={(value) =>{ this.updateCaracteristic(caracteristic.OV, value);}}/>
+                                    </div>
+                                    )
                                 )
-                            )
-                        }
+                            }
+                            </div>
+                            <Skills master={masterSkills}
+                                    historicId={historicId}
+                                    level={characterLevel}
+                                    caracteristicsBonus={caracteristicsBonus}
+                                    subRaceId={subRaceId}
+                                    onClick={this.toggleSkill} />
                         </div>
                     </div>
-
-                    <Skills master={masterSkills}
-                            historicId={historicId}
-                            level={characterLevel}
-                            caracteristicsBonus={caracteristicsBonus}
-                            subRaceId={subRaceId}
-                            onClick={this.toggleSkill} />
                 </div>
             )}
         </div>
@@ -189,7 +193,7 @@ class Character extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    caracteristics: state.referential.caracteristics,
-    capacities: state.referential.capacities
+    levels: state.referential.levels,
+    caracteristics: state.referential.caracteristics
 });
 export default connect(mapStateToProps)(Character)

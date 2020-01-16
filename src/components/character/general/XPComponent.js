@@ -8,8 +8,11 @@ class XPComponent extends Component {
 
   render() {
     const { XP, levels } = this.props;
-    const level = levels && Math.max(...levels.filter((lev) => lev && lev.XP <= XP).map((lev) => lev.Level));
-    const levelSupXp = levels && levels.find((lev) => lev && lev.Level === (level+1)).XP;
+    const maxLevel = levels && levels[levels.length-1];
+    const maxXP = maxLevel && maxLevel.XP;
+    const level = levels && Math.max(...levels.filter((lev) => lev && lev.XP <= Math.min(XP, maxXP)).map((lev) => lev.Level));
+    const levelSup = XP>=maxXP?maxLevel: (levels && levels.find((lev) => lev && lev.Level === (level+1)));
+    const levelSupXp = levelSup && levelSup.XP;
 
     return (
       <div className="XPComponent">
@@ -22,6 +25,7 @@ class XPComponent extends Component {
                     name="XP"
                     value={XP}
                     min={0}
+                    max={maxXP}
                     step={10}
                     className="xp-value"
                     onChange={(event) => this.props.onChange(event.target.value)} />

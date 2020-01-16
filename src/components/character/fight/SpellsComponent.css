@@ -1,0 +1,39 @@
+.spellsComponent {
+  display: flex;
+  flex-direction: column;
+}
+
+.location {
+  display: flex;
+  flex-direction: row;
+}
+
+.spell-points {
+  display: flex;
+  align-items: center;
+}
+
+.spell-name {
+  margin-right: 1rem;
+}
+
+.spell-point {
+  margin: 0 0.25rem;
+  border-radius: 50%;
+  height: calc(var(--height-bars)/2);
+  width: calc(var(--height-bars)/2);
+  margin: 0 calc(var(--height-bars)/4 + var(--height-bars)/8);
+  background-image: radial-gradient(transparent, var(--color-Spell));
+}
+
+.spell-available {
+  height: var(--height-bars);
+  width: var(--height-bars);
+  margin: 0 calc(var(--height-bars)/8);
+  background-size: 100%;
+  background-image: radial-gradient(var(--color-Spell), transparent);
+}
+
+.spell-image {
+  width: 100%;
+}

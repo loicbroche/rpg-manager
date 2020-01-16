@@ -1,5 +1,6 @@
 .specialsComponent {
   display: flex;
+  flex-direction: row;
 }
 
 .special-points {
@@ -7,51 +8,49 @@
   align-items: center;
 }
 
-.specials-name {
-  margin-right:
-}
-
 .special-point {
   margin: 0 0.25rem;
   border-radius: 50%;
   height: calc(var(--height-bars)/2);
   width: calc(var(--height-bars)/2);
+  margin: 0 calc(var(--height-bars)/4 + var(--height-bars)/8);
   border: 1px solid var(--color-primary);
 }
 
-.available {
+.special-available {
   height: var(--height-bars);
   width: var(--height-bars);
-  border: 1px solid var(--color-primary);
+  margin: 0 calc(var(--height-bars)/8);
   background-size: 100%;
 }
 
-.Ki:not(.available) {
+.special-image {
+  width: 100%;
+}
+
+.Ki:not(.special-available) {
   border: 0;
   background-image: radial-gradient(transparent, var(--color-Ki));
 }
-.Ki.available {
+.Ki.special-available {
   border: 0;
   background-image: radial-gradient(var(--color-Ki), transparent);
-  background-image: url("images/Ki.png");
 }
 
-.Rage:not(.available) {
+.Rage:not(.special-available) {
   border: 0;
   background-image: radial-gradient(transparent, var(--color-Rage));
 }
-.Rage.available {
+.Rage.special-available {
   border: 0;
   background-image: radial-gradient(var(--color-Rage), transparent);
-  background-image: url("images/Rage.png");
 }
 
-.Sorcellerie:not(.available) {
+.Sorcellerie:not(.special-available) {
   border: 0;
   background-image: radial-gradient(transparent, var(--color-Witchcraft));
 }
-.Sorcellerie.available {
+.Sorcellerie.special-available {
   border: 0;
   background-image: radial-gradient(var(--color-Witchcraft), transparent);
-  background-image: url("images/Sorcellerie.png");
 }

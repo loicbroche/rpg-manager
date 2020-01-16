@@ -60,8 +60,7 @@ export const DATA_MODEL = {
                 LOCATIONS: { name: "Locations", optional: true },
                 LOCATIONS_LEVEL: { name: "LocationLevel", optional: true },
                 INVOCATIONS: { name: "Invocations", optional: true },
-                ARMOURLESS_SPEED: { name: "ArmourlessSpeed", optional: true },
-                
+                ARMOURLESS_SPEED: { name: "ArmourlessSpeed", optional: true }
             }
         },
     HISTORICS:
@@ -294,7 +293,8 @@ export const DATA_MODEL = {
                 ARMOR: { name: "Armor" },
                 MONEY: { name: "Money" },
                 OBJECTS: { name: "Objects" },
-                SPECIALS: { name: "Specials", optional: true }
+                SPECIALS: { name: "Specials", optional: true },
+                SPELLS: { name: "Spells", optional: true }
             }
         }
 }
