@@ -11,7 +11,7 @@ class SpellsComponent extends Component {
     const {spells, classId, level, capacities} = this.props;
     const capacity = capacities && classId && level && capacities[classId+"-"+level];
     const maxSpells = capacity && capacity.Locations;
-    const spellsLocationMax = maxSpells && maxSpells.length;
+    const spellsLocationMax = maxSpells && Math.max(...Object.keys(maxSpells));
 
     const spellsPoints = [];
     for (let location = 1; location <= spellsLocationMax; location++) {
@@ -23,10 +23,10 @@ class SpellsComponent extends Component {
       }
       spellsPoints[location] = locationPoints;
     }
-  
+
     return (
       <div className="spellsComponent">
-          { Object.values(spellsPoints).map((locationPoints, location) => {
+          { Object.entries(spellsPoints).map(([location, locationPoints]) => {
               const locationImage = require(`images/spells/${location}.png`);
               return (maxSpells && maxSpells[location] > 0 &&
               <div className="location" key={location}>
@@ -35,7 +35,7 @@ class SpellsComponent extends Component {
                       title={`Utiliser un point de sort de niveau ${location}`}></span>
                 <div className="spell-points">
                   { 
-                      spellsPoints[location] && Object.values(spellsPoints[location]).map((available, index) => 
+                      locationPoints && Object.entries(locationPoints).map(([index, available]) => 
                       <div key={index} className={`spell-point ${available&&"spell-available"}`}
                           title={`Point de sort de niveau ${location} ${available?"disponible":"utilisé"}` }>
                           {available && <img src={locationImage} className="spell-image" alt={location} />}

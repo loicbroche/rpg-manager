@@ -58,7 +58,6 @@ export const DATA_MODEL = {
                 MINOR_SPELLS: { name: "MinorSpells", optional: true },
                 SPELLS: { name: "Spells", optional: true },
                 LOCATIONS: { name: "Locations", optional: true },
-                LOCATIONS_LEVEL: { name: "LocationLevel", optional: true },
                 INVOCATIONS: { name: "Invocations", optional: true },
                 ARMOURLESS_SPEED: { name: "ArmourlessSpeed", optional: true }
             }

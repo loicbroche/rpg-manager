@@ -5393,141 +5393,121 @@
 		"Capacities":"Patron d'Outremonde, Magie de pacte",
 		"MinorSpells": 2,
 		"Spells": 2,
-		"Locations": 1,
-		"LocationLevel": 1,
+		"Locations": {"1":1},
 		"Invocations": 0
 		},"WIZARD-2" : {
 		"Capacities":"Invocations occultes",
 		"MinorSpells": 2,
 		"Spells": 3,
-		"Locations": 2,
-		"LocationLevel": 1,
+		"Locations": {"1":2},
 		"Invocations": 2
 		},"WIZARD-3" : {
 		"Capacities":"Faveur de pacte",
 		"MinorSpells": 2,
 		"Spells": 4,
-		"Locations": 2,
-		"LocationLevel": 2,
+		"Locations": {"2":2},
 		"Invocations": 2
 		},"WIZARD-4" : {
 		"Capacities":"Amélioration de caractéristiques",
 		"MinorSpells": 3,
 		"Spells": 5,
-		"Locations": 2,
-		"LocationLevel": 2,
+		"Locations": {"2":2},
 		"Invocations": 2
 		},"WIZARD-5" : {
 		"Capacities":"-",
 		"MinorSpells": 3,
 		"Spells": 6,
-		"Locations": 2,
-		"LocationLevel": 3,
+		"Locations": {"3":2},
 		"Invocations": 3
 		},"WIZARD-6" : {
 		"Capacities":"Capacité de patron d'Outremonde",
 		"MinorSpells": 3,
 		"Spells": 7,
-		"Locations": 2,
-		"LocationLevel": 3,
+		"Locations": {"3":2},
 		"Invocations": 3
 		},"WIZARD-7" : {
 		"Capacities":"-",
 		"MinorSpells": 3,
 		"Spells": 8,
-		"Locations": 2,
-		"LocationLevel": 4,
+		"Locations": {"4":2},
 		"Invocations": 4
 		},"WIZARD-8" : {
 		"Capacities":"Amélioration de caractéristiques",
 		"MinorSpells": 3,
 		"Spells": 9,
-		"Locations": 2,
-		"LocationLevel": 4,
+		"Locations": {"4":2},
 		"Invocations": 4
 		},"WIZARD-9" : {
 		"Capacities":"-",
 		"MinorSpells": 3,
 		"Spells": 10,
-		"Locations": 2,
-		"LocationLevel": 5,
+		"Locations": {"5":2},
 		"Invocations": 5
 		},"WIZARD-10" : {
 		"Capacities":"Capacité de patron d'Outremonde",
 		"MinorSpells": 4,
 		"Spells": 10,
-		"Locations": 2,
-		"LocationLevel": 5,
+		"Locations": {"5":2},
 		"Invocations": 5
 		},"WIZARD-11" : {
 		"Capacities":"Arcanum mystique (niveau 6)",
 		"MinorSpells": 4,
 		"Spells": 11,
-		"Locations": 3,
-		"LocationLevel": 5,
+		"Locations": {"5":3},
 		"Invocations": 5
 		},"WIZARD-12" : {
 		"Capacities":"Amélioration de caractéristiques",
 		"MinorSpells": 4,
 		"Spells": 11,
-		"Locations": 3,
-		"LocationLevel": 5,
+		"Locations": {"5":3},
 		"Invocations": 6
 		},"WIZARD-13" : {
 		"Capacities":"Arcanum mystique (niveau 7)",
 		"MinorSpells": 4,
 		"Spells": 12,
-		"Locations": 3,
-		"LocationLevel": 5,
+		"Locations": {"5":3},
 		"Invocations": 6
 		},"WIZARD-14" : {
 		"Capacities":"Capacité de patron d'Outremonde",
 		"MinorSpells": 4,
 		"Spells": 12,
-		"Locations": 3,
-		"LocationLevel": 5,
+		"Locations": {"5":3},
 		"Invocations": 6
 		},"WIZARD-15" : {
 		"Capacities":"Arcanum mystique (niveau 8)",
 		"MinorSpells": 4,
 		"Spells": 13,
-		"Locations": 3,
-		"LocationLevel": 5,
+		"Locations": {"5":3},
 		"Invocations": 7
 		},"WIZARD-16" : {
 		"Capacities":"Amélioration de caractéristiques",
 		"MinorSpells": 4,
 		"Spells": 13,
-		"Locations": 3,
-		"LocationLevel": 5,
+		"Locations": {"5":3},
 		"Invocations": 7
 		},"WIZARD-17" : {
 		"Capacities":"Arcanum mystique (niveau 9)",
 		"MinorSpells": 4,
 		"Spells": 14,
-		"Locations": 4,
-		"LocationLevel": 5,
+		"Locations": {"5":4},
 		"Invocations": 7
 		},"WIZARD-18" : {
 		"Capacities":"-",
 		"MinorSpells": 4,
 		"Spells": 14,
-		"Locations": 4,
-		"LocationLevel": 5,
+		"Locations": {"5":4},
 		"Invocations": 8
 		},"WIZARD-19" : {
 		"Capacities":"Amélioration de caractéristiques",
 		"MinorSpells": 4,
 		"Spells": 15,
-		"Locations": 4,
-		"LocationLevel": 5,
+		"Locations": {"5":4},
 		"Invocations": 8
 		},"WIZARD-20" : {
 		"Capacities":"Maître de l'occulte",
 		"MinorSpells": 4,
 		"Spells": 15,
-		"Locations": 4,
-		"LocationLevel": 5,
+		"Locations": {"5":4},
 		"Invocations": 8
 		}
 	}

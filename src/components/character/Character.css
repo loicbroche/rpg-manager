@@ -25,7 +25,7 @@
     border: 1px dashed purple;
 }
 
-.status > *:not(:nth-child(1)) {
+.status > *:not(:nth-child(1)):not(:empty) {
     margin-top: 0.75rem;
 }
 

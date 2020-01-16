@@ -17,19 +17,20 @@ class SpecialsComponent extends Component {
     for(let i = 0; i < maxVal; i++) {
       specialPoints[i] = i < val;
     }
+
     return (
       <div className="specialsComponent">
         { maxVal > 0 && <span className={`currentModifier decrease-value ${val===0 &&"disabled"}`} onClick={(event) => {this.handleValueChange(-1, maxVal)}}
                         title={`Utiliser un point ${characterClass && characterClass.SpecialsName && "de "+characterClass.SpecialsName}`}></span>}
+        {maxVal > 0 && 
         <div className="special-points">
-          { 
-            maxVal > 0 &&  specialPoints.map((available, index) => 
+          {  Object.entries(specialPoints).map(([index, available]) => 
               <div key={index} className={`special-point ${available&&"special-available"} ${characterClass && characterClass.SpecialsName}`}
                    title={characterClass && `Point de ${characterClass.SpecialsName} ${available?"disponible":"utilisé"}` }>
                      {available && <img src={locationImage} className="special-image" alt={characterClass.SpecialsName} />}
                    </div>)
           }
-        </div>
+        </div>}
         { maxVal > 0 && <span className={`currentModifier increase-value ${val===maxVal &&"disabled"}`} onClick={(event) => {this.handleValueChange(1, maxVal)}}
                         title={`Récupérer un point ${characterClass && characterClass.SpecialsName && "de "+characterClass.SpecialsName}`}></span>}
       </div>
