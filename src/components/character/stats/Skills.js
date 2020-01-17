@@ -24,7 +24,7 @@ class Skills extends Component {
           const caracteristicBonus = caracteristicsBonus && caracteristicsBonus[caracteristicCode];
 
           return (
-          <li key={index} className={"skill "+(isHistoricMaster&&"historic-master")} onClick={() => !isHistoricMaster && onClick(Name)}>
+          <li key={index} className={"skill "+(isHistoricMaster?"historic-master":"activable")} onClick={() => !isHistoricMaster && onClick(Name)}>
             <div className={"option "+((isHistoricMaster||isMaster)&&"filled")}></div>
             <span className="skill-name">{Name}</span>
             { caracteristic &&

@@ -191,7 +191,7 @@ class App extends Component {
       <BrowserRouter>
         <header role="banner">
           <Link to={ROUTE_HOME}>
-            <div className="header">
+            <div className="header activable">
               <span>JdR Manager</span>
             </div>
           </Link>

@@ -5,6 +5,10 @@
   --background-color-error: #D88;
   --highlight-background-color-1: #333;
   --highlight-background-color-2: #D2D2D2;
+  --highlight-background-transparent-color-1: rgba(51, 51, 51, 0.5);
+  --active-background-color-1: #444;
+  --active-background-color-2: #D9D9D9;
+  --active-background-transparent-color-1: rgba(68, 68, 68, 0.5);
   --color-primary: #DDD;
   --color-secondary: goldenrod;
   --color-error: #911;
@@ -94,6 +98,22 @@ a {
   font-size: 1.75rem;
 }
 
+.activable:hover,
+.activable:focus {
+  background-color: var(--highlight-background-color-1);
+}
+.activable:active {
+  background-color: var(--active-background-color-1);
+}
+.activable.transparent:hover,
+.activable.transparent:focus {
+  background-color: var(--highlight-background-transparent-color-1);
+}
+.activable.transparent:active {
+  background-color: var(--active-background-transparent-color-1);
+}
+
+
 .body {
   margin: 1rem;
 }
@@ -140,37 +160,47 @@ a {
   padding-left: calc(var(--height-icons)/2);
 }
 
-.decrease-max::before {
-  content: "⏮";
-}
-.increase-max::before {
-  content: "⏭";
-}
-.decrease-value::before {
-  content: "⏴";
-}
-.increase-value::before {
-  content: "⏵";
-}
-
 .currentModifier,
 .maxModifier {
-  display: inline-block;
-  border: 1px solid var(--color-secondary);
-  color: var(--color-secondary);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0.25rem;
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+  color: var(--color-primary);
   font-weight: bold;
 }
 
-.currentModifier:hover,
-.currentModifier:focus,
-.maxModifier:hover,
-.maxModifier:focus {
-  background: var(--highlight-background-color-1);
+.currentModifier:not(.disabled):hover,
+.currentModifier:not(.disabled):focus,
+.maxModifier:not(.disabled):hover,
+.maxModifier:not(.disabled):focus {
+  background-color: var(--highlight-background-color-1);
+  
+}
+.currentModifier:not(.disabled):active,
+.maxModifier:not(.disabled):active {
+  background-color: var(--active-background-color-1);
+}
+
+.decrease-max::before {
+  content: "🢐";
+}
+.decrease-value::before {
+  content: "⮜";
+}
+.increase-value::before {
+  content: "⮞";
+}
+.increase-max::before {
+  content: "🢒";
 }
 
 .currentModifier.disabled,
 .currentModifier.disabled,
 .maxModifier.disabled,
 .maxModifier.disabled {
-  visibility: hidden;
+  color: var(--highlight-background-color-1);
 }

@@ -15,7 +15,6 @@
 }
 .skill:hover:not(.historic-master),
 .skill:focus:not(.historic-master) {
-  background-color: var(--highlight-background-color-1);
   border: 1px solid var(--color-primary);
 }
 

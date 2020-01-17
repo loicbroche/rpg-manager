@@ -32,11 +32,11 @@ class Home extends Component {
     const { characters} = this.state
     return (
       <div className="menu">
-        <Link to={ROUTE_GAME_MASTER} className="menu-item gm">
+        <Link to={ROUTE_GAME_MASTER} className="menu-item activable gm">
             Maître du jeu
         </Link>
         {characters && Object.values(characters).map(({ Id, Name}) => (
-            <div key={Name} className="menu-item character">
+            <div key={Name} className="menu-item activable character">
               <CharacterMenuItem id={Id} name={Name} onRemove={deleteCharacter} />
             </div>
           ))}

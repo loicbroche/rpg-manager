@@ -18,7 +18,7 @@ class HPComponent extends Component {
         <div className="hpBar">
           <div className="hpProgressBar" style={{width:`${Math.ceil(val/maxVal*100)}%`}}>&nbsp;</div>
           <div className="label">
-            {`${val} / ${maxVal}`}
+            <span>{`${val} / ${maxVal}`}</span>
             <img src={diceImage} className="dice-image" alt={`D${characterClass && characterClass.HD}`} title={`D${characterClass && characterClass.HD}`} />
           </div>
         </div>

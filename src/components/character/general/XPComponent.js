@@ -27,7 +27,7 @@ class XPComponent extends Component {
                     min={0}
                     max={maxXP}
                     step={10}
-                    className="xp-value"
+                    className="activable transparent xp-value"
                     onChange={(event) => this.props.onChange(event.target.value)} />
                   <span>{" XP"}</span>
                 </div>

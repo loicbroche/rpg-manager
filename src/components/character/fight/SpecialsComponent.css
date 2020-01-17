@@ -36,6 +36,9 @@
   border: 0;
   background-image: radial-gradient(var(--color-Ki), transparent);
 }
+.Ki-modifier {
+  color: var(--color-Ki);
+}
 
 .Rage:not(.special-available) {
   border: 0;
@@ -45,6 +48,9 @@
   border: 0;
   background-image: radial-gradient(var(--color-Rage), transparent);
 }
+.Rage-modifier {
+  color: var(--color-Rage);
+}
 
 .Sorcellerie:not(.special-available) {
   border: 0;
@@ -53,4 +59,7 @@
 .Sorcellerie.special-available {
   border: 0;
   background-image: radial-gradient(var(--color-Witchcraft), transparent);
+}
+.Sorcellerie-modifier {
+  color: var(--color-Witchcraft);
 }

@@ -34,6 +34,10 @@
   background-image: radial-gradient(var(--color-Spell), transparent);
 }
 
+.spell-modifier {
+  color: var(--color-Spell);
+}
+
 .spell-image {
   width: 100%;
 }
