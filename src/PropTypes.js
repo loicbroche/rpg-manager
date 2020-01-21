@@ -36,6 +36,18 @@ export const ClassPropType = PropTypes.shape({
     Charisma: PropTypes.number.isRequired
 })
 
+export const CapacityPropType = PropTypes.shape({
+    Capacities: PropTypes.string.isRequired,
+    Specials: PropTypes.number,
+    BonusAttack: PropTypes.string,
+    Damages: PropTypes.number,
+    MinorSpells: PropTypes.number,
+    Spells: PropTypes.number,
+    Locations: PropTypes.arrayOf(PropTypes.number),
+    Invocations: PropTypes.string,
+    ArmorlessSpeed: PropTypes.string
+})
+
 export const HistoricPropType = PropTypes.shape({
     Name: PropTypes.string.isRequired,
     Skills: PropTypes.arrayOf(PropTypes.string)
@@ -67,6 +79,8 @@ export const ArmorPropType = PropTypes.shape({
     OV: PropTypes.string.isRequired,
     Category: PropTypes.string.isRequired,
     AC: PropTypes.string.isRequired,
+    BonusAC: PropTypes.string,
+    MaxBonusAC: PropTypes.string,
     Weight: PropTypes.string.isRequired,
     Price: PropTypes.string.isRequired,
     Properties: PropTypes.string.isRequired,
@@ -197,6 +211,9 @@ export const CharacterPropType = PropTypes.shape({
     WeaponRight: PropTypes.string,
     WeaponLeft: PropTypes.string,
     Armor: PropTypes.string,
+    Shield: PropTypes.string,
     Money: PropTypes.number.isRequired,
-    Objects: PropTypes.arrayOf(PropTypes.string)
+    Objects: PropTypes.arrayOf(PropTypes.string),
+    Specials: PropTypes.number,
+    Spells: PropTypes.arrayOf(PropTypes.string)
 })

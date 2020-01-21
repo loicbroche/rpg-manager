@@ -4747,102 +4747,102 @@ export const referentialMock = {
 		"Capacities":"Défense sans armure, Arts martiaux",
 		"Specials": 0,
 		"BonusAttack": "1d4",
-		"ArmourlessSpeed": "-"
+		"ArmorlessSpeed": "-"
 		},"MONK-2" : {
 		"Capacities":"Ki, Déplacement sans armure",
 		"Specials": 2,
 		"BonusAttack": "1d4",
-		"ArmourlessSpeed": "+ 3 m"
+		"ArmorlessSpeed": "+ 3 m"
 		},"MONK-3" : {
 		"Capacities":"Tradition monastique, Parade de projectiles",
 		"Specials": 3,
 		"BonusAttack": "1d4",
-		"ArmourlessSpeed": "+ 3 m"
+		"ArmorlessSpeed": "+ 3 m"
 		},"MONK-4" : {
 		"Capacities":"Amélioration de caractéristiques, Chute ralentie",
 		"Specials": 4,
 		"BonusAttack": "1d4",
-		"ArmourlessSpeed": "+ 3 m"
+		"ArmorlessSpeed": "+ 3 m"
 		},"MONK-5" : {
 		"Capacities":"Attaque supplémentaire, Frappe étourdissante",
 		"Specials": 5,
 		"BonusAttack": "1d6",
-		"ArmourlessSpeed": "+ 3 m"
+		"ArmorlessSpeed": "+ 3 m"
 		},"MONK-6" : {
 		"Capacities":"Frappes de ki, Capacité de la tradition monastique",
 		"Specials": 6,
 		"BonusAttack": "1d6",
-		"ArmourlessSpeed": "+ 4,50 m"
+		"ArmorlessSpeed": "+ 4,50 m"
 		},"MONK-7" : {
 		"Capacities":"Dérobade, Tranquillité de l'esprit",
 		"Specials": 7,
 		"BonusAttack": "1d6",
-		"ArmourlessSpeed": "+ 4,50 m"
+		"ArmorlessSpeed": "+ 4,50 m"
 		},"MONK-8" : {
 		"Capacities":"Amélioration de caractéristiques",
 		"Specials": 8,
 		"BonusAttack": "1d6",
-		"ArmourlessSpeed": "+ 4,50 m"
+		"ArmorlessSpeed": "+ 4,50 m"
 		},"MONK-9" : {
 		"Capacities":"Déplacement sans armure amélioré",
 		"Specials": 9,
 		"BonusAttack": "1d6",
-		"ArmourlessSpeed": "+ 4,50 m"
+		"ArmorlessSpeed": "+ 4,50 m"
 		},"MONK-10" : {
 		"Capacities":"Pureté du corps",
 		"Specials": 10,
 		"BonusAttack": "1d6",
-		"ArmourlessSpeed": "+ 6 m"
+		"ArmorlessSpeed": "+ 6 m"
 		},"MONK-11" : {
 		"Capacities":"Capacité de la tradition monastique",
 		"Specials": 11,
 		"BonusAttack": "1d8",
-		"ArmourlessSpeed": "+ 6 m"
+		"ArmorlessSpeed": "+ 6 m"
 		},"MONK-12" : {
 		"Capacities":"Amélioration de caractéristiques",
 		"Specials": 12,
 		"BonusAttack": "1d8",
-		"ArmourlessSpeed": "+ 6 m"
+		"ArmorlessSpeed": "+ 6 m"
 		},"MONK-13" : {
 		"Capacities":"Langage du soleil et de la lune",
 		"Specials": 13,
 		"BonusAttack": "1d8",
-		"ArmourlessSpeed": "+ 6 m"
+		"ArmorlessSpeed": "+ 6 m"
 		},"MONK-14" : {
 		"Capacities":"Âme de diamant",
 		"Specials": 14,
 		"BonusAttack": "1d8",
-		"ArmourlessSpeed": "+ 7,50 m"
+		"ArmorlessSpeed": "+ 7,50 m"
 		},"MONK-15" : {
 		"Capacities":"Jeunesse éternelle",
 		"Specials": 15,
 		"BonusAttack": "1d8",
-		"ArmourlessSpeed": "+ 7,50 m"
+		"ArmorlessSpeed": "+ 7,50 m"
 		},"MONK-16" : {
 		"Capacities":"Amélioration de caractéristiques",
 		"Specials": 16,
 		"BonusAttack": "1d8",
-		"ArmourlessSpeed": "+ 7,50 m"
+		"ArmorlessSpeed": "+ 7,50 m"
 		},"MONK-17" : {
 		"Capacities":"Capacité de la tradition monastique",
 		"Specials": 17,
 		"BonusAttack": "1d10",
-		"ArmourlessSpeed": "+ 7,50 m"
+		"ArmorlessSpeed": "+ 7,50 m"
 		},"MONK-18" : {
 		"Capacities":"Corps vide",
 		"Specials": 18,
 		"BonusAttack": "1d10",
-		"ArmourlessSpeed": "+ 9 m"
+		"ArmorlessSpeed": "+ 9 m"
 		},"MONK-19" : {
 		"Capacities":"Amélioration de caractéristiques",
 		"Specials": 19,
 		"BonusAttack": "1d10",
-		"ArmourlessSpeed": "+ 9 m"
+		"ArmorlessSpeed": "+ 9 m"
 		},"MONK-20" : {
 		"Capacities":"Perfection de l'être",
 		"Specials": 20,
 		"BonusAttack": "1d10",
-		"ArmourlessSpeed": "+ 9 m"
+		"ArmorlessSpeed": "+ 9 m"
 		},
 		"PALADIN-1" : {
 		"Capacities":"Sens divin, Imposition des mains",

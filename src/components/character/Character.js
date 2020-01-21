@@ -14,6 +14,7 @@ import XPComponent from './general/XPComponent';
 import HPComponent from './fight/HPComponent';
 import SpecialsComponent from './fight/SpecialsComponent';
 import SpellsComponent from './fight/SpellsComponent';
+import ArmorSelector from './equipment/ArmorSelector';
 
 class Character extends Component {
     constructor (props) {
@@ -70,7 +71,7 @@ class Character extends Component {
     render() {
         const { caracteristics, levels} = this.props;
         const { Name, SubRace: subRaceId, Gender, Class: classId, Historic: historicId, History, Skills: masterSkills,
-                XP, HP, MaxHP, Specials, Spells} = this.state
+                XP, HP, MaxHP, Specials, Spells, Armor, Shield} = this.state
         const caracteristicsBonus = caracteristics && Object.values(caracteristics).reduce((accum, caracteristic) => {
             accum[caracteristic.Code] = this.state[caracteristic.OV];
             return accum;
@@ -105,6 +106,8 @@ class Character extends Component {
                                             onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPECIALS.name, value); }} />
                             <SpellsComponent spells={Spells} classId={classId} level={characterLevel}
                                             onValChange={ (value, level) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPELLS.name, value); }} />
+                            <ArmorSelector armorId={Armor} onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.ARMOR.name, value); }}/>
+                            <ArmorSelector armorId={Shield} shield={true} onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SHIELD.name, value); }}/>
                         </div>
 
                         <div className="stats">

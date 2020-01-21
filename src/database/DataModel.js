@@ -59,7 +59,7 @@ export const DATA_MODEL = {
                 SPELLS: { name: "Spells", optional: true },
                 LOCATIONS: { name: "Locations", optional: true },
                 INVOCATIONS: { name: "Invocations", optional: true },
-                ARMOURLESS_SPEED: { name: "ArmourlessSpeed", optional: true }
+                ARMORLESS_SPEED: { name: "ArmorlessSpeed", optional: true }
             }
         },
     HISTORICS:
@@ -107,6 +107,8 @@ export const DATA_MODEL = {
                 OV: { name: "OV" },
                 CATEGORY_CODE: { name: "Category" },
                 AC: { name: "AC" },
+                BONUS_AC: { name: "BonusAC", optional: true },
+                MAX_BONUS_AC: { name: "MaxBonusAC", optional: true },
                 WEIGHT: { name: "Weight" },
                 PRICE: { name: "Price" },
                 DISCRETION: { name: "Discretion" },
@@ -290,6 +292,7 @@ export const DATA_MODEL = {
                 WEAPON_RIGHT: { name: "WeaponRight" },
                 WEAPON_LEFT: { name: "WeaponLeft" },
                 ARMOR: { name: "Armor" },
+                SHIELD: { name: "Shield" },
                 MONEY: { name: "Money" },
                 OBJECTS: { name: "Objects" },
                 SPECIALS: { name: "Specials", optional: true },

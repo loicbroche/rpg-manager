@@ -681,10 +681,9 @@
 	  "VARIOUS": {"Code": "VARIOUS", "Name": "Divers"}
 	 },
 	"HostelCategories": {
-	  "HOSTEL": {"Code": "HOSTEL", "Name": "Auberge"},
-	  "MEAL": {"Code": "MEAL", "Name": "Repas (par jour)"},
-	  "FOOD": {"Code": "FOOD", "Name": "Nourriture"},
-	  "DRINK": {"Code": "DRINK", "Name": "Boisson"}
+	  
+	  
+	  
 	 },
 	"ServiceCategories": {
 	  "HIRING": {"Code": "HIRING", "Name": "Embauche"},
@@ -1027,129 +1026,162 @@
 		}
 	},
 	"Armors" : {
-	  "Cuir": {
-	   "Name" : "  Cuir",
-	   "OV" : "Leather",
-	   "Category": "LIGHT",
-	   "AC" : "11 + Mod.Dex",
-	   "Weight" : 5000,
-	   "Price" : 1000,
-	   "Discretion" : "-",
-	   "Strength" : "-"
-		},
-	  "Cuir clouté": {
-	   "Name" : "  Cuir clouté",
-	   "OV" : "Studded leather",
-	   "Category": "LIGHT",
-	   "AC" : "12 + Mod.Dex",
-	   "Weight" : 6500,
-	   "Price" : 4500,
-	   "Discretion" : "-",
-	   "Strength" : "-"
-		},
-  
-	  "Peau": {
-	   "Name" : "  Peau",
-	   "OV" : "Hide",
-	   "Category": "MID",
-	   "AC" : "12 + Mod.Dex (max +2)",
-	   "Weight" : 6000,
-	   "Price" : 1000,
-	   "Discretion" : "-",
-	   "Strength" : "-"
-		},
-	  "Chemise de mailles": {
-	   "Name" : "  Chemise de mailles",
-	   "OV" : "Chain shirt",
-	   "Category": "MID",
-	   "AC" : "13 + Mod.Dex (max +2)",
-	   "Weight" : 10000,
-	   "Price" : 5000,
-	   "Discretion" : "-",
-	   "Strength" : "-"
-		},
-	  "Écailles": {
-	   "Name" : "  Écailles",
-	   "OV" : "Scale mail",
-	   "Category": "MID",
-	   "AC" : "14 + Mod.Dex (max +2)",
-	   "Weight" : 22500,
-	   "Price" : 5000,
-	   "Discretion" : "Désavantage",
-	   "Strength" : "-"
-		},
-	  "Cuirasse": {
-	   "Name" : "  Cuirasse",
-	   "OV" : "Breastplate",
-	   "Category": "MID",
-	   "AC" : "14 + Mod.Dex (max +2)",
-	   "Weight" : 10000,
-	   "Price" : 40000,
-	   "Discretion" : "-",
-	   "Strength" : "-"
-		},
-	  "Demi-plate": {
-	   "Name" : "  Demi-plate",
-	   "OV" : "Half plate",
-	   "Category": "MID",
-	   "AC" : "15 + Mod.Dex (max +2)",
-	   "Weight" : 20000,
-	   "Price" : 75000,
-	   "Discretion" : "Désavantage",
-	   "Strength" : "-"
-		},
-  
-	  "Broigne": {
-	   "Name" : "  Broigne",
-	   "OV" : "Ring mail",
-	   "Category": "HEAVY",
-	   "AC" : "14",
-	   "Weight" : 20000,
-	   "Price" : 3000,
-	   "Discretion" : "Désavantage",
-	   "Strength" : "-"
-		},
-	  "Cotte de mailles": {
-	   "Name" : "  Cotte de mailles",
-	   "OV" : "Chain mail",
-	   "Category": "HEAVY",
-	   "AC" : "16",
-	   "Weight" : 27500,
-	   "Price" : 7500,
-	   "Discretion" : "Désavantage",
-	   "Strength" : "For 13"
-		},
-	  "Clibanion": {
-	   "Name" : "  Clibanion",
-	   "OV" : "Splint",
-	   "Category": "HEAVY",
-	   "AC" : "17",
-	   "Weight" : 30000,
-	   "Price" : 20000,
-	   "Discretion" : "Désavantage",
-	   "Strength" : "For 15"
-		},
-	  "Harnois": {
-	   "Name" : "  Harnois",
-	   "OV" : "Plate",
-	   "Category": "HEAVY",
-	   "AC" : "18",
-	   "Weight" : 32500,
-	   "Price" : 150000,
-	   "Discretion" : "Désavantage",
-	   "Strength" : "For 15"
-		},
-  
-	  "Bouclier": {
-	   "Name" : "  Bouclier",
-	   "OV" : "Shield",
-	   "Category": "SHIELD",
-	   "AC" : "2",
-	   "Weight" : 3000,
-	   "Price" : 1000,
-	   "Discretion" : "-",
-	   "Strength" : "-"
-		}
+	 "Matelassée": {
+	 "Name" : "  Matelassée",
+	 "OV" : "Padded",
+	 "Category": "LIGHT",
+	 "AC" : "11",
+	 "BonusAC" : " Dexterity",
+	 "MaxBonusAC" : "",
+	 "Weight" : 4000,
+	 "Price" : 500,
+	 "Discretion" : "Désavantage",
+	 "Strength" : "-"
+	  },
+	"Cuir": {
+	 "Name" : "  Cuir",
+	 "OV" : "Leather",
+	 "Category": "LIGHT",
+	 "AC" : "11",
+	 "BonusAC" : " Dexterity",
+	 "MaxBonusAC" : "",
+	 "Weight" : 5000,
+	 "Price" : 1000,
+	 "Discretion" : "-",
+	 "Strength" : "-"
+	  },
+	"Cuir clouté": {
+	 "Name" : "  Cuir clouté",
+	 "OV" : "Studded leather",
+	 "Category": "LIGHT",
+	 "AC" : "12",
+	 "BonusAC" : " Dexterity",
+	 "MaxBonusAC" : "",
+	 "Weight" : 6500,
+	 "Price" : 4500,
+	 "Discretion" : "-",
+	 "Strength" : "-"
+	  },
+	"Peau": {
+	 "Name" : "  Peau",
+	 "OV" : "Hide",
+	 "Category": "MID",
+	 "AC" : "12",
+	 "BonusAC" : " Dexterity",
+	 "MaxBonusAC" : "2",
+	 "Weight" : 6000,
+	 "Price" : 1000,
+	 "Discretion" : "-",
+	 "Strength" : "-"
+	  },
+	"Chemise de mailles": {
+	 "Name" : "  Chemise de mailles",
+	 "OV" : "Chain shirt",
+	 "Category": "MID",
+	 "AC" : "13",
+	 "BonusAC" : " Dexterity",
+	 "MaxBonusAC" : "2",
+	 "Weight" : 10000,
+	 "Price" : 5000,
+	 "Discretion" : "-",
+	 "Strength" : "-"
+	  },
+	"Écailles": {
+	 "Name" : "  Écailles",
+	 "OV" : "Scale mail",
+	 "Category": "MID",
+	 "AC" : "14",
+	 "BonusAC" : " Dexterity",
+	 "MaxBonusAC" : "2",
+	 "Weight" : 22500,
+	 "Price" : 5000,
+	 "Discretion" : "Désavantage",
+	 "Strength" : "-"
+	  },
+	"Cuirasse": {
+	 "Name" : "  Cuirasse",
+	 "OV" : "Breastplate",
+	 "Category": "MID",
+	 "AC" : "14",
+	 "BonusAC" : " Dexterity",
+	 "MaxBonusAC" : "2",
+	 "Weight" : 10000,
+	 "Price" : 40000,
+	 "Discretion" : "-",
+	 "Strength" : "-"
+	  },
+	"Demi-plate": {
+	 "Name" : "  Demi-plate",
+	 "OV" : "Half plate",
+	 "Category": "MID",
+	 "AC" : "15",
+	 "BonusAC" : " Dexterity",
+	 "MaxBonusAC" : "2",
+	 "Weight" : 20000,
+	 "Price" : 75000,
+	 "Discretion" : "Désavantage",
+	 "Strength" : "-"
+	  },
+	"Broigne": {
+	 "Name" : "  Broigne",
+	 "OV" : "Ring mail",
+	 "Category": "HEAVY",
+	 "AC" : "14",
+	 "BonusAC" : "",
+	 "MaxBonusAC" : "",
+	 "Weight" : 20000,
+	 "Price" : 3000,
+	 "Discretion" : "Désavantage",
+	 "Strength" : "-"
+	  },
+	"Cotte de mailles": {
+	 "Name" : "  Cotte de mailles",
+	 "OV" : "Chain mail",
+	 "Category": "HEAVY",
+	 "AC" : "16",
+	 "BonusAC" : "",
+	 "MaxBonusAC" : "",
+	 "Weight" : 27500,
+	 "Price" : 7500,
+	 "Discretion" : "Désavantage",
+	 "Strength" : "13"
+	  },
+	"Clibanion": {
+	 "Name" : "  Clibanion",
+	 "OV" : "Splint",
+	 "Category": "HEAVY",
+	 "AC" : "17",
+	 "BonusAC" : "",
+	 "MaxBonusAC" : "",
+	 "Weight" : 30000,
+	 "Price" : 20000,
+	 "Discretion" : "Désavantage",
+	 "Strength" : "15"
+	  },
+	"Harnois": {
+	 "Name" : "  Harnois",
+	 "OV" : "Plate",
+	 "Category": "HEAVY",
+	 "AC" : "18",
+	 "BonusAC" : "",
+	 "MaxBonusAC" : "",
+	 "Weight" : 32500,
+	 "Price" : 150000,
+	 "Discretion" : "Désavantage",
+	 "Strength" : "15"
+	  },
+	"Bouclier": {
+	 "Name" : "  Bouclier",
+	 "OV" : "Shield",
+	 "Category": "SHIELD",
+	 "AC" : "2",
+	 "BonusAC" : "",
+	 "MaxBonusAC" : "",
+	 "Weight" : 3000,
+	 "Price" : 1000,
+	 "Discretion" : "-",
+	 "Strength" : "-"
+	  }
 	},
 	"Objects": {
 	  "Chalemie": {
@@ -4889,102 +4921,102 @@
 		"Capacities":"Défense sans armure, Arts martiaux",
 		"Specials": 0,
 		"BonusAttack": "1d4",
-		"ArmourlessSpeed": "-"
+		"ArmorlessSpeed": "-"
 		},"MONK-2" : {
 		"Capacities":"Ki, Déplacement sans armure",
 		"Specials": 2,
 		"BonusAttack": "1d4",
-		"ArmourlessSpeed": "+ 3 m"
+		"ArmorlessSpeed": "+ 3 m"
 		},"MONK-3" : {
 		"Capacities":"Tradition monastique, Parade de projectiles",
 		"Specials": 3,
 		"BonusAttack": "1d4",
-		"ArmourlessSpeed": "+ 3 m"
+		"ArmorlessSpeed": "+ 3 m"
 		},"MONK-4" : {
 		"Capacities":"Amélioration de caractéristiques, Chute ralentie",
 		"Specials": 4,
 		"BonusAttack": "1d4",
-		"ArmourlessSpeed": "+ 3 m"
+		"ArmorlessSpeed": "+ 3 m"
 		},"MONK-5" : {
 		"Capacities":"Attaque supplémentaire, Frappe étourdissante",
 		"Specials": 5,
 		"BonusAttack": "1d6",
-		"ArmourlessSpeed": "+ 3 m"
+		"ArmorlessSpeed": "+ 3 m"
 		},"MONK-6" : {
 		"Capacities":"Frappes de ki, Capacité de la tradition monastique",
 		"Specials": 6,
 		"BonusAttack": "1d6",
-		"ArmourlessSpeed": "+ 4,50 m"
+		"ArmorlessSpeed": "+ 4,50 m"
 		},"MONK-7" : {
 		"Capacities":"Dérobade, Tranquillité de l'esprit",
 		"Specials": 7,
 		"BonusAttack": "1d6",
-		"ArmourlessSpeed": "+ 4,50 m"
+		"ArmorlessSpeed": "+ 4,50 m"
 		},"MONK-8" : {
 		"Capacities":"Amélioration de caractéristiques",
 		"Specials": 8,
 		"BonusAttack": "1d6",
-		"ArmourlessSpeed": "+ 4,50 m"
+		"ArmorlessSpeed": "+ 4,50 m"
 		},"MONK-9" : {
 		"Capacities":"Déplacement sans armure amélioré",
 		"Specials": 9,
 		"BonusAttack": "1d6",
-		"ArmourlessSpeed": "+ 4,50 m"
+		"ArmorlessSpeed": "+ 4,50 m"
 		},"MONK-10" : {
 		"Capacities":"Pureté du corps",
 		"Specials": 10,
 		"BonusAttack": "1d6",
-		"ArmourlessSpeed": "+ 6 m"
+		"ArmorlessSpeed": "+ 6 m"
 		},"MONK-11" : {
 		"Capacities":"Capacité de la tradition monastique",
 		"Specials": 11,
 		"BonusAttack": "1d8",
-		"ArmourlessSpeed": "+ 6 m"
+		"ArmorlessSpeed": "+ 6 m"
 		},"MONK-12" : {
 		"Capacities":"Amélioration de caractéristiques",
 		"Specials": 12,
 		"BonusAttack": "1d8",
-		"ArmourlessSpeed": "+ 6 m"
+		"ArmorlessSpeed": "+ 6 m"
 		},"MONK-13" : {
 		"Capacities":"Langage du soleil et de la lune",
 		"Specials": 13,
 		"BonusAttack": "1d8",
-		"ArmourlessSpeed": "+ 6 m"
+		"ArmorlessSpeed": "+ 6 m"
 		},"MONK-14" : {
 		"Capacities":"Âme de diamant",
 		"Specials": 14,
 		"BonusAttack": "1d8",
-		"ArmourlessSpeed": "+ 7,50 m"
+		"ArmorlessSpeed": "+ 7,50 m"
 		},"MONK-15" : {
 		"Capacities":"Jeunesse éternelle",
 		"Specials": 15,
 		"BonusAttack": "1d8",
-		"ArmourlessSpeed": "+ 7,50 m"
+		"ArmorlessSpeed": "+ 7,50 m"
 		},"MONK-16" : {
 		"Capacities":"Amélioration de caractéristiques",
 		"Specials": 16,
 		"BonusAttack": "1d8",
-		"ArmourlessSpeed": "+ 7,50 m"
+		"ArmorlessSpeed": "+ 7,50 m"
 		},"MONK-17" : {
 		"Capacities":"Capacité de la tradition monastique",
 		"Specials": 17,
 		"BonusAttack": "1d10",
-		"ArmourlessSpeed": "+ 7,50 m"
+		"ArmorlessSpeed": "+ 7,50 m"
 		},"MONK-18" : {
 		"Capacities":"Corps vide",
 		"Specials": 18,
 		"BonusAttack": "1d10",
-		"ArmourlessSpeed": "+ 9 m"
+		"ArmorlessSpeed": "+ 9 m"
 		},"MONK-19" : {
 		"Capacities":"Amélioration de caractéristiques",
 		"Specials": 19,
 		"BonusAttack": "1d10",
-		"ArmourlessSpeed": "+ 9 m"
+		"ArmorlessSpeed": "+ 9 m"
 		},"MONK-20" : {
 		"Capacities":"Perfection de l'être",
 		"Specials": 20,
 		"BonusAttack": "1d10",
-		"ArmourlessSpeed": "+ 9 m"
+		"ArmorlessSpeed": "+ 9 m"
 		},
 		"PALADIN-1" : {
 		"Capacities":"Sens divin, Imposition des mains",
