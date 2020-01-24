@@ -6,35 +6,36 @@ import PropTypes from 'prop-types'
 import { CharacterPropType } from 'PropTypes'
 import Money from 'components/shared/Money'
 import Weight from 'components/shared/Weight'
-import CaracteristicBonus from 'components/shared/CaracteristicBonus'
-import { filterArmorsCategories, filterShieldsCategories } from 'rules/Armors.rules'
+import { filterDistanceCategories, filterHtHCategories } from 'rules/Weapons.rules'
+import { getLevel } from 'rules/Levels.rules'
 
 import './EquipmentSelector.css'
 
-const mainStatImage = require("images/AC.png");
+const mainStatImage = require("images/Damage.png");
 
-class ArmorSelector extends Component {
+class WeaponSelector extends Component {
 
   render() {
-/**/const { equipmentCategories, equipments, equipmentId, shield, wearingCharacter } = this.props;
+/**/const { equipmentCategories, equipments, levels, equipmentId, distance, wearingCharacter } = this.props;
+/**/const filteredCategories = equipmentCategories && (distance?filterDistanceCategories(equipmentCategories):filterHtHCategories(equipmentCategories));
     const equipment = equipments && equipments[equipmentId];
-    
-/**/const equipmentType = shield?"shield":"armor";
-/**/const equipmentTitleLabel = shield?"Bouclier":"Armure";
-/**/const equipmentLabel = shield?"un bouclier":"une armure";
-/**/const filteredCategories = equipmentCategories && (shield?filterShieldsCategories(equipmentCategories):filterArmorsCategories(equipmentCategories));
 
-/**/const bonusContent = equipment && equipment.BonusAC &&
-    <div className={`main-stat-bonus-label ${equipment.BonusAC}`}>
-    <CaracteristicBonus caracteristicName={equipment.BonusAC}
-                        value={wearingCharacter && wearingCharacter[equipment.BonusAC]}
-                        bonusMax={Number.isNaN(equipment.MaxBonusAC)?null:equipment.MaxBonusAC}
-                        subRaceId={wearingCharacter && wearingCharacter.SubRace} />              
-  </div>
+/**/const equipmentType = distance?"distance-weapon":"weapon";
+/**/const equipmentTitleLabel = distance?"Arme de jet":"Arme";
+/**/const equipmentLabel = distance?"une arme de jet":"une arme";
 
-/**/const bonusCode = "CA";
-/**/const bonusTitle = "Classe d'armure";
-/**/const mainValue = equipment && equipment.AC;
+const level = getLevel(levels, wearingCharacter && wearingCharacter.XP);
+const masterBonus = level && level.MasteryBonus;
+
+/**/const bonusContent = equipment && equipment.Damage &&
+                        <div className={`main-stat-bonus-label master-bonus`}>
+                          {"+"+masterBonus}            
+                        </div>
+
+/**/const bonusCode = "Dégâts";
+/**/const bonusTitle = "Dégâts";
+/**/const mainValue = equipment && equipment.Damage;
+/**/const additionalInfo = distance && wearingCharacter && "x"+wearingCharacter.Ammunition;
 
     let equipmentImage;
     try {
@@ -42,11 +43,12 @@ class ArmorSelector extends Component {
     } catch (ex) {
       equipmentImage = require(`images/equipments/${equipmentType}/no_image.png`);
     }
-
+  
     return (
       <div className="equipment-selector">
           <div className="equipment-name">
             <span>{equipmentTitleLabel}</span>
+            <span className="additional-info">{additionalInfo}</span>
           </div>
           <div className="equipment-title">
             { equipmentCategories && equipments && (
@@ -67,8 +69,8 @@ class ArmorSelector extends Component {
           </div>
           <div className="equipment-description">
             <div className="equipment-description-line"><span className="description-line-title">{equipment?"Poids:":'\u00A0'}</span>{equipment && <Weight weight={equipment.Weight} />}</div>
-            <div className="equipment-description-line"><span className="description-line-title">{equipment?"Discretion:":'\u00A0'}</span><span>{equipment && equipment.Discretion}</span></div>
-            <div className="equipment-description-line"><span className="description-line-title">{equipment?"Force:":'\u00A0'}</span><span>{equipment && equipment.Strength}</span></div>
+            <div className="equipment-description-line"><span className="description-line-title">{equipment?"Dégâts:":'\u00A0'}</span><span>{equipment && equipment.Damage+" "+equipment.DamageType}</span></div>
+            <div className="equipment-description-line"><span className="description-line-title">{equipment?"Propriété:":'\u00A0'}</span><span>{equipment && equipment.Properties}</span></div>
             <div className="equipment-description-line"><span className="description-line-title">{equipment?"Prix:":'\u00A0'}</span>{equipment && <Money amount={equipment.Price} />}</div>
           </div>
       </div>
@@ -93,19 +95,20 @@ class ArmorSelector extends Component {
   }
 }
 
-ArmorSelector.propTypes = {
-  armorId: PropTypes.string,
-  shield: PropTypes.bool,
+WeaponSelector.propTypes = {
+  equipmentId: PropTypes.string,
+  distance: PropTypes.bool,
   wearingCharacter: CharacterPropType,
   onChange: PropTypes.func.isRequired,
 }
 
-ArmorSelector.defaultProps = {
-  shield: false
+WeaponSelector.defaultProps = {
+  distance: false
 }
 
 const mapStateToProps = (state) => ({
-  equipmentCategories: state.referential.armorCategories,
-  equipments: state.referential.armors
+  equipmentCategories: state.referential.weaponCategories,
+  equipments: state.referential.weapons,
+  levels: state.referential.levels
 })
-export default connect(mapStateToProps)(ArmorSelector)
+export default connect(mapStateToProps)(WeaponSelector)

@@ -4,6 +4,7 @@ import { database } from 'database/InitializeDatabase'
 import { DATA_MODEL } from 'database/DataModel'
 import { insertCharacterSkills, deleteCharacterSkills, updateCharacterCaracteristic } from 'database/PersistCharacter';
 
+import { getLevelNumber } from 'rules/Levels.rules'
 import './Character.css'
 import Skills from './stats/Skills'
 import Caracteristic from './stats/Caracteristic'
@@ -15,6 +16,7 @@ import HPComponent from './fight/HPComponent';
 import SpecialsComponent from './fight/SpecialsComponent';
 import SpellsComponent from './fight/SpellsComponent';
 import ArmorSelector from './equipment/ArmorSelector';
+import WeaponSelector from './equipment/WeaponSelector';
 
 class Character extends Component {
     constructor (props) {
@@ -71,12 +73,12 @@ class Character extends Component {
     render() {
         const { caracteristics, levels} = this.props;
         const { Name, SubRace: subRaceId, Gender, Class: classId, Historic: historicId, History, Skills: masterSkills,
-                XP, HP, MaxHP, Specials, Spells, Armor, Shield} = this.state
+                XP, HP, MaxHP, Specials, Spells, Armor, Shield, Weapon, DistanceWeapon } = this.state
         const caracteristicsBonus = caracteristics && Object.values(caracteristics).reduce((accum, caracteristic) => {
             accum[caracteristic.Code] = this.state[caracteristic.OV];
             return accum;
         }, {});
-        const characterLevel = levels && Math.max(...levels.filter((lev) => lev && lev.XP <= XP).map((lev) => lev.Level));
+        const characterLevel = getLevelNumber(levels, XP);
 
         return (
         <div className="character">
@@ -98,16 +100,28 @@ class Character extends Component {
                     </div>
 
                     <div className="character-body">
-                        <div className="status">
+                        <div className="fight">
                             <HPComponent val={HP} maxVal={MaxHP} classId={classId}
                                             onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HP.name, value); }}
                                             onMaxValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.MAX_HP.name, value); }} />
                             <SpecialsComponent val={Specials} classId={classId} level={characterLevel}
                                             onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPECIALS.name, value); }} />
-                            <SpellsComponent spells={Spells} classId={classId} level={characterLevel}
-                                            onValChange={ (value, level) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPELLS.name, value); }} />
-                            <ArmorSelector armorId={Armor} onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.ARMOR.name, value); }}/>
-                            <ArmorSelector armorId={Shield} shield={true} onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SHIELD.name, value); }}/>
+                            <div className="status">
+                                <div className="points">
+                                    <SpellsComponent spells={Spells} classId={classId} level={characterLevel}
+                                            onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPELLS.name, value); }} />
+                                </div>
+                                <div className="equipment">
+                                    <div className="weapons">
+                                        <WeaponSelector equipmentId={Weapon} wearingCharacter={ this.state } onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.WEAPON.name, value); }}/>
+                                        <WeaponSelector equipmentId={DistanceWeapon} distance={true} wearingCharacter={ this.state } onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.DISTANCE_WEAPON.name, value); }}/>
+                                    </div>
+                                    <div className="armors">
+                                        <ArmorSelector equipmentId={Armor} wearingCharacter={ this.state } onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.ARMOR.name, value); }}/>
+                                        <ArmorSelector equipmentId={Shield} wearingCharacter={ this.state } shield={true} onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SHIELD.name, value); }}/>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div className="stats">

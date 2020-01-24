@@ -1,0 +1,91 @@
+.equipment-selector {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-primary);
+}
+
+.equipment-name {
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.equipment-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.equipment-illustration {
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 2rem;
+    text-align: center;
+    border-radius: 0;
+    background-color: var(--background-color-2);
+    border: 1px solid var(--color-primary);
+}
+.equipment-image {
+    width: 100%;
+    max-height: 20rem;
+}
+
+.equipment-description {
+    display: flex;
+    flex-direction: column;
+}
+
+.equipment-description-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.main-stat-value {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    color: var(--background-color-1);
+}
+.main-stat-image {
+    position: absolute;
+    height: 2rem;
+}
+.main-stat-label {
+    z-index: 2;
+    min-width: 1.5rem;
+}
+.main-stat-bonus-label {
+    position: absolute;
+    bottom: -1rem;
+    right: -0.25rem;
+    font-size: 0.75rem;
+    border-radius: 50%;
+    border : 1px solid var(--color-primary);
+    color: var(--color-primary);
+    background-color: var(--background-color-1);
+}
+
+.Strength {
+    border-color: var(--color-Strength);
+}
+.Constitution {
+    border-color: var(--color-Constitution);
+}
+.Dexterity {
+    border-color: var(--color-Dexterity);
+}
+.Intelligence {
+    border-color: var(--color-Intelligence);
+}
+.Wisdom{
+    border-color: var(--color-Wisdom);
+}
+.Charisma {
+    border-color: var(--color-Charisma);
+}

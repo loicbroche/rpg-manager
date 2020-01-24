@@ -13,8 +13,9 @@ calculateBonus.propTypes = {
   bonusStep: PropTypes.number
 }
 
-export const calculateTotalBonus = (value, raceBonus, subRaceBonus, maxVal = MAX_CARACTERISTIC, bonusStep = BONUS_STEP) => {
-  return calculateBonus(value + raceBonus + subRaceBonus, maxVal, bonusStep);
+export const calculateTotalBonus = (value, raceBonus, subRaceBonus, maxVal = MAX_CARACTERISTIC, bonusStep = BONUS_STEP, bonusMax = null) => {
+  const bonus = calculateBonus(value + raceBonus + subRaceBonus, maxVal, bonusStep);
+  return (bonusMax || bonusMax === 0)?Math.min(bonus, bonusMax):bonus;
 }
 
 calculateTotalBonus.propTypes = {
@@ -22,5 +23,6 @@ calculateTotalBonus.propTypes = {
   raceBonus: PropTypes.number.isRequired,
   subRaceBonus: PropTypes.number.isRequired,
   maxVal: PropTypes.number,
-  bonusStep: PropTypes.number
+  bonusStep: PropTypes.number,
+  bonusMax: PropTypes.number
 }

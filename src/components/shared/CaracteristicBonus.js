@@ -8,14 +8,14 @@ import './CaracteristicBonus.css'
 class CaracteristicBonus extends Component {
 
   render() {
-    const { races, subRaces, caracteristicName, value, subRaceId, maxVal, bonusStep } = this.props;
+    const { races, subRaces, caracteristicName, value, subRaceId, maxVal, bonusStep, bonusMax } = this.props;
 
     const subRace = subRaces && subRaces[subRaceId];
     const race = subRace && races && races[subRace.Race];
 
     const raceBonus = race && race[caracteristicName];
     const subRaceBonus = subRace && subRace[caracteristicName];
-    const bonus = calculateTotalBonus(value, raceBonus, subRaceBonus, maxVal, bonusStep);
+    const bonus = calculateTotalBonus(value, raceBonus, subRaceBonus, maxVal, bonusStep, bonusMax);
 
     return <span className={caracteristicName}>{(bonus>=0?"+":"")+bonus}</span>
   }
@@ -26,6 +26,7 @@ CaracteristicBonus.propTypes = {
   value: PropTypes.number.isRequired,
   maxVal: PropTypes.number.isRequired,
   bonusStep: PropTypes.number.isRequired,
+  bonusMax: PropTypes.number,
   subRaceId: PropTypes.string
 }
 

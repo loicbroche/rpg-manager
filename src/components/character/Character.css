@@ -7,6 +7,10 @@
     padding: 0.5rem;
     border: 1px solid var(--color-primary);
 }
+.character-name {
+    font-weight: bold;
+}
+
 .character-body {
     display: flex;
     flex-direction: row;
@@ -14,25 +18,42 @@
     padding-top: 1rem;
 }
 
-.character-name {
-    font-weight: bold;
+.fight {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.fight > *:not(:nth-child(1)):not(:empty) {
+    margin-top: 0.75rem;
 }
 
 .status {
     display: flex;
-    flex-direction: column;
-    width: 50%;
-    border: 1px dashed purple;
+    flex-direction: row;
 }
 
-.status > *:not(:nth-child(1)):not(:empty) {
+.equipment {
+    display: flex;
+    flex-direction: row;
+}
+.equipment > * {
+    margin-left: 0.75rem;
+}
+
+.weapons,
+.armors {
+    display: flex;
+    flex-direction: column;
+}
+.weapons > *:not(:nth-child(1)):not(:empty),
+.armors > *:not(:nth-child(1)):not(:empty) {
     margin-top: 0.75rem;
 }
 
 .stats {
     display: flex;
     flex-direction: column;
-    border: 1px dashed purple;
 }
 
 .caracteristics {

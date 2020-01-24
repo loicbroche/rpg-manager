@@ -64,6 +64,7 @@ export const WeaponPropType = PropTypes.shape({
     OV: PropTypes.string.isRequired,
     Category: PropTypes.string.isRequired,
     Damage: PropTypes.string.isRequired,
+    DamageType: PropTypes.string.isRequired,
     Weight: PropTypes.string.isRequired,
     Price: PropTypes.string.isRequired,
     Properties: PropTypes.string.isRequired
@@ -204,16 +205,16 @@ export const CharacterPropType = PropTypes.shape({
     History: PropTypes.string.isRequired,
     Languages: PropTypes.arrayOf(PropTypes.string),
     XP: PropTypes.number.isRequired,
-    Level: PropTypes.number.isRequired,
     MaxHP: PropTypes.number.isRequired,
     HP: PropTypes.number.isRequired,
     AC: PropTypes.number.isRequired,
-    WeaponRight: PropTypes.string,
-    WeaponLeft: PropTypes.string,
+    Weapon: PropTypes.string,
+    DistanceWeapon: PropTypes.string,
+    Ammunition: PropTypes.number,
     Armor: PropTypes.string,
     Shield: PropTypes.string,
     Money: PropTypes.number.isRequired,
     Objects: PropTypes.arrayOf(PropTypes.string),
     Specials: PropTypes.number,
-    Spells: PropTypes.arrayOf(PropTypes.string)
+    Spells: PropTypes.arrayOf(PropTypes.number)
 })
