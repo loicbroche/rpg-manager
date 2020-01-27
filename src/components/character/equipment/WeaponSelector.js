@@ -10,6 +10,7 @@ import { filterDistanceCategories, filterHtHCategories } from 'rules/Weapons.rul
 import { getLevel } from 'rules/Levels.rules'
 
 import './EquipmentSelector.css'
+import './WeaponSelector.css'
 
 const mainStatImage = require("images/Damage.png");
 
@@ -35,7 +36,21 @@ const masterBonus = level && level.MasteryBonus;
 /**/const bonusCode = "Dégâts";
 /**/const bonusTitle = "Dégâts";
 /**/const mainValue = equipment && equipment.Damage;
-/**/const additionalInfo = distance && wearingCharacter && "x"+wearingCharacter.Ammunition;
+/**/const ammunitions = [];
+    for(let i = 0; i < wearingCharacter.Ammunition; i++) {
+      ammunitions[i] = true;
+    }
+    const additionalInfo = distance && wearingCharacter && 
+      <div className="ammunitions">
+        <span className={`currentModifier decrease-value ${wearingCharacter.Ammunition===0 &&"disabled"}`} onClick={(event) => {this.handleAmmunitionUpdate(-1)}}
+                        title={`Utiliser une munition`}></span>
+        <div className="ammunition-points">
+          { ammunitions.map((ammunition, index) => <div key={index} className="ammunition" title={`${wearingCharacter.Ammunition} munitions`}></div>) }
+        </div>
+        <span className={`currentModifier increase-value`} onClick={(event) => {this.handleAmmunitionUpdate(+1)}}
+                        title={`Récupérer une munition`}></span>
+      </div>
+    ;
 
     let equipmentImage;
     try {
@@ -83,6 +98,16 @@ const masterBonus = level && level.MasteryBonus;
     this.props.onChange(selectedEquipment);
   }
 
+  
+  // Arrow fx for binding
+  handleAmmunitionUpdate = (value) => {
+    const {wearingCharacter, onAmmunitionChange} = this.props;
+    const newVal = Math.max(wearingCharacter.Ammunition+value, 0);
+    if (newVal !== wearingCharacter.Ammunition) {
+      onAmmunitionChange(newVal);
+    }
+  }
+
   getEquipmentsOptionElement(equipmentCategoryId) {
     const { equipmentCategories, equipments} = this.props;
     const availableEquipments = Object.values(equipments).filter((equipment) => equipment.Category === equipmentCategoryId);
@@ -100,6 +125,7 @@ WeaponSelector.propTypes = {
   distance: PropTypes.bool,
   wearingCharacter: CharacterPropType,
   onChange: PropTypes.func.isRequired,
+  onAmmunitionChange: PropTypes.func
 }
 
 WeaponSelector.defaultProps = {

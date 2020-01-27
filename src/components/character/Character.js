@@ -114,7 +114,9 @@ class Character extends Component {
                                 <div className="equipment">
                                     <div className="weapons">
                                         <WeaponSelector equipmentId={Weapon} wearingCharacter={ this.state } onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.WEAPON.name, value); }}/>
-                                        <WeaponSelector equipmentId={DistanceWeapon} distance={true} wearingCharacter={ this.state } onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.DISTANCE_WEAPON.name, value); }}/>
+                                        <WeaponSelector equipmentId={DistanceWeapon} distance={true} wearingCharacter={ this.state }
+                                                        onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.DISTANCE_WEAPON.name, value); }}
+                                                        onAmmunitionChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.AMMUNITION.name, value);  }}/>
                                     </div>
                                     <div className="armors">
                                         <ArmorSelector equipmentId={Armor} wearingCharacter={ this.state } onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.ARMOR.name, value); }}/>

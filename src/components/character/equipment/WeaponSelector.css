@@ -1,0 +1,20 @@
+.ammunitions {
+    display: flex;
+    flex-direction: row;
+}
+
+.ammunition-points {
+    display: flex;
+    flex-direction: row;
+    width: 10rem;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.ammunition {
+    width: 0.75rem;
+    height: 0.75rem;
+    margin: 0 0.125rem;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+}
