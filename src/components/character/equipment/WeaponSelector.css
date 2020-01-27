@@ -18,3 +18,8 @@
     border-radius: 50%;
     background-color: var(--color-primary);
 }
+
+.master-bonus {
+    color: var(--color-master-bonus);
+    border-color: var(--color-master-bonus);
+}

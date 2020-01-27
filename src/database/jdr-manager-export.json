@@ -523,7 +523,9 @@
 	 "Charisma" : 0,
 	 "HD" : 8,
 	 "SpecialsName" : "Ki",
-	 "BonusAttackName" : "Arts-Martiaux"
+	 "BonusAttackName" : "Arts-Martiaux",
+	 "WeaponCategories" : ["C_MEL"],
+	 "WeaponCategories" : ["Sarbacane"]
 	  },
 	"PALADIN":  {
 	 "Name" : "Paladin",
@@ -3323,9 +3325,8 @@
 		  "Gender":"♂",
 		  "Class":"BARD",
 		  "ChargeCapacity": 20000,
-		  "MasterBonus": 2,
 		  "Skills": ["Eloquence", "Etiquette", "Narcotique", "Négociation", "Noblesse", "Représentation"],
-		  "MasterWeapons": [],
+		  "MasterWeapons": ["Trident"],
 		  "MasterArmors": [],
 		  "MasterObjects": [],
 		  "Historic": "HERMIT",
@@ -3364,7 +3365,6 @@
 		  "Gender":"♂",
 		  "Class":"MONK",
 		  "ChargeCapacity": 20000,
-		  "MasterBonus": 2,
 		  "Skills": ["Acrobatie", "Discrétion", "Médecine", "Religion"],
 		  "MasterWeapons": [],
 		  "MasterArmors": [],
@@ -3418,7 +3418,6 @@
 		  "Gender":"♂",
 		  "Class":"WARRIOR",
 		  "ChargeCapacity": 20000,
-		  "MasterBonus": 2,
 		  "Skills": ["Acrobatie", "Discrétion", "Médecine", "Religion"],
 		  "MasterWeapons": [],
 		  "MasterArmors": [],

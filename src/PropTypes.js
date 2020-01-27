@@ -185,7 +185,6 @@ export const CharacterPropType = PropTypes.shape({
     SubRace: PropTypes.string.isRequired,
     Class: PropTypes.string.isRequired,
     ChargeCapacity: PropTypes.number.isRequired,
-    MasterBonus: PropTypes.number.isRequired,
     Skills: PropTypes.arrayOf(PropTypes.string),
     MasterWeapons: PropTypes.arrayOf(PropTypes.string),
     MasterArmors: PropTypes.arrayOf(PropTypes.string),

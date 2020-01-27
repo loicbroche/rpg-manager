@@ -66,10 +66,14 @@ class ArmorSelector extends Component {
             <img src={equipmentImage} className="equipment-image" alt="" />
           </div>
           <div className="equipment-description">
-            <div className="equipment-description-line"><span className="description-line-title">{equipment?"Poids:":'\u00A0'}</span>{equipment && <Weight weight={equipment.Weight} />}</div>
-            <div className="equipment-description-line"><span className="description-line-title">{equipment?"Discretion:":'\u00A0'}</span><span>{equipment && equipment.Discretion}</span></div>
-            <div className="equipment-description-line"><span className="description-line-title">{equipment?"Force:":'\u00A0'}</span><span>{equipment && equipment.Strength}</span></div>
-            <div className="equipment-description-line"><span className="description-line-title">{equipment?"Prix:":'\u00A0'}</span>{equipment && <Money amount={equipment.Price} />}</div>
+            <div className="equipment-description-line"><span className="description-line-title">{equipment?"Poids:":'\u00A0'}</span>
+                                                        {equipment && <Weight weight={equipment.Weight} />}</div>
+            <div className="equipment-description-line"><span className="description-line-title">{equipment?"Discretion:":'\u00A0'}</span>
+                                                        <span className="description-line-value">{equipment && equipment.Discretion}</span></div>
+            <div className="equipment-description-line"><span className="description-line-title">{equipment?"Force:":'\u00A0'}</span>
+                                                        <span className="description-line-value">{equipment && equipment.Strength}</span></div>
+            <div className="equipment-description-line"><span className="description-line-title">{equipment?"Prix:":'\u00A0'}</span>
+                                                        {equipment && <Money amount={equipment.Price} />}</div>
           </div>
       </div>
     )

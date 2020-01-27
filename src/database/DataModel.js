@@ -261,7 +261,6 @@ export const DATA_MODEL = {
                 GENDER: { name: "Gender" },
                 CLASS: { name: "Class" },
                 CHARGE_CAPACITY: { name: "ChargeCapacity" },
-                MASTER_BONUS: { name: "MasterBonus" },
                 SKILLS: { name: "Skills", optional: true },
                 MASTER_WEAPONS: { name: "MasterWeapons", optional: true },
                 MASTER_ARMORS: { name: "MasterArmors", optional: true },

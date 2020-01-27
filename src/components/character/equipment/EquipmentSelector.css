@@ -42,6 +42,9 @@
     flex-direction: row;
     justify-content: space-between;
 }
+.description-line-value {
+    text-align: right;
+}
 
 .main-stat-value {
     position: relative;
@@ -69,6 +72,10 @@
     border : 1px solid var(--color-primary);
     color: var(--color-primary);
     background-color: var(--background-color-1);
+}
+
+.master-equipment {
+    color: var(--color-master-bonus);
 }
 
 .Strength {

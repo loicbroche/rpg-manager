@@ -17,18 +17,26 @@ const mainStatImage = require("images/Damage.png");
 class WeaponSelector extends Component {
 
   render() {
-/**/const { equipmentCategories, equipments, levels, equipmentId, distance, wearingCharacter } = this.props;
+/**/const { equipmentCategories, equipments, levels, classes, equipmentId, distance, wearingCharacter, classId, master } = this.props;
 /**/const filteredCategories = equipmentCategories && (distance?filterDistanceCategories(equipmentCategories):filterHtHCategories(equipmentCategories));
     const equipment = equipments && equipments[equipmentId];
+    const weapon = equipments && equipments[equipmentId];
 
 /**/const equipmentType = distance?"distance-weapon":"weapon";
 /**/const equipmentTitleLabel = distance?"Arme de jet":"Arme";
 /**/const equipmentLabel = distance?"une arme de jet":"une arme";
 
-const level = getLevel(levels, wearingCharacter && wearingCharacter.XP);
-const masterBonus = level && level.MasteryBonus;
+/**/const level = getLevel(levels, wearingCharacter && wearingCharacter.XP);
+/**/const characterClass = classes && classes[classId];
+/**/const classWeaponCategories = characterClass && (characterClass.Weapons||[]);
+/**/const classWeapons = characterClass && (characterClass.WeaponCategories||[]);
+/**/const masterBonus = level && level.MasteryBonus;
 
-/**/const bonusContent = equipment && equipment.Damage &&
+/**/const isMaster = master && master.includes(weapon && weapon.Name);
+/**/const isClassMaster = (classWeapons && classWeapons.includes(weapon && weapon.Name)) ||
+                          (classWeaponCategories && classWeaponCategories.includes(weapon && weapon.Category));
+
+/**/const bonusContent = equipment && equipment.Damage && (isMaster || isClassMaster) &&
                         <div className={`main-stat-bonus-label master-bonus`}>
                           {"+"+masterBonus}            
                         </div>
@@ -83,10 +91,14 @@ const masterBonus = level && level.MasteryBonus;
             <img src={equipmentImage} className="equipment-image" alt="" />
           </div>
           <div className="equipment-description">
-            <div className="equipment-description-line"><span className="description-line-title">{equipment?"Poids:":'\u00A0'}</span>{equipment && <Weight weight={equipment.Weight} />}</div>
-            <div className="equipment-description-line"><span className="description-line-title">{equipment?"Dégâts:":'\u00A0'}</span><span>{equipment && equipment.Damage+" "+equipment.DamageType}</span></div>
-            <div className="equipment-description-line"><span className="description-line-title">{equipment?"Propriété:":'\u00A0'}</span><span>{equipment && equipment.Properties}</span></div>
-            <div className="equipment-description-line"><span className="description-line-title">{equipment?"Prix:":'\u00A0'}</span>{equipment && <Money amount={equipment.Price} />}</div>
+            <div className="equipment-description-line"><span className="description-line-title">{equipment?"Poids:":'\u00A0'}</span>
+                                                        {equipment && <Weight weight={equipment.Weight} />}</div>
+            <div className="equipment-description-line"><span className="description-line-title">{equipment?"Dégâts:":'\u00A0'}</span>
+                                                        <span className="description-line-value">{equipment && equipment.Damage+" "+equipment.DamageType}</span></div>
+            <div className="equipment-description-line"><span className="description-line-title">{equipment?"Propriété:":'\u00A0'}</span>
+                                                        <span className="description-line-value">{equipment && equipment.Properties}</span></div>
+            <div className="equipment-description-line"><span className="description-line-title">{equipment?"Prix:":'\u00A0'}</span>
+                                                        {equipment && <Money amount={equipment.Price} />}</div>
           </div>
       </div>
     )
@@ -114,7 +126,7 @@ const masterBonus = level && level.MasteryBonus;
     return availableEquipments && availableEquipments.length > 0 && 
            <optgroup key={equipmentCategoryId} label={equipmentCategories && equipmentCategories[equipmentCategoryId].Name}>
             { availableEquipments.map((equipment) => (
-              <option key={equipment.Name} value={equipment.Id}>{equipment.Name}</option>
+              <option key={equipment.Name} value={equipment.Id} className="master-equipment">{equipment.Name}</option>
             ))}
           </optgroup>
   }
@@ -125,7 +137,9 @@ WeaponSelector.propTypes = {
   distance: PropTypes.bool,
   wearingCharacter: CharacterPropType,
   onChange: PropTypes.func.isRequired,
-  onAmmunitionChange: PropTypes.func
+  onAmmunitionChange: PropTypes.func,
+  classId: PropTypes.string,
+  master: PropTypes.arrayOf(PropTypes.string)
 }
 
 WeaponSelector.defaultProps = {
@@ -135,6 +149,7 @@ WeaponSelector.defaultProps = {
 const mapStateToProps = (state) => ({
   equipmentCategories: state.referential.weaponCategories,
   equipments: state.referential.weapons,
-  levels: state.referential.levels
+  levels: state.referential.levels,
+  classes: state.referential.classes
 })
 export default connect(mapStateToProps)(WeaponSelector)

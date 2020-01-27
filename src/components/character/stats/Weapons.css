@@ -1,11 +1,11 @@
-.skills {
+.weapons {
   display: flex;
   flex-direction: column;
   user-select: none;
   padding-inline-start: 0;
 }
 
-.skill {
+.weapon {
   width: 95%;
   margin: 0.1rem auto;
   display: flex;
@@ -13,24 +13,24 @@
   border-width: 0;
   color: var(--color-primary);
 }
-.skill:hover:not(.historic-master),
-.skill:focus:not(.historic-master) {
+.weapon:hover:not(.class-master),
+.weapon:focus:not(.class-master) {
   border: 1px solid var(--color-primary);
 }
 
-.skill-name {
+.weapon-name {
   flex-grow: 1;
   margin: 0 0.5rem;
 }
 
-.skill-bonus {
+.weapon-bonus {
   width: 2.5rem;
 }
 
-.historic-master {
+.class-master {
   border: 1px solid var(--color-primary);
 }
 
-.skill-bonus {
+.weapon-bonus {
   color: var(--color-master-bonus);
 }

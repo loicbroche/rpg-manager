@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { database } from 'database/InitializeDatabase'
 import { DATA_MODEL } from 'database/DataModel'
-import { insertCharacterSkills, deleteCharacterSkills, updateCharacterCaracteristic } from 'database/PersistCharacter';
+import { insertCharacterSkills, deleteCharacterSkills, updateCharacterCaracteristic, insertCharacterWeapons, deleteCharacterWeapons, } from 'database/PersistCharacter';
 
 import { getLevelNumber } from 'rules/Levels.rules'
 import './Character.css'
 import Skills from './stats/Skills'
+import Weapons from './stats/Weapons'
 import Caracteristic from './stats/Caracteristic'
 import RaceSelector from './general/RaceSelector'
 import ClassSelector from './general/ClassSelector'
@@ -73,7 +74,7 @@ class Character extends Component {
     render() {
         const { caracteristics, levels} = this.props;
         const { Name, SubRace: subRaceId, Gender, Class: classId, Historic: historicId, History, Skills: masterSkills,
-                XP, HP, MaxHP, Specials, Spells, Armor, Shield, Weapon, DistanceWeapon } = this.state
+                XP, HP, MaxHP, Specials, Spells, Armor, Shield, Weapon, DistanceWeapon, MasterWeapons } = this.state
         const caracteristicsBonus = caracteristics && Object.values(caracteristics).reduce((accum, caracteristic) => {
             accum[caracteristic.Code] = this.state[caracteristic.OV];
             return accum;
@@ -113,10 +114,15 @@ class Character extends Component {
                                 </div>
                                 <div className="equipment">
                                     <div className="weapons">
-                                        <WeaponSelector equipmentId={Weapon} wearingCharacter={ this.state } onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.WEAPON.name, value); }}/>
+                                        <WeaponSelector equipmentId={Weapon} wearingCharacter={ this.state }
+                                                        onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.WEAPON.name, value); }}
+                                                        master={MasterWeapons}
+                                                        classId={classId}/>
                                         <WeaponSelector equipmentId={DistanceWeapon} distance={true} wearingCharacter={ this.state }
                                                         onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.DISTANCE_WEAPON.name, value); }}
-                                                        onAmmunitionChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.AMMUNITION.name, value);  }}/>
+                                                        onAmmunitionChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.AMMUNITION.name, value);  }}
+                                                        master={MasterWeapons}
+                                                        classId={classId}/>
                                     </div>
                                     <div className="armors">
                                         <ArmorSelector equipmentId={Armor} wearingCharacter={ this.state } onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.ARMOR.name, value); }}/>
@@ -143,6 +149,10 @@ class Character extends Component {
                                 )
                             }
                             </div>
+                            <Weapons master={MasterWeapons}
+                                    classId={classId}
+                                    level={characterLevel}
+                                    onClick={this.toggleWeapon} />
                             <Skills master={masterSkills}
                                     historicId={historicId}
                                     level={characterLevel}
@@ -159,11 +169,23 @@ class Character extends Component {
     toggleSkill = (skillId) => {
         const { Id: characterId, Skills } = this.state;
         if (characterId !== null) {
-            const index = Skills.findIndex((name) => name === skillId);
+            const index = Skills?Skills.findIndex((name) => name === skillId):-1;
             if (index === -1) {
-                insertCharacterSkills(characterId, Skills.length, skillId);
+                insertCharacterSkills(characterId, Skills?Skills.length:0, skillId);
             } else {
                 deleteCharacterSkills(characterId, index);
+            }
+        }
+    }
+
+    toggleWeapon = (weaponId) => {
+        const { Id: characterId, MasterWeapons } = this.state;
+        if (characterId !== null) {
+            const index = MasterWeapons?MasterWeapons.findIndex((name) => name === weaponId):-1;
+            if (index === -1) {
+                insertCharacterWeapons(characterId, MasterWeapons?MasterWeapons.length:0, weaponId);
+            } else {
+                deleteCharacterWeapons(characterId, index);
             }
         }
     }

@@ -46,6 +46,29 @@ deleteCharacterSkills.propTypes = {
 export { insertCharacterSkills };
 export { deleteCharacterSkills };
 
+//Weapons
+const insertCharacterWeapons = (characterId, index, weaponId) => {
+    const url = DATA_MODEL.CHARACTERS.name + '/' + characterId + '/'+DATA_MODEL.CHARACTERS.columns.MASTER_WEAPONS.name+'/' + index;
+    return database.ref(url).set(weaponId);
+}
+insertCharacterWeapons.propTypes = {
+    characterId: PropTypes.string.isRequired,
+    index: PropTypes.number.isRequired,
+    weaponId: PropTypes.string.isRequired
+}
+
+const deleteCharacterWeapons = (characterId, index) => {
+    const url = DATA_MODEL.CHARACTERS.name + '/' + characterId + '/'+DATA_MODEL.CHARACTERS.columns.MASTER_WEAPONS.name+'/' + index;
+    return database.ref(url).remove();
+}
+deleteCharacterWeapons.propTypes = {
+    characterId: PropTypes.string.isRequired,
+    index: PropTypes.number.isRequired
+}
+
+export { insertCharacterWeapons };
+export { deleteCharacterWeapons };
+
 const updateCharacterCaracteristic = (characterId, caracteristicName, value) => {
     const url = DATA_MODEL.CHARACTERS.name + '/' + characterId + '/'+caracteristicName;
     return database.ref(url).set(value);

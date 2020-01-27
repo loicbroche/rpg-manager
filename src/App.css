@@ -19,6 +19,7 @@
   --color-Wisdom: #31869B;
   --color-Charisma: #974706;
   --color-XP: goldenrod;
+  --color-master-bonus: var(--color-XP);
   --color-Health: #963634;
   --color-Ki: #C4006B;
   --color-Witchcraft: #3A9E31;
