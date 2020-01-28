@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { ArmorCategoryPropType } from '../PropTypes';
 
-const SHIELD_CATEGORY_CODE = "SHIELD";
+const SHIELD_CATEGORY_CODE = "0_SHIELD";
 
 export const filterArmorsCategories = (armorCategories) => {
   return Object.values(armorCategories).filter((category) => category.Code !== SHIELD_CATEGORY_CODE);

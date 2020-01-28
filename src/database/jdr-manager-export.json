@@ -185,11 +185,11 @@
 	   "Charisma" : 0,
 	   "Speed" : 0
 		},
-	  "LIGHT_FOOT_HALFELIN": {
-	   "Id" : "LIGHT_FOOT_HALFELIN",
+	  "1_LIGHT_FOOT_HALFELIN": {
+	   "Id" : "1_LIGHT_FOOT_HALFELIN",
 	   "Race" : "HALFELIN",
 	   "Name" : "Halfelin pied-léger",
-	   "OV" : "Light-foot Halfelin",
+	   "OV" : "1_LIGHT-foot Halfelin",
 	   "Strength" : 0,
 	   "Constitution" : 0,
 	   "Dexterity" : 0,
@@ -421,164 +421,198 @@
 		}
 	},
 	"Classes" : {
-	"BARBARIAN":  {
-	 "Name" : "Barbare",
-	 "OV" : "Barbarian",
-	 "Strength" : 0,
-	 "Constitution" : 0,
-	 "Dexterity" : 0,
-	 "Intelligence" : 0,
-	 "Wisdom" : 0,
-	 "Charisma" : 0,
-	 "HD" : 12,
-	 "SpecialsName" : "Rage",
-	 "BonusAttackName" : ""
-	  },
-	"BARD":  {
-	 "Name" : "Barde",
-	 "OV" : "Bard",
-	 "Strength" : 0,
-	 "Constitution" : 0,
-	 "Dexterity" : 0,
-	 "Intelligence" : 0,
-	 "Wisdom" : 0,
-	 "Charisma" : 0,
-	 "HD" : 8,
-	 "SpecialsName" : "",
-	 "BonusAttackName" : ""
-	  },
-	"CLERK":  {
-	 "Name" : "Clerc",
-	 "OV" : "Clerk",
-	 "Strength" : 0,
-	 "Constitution" : 0,
-	 "Dexterity" : 0,
-	 "Intelligence" : 0,
-	 "Wisdom" : 0,
-	 "Charisma" : 0,
-	 "HD" : 8,
-	 "SpecialsName" : "",
-	 "BonusAttackName" : ""
-	  },
-	"DRUID":  {
-	 "Name" : "Druide",
-	 "OV" : "Druid",
-	 "Strength" : 0,
-	 "Constitution" : 0,
-	 "Dexterity" : 0,
-	 "Intelligence" : 0,
-	 "Wisdom" : 0,
-	 "Charisma" : 0,
-	 "HD" : 8,
-	 "SpecialsName" : "",
-	 "BonusAttackName" : ""
-	  },
-	"SORCERER":  {
-	 "Name" : "Ensorceleur",
-	 "OV" : "Sorcerer",
-	 "Strength" : 0,
-	 "Constitution" : 0,
-	 "Dexterity" : 0,
-	 "Intelligence" : 0,
-	 "Wisdom" : 0,
-	 "Charisma" : 0,
-	 "HD" : 6,
-	 "SpecialsName" : "Sorcellerie",
-	 "BonusAttackName" : ""
-	  },
-	"WARRIOR":  {
-	 "Name" : "Guerrier",
-	 "OV" : "Warrior",
-	 "Strength" : 0,
-	 "Constitution" : 0,
-	 "Dexterity" : 0,
-	 "Intelligence" : 0,
-	 "Wisdom" : 0,
-	 "Charisma" : 0,
-	 "HD" : 10,
-	 "SpecialsName" : "",
-	 "BonusAttackName" : ""
-	  },
-	"MAGICIAN":  {
-	 "Name" : "Magicien",
-	 "OV" : "Magician",
-	 "Strength" : 0,
-	 "Constitution" : 0,
-	 "Dexterity" : 0,
-	 "Intelligence" : 0,
-	 "Wisdom" : 0,
-	 "Charisma" : 0,
-	 "HD" : 6,
-	 "SpecialsName" : "",
-	 "BonusAttackName" : ""
-	  },
-	"MONK":  {
-	 "Name" : "Moine",
-	 "OV" : "Monk",
-	 "Strength" : 0,
-	 "Constitution" : 0,
-	 "Dexterity" : 0,
-	 "Intelligence" : 0,
-	 "Wisdom" : 0,
-	 "Charisma" : 0,
-	 "HD" : 8,
-	 "SpecialsName" : "Ki",
-	 "BonusAttackName" : "Arts-Martiaux",
-	 "WeaponCategories" : ["C_MEL"],
-	 "WeaponCategories" : ["Sarbacane"]
-	  },
-	"PALADIN":  {
-	 "Name" : "Paladin",
-	 "OV" : "Paladin",
-	 "Strength" : 0,
-	 "Constitution" : 0,
-	 "Dexterity" : 0,
-	 "Intelligence" : 0,
-	 "Wisdom" : 0,
-	 "Charisma" : 0,
-	 "HD" : 10,
-	 "SpecialsName" : "",
-	 "BonusAttackName" : ""
-	  },
-	"PROWLER":  {
-	 "Name" : "Rôdeur",
-	 "OV" : "Prowler",
-	 "Strength" : 0,
-	 "Constitution" : 0,
-	 "Dexterity" : 0,
-	 "Intelligence" : 0,
-	 "Wisdom" : 0,
-	 "Charisma" : 0,
-	 "HD" : 10,
-	 "SpecialsName" : "",
-	 "BonusAttackName" : ""
-	  },
-	"WILY":  {
-	 "Name" : "Roublard",
-	 "OV" : "Wily",
-	 "Strength" : 0,
-	 "Constitution" : 0,
-	 "Dexterity" : 0,
-	 "Intelligence" : 0,
-	 "Wisdom" : 0,
-	 "Charisma" : 0,
-	 "HD" : 8,
-	 "SpecialsName" : "",
-	 "BonusAttackName" : "Attaque sournoise"
-	  },
-	"WIZARD":  {
-	 "Name" : "Sorcier",
-	 "OV" : "Wizard",
-	 "Strength" : 0,
-	 "Constitution" : 0,
-	 "Dexterity" : 0,
-	 "Intelligence" : 0,
-	 "Wisdom" : 0,
-	 "Charisma" : 0,
-	 "HD" : 8,
-	 "SpecialsName" : "",
-	 "BonusAttackName" : ""
-	  }
+		"BARBARIAN":  {
+		 "Name" : "Barbare",
+		 "OV" : "Barbarian",
+		 "Strength" : 0,
+		 "Constitution" : 0,
+		 "Dexterity" : 0,
+		 "Intelligence" : 0,
+		 "Wisdom" : 0,
+		 "Charisma" : 0,
+		 "HD" : 12,
+		 "SpecialsName" : "Rage",
+		 "BonusAttackName" : "",
+		 "WeaponCategories" : ["C_MEL", "C_DIS", "W_MEL", "W_DIS"],
+		 "Weapons" : [],
+		 "ArmorCategories" : ["1_LIGHT", "2_MID",  "0_SHIELD"]
+		  },
+		"BARD":  {
+		 "Name" : "Barde",
+		 "OV" : "Bard",
+		 "Strength" : 0,
+		 "Constitution" : 0,
+		 "Dexterity" : 0,
+		 "Intelligence" : 0,
+		 "Wisdom" : 0,
+		 "Charisma" : 0,
+		 "HD" : 8,
+		 "SpecialsName" : "",
+		 "BonusAttackName" : "",
+		 "WeaponCategories" : ["C_MEL", "C_DIS"],
+		 "Weapons" : ["Arbalète de poing", "Épée courte", "Épée longue",  "Rapière"],
+		 "ArmorCategories" : ["1_LIGHT"]
+		  },
+		"CLERK":  {
+		 "Name" : "Clerc",
+		 "OV" : "Clerk",
+		 "Strength" : 0,
+		 "Constitution" : 0,
+		 "Dexterity" : 0,
+		 "Intelligence" : 0,
+		 "Wisdom" : 0,
+		 "Charisma" : 0,
+		 "HD" : 8,
+		 "SpecialsName" : "",
+		 "BonusAttackName" : "",
+		 "WeaponCategories" : ["C_MEL", "C_DIS"],
+		 "Weapons" : [],
+		 "ArmorCategories" : ["1_LIGHT", "2_MID",  "0_SHIELD"]
+		  },
+		"DRUID":  {
+		 "Name" : "Druide",
+		 "OV" : "Druid",
+		 "Strength" : 0,
+		 "Constitution" : 0,
+		 "Dexterity" : 0,
+		 "Intelligence" : 0,
+		 "Wisdom" : 0,
+		 "Charisma" : 0,
+		 "HD" : 8,
+		 "SpecialsName" : "",
+		 "BonusAttackName" : "",
+		 "WeaponCategories" : [],
+		 "Weapons" : ["Gourdin", "Dague", "Fléchette", "Javeline", "Masse d'armes", "Bâton", "Cimeterre", "Fronde", "Serpe", "Lance"],
+		 "ArmorCategories" : ["1_LIGHT", "2_MID",  "0_SHIELD"]
+		  },
+		"SORCERER":  {
+		 "Name" : "Ensorceleur",
+		 "OV" : "Sorcerer",
+		 "Strength" : 0,
+		 "Constitution" : 0,
+		 "Dexterity" : 0,
+		 "Intelligence" : 0,
+		 "Wisdom" : 0,
+		 "Charisma" : 0,
+		 "HD" : 6,
+		 "SpecialsName" : "Sorcellerie",
+		 "BonusAttackName" : "",
+		 "WeaponCategories" : [],
+		 "Weapons" : ["Dague", "Fléchette", "Fronde", "Bâton", "Arbalète légère"],
+		 "ArmorCategories" : []
+		  },
+		"WARRIOR":  {
+		 "Name" : "Guerrier",
+		 "OV" : "Warrior",
+		 "Strength" : 0,
+		 "Constitution" : 0,
+		 "Dexterity" : 0,
+		 "Intelligence" : 0,
+		 "Wisdom" : 0,
+		 "Charisma" : 0,
+		 "HD" : 10,
+		 "SpecialsName" : "",
+		 "BonusAttackName" : "",
+		 "WeaponCategories" : ["C_MEL", "C_DIS", "W_MEL", "W_DIS"],
+		 "Weapons" : [],
+		 "ArmorCategories" : ["1_LIGHT", "2_MID", "3_HEAVY", "0_SHIELD"]
+		  },
+		"MAGICIAN":  {
+		 "Name" : "Magicien",
+		 "OV" : "Magician",
+		 "Strength" : 0,
+		 "Constitution" : 0,
+		 "Dexterity" : 0,
+		 "Intelligence" : 0,
+		 "Wisdom" : 0,
+		 "Charisma" : 0,
+		 "HD" : 6,
+		 "SpecialsName" : "",
+		 "BonusAttackName" : "",
+		 "WeaponCategories" : [],
+		 "Weapons" : ["Dague", "Fléchette", "Fronde", "Bâton", "Arbalète légère"],
+		 "ArmorCategories" : []
+		  },
+		"MONK":  {
+		 "Name" : "Moine",
+		 "OV" : "Monk",
+		 "Strength" : 0,
+		 "Constitution" : 0,
+		 "Dexterity" : 0,
+		 "Intelligence" : 0,
+		 "Wisdom" : 0,
+		 "Charisma" : 0,
+		 "HD" : 8,
+		 "SpecialsName" : "Ki",
+		 "BonusAttackName" : "Arts-Martiaux",
+		 "WeaponCategories" : ["C_MEL", "C_DIS"],
+		 "Weapons" : ["Épée courte"],
+		 "ArmorCategories" : []
+		  },
+		"PALADIN":  {
+		 "Name" : "Paladin",
+		 "OV" : "Paladin",
+		 "Strength" : 0,
+		 "Constitution" : 0,
+		 "Dexterity" : 0,
+		 "Intelligence" : 0,
+		 "Wisdom" : 0,
+		 "Charisma" : 0,
+		 "HD" : 10,
+		 "SpecialsName" : "",
+		 "BonusAttackName" : "",
+		 "WeaponCategories" : ["C_MEL", "C_DIS", "W_MEL", "W_DIS"],
+		 "Weapons" : [],
+		 "ArmorCategories" : ["1_LIGHT", "2_MID", "3_HEAVY", "0_SHIELD"]
+		  },
+		"PROWLER":  {
+		 "Name" : "Rôdeur",
+		 "OV" : "Prowler",
+		 "Strength" : 0,
+		 "Constitution" : 0,
+		 "Dexterity" : 0,
+		 "Intelligence" : 0,
+		 "Wisdom" : 0,
+		 "Charisma" : 0,
+		 "HD" : 10,
+		 "SpecialsName" : "",
+		 "BonusAttackName" : "",
+		 "WeaponCategories" : ["C_MEL", "C_DIS", "W_MEL", "W_DIS"],
+		 "Weapons" : [],
+		 "ArmorCategories" : ["1_LIGHT", "2_MID",  "0_SHIELD"]
+		  },
+		"WILY":  {
+		 "Name" : "Roublard",
+		 "OV" : "Wily",
+		 "Strength" : 0,
+		 "Constitution" : 0,
+		 "Dexterity" : 0,
+		 "Intelligence" : 0,
+		 "Wisdom" : 0,
+		 "Charisma" : 0,
+		 "HD" : 8,
+		 "SpecialsName" : "",
+		 "BonusAttackName" : "Attaque sournoise",
+		 "WeaponCategories" : ["C_MEL", "C_DIS"],
+		 "Weapons" : ["Arbalète de poing", "Épée courte", "Épée longue",  "Rapière"],
+		 "ArmorCategories" : ["1_LIGHT"]
+		  },
+		"WIZARD":  {
+		 "Name" : "Sorcier",
+		 "OV" : "Wizard",
+		 "Strength" : 0,
+		 "Constitution" : 0,
+		 "Dexterity" : 0,
+		 "Intelligence" : 0,
+		 "Wisdom" : 0,
+		 "Charisma" : 0,
+		 "HD" : 8,
+		 "SpecialsName" : "",
+		 "BonusAttackName" : "",
+		 "WeaponCategories" : ["C_MEL", "C_DIS"],
+		 "Weapons" : [],
+		 "ArmorCategories" : ["1_LIGHT"]
+		  }
 	},
 	"Historics": {
 	  "ACOLYTE":  {
@@ -631,7 +665,7 @@
 		},
 	  "SOLDIER":  {
 	   "Name" : "Soldat",
-	   "Skills" : ["Athlétisme", "Intimidation"]
+	   "Skills" : ["Athlétisme", "Inti2_MIDation"]
 		},
 	  "BOUNTY_HUNTER":  {
 	   "Name" : "Chasseur De Primes",
@@ -661,10 +695,10 @@
 	  "W_DIS": {"Code": "W_DIS","Name": "Armes de guerre à distance"}
 	 },
 	"ArmorCategories" : {
-	  "LIGHT": {"Code": "LIGHT", "Name": "Armures légères"},
-	  "MID": {"Code": "MID","Name": "Armures intermédiaires"},
-	  "HEAVY": {"Code": "HEAVY","Name": "Armures lourdes"},
-	  "SHIELD": {"Code": "SHIELD","Name": "Boucliers"}
+	  "1_LIGHT": {"Code": "1_LIGHT", "Name": "Armures légères"},
+	  "2_MID": {"Code": "2_MID","Name": "Armures intermédiaires"},
+	  "3_HEAVY": {"Code": "3_HEAVY","Name": "Armures lourdes"},
+	  "0_SHIELD": {"Code": "0_SHIELD","Name": "Boucliers"}
 	 },
 	"ObjectCategories" : {
 	  "MUSIC":  {"Code": "MUSIC", "Name": "Instruments de musique", "OV": "Musical instrument"},
@@ -683,9 +717,10 @@
 	  "VARIOUS": {"Code": "VARIOUS", "Name": "Divers"}
 	 },
 	"HostelCategories": {
-	  
-	  
-	  
+	  "HOSTEL": {"Code": "HOSTEL", "Name": "Auberge"},
+	  "MEAL": {"Code": "MEAL", "Name": "Repas (par jour)"},
+	  "FOOD": {"Code": "FOOD", "Name": "Nourriture"},
+	  "DRINK": {"Code": "DRINK", "Name": "Boisson"}
 	 },
 	"ServiceCategories": {
 	  "HIRING": {"Code": "HIRING", "Name": "Embauche"},
@@ -1067,7 +1102,7 @@
 	 "Matelassée": {
 	 "Name" : "  Matelassée",
 	 "OV" : "Padded",
-	 "Category": "LIGHT",
+	 "Category": "1_LIGHT",
 	 "AC" : "11",
 	 "BonusAC" : "Dexterity",
 	 "Weight" : 4000,
@@ -1078,7 +1113,7 @@
 	"Cuir": {
 	 "Name" : "  Cuir",
 	 "OV" : "Leather",
-	 "Category": "LIGHT",
+	 "Category": "1_LIGHT",
 	 "AC" : "11",
 	 "BonusAC" : "Dexterity",
 	 "Weight" : 5000,
@@ -1089,7 +1124,7 @@
 	"Cuir clouté": {
 	 "Name" : "  Cuir clouté",
 	 "OV" : "Studded leather",
-	 "Category": "LIGHT",
+	 "Category": "1_LIGHT",
 	 "AC" : "12",
 	 "BonusAC" : "Dexterity",
 	 "Weight" : 6500,
@@ -1100,7 +1135,7 @@
 	"Peau": {
 	 "Name" : "  Peau",
 	 "OV" : "Hide",
-	 "Category": "MID",
+	 "Category": "2_MID",
 	 "AC" : "12",
 	 "BonusAC" : "Dexterity",
 	 "MaxBonusAC" : 2,
@@ -1112,7 +1147,7 @@
 	"Chemise de mailles": {
 	 "Name" : "  Chemise de mailles",
 	 "OV" : "Chain shirt",
-	 "Category": "MID",
+	 "Category": "2_MID",
 	 "AC" : "13",
 	 "BonusAC" : "Dexterity",
 	 "MaxBonusAC" : 2,
@@ -1124,7 +1159,7 @@
 	"Écailles": {
 	 "Name" : "  Écailles",
 	 "OV" : "Scale mail",
-	 "Category": "MID",
+	 "Category": "2_MID",
 	 "AC" : "14",
 	 "BonusAC" : "Dexterity",
 	 "MaxBonusAC" : 2,
@@ -1136,7 +1171,7 @@
 	"Cuirasse": {
 	 "Name" : "  Cuirasse",
 	 "OV" : "Breastplate",
-	 "Category": "MID",
+	 "Category": "2_MID",
 	 "AC" : "14",
 	 "BonusAC" : "Dexterity",
 	 "MaxBonusAC" : 2,
@@ -1148,7 +1183,7 @@
 	"Demi-plate": {
 	 "Name" : "  Demi-plate",
 	 "OV" : "Half plate",
-	 "Category": "MID",
+	 "Category": "2_MID",
 	 "AC" : "15",
 	 "BonusAC" : "Dexterity",
 	 "MaxBonusAC" : 2,
@@ -1160,7 +1195,7 @@
 	"Broigne": {
 	 "Name" : "  Broigne",
 	 "OV" : "Ring mail",
-	 "Category": "HEAVY",
+	 "Category": "3_HEAVY",
 	 "AC" : "14",
 	 "BonusAC" : "",
 	 "Weight" : 20000,
@@ -1171,7 +1206,7 @@
 	"Cotte de mailles": {
 	 "Name" : "  Cotte de mailles",
 	 "OV" : "Chain mail",
-	 "Category": "HEAVY",
+	 "Category": "3_HEAVY",
 	 "AC" : "16",
 	 "BonusAC" : "",
 	 "Weight" : 27500,
@@ -1182,7 +1217,7 @@
 	"Clibanion": {
 	 "Name" : "  Clibanion",
 	 "OV" : "Splint",
-	 "Category": "HEAVY",
+	 "Category": "3_HEAVY",
 	 "AC" : "17",
 	 "BonusAC" : "",
 	 "Weight" : 30000,
@@ -1193,7 +1228,7 @@
 	"Harnois": {
 	 "Name" : "  Harnois",
 	 "OV" : "Plate",
-	 "Category": "HEAVY",
+	 "Category": "3_HEAVY",
 	 "AC" : "18",
 	 "BonusAC" : "",
 	 "Weight" : 32500,
@@ -1204,7 +1239,7 @@
 	"Bouclier": {
 	 "Name" : "  Bouclier",
 	 "OV" : "Shield",
-	 "Category": "SHIELD",
+	 "Category": "0_SHIELD",
 	 "AC" : "2",
 	 "BonusAC" : "",
 	 "Weight" : 3000,
@@ -2794,7 +2829,7 @@
 		},
 	  "64": {
 	   "d100" : 64,
-	   "Trinket" : "Une pyramide de bâtonnets d'encens noir qui sent très mauvais"
+	   "Trinket" : "Une pyra2_MIDe de bâtonnets d'encens noir qui sent très mauvais"
 		},
 	  "65": {
 	   "d100" : 65,
@@ -3205,8 +3240,8 @@
 	  "Imitation": {  "Caracteristic": "INT",
 		"Name": "Imitation"
 	   },
-	  "Intimidation": {  "Caracteristic": "CHA",
-		"Name": "Intimidation"
+	  "Inti2_MIDation": {  "Caracteristic": "CHA",
+		"Name": "Inti2_MIDation"
 	   },
 	  "Intuition": {  "Caracteristic": "SAG",
 		"Name": "Intuition"
@@ -3326,7 +3361,7 @@
 		  "Class":"BARD",
 		  "ChargeCapacity": 20000,
 		  "Skills": ["Eloquence", "Etiquette", "Narcotique", "Négociation", "Noblesse", "Représentation"],
-		  "MasterWeapons": ["Trident"],
+		  "MasterWeapons": [],
 		  "MasterArmors": [],
 		  "MasterObjects": [],
 		  "Historic": "HERMIT",
@@ -5719,7 +5754,7 @@
 		   },
 		"Fouet foudroyant": {
 		  "Name" : "Fouet foudroyant",
-		  "OV" : "Lightning Lure",
+		  "OV" : "1_LIGHTning Lure",
 		  "Level" : 0,
 		  "BBE" : "Fouet électrique",
 		  "School" : "évocation",
@@ -5799,7 +5834,7 @@
 		   },
 		"Lumière": {
 		  "Name" : "Lumière",
-		  "OV" : "Light",
+		  "OV" : "1_LIGHT",
 		  "Level" : 0,
 		  "BBE" : "",
 		  "School" : "évocation",
@@ -5809,7 +5844,7 @@
 		   },
 		"Lumières dansantes": {
 		  "Name" : "Lumières dansantes",
-		  "OV" : "Dancing Lights",
+		  "OV" : "Dancing 1_LIGHTs",
 		  "Level" : 0,
 		  "BBE" : "",
 		  "School" : "évocation",
@@ -6089,7 +6124,7 @@
 		   },
 		"Bouclier": {
 		  "Name" : "Bouclier",
-		  "OV" : "Shield",
+		  "OV" : "0_SHIELD",
 		  "Level" : 1,
 		  "BBE" : "",
 		  "School" : "abjuration",
@@ -6099,7 +6134,7 @@
 		   },
 		"Bouclier de la foi": {
 		  "Name" : "Bouclier de la foi",
-		  "OV" : "Shield of Faith",
+		  "OV" : "0_SHIELD of Faith",
 		  "Level" : 1,
 		  "BBE" : "",
 		  "School" : "abjuration",
@@ -7440,7 +7475,7 @@
 		   },
 		"Appel de la foudre": {
 		  "Name" : "Appel de la foudre",
-		  "OV" : "Call Lightning",
+		  "OV" : "Call 1_LIGHTning",
 		  "Level" : 3,
 		  "BBE" : "",
 		  "School" : "invocation",
@@ -7611,7 +7646,7 @@
 		   },
 		"Éclair": {
 		  "Name" : "Éclair",
-		  "OV" : "Lightning Bolt",
+		  "OV" : "1_LIGHTning Bolt",
 		  "Level" : 3,
 		  "BBE" : "",
 		  "School" : "évocation",
@@ -7661,7 +7696,7 @@
 		   },
 		"Flèche de foudre": {
 		  "Name" : "Flèche de foudre",
-		  "OV" : "Lightning Arrow",
+		  "OV" : "1_LIGHTning Arrow",
 		  "Level" : 3,
 		  "BBE" : "",
 		  "School" : "transmutation",
@@ -7791,7 +7826,7 @@
 		   },
 		"Lumière du jour": {
 		  "Name" : "Lumière du jour",
-		  "OV" : "Daylight",
+		  "OV" : "Day1_LIGHT",
 		  "Level" : 3,
 		  "BBE" : "",
 		  "School" : "évocation",
@@ -8101,7 +8136,7 @@
 		   },
 		"Bouclier de feu": {
 		  "Name" : "Bouclier de feu",
-		  "OV" : "Fire Shield",
+		  "OV" : "Fire 0_SHIELD",
 		  "Level" : 4,
 		  "BBE" : "",
 		  "School" : "évocation",
@@ -8231,7 +8266,7 @@
 		   },
 		"Flétrissement": {
 		  "Name" : "Flétrissement",
-		  "OV" : "Blight",
+		  "OV" : "B1_LIGHT",
 		  "Level" : 4,
 		  "BBE" : "",
 		  "School" : "nécromancie",
@@ -8912,7 +8947,7 @@
 		   },
 		"Mur de lumière": {
 		  "Name" : "Mur de lumière",
-		  "OV" : "Wall of Light",
+		  "OV" : "Wall of 1_LIGHT",
 		  "Level" : 5,
 		  "BBE" : "",
 		  "School" : "évocation",
@@ -9132,7 +9167,7 @@
 		   },
 		"Chaîne d'éclairs": {
 		  "Name" : "Chaîne d'éclairs",
-		  "OV" : "Chain Lightning",
+		  "OV" : "Chain 1_LIGHTning",
 		  "Level" : 6,
 		  "BBE" : "",
 		  "School" : "évocation",

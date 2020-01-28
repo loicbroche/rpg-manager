@@ -3,6 +3,17 @@
   flex-direction: column;
   user-select: none;
   padding-inline-start: 0;
+  padding-inline-end: 0;
+}
+
+.weapons-category {
+  margin: 0;
+  padding-inline-end: 0;
+  margin: 0.1rem 0 0.1rem auto
+}
+
+.weapons-category-name {
+  
 }
 
 .weapon {
@@ -25,12 +36,9 @@
 
 .weapon-bonus {
   width: 2.5rem;
+  color: var(--color-master-bonus);
 }
 
 .class-master {
   border: 1px solid var(--color-primary);
-}
-
-.weapon-bonus {
-  color: var(--color-master-bonus);
 }

@@ -33,7 +33,13 @@ export const ClassPropType = PropTypes.shape({
     Dexterity: PropTypes.number.isRequired,
     Intelligence: PropTypes.number.isRequired,
     Wisdom: PropTypes.number.isRequired,
-    Charisma: PropTypes.number.isRequired
+    Charisma: PropTypes.number.isRequired,
+    HD: PropTypes.number.isRequired,
+    SpecialsName: PropTypes.string,
+    BonusAttackName: PropTypes.string,
+    WeaponCategories: PropTypes.arrayOf(PropTypes.string),
+    Weapons: PropTypes.arrayOf(PropTypes.string),
+    ArmorCategories: PropTypes.arrayOf(PropTypes.string),
 })
 
 export const CapacityPropType = PropTypes.shape({

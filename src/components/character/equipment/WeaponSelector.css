@@ -6,15 +6,15 @@
 .ammunition-points {
     display: flex;
     flex-direction: row;
-    width: 10rem;
+    width: 9rem;
     flex-wrap: wrap;
     align-content: center;
 }
 
 .ammunition {
-    width: 0.75rem;
-    height: 0.75rem;
-    margin: 0 0.125rem;
+    width: 0.7rem;
+    height: 0.7rem;
+    margin: 0 0.1rem;
     border-radius: 50%;
     background-color: var(--color-primary);
 }

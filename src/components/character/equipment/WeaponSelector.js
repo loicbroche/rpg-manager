@@ -13,32 +13,25 @@ import './EquipmentSelector.css'
 import './WeaponSelector.css'
 
 const mainStatImage = require("images/Damage.png");
+const notMasterImage = require("images/cross.png");
 
 class WeaponSelector extends Component {
 
   render() {
-/**/const { equipmentCategories, equipments, levels, classes, equipmentId, distance, wearingCharacter, classId, master } = this.props;
+/**/const { equipmentCategories, equipments, levels, equipmentId, distance, wearingCharacter } = this.props;
 /**/const filteredCategories = equipmentCategories && (distance?filterDistanceCategories(equipmentCategories):filterHtHCategories(equipmentCategories));
     const equipment = equipments && equipments[equipmentId];
-    const weapon = equipments && equipments[equipmentId];
 
 /**/const equipmentType = distance?"distance-weapon":"weapon";
-/**/const equipmentTitleLabel = distance?"Arme de jet":"Arme";
-/**/const equipmentLabel = distance?"une arme de jet":"une arme";
+/**/const equipmentTitleLabel = distance?"Arme à distance":"Arme";
+/**/const equipmentLabel = distance?"une arme à distance":"une arme";
 
 /**/const level = getLevel(levels, wearingCharacter && wearingCharacter.XP);
-/**/const characterClass = classes && classes[classId];
-/**/const classWeaponCategories = characterClass && (characterClass.Weapons||[]);
-/**/const classWeapons = characterClass && (characterClass.WeaponCategories||[]);
 /**/const masterBonus = level && level.MasteryBonus;
-
-/**/const isMaster = master && master.includes(weapon && weapon.Name);
-/**/const isClassMaster = (classWeapons && classWeapons.includes(weapon && weapon.Name)) ||
-                          (classWeaponCategories && classWeaponCategories.includes(weapon && weapon.Category));
-
-/**/const bonusContent = equipment && equipment.Damage && (isMaster || isClassMaster) &&
-                        <div className={`main-stat-bonus-label master-bonus`}>
-                          {"+"+masterBonus}            
+/**/const isMaster = this.isMaster(equipment);
+/**/const bonusContent = equipment && equipment.Damage &&
+                        <div className={`main-stat-bonus-label ${ isMaster?"master-bonus":"not-master-equipment"}`}>
+                          { isMaster?("+"+masterBonus):<img src={notMasterImage} className="not-master-image" alt="" title="Non maîtrisé"/>}
                         </div>
 
 /**/const bonusCode = "Dégâts";
@@ -69,10 +62,10 @@ class WeaponSelector extends Component {
   
     return (
       <div className="equipment-selector">
-          <div className="equipment-name">
+          <h1 className="equipment-name">
             <span>{equipmentTitleLabel}</span>
             <span className="additional-info">{additionalInfo}</span>
-          </div>
+          </h1>
           <div className="equipment-title">
             { equipmentCategories && equipments && (
               <select className="equipment-select" value={equipmentId} onChange={this.handleValueUpdate}>
@@ -126,9 +119,23 @@ class WeaponSelector extends Component {
     return availableEquipments && availableEquipments.length > 0 && 
            <optgroup key={equipmentCategoryId} label={equipmentCategories && equipmentCategories[equipmentCategoryId].Name}>
             { availableEquipments.map((equipment) => (
-              <option key={equipment.Name} value={equipment.Id} className="master-equipment">{equipment.Name}</option>
+              <option key={equipment.Name} value={equipment.Id} className={this.isMaster(equipment)?"master-equipment":""}>{equipment.Name}</option>
             ))}
           </optgroup>
+  }
+
+  isMaster(weapon) {
+    const { classes, classId, master } = this.props;
+  
+    const characterClass = classes && classes[classId];
+    const classWeaponCategories = characterClass && (characterClass.WeaponCategories || []);
+    const classWeapons = characterClass && (characterClass.Weapons || []);
+  
+    const isMaster = master && master.includes(weapon && weapon.Name);
+    const isClassMaster = (classWeapons && classWeapons.includes(weapon && weapon.Name)) ||
+                          (classWeaponCategories && classWeaponCategories.includes(weapon && weapon.Category));
+
+    return isMaster || isClassMaster;
   }
 }
 

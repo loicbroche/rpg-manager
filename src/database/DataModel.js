@@ -44,7 +44,10 @@ export const DATA_MODEL = {
                 CHARISMA: { name: "Charisma" },
                 HEALTH_DICE: { name: "HD" },
                 SPECIALS_POINTS_NAME: { name: "SpecialsName" },
-                BONUS_ATTACK_NAME: { name: "BonusAttackName" }
+                BONUS_ATTACK_NAME: { name: "BonusAttackName" },
+                WEAPON_CATEGORIES: { name: "WeaponCategories", optional: true },
+                WEAPONS: { name: "Weapons", optional: true },
+                ARMOR_CATEGORIES: { name: "ArmorCategories", optional: true }
             }
         },
         CAPACITIES:
