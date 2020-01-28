@@ -1,7 +1,7 @@
 /*Define variables for theming */
 :root {
   --background-color-1: #222;
-  --background-color-2: #969696;
+  --background-color-2: #858585;
   --background-color-error: #D88;
   --highlight-background-color-1: #333;
   --highlight-background-color-2: #D2D2D2;
@@ -39,6 +39,7 @@
   --height-bars: 1.25rem;
   --height-icons: 2.5rem;
   --size-bars-font: 0.8rem;
+  --components-separator-margin: 0.75rem;
 }
 
 body {

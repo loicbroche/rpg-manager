@@ -7,9 +7,9 @@
 
 .skill {
   width: 95%;
-  margin: 0.1rem auto;
   display: flex;
   flex-direction: row;
+  margin: 0.1rem auto;
   border-width: 0;
   color: var(--color-primary);
 }
@@ -24,7 +24,7 @@
 }
 
 .skill-bonus {
-  width: 2.5rem;
+  width: 2rem;
 }
 
 .historic-master {

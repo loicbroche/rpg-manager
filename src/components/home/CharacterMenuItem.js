@@ -11,7 +11,8 @@ const CharacterMenuItem = ({ id, name, onRemove }) => (
         <Link to={`${ROUTE_CHARACTER}/${name}`}>
           {name}
         </Link>
-        <button onClick={() => {if(window.confirm(`Êtes-vous certain de vouloir supprimer la fiche personnage de ${name} ?`)) {onRemove(id);}} } className="delete-button">
+        <button className="delete-button" title="Supprimer le personnage"
+        onClick={() => {if(window.confirm(`Êtes-vous certain de vouloir supprimer la fiche personnage de ${name} ?`)) {onRemove(id);}} }>
           <img src={deleteImage} alt={`Supprimer la fiche personnage de ${name}`} className="delete-image" />
         </button>
       </div>

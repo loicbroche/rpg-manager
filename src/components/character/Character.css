@@ -1,4 +1,4 @@
-
+/* Header */
 .character-header {
     display: flex;
     flex-direction: row;
@@ -11,7 +11,8 @@
     font-weight: bold;
 }
 
-.character-body {
+/* Capacities */
+.character-capacities {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -23,37 +24,27 @@
     flex-direction: column;
     width: 50%;
 }
-
 .fight > *:not(:nth-child(1)):not(:empty) {
-    margin-top: 0.75rem;
+    margin-top: var(--components-separator-margin);
 }
 
+.special,
 .status {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
 }
-
-.equipment {
-    display: flex;
-    flex-direction: row;
-}
-.equipment > * {
-    margin-left: 0.75rem;
-}
-
-.weapons,
-.armors {
-    display: flex;
-    flex-direction: column;
-}
-.weapons > *:not(:nth-child(1)):not(:empty),
-.armors > *:not(:nth-child(1)):not(:empty) {
-    margin-top: 0.75rem;
+.spells,
+.special-capacities {
+    border: 1px dashed purple;
+    color: purple;
 }
 
 .stats {
     display: flex;
     flex-direction: column;
+    align-items: stretch;
 }
 
 .caracteristics {
@@ -61,13 +52,54 @@
     flex-direction: row;
     justify-content: space-between;
 }
+.caracteristics > * {
+    margin: 0 0.25rem;
+}
+.caracteristic {
+    margin: auto;
+}
 
 .caracteristic-name {
     display: block;
     text-align: center;
 }
 
+.protections {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-top: var(--components-separator-margin);
+}
+.resistances,
+.saves {
+    flex-grow: 1;
+    border: 1px dashed purple;
+    color: purple;
+}
+/* Equipments */
+.equipment,
+.equipment-weapon,
+.equipment-armor {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: var(--components-separator-margin);
+}
+.equipment > *:not(:nth-child(1)):not(:empty),
+.equipment-weapon > *:not(:nth-child(1)):not(:empty),
+.equipment-armor > *:not(:nth-child(1)):not(:empty) {
+    margin-left: var(--components-separator-margin);
+}
+.equipment-weapon {
+    flex-grow: 2;
+}
+
+/* Skills selection */
 .skills-selection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     max-height: 20rem;
     overflow-y: scroll;
 }
