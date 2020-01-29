@@ -29,7 +29,7 @@ class WeaponSelector extends Component {
 /**/const level = getLevel(levels, wearingCharacter && wearingCharacter.XP);
 /**/const masterBonus = level && level.MasteryBonus;
 /**/const isMaster = this.isMaster(equipment);
-/**/const bonusContent = equipment && equipment.Damage &&
+/**/const bonusContent = equipment &&
                         <div className={`main-stat-bonus-label ${ isMaster?"master-bonus":"not-master-equipment"}`}>
                           { isMaster?("+"+masterBonus):<img src={notMasterImage} className="not-master-image" alt="" title="Non maîtrisé"/>}
                         </div>

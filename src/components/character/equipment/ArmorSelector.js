@@ -25,7 +25,8 @@ class ArmorSelector extends Component {
 /**/const equipmentLabel = shield?"un bouclier":"une armure";
 /**/const filteredCategories = equipmentCategories && (shield?filterShieldsCategories(equipmentCategories):filterArmorsCategories(equipmentCategories));
     const isMaster = this.isMaster(equipment);
-/**/const bonusContent = <div className={`main-stat-bonus-label ${ isMaster?(equipment && equipment.BonusAC):"not-master-equipment"}`}>
+/**/const bonusContent = equipment && 
+                         <div className={`main-stat-bonus-label ${ isMaster?(equipment && equipment.BonusAC):"not-master-equipment"}`}>
                             {isMaster
                               ?(equipment && equipment.BonusAC && <CaracteristicBonus caracteristicName={equipment.BonusAC}
                                                   value={wearingCharacter && wearingCharacter[equipment.BonusAC]}

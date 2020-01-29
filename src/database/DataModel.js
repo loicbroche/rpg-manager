@@ -254,6 +254,52 @@ export const DATA_MODEL = {
                 NAME: { name: "Name" }
             }
         },
+
+    SPELLS:
+        {
+            name: 'Spells',
+            columns: {
+                NAME: { name: "Name" },
+                OV: { name: "OV" },
+                LEVEL: { name: "Level" },
+                BBE: { name: "BBE" },
+                SCHOOL: { name: "School" },
+                INCANTATION: { name: "Incantation" },
+                TYPE: { name: "Type" },
+                DESCRIPTION: { name: "Description" }
+            }
+        },
+
+        ALTERATIONS:
+        {
+            name: 'Alterations',
+            columns: {
+                CODE: { name: "Code" },
+                NAME: { name: "Name" }
+            }
+        },
+
+        ALIGNMENTS:
+        {
+            name: 'Alignments',
+            columns: {
+                CODE: { name: "Code" },
+                NAME: { name: "Name" },
+                DESCRIPTION: { name: "Description" }
+            }
+        },
+
+        LANGUAGES:
+        {
+            name: 'Languages',
+            columns: {
+                CODE: { name: "Code" },
+                TYPE: { name: "Type" },
+                WRITING: { name: "Writing" },
+                TYPICAL_RACES: { name: "TypicalRaces" }
+            }
+        },
+
     CHARACTERS:
         {
             name: 'Characters',
@@ -285,6 +331,8 @@ export const DATA_MODEL = {
                 XP: { name: "XP" },
                 MAX_HP: { name: "MaxHP" },
                 HP: { name: "HP" },
+                HEALTH: { name: "Health" },
+                ALTERATIONS: { name: "Alterations", optional: true },
                 STRENGTH: { name: "Strength" },
                 CONSTITUTION: { name: "Constitution" },
                 DEXTERITY: { name: "Dexterity" },

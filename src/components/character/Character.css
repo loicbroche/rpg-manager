@@ -35,11 +35,6 @@
     justify-content: space-between;
     align-items: stretch;
 }
-.spells,
-.special-capacities {
-    border: 1px dashed purple;
-    color: purple;
-}
 
 .stats {
     display: flex;
@@ -71,12 +66,10 @@
     align-items: stretch;
     margin-top: var(--components-separator-margin);
 }
-.resistances,
-.saves {
+.protections >* {
     flex-grow: 1;
-    border: 1px dashed purple;
-    color: purple;
 }
+
 /* Equipments */
 .equipment,
 .equipment-weapon,

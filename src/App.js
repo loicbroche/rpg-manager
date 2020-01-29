@@ -184,6 +184,34 @@ class App extends Component {
       const action = { type: ActionTypes.REFERENTIAL.LOAD_CARACTERISTICS, value: objectToArray(snapshot.val()) }
       this.props.dispatch(action);
     });
+
+    this.spellsRef = database.ref(DATA_MODEL.SPELLS.name);
+    this.spellsRef.once('value', snapshot => {
+      //referentialReducer: state.referential.spells
+      const action = { type: ActionTypes.REFERENTIAL.LOAD_SPELLS, value: objectToArray(snapshot.val()) }
+      this.props.dispatch(action);
+    });
+
+    this.alterationsRef = database.ref(DATA_MODEL.ALTERATIONS.name);
+    this.alterationsRef.once('value', snapshot => {
+      //referentialReducer: state.referential.alterations
+      const action = { type: ActionTypes.REFERENTIAL.LOAD_ALTERATIONS, value: objectToArray(snapshot.val()) }
+      this.props.dispatch(action);
+    });
+
+    this.alignmentsRef = database.ref(DATA_MODEL.ALIGNMENTS.name);
+    this.alignmentsRef.once('value', snapshot => {
+      //referentialReducer: state.referential.alignments
+      const action = { type: ActionTypes.REFERENTIAL.LOAD_ALIGNMENTS, value: objectToArray(snapshot.val()) }
+      this.props.dispatch(action);
+    });
+
+    this.languagesRef = database.ref(DATA_MODEL.LANGUAGES.name);
+    this.alignmentsRef.once('value', snapshot => {
+      //languagesRef: state.referential.languages
+      const action = { type: ActionTypes.REFERENTIAL.LOAD_LANGUAGES, value: objectToArray(snapshot.val()) }
+      this.props.dispatch(action);
+    });
   }
 
   render () {

@@ -33,7 +33,7 @@ class CharacterOverview extends Component {
                     <SkillSelector  caracteristicsBonus={caracteristicsBonus}
                                     subRaceId={character.SubRace}
                                     master={character.Skills}
-                                    level={character.Level}
+                                    XP={character.XP}
                                     historicId={character.Historic} />
                 </div>
             </div>

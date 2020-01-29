@@ -9,13 +9,21 @@ import './Character.css'
 import Skills from './stats/Skills'
 import Weapons from './stats/Weapons'
 import Caracteristic from './stats/Caracteristic'
+import ResistancesComponent from './stats/ResistancesComponent'
+import SavesComponent from './stats/SavesComponent'
+import SpeedComponent from './stats/SpeedComponent'
 import RaceSelector from './general/RaceSelector'
 import ClassSelector from './general/ClassSelector'
 import HistoricSelector from './general/HistoricSelector'
 import XPComponent from './general/XPComponent';
+import DescriptionComponent from './general/DescriptionComponent';
 import HPComponent from './fight/HPComponent';
+import CAComponent from './fight/CAComponent';
+import HealthComponent from './fight/HealthComponent';
 import SpecialsComponent from './fight/SpecialsComponent';
 import SpellsComponent from './fight/SpellsComponent';
+import SpellBookComponent from './fight/SpellBookComponent';
+import SpecialCapacitiesComponent from './fight/SpecialCapacitiesComponent';
 import ArmorSelector from './equipment/ArmorSelector';
 import WeaponSelector from './equipment/WeaponSelector';
 
@@ -92,7 +100,10 @@ class Character extends Component {
             { Name !== null && (
                 <div>
                     <div className="character-header">
-                        <span className="character-name">{Name}</span>
+                        <div>
+                            <span className="character-name">{Name}</span>
+                            <DescriptionComponent />
+                        </div>
                         <RaceSelector   subRaceId={subRaceId}
                                         gender={Gender}
                                         onRaceChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SUB_RACE.name, value);}}
@@ -111,17 +122,18 @@ class Character extends Component {
                             <HPComponent val={HP} maxVal={MaxHP} classId={classId}
                                             onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HP.name, value); }}
                                             onMaxValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.MAX_HP.name, value); }} />
+                            <HealthComponent />
                             <div className="special">
                                 <SpecialsComponent val={Specials} classId={classId} level={characterLevel}
                                                     onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPECIALS.name, value); }} />
-                                <div className="special-capacities">Capacités spéciales</div>
+                                <SpecialCapacitiesComponent />
                             </div>
                             <div className="status">
                                 <div className="points">
                                     <SpellsComponent spells={Spells} classId={classId} level={characterLevel}
                                             onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPELLS.name, value); }} />
                                 </div>
-                                <div className="spells">Livre de sorts</div>
+                                <SpellBookComponent />
                             </div>
                         </div>
 
@@ -143,9 +155,11 @@ class Character extends Component {
                             }
                             </div>
                             <div className="protections">
-                                <div className="resistances">Résistances</div>
-                                <div className="saves">Sauvegardes</div>
+                                <ResistancesComponent />
+                                <SavesComponent />
                             </div>
+                            <CAComponent />
+                            <SpeedComponent />
                         </div>
                     </div>
                     <div className="equipment">

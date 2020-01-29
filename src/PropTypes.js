@@ -185,6 +185,35 @@ export const SkillPropType = PropTypes.shape({
     Name: PropTypes.string.isRequired
 })
 
+export const SpellPropType = PropTypes.shape({
+    Name: PropTypes.string.isRequired,
+    OV: PropTypes.string.isRequired,
+    Level: PropTypes.number.isRequired,
+    BBE: PropTypes.string.isRequired,
+    School: PropTypes.string.isRequired,
+    Incantation: PropTypes.string.isRequired,
+    Type: PropTypes.string.isRequired,
+    Description: PropTypes.string.isRequired
+})
+
+export const AlterationPropType = PropTypes.shape({
+    Code: PropTypes.string.isRequired,
+    Name: PropTypes.string.isRequired
+})
+
+export const AlignmentPropType = PropTypes.shape({
+    Code: PropTypes.string.isRequired,
+    Name: PropTypes.string.isRequired,
+    Description: PropTypes.string.isRequired
+})
+
+export const LanguagePropType = PropTypes.shape({
+    Code: PropTypes.string.isRequired,
+    Type: PropTypes.string.isRequired,
+    Writing: PropTypes.string.isRequired,
+    TypicalRaces: PropTypes.string.isRequired
+})
+
 export const CharacterPropType = PropTypes.shape({
     Id: PropTypes.string.isRequired,
     Name: PropTypes.string.isRequired,
@@ -212,6 +241,8 @@ export const CharacterPropType = PropTypes.shape({
     XP: PropTypes.number.isRequired,
     MaxHP: PropTypes.number.isRequired,
     HP: PropTypes.number.isRequired,
+    Health: PropTypes.number.isRequired,
+    Alterations: PropTypes.arrayOf(PropTypes.string),
     AC: PropTypes.number.isRequired,
     Weapon: PropTypes.string,
     DistanceWeapon: PropTypes.string,
