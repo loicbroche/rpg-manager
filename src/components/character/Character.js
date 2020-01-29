@@ -154,12 +154,14 @@ class Character extends Component {
                                 )
                             }
                             </div>
+                            <div className="complements">
+                                <CAComponent />
+                                <SpeedComponent subRaceId={subRaceId} classId={classId} level={characterLevel} />
+                            </div>
                             <div className="protections">
                                 <ResistancesComponent />
                                 <SavesComponent />
                             </div>
-                            <CAComponent />
-                            <SpeedComponent />
                         </div>
                     </div>
                     <div className="equipment">

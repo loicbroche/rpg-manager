@@ -318,7 +318,7 @@ export const DATA_MODEL = {
                 ALIGNMENT: { name: "Alignment" },
                 AGE: { name: "Age" },
                 HEIGHT: { name: "Height" },
-                WIDTH: { name: "Width" },
+                WEIGHT: { name: "Weight" },
                 EYES: { name: "Eyes" },
                 SKIN: { name: "Skin" },
                 HAIRS: { name: "Hairs" },

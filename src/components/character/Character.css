@@ -59,6 +59,12 @@
     text-align: center;
 }
 
+.complements {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
 .protections {
     display: flex;
     flex-direction: row;

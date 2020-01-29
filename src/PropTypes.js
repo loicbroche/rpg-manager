@@ -51,7 +51,7 @@ export const CapacityPropType = PropTypes.shape({
     Spells: PropTypes.number,
     Locations: PropTypes.arrayOf(PropTypes.number),
     Invocations: PropTypes.string,
-    ArmorlessSpeed: PropTypes.string
+    ArmorlessSpeed: PropTypes.number
 })
 
 export const HistoricPropType = PropTypes.shape({
@@ -243,7 +243,11 @@ export const CharacterPropType = PropTypes.shape({
     HP: PropTypes.number.isRequired,
     Health: PropTypes.number.isRequired,
     Alterations: PropTypes.arrayOf(PropTypes.string),
-    AC: PropTypes.number.isRequired,
+    Strength: PropTypes.number.isRequired,
+	Constitution: PropTypes.number.isRequired,
+	Dexterity: PropTypes.number.isRequired,
+	Intelligence: PropTypes.number.isRequired,
+    Charisma: PropTypes.number.isRequired,
     Weapon: PropTypes.string,
     DistanceWeapon: PropTypes.string,
     Ammunition: PropTypes.number,
