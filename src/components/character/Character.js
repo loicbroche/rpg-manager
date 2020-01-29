@@ -16,7 +16,7 @@ import RaceSelector from './general/RaceSelector'
 import ClassSelector from './general/ClassSelector'
 import HistoricSelector from './general/HistoricSelector'
 import XPComponent from './general/XPComponent';
-import DescriptionComponent from './general/DescriptionComponent';
+import DetailsComponent from './general/DetailsComponent';
 import HPComponent from './fight/HPComponent';
 import CAComponent from './fight/CAComponent';
 import HealthComponent from './fight/HealthComponent';
@@ -102,7 +102,7 @@ class Character extends Component {
                     <div className="character-header">
                         <div>
                             <span className="character-name">{Name}</span>
-                            <DescriptionComponent />
+                            <DetailsComponent />
                         </div>
                         <RaceSelector   subRaceId={subRaceId}
                                         gender={Gender}
