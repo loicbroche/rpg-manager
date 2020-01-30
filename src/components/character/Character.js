@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+
 import { database } from 'database/InitializeDatabase'
 import { DATA_MODEL } from 'database/DataModel'
 import { insertCharacterSkills, deleteCharacterSkills, updateCharacterCaracteristic, insertCharacterWeapons, deleteCharacterWeapons, } from 'database/PersistCharacter';
-
 import { getLevelNumber } from 'rules/Levels.rules'
+
 import './Character.css'
 import Skills from './stats/Skills'
 import Weapons from './stats/Weapons'
@@ -168,16 +169,12 @@ class Character extends Component {
                         <div className="equipment-weapon">
                             <WeaponSelector equipmentId={Weapon}
                                             wearingCharacter={ this.state }
-                                            onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.WEAPON.name, value); }}
-                                            master={MasterWeapons}
-                                            classId={classId}/>
+                                            onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.WEAPON.name, value); }} />
                             <WeaponSelector equipmentId={DistanceWeapon}
                                             wearingCharacter={ this.state }
                                             distance={true}
                                             onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.DISTANCE_WEAPON.name, value); }}
-                                            onAmmunitionChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.AMMUNITION.name, value);  }}
-                                            master={MasterWeapons}
-                                            classId={classId}/>
+                                            onAmmunitionChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.AMMUNITION.name, value);  }} />
                         </div>
                         <div className="equipment-armor">
                             <ArmorSelector equipmentId={Armor}

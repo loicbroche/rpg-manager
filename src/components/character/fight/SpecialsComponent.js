@@ -8,7 +8,7 @@ import './SpecialsComponent.css'
 class SpecialsComponent extends Component {
 
   render() {
-    const {val, classId, level, classes, capacities} = this.props;
+    const {val, classId, level, classes, capacities, onValChange} = this.props;
     const characterClass = classes && classId && classes[classId];
     const capacity = capacities && level && capacities[classId+"-"+level];
     const maxVal = capacity && capacity.Specials;
@@ -20,7 +20,7 @@ class SpecialsComponent extends Component {
 
     return (
       <div className="specialsComponent">
-        { maxVal > 0 && <span className={`currentModifier decrease-value ${characterClass.SpecialsName}-modifier ${val===0 &&"disabled"}`} onClick={(event) => {this.handleValueChange(-1, maxVal)}}
+        { onValChange && maxVal > 0 && <span className={`currentModifier decrease-value ${characterClass.SpecialsName}-modifier ${val===0 &&"disabled"}`} onClick={(event) => {this.handleValueChange(-1, maxVal)}}
                         title={`Utiliser un point ${characterClass && characterClass.SpecialsName && "de "+characterClass.SpecialsName}`}></span>}
         {maxVal > 0 && 
         <div className="special-points">
@@ -31,7 +31,7 @@ class SpecialsComponent extends Component {
                    </div>)
           }
         </div>}
-        { maxVal > 0 && <span className={`currentModifier increase-value ${characterClass.SpecialsName}-modifier ${val===maxVal &&"disabled"}`} onClick={(event) => {this.handleValueChange(1, maxVal)}}
+        { onValChange && maxVal > 0 && <span className={`currentModifier increase-value ${characterClass.SpecialsName}-modifier ${val===maxVal &&"disabled"}`} onClick={(event) => {this.handleValueChange(1, maxVal)}}
                         title={`Récupérer un point ${characterClass && characterClass.SpecialsName && "de "+characterClass.SpecialsName}`}></span>}
       </div>
       )
@@ -51,7 +51,7 @@ SpecialsComponent.propTypes = {
   val: PropTypes.number.isRequired,
   classId: PropTypes.string.isRequired,
   level: PropTypes.number,
-  onValChange: PropTypes.func.isRequired
+  onValChange: PropTypes.func
 }
 
 SpecialsComponent.defaultProps = {

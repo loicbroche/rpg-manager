@@ -5,10 +5,9 @@
 
 .XPBar {
   position: relative;
-  right: calc(-1 * var(--height-icons)/2);
   padding-right: calc(var(--height-icons)/2);
   height: var(--height-bars);
-  width: calc(100% - var(--height-icons)/2);
+  width: 100%;
   text-align: center;
   border: 1px solid var(--color-primary);
 }
@@ -23,8 +22,7 @@
   height: 100%;
   position: relative;
   top: calc(-1 * var(--height-bars));
-  right: calc(var(--height-icons)/2);
-  padding: 0 0.5rem;
+  padding: 0 calc(0.5rem + var(--height-icons)/2) 0 0.5rem;
   font-size: var(--size-bars-font);
 }
 

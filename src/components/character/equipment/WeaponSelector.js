@@ -125,9 +125,10 @@ class WeaponSelector extends Component {
   }
 
   isMaster(weapon) {
-    const { classes, classId, master } = this.props;
+    const { classes, wearingCharacter } = this.props;
   
-    const characterClass = classes && classes[classId];
+    const master = wearingCharacter.MasterWeapons;
+    const characterClass = classes && classes[wearingCharacter.Class];
     const classWeaponCategories = characterClass && (characterClass.WeaponCategories || []);
     const classWeapons = characterClass && (characterClass.Weapons || []);
   
@@ -144,9 +145,7 @@ WeaponSelector.propTypes = {
   distance: PropTypes.bool,
   wearingCharacter: CharacterPropType,
   onChange: PropTypes.func.isRequired,
-  onAmmunitionChange: PropTypes.func,
-  classId: PropTypes.string,
-  master: PropTypes.arrayOf(PropTypes.string)
+  onAmmunitionChange: PropTypes.func
 }
 
 WeaponSelector.defaultProps = {
