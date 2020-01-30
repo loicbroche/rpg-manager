@@ -1571,9 +1571,8 @@
   },
   "Characters" : {
     "Ash" : {
-      "AC" : 10,
       "Age" : 26,
-      "Alignment" : "Neutre",
+      "Alignment" : "NB",
       "Armor" : "Cuir",
       "ChargeCapacity" : 20000,
       "Charisma" : 10,
@@ -1611,9 +1610,8 @@
       "XP" : 900
     },
     "Saphir" : {
-      "AC" : 10,
       "Age" : 26,
-      "Alignment" : "Neutre",
+      "Alignment" : "NB",
       "Ammunition" : 10,
       "Armor" : "-",
       "ChargeCapacity" : 20000,
@@ -1653,9 +1651,8 @@
       "XP" : 900
     },
     "Sorwen" : {
-      "AC" : 10,
       "Age" : 26,
-      "Alignment" : "Neutre",
+      "Alignment" : "NB",
       "Armor" : "Demi-plate",
       "ChargeCapacity" : 20000,
       "Charisma" : 10,
@@ -2646,7 +2643,7 @@
     },
     "SOLDIER" : {
       "Name" : "Soldat",
-      "Skills" : [ "Athlétisme", "Inti2_MIDation" ]
+      "Skills" : [ "Athlétisme", "Intimidation" ]
     },
     "STREETS_CHILD" : {
       "Name" : "Enfant Des Rues",
@@ -3791,9 +3788,9 @@
       "Caracteristic" : "INT",
       "Name" : "Imitation"
     },
-    "Inti2_MIDation" : {
+    "Intimidation" : {
       "Caracteristic" : "CHA",
-      "Name" : "Inti2_MIDation"
+      "Name" : "Intimidation"
     },
     "Intuition" : {
       "Caracteristic" : "SAG",
@@ -9011,7 +9008,7 @@
     "Trinket" : "Un masque d'albâtre",
     "d100" : 63
   }, {
-    "Trinket" : "Une pyra2_MIDe de bâtonnets d'encens noir qui sent très mauvais",
+    "Trinket" : "Une pyramide de bâtonnets d'encens noir qui sent très mauvais",
     "d100" : 64
   }, {
     "Trinket" : "Un bonnet de nuit qui, lorsqu'il est porté, vous donne des rêves agréables",

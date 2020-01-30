@@ -55,42 +55,49 @@ class Home extends Component {
   // Arrow fx for binding
   insertCharacter = (character) => {
     if (character.Name) {
-        character.Race = "ELF";
-        character.Class = "BARBARIAN";
-        character.ChargeCapacity = 2000;
-        character.MasterBonus = 2;
-        character.Skills = [];
-        character.MasterWeapons = [];
-        character.MasterArmors = [];
-        character.MasterObjects = [];
-        character.Historic = "";
-        character.Alignment = "Neutre";
-        character.Age = 0;
-        character.Height = 0;
-        character.Width = 0;
-        character.Eyes = "";
-        character.Skin = "";
-        character.Hairs = "";
-        character.PersonnalityTraits = "";
-        character.Ideals = "";
-        character.Links = "";
-        character.Defects = "";
-        character.History = "";
-        character.Languages = "";
-        character.XP = 0;
-        character.Level = 1;
-        character.MaxHP = 8;
-        character.HP = 8;
-        character.AC = 10;
-        character.WeaponRight = "";
-        character.WeaponLeft = "";
-        character.Armor = "";
-        character.Money = 1000;
-        character.Objects = [];
+      character.Age = 0;
+      character.Alignment = "NB";
+      character.Alterations= [];/**/
+      character.Ammunition = 10;/**/
+      character.Armor = "-";/**/
+      character.ChargeCapacity = 20000;
+      character.Charisma = 10;
+      character.Class = "BARBARIAN";
+      character.Constitution = 10;
+      character.Defects = "";
+      character.Dexterity = 10;
+      character.DistanceWeapon = "-";/**/
+      character.Eyes = "";
+      character.Hairs = "";
+      character.Health = 4;
+      character.Height = 0;
+      character.Historic = "ACOLYTE";
+      character.History = "";
+      character.HP = 8;
+      character.Ideals = "";
+      character.Intelligence = 10;
+      character.Languages = [];/**/
+      character.Links = "";
+      character.MasterArmors = [];/**/
+      character.MasterObjects = [];/**/
+      character.MasterWeapons = [];/**/
+      character.MaxHP = 8;
+      character.Money = 1000;
+      character.Objects = [];/**/
+      character.PersonnalityTraits = "";
+      character.Shield = "-";/**/
+      character.Skills = [];
+      character.Skin = "";
+      character.Specials = 0;/**/
+      character.Spells = [];/**/
+      character.Strength = 10;/**/
+      character.SubRace = "AARAKOCRA";
+      character.Weapon = "-";
+      character.Weight = 0;
+      character.Wisdom = 10;
+      character.XP = 0;      
 
       insertCharacter(character);
-      //characters.push(character);
-      //this.setState({ characters: characters });
     }
   }
 }
