@@ -37,7 +37,8 @@ class Weapons extends Component {
               const isMaster = master && master.includes(Name);
               const isClassMaster = classWeapons.includes(Name) || isClassMasterCategory;
               return (
-              <li key={index} className={"weapon "+(isClassMaster?"class-master":"activable")} onClick={() => !isClassMaster && onClick(Name)}>
+              <li key={index} className={"weapon "+(isClassMaster?"class-master":"activable")} onClick={() => !isClassMaster && onClick(Name)}
+                  title={isClassMaster?"Maîtrisé via la classe "+characterClass.Name:(isMaster?"Oublier la maîtrise de "+Name:"Apprendre la maîtrise de "+Name)}>
                 <div className={"option "+((isClassMaster||isMaster)&&"filled")}></div>
                 <span className="weapon-name">{Name}</span>
                 <span className="weapon-bonus">{ (isClassMaster||isMaster) && `+${masteryBonus}`}</span> 

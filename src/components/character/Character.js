@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import { database } from 'database/InitializeDatabase'
 import { DATA_MODEL } from 'database/DataModel'
-import { insertCharacterSkills, deleteCharacterSkills, updateCharacterCaracteristic, insertCharacterWeapons, deleteCharacterWeapons, } from 'database/PersistCharacter';
+import { updateCharacterCaracteristic, insertCharacterElement, deleteCharacterElement } from 'database/PersistCharacter';
 import { getLevelNumber } from 'rules/Levels.rules'
 
 import './Character.css'
@@ -66,14 +66,20 @@ class Character extends Component {
         WeaponLeft: null,
         Armor: null,
         Money: null,
-        Objects: null
+        Objects: null,
+        Alterations: null,
+        Resistances: null
       }
       this.characterRef = database.ref(DATA_MODEL.CHARACTERS.name+"/"+characterId);
       this.updateCharacter = (snapshot) => {
           const newState = snapshot.val();
           newState.MasterWeapons = newState.MasterWeapons || [];
+          newState.MasterObjects = newState.MasterObjects || [];
           newState.Skills = newState.Skills || [];
-
+          newState.Alterations = newState.Alterations || [];
+          newState.Resistances = newState.Resistances || [];
+          newState.Objects = newState.MasterObjects || [];
+          newState.Languages = newState.Languages || [];
           this.setState({...newState});
         }
     }
@@ -89,7 +95,7 @@ class Character extends Component {
     render() {
         const { caracteristics, levels} = this.props;
         const { Name, SubRace: subRaceId, Gender, Class: classId, Historic: historicId, History, Skills: masterSkills,
-                XP, HP, MaxHP, Specials, Spells, Armor, Shield, Weapon, DistanceWeapon, MasterWeapons, MasterArmors } = this.state
+                XP, HP, MaxHP, Specials, Spells, Armor, Shield, Weapon, DistanceWeapon, MasterWeapons, MasterArmors, Resistances } = this.state
         const caracteristicsBonus = caracteristics && Object.values(caracteristics).reduce((accum, caracteristic) => {
             accum[caracteristic.Code] = this.state[caracteristic.OV];
             return accum;
@@ -159,10 +165,8 @@ class Character extends Component {
                                 <CAComponent />
                                 <SpeedComponent subRaceId={subRaceId} classId={classId} level={characterLevel} />
                             </div>
-                            <div className="protections">
-                                <ResistancesComponent />
-                                <SavesComponent />
-                            </div>
+                            <ResistancesComponent resistances={Resistances} subRaceId={subRaceId} onClick={this.toggleResistance}/>
+                            <SavesComponent />
                         </div>
                     </div>
                     <div className="equipment">
@@ -212,9 +216,9 @@ class Character extends Component {
         if (characterId !== null) {
             const index = Skills?Skills.findIndex((name) => name === skillId):-1;
             if (index === -1) {
-                insertCharacterSkills(characterId, skillId);
+                insertCharacterElement(characterId, DATA_MODEL.CHARACTERS.columns.SKILLS.name, skillId);
             } else {
-                deleteCharacterSkills(characterId, skillId);
+                deleteCharacterElement(characterId, DATA_MODEL.CHARACTERS.columns.SKILLS.name, skillId);
             }
         }
     }
@@ -224,9 +228,21 @@ class Character extends Component {
         if (characterId !== null) {
             const index = MasterWeapons?MasterWeapons.findIndex((name) => name === weaponId):-1;
             if (index === -1) {
-                insertCharacterWeapons(characterId, weaponId);
+                insertCharacterElement(characterId, DATA_MODEL.CHARACTERS.columns.MASTER_WEAPONS.name, weaponId);
             } else {
-                deleteCharacterWeapons(characterId, weaponId);
+                deleteCharacterElement(characterId, DATA_MODEL.CHARACTERS.columns.MASTER_WEAPONS.name, weaponId);
+            }
+        }
+    }
+
+    toggleResistance = (resistanceId) => {
+        const { Id: characterId, Resistances } = this.state;
+        if (characterId !== null) {
+            const index = Resistances?Resistances.findIndex((name) => name === resistanceId):-1;
+            if (index === -1) {
+                insertCharacterElement(characterId, DATA_MODEL.CHARACTERS.columns.RESISTANCES.name, resistanceId);
+            } else {
+                deleteCharacterElement(characterId, DATA_MODEL.CHARACTERS.columns.RESISTANCES.name, resistanceId);
             }
         }
     }
@@ -238,39 +254,38 @@ class Character extends Component {
 
     equals(character) {
         return character
-                && this.state.Id === character.Id
-                && this.state.Name === character.Name
-                && this.state.Race === character.Race
-                && this.state.Class === character.Class
-                && this.state.ChargeCapacity === character.ChargeCapacity
-                && this.state.MasterBonus === character.MasterBonus
-                && JSON.stringify(this.state.Skills) === JSON.stringify(character.Skills)
-                && JSON.stringify(this.state.MasterWeapons) === JSON.stringify(character.MasterWeapons)
-                && JSON.stringify(this.state.MasterArmors) === JSON.stringify(character.MasterArmors)
-                && JSON.stringify(this.state.MasterObjects) === JSON.stringify(character.MasterObjects)
-                && this.state.Historic === character.Historic
-                && this.state.Alignment === character.Alignment
-                && this.state.Age === character.Age
-                && this.state.Height === character.Height
-                && this.state.Width === character.Width
-                && this.state.Eyes === character.Eyes
-                && this.state.Skin === character.Skin
-                && this.state.Hairs === character.Hairs
-                && this.state.PersonnalityTraits === character.PersonnalityTraits
-                && this.state.Ideals === character.Ideals
-                && this.state.Links === character.Links
-                && this.state.Defects === character.Defects
-                && this.state.History === character.History
-                && JSON.stringify(this.state.Languages) === JSON.stringify(character.Languages)
-                && this.state.Level === character.Level
-                && this.state.MaxHP === character.MaxHP
-                && this.state.HP === character.HP
-                && this.state.AC === character.AC
-                && this.state.WeaponRight === character.WeaponRight
-                && this.state.WeaponLeft === character.WeaponLeft
-                && this.state.Armor === character.Armor
-                && this.state.Money === character.Money
-                && JSON.stringify(this.state.Objects) === JSON.stringify(character.Objects)
+            && this.state.Age === character.Age
+            && this.state.Alignment === character.Alignment
+            && JSON.stringify(this.state.Alterations) === JSON.stringify(character.Alterations)
+            && this.state.Armor === character.Armor
+            && this.state.ChargeCapacity === character.ChargeCapacity
+            && this.state.Class === character.Class
+            && this.state.Defects === character.Defects
+            && this.state.DistanceWeapon === character.DistanceWeapon
+            && this.state.Eyes === character.Eyes
+            && this.state.Hairs === character.Hairs
+            && this.state.Height === character.Height
+            && this.state.Historic === character.Historic
+            && this.state.History === character.History
+            && this.state.HP === character.HP
+            && this.state.Id === character.Id
+            && this.state.Ideals === character.Ideals
+            && JSON.stringify(this.state.Languages) === JSON.stringify(character.Languages)
+            && this.state.Links === character.Links
+            && JSON.stringify(this.state.MasterArmors) === JSON.stringify(character.MasterArmors)
+            && JSON.stringify(this.state.MasterObjects) === JSON.stringify(character.MasterObjects)
+            && JSON.stringify(this.state.MasterWeapons) === JSON.stringify(character.MasterWeapons)
+            && this.state.MaxHP === character.MaxHP
+            && this.state.Money === character.Money
+            && this.state.Name === character.Name
+            && JSON.stringify(this.state.Objects) === JSON.stringify(character.Objects)
+            && this.state.PersonnalityTraits === character.PersonnalityTraits
+            && this.state.Race === character.Race
+            && JSON.stringify(this.state.Resistances) === JSON.stringify(character.Resistances)
+            && JSON.stringify(this.state.Skills) === JSON.stringify(character.Skills)
+            && this.state.Skin === character.Skin
+            && this.state.Weapon === character.Weapon
+            && this.state.Width === character.Width;
     }
 }
 

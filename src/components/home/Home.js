@@ -78,13 +78,13 @@ class Home extends Component {
       character.Intelligence = 10;
       character.Languages = [];/**/
       character.Links = "";
-      character.MasterArmors = [];/**/
       character.MasterObjects = [];/**/
       character.MasterWeapons = [];/**/
       character.MaxHP = 8;
       character.Money = 1000;
       character.Objects = [];/**/
       character.PersonnalityTraits = "";
+      character.Resistances= [];/**/
       character.Shield = "-";/**/
       character.Skills = [];
       character.Skin = "";

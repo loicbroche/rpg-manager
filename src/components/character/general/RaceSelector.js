@@ -33,7 +33,7 @@ class RaceSelector extends Component {
           )}
         </div>
         <div className="gender-value">
-          <select className={`genders ${gender}`} value={gender} onChange={(event) => this.props.onGenderChange(event.target.value)}>
+          <select className={`activable genders ${gender}`} value={gender} onChange={(event) => this.props.onGenderChange(event.target.value)}>
             { genders.map((gender) => (
               <option key={gender} className={`gender ${gender}`} value={gender}>{gender}</option>
             ))}

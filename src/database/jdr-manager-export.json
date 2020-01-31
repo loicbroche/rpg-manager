@@ -1679,7 +1679,7 @@
       "Objects" : [ "Herboriste", "Cartographe" ],
       "PersonnalityTraits" : "Serien",
       "Shield" : "Bouclier",
-      "Skills" : [ "Acrobatie", "Discrétion", "Médecine", "Religion" ],
+      "Skills" : [ "Acrobatie", "Discrétion" ],
       "Skin" : "Bleu clair",
       "Specials" : 0,
       "Strength" : 10,

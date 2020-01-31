@@ -1,4 +1,40 @@
 .resistancesComponent {
-  border: 1px dashed purple;
-  color: purple;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.resistancesComponent h1 {
+  border: 1px solid var(--color-primary);
+}
+
+.resistances {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid var(--color-primary);
+}
+
+.resistances > *:not(:nth-child(1)) {
+  margin-left: 0.25rem;
+}
+
+.resistance {
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  opacity: 0.3;
+}
+
+.resistance.activable:hover,
+.resistance.activable:focus {
+  border-color: var(--color-primary);
+}
+
+.resistant {
+  opacity: 1;
+}
+
+.race-resistant {
+  border-color: var(--color-primary);
+  cursor: default;
 }

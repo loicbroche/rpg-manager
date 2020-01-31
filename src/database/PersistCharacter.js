@@ -23,68 +23,6 @@ deleteCharacter.propTypes = {
 export { insertCharacter };
 export { deleteCharacter };
 
-//Skills
-const insertCharacterSkills = (characterId, skillId) => {
-    const url = DATA_MODEL.CHARACTERS.name + '/' + characterId + '/'+DATA_MODEL.CHARACTERS.columns.SKILLS.name;
-    database.ref(url).once('value', snapshot => {
-        const skills = snapshot.val()||[];
-        skills[skills.length] = skillId;
-        database.ref(url).set(skills)
-    });
-}
-insertCharacterSkills.propTypes = {
-    characterId: PropTypes.string.isRequired,
-    skillId: PropTypes.string.isRequired
-}
-
-const deleteCharacterSkills = (characterId, skillId) => {
-    const url = DATA_MODEL.CHARACTERS.name + '/' + characterId + '/'+DATA_MODEL.CHARACTERS.columns.SKILLS.name;
-    database.ref(url).once('value', snapshot => {
-        const skills = snapshot.val()||[];
-        const index = skills.findIndex((name) => name === skillId);
-        skills.splice(index, 1);
-        database.ref(url).set(skills);
-    });
-}
-deleteCharacterSkills.propTypes = {
-    characterId: PropTypes.string.isRequired,
-    skillId: PropTypes.string.isRequired
-}
-
-export { insertCharacterSkills };
-export { deleteCharacterSkills };
-
-//Weapons
-const insertCharacterWeapons = (characterId, weaponId) => {
-    const url = DATA_MODEL.CHARACTERS.name + '/' + characterId + '/'+DATA_MODEL.CHARACTERS.columns.MASTER_WEAPONS.name;
-    database.ref(url).once('value', snapshot => {
-        const weapons = snapshot.val()||[];
-        weapons[weapons.length] = weaponId;
-        database.ref(url).set(weapons)
-    });
-}
-insertCharacterWeapons.propTypes = {
-    characterId: PropTypes.string.isRequired,
-    weaponId: PropTypes.string.isRequired
-}
-
-const deleteCharacterWeapons = (characterId, weaponId) => {
-    const url = DATA_MODEL.CHARACTERS.name + '/' + characterId + '/'+DATA_MODEL.CHARACTERS.columns.MASTER_WEAPONS.name;
-    database.ref(url).once('value', snapshot => {
-        const weapons = snapshot.val()||[];
-        const index = weapons.findIndex((name) => name === weaponId);
-        weapons.splice(index, 1);
-        database.ref(url).set(weapons);
-    });
-}
-deleteCharacterWeapons.propTypes = {
-    characterId: PropTypes.string.isRequired,
-    weaponId: PropTypes.string.isRequired
-}
-
-export { insertCharacterWeapons };
-export { deleteCharacterWeapons };
-
 const updateCharacterCaracteristic = (characterId, caracteristicName, value) => {
     const url = DATA_MODEL.CHARACTERS.name + '/' + characterId + '/'+caracteristicName;
     return database.ref(url).set(value);
@@ -96,3 +34,36 @@ updateCharacterCaracteristic.propTypes = {
 }
 
 export { updateCharacterCaracteristic };
+
+const insertCharacterElement = (characterId, caracteristicName, value) => {
+    const url = DATA_MODEL.CHARACTERS.name + '/' + characterId + '/'+caracteristicName;
+    database.ref(url).once('value', snapshot => {
+        const elements = snapshot.val()||[];
+        elements[elements.length] = value;
+        database.ref(url).set(elements)
+    });
+}
+insertCharacterElement.propTypes = {
+    characterId: PropTypes.string.isRequired,
+    caracteristicName: PropTypes.string.isRequired,
+    value: PropTypes.any.isRequired,
+}
+
+const deleteCharacterElement = (characterId, caracteristicName, value) => {
+    const url = DATA_MODEL.CHARACTERS.name + '/' + characterId + '/'+caracteristicName;
+    database.ref(url).once('value', snapshot => {
+        const elements = snapshot.val()||[];
+        const index = elements.findIndex((name) => name === value);
+        elements.splice(index, 1);
+        database.ref(url).set(elements);
+    });
+}
+deleteCharacterElement.propTypes = {
+    characterId: PropTypes.string.isRequired,
+
+    caracteristicName: PropTypes.string.isRequired,
+    value: PropTypes.any.isRequired,
+}
+
+export { insertCharacterElement };
+export { deleteCharacterElement };

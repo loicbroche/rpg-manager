@@ -80,7 +80,7 @@ h1 {
 
 h1 {
   margin: 0;
-  padding: 0.15rem 0;
+  padding: 0.15rem;
   font-size: 1rem;
   background-color: var(--color-header);
   color: var(--color-primary);
@@ -114,6 +114,9 @@ h1 {
   font-size: 1.75rem;
 }
 
+.activable {
+  cursor: pointer;
+}
 .activable:hover,
 .activable:focus {
   background-color: var(--highlight-background-color-1);
@@ -193,7 +196,7 @@ h1 {
 .maxModifier:not(.disabled):hover,
 .maxModifier:not(.disabled):focus {
   background-color: var(--highlight-background-color-1);
-  
+  cursor: pointer;
 }
 .currentModifier:not(.disabled):active,
 .maxModifier:not(.disabled):active {

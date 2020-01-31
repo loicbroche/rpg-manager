@@ -46,7 +46,6 @@
 }
 
 .level {
-  z-index: 2;
   display: flex;
   flex-direction: column;
   height: var(--height-icons);
