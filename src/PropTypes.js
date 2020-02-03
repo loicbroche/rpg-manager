@@ -9,7 +9,8 @@ export const RacePropType = PropTypes.shape({
     Intelligence: PropTypes.number.isRequired,
     Wisdom: PropTypes.number.isRequired,
     Charisma: PropTypes.number.isRequired,
-    Speed: PropTypes.number.isRequired
+    Speed: PropTypes.number.isRequired,
+    Resistances: PropTypes.arrayOf(PropTypes.string)
 })
 
 export const SubRacePropType = PropTypes.shape({
@@ -22,7 +23,9 @@ export const SubRacePropType = PropTypes.shape({
     Intelligence: PropTypes.number.isRequired,
     Wisdom: PropTypes.number.isRequired,
     Charisma: PropTypes.number.isRequired,
-    Speed: PropTypes.number.isRequired
+    Speed: PropTypes.number.isRequired,
+    ArmorCategories: PropTypes.arrayOf(PropTypes.string),
+    Resistances: PropTypes.arrayOf(PropTypes.string)
 })
 
 export const ClassPropType = PropTypes.shape({
@@ -198,6 +201,7 @@ export const SpellPropType = PropTypes.shape({
 
 export const AlterationPropType = PropTypes.shape({
     Code: PropTypes.string.isRequired,
+    Element: PropTypes.string.isRequired,
     Name: PropTypes.string.isRequired
 })
 
@@ -243,6 +247,7 @@ export const CharacterPropType = PropTypes.shape({
     Health: PropTypes.number.isRequired,
     Alterations: PropTypes.arrayOf(PropTypes.string),
     Resistances: PropTypes.arrayOf(PropTypes.string),
+    Saves: PropTypes.arrayOf(PropTypes.string),
     Strength: PropTypes.number.isRequired,
 	Constitution: PropTypes.number.isRequired,
 	Dexterity: PropTypes.number.isRequired,

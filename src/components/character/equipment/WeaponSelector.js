@@ -114,12 +114,17 @@ class WeaponSelector extends Component {
   }
 
   getEquipmentsOptionElement(equipmentCategoryId) {
-    const { equipmentCategories, equipments} = this.props;
+    const { equipmentCategories, equipments, classes, wearingCharacter} = this.props;
+    const characterClass = classes && classes[wearingCharacter.Class];
+    const className = characterClass?characterClass.Name:"";
+    const isClassMaster = characterClass && characterClass.WeaponCategories && characterClass.WeaponCategories.includes(equipmentCategoryId);
+
     const availableEquipments = Object.values(equipments).filter((equipment) => equipment.Category === equipmentCategoryId);
     return availableEquipments && availableEquipments.length > 0 && 
            <optgroup key={equipmentCategoryId} label={equipmentCategories && equipmentCategories[equipmentCategoryId].Name}>
             { availableEquipments.map((equipment) => (
-              <option key={equipment.Name} value={equipment.Id} className={this.isMaster(equipment)?"master-equipment":""}>{equipment.Name}</option>
+              <option key={equipment.Name} value={equipment.Id} className={this.isMaster(equipment)?"master-equipment":""}
+              title={isClassMaster?"Maîtrise héritée de la classe "+className:"Non maîtrisé"}>{equipment.Name}</option>
             ))}
           </optgroup>
   }

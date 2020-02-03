@@ -11,7 +11,8 @@ export const DATA_MODEL = {
                 INTELLIGENCE: { name: "Intelligence" },
                 WISDOM: { name: "Wisdom" },
                 CHARISMA: { name: "Charisma" },
-                SPEED: { name: "Speed" }
+                SPEED: { name: "Speed" },
+                RESISTANCES: { name: "ArmorCategories", optional: true }
             }
         },
     SUB_RACES:
@@ -27,7 +28,9 @@ export const DATA_MODEL = {
                 INTELLIGENCE: { name: "Intelligence" },
                 WISDOM: { name: "Wisdom" },
                 CHARISMA: { name: "Charisma" },
-                SPEED: { name: "Speed" }
+                SPEED: { name: "Speed" },
+                ARMOR_CATEGORIES: { name: "ArmorCategories", optional: true },
+                RESISTANCES: { name: "ArmorCategories", optional: true }
             }
         },
     CLASSES:
@@ -275,6 +278,7 @@ export const DATA_MODEL = {
             name: 'Alterations',
             columns: {
                 CODE: { name: "Code" },
+                ELEMENT: { name: "Element" },
                 NAME: { name: "Name" }
             }
         },
@@ -333,6 +337,7 @@ export const DATA_MODEL = {
                 HEALTH: { name: "Health" },
                 ALTERATIONS: { name: "Alterations", optional: true },
                 RESISTANCES: { name: "Resistances", optional: true },
+                SAVES: { name: "Saves", optional: true },
                 STRENGTH: { name: "Strength" },
                 CONSTITUTION: { name: "Constitution" },
                 DEXTERITY: { name: "Dexterity" },

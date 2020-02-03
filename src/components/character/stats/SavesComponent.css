@@ -1,4 +1,75 @@
 .savesComponent {
-  border: 1px dashed purple;
-  color: purple;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.savesComponent h1 {
+  border: 1px solid var(--color-primary);
+}
+
+.saves {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-primary);
+}
+
+.caracteristics-saves,
+.alteration-saves {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+}
+
+.caracteristics-saves > *:not(:nth-child(1)),
+.alteration-saves > *:not(:nth-child(1)) {
+  margin-right: 0.25rem;
+}
+
+.save {
+  display: inline-flex;
+  padding: 0.15rem;
+  border-radius: 50%;
+  border: 1px solid transparent;
+}
+
+.save.activable:hover,
+.save.activable:focus {
+  border-color: var(--color-primary);
+}
+
+.save-image {
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  opacity: 0.3;
+}
+
+.saved {
+  border-color: var(--color-primary);
+  opacity: 1;
+}
+
+.class-saved {
+  border-color: var(--color-primary);
+  cursor: default;
+}
+
+.FOR {
+  background-color: var(--color-Strength);
+}
+.CON {
+  background-color: var(--color-Constitution);
+}
+.DEX {
+  background-color: var(--color-Dexterity);
+}
+.INT {
+  background-color: var(--color-Intelligence);
+}
+.SAG{
+  background-color: var(--color-Wisdom);
+}
+.CHA {
+  background-color: var(--color-Charisma);
 }

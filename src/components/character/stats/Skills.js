@@ -25,7 +25,7 @@ class Skills extends Component {
 
           return (
           <li key={index} className={"skill "+(isHistoricMaster?"historic-master":"activable")} onClick={() => !isHistoricMaster && onClick(Name)}
-              title={isHistoricMaster?"Maîtrisé via l'historique "+historic.Name:(isMaster?"Oublier la compétence "+Name:"Apprendre la compétence "+Name)}>
+              title={isHistoricMaster?"Maîtrise héritée de l'historique "+historic.Name:(isMaster?"Oublier la compétence "+Name:"Apprendre la compétence "+Name)}>
             <div className={"option "+((isHistoricMaster||isMaster)&&"filled")}></div>
             <span className="skill-name">{Name}</span>
             { caracteristic &&

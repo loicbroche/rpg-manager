@@ -24,7 +24,7 @@ class ArmorSelector extends Component {
 /**/const equipmentTitleLabel = shield?"Bouclier":"Armure";
 /**/const equipmentLabel = shield?"un bouclier":"une armure";
 /**/const filteredCategories = equipmentCategories && (shield?filterShieldsCategories(equipmentCategories):filterArmorsCategories(equipmentCategories));
-    const isMaster = this.isMaster(equipment);
+    const isMaster = this.isMasterCategory(equipment && equipment.Category);
 /**/const bonusContent = equipment && 
                          <div className={`main-stat-bonus-label ${ isMaster?(equipment && equipment.BonusAC):"not-master-equipment"}`}>
                             {isMaster
@@ -90,18 +90,28 @@ class ArmorSelector extends Component {
   }
 
   getEquipmentsOptionElement(equipmentCategoryId) {
-    const { equipmentCategories, equipments} = this.props;
+    const { equipmentCategories, equipments, subRaces, subRaceId, classes, classId} = this.props;
+    const characterClass = classes && classes[classId];
+    const subRace = subRaces && subRaces[subRaceId];
+
     const availableEquipments = Object.values(equipments).filter((equipment) => equipment.Category === equipmentCategoryId);
-    const isMasterCategory = this.isMasterCategory(equipmentCategoryId);
+    const isClassMasterCategory = this.isClassMasterCategory(equipmentCategoryId);
+    const isRaceMasterCategory = this.isRaceMasterCategory(equipmentCategoryId);
+    const isMasterCategory = isClassMasterCategory || isRaceMasterCategory;
     return availableEquipments && availableEquipments.length > 0 && 
            <optgroup key={equipmentCategoryId} label={equipmentCategories && equipmentCategories[equipmentCategoryId].Name} >
             { availableEquipments.map((equipment) => (
-              <option key={equipment.Name} value={equipment.Id} className={isMasterCategory?"master-equipment":""}>{equipment.Name}</option>
+              <option key={equipment.Name} value={equipment.Id} className={isMasterCategory?"master-equipment":""}
+                      title={isRaceMasterCategory?"Maîtrise héritée de la race "+subRace.Name:(isClassMasterCategory?"Maîtrise héritée de la classe "+characterClass.Name:"Non maîtrisé")}>{equipment.Name}</option>
             ))}
           </optgroup>
   }
 
   isMasterCategory(armorCategoryId) {
+    return this.isClassMasterCategory(armorCategoryId) || this.isRaceMasterCategory(armorCategoryId);
+  }
+
+  isClassMasterCategory(armorCategoryId) {
     const { classes, classId } = this.props;
     const characterClass = classes && classes[classId];
     const classArmorCategories = characterClass && (characterClass.ArmorCategories || []);
@@ -109,21 +119,20 @@ class ArmorSelector extends Component {
     return (classArmorCategories && classArmorCategories.includes(armorCategoryId));
   }
 
-  isMaster(armor) {
-    const { classes, classId, master } = this.props;
-  
-    const characterClass = classes && classes[classId];
-    const classArmorCategories = characterClass && (characterClass.ArmorCategories || []);
-  
-    const isMaster = master && master.includes(armor && armor.Name);
-    const isClassMaster = (classArmorCategories && classArmorCategories.includes(armor && armor.Category));
+  isRaceMasterCategory(armorCategoryId) {
+    const { subRaces, subRaceId } = this.props;
 
-    return isMaster || isClassMaster;
+    const subRace = subRaces && subRaces[subRaceId];
+    const subRaceArmorCategories =  subRace && (subRace.ArmorCategories || []);
+
+    return (subRaceArmorCategories && subRaceArmorCategories.includes(armorCategoryId));
   }
 }
 
 ArmorSelector.propTypes = {
   armorId: PropTypes.string,
+  classId: PropTypes.string,
+  subRaceId: PropTypes.string,
   shield: PropTypes.bool,
   wearingCharacter: CharacterPropType,
   onChange: PropTypes.func.isRequired,
@@ -136,6 +145,7 @@ ArmorSelector.defaultProps = {
 const mapStateToProps = (state) => ({
   equipmentCategories: state.referential.armorCategories,
   equipments: state.referential.armors,
-  classes: state.referential.classes
+  classes: state.referential.classes,
+  subRaces: state.referential.subRaces
 })
 export default connect(mapStateToProps)(ArmorSelector)

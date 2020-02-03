@@ -12,8 +12,10 @@ class ResistancesComponent extends Component {
 
     const subRace = subRaces && subRaces[subRaceId];
     const race = subRace && races && races[subRace.Race];
-    const raceName = subRace?subRace.Name:"";
+    const raceName = race?race.Name:"";
     const raceResistances = race && race.Resistances;
+    const subRaceResistances = subRace && subRace.Resistances;
+    const subRaceName = subRace?subRace.Name:"";
 
     return (
       <div className="resistancesComponent">
@@ -22,16 +24,27 @@ class ResistancesComponent extends Component {
           { alterations &&
             Object.values(alterations).map((alteration) => {
               let resistanceImage;
-              const raceResistant = raceResistances && raceResistances.find((resistance) => resistance === alteration.Code);
-              const resistant = raceResistant || (resistances && resistances.find((resistance) => resistance === alteration.Code));
               try {
                 resistanceImage = require(`images/alterations/${alteration.Code}.png`);
               } catch (ex) {
                 resistanceImage = require(`images/alterations/no_image.png`);
               }
-              return <img key={alteration.Code} src={resistanceImage} className={`resistance ${onClick?"activable":""} ${resistant?"resistant":""} ${raceResistant?"race-resistant":""}`} alt={alteration.Name}
-                          title={raceResistant?"Résistance héritée de la race "+raceName:((resistant?"Désactiver":"Activer")+" la résistance à l'altération "+alteration.Name)}
-                          onClick={() => { onClick && !raceResistant && onClick(alteration.Code)}} />
+              let raceResistant = raceResistances && raceResistances.find((resistance) => resistance === alteration.Code);
+              let raceResistantTitle = `Résistance ${alteration.Element}\nHéritée de la race ${raceName}`;
+              const subRaceResistant = subRaceResistances && subRaceResistances.find((resistance) => resistance === alteration.Code);
+              if (!raceResistant && subRaceResistant) {
+                raceResistant = true;
+                raceResistantTitle = `Résistance ${alteration.Element}\nHéritée de la race ${subRaceName}`;
+              }
+              const resistant = raceResistant || (resistances && resistances.find((resistance) => resistance === alteration.Code));
+
+
+              return <span key={alteration.Code} onClick={() => { onClick && !raceResistant && onClick(alteration.Code)}}
+                            title={raceResistant?raceResistantTitle:((resistant?"Désactiver":"Activer")+" la résistance "+alteration.Element)}
+                            className={`resistance ${onClick?"activable":""} ${raceResistant?"race-resistant":""}`}>
+                <img  src={resistanceImage} className={`resistance-image ${resistant?"resistant":""}`} alt={alteration.Element} />
+              </span>
+
             })
           }
         </div>
