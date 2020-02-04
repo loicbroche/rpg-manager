@@ -248,6 +248,7 @@ export const CharacterPropType = PropTypes.shape({
     Alterations: PropTypes.arrayOf(PropTypes.string),
     Resistances: PropTypes.arrayOf(PropTypes.string),
     Saves: PropTypes.arrayOf(PropTypes.string),
+    SaveAdvantages: PropTypes.arrayOf(PropTypes.string),
     Strength: PropTypes.number.isRequired,
 	Constitution: PropTypes.number.isRequired,
 	Dexterity: PropTypes.number.isRequired,

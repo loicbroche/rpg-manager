@@ -19,6 +19,7 @@
   display: flex;
   flex-direction: row-reverse;
   flex-wrap: wrap;
+  margin-top: 0.25rem;
 }
 
 .caracteristics-saves > *:not(:nth-child(1)),
@@ -28,13 +29,16 @@
 
 .save {
   display: inline-flex;
+  position: relative;
   padding: 0.15rem;
   border-radius: 50%;
   border: 1px solid transparent;
 }
 
 .save.activable:hover,
-.save.activable:focus {
+.save.activable:focus,
+.advantage.activable:hover,
+.advantage.activable:focus {
   border-color: var(--color-primary);
 }
 
@@ -53,6 +57,39 @@
 .class-saved {
   border-color: var(--color-primary);
   cursor: default;
+}
+
+.advantage {
+  position: absolute;
+  top: -0.15rem;
+  left: -0.15rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  border: 1px solid transparent;
+}
+.advantage.race-advantage {
+  cursor: default;
+  border-color: var(--color-primary);
+}
+
+.advantage-marker {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--background-color-1);
+  border: 1px solid var(--color-primary);
+}
+.advantage-marker:not(.have-advantage):hover,
+.advantage-marker:not(.have-advantage):focus {
+  background-color: var(--highlight-background-color-1);
+}
+
+.have-advantage {
+  background-color: var(--color-primary);
 }
 
 .FOR {

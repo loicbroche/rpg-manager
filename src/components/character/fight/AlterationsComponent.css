@@ -1,0 +1,77 @@
+.alterationsComponent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.alterations {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  padding-top: 0.25rem;
+  border: 1px solid var(--color-primary);
+}
+
+.alterations > *:not(:nth-child(1)) {
+  margin-right: 0.25rem;
+}
+
+.alteration {
+  display: inline-flex;
+  position: relative;
+  padding: 0.15rem;
+  border-radius: 50%;
+  border: 1px solid transparent;
+}
+
+.alteration.activable:hover,
+.alteration.activable:focus,
+.resistance.activable:hover,
+.resistance.activable:focus {
+  border-color: var(--color-primary);
+}
+
+.alteration-image {
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  opacity: 0.3;
+}
+
+.alterated {
+  border-color: var(--color-primary);
+  opacity: 1;
+}
+
+.resistance {
+  position: absolute;
+  top: -0.15rem;
+  left: -0.15rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  border: 1px solid transparent;
+}
+.resistance.race-resistant {
+  cursor: default;
+  border-color: var(--color-primary);
+}
+
+.resistant-marker {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--background-color-1);
+  border: 1px solid var(--color-primary);
+}
+.resistant-marker:not(.is-resistant):hover,
+.resistant-marker:not(.is-resistan):focus {
+  background-color: var(--highlight-background-color-1);
+}
+
+.is-resistant {
+  background-color: var(--color-primary);
+}

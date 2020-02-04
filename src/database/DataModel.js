@@ -338,6 +338,7 @@ export const DATA_MODEL = {
                 ALTERATIONS: { name: "Alterations", optional: true },
                 RESISTANCES: { name: "Resistances", optional: true },
                 SAVES: { name: "Saves", optional: true },
+                SAVE_ADVANTAGES: { name: "SaveAdvantages", optional: true },
                 STRENGTH: { name: "Strength" },
                 CONSTITUTION: { name: "Constitution" },
                 DEXTERITY: { name: "Dexterity" },

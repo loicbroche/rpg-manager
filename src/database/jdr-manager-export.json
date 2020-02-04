@@ -3437,7 +3437,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 9,
 	 "Resistances" : [],
-	 "Saves" : []
+	 "SaveAdvantages" : ["Seduced"]
 	  },
 	"HALFELIN": {
 	 "Id" : "HALFELIN",
@@ -3451,7 +3451,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 7.5,
 	 "Resistances" : [],
-	 "Saves" : []
+	 "SaveAdvantages" : ["Scared"]
 	  },
 	"HUMAN": {
 	 "Id" : "HUMAN",
@@ -3465,7 +3465,7 @@
 	 "Charisma" : 1,
 	 "Speed" : 9,
 	 "Resistances" : [],
-	 "Saves" : []
+	 "SaveAdvantages" : []
 	  },
 	"DWARF": {
 	 "Id" : "DWARF",
@@ -3479,7 +3479,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 7.5,
 	 "Resistances" : ["Poisonned"],
-	 "Saves" : ["Poisonned"]
+	 "SaveAdvantages" : ["Poisonned"]
 	  },
 	"HALF_ELF": {
 	 "Id" : "HALF_ELF",
@@ -3493,7 +3493,7 @@
 	 "Charisma" : 2,
 	 "Speed" : 9,
 	 "Resistances" : [],
-	 "Saves" : []
+	 "SaveAdvantages" : []
 	  },
 	"HALF_ORC": {
 	 "Id" : "HALF_ORC",
@@ -3507,7 +3507,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 9,
 	 "Resistances" : [],
-	 "Saves" : []
+	 "SaveAdvantages" : []
 	  },
 	"DRAGON_BORN": {
 	 "Id" : "DRAGON_BORN",
@@ -3521,7 +3521,7 @@
 	 "Charisma" : 1,
 	 "Speed" : 9,
 	 "Resistances" : [],
-	 "Saves" : []
+	 "SaveAdvantages" : []
 	  },
 	"GNOME": {
 	 "Id" : "GNOME",
@@ -3535,7 +3535,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 7.5,
 	 "Resistances" : [],
-	 "Saves" : []
+	 "SaveAdvantages" : ["Intelligence", "Wisdom", "Charisma"]
 	  },
 	"TIEFFLING": {
 	 "Id" : "TIEFFLING",
@@ -3549,7 +3549,7 @@
 	 "Charisma" : 2,
 	 "Speed" : 9,
 	 "Resistances" : [],
-	 "Saves" : []
+	 "SaveAdvantages" : []
 	  },
 	"AARAKOCRA": {
 	 "Id" : "AARAKOCRA",
@@ -3563,7 +3563,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 7.5,
 	 "Resistances" : [],
-	 "Saves" : []
+	 "SaveAdvantages" : []
 	  },
 	"GENASI": {
 	 "Id" : "GENASI",
@@ -3577,7 +3577,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 9,
 	 "Resistances" : [],
-	 "Saves" : []
+	 "SaveAdvantages" : []
 	  },
 	"GOLIATH": {
 	 "Id" : "GOLIATH",
@@ -3591,7 +3591,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 9,
 	 "Resistances" : [],
-	 "Saves" : []
+	 "SaveAdvantages" : []
 	  }
   },
   "ServiceCategories" : {
@@ -8604,7 +8604,7 @@
     }
   },
   "SubRaces" : {
-	 "HIGH_ELF": {
+	"HIGH_ELF": {
 	 "Id" : "HIGH_ELF",
 	 "Race" : "ELF",
 	 "Name" : "Haut-Elfe",
@@ -8617,7 +8617,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 0,
 	 "Resistances" : [],
-	 "Saves" : [],
+	 "SaveAdvantages" : [],
 	 "ArmorCategories" : []
 	  },
 	"WOODEN_ELF": {
@@ -8633,7 +8633,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 10.5,
 	 "Resistances" : [],
-	 "Saves" : [],
+	 "SaveAdvantages" : [],
 	 "ArmorCategories" : []
 	  },
 	"DROW": {
@@ -8649,7 +8649,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 0,
 	 "Resistances" : [],
-	 "Saves" : [],
+	 "SaveAdvantages" : [],
 	 "ArmorCategories" : []
 	  },
 	"LIGHT_FOOT_HALFELIN": {
@@ -8665,7 +8665,7 @@
 	 "Charisma" : 1,
 	 "Speed" : 0,
 	 "Resistances" : [],
-	 "Saves" : [],
+	 "SaveAdvantages" : [],
 	 "ArmorCategories" : []
 	  },
 	"ROBUST_HALFELIN": {
@@ -8681,7 +8681,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 0,
 	 "Resistances" : ["Poisonned"],
-	 "Saves" : ["Poisonned"],
+	 "SaveAdvantages" : ["Poisonned"],
 	 "ArmorCategories" : []
 	  },
 	"HILLS_DWARF": {
@@ -8697,7 +8697,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 0,
 	 "Resistances" : [],
-	 "Saves" : [],
+	 "SaveAdvantages" : [],
 	 "ArmorCategories" : []
 	  },
 	"MONTAINS_DWARF": {
@@ -8713,7 +8713,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 0,
 	 "Resistances" : [],
-	 "Saves" : [],
+	 "SaveAdvantages" : [],
 	 "ArmorCategories" : ["1_LIGHT", "2_MID"]
 	  },
 	"FORESTS_GNOME": {
@@ -8729,7 +8729,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 0,
 	 "Resistances" : [],
-	 "Saves" : [],
+	 "SaveAdvantages" : [],
 	 "ArmorCategories" : []
 	  },
 	"ROCKS_GNOME": {
@@ -8745,7 +8745,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 0,
 	 "Resistances" : [],
-	 "Saves" : [],
+	 "SaveAdvantages" : [],
 	 "ArmorCategories" : []
 	  },
 	"DEPTH_GNOME": {
@@ -8761,7 +8761,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 0,
 	 "Resistances" : [],
-	 "Saves" : [],
+	 "SaveAdvantages" : [],
 	 "ArmorCategories" : []
 	  },
 	"AIR_GENASI": {
@@ -8777,7 +8777,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 0,
 	 "Resistances" : [],
-	 "Saves" : [],
+	 "SaveAdvantages" : [],
 	 "ArmorCategories" : []
 	  },
 	"EARTH_GENASI": {
@@ -8793,7 +8793,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 0,
 	 "Resistances" : [],
-	 "Saves" : [],
+	 "SaveAdvantages" : [],
 	 "ArmorCategories" : []
 	  },
 	"FIRE_GENASI": {
@@ -8809,7 +8809,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 0,
 	 "Resistances" : ["Burned"],
-	 "Saves" : ["Burned"],
+	 "SaveAdvantages" : ["Burned"],
 	 "ArmorCategories" : []
 	  },
 	"WATER_GENASI": {
@@ -8825,7 +8825,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 0,
 	 "Resistances" : ["Acidified"],
-	 "Saves" : ["Acidified"],
+	 "SaveAdvantages" : ["Acidified"],
 	 "ArmorCategories" : []
 	  },
 	"HUMAN": {
@@ -8841,7 +8841,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 0,
 	 "Resistances" : [],
-	 "Saves" : [],
+	 "SaveAdvantages" : [],
 	 "ArmorCategories" : []
 	  },
 	"HALF_ELF": {
@@ -8857,7 +8857,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 0,
 	 "Resistances" : [],
-	 "Saves" : [],
+	 "SaveAdvantages" : [],
 	 "ArmorCategories" : []
 	  },
 	"HALF_ORC": {
@@ -8873,7 +8873,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 0,
 	 "Resistances" : [],
-	 "Saves" : [],
+	 "SaveAdvantages" : [],
 	 "ArmorCategories" : []
 	  },
 	"WHITE_DRAGON": {
@@ -8889,7 +8889,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 0,
 	 "Resistances" : ["Cold"],
-	 "Saves" : ["Cold"],
+	 "SaveAdvantages" : ["Cold"],
 	 "ArmorCategories" : []
 	  },
 	"BLUE_DRAGON": {
@@ -8905,7 +8905,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 0,
 	 "Resistances" : ["Electrified"],
-	 "Saves" : ["Electrified"],
+	 "SaveAdvantages" : ["Electrified"],
 	 "ArmorCategories" : []
 	  },
 	"BLACK_DRAGON": {
@@ -8921,7 +8921,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 0,
 	 "Resistances" : ["Acidified"],
-	 "Saves" : ["Acidified"],
+	 "SaveAdvantages" : ["Acidified"],
 	 "ArmorCategories" : []
 	  },
 	"RED_DRAGON": {
@@ -8937,7 +8937,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 0,
 	 "Resistances" : ["Burned"],
-	 "Saves" : ["Burned"],
+	 "SaveAdvantages" : ["Burned"],
 	 "ArmorCategories" : []
 	  },
 	"GREEN_DRAGON": {
@@ -8953,7 +8953,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 0,
 	 "Resistances" : ["Poisonned"],
-	 "Saves" : ["Poisonned"],
+	 "SaveAdvantages" : ["Poisonned"],
 	 "ArmorCategories" : []
 	  },
 	"BRASS_DRAGON": {
@@ -8969,7 +8969,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 0,
 	 "Resistances" : ["Burned"],
-	 "Saves" : ["Burned"],
+	 "SaveAdvantages" : ["Burned"],
 	 "ArmorCategories" : []
 	  },
 	"SILVER_DRAGON": {
@@ -8985,7 +8985,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 0,
 	 "Resistances" : ["Cold"],
-	 "Saves" : ["Cold"],
+	 "SaveAdvantages" : ["Cold"],
 	 "ArmorCategories" : []
 	  },
 	"BRONZE_DRAGON": {
@@ -9001,7 +9001,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 0,
 	 "Resistances" : ["Electrified"],
-	 "Saves" : ["Electrified"],
+	 "SaveAdvantages" : ["Electrified"],
 	 "ArmorCategories" : []
 	  },
 	"COPPER_DRAGON": {
@@ -9017,7 +9017,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 0,
 	 "Resistances" : ["Acidified"],
-	 "Saves" : ["Acidified"],
+	 "SaveAdvantages" : ["Acidified"],
 	 "ArmorCategories" : []
 	  },
 	"GOLD_DRAGON": {
@@ -9033,7 +9033,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 0,
 	 "Resistances" : ["Burned"],
-	 "Saves" : ["Burned"],
+	 "SaveAdvantages" : ["Burned"],
 	 "ArmorCategories" : []
 	  },
 	"TIEFFLING": {
@@ -9049,7 +9049,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 0,
 	 "Resistances" : ["Burned"],
-	 "Saves" : ["Burned"],
+	 "SaveAdvantages" : ["Burned"],
 	 "ArmorCategories" : []
 	  },
 	"AARAKOCRA": {
@@ -9065,7 +9065,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 0,
 	 "Resistances" : [],
-	 "Saves" : [],
+	 "SaveAdvantages" : [],
 	 "ArmorCategories" : []
 	  },
 	"GOLIATH": {
@@ -9081,7 +9081,7 @@
 	 "Charisma" : 0,
 	 "Speed" : 0,
 	 "Resistances" : [],
-	 "Saves" : [],
+	 "SaveAdvantages" : [],
 	 "ArmorCategories" : []
 	  }
   },

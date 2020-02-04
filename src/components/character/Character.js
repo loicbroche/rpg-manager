@@ -10,7 +10,6 @@ import './Character.css'
 import Skills from './stats/Skills'
 import Weapons from './stats/Weapons'
 import Caracteristic from './stats/Caracteristic'
-import ResistancesComponent from './stats/ResistancesComponent'
 import SavesComponent from './stats/SavesComponent'
 import SpeedComponent from './stats/SpeedComponent'
 import RaceSelector from './general/RaceSelector'
@@ -25,6 +24,7 @@ import SpecialsComponent from './fight/SpecialsComponent';
 import SpellsComponent from './fight/SpellsComponent';
 import SpellBookComponent from './fight/SpellBookComponent';
 import SpecialCapacitiesComponent from './fight/SpecialCapacitiesComponent';
+import AlterationsComponent from './fight/AlterationsComponent'
 import ArmorSelector from './equipment/ArmorSelector';
 import WeaponSelector from './equipment/WeaponSelector';
 
@@ -68,7 +68,9 @@ class Character extends Component {
         Money: null,
         Objects: null,
         Alterations: null,
-        Resistances: null
+        Resistances: null,
+        Saves: null,
+        SaveAdvantages: null
       }
       this.characterRef = database.ref(DATA_MODEL.CHARACTERS.name+"/"+characterId);
       this.updateCharacter = (snapshot) => {
@@ -80,6 +82,8 @@ class Character extends Component {
           newState.Resistances = newState.Resistances || [];
           newState.Objects = newState.MasterObjects || [];
           newState.Languages = newState.Languages || [];
+          newState.Saves = newState.Saves || [];
+          newState.SaveAdvantages = newState.SaveAdvantages || [];
           this.setState({...newState});
         }
     }
@@ -95,7 +99,8 @@ class Character extends Component {
     render() {
         const { caracteristics, levels} = this.props;
         const { Name, SubRace: subRaceId, Gender, Class: classId, Historic: historicId, History, Skills: masterSkills,
-                XP, HP, MaxHP, Specials, Spells, Armor, Shield, Weapon, DistanceWeapon, MasterWeapons, MasterArmors, Resistances, Saves } = this.state
+                XP, HP, MaxHP, Specials, Spells, Armor, Shield, Weapon, DistanceWeapon, MasterWeapons, MasterArmors, Alterations,
+                Resistances, Saves, SaveAdvantages } = this.state
         const caracteristicsBonus = caracteristics && Object.values(caracteristics).reduce((accum, caracteristic) => {
             accum[caracteristic.Code] = this.state[caracteristic.OV];
             return accum;
@@ -129,7 +134,12 @@ class Character extends Component {
                             <HPComponent val={HP} maxVal={MaxHP} classId={classId}
                                             onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HP.name, value); }}
                                             onMaxValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.MAX_HP.name, value); }} />
-                            <HealthComponent />
+                            <div className="health">
+                                <HealthComponent />
+                                <AlterationsComponent characterAlterations={Alterations} resistances={Resistances} subRaceId={subRaceId} classId={classId}
+                                onClick={(alterationId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.ALTERATIONS.name, alterationId) }}
+                                onResistanceClick={this.toggleResistance}/>
+                            </div>
                             <div className="special">
                                 <SpecialsComponent val={Specials} classId={classId} level={characterLevel}
                                                     onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPECIALS.name, value); }} />
@@ -165,8 +175,9 @@ class Character extends Component {
                                 <CAComponent />
                                 <SpeedComponent subRaceId={subRaceId} classId={classId} level={characterLevel} />
                             </div>
-                            <ResistancesComponent resistances={Resistances} subRaceId={subRaceId} onClick={this.toggleResistance}/>
-                            <SavesComponent saves={Saves} subRaceId={subRaceId} classId={classId} onClick={this.toggleSave}/>
+                            <SavesComponent saves={Saves} advantages={SaveAdvantages} subRaceId={subRaceId} classId={classId}
+                                            onClick={(alterationId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.SAVES.name, alterationId) }}
+                                            onAdvantageClick={(alterationId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.SAVE_ADVANTAGES.name, alterationId) }}/>
                         </div>
                     </div>
                     <div className="equipment">
@@ -200,63 +211,45 @@ class Character extends Component {
                         <Weapons master={MasterWeapons}
                             classId={classId}
                             level={characterLevel}
-                            onClick={this.toggleWeapon} />
+                            onClick={(weaponId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.MASTER_WEAPONS.name, weaponId) }} />
                         <Skills master={masterSkills}
                             historicId={historicId}
                             level={characterLevel}
                             caracteristicsBonus={caracteristicsBonus}
                             subRaceId={subRaceId}
-                            onClick={this.toggleSkill} />
+                            onClick={(skillId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.SKILLS.name, skillId) }} />
                     </div>
                 </div>
             )}
         </div>
         )
     }
-    toggleSkill = (skillId) => {
-        const { Id: characterId, Skills } = this.state;
+
+    toggleElement = (elementName, elementId) => {
+        const { Id: characterId } = this.state;
+        const elements = this.state[elementName];
         if (characterId !== null) {
-            const index = Skills?Skills.findIndex((name) => name === skillId):-1;
+            const index = elements?elements.findIndex((name) => name === elementId):-1;
             if (index === -1) {
-                insertCharacterElement(characterId, DATA_MODEL.CHARACTERS.columns.SKILLS.name, skillId);
+                insertCharacterElement(characterId, elementName, elementId);
             } else {
-                deleteCharacterElement(characterId, DATA_MODEL.CHARACTERS.columns.SKILLS.name, skillId);
+                deleteCharacterElement(characterId, elementName, elementId);
             }
         }
     }
 
-    toggleWeapon = (weaponId) => {
-        const { Id: characterId, MasterWeapons } = this.state;
+    toggleResistance = (alterationId) => {
+        const { Id: characterId, Resistances, Alterations } = this.state;
         if (characterId !== null) {
-            const index = MasterWeapons?MasterWeapons.findIndex((name) => name === weaponId):-1;
+            const index = Resistances?Resistances.findIndex((name) => name === alterationId):-1;
             if (index === -1) {
-                insertCharacterElement(characterId, DATA_MODEL.CHARACTERS.columns.MASTER_WEAPONS.name, weaponId);
+                insertCharacterElement(characterId, DATA_MODEL.CHARACTERS.columns.RESISTANCES.name, alterationId);
+                const index = Alterations?Alterations.findIndex((name) => name === alterationId):-1;
+                if (index > -1) {
+                    deleteCharacterElement(characterId, DATA_MODEL.CHARACTERS.columns.ALTERATIONS.name, alterationId);
+                }
             } else {
-                deleteCharacterElement(characterId, DATA_MODEL.CHARACTERS.columns.MASTER_WEAPONS.name, weaponId);
-            }
-        }
-    }
-
-    toggleResistance = (resistanceId) => {
-        const { Id: characterId, Resistances } = this.state;
-        if (characterId !== null) {
-            const index = Resistances?Resistances.findIndex((name) => name === resistanceId):-1;
-            if (index === -1) {
-                insertCharacterElement(characterId, DATA_MODEL.CHARACTERS.columns.RESISTANCES.name, resistanceId);
-            } else {
-                deleteCharacterElement(characterId, DATA_MODEL.CHARACTERS.columns.RESISTANCES.name, resistanceId);
-            }
-        }
-    }
-
-    toggleSave = (saveId) => {
-        const { Id: characterId, Saves } = this.state;
-        if (characterId !== null) {
-            const index = Saves?Saves.findIndex((name) => name === saveId):-1;
-            if (index === -1) {
-                insertCharacterElement(characterId, DATA_MODEL.CHARACTERS.columns.SAVES.name, saveId);
-            } else {
-                deleteCharacterElement(characterId, DATA_MODEL.CHARACTERS.columns.SAVES.name, saveId);
+                deleteCharacterElement(characterId, DATA_MODEL.CHARACTERS.columns.RESISTANCES.name, alterationId);
             }
         }
     }

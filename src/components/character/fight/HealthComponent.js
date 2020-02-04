@@ -12,7 +12,6 @@ class HealthComponent extends Component {
     return (
       <div className="healthComponent">
         <span>Niveau de forme</span>
-        <span>[ Altérations ]</span>
       </div>
     )
   }

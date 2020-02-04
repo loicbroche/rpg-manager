@@ -31,6 +31,12 @@
     margin-top: var(--components-separator-margin);
 }
 
+.health {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .special,
 .status {
     display: flex;
