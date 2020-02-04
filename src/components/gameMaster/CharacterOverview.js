@@ -4,7 +4,7 @@ import { CharacterPropType } from 'PropTypes';
 
 import { DATA_MODEL } from 'database/DataModel'
 import { getLevelNumber } from 'rules/Levels.rules'
-import { updateCharacterCaracteristic } from 'database/PersistCharacter';
+import { updateCharacterCaracteristic, insertCharacterElement, deleteCharacterElement } from 'database/PersistCharacter';
 
 import './CharacterOverview.css'
 import CaracteristicBonus from 'components/shared/CaracteristicBonus'
@@ -13,6 +13,7 @@ import XPComponent from 'components/character/general/XPComponent';
 import HPComponent from 'components/character/fight/HPComponent';
 import SpecialsComponent from 'components/character/fight/SpecialsComponent';
 import CAComponent from 'components/character/fight/CAComponent';
+import AlterationsComponent from 'components/character/fight/AlterationsComponent'
 import SpeedComponent from 'components/character/stats/SpeedComponent'
 
 class CharacterOverview extends Component {
@@ -31,6 +32,9 @@ class CharacterOverview extends Component {
                     <XPComponent XP={character.XP} onChange={(value) =>{ updateCharacterCaracteristic(character.Id, DATA_MODEL.CHARACTERS.columns.XP.name, value);}}/>
                 </h1>
                 <HPComponent val={character.HP} maxVal={character.MaxHP} classId={character.Class} />
+                <AlterationsComponent characterAlterations={character.Alterations} resistances={character.Resistances}
+                                        subRaceId={character.SubRace} classId={character.Class}
+                                        onClick={(alterationId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.ALTERATIONS.name, character, alterationId) }}/>
                 <SpecialsComponent val={character.Specials} classId={character.Class} level={characterLevel} />
                 <div className="caracteristics-overview">
                     {   caracteristics && 
@@ -55,6 +59,7 @@ class CharacterOverview extends Component {
                     <CAComponent />
                     <SpeedComponent subRaceId={character.SubRace} classId={character.Class} level={characterLevel} />
                 </div>
+
                 <div className="equipments-overview">
                         {character.Weapon &&
                         <div className="equipment-overview">
@@ -79,6 +84,18 @@ class CharacterOverview extends Component {
                     </div>
             </div>
         )
+    }
+
+    toggleElement = (elementName, character, elementId) => {
+        const elements = character[elementName];
+        if (character.Id !== null) {
+            const index = elements?elements.findIndex((name) => name === elementId):-1;
+            if (index === -1) {
+                insertCharacterElement(character.Id, elementName, elementId);
+            } else {
+                deleteCharacterElement(character.Id, elementName, elementId);
+            }
+        }
     }
 }
 

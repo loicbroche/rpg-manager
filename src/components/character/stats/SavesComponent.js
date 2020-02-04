@@ -43,12 +43,20 @@ class SavesComponent extends Component {
                 const advantage = raceAdvantage || (advantages && advantages.find((save) => save === caracteristic.Code));
 
                 return <span key={caracteristic.Code} onClick={() => { onClick && !classSaved && onClick(caracteristic.Code)}}
-                              title={classSaved?`Jet de sauvegarde ${caracteristic.Name}\nHérité de la classe ${className}`:((saved?"Désactiver":"Activer")+" le jet de sauvegarde "+caracteristic.Name)}
-                              className={`save ${onClick?"activable":""} ${classSaved?"class-saved":""}`}>
+                             className={`save ${onClick?"activable":""} ${classSaved?"class-saved":""}`}
+                             title={classSaved?`Jet de sauvegarde ${caracteristic.Name}\nHérité de la classe ${className}`:
+                                   (  onClick
+                                      ?((saved?"Désactiver":"Activer")+" le jet de sauvegarde "+caracteristic.Name)
+                                      :((saved?"Jet de sauvegarde":"Pas de jet de sauvegarde")+" "+caracteristic.Name)
+                                   )} >
                   <img  src={saveImage} className={`save-image ${saved?"saved":""} ${caracteristic.Code}`} alt={caracteristic.Name}/>
-                  <span className={`advantage ${raceAdvantage?"race-advantage":"activable"}`}
-                        title={`${raceAdvantage?raceAdvantageTitle:((advantage?"Désactiver":"Activer")+` l'avantage aux jets de sauvegarde ${caracteristic.Name}`)}`}
-                        onClick={(event) => { if (!raceAdvantage && onAdvantageClick) { onAdvantageClick(caracteristic.Code) } event.stopPropagation()}}>
+                  <span className={`advantage ${raceAdvantage?"race-advantage":(onAdvantageClick?"activable":"")}`}
+                        onClick={(event) => { if (!raceAdvantage && onAdvantageClick) { onAdvantageClick(caracteristic.Code) } event.stopPropagation()}}
+                        title={`${raceAdvantage?raceAdvantageTitle:
+                                ( onAdvantageClick
+                                  ?((advantage?"Désactiver":"Activer")+` l'avantage aux jets de sauvegarde ${caracteristic.Name}`)
+                                  :((advantage?"Avantage":"Pas d'avantage")+` aux jets de sauvegarde ${caracteristic.Name}`)
+                                )}`} >
                     <span className={`advantage-marker ${advantage&&"have-advantage"}`} ></span>
                   </span>
                 </span>
@@ -76,11 +84,18 @@ class SavesComponent extends Component {
                 const advantage = raceAdvantage || (advantages && advantages.find((save) => save === alteration.Code));
 
                 return <span key={alteration.Code} onClick={() => { onClick && onClick(alteration.Code)}}
-                              title={(saved?"Désactiver":"Activer")+" le jet de sauvegarde "+alteration.Element}
+                              title={(  onClick
+                                        ?((saved?"Désactiver":"Activer")+" le jet de sauvegarde "+alteration.Element)
+                                        :((saved?"Jet de sauvegarde":"Pas de jet de sauvegarde")+" "+alteration.Element)
+                              )}
                               className={`save ${onClick?"activable":""}`}>
                   <img  src={saveImage} className={`save-image ${saved?"saved":""}`} alt={alteration.Element} />
-                  <span className={`advantage ${raceAdvantage?"race-advantage":"activable"}`}
-                        title={`${raceAdvantage?raceAdvantageTitle:((advantage?"Désactiver":"Activer")+` l'avantage aux jets de sauvegarde ${alteration.Element}`)}`}
+                  <span className={`advantage ${raceAdvantage?"race-advantage":(onAdvantageClick?"activable":"")}`}
+                        title={`${raceAdvantage?raceAdvantageTitle:
+                            ( onAdvantageClick
+                              ?((advantage?"Désactiver":"Activer")+` l'avantage aux jets de sauvegarde ${alteration.Element}`)
+                              :((advantage?"Avantage":"Pas d'avantage")+` aux jets de sauvegarde ${alteration.Element}`)
+                            )}`}
                         onClick={(event) => { if (!raceAdvantage && onAdvantageClick) { onAdvantageClick(alteration.Code) } event.stopPropagation()}}>
                     <span className={`advantage-marker ${advantage&&"have-advantage"}`} ></span>
                   </span>

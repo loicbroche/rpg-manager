@@ -67,8 +67,11 @@
   background-color: var(--background-color-1);
   border: 1px solid var(--color-primary);
 }
-.resistant-marker:not(.is-resistant):hover,
-.resistant-marker:not(.is-resistan):focus {
+:not(.activable) > .resistant-marker {
+  cursor: default;
+}
+.activable > .resistant-marker:not(.is-resistant):hover,
+.activable > .resistant-marker:not(.is-resistant):focus {
   background-color: var(--highlight-background-color-1);
 }
 

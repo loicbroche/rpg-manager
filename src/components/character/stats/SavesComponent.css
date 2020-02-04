@@ -83,8 +83,11 @@
   background-color: var(--background-color-1);
   border: 1px solid var(--color-primary);
 }
-.advantage-marker:not(.have-advantage):hover,
-.advantage-marker:not(.have-advantage):focus {
+:not(.activable) > .advantage-marker {
+  cursor: default;
+}
+.activable .advantage-marker:not(.have-advantage):hover,
+.activable .advantage-marker:not(.have-advantage):focus {
   background-color: var(--highlight-background-color-1);
 }
 

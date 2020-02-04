@@ -40,11 +40,20 @@ class AlterationsComponent extends Component {
                 const resistant = raceResistant || (resistances && resistances.find((resistance) => resistance === alteration.Code));
 
                 return <span key={alteration.Code} onClick={() => { !resistant && onClick && onClick(alteration.Code)}}
-                              title={resistant?`Résistance ${alteration.Element}`:(alterated?"Désactiver":"Activer")+" l'altération "+alteration.Element}
-                              className={`alteration ${( !resistant && onClick)?"activable":""}`}>
+                              className={`alteration ${( !resistant && onClick)?"activable":""}`}
+                              title={resistant?`Résistance ${alteration.Element}`:
+                                    ( onClick
+                                      ?((alterated?"Désactiver":"Activer")+" l'altération "+alteration.Name)
+                                      :((alterated?"":"Non")+" "+alteration.Name)
+                                    )} >
                   <img  src={alterationImage} className={`alteration-image ${alterated?"alterated":""}`} alt={alteration.Element} />
-                  <span className={`resistance ${raceResistant?"race-resistant":"activable"}`}
-                        title={`${raceResistant?raceResistantTitle:((resistant?"Désactiver":"Activer")+` la résistance ${alteration.Element}`)}`}
+                  <span className={`resistance ${raceResistant?"race-resistant":(onResistanceClick?"activable":"")}`}
+                        title={`${raceResistant?raceResistantTitle:
+                            ( onResistanceClick
+                              ?((resistant?"Désactiver":"Activer")+` la résistance ${alteration.Element}`)
+                              :((resistant?"Résistant":"Non résistant")+` à ${alteration.Element}`)
+                            )
+                        }`}
                         onClick={(event) => { if (!raceResistant && onResistanceClick) { onResistanceClick(alteration.Code) } event.stopPropagation()}}>
                     <span className={`resistant-marker ${resistant&&"is-resistant"}`} ></span>
                   </span>

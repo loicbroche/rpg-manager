@@ -37,7 +37,6 @@
 .xp-value {
   position: relative;
   right: -0.75rem;
-  max-width: 5rem;
   background: none;
   font-size: var(--size-bars-font);
   color: var(--color-primary);

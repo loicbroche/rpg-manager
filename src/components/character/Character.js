@@ -155,6 +155,10 @@ class Character extends Component {
                         </div>
 
                         <div className="stats">
+                            <div className="complements">
+                                <CAComponent />
+                                <SpeedComponent subRaceId={subRaceId} classId={classId} level={characterLevel} />
+                            </div>
                             <div className="caracteristics">
                             {   caracteristics && 
                                 Object.values(caracteristics).map((caracteristic) => (
@@ -170,10 +174,6 @@ class Character extends Component {
                                     )
                                 )
                             }
-                            </div>
-                            <div className="complements">
-                                <CAComponent />
-                                <SpeedComponent subRaceId={subRaceId} classId={classId} level={characterLevel} />
                             </div>
                             <SavesComponent saves={Saves} advantages={SaveAdvantages} subRaceId={subRaceId} classId={classId}
                                             onClick={(alterationId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.SAVES.name, alterationId) }}

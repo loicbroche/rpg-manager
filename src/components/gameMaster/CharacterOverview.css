@@ -4,7 +4,9 @@
 }
 
 .overview-header {
-    position: relative
+    position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .overview-name {
