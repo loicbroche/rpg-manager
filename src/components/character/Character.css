@@ -35,6 +35,15 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: flex-end;
+}
+
+.health > .healthComponent {
+    flex-grow: 1;
+}
+
+.health > .filler {
+    width: 1rem;
 }
 
 .special,

@@ -24,7 +24,7 @@
   --color-speed: #00D878;
   --color-Disadvantage: #C12323;
   --color-Health: #963634;
-  --color-Energy: #963661;
+  --color-Energy: #693661;
   --color-Ki: #C4006B;
   --color-Witchcraft: #3A9E31;
   --color-Rage: #C12323;
@@ -41,6 +41,7 @@
   --height-bars: 1.25rem;
   --height-icons: 2.5rem;
   --size-bars-font: 0.8rem;
+  --opacity-inactive: 0.2;
   --components-separator-margin: 0.75rem;
 }
 

@@ -19,6 +19,7 @@ class AlterationsComponent extends Component {
 
     return (
       <div className="alterationsComponent">
+
         <div className="alterations">
           { alterations &&
               Object.values(alterations).map((alteration) => {

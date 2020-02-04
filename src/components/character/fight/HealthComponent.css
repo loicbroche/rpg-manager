@@ -1,4 +1,27 @@
 .healthComponent {
-  border: 1px dashed purple;
-  color: purple;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.healthBar {
+  flex-grow: 1;
+  height: var(--height-bars);
+  text-align: center;
+  border: 1px solid var(--color-primary);
+}
+
+.healthProgressBar {
+  height: 100%;
+  background: linear-gradient(transparent, var(--color-Energy), transparent);
+  
+}
+.label {
+  position: relative;
+  top: calc(-1 * var(--height-bars));
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }

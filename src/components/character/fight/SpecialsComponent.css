@@ -30,7 +30,7 @@
 
 .Ki:not(.special-available) {
   border: 0;
-  background-image: radial-gradient(transparent, var(--color-Ki));
+  background-image: radial-gradient(transparent 25%, var(--color-Ki));
 }
 .Ki.special-available {
   border: 0;
@@ -42,7 +42,7 @@
 
 .Rage:not(.special-available) {
   border: 0;
-  background-image: radial-gradient(transparent, var(--color-Rage));
+  background-image: radial-gradient(transparent 25%, var(--color-Rage));
 }
 .Rage.special-available {
   border: 0;
@@ -54,7 +54,7 @@
 
 .Sorcellerie:not(.special-available) {
   border: 0;
-  background-image: radial-gradient(transparent, var(--color-Witchcraft));
+  background-image: radial-gradient(transparent 25%, var(--color-Witchcraft));
 }
 .Sorcellerie.special-available {
   border: 0;

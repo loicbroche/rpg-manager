@@ -23,7 +23,7 @@
   height: calc(var(--height-bars)/2);
   width: calc(var(--height-bars)/2);
   margin: 0 calc(var(--height-bars)/4 + var(--height-bars)/8);
-  background-image: radial-gradient(transparent, var(--color-Spell));
+  background-image: radial-gradient(transparent 25%, var(--color-Spell));
 }
 
 .spell-available {

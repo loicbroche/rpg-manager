@@ -46,7 +46,7 @@
   height: 1.5rem;
   border-radius: 50%;
   border: 1px solid transparent;
-  opacity: 0.3;
+  opacity: var(--opacity-inactive);
 }
 
 .saved {
