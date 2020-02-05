@@ -25,12 +25,11 @@ class HistoricSelector extends Component {
     }
 
     return (
-      <div >
         <div className="selector historic-selector">
-        <div className={`history-container ${showHistory&&"show-history"}`}>
-            <img src={inkWellImage} className="activable transparent modify" alt="Lire/Modifier l'historique" title="Lire/modifier l'historique" onClick={this.onHistoryUpdate}/>
-            <textarea className={`narrative history ${showHistory&&"show-history"}`} value={history} onChange={this.onHistoryChange}></textarea>
-        </div>
+          <div className={`history-container ${showHistory&&"show-history"}`}>
+              <img src={inkWellImage} className="activable transparent modify" alt="Lire/Modifier l'historique" title="Lire/modifier l'historique" onClick={this.onHistoryUpdate}/>
+              <textarea className={`narrative history ${showHistory&&"show-history"}`} value={history} onChange={this.onHistoryChange}></textarea>
+          </div>
           <div className="selector-icon historic-icon">
             <img src={historicImage} className="selector-image" alt="" />
             <img src={historicBorderImage} className="selector-image" alt="" />
@@ -47,8 +46,6 @@ class HistoricSelector extends Component {
             )}
           </div>
         </div>
-
-      </div>
     )
   }
 

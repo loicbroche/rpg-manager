@@ -27,6 +27,7 @@ import SpecialCapacitiesComponent from './fight/SpecialCapacitiesComponent';
 import AlterationsComponent from './fight/AlterationsComponent'
 import ArmorSelector from './equipment/ArmorSelector';
 import WeaponSelector from './equipment/WeaponSelector';
+import BagComponent from './equipment/BagComponent';
 
 class Character extends Component {
     constructor (props) {
@@ -112,10 +113,7 @@ class Character extends Component {
             { Name !== null && (
                 <div>
                     <div className="character-header">
-                        <div>
-                            <span className="character-name">{Name}</span>
-                            <DetailsComponent />
-                        </div>
+                        <DetailsComponent character={this.state}/>
                         <RaceSelector   subRaceId={subRaceId}
                                         gender={Gender}
                                         onRaceChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SUB_RACE.name, value);}}
@@ -193,6 +191,7 @@ class Character extends Component {
                                             onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.DISTANCE_WEAPON.name, value); }}
                                             onAmmunitionChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.AMMUNITION.name, value);  }} />
                         </div>
+                        <BagComponent />
                         <div className="equipment-armor">
                             <ArmorSelector equipmentId={Armor}
                                             wearingCharacter={ this.state }
