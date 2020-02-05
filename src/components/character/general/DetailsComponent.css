@@ -19,23 +19,32 @@
   top: 1.5rem;
   z-index: 5;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 1rem;
   border: 0;
   visibility: collapse;
   background-color: var(--background-color-1);
   border: 1px solid var(--color-primary);
-  color: purple;
+}
+
+.details-names,
+.details-values {
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+}
+
+.details-values {
+  margin-left: var(--components-separator-margin);
+}
+
+.details-names > *:not(:nth-child(1)),
+.details-values > *:not(:nth-child(1)) {
+  margin-top: 0.5rem;
 }
 
 .show-details {
   visibility: visible;
-}
-
-.detail {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
 
 .modify-details {
