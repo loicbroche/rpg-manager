@@ -33,12 +33,12 @@ class Weapons extends Component {
         <h1 className={`weapons-category-name ${(isClassMasterCategory?"class-master":"")}`}>{(category && category.Name)}</h1>
         <ul className="weapons-category">
           {availableWeapons &&
-            Object.values(availableWeapons).map(({Name}, index) => {
+            Object.values(availableWeapons).map(({Name, Damage, DamageType}, index) => {
               const isMaster = master && master.includes(Name);
               const isClassMaster = classWeapons.includes(Name) || isClassMasterCategory;
               return (
               <li key={index} className={"weapon "+(isClassMaster?"class-master":"activable")} onClick={() => !isClassMaster && onClick(Name)}
-                  title={isClassMaster?"Maîtrise héritée de la classe "+characterClass.Name:(isMaster?"Oublier la maîtrise de "+Name:"Apprendre la maîtrise de "+Name)}>
+                  title={(isClassMaster?"Maîtrise héritée de la classe "+characterClass.Name:(isMaster?"Oublier":"Apprendre")+` la maîtrise de ${Name}`)+`\nDégâts : ${Damage} ${DamageType}`}>
                 <div className={"option "+((isClassMaster||isMaster)&&"filled")}></div>
                 <span className="weapon-name">{Name}</span>
                 <span className="weapon-bonus">{ (isClassMaster||isMaster) && `+${masteryBonus}`}</span> 

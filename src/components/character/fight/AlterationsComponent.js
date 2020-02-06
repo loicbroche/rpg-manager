@@ -32,27 +32,27 @@ class AlterationsComponent extends Component {
 
                 const alterated = characterAlterations && characterAlterations.find((alt) => alt === alteration.Code);
                 let raceResistant = raceResistances && raceResistances.find((resistance) => resistance === alteration.Code);
-                let raceResistantTitle = `Résistance ${alteration.Element}\nHéritée de la race ${raceName}`;
+                let raceResistantTitle = `Résistance ${alteration.Name}\nHéritée de la race ${raceName}`;
                 const subRaceResistant = subRaceResistances && subRaceResistances.find((resistance) => resistance === alteration.Code);
                 if (!raceResistant && subRaceResistant) {
                   raceResistant = true;
-                  raceResistantTitle = `Résistance ${alteration.Element}\nHéritée de la race ${subRaceName}`;
+                  raceResistantTitle = `Résistance ${alteration.Name}\nHéritée de la race ${subRaceName}`;
                 }         
                 const resistant = raceResistant || (resistances && resistances.find((resistance) => resistance === alteration.Code));
 
                 return <span key={alteration.Code} onClick={() => { !resistant && onClick && onClick(alteration.Code)}}
                               className={`alteration ${( !resistant && onClick)?"activable":""}`}
-                              title={resistant?`Résistance ${alteration.Element}`:
+                              title={resistant?`Résistance ${alteration.Name}`:
                                     ( onClick
-                                      ?((alterated?"Désactiver":"Activer")+" l'altération "+alteration.Name)
-                                      :((alterated?"":"Non")+" "+alteration.Name)
+                                      ?((alterated?"Désactiver":"Activer")+" l'altération "+alteration.Effect)
+                                      :((alterated?"":"Non")+" "+alteration.Effect)
                                     )} >
-                  <img  src={alterationImage} className={`alteration-image ${alterated?"alterated":""}`} alt={alteration.Element} />
+                  <img  src={alterationImage} className={`alteration-image ${alterated?"alterated":""}`} alt={alteration.Name} />
                   <span className={`resistance ${raceResistant?"race-resistant":(onResistanceClick?"activable":"")}`}
                         title={`${raceResistant?raceResistantTitle:
                             ( onResistanceClick
-                              ?((resistant?"Désactiver":"Activer")+` la résistance ${alteration.Element}`)
-                              :((resistant?"Résistant":"Non résistant")+` à ${alteration.Element}`)
+                              ?((resistant?"Désactiver":"Activer")+` la résistance ${alteration.Name}`)
+                              :((resistant?"Résistant":"Non résistant")+` à ${alteration.Name}`)
                             )
                         }`}
                         onClick={(event) => { if (!raceResistant && onResistanceClick) { onResistanceClick(alteration.Code) } event.stopPropagation()}}>

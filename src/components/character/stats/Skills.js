@@ -48,7 +48,7 @@ Skills.propTypes = {
   level: PropTypes.number,
   caracteristicsBonus: PropTypes.any,
   subRaceId: PropTypes.string,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired
 }
 
 Skills.defaultProps = {

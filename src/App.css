@@ -138,7 +138,7 @@ h1 {
 }
 
 .option {
-  width: 1rem;
+  min-width: 1rem;
   height: 1rem;
   border-radius: 50%;
   border: 1px solid var(--color-primary);

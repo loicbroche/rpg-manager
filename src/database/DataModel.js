@@ -12,7 +12,9 @@ export const DATA_MODEL = {
                 WISDOM: { name: "Wisdom" },
                 CHARISMA: { name: "Charisma" },
                 SPEED: { name: "Speed" },
-                RESISTANCES: { name: "ArmorCategories", optional: true }
+                LANGUAGES: { name: "Languages" },
+                RESISTANCES: { name: "ArmorCategories", optional: true },
+                SAVE_ADVANTAGES: { name: "SaveAdvantages", optional: true }
             }
         },
     SUB_RACES:
@@ -30,7 +32,9 @@ export const DATA_MODEL = {
                 CHARISMA: { name: "Charisma" },
                 SPEED: { name: "Speed" },
                 ARMOR_CATEGORIES: { name: "ArmorCategories", optional: true },
-                RESISTANCES: { name: "ArmorCategories", optional: true }
+                LANGUAGES: { name: "Languages", optional: true },
+                RESISTANCES: { name: "ArmorCategories", optional: true },
+                SAVE_ADVANTAGES: { name: "SaveAdvantages", optional: true }
             }
         },
     CLASSES:

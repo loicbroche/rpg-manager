@@ -47,65 +47,65 @@
 	   }
   },
   "Alterations" : {
-	"Alcoholic": {
-	  "Code": "Alcoholic",
-	  "Element": "Alcool",
-	  "Name": "Alcoolisé"
+	"ALCOHOL": {
+	  "Code": "ALCOHOL",
+	  "Name": "Alcool",
+	  "Effect": "Alcoolisé"
 	 },
-	"Bewitched": {
-	  "Code": "Bewitched",
-	  "Element": "Envoutement",
-	  "Name": "Envouté"
+	"BEWITCHMENT": {
+	  "Code": "BEWITCHMENT",
+	  "Name": "Envoutement",
+	  "Effect": "Envouté"
 	 },
-	"Scared": {
-	  "Code": "Scared",
-	  "Element": "Peur",
-	  "Name": "Effrayé"
+	"FEAR": {
+	  "Code": "FEAR",
+	  "Name": "Peur",
+	  "Effect": "Effrayé"
 	 },
-	"Provocated": {
-	  "Code": "Provocated",
-	  "Element": "Provocation",
-	  "Name": "Provoqué"
+	"PROVOCATION": {
+	  "Code": "PROVOCATION",
+	  "Name": "Provocation",
+	  "Effect": "Provoqué"
 	 },
-	"Seduced": {
-	  "Code": "Seduced",
-	  "Element": "Charme",
-	  "Name": "Séduit"
+	"CHARM": {
+	  "Code": "CHARM",
+	  "Name": "Charme",
+	  "Effect": "Séduit"
 	 },
-	"Stressed": {
-	  "Code": "Stressed",
-	  "Element": "Stress",
-	  "Name": "Stressé"
+	"STRESS": {
+	  "Code": "STRESS",
+	  "Name": "Stress",
+	  "Effect": "Stressé"
 	 },
-	"Acidified": {
-	  "Code": "Acidified",
-	  "Element": "Acide",
-	  "Name": "Acidifié"
+	"ACID": {
+	  "Code": "ACID",
+	  "Name": "Acide",
+	  "Effect": "Acidifié"
 	 },
-	"Burned": {
-	  "Code": "Burned",
-	  "Element": "Feu",
-	  "Name": "Brûlé"
+	"FIRE": {
+	  "Code": "FIRE",
+	  "Name": "Feu",
+	  "Effect": "Brûlé"
 	 },
-	"Electrified": {
-	  "Code": "Electrified",
-	  "Element": "Foudre",
-	  "Name": "Foudroyé"
+	"LIGHTNING": {
+	  "Code": "LIGHTNING",
+	  "Name": "Foudre",
+	  "Effect": "Foudroyé"
 	 },
-	"Cold": {
-	  "Code": "Cold",
-	  "Element": "Froid",
-	  "Name": "Froid"
+	"COLD": {
+	  "Code": "COLD",
+	  "Name": "Froid",
+	  "Effect": "Froid"
 	 },
-	"Drug": {
-	  "Code": "Drug",
-	  "Element": "Narcotique",
-	  "Name": "Drogué"
+	"DRUG": {
+	  "Code": "DRUG",
+	  "Name": "Narcotique",
+	  "Effect": "Drogué"
 	 },
-	"Poisonned": {
-	  "Code": "Poisonned",
-	  "Element": "Poison",
-	  "Name": "Empoisonné"
+	"POISON": {
+	  "Code": "POISON",
+	  "Name": "Poison",
+	  "Effect": "Empoisonné"
 	 }
   },
   "ArmorCategories" : {
@@ -151,7 +151,7 @@
     },
     "Chemise de mailles" : {
       "AC" : "13",
-      "BonusAC" : "Dexterity",
+      "BonusAC" : "DEX",
       "Category" : "2_MID",
       "Discretion" : "-",
       "MaxBonusAC" : 2,
@@ -185,7 +185,7 @@
     },
     "Cuir" : {
       "AC" : "11",
-      "BonusAC" : "Dexterity",
+      "BonusAC" : "DEX",
       "Category" : "1_LIGHT",
       "Discretion" : "-",
       "Name" : "  Cuir",
@@ -196,7 +196,7 @@
     },
     "Cuir clouté" : {
       "AC" : "12",
-      "BonusAC" : "Dexterity",
+      "BonusAC" : "DEX",
       "Category" : "1_LIGHT",
       "Discretion" : "-",
       "Name" : "  Cuir clouté",
@@ -207,7 +207,7 @@
     },
     "Cuirasse" : {
       "AC" : "14",
-      "BonusAC" : "Dexterity",
+      "BonusAC" : "DEX",
       "Category" : "2_MID",
       "Discretion" : "-",
       "MaxBonusAC" : 2,
@@ -219,7 +219,7 @@
     },
     "Demi-plate" : {
       "AC" : "15",
-      "BonusAC" : "Dexterity",
+      "BonusAC" : "DEX",
       "Category" : "2_MID",
       "Discretion" : "Désavantage",
       "MaxBonusAC" : 2,
@@ -242,7 +242,7 @@
     },
     "Matelassée" : {
       "AC" : "11",
-      "BonusAC" : "Dexterity",
+      "BonusAC" : "DEX",
       "Category" : "1_LIGHT",
       "Discretion" : "Désavantage",
       "Name" : "  Matelassée",
@@ -253,7 +253,7 @@
     },
     "Peau" : {
       "AC" : "12",
-      "BonusAC" : "Dexterity",
+      "BonusAC" : "DEX",
       "Category" : "2_MID",
       "Discretion" : "-",
       "MaxBonusAC" : 2,
@@ -265,7 +265,7 @@
     },
     "Écailles" : {
       "AC" : "14",
-      "BonusAC" : "Dexterity",
+      "BonusAC" : "DEX",
       "Category" : "2_MID",
       "Discretion" : "Désavantage",
       "MaxBonusAC" : 2,
@@ -1609,7 +1609,7 @@
       "Id" : "Ash",
       "Ideals" : "Logique",
       "Intelligence" : 10,
-      "Languages" : [ "Commun", "Primodrial", "Sylvain" ],
+      "Languages" : [],
       "Links" : "L'ordre de son monastère",
       "MaxHP" : 24,
       "Money" : 1000,
@@ -1649,14 +1649,14 @@
       "Id" : "Saphir",
       "Ideals" : "Logique",
       "Intelligence" : 14,
-      "Languages" : [ "Commun", "Primodrial", "Sylvain" ],
+      "Languages" : [ "SILVAN" ],
       "Links" : "L'ordre de son monastère",
       "MaxHP" : 24,
       "Money" : 1000,
       "Name" : "Saphir",
       "Objects" : [ "Herboriste", "Cartographe" ],
       "PersonnalityTraits" : "Serein",
-      "Skills" : [ "Acrobatie", "Discrétion", "Médecine", "Religion" ],
+      "Skills" : [ "Acrobatie", "Discrétion" ],
       "Skin" : "Bleu clair",
       "Specials" : 2,
       "Spells" : [ null, 3, 2, 0, 0, 0, 0, 0, 0, 0 ],
@@ -1688,7 +1688,7 @@
       "Id" : "Sorwen",
       "Ideals" : "Logique",
       "Intelligence" : 10,
-      "Languages" : [ "Commun", "Primodrial", "Sylvain" ],
+      "Languages" : [],
       "Links" : "L'ordre de son monastère",
       "MaxHP" : 24,
       "Money" : 1000,
@@ -2802,102 +2802,125 @@
     }
   },
   "Languages" : {
-    "Abyssal" : {
-      "Code" : "Abyssal",
-      "Type" : "EXOTIC",
-      "TypicalRaces" : "Démons",
-      "Writing" : "Infernal"
-    },
-    "Commun" : {
-      "Code" : "Commun",
-      "Type" : "STANDARD",
-      "TypicalRaces" : "Humains",
-      "Writing" : "Commun"
-    },
-    "Commun des profondeurs" : {
-      "Code" : "Commun des profondeurs",
-      "Type" : "EXOTIC",
-      "TypicalRaces" : "Créatures de l'Outreterre",
-      "Writing" : "Elfique"
-    },
-    "Céleste" : {
-      "Code" : "Céleste",
-      "Type" : "EXOTIC",
-      "TypicalRaces" : "Célestes",
-      "Writing" : "Céleste"
-    },
-    "Draconique" : {
-      "Code" : "Draconique",
-      "Type" : "EXOTIC",
-      "TypicalRaces" : "Dragons, drakéides",
-      "Writing" : "Draconique"
-    },
-    "Elfique" : {
-      "Code" : "Elfique",
-      "Type" : "STANDARD",
-      "TypicalRaces" : "Elfes",
-      "Writing" : "Elfique"
-    },
-    "Gnome" : {
-      "Code" : "Gnome",
-      "Type" : "STANDARD",
-      "TypicalRaces" : "Gnomes",
-      "Writing" : "Nain"
-    },
-    "Gobelin" : {
-      "Code" : "Gobelin",
-      "Type" : "STANDARD",
-      "TypicalRaces" : "Gobelinoïdes",
-      "Writing" : "Nain"
-    },
-    "Géant" : {
-      "Code" : "Géant",
-      "Type" : "STANDARD",
-      "TypicalRaces" : "Ogres, géants",
-      "Writing" : "Nain"
-    },
-    "Halfelin" : {
-      "Code" : "Halfelin",
-      "Type" : "STANDARD",
-      "TypicalRaces" : "Halfelins",
-      "Writing" : "Commun"
-    },
-    "Infernal" : {
-      "Code" : "Infernal",
-      "Type" : "EXOTIC",
-      "TypicalRaces" : "Diables",
-      "Writing" : "Infernal"
-    },
-    "Nain" : {
-      "Code" : "Nain",
-      "Type" : "STANDARD",
-      "TypicalRaces" : "Nains",
-      "Writing" : "Nain"
-    },
-    "Orque" : {
-      "Code" : "Orque",
-      "Type" : "STANDARD",
-      "TypicalRaces" : "Orques",
-      "Writing" : "Nain"
-    },
-    "Primordial" : {
-      "Code" : "Primordial",
-      "Type" : "EXOTIC",
-      "TypicalRaces" : "Élémentaires",
-      "Writing" : "Nain"
-    },
-    "Profond" : {
-      "Code" : "Profond",
-      "Type" : "EXOTIC",
-      "TypicalRaces" : "Beholders, flagelleurs mentaux",
-      "Writing" : "-"
-    },
-    "Sylvain" : {
-      "Code" : "Sylvain",
-      "Type" : "EXOTIC",
-      "TypicalRaces" : "Créatures féeriques",
-      "Writing" : "Elfique"
-    }
+	"COMMON": {
+	  "Code" : "COMMON",
+	  "Name" : "Commun",
+	  "Type" : "STANDARD",
+	  "Writing" : "Commun",
+	  "TypicalRaces" : "Humains"
+	   },
+	"ELVISH": {
+	  "Code" : "ELVISH",
+	  "Name" : "Elfique",
+	  "Type" : "STANDARD",
+	  "Writing" : "Elfique",
+	  "TypicalRaces" : "Elfes"
+	   },
+	"GIANT": {
+	  "Code" : "GIANT",
+	  "Name" : "Géant",
+	  "Type" : "STANDARD",
+	  "Writing" : "Nain",
+	  "TypicalRaces" : "Ogres, géants"
+	   },
+	"GNOME": {
+	  "Code" : "GNOME",
+	  "Name" : "Gnome",
+	  "Type" : "STANDARD",
+	  "Writing" : "Nain",
+	  "TypicalRaces" : "Gnomes"
+	   },
+	"GOBLIN": {
+	  "Code" : "GOBLIN",
+	  "Name" : "Gobelin",
+	  "Type" : "STANDARD",
+	  "Writing" : "Nain",
+	  "TypicalRaces" : "Gobelinoïdes"
+	   },
+	"HALFELIN": {
+	  "Code" : "HALFELIN",
+	  "Name" : "Halfelin",
+	  "Type" : "STANDARD",
+	  "Writing" : "Commun",
+	  "TypicalRaces" : "Halfelins"
+	   },
+	"DWARF": {
+	  "Code" : "DWARF",
+	  "Name" : "Nain",
+	  "Type" : "STANDARD",
+	  "Writing" : "Nain",
+	  "TypicalRaces" : "Nains"
+	   },
+	"ORC": {
+	  "Code" : "ORC",
+	  "Name" : "Orque",
+	  "Type" : "STANDARD",
+	  "Writing" : "Nain",
+	  "TypicalRaces" : "Orques"
+	   },
+	"ABYSSAL": {
+	  "Code" : "ABYSSAL",
+	  "Name" : "Abyssal",
+	  "Type" : "EXOTIC",
+	  "Writing" : "Infernal",
+	  "TypicalRaces" : "Démons"
+	   },
+	"CELESTIAL": {
+	  "Code" : "CELESTIAL",
+	  "Name" : "Céleste",
+	  "Type" : "EXOTIC",
+	  "Writing" : "Céleste",
+	  "TypicalRaces" : "Célestes"
+	   },
+	"DEPTH_COMMON": {
+	  "Code" : "DEPTH_COMMON",
+	  "Name" : "Commun des profondeurs",
+	  "Type" : "EXOTIC",
+	  "Writing" : "Elfique",
+	  "TypicalRaces" : "Créatures de l'Outreterre"
+	   },
+	"DRACONIC": {
+	  "Code" : "DRACONIC",
+	  "Name" : "Draconique",
+	  "Type" : "EXOTIC",
+	  "Writing" : "Draconique",
+	  "TypicalRaces" : "Dragons, drakéides"
+	   },
+	"INFERNAL": {
+	  "Code" : "INFERNAL",
+	  "Name" : "Infernal",
+	  "Type" : "EXOTIC",
+	  "Writing" : "Infernal",
+	  "TypicalRaces" : "Diables"
+	   },
+	"PRIMARY": {
+	  "Code" : "PRIMARY",
+	  "Name" : "Primordial",
+	  "Type" : "EXOTIC",
+	  "Writing" : "Nain",
+	  "TypicalRaces" : "Élémentaires"
+	   },
+	"DEEP": {
+	  "Code" : "DEEP",
+	  "Name" : "Profond",
+	  "Type" : "EXOTIC",
+	  "Writing" : "-",
+	  "TypicalRaces" : "Beholders, flagelleurs mentaux"
+	   },
+	"SILVAN": {
+	  "Code" : "SILVAN",
+	  "Name" : "Sylvain",
+	  "Type" : "EXOTIC",
+	  "Writing" : "Elfique",
+	  "TypicalRaces" : "Créatures féeriques"
+	   },
+	"AIR": {
+	  "Code" : "AIR",
+	  "Name" : "Aérien",
+	  "Type" : "EXOTIC",
+	  "Writing" : "-",
+	  "TypicalRaces" : "Aarakocra"
+	   }
   },
   "Levels" : [ null, {
     "Level" : 1,
@@ -3441,8 +3464,9 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 9,
+	 "Languages" : ["COMMON", "ELVISH"],
 	 "Resistances" : [],
-	 "SaveAdvantages" : ["Seduced"]
+	 "SaveAdvantages" : ["CHARME"]
 	  },
 	"HALFELIN": {
 	 "Id" : "HALFELIN",
@@ -3455,8 +3479,9 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 7.5,
+	 "Languages" : ["COMMON", "HALFELIN"],
 	 "Resistances" : [],
-	 "SaveAdvantages" : ["Scared"]
+	 "SaveAdvantages" : ["FEAR"]
 	  },
 	"HUMAN": {
 	 "Id" : "HUMAN",
@@ -3469,6 +3494,7 @@
 	 "Wisdom" : 1,
 	 "Charisma" : 1,
 	 "Speed" : 9,
+	 "Languages" : ["COMMON"],
 	 "Resistances" : [],
 	 "SaveAdvantages" : []
 	  },
@@ -3483,8 +3509,9 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 7.5,
-	 "Resistances" : ["Poisonned"],
-	 "SaveAdvantages" : ["Poisonned"]
+	 "Languages" : ["DWARF"],
+	 "Resistances" : ["POISON"],
+	 "SaveAdvantages" : ["POISON"]
 	  },
 	"HALF_ELF": {
 	 "Id" : "HALF_ELF",
@@ -3497,6 +3524,7 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 2,
 	 "Speed" : 9,
+	 "Languages" : ["COMMON", "ELVISH"],
 	 "Resistances" : [],
 	 "SaveAdvantages" : []
 	  },
@@ -3511,6 +3539,7 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 9,
+	 "Languages" : ["COMMON", "ORC"],
 	 "Resistances" : [],
 	 "SaveAdvantages" : []
 	  },
@@ -3525,6 +3554,7 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 1,
 	 "Speed" : 9,
+	 "Languages" : ["COMMON", "DRACONIC"],
 	 "Resistances" : [],
 	 "SaveAdvantages" : []
 	  },
@@ -3539,8 +3569,9 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 7.5,
+	 "Languages" : ["COMMON", "GNOME"],
 	 "Resistances" : [],
-	 "SaveAdvantages" : ["Intelligence", "Wisdom", "Charisma"]
+	 "SaveAdvantages" : ["INT", "SAG", "CHA"]
 	  },
 	"TIEFFLING": {
 	 "Id" : "TIEFFLING",
@@ -3553,6 +3584,7 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 2,
 	 "Speed" : 9,
+	 "Languages" : ["COMMON", "INFERNAL"],
 	 "Resistances" : [],
 	 "SaveAdvantages" : []
 	  },
@@ -3567,6 +3599,7 @@
 	 "Wisdom" : 1,
 	 "Charisma" : 0,
 	 "Speed" : 7.5,
+	 "Languages" : ["COMMON", "AARAKOCRA", "AIR"],
 	 "Resistances" : [],
 	 "SaveAdvantages" : []
 	  },
@@ -3581,6 +3614,7 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 9,
+	 "Languages" : ["COMMON", "PRIMARY"],
 	 "Resistances" : [],
 	 "SaveAdvantages" : []
 	  },
@@ -3595,6 +3629,7 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 9,
+	 "Languages" : ["COMMON", "GIANT"],
 	 "Resistances" : [],
 	 "SaveAdvantages" : []
 	  }
@@ -8621,6 +8656,7 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 0,
+	 "Languages" : [],
 	 "Resistances" : [],
 	 "SaveAdvantages" : [],
 	 "ArmorCategories" : []
@@ -8637,6 +8673,7 @@
 	 "Wisdom" : 1,
 	 "Charisma" : 0,
 	 "Speed" : 10.5,
+	 "Languages" : [],
 	 "Resistances" : [],
 	 "SaveAdvantages" : [],
 	 "ArmorCategories" : []
@@ -8653,6 +8690,7 @@
 	 "Wisdom" : 1,
 	 "Charisma" : 0,
 	 "Speed" : 0,
+	 "Languages" : [],
 	 "Resistances" : [],
 	 "SaveAdvantages" : [],
 	 "ArmorCategories" : []
@@ -8669,6 +8707,7 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 1,
 	 "Speed" : 0,
+	 "Languages" : [],
 	 "Resistances" : [],
 	 "SaveAdvantages" : [],
 	 "ArmorCategories" : []
@@ -8685,8 +8724,9 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 0,
-	 "Resistances" : ["Poisonned"],
-	 "SaveAdvantages" : ["Poisonned"],
+	 "Languages" : [],
+	 "Resistances" : ["POISON"],
+	 "SaveAdvantages" : ["POISON"],
 	 "ArmorCategories" : []
 	  },
 	"HILLS_DWARF": {
@@ -8701,6 +8741,7 @@
 	 "Wisdom" : 1,
 	 "Charisma" : 0,
 	 "Speed" : 0,
+	 "Languages" : [],
 	 "Resistances" : [],
 	 "SaveAdvantages" : [],
 	 "ArmorCategories" : []
@@ -8717,6 +8758,7 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 0,
+	 "Languages" : [],
 	 "Resistances" : [],
 	 "SaveAdvantages" : [],
 	 "ArmorCategories" : ["1_LIGHT", "2_MID"]
@@ -8733,6 +8775,7 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 0,
+	 "Languages" : [],
 	 "Resistances" : [],
 	 "SaveAdvantages" : [],
 	 "ArmorCategories" : []
@@ -8749,6 +8792,7 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 0,
+	 "Languages" : [],
 	 "Resistances" : [],
 	 "SaveAdvantages" : [],
 	 "ArmorCategories" : []
@@ -8765,6 +8809,7 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 0,
+	 "Languages" : ["DEPTH_COMMON"],
 	 "Resistances" : [],
 	 "SaveAdvantages" : [],
 	 "ArmorCategories" : []
@@ -8781,6 +8826,7 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 0,
+	 "Languages" : [],
 	 "Resistances" : [],
 	 "SaveAdvantages" : [],
 	 "ArmorCategories" : []
@@ -8797,6 +8843,7 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 0,
+	 "Languages" : [],
 	 "Resistances" : [],
 	 "SaveAdvantages" : [],
 	 "ArmorCategories" : []
@@ -8813,8 +8860,9 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 0,
-	 "Resistances" : ["Burned"],
-	 "SaveAdvantages" : ["Burned"],
+	 "Languages" : [],
+	 "Resistances" : ["FIRE"],
+	 "SaveAdvantages" : ["FIRE"],
 	 "ArmorCategories" : []
 	  },
 	"WATER_GENASI": {
@@ -8829,8 +8877,9 @@
 	 "Wisdom" : 1,
 	 "Charisma" : 0,
 	 "Speed" : 0,
-	 "Resistances" : ["Acidified"],
-	 "SaveAdvantages" : ["Acidified"],
+	 "Languages" : [],
+	 "Resistances" : ["ACID"],
+	 "SaveAdvantages" : ["ACID"],
 	 "ArmorCategories" : []
 	  },
 	"HUMAN": {
@@ -8845,6 +8894,7 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 0,
+	 "Languages" : [],
 	 "Resistances" : [],
 	 "SaveAdvantages" : [],
 	 "ArmorCategories" : []
@@ -8861,6 +8911,7 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 0,
+	 "Languages" : [],
 	 "Resistances" : [],
 	 "SaveAdvantages" : [],
 	 "ArmorCategories" : []
@@ -8877,6 +8928,7 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 0,
+	 "Languages" : [],
 	 "Resistances" : [],
 	 "SaveAdvantages" : [],
 	 "ArmorCategories" : []
@@ -8893,6 +8945,7 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 0,
+	 "Languages" : [],
 	 "Resistances" : ["Cold"],
 	 "SaveAdvantages" : ["Cold"],
 	 "ArmorCategories" : []
@@ -8909,8 +8962,9 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 0,
-	 "Resistances" : ["Electrified"],
-	 "SaveAdvantages" : ["Electrified"],
+	 "Languages" : [],
+	 "Resistances" : ["LIGHTNING"],
+	 "SaveAdvantages" : ["LIGHTNING"],
 	 "ArmorCategories" : []
 	  },
 	"BLACK_DRAGON": {
@@ -8925,8 +8979,9 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 0,
-	 "Resistances" : ["Acidified"],
-	 "SaveAdvantages" : ["Acidified"],
+	 "Languages" : [],
+	 "Resistances" : ["ACID"],
+	 "SaveAdvantages" : ["ACID"],
 	 "ArmorCategories" : []
 	  },
 	"RED_DRAGON": {
@@ -8941,8 +8996,9 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 0,
-	 "Resistances" : ["Burned"],
-	 "SaveAdvantages" : ["Burned"],
+	 "Languages" : [],
+	 "Resistances" : ["FIRE"],
+	 "SaveAdvantages" : ["FIRE"],
 	 "ArmorCategories" : []
 	  },
 	"GREEN_DRAGON": {
@@ -8957,8 +9013,9 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 0,
-	 "Resistances" : ["Poisonned"],
-	 "SaveAdvantages" : ["Poisonned"],
+	 "Languages" : [],
+	 "Resistances" : ["POISON"],
+	 "SaveAdvantages" : ["POISON"],
 	 "ArmorCategories" : []
 	  },
 	"BRASS_DRAGON": {
@@ -8973,8 +9030,9 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 0,
-	 "Resistances" : ["Burned"],
-	 "SaveAdvantages" : ["Burned"],
+	 "Languages" : [],
+	 "Resistances" : ["FIRE"],
+	 "SaveAdvantages" : ["FIRE"],
 	 "ArmorCategories" : []
 	  },
 	"SILVER_DRAGON": {
@@ -8989,8 +9047,9 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 0,
-	 "Resistances" : ["Cold"],
-	 "SaveAdvantages" : ["Cold"],
+	 "Languages" : [],
+	 "Resistances" : ["COLD"],
+	 "SaveAdvantages" : ["COLD"],
 	 "ArmorCategories" : []
 	  },
 	"BRONZE_DRAGON": {
@@ -9005,8 +9064,9 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 0,
-	 "Resistances" : ["Electrified"],
-	 "SaveAdvantages" : ["Electrified"],
+	 "Languages" : [],
+	 "Resistances" : ["LIGHTNING"],
+	 "SaveAdvantages" : ["LIGHTNING"],
 	 "ArmorCategories" : []
 	  },
 	"COPPER_DRAGON": {
@@ -9021,8 +9081,9 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 0,
-	 "Resistances" : ["Acidified"],
-	 "SaveAdvantages" : ["Acidified"],
+	 "Languages" : [],
+	 "Resistances" : ["ACID"],
+	 "SaveAdvantages" : ["ACID"],
 	 "ArmorCategories" : []
 	  },
 	"GOLD_DRAGON": {
@@ -9037,8 +9098,9 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 0,
-	 "Resistances" : ["Burned"],
-	 "SaveAdvantages" : ["Burned"],
+	 "Languages" : [],
+	 "Resistances" : ["FIRE"],
+	 "SaveAdvantages" : ["FIRE"],
 	 "ArmorCategories" : []
 	  },
 	"TIEFFLING": {
@@ -9053,8 +9115,9 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 0,
-	 "Resistances" : ["Burned"],
-	 "SaveAdvantages" : ["Burned"],
+	 "Languages" : [],
+	 "Resistances" : ["FIRE"],
+	 "SaveAdvantages" : ["FIRE"],
 	 "ArmorCategories" : []
 	  },
 	"AARAKOCRA": {
@@ -9069,6 +9132,7 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 0,
+	 "Languages" : [],
 	 "Resistances" : [],
 	 "SaveAdvantages" : [],
 	 "ArmorCategories" : []
@@ -9085,6 +9149,7 @@
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
 	 "Speed" : 0,
+	 "Languages" : [],
 	 "Resistances" : [],
 	 "SaveAdvantages" : [],
 	 "ArmorCategories" : []

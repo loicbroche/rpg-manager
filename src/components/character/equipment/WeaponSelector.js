@@ -84,12 +84,12 @@ class WeaponSelector extends Component {
             <img src={equipmentImage} className="equipment-image" alt="" />
           </div>
           <div className="equipment-description">
-            <div className="equipment-description-line"><span className="description-line-title">{equipment?"Poids:":'\u00A0'}</span>
-                                                        {equipment && <Weight weight={equipment.Weight} />}</div>
             <div className="equipment-description-line"><span className="description-line-title">{equipment?"Dégâts:":'\u00A0'}</span>
                                                         <span className="description-line-value">{equipment && equipment.Damage+" "+equipment.DamageType}</span></div>
             <div className="equipment-description-line"><span className="description-line-title">{equipment?"Propriété:":'\u00A0'}</span>
                                                         <span className="description-line-value">{equipment && equipment.Properties}</span></div>
+            <div className="equipment-description-line"><span className="description-line-title">{equipment?"Poids:":'\u00A0'}</span>
+                                                        {equipment && <Weight weight={equipment.Weight} />}</div>
             <div className="equipment-description-line"><span className="description-line-title">{equipment?"Prix:":'\u00A0'}</span>
                                                         {equipment && <Money amount={equipment.Price} />}</div>
           </div>
@@ -124,7 +124,7 @@ class WeaponSelector extends Component {
            <optgroup key={equipmentCategoryId} label={equipmentCategories && equipmentCategories[equipmentCategoryId].Name}>
             { availableEquipments.map((equipment) => (
               <option key={equipment.Name} value={equipment.Id} className={this.isMaster(equipment)?"master-equipment":""}
-              title={isClassMaster?"Maîtrise héritée de la classe "+className:"Non maîtrisé"}>{equipment.Name}</option>
+              title={(isClassMaster?"Maîtrise héritée de la classe "+className:"Non maîtrisé")+`\nDégâts : ${equipment.Damage} ${equipment.DamageType}`}>{equipment.Name}</option>
             ))}
           </optgroup>
   }

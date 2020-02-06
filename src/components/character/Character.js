@@ -113,7 +113,9 @@ class Character extends Component {
             { Name !== null && (
                 <div>
                     <div className="character-header">
-                        <DetailsComponent character={this.state} onChange={(caracteristicName, value) => { this.updateCaracteristic(caracteristicName, value); }}/>
+                        <DetailsComponent   character={this.state}
+                                            onChange={(caracteristicName, value) => { this.updateCaracteristic(caracteristicName, value); }}
+                                            onClickElement={(elementName, value) => { this.toggleElement(elementName, value); }} />
                         <RaceSelector   subRaceId={subRaceId}
                                         gender={Gender}
                                         onRaceChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SUB_RACE.name, value);}}

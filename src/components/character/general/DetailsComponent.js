@@ -20,7 +20,7 @@ class DetailsComponent extends Component {
 
   render() {
     const { showDetails } = this.state;
-    const { alignments, character, onChange } = this.props;
+    const { alignments, character, onChange, onClickElement } = this.props;
     return (
       <div className="detailsComponent">
           <span className="details-header">
@@ -110,7 +110,9 @@ class DetailsComponent extends Component {
                       onChange={(event) => onChange(DATA_MODEL.CHARACTERS.columns.DEFECTS.name, event.target.value)}
                       className="defects"
                       disabled={!onChange} />
-              <LanguagesComponent knownLanguages={character[DATA_MODEL.CHARACTERS.columns.LANGUAGES.name]}/>
+              <LanguagesComponent knownLanguages={character[DATA_MODEL.CHARACTERS.columns.LANGUAGES.name]}
+                                  subRaceId={character[DATA_MODEL.CHARACTERS.columns.SUB_RACE.name]}
+                                  onClick={(value) => onClickElement(DATA_MODEL.CHARACTERS.columns.LANGUAGES.name, value)} />
             </div>
         </div>
       </div>
@@ -121,11 +123,13 @@ class DetailsComponent extends Component {
   onDetailsUpdate = (event) => {
     this.setState({showDetails: !this.state.showDetails})
   }
+
 }
 
 DetailsComponent.propTypes = {
   character: CharacterPropType.isRequired,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
+  onClickElement: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => ({

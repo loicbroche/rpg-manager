@@ -207,7 +207,7 @@ class App extends Component {
     });
 
     this.languagesRef = database.ref(DATA_MODEL.LANGUAGES.name);
-    this.alignmentsRef.once('value', snapshot => {
+    this.languagesRef.once('value', snapshot => {
       //languagesRef: state.referential.languages
       const action = { type: ActionTypes.REFERENTIAL.LOAD_LANGUAGES, value: objectToArray(snapshot.val()) }
       this.props.dispatch(action);

@@ -17,7 +17,7 @@ const notMasterImage = require("images/cross.png");
 class ArmorSelector extends Component {
 
   render() {
-/**/const { equipmentCategories, equipments, equipmentId, shield, wearingCharacter } = this.props;
+/**/const { equipmentCategories, equipments, caracteristics, equipmentId, shield, wearingCharacter } = this.props;
     const equipment = equipments && equipments[equipmentId];
     
 /**/const equipmentType = shield?"shield":"armor";
@@ -25,12 +25,13 @@ class ArmorSelector extends Component {
 /**/const equipmentLabel = shield?"un bouclier":"une armure";
 /**/const filteredCategories = equipmentCategories && (shield?filterShieldsCategories(equipmentCategories):filterArmorsCategories(equipmentCategories));
     const isMaster = this.isMasterCategory(equipment && equipment.Category);
+/**/const bonusCaracteristic = caracteristics && equipment && equipment.BonusAC && caracteristics[equipment.BonusAC];
 /**/const bonusContent = equipment && 
                          <div className={`main-stat-bonus-label ${ isMaster?(equipment && equipment.BonusAC):"not-master-equipment"}`}>
                             {isMaster
-                              ?(equipment && equipment.BonusAC && <CaracteristicBonus caracteristicName={equipment.BonusAC}
-                                                  value={wearingCharacter && wearingCharacter[equipment.BonusAC]}
-                                                 bonusMax={Number.isNaN(equipment.MaxBonusAC)?null:equipment.MaxBonusAC}
+                              ?(equipment && equipment.BonusAC && <CaracteristicBonus caracteristicName={bonusCaracteristic.OV}
+                                                  value={wearingCharacter && wearingCharacter[bonusCaracteristic.OV]}
+                                                  bonusMax={Number.isNaN(equipment.MaxBonusAC)?null:equipment.MaxBonusAC}
                                                   subRaceId={wearingCharacter && wearingCharacter.SubRace} />)
                               :<img src={notMasterImage} className="not-master-image" alt="" title="Non maîtrisé"/>
                             }
@@ -70,12 +71,12 @@ class ArmorSelector extends Component {
             <img src={equipmentImage} className="equipment-image" alt="" />
           </div>
           <div className="equipment-description">
-            <div className="equipment-description-line"><span className="description-line-title">{equipment?"Poids:":'\u00A0'}</span>
-                                                        {equipment && <Weight weight={equipment.Weight} />}</div>
             <div className="equipment-description-line"><span className="description-line-title">{equipment?"Discretion:":'\u00A0'}</span>
                                                         <span className="description-line-value">{equipment && equipment.Discretion}</span></div>
             <div className="equipment-description-line"><span className="description-line-title">{equipment?"Force:":'\u00A0'}</span>
                                                         <span className="description-line-value">{equipment && equipment.Strength}</span></div>
+            <div className="equipment-description-line"><span className="description-line-title">{equipment?"Poids:":'\u00A0'}</span>
+                                                        {equipment && <Weight weight={equipment.Weight} />}</div>
             <div className="equipment-description-line"><span className="description-line-title">{equipment?"Prix:":'\u00A0'}</span>
                                                         {equipment && <Money amount={equipment.Price} />}</div>
           </div>
@@ -102,7 +103,17 @@ class ArmorSelector extends Component {
            <optgroup key={equipmentCategoryId} label={equipmentCategories && equipmentCategories[equipmentCategoryId].Name} >
             { availableEquipments.map((equipment) => (
               <option key={equipment.Name} value={equipment.Id} className={isMasterCategory?"master-equipment":""}
-                      title={isRaceMasterCategory?"Maîtrise héritée de la race "+subRace.Name:(isClassMasterCategory?"Maîtrise héritée de la classe "+characterClass.Name:"Non maîtrisé")}>{equipment.Name}</option>
+                      title={ (isRaceMasterCategory
+                              ?"Maîtrise héritée de la race "+subRace.Name
+                              :(  isClassMasterCategory
+                                  ?"Maîtrise héritée de la classe "+characterClass.Name
+                                  :"Non maîtrisé"
+                              ))+`\nCA : ${equipment.AC} ${equipment.BonusAC
+                                                            ?`+${equipment.BonusAC} ${equipment.MaxBonusAC
+                                                                                      ?`(max ${equipment.MaxBonusAC})`
+                                                                                      :""}`
+                                                            :""}
+                                  `}>{equipment.Name}</option>
             ))}
           </optgroup>
   }
@@ -146,6 +157,7 @@ const mapStateToProps = (state) => ({
   equipmentCategories: state.referential.armorCategories,
   equipments: state.referential.armors,
   classes: state.referential.classes,
-  subRaces: state.referential.subRaces
+  subRaces: state.referential.subRaces,
+  caracteristics: state.referential.caracteristics
 })
 export default connect(mapStateToProps)(ArmorSelector)
