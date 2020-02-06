@@ -33,6 +33,7 @@ const initialState = {
     skills: null,
     spells: null,
     alterations: null,
+    alterationTypes: null,
     alignments: null,
     languages: null
 }
@@ -194,6 +195,12 @@ function referentialReducer(state = initialState, action) {
             nextState = {
                 ...state,
                 alterations: action.value
+            }
+            return nextState;
+        case ActionTypes.REFERENTIAL.LOAD_ALTERATION_TYPES:
+            nextState = {
+                ...state,
+                alterationTypes: action.value
             }
             return nextState;
         case ActionTypes.REFERENTIAL.LOAD_ALIGNMENTS:

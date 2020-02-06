@@ -282,8 +282,19 @@ export const DATA_MODEL = {
             name: 'Alterations',
             columns: {
                 CODE: { name: "Code" },
-                ELEMENT: { name: "Element" },
-                NAME: { name: "Name" }
+                TYPE: { name: "Type" },
+                NAME: { name: "Name" },
+                EFFECT: { name: "Effect" },
+                EFFECT_DESCRIPTION: { name: "EffectDescription" }
+            }
+        },
+        ALTERATION_TYPES:
+        {
+            name: 'AlterationTypes',
+            columns: {
+                CODE: { name: "Code" },
+                NAME: { name: "Name" },
+                RESISTABLE: { name: "Resistable" }
             }
         },
 

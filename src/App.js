@@ -199,6 +199,13 @@ class App extends Component {
       this.props.dispatch(action);
     });
 
+    this.alterationTypesRef = database.ref(DATA_MODEL.ALTERATION_TYPES.name);
+    this.alterationTypesRef.once('value', snapshot => {
+      //referentialReducer: state.referential.alterationTypes
+      const action = { type: ActionTypes.REFERENTIAL.LOAD_ALTERATION_TYPES, value: objectToArray(snapshot.val()) }
+      this.props.dispatch(action);
+    });
+
     this.alignmentsRef = database.ref(DATA_MODEL.ALIGNMENTS.name);
     this.alignmentsRef.once('value', snapshot => {
       //referentialReducer: state.referential.alignments

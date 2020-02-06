@@ -9,6 +9,7 @@ import { getLevelNumber } from 'rules/Levels.rules'
 import './Character.css'
 import Skills from './stats/Skills'
 import Weapons from './stats/Weapons'
+import Objects from './stats/Objects'
 import Caracteristic from './stats/Caracteristic'
 import SavesComponent from './stats/SavesComponent'
 import SpeedComponent from './stats/SpeedComponent'
@@ -42,7 +43,6 @@ class Character extends Component {
         MasterBonus: null,
         Skills: null,
         MasterWeapons: null,
-        MasterArmors: null,
         MasterObjects: null,
         Historic: null,
         Alignment: null,
@@ -63,8 +63,8 @@ class Character extends Component {
         MaxHP: null,
         HP: null,
         AC: null,
-        WeaponRight: null,
-        WeaponLeft: null,
+        Weapon: null,
+        DistanceWeapon: null,
         Armor: null,
         Money: null,
         Objects: null,
@@ -100,7 +100,7 @@ class Character extends Component {
     render() {
         const { caracteristics, levels} = this.props;
         const { Name, SubRace: subRaceId, Gender, Class: classId, Historic: historicId, History, Skills: masterSkills,
-                XP, HP, MaxHP, Specials, Spells, Armor, Shield, Weapon, DistanceWeapon, MasterWeapons, MasterArmors, Alterations,
+                XP, HP, MaxHP, Specials, Spells, Armor, Shield, Weapon, DistanceWeapon, MasterWeapons, MasterObjects, Alterations,
                 Resistances, Saves, SaveAdvantages, Health } = this.state
         const caracteristicsBonus = caracteristics && Object.values(caracteristics).reduce((accum, caracteristic) => {
             accum[caracteristic.Code] = this.state[caracteristic.OV];
@@ -131,6 +131,9 @@ class Character extends Component {
 
                     <div className="character-capacities">
                         <div className="fight">
+                            <HPComponent val={HP} maxVal={MaxHP} classId={classId}
+                                            onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HP.name, value); }}
+                                            onMaxValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.MAX_HP.name, value); }} />
                             <div className="health">
                                 <div className="filler"></div>
                                 <HealthComponent value={Health} onChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HEALTH.name, value); }} />
@@ -139,9 +142,6 @@ class Character extends Component {
                                 onResistanceClick={this.toggleResistance}/>
                                 <div className="filler"></div>
                             </div>
-                            <HPComponent val={HP} maxVal={MaxHP} classId={classId}
-                                            onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HP.name, value); }}
-                                            onMaxValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.MAX_HP.name, value); }} />
                             <div className="special">
                                 <SpecialsComponent val={Specials} classId={classId} level={characterLevel}
                                                     onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPECIALS.name, value); }} />
@@ -197,14 +197,12 @@ class Character extends Component {
                         <div className="equipment-armor">
                             <ArmorSelector equipmentId={Armor}
                                             wearingCharacter={ this.state }
-                                            master={MasterArmors}
                                             classId={classId}
                                             subRaceId={subRaceId}
                                             onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.ARMOR.name, value); }}/>
                             <ArmorSelector equipmentId={Shield}
                                             wearingCharacter={ this.state }
                                             shield={true}
-                                            master={MasterArmors}
                                             classId={classId}
                                             subRaceId={subRaceId}
                                             onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SHIELD.name, value); }}/>
@@ -215,6 +213,12 @@ class Character extends Component {
                             classId={classId}
                             level={characterLevel}
                             onClick={(weaponId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.MASTER_WEAPONS.name, weaponId) }} />
+
+                        <Objects master={MasterObjects}
+                            classId={classId}
+                            historicId={historicId}
+                            onClick={(objectId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.MASTER_OBJECTS.name, objectId) }} />
+
                         <Skills master={masterSkills}
                             historicId={historicId}
                             level={characterLevel}

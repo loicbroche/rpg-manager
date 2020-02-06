@@ -205,8 +205,17 @@ export const SpellPropType = PropTypes.shape({
 
 export const AlterationPropType = PropTypes.shape({
     Code: PropTypes.string.isRequired,
-    Element: PropTypes.string.isRequired,
-    Name: PropTypes.string.isRequired
+    Type: PropTypes.string.isRequired,
+    Name: PropTypes.string.isRequired,
+    Effect: PropTypes.string.isRequired,
+    EffectDescription: PropTypes.string.isRequired
+})
+
+
+export const AlterationTypePropType = PropTypes.shape({
+    Code: PropTypes.string.isRequired,
+    Name: PropTypes.string.isRequired,
+    Resistable: PropTypes.bool.isRequired
 })
 
 export const AlignmentPropType = PropTypes.shape({
