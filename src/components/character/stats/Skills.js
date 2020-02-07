@@ -7,7 +7,7 @@ import './Skills.css'
 import CaracteristicBonus from 'components/shared/CaracteristicBonus'
 import SkillSelector from 'components/shared//SkillSelector';
 
-const skillsImage = require('images/details.png');
+const detailsImage = require('images/details.png');
 
 class Skills extends Component {
 
@@ -36,7 +36,7 @@ class Skills extends Component {
                         XP={XP}
                         historicId={historicId} />
         <span className={`activable extensor ${showSkills?"opened":"closed"}`} onClick={this.onShowSkillsUpdate} title={title} >
-          <img src={skillsImage} alt={title} />
+          <img src={detailsImage} alt={title} />
         </span>
       </span>
       <div className={`skills-container`}>
@@ -49,7 +49,7 @@ class Skills extends Component {
               const caracteristicBonus = caracteristicsBonus && caracteristicsBonus[caracteristicCode];
 
               return (
-              <li key={index} className={"skill "+(isHistoricMaster?"historic-master":"activable")} onClick={() => !isHistoricMaster && onClick(Name)}
+              <li key={index} className={"skill "+(isHistoricMaster?"locked":"activable")} onClick={() => !isHistoricMaster && onClick(Name)}
                   title={isHistoricMaster?"Maîtrise héritée de l'historique "+historic.Name:(isMaster?"Oublier la compétence "+Name:"Apprendre la compétence "+Name)}>
                 <div className={"option "+((isHistoricMaster||isMaster)&&"filled")}></div>
                 <span className="skill-name">{Name}</span>
@@ -70,7 +70,7 @@ class Skills extends Component {
   }
 
   // Arrow fx for binding
-  onShowSkillsUpdate = (event) => {
+  onShowSkillsUpdate = () => {
     this.setState({showSkills: !this.state.showSkills})
   }
 }

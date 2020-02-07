@@ -189,18 +189,30 @@ class Character extends Component {
                         </div>
                     </div>
                     <div className="equipment">
-                        <div className="equipment-weapon">
-                            <WeaponSelector equipmentId={Weapon}
-                                            wearingCharacter={ this.state }
-                                            onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.WEAPON.name, value); }} />
-                            <WeaponSelector equipmentId={DistanceWeapon}
-                                            wearingCharacter={ this.state }
-                                            distance={true}
-                                            onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.DISTANCE_WEAPON.name, value); }}
-                                            onAmmunitionChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.AMMUNITION.name, value);  }} />
+                        <div className="equipment-weapons">
+                            <div className="weapons-selectors">
+                                <WeaponSelector equipmentId={Weapon}
+                                                wearingCharacter={ this.state }
+                                                onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.WEAPON.name, value); }} />
+                                <WeaponSelector equipmentId={DistanceWeapon}
+                                                wearingCharacter={ this.state }
+                                                distance={true}
+                                                onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.DISTANCE_WEAPON.name, value); }}
+                                                onAmmunitionChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.AMMUNITION.name, value);  }} />
+                            </div>
+                            <Weapons master={MasterWeapons}
+                                    classId={classId}
+                                    level={characterLevel}
+                                    onClick={(weaponId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.MASTER_WEAPONS.name, weaponId) }} />
                         </div>
-                        <BagComponent />
-                        <div className="equipment-armor">
+                        <div className="equipment-bag">
+                            <BagComponent />
+                            <Objects master={MasterObjects}
+                                classId={classId}
+                                historicId={historicId}
+                                onClick={(objectId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.MASTER_OBJECTS.name, objectId) }} />
+                        </div>
+                        <div className="equipment-armors">
                             <ArmorSelector equipmentId={Armor}
                                             wearingCharacter={ this.state }
                                             classId={classId}
@@ -213,17 +225,6 @@ class Character extends Component {
                                             subRaceId={subRaceId}
                                             onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SHIELD.name, value); }}/>
                         </div>
-                    </div>
-                    <div className="skills-selection">
-                        <Weapons master={MasterWeapons}
-                            classId={classId}
-                            level={characterLevel}
-                            onClick={(weaponId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.MASTER_WEAPONS.name, weaponId) }} />
-
-                        <Objects master={MasterObjects}
-                            classId={classId}
-                            historicId={historicId}
-                            onClick={(objectId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.MASTER_OBJECTS.name, objectId) }} />
                     </div>
                 </div>
             )}

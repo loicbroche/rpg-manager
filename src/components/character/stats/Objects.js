@@ -5,16 +5,35 @@ import PropTypes from 'prop-types'
 import './Objects.css'
 import { filterMasterableCategories } from 'rules/Objects.rules'
 
+const detailsImage = require('images/details.png');
+
 class Objects extends Component {
+
+  
+  constructor(props) {
+    super(props);
+    this.state = { showObjects: false };
+  }
 
   render() {
     const { objectCategories } = this.props;
+    const { showObjects } = this.state;
+    const title=showObjects?"Masquer les maîtrises d'objet":"Lire/Modifier les maîtrises d'objet";
 
     return (
-    <div className='objects'>
-      {objectCategories &&
-        Object.values(filterMasterableCategories(objectCategories)).map(( category ) => this.getObjects(category))
-      }
+    <div className='objectsComponent'>
+      <h1 className="objects-header">
+        <span className={`activable extensor ${showObjects?"opened":"closed"}`} onClick={this.onShowObjectsUpdate} title={title} >
+          <img src={detailsImage} alt={title} />
+        </span>
+      </h1>
+      <div className={`objects-container`}>
+        <div className={`objects ${showObjects&&"show-objects"}`}>
+          {objectCategories &&
+            Object.values(filterMasterableCategories(objectCategories)).map(( category ) => this.getObjects(category))
+          }
+        </div>
+      </div>
     </div>
   )
   }
@@ -38,7 +57,7 @@ class Objects extends Component {
               const isClassMaster = classObjects && classObjects.includes(Name);
               const isHistoricMaster = historicObjects && historicObjects.includes(Name);
               return (
-              <li key={index} className={"object "+(isClassMaster || isHistoricMaster?"class-master":"activable")}
+              <li key={index} className={"object "+(isClassMaster || isHistoricMaster?"locked":"activable")}
                   onClick={() => !(isClassMaster || isHistoricMaster) && onClick(Name)}
                   title={ isClassMaster
                           ?"Maîtrise héritée de la classe "+characterClass.Name
@@ -55,6 +74,11 @@ class Objects extends Component {
         </ul>
       </div>
   }
+
+    // Arrow fx for binding
+    onShowObjectsUpdate = () => {
+      this.setState({showObjects: !this.state.showObjects})
+    }
 }
 
 Objects.propTypes = {

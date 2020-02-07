@@ -96,27 +96,38 @@
 
 /* Equipments */
 .equipment,
-.equipment-weapon,
-.equipment-armor {
+.equipment-weapons,
+.equipment-armors {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-top: var(--components-separator-margin);
 }
-.equipment > *:not(:nth-child(1)):not(:empty),
-.equipment-weapon > *:not(:nth-child(1)):not(:empty),
-.equipment-armor > *:not(:nth-child(1)):not(:empty) {
-    margin-left: var(--components-separator-margin);
-}
-.equipment-weapon {
+.equipment-weapons {
     flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+}
+.equipment-bag {
+    margin-top: var(--components-separator-margin);
+    display: flex;
+    flex-direction: column;
+}
+.weapons-selectors {
+    display: flex;
+    flex-direction: row;
+}
+.equipment > *:not(:nth-child(1)):not(:empty),
+.weapons-selectors > *:not(:nth-child(1)):not(:empty),
+.equipment-armors > *:not(:nth-child(1)):not(:empty) {
+    margin-left: var(--components-separator-margin);
 }
 
 /* Skills selection */
 .skills-selection {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
     max-height: 20rem;
     overflow-y: scroll;
 }

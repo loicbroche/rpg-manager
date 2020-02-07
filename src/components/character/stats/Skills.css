@@ -1,7 +1,6 @@
 .skillsComponent {
   border: 1px solid var(--color-primary);
   justify-content: stretch;
-  height: 1.5rem;
 }
 
 .skills-header {
@@ -49,10 +48,6 @@
   border-width: 0;
   color: var(--color-primary);
 }
-.skill:hover:not(.historic-master),
-.skill:focus:not(.historic-master) {
-  border: 1px solid var(--color-primary);
-}
 
 .skill-name {
   flex-grow: 1;
@@ -61,10 +56,6 @@
 
 .skill-bonus {
   width: 2rem;
-}
-
-.historic-master {
-  border: 1px solid var(--color-primary);
 }
 
 .skill-bonus {

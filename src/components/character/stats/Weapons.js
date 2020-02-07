@@ -4,16 +4,35 @@ import PropTypes from 'prop-types'
 
 import './Weapons.css'
 
+const detailsImage = require('images/details.png');
+
 class Weapons extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { showWeapons: false };
+  }
 
   render() {
     const { weaponCategories } = this.props;
+    const { showWeapons } = this.state;
+    const title=showWeapons?"Masquer les maîtrises d'armes":"Lire/Modifier les maîtrises d'arme";
 
     return (
-    <div className='weapons'>
-      {weaponCategories &&
-        Object.values(weaponCategories).map(( category ) => this.getWeapons(category))
-      }
+    <div className='weaponsComponent'>
+      <h1 className="weapons-header">
+        Maîtrises d'armes
+        <span className={`activable extensor ${showWeapons?"opened":"closed"}`} onClick={this.onShowWeaponsUpdate} title={title} >
+          <img src={detailsImage} alt={title} />
+        </span>
+      </h1>
+      <div className={`weapons-container`}>
+        <div className={`weapons ${showWeapons&&"show-weapons"}`}>
+          {weaponCategories &&
+            Object.values(weaponCategories).map(( category ) => this.getWeapons(category))
+          }
+        </div>
+      </div>
     </div>
   )
   }
@@ -30,14 +49,14 @@ class Weapons extends Component {
 
     return availableWeapons && availableWeapons.length > 0 &&
       <div key={category && category.Code}>
-        <h1 className={`weapons-category-name ${(isClassMasterCategory?"class-master":"")}`}>{(category && category.Name)}</h1>
+        <h1 className={`weapons-category-name ${(isClassMasterCategory?"locked":"")}`}>{(category && category.Name)}</h1>
         <ul className="weapons-category">
           {availableWeapons &&
             Object.values(availableWeapons).map(({Name, Damage, DamageType}, index) => {
               const isMaster = master && master.includes(Name);
               const isClassMaster = isClassMasterCategory || classWeapons.includes(Name);
               return (
-              <li key={index} className={"weapon "+(isClassMaster?"class-master":"activable")} onClick={() => !isClassMaster && onClick(Name)}
+              <li key={index} className={"weapon "+(isClassMaster?"locked":"activable")} onClick={() => !isClassMaster && onClick(Name)}
                   title={(isClassMaster?"Maîtrise héritée de la classe "+characterClass.Name:(isMaster?"Oublier":"Apprendre")+` la maîtrise de ${Name}`)+`\nDégâts : ${Damage} ${DamageType}`}>
                 <div className={"option "+((isClassMaster||isMaster)&&"filled")}></div>
                 <span className="weapon-name">{Name}</span>
@@ -48,6 +67,11 @@ class Weapons extends Component {
         </ul>
       </div>
   }
+
+    // Arrow fx for binding
+    onShowWeaponsUpdate = () => {
+      this.setState({showWeapons: !this.state.showWeapons})
+    }
 }
 
 Weapons.propTypes = {

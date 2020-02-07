@@ -129,6 +129,12 @@ h1 {
 .activable.transparent:active {
   background-color: var(--active-background-transparent-color-1);
 }
+li.activable:hover,
+li.skill:focus,
+li.locked {
+  border: 1px solid var(--color-primary);
+}
+
 
 .body {
   margin: 1rem;
