@@ -10,6 +10,7 @@ class HistoricSelector extends Component {
     super(props);
     this.state = { showHistory: false, history: props.history };
   }
+
   render() {
     const { historics, historicId } = this.props;
     const { history } = this.state;
@@ -23,11 +24,13 @@ class HistoricSelector extends Component {
     } catch (ex) {
       historicImage = require("images/historics/no_historic.png");
     }
-
+    const title = showHistory?"Enregistrer et masquer l'historique":"Lire/Modifier l'historique";
     return (
         <div className="selector historic-selector">
           <div className={`history-container ${showHistory&&"show-history"}`}>
-              <img src={inkWellImage} className="activable transparent modify" alt="Lire/Modifier l'historique" title="Lire/modifier l'historique" onClick={this.onHistoryUpdate}/>
+            <span className={`activable transparent extensor ${showHistory?"opened":"closed"}`} onClick={this.onHistoryUpdate} title={title} >
+              <img src={inkWellImage} alt={title} />
+            </span>  
               <textarea className={`narrative history ${showHistory&&"show-history"}`} value={history} onChange={this.onHistoryChange}></textarea>
           </div>
           <div className="selector-icon historic-icon">
@@ -55,18 +58,18 @@ class HistoricSelector extends Component {
     this.props.onHistoricChange(selectedHistoric);
   }
 
-    // Arrow fx for binding
-    onHistoryUpdate = (event) => {
-      const { history } = this.state;
-      this.setState({showHistory: !this.state.showHistory})
-      this.props.onHistoryChange(history);
-    }
+  // Arrow fx for binding
+  onHistoryUpdate = (event) => {
+    const { history } = this.state;
+    this.setState({showHistory: !this.state.showHistory})
+    this.props.onHistoryChange(history);
+  }
 
-    // Arrow fx for binding
-    onHistoryChange = (event) => {
-      const history = event.target.value;
-      this.setState({history: history})
-    }
+  // Arrow fx for binding
+  onHistoryChange = (event) => {
+    const history = event.target.value;
+    this.setState({history: history})
+  }
 }
 
 HistoricSelector.propTypes = {

@@ -215,7 +215,7 @@ export const AlterationPropType = PropTypes.shape({
 export const AlterationTypePropType = PropTypes.shape({
     Code: PropTypes.string.isRequired,
     Name: PropTypes.string.isRequired,
-    Resistable: PropTypes.bool.isRequired
+    Savable: PropTypes.bool.isRequired
 })
 
 export const AlignmentPropType = PropTypes.shape({

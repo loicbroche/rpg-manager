@@ -6,14 +6,15 @@
 
 .alterations {
   display: flex;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
+  flex-direction: column;
   padding-top: 0.25rem;
-  
 }
 
-.alterations > *:not(:nth-child(1)) {
-  margin-right: 0.25rem;
+.savable,
+.unsavable,
+.alteration-category {
+  display: flex;
+  flex-direction: row;
 }
 
 .alteration {
@@ -22,6 +23,7 @@
   padding: 0.15rem;
   border-radius: 50%;
   border: 1px solid transparent;
+  margin-left: 0.25rem;
 }
 
 .alteration.activable:hover,

@@ -1,8 +1,43 @@
+.skillsComponent {
+  border: 1px solid var(--color-primary);
+  justify-content: stretch;
+  height: 1.5rem;
+}
+
+.skills-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skills-header .skill-selector {
+  flex-grow: 1;
+}
+
+.skills-container {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
 .skills {
+  position: absolute;
+  visibility: collapse;   
   display: flex;
   flex-direction: column;
-  user-select: none;
+  margin: 0;
+  max-height: 50vh;
+  overflow-y: scroll;
   padding-inline-start: 0;
+  user-select: none; 
+  z-index: 2;
+  border: 1px solid var(--color-primary);
+  background-color: var(--background-color-1);
+}
+
+.show-skills {
+  visibility: visible;
 }
 
 .skill {
@@ -10,6 +45,7 @@
   display: flex;
   flex-direction: row;
   margin: 0.1rem auto;
+  white-space: nowrap;
   border-width: 0;
   color: var(--color-primary);
 }

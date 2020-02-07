@@ -46,10 +46,3 @@
 .show-details {
   visibility: visible;
 }
-
-.modify-details {
-  width: 1rem;
-  margin-left: 0.25rem;
-  align-self: flex-end;
-  border-radius: 0.25rem;
-}

@@ -25,7 +25,7 @@ class SkillSelector extends Component {
 
     const historic = historics && historics[historicId];
     const historicSkills = historic?historic.Skills:[];
-
+console.log("historics "+historicId, historic, historics);
     const isMaster = master && master.includes(selectedSkillName);
     const isHistoricMaster = historicSkills.includes(selectedSkillName);
 
@@ -71,6 +71,7 @@ SkillSelector.defaultProps = {
 const mapStateToProps = (state) => ({
   skills: state.referential.skills,
   caracteristics: state.referential.caracteristics,
-  levels: state.referential.levels
+  levels: state.referential.levels,
+  historics: state.referential.historics
 })
 export default connect(mapStateToProps)(SkillSelector)

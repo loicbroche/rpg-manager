@@ -206,32 +206,32 @@
 	"1_SUBSTANCE": {
 	  "Code": "1_SUBSTANCE",
 	  "Name": "Substance",
-	  "Resistable": true
+	  "Savable": true
 	 },
 	"2_ELEMENT": {
 	  "Code": "2_ELEMENT",
 	  "Name": "Elément",
-	  "Resistable": true
-	 },
-	"6_POSITION": {
-	  "Code": "6_POSITION",
-	  "Name": "Position",
-	  "Resistable": false
+	  "Savable": true
 	 },
 	"3_CONTEXT": {
 	  "Code": "3_CONTEXT",
 	  "Name": "Contexte",
-	  "Resistable": true
+	  "Savable": true
 	 },
 	"4_MAGIC": {
 	  "Code": "4_MAGIC",
 	  "Name": "Magie",
-	  "Resistable": false
+	  "Savable": true
 	 },
 	"5_SENSE": {
 	  "Code": "5_SENSE",
 	  "Name": "Sens",
-	  "Resistable": false
+	  "Savable": false
+	 },
+	"6_POSITION": {
+	  "Code": "6_POSITION",
+	  "Name": "Position",
+	  "Savable": false
 	 }
   },
   "ArmorCategories" : {

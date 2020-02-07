@@ -294,7 +294,7 @@ export const DATA_MODEL = {
             columns: {
                 CODE: { name: "Code" },
                 NAME: { name: "Name" },
-                RESISTABLE: { name: "Resistable" }
+                SAVABLE: { name: "Savable" }
             }
         },
 

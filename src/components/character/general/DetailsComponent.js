@@ -9,7 +9,7 @@ import Weight from 'components/shared/Weight'
 import LanguagesComponent from './LanguagesComponent'
 import './DetailsComponent.css'
 
-const detailsImage = require('images/details.png');
+const detailsImage = require('images/inkwell_primary.png');
 
 class DetailsComponent extends Component {
 
@@ -21,11 +21,14 @@ class DetailsComponent extends Component {
   render() {
     const { showDetails } = this.state;
     const { alignments, character, onChange, onClickElement } = this.props;
+    const title=showDetails?"Masquer les détails":"Lire/Modifier les détails";
     return (
       <div className="detailsComponent">
           <span className="details-header">
             <span className="character-name">{character.Name}</span>
-            <img src={detailsImage} className="activable modify-details" alt="Lire/Modifier les détails" title="Lire/modifier les détails" onClick={this.onDetailsUpdate}/>
+            <span className={`activable extensor ${showDetails?"opened":"closed"}`} onClick={this.onShowDetailsUpdate} title={title} >
+              <img src={detailsImage}  alt={title} />
+            </span>
           </span>
         <div className={`details-container ${showDetails&&"show-details"}`}>
             <div className="details-names">
@@ -120,7 +123,7 @@ class DetailsComponent extends Component {
   }
 
   // Arrow fx for binding
-  onDetailsUpdate = (event) => {
+  onShowDetailsUpdate = (event) => {
     this.setState({showDetails: !this.state.showDetails})
   }
 

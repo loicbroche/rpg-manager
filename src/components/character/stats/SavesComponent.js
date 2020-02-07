@@ -66,7 +66,7 @@ class SavesComponent extends Component {
           </div>
           <div className="alteration-saves">
             {alterationTypes &&
-              Object.values(alterationTypes).map((type) => type.Resistable && this.getAlterations(type))
+              Object.values(alterationTypes).map((type) => type.Savable && this.getAlterations(type))
             }
           </div>
         </div>

@@ -13,9 +13,16 @@ class AlterationsComponent extends Component {
     return (
       <div className="alterationsComponent">
         <div className="alterations">
-          {alterationTypes &&
-            Object.values(alterationTypes).map((type) =>  this.getAlterations(type))
-          }
+          <div className="unsavable">
+            {alterationTypes &&
+              Object.values(alterationTypes).map((type) => !type.Savable &&  <span key={type.Code} className="alteration-category">{this.getAlterations(type)}</span>)
+            }
+          </div>
+          <div className="savable">
+            {alterationTypes &&
+              Object.values(alterationTypes).map((type) => type.Savable &&  <span key={type.Code} className="alteration-category">{this.getAlterations(type)}</span>)
+            }
+          </div>
         </div>
       </div>
     )

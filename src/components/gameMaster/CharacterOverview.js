@@ -8,7 +8,7 @@ import { updateCharacterCaracteristic, insertCharacterElement, deleteCharacterEl
 
 import './CharacterOverview.css'
 import CaracteristicBonus from 'components/shared/CaracteristicBonus'
-import SkillSelector from './SkillSelector';
+import SkillSelector from 'components/shared//SkillSelector';
 import XPComponent from 'components/character/general/XPComponent';
 import HPComponent from 'components/character/fight/HPComponent';
 import SpecialsComponent from 'components/character/fight/SpecialsComponent';

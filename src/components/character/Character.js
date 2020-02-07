@@ -131,17 +131,17 @@ class Character extends Component {
 
                     <div className="character-capacities">
                         <div className="fight">
+                            <div className="health">
+                                <div className="filler"></div>
+                                <AlterationsComponent characterAlterations={Alterations} resistances={Resistances} subRaceId={subRaceId} classId={classId}
+                                                        onClick={(alterationId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.ALTERATIONS.name, alterationId) }}
+                                                        onResistanceClick={this.toggleResistance}/>
+                                <HealthComponent value={Health} onChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HEALTH.name, value); }} />
+                                <div className="filler"></div>
+                            </div>
                             <HPComponent val={HP} maxVal={MaxHP} classId={classId}
                                             onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HP.name, value); }}
                                             onMaxValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.MAX_HP.name, value); }} />
-                            <div className="health">
-                                <div className="filler"></div>
-                                <HealthComponent value={Health} onChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HEALTH.name, value); }} />
-                                <AlterationsComponent characterAlterations={Alterations} resistances={Resistances} subRaceId={subRaceId} classId={classId}
-                                onClick={(alterationId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.ALTERATIONS.name, alterationId) }}
-                                onResistanceClick={this.toggleResistance}/>
-                                <div className="filler"></div>
-                            </div>
                             <div className="special">
                                 <SpecialsComponent val={Specials} classId={classId} level={characterLevel}
                                                     onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPECIALS.name, value); }} />
@@ -177,6 +177,12 @@ class Character extends Component {
                                 )
                             }
                             </div>
+                            <Skills master={masterSkills}
+                                    historicId={historicId}
+                                    XP={XP}
+                                    caracteristicsBonus={caracteristicsBonus}
+                                    subRaceId={subRaceId}
+                                    onClick={(skillId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.SKILLS.name, skillId) }} />
                             <SavesComponent saves={Saves} advantages={SaveAdvantages} subRaceId={subRaceId} classId={classId}
                                             onClick={(alterationId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.SAVES.name, alterationId) }}
                                             onAdvantageClick={(alterationId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.SAVE_ADVANTAGES.name, alterationId) }}/>
@@ -218,13 +224,6 @@ class Character extends Component {
                             classId={classId}
                             historicId={historicId}
                             onClick={(objectId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.MASTER_OBJECTS.name, objectId) }} />
-
-                        <Skills master={masterSkills}
-                            historicId={historicId}
-                            level={characterLevel}
-                            caracteristicsBonus={caracteristicsBonus}
-                            subRaceId={subRaceId}
-                            onClick={(skillId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.SKILLS.name, skillId) }} />
                     </div>
                 </div>
             )}
