@@ -5,32 +5,25 @@ import PropTypes from 'prop-types'
 import { CharacterPropType } from 'PropTypes';
 import { DATA_MODEL } from 'database/DataModel'
 
+import './DetailsComponent.css'
+import ExpendableComponent from 'components/shared/ExpendableComponent';
 import Weight from 'components/shared/Weight'
 import LanguagesComponent from './LanguagesComponent'
-import './DetailsComponent.css'
 
 const detailsImage = require('images/inkwell_primary.png');
 
 class DetailsComponent extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = { showDetails: false };
-  }
-
   render() {
-    const { showDetails } = this.state;
+
     const { alignments, character, onChange, onClickElement } = this.props;
-    const title=showDetails?"Masquer les détails":"Lire/Modifier les détails";
+
     return (
       <div className="detailsComponent">
-          <span className="details-header">
-            <span className="character-name">{character.Name}</span>
-            <span className={`activable extensor ${showDetails?"opened":"closed"}`} onClick={this.onShowDetailsUpdate} title={title} >
-              <img src={detailsImage}  alt={title} />
-            </span>
-          </span>
-        <div className={`details-container ${showDetails&&"show-details"}`}>
+        <ExpendableComponent extensorTitle="les détails"
+                              header={<span className="character-name">{character.Name}</span>}
+                              extensor={<img src={detailsImage} alt="Détails" />}>
+          <div className="details">
             <div className="details-names">
               <span>Alignement</span>
               <span>Âge</span>
@@ -117,16 +110,11 @@ class DetailsComponent extends Component {
                                   subRaceId={character[DATA_MODEL.CHARACTERS.columns.SUB_RACE.name]}
                                   onClick={(value) => onClickElement(DATA_MODEL.CHARACTERS.columns.LANGUAGES.name, value)} />
             </div>
-        </div>
+          </div>
+        </ExpendableComponent>
       </div>
     )
   }
-
-  // Arrow fx for binding
-  onShowDetailsUpdate = (event) => {
-    this.setState({showDetails: !this.state.showDetails})
-  }
-
 }
 
 DetailsComponent.propTypes = {

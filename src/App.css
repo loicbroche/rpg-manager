@@ -220,24 +220,6 @@ li.locked {
   content: "🢒";
 }
 
-.extensor {
-  height: 1rem;
-  padding: 0.15rem;
-  align-self: flex-end;
-  border-radius: 0.25rem;
-}
-.extensor img {
-  height: 100%;
-}
-
-.opened::before {
-  font-size: 0.33rem;
-  content: "⮝";
-}
-.closed::before {
-  font-size: 0.33rem;
-  content: "⮟";
-}
 .currentModifier.disabled,
 .currentModifier.disabled,
 .maxModifier.disabled,

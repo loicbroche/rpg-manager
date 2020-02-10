@@ -3,39 +3,28 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
 import './Objects.css'
+import ExpendableComponent from 'components/shared/ExpendableComponent';
 import { filterMasterableCategories } from 'rules/Objects.rules'
 
 const detailsImage = require('images/details.png');
 
 class Objects extends Component {
 
-  
-  constructor(props) {
-    super(props);
-    this.state = { showObjects: false };
-  }
-
   render() {
     const { objectCategories } = this.props;
-    const { showObjects } = this.state;
-    const title=showObjects?"Masquer les maîtrises d'objet":"Lire/Modifier les maîtrises d'objet";
 
     return (
     <div className='objectsComponent'>
-      <h1 className="objects-header">
-        <span className={`activable extensor ${showObjects?"opened":"closed"}`} onClick={this.onShowObjectsUpdate} title={title} >
-          <img src={detailsImage} alt={title} />
-        </span>
-      </h1>
-      <div className={`objects-container`}>
-        <div className={`objects ${showObjects&&"show-objects"}`}>
-          {objectCategories &&
-            Object.values(filterMasterableCategories(objectCategories)).map(( category ) => this.getObjects(category))
-          }
-        </div>
-      </div>
+          <ExpendableComponent extensorTitle="les maîtrises d'objet"
+                                extensor={<img src={detailsImage} alt="Maîtrises d'objet" />}>
+            <div className="objects">
+              {objectCategories &&
+                Object.values(filterMasterableCategories(objectCategories)).map(( category ) => this.getObjects(category))
+              }
+            </div>
+          </ExpendableComponent>
     </div>
-  )
+    )
   }
 
   getObjects(category) {
@@ -74,11 +63,6 @@ class Objects extends Component {
         </ul>
       </div>
   }
-
-    // Arrow fx for binding
-    onShowObjectsUpdate = () => {
-      this.setState({showObjects: !this.state.showObjects})
-    }
 }
 
 Objects.propTypes = {

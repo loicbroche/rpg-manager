@@ -3,36 +3,26 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
 import './Weapons.css'
+import ExpendableComponent from 'components/shared/ExpendableComponent';
 
 const detailsImage = require('images/details.png');
 
 class Weapons extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = { showWeapons: false };
-  }
-
   render() {
     const { weaponCategories } = this.props;
-    const { showWeapons } = this.state;
-    const title=showWeapons?"Masquer les maîtrises d'armes":"Lire/Modifier les maîtrises d'arme";
 
     return (
     <div className='weaponsComponent'>
-      <h1 className="weapons-header">
-        Maîtrises d'armes
-        <span className={`activable extensor ${showWeapons?"opened":"closed"}`} onClick={this.onShowWeaponsUpdate} title={title} >
-          <img src={detailsImage} alt={title} />
-        </span>
-      </h1>
-      <div className={`weapons-container`}>
-        <div className={`weapons ${showWeapons&&"show-weapons"}`}>
-          {weaponCategories &&
-            Object.values(weaponCategories).map(( category ) => this.getWeapons(category))
-          }
-        </div>
-      </div>
+      <ExpendableComponent extensorTitle="les maîtrises d'armes"
+                              header={<span>Maîtrises d'armes</span>}
+                              extensor={<img src={detailsImage} alt="Maîtrises d'armes" />}>
+          <div className="weapons">
+            {weaponCategories &&
+              Object.values(weaponCategories).map(( category ) => this.getWeapons(category))
+            }
+          </div>
+        </ExpendableComponent>
     </div>
   )
   }
@@ -67,11 +57,6 @@ class Weapons extends Component {
         </ul>
       </div>
   }
-
-    // Arrow fx for binding
-    onShowWeaponsUpdate = () => {
-      this.setState({showWeapons: !this.state.showWeapons})
-    }
 }
 
 Weapons.propTypes = {

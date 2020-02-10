@@ -1,45 +1,9 @@
-.weaponsComponent {
-  display: flex;
-  flex-direction: column;
-  padding-inline-start: 0;
-  white-space: nowrap;
-  border: 1px solid var(--color-primary);
-  justify-content: stretch;
-}
-.weapons-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .weapons-category {
   margin: 0.1rem 0 0.1rem auto
 }
 
-.weapons-container {
-  position: relative;
-  display: flex;
-  justify-content: flex-end;
-}
-
 .weapons {
-  position: absolute;
-  visibility: collapse;   
-  display: flex;
-  flex-direction: column;
-  margin: 0;
   max-height: 50vh;
-  overflow-y: scroll;
-  padding-inline-start: 0;
-  user-select: none; 
-  z-index: 2;
-  border: 1px solid var(--color-primary);
-  background-color: var(--background-color-1);
-}
-
-.show-weapons {
-  visibility: visible;
 }
 
 .weapon {

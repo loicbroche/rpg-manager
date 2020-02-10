@@ -1,30 +1,11 @@
-.detailsComponent {
-  display: flex;
-  flex-direction: column;
-  position: relative;
+.detailsComponent .expendable-container {
+  justify-content: flex-start;
 }
 
-.details-header {
+.details {
   display: flex;
   flex-direction: row;
-  align-items: center;
-}
-
-.character-name {
-  font-weight: bold;
-}
-
-.details-container {
-  position: absolute;
-  top: 1.5rem;
-  z-index: 5;
-  display: flex;
-  flex-direction: row;
-  padding: 1rem;
-  border: 0;
-  visibility: collapse;
-  background-color: var(--background-color-1);
-  border: 1px solid var(--color-primary);
+  padding: 0.5rem;
 }
 
 .details-names,
@@ -43,6 +24,7 @@
   margin-top: 0.5rem;
 }
 
-.show-details {
-  visibility: visible;
+.languages {
+  margin-block-start: 0rem;
+  margin-block-end: 0rem;
 }

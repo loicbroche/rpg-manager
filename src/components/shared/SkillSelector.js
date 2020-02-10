@@ -25,7 +25,7 @@ class SkillSelector extends Component {
 
     const historic = historics && historics[historicId];
     const historicSkills = historic?historic.Skills:[];
-console.log("historics "+historicId, historic, historics);
+
     const isMaster = master && master.includes(selectedSkillName);
     const isHistoricMaster = historicSkills.includes(selectedSkillName);
 
