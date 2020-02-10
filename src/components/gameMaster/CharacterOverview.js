@@ -12,7 +12,7 @@ import SkillSelector from 'components/shared//SkillSelector';
 import XPComponent from 'components/character/general/XPComponent';
 import HPComponent from 'components/character/fight/HPComponent';
 import SpecialsComponent from 'components/character/fight/SpecialsComponent';
-import CAComponent from 'components/character/fight/CAComponent';
+import ACComponent from 'components/character/fight/ACComponent';
 import AlterationsComponent from 'components/character/fight/AlterationsComponent'
 import SpeedComponent from 'components/character/stats/SpeedComponent'
 
@@ -56,8 +56,11 @@ class CharacterOverview extends Component {
                                     historicId={character.Historic} />
                 </div>
                 <div className="stats-overview">
-                    <CAComponent />
-                    <SpeedComponent subRaceId={character.SubRace} classId={character.Class} level={characterLevel} />
+                    <ACComponent dexterityPoints={character.Dexterity}/>
+                    <ACComponent    dexterityPoints={character.Dexterity}
+                                    subRaceId={character.SubRace} classId={character.Class}
+                                    armorId={character.Armor} shieldId={character.Shield} />
+                    <SpeedComponent subRaceId={character.SubRace} classId={character.Class} armorId={character.Armor} level={characterLevel} />
                 </div>
 
                 <div className="equipments-overview">

@@ -26,11 +26,12 @@ class ArmorSelector extends Component {
 /**/const filteredCategories = equipmentCategories && (shield?filterShieldsCategories(equipmentCategories):filterArmorsCategories(equipmentCategories));
     const isMaster = this.isMasterCategory(equipment && equipment.Category);
 /**/const bonusCaracteristic = caracteristics && equipment && equipment.BonusAC && caracteristics[equipment.BonusAC];
+    const caracteristicName = bonusCaracteristic && bonusCaracteristic.OV;
 /**/const bonusContent = equipment && 
                          <div className={`main-stat-bonus-label ${ isMaster?(equipment && equipment.BonusAC):"not-master-equipment"}`}>
                             {isMaster
-                              ?(equipment && equipment.BonusAC && <CaracteristicBonus caracteristicName={bonusCaracteristic.OV}
-                                                  value={wearingCharacter && wearingCharacter[bonusCaracteristic.OV]}
+                              ?(equipment && equipment.BonusAC && <CaracteristicBonus caracteristicName={caracteristicName}
+                                                  value={wearingCharacter && wearingCharacter[caracteristicName]}
                                                   bonusMax={Number.isNaN(equipment.MaxBonusAC)?null:equipment.MaxBonusAC}
                                                   subRaceId={wearingCharacter && wearingCharacter.SubRace} />)
                               :<img src={notMasterImage} className="not-master-image" alt="" title="Non maîtrisé"/>

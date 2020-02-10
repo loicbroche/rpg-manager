@@ -1,0 +1,63 @@
+.acComponent {
+  position: relative;
+  display: flex;
+  font-weight: bold;
+  cursor: default;
+}
+
+.ac-background-image {
+  height: 3rem;
+}
+
+.ac-values {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+.ac-calculation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ac-equipment-values {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 1rem;
+}
+
+.ac-base-value,
+.ac-armor-value,
+.ac-shield-value,
+.ac-bonus-value {
+  font-size: 0.5rem;
+  min-width: 0.7rem;
+  border-radius: 50%;
+  border: 1px solid var(--color-primary);
+  background-color: var(--background-color-1);
+}
+
+.ac-base-value {
+  align-self: flex-start;
+}
+.ac-bonus-value {
+  display: inline-block;
+}
+
+.ac-no-value {
+  /*visibility: hidden;*/
+}
+
+.ac-total-value {
+  font-weight: bold;
+  color: var(--background-color-1);
+}
+

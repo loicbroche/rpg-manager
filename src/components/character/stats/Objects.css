@@ -1,3 +1,7 @@
+.objectsComponent {
+  cursor: default;
+}
+
 .objects {
   max-height: 50vh;
   padding-inline-start: 0;

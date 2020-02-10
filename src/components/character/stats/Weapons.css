@@ -1,3 +1,7 @@
+.weaponsComponent {
+  cursor: default;
+}
+
 .weapons-category {
   margin: 0.1rem 0 0.1rem auto
 }

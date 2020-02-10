@@ -19,7 +19,7 @@ import HistoricSelector from './general/HistoricSelector'
 import XPComponent from './general/XPComponent';
 import DetailsComponent from './general/DetailsComponent';
 import HPComponent from './fight/HPComponent';
-import CAComponent from './fight/CAComponent';
+import ACComponent from './fight/ACComponent';
 import HealthComponent from './fight/HealthComponent';
 import SpecialsComponent from './fight/SpecialsComponent';
 import SpellsComponent from './fight/SpellsComponent';
@@ -71,7 +71,8 @@ class Character extends Component {
         Alterations: null,
         Resistances: null,
         Saves: null,
-        SaveAdvantages: null
+        SaveAdvantages: null,
+        Dexterity: null
       }
       this.characterRef = database.ref(DATA_MODEL.CHARACTERS.name+"/"+characterId);
       this.updateCharacter = (snapshot) => {
@@ -101,7 +102,7 @@ class Character extends Component {
         const { caracteristics, levels} = this.props;
         const { Name, SubRace: subRaceId, Gender, Class: classId, Historic: historicId, History, Skills: masterSkills,
                 XP, HP, MaxHP, Specials, Spells, Armor, Shield, Weapon, DistanceWeapon, MasterWeapons, MasterObjects, Alterations,
-                Resistances, Saves, SaveAdvantages, Health } = this.state
+                Resistances, Saves, SaveAdvantages, Health, Dexterity  } = this.state
         const caracteristicsBonus = caracteristics && Object.values(caracteristics).reduce((accum, caracteristic) => {
             accum[caracteristic.Code] = this.state[caracteristic.OV];
             return accum;
@@ -158,8 +159,8 @@ class Character extends Component {
 
                         <div className="stats">
                             <div className="complements">
-                                <CAComponent />
-                                <SpeedComponent subRaceId={subRaceId} classId={classId} level={characterLevel} />
+                                <ACComponent dexterityPoints={Dexterity} subRaceId={subRaceId}  classId={classId} armorId={Armor} shieldId={Shield} />
+                                <SpeedComponent subRaceId={subRaceId} classId={classId} armorId={Armor} level={characterLevel} />
                             </div>
                             <div className="caracteristics">
                             {   caracteristics && 
