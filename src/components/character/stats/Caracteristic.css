@@ -8,11 +8,13 @@
   border-width: 1px;
   border-style: solid;
   border-color: var(--color-primary);
+  cursor: default;
 }
 
 .bonus-caracteristic {
   text-align: center;
   font-size: 1rem;
+  font-weight: bold;
   padding: 0;
 }
 

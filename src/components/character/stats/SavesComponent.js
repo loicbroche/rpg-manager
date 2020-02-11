@@ -2,14 +2,17 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import { getLevel } from 'rules/Levels.rules'
 
 import './SavesComponent.css'
 
 class SavesComponent extends Component {
 
   render() {
-    const { alterationTypes, caracteristics, races, subRaces, classes, saves, advantages, subRaceId, classId, onClick, onAdvantageClick} = this.props;
+    const { alterationTypes, caracteristics, races, subRaces, classes, saves, advantages, levels, subRaceId, classId, XP, onClick, onAdvantageClick} = this.props;
 
+    const level = getLevel(levels, XP) || 0;
+    const masteryBonus = level && level.MasteryBonus;
     const characterClass = classes && classes[classId];
     const classSaves = characterClass && characterClass.Saves;
     const className = characterClass?characterClass.Name:"";
@@ -44,10 +47,10 @@ class SavesComponent extends Component {
 
                 return <span key={caracteristic.Code} onClick={() => { onClick && !classSaved && onClick(caracteristic.Code)}}
                              className={`save ${onClick?"activable":""} ${classSaved?"class-saved":""}`}
-                             title={classSaved?`Jet de sauvegarde ${caracteristic.Name}\nHérité de la classe ${className}`:
+                             title={classSaved?`Jet de sauvegarde ${caracteristic.Name} +${masteryBonus}\nHérité de la classe ${className}`:
                                    (  onClick
-                                      ?((saved?"Désactiver":"Activer")+" le jet de sauvegarde "+caracteristic.Name)
-                                      :((saved?"Jet de sauvegarde":"Pas de jet de sauvegarde")+" "+caracteristic.Name)
+                                      ?((saved?"Désactiver":"Activer")+` le jet de sauvegarde ${caracteristic.Name} +${masteryBonus}`)
+                                      :(saved?`Jet de sauvegarde ${caracteristic.Name} +${masteryBonus}`:`Pas de jet de sauvegarde ${caracteristic.Name}`)
                                    )} >
                   <img  src={saveImage} className={`save-image ${saved?"saved":""} ${caracteristic.Code}`} alt={caracteristic.Name}/>
                   <span className={`advantage ${raceAdvantage?"race-advantage":(onAdvantageClick?"activable":"")}`}
@@ -75,9 +78,11 @@ class SavesComponent extends Component {
   }
 
   getAlterations(alterationType) {
-    const { alterations, races, subRaces, saves, advantages, subRaceId, onClick, onAdvantageClick} = this.props;
+    const { alterations, races, subRaces, saves, advantages, levels, subRaceId, XP, onClick, onAdvantageClick} = this.props;
     const availableAlterations = alterations && Object.values(alterations).filter((alteration) => alteration.Type === alterationType.Code);
 
+    const level = getLevel(levels, XP) ||0;
+    const masteryBonus = level && level.MasteryBonus;
     const subRace = subRaces && subRaces[subRaceId];
     const race = subRace && races && races[subRace.Race];
     const raceSaveAdvantages = race && race.SaveAdvantages;
@@ -103,8 +108,8 @@ class SavesComponent extends Component {
 
         return <span key={alteration.Code} onClick={() => { onClick && onClick(alteration.Code)}}
                       title={(  onClick
-                                ?((saved?"Désactiver":"Activer")+" le jet de sauvegarde "+alteration.Name)
-                                :((saved?"Jet de sauvegarde":"Pas de jet de sauvegarde")+" "+alteration.Name)
+                                ?((saved?"Désactiver":"Activer")+` le jet de sauvegarde ${alteration.Name} +${masteryBonus}`)
+                                :(saved?`Jet de sauvegarde ${alteration.Name} +${masteryBonus}`:`Pas de jet de sauvegarde ${alteration.Name}`)
                       )}
                       className={`save ${onClick?"activable":""}`}>
           <img  src={saveImage} className={`save-image ${saved?"saved":""}`} alt={alteration.Name} />
@@ -128,6 +133,7 @@ SavesComponent.propTypes = {
   advantages: PropTypes.arrayOf(PropTypes.string),
   subRaceId: PropTypes.string,
   classId: PropTypes.string,
+  XP: PropTypes.number,
   onClick: PropTypes.func,
   onAdvantageClick: PropTypes.func
 }
@@ -138,7 +144,8 @@ const mapStateToProps = (state) => ({
   caracteristics: state.referential.caracteristics,
   races: state.referential.races,
   subRaces: state.referential.subRaces,
-  classes: state.referential.classes
+  classes: state.referential.classes,
+  levels: state.referential.levels
 })
 
 export default connect(mapStateToProps)(SavesComponent)

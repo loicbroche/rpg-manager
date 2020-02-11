@@ -263,7 +263,7 @@
 	 "Weight" : 4000,
 	 "Price" : 500,
 	 "Discretion" : "Désavantage",
-	 "Strength" : "-"
+	 "Strength" : 0
 	  },
 	"Cuir": {
 	 "Name" : "  Cuir",
@@ -275,7 +275,7 @@
 	 "Weight" : 5000,
 	 "Price" : 1000,
 	 "Discretion" : "-",
-	 "Strength" : "-"
+	 "Strength" : 0
 	  },
 	"Cuir clouté": {
 	 "Name" : "  Cuir clouté",
@@ -287,7 +287,7 @@
 	 "Weight" : 6500,
 	 "Price" : 4500,
 	 "Discretion" : "-",
-	 "Strength" : "-"
+	 "Strength" : 0
 	  },
 	"Peau": {
 	 "Name" : "  Peau",
@@ -299,7 +299,7 @@
 	 "Weight" : 6000,
 	 "Price" : 1000,
 	 "Discretion" : "-",
-	 "Strength" : "-"
+	 "Strength" : 0
 	  },
 	"Chemise de mailles": {
 	 "Name" : "  Chemise de mailles",
@@ -311,7 +311,7 @@
 	 "Weight" : 10000,
 	 "Price" : 5000,
 	 "Discretion" : "-",
-	 "Strength" : "-"
+	 "Strength" : 0
 	  },
 	"Écailles": {
 	 "Name" : "  Écailles",
@@ -323,7 +323,7 @@
 	 "Weight" : 22500,
 	 "Price" : 5000,
 	 "Discretion" : "Désavantage",
-	 "Strength" : "-"
+	 "Strength" : 0
 	  },
 	"Cuirasse": {
 	 "Name" : "  Cuirasse",
@@ -335,7 +335,7 @@
 	 "Weight" : 10000,
 	 "Price" : 40000,
 	 "Discretion" : "-",
-	 "Strength" : "-"
+	 "Strength" : 0
 	  },
 	"Demi-plate": {
 	 "Name" : "  Demi-plate",
@@ -347,7 +347,7 @@
 	 "Weight" : 20000,
 	 "Price" : 75000,
 	 "Discretion" : "Désavantage",
-	 "Strength" : "-"
+	 "Strength" : 0
 	  },
 	"Broigne": {
 	 "Name" : "  Broigne",
@@ -359,7 +359,7 @@
 	 "Weight" : 20000,
 	 "Price" : 3000,
 	 "Discretion" : "Désavantage",
-	 "Strength" : "-"
+	 "Strength" : 0
 	  },
 	"Cotte de mailles": {
 	 "Name" : "  Cotte de mailles",
@@ -371,7 +371,7 @@
 	 "Weight" : 27500,
 	 "Price" : 7500,
 	 "Discretion" : "Désavantage",
-	 "Strength" : "13"
+	 "Strength" : 13
 	  },
 	"Clibanion": {
 	 "Name" : "  Clibanion",
@@ -383,7 +383,7 @@
 	 "Weight" : 30000,
 	 "Price" : 20000,
 	 "Discretion" : "Désavantage",
-	 "Strength" : "15"
+	 "Strength" : 15
 	  },
 	"Harnois": {
 	 "Name" : "  Harnois",
@@ -395,7 +395,7 @@
 	 "Weight" : 32500,
 	 "Price" : 150000,
 	 "Discretion" : "Désavantage",
-	 "Strength" : "15"
+	 "Strength" : 15
 	  },
 	"Bouclier": {
 	 "Name" : "  Bouclier",
@@ -407,7 +407,7 @@
 	 "Weight" : 3000,
 	 "Price" : 1000,
 	 "Discretion" : "-",
-	 "Strength" : "-"
+	 "Strength" : 0
 	  }
   },
   "Capacities" : {
@@ -1851,9 +1851,14 @@
 	 "Intelligence" : 0,
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
+	 "ACBonus" : "CON",
+	 "ACBonusArmor" : false,
 	 "HD" : 12,
 	 "SpecialsName" : "Rage",
 	 "BonusAttackName" : "",
+	 "SpecialisationName" : "Voie primitive",
+	 "SpecialisationLevel" : 3,
+	 "MultiSpecialisation" : false ,
 	 "WeaponCategories" : ["C_MEL", "C_DIS", "W_MEL", "W_DIS"],
 	 "Weapons" : [],
 	 "ArmorCategories" : ["1_LIGHT", "2_MID",  "0_SHIELD"],
@@ -1870,9 +1875,14 @@
 	 "Intelligence" : 0,
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
+	 "ACBonus" : "",
+	 
 	 "HD" : 8,
 	 "SpecialsName" : "",
 	 "BonusAttackName" : "",
+	 "SpecialisationName" : "Collège  bardique",
+	 "SpecialisationLevel" : 3,
+	 "MultiSpecialisation" : false ,
 	 "WeaponCategories" : ["C_MEL", "C_DIS"],
 	 "Weapons" : ["Arbalète de poing", "Épée courte", "Épée longue",  "Rapière"],
 	 "ArmorCategories" : ["1_LIGHT"],
@@ -1889,9 +1899,14 @@
 	 "Intelligence" : 0,
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
+	 "ACBonus" : "",
+	 
 	 "HD" : 8,
 	 "SpecialsName" : "",
 	 "BonusAttackName" : "",
+	 "SpecialisationName" : "Domaine divin",
+	 "SpecialisationLevel" : 1,
+	 "MultiSpecialisation" : false ,
 	 "WeaponCategories" : ["C_MEL", "C_DIS"],
 	 "Weapons" : [],
 	 "ArmorCategories" : ["1_LIGHT", "2_MID",  "0_SHIELD"],
@@ -1908,9 +1923,14 @@
 	 "Intelligence" : 0,
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
+	 "ACBonus" : "",
+	 
 	 "HD" : 8,
 	 "SpecialsName" : "",
 	 "BonusAttackName" : "",
+	 "SpecialisationName" : "Cercle druidique",
+	 "SpecialisationLevel" : 2,
+	 "MultiSpecialisation" : false ,
 	 "WeaponCategories" : [],
 	 "Weapons" : ["Gourdin", "Dague", "Fléchette", "Javeline", "Masse d'armes", "Bâton", "Cimeterre", "Fronde", "Serpe", "Lance"],
 	 "ArmorCategories" : ["1_LIGHT", "2_MID",  "0_SHIELD"],
@@ -1927,9 +1947,14 @@
 	 "Intelligence" : 0,
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
+	 "ACBonus" : "",
+	 
 	 "HD" : 6,
 	 "SpecialsName" : "Sorcellerie",
 	 "BonusAttackName" : "",
+	 "SpecialisationName" : "Origine magique",
+	 "SpecialisationLevel" : 1,
+	 "MultiSpecialisation" : false ,
 	 "WeaponCategories" : [],
 	 "Weapons" : ["Dague", "Fléchette", "Fronde", "Bâton", "Arbalète légère"],
 	 "ArmorCategories" : [],
@@ -1946,9 +1971,14 @@
 	 "Intelligence" : 0,
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
+	 "ACBonus" : "",
+	 
 	 "HD" : 10,
 	 "SpecialsName" : "",
 	 "BonusAttackName" : "",
+	 "SpecialisationName" : "Style de combat",
+	 "SpecialisationLevel" : 1,
+	 "MultiSpecialisation" : true ,
 	 "WeaponCategories" : ["C_MEL", "C_DIS", "W_MEL", "W_DIS"],
 	 "Weapons" : [],
 	 "ArmorCategories" : ["1_LIGHT", "2_MID", "3_HEAVY", "0_SHIELD"],
@@ -1965,9 +1995,14 @@
 	 "Intelligence" : 0,
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
+	 "ACBonus" : "",
+	 
 	 "HD" : 6,
 	 "SpecialsName" : "",
 	 "BonusAttackName" : "",
+	 "SpecialisationName" : "Tradiction arcanique",
+	 "SpecialisationLevel" : 2,
+	 "MultiSpecialisation" : false ,
 	 "WeaponCategories" : [],
 	 "Weapons" : ["Dague", "Fléchette", "Fronde", "Bâton", "Arbalète légère"],
 	 "ArmorCategories" : [],
@@ -1984,9 +2019,14 @@
 	 "Intelligence" : 0,
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
+	 "ACBonus" : "SAG",
+	 "ACBonusArmor" : false,"ACBonusShield" : false,
 	 "HD" : 8,
 	 "SpecialsName" : "Ki",
 	 "BonusAttackName" : "Arts-Martiaux",
+	 "SpecialisationName" : "Tradition monastique",
+	 "SpecialisationLevel" : 3,
+	 "MultiSpecialisation" : false ,
 	 "WeaponCategories" : ["C_MEL", "C_DIS"],
 	 "Weapons" : ["Épée courte"],
 	 "ArmorCategories" : [],
@@ -2003,9 +2043,14 @@
 	 "Intelligence" : 0,
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
+	 "ACBonus" : "",
+	 
 	 "HD" : 10,
 	 "SpecialsName" : "",
 	 "BonusAttackName" : "",
+	 "SpecialisationName" : "Style de combat",
+	 "SpecialisationLevel" : 2,
+	 "MultiSpecialisation" : false ,
 	 "WeaponCategories" : ["C_MEL", "C_DIS", "W_MEL", "W_DIS"],
 	 "Weapons" : [],
 	 "ArmorCategories" : ["1_LIGHT", "2_MID", "3_HEAVY", "0_SHIELD"],
@@ -2022,9 +2067,14 @@
 	 "Intelligence" : 0,
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
+	 "ACBonus" : "",
+	 
 	 "HD" : 10,
 	 "SpecialsName" : "",
 	 "BonusAttackName" : "",
+	 "SpecialisationName" : "Style de combat",
+	 "SpecialisationLevel" : 2,
+	 "MultiSpecialisation" : false ,
 	 "WeaponCategories" : ["C_MEL", "C_DIS", "W_MEL", "W_DIS"],
 	 "Weapons" : [],
 	 "ArmorCategories" : ["1_LIGHT", "2_MID",  "0_SHIELD"],
@@ -2041,9 +2091,14 @@
 	 "Intelligence" : 0,
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
+	 "ACBonus" : "",
+	 
 	 "HD" : 8,
 	 "SpecialsName" : "",
 	 "BonusAttackName" : "Attaque sournoise",
+	 "SpecialisationName" : "Archétype de roublard",
+	 "SpecialisationLevel" : 3,
+	 "MultiSpecialisation" : false ,
 	 "WeaponCategories" : ["C_MEL", "C_DIS"],
 	 "Weapons" : ["Arbalète de poing", "Épée courte", "Épée longue",  "Rapière"],
 	 "ArmorCategories" : ["1_LIGHT"],
@@ -2060,9 +2115,14 @@
 	 "Intelligence" : 0,
 	 "Wisdom" : 0,
 	 "Charisma" : 0,
+	 "ACBonus" : "",
+	 
 	 "HD" : 8,
 	 "SpecialsName" : "",
 	 "BonusAttackName" : "",
+	 "SpecialisationName" : "Patron d'Outremonde",
+	 "SpecialisationLevel" : 1,
+	 "MultiSpecialisation" : false ,
 	 "WeaponCategories" : ["C_MEL", "C_DIS"],
 	 "Weapons" : [],
 	 "ArmorCategories" : ["1_LIGHT"],
@@ -3136,7 +3196,7 @@
 	  "TypicalRaces" : "Aarakocra"
 	   }
   },
-  "Levels" : [ null, {
+  "Levels" : [ {
     "Level" : 1,
     "MasteryBonus" : 2,
     "XP" : 0
@@ -4259,6 +4319,332 @@
       "Caracteristic" : "SAG",
       "Name" : "Vigilance"
     }
+  },
+  "Specialisations" : {
+	"BERSERKER":  {
+	 "Code" : "BERSERKER",
+	 "Class" : "BARBARIAN",
+	 "Name" : "Voie du berserker",
+	  "ACBonus" : 0
+	  },
+	"TOTEM_WARRIOR":  {
+	 "Code" : "TOTEM_WARRIOR",
+	 "Class" : "BARBARIAN",
+	 "Name" : "Voie du guerrier totem",
+	  "ACBonus" : 0
+	  },
+	"KNOWLEDGE_SCHOOL":  {
+	 "Code" : "KNOWLEDGE_SCHOOL",
+	 "Class" : "BARD",
+	 "Name" : "Collège du savoir",
+	  "ACBonus" : 0
+	  },
+	"BRAVERY_SCHOOL":  {
+	 "Code" : "BRAVERY_SCHOOL",
+	 "Class" : "BARD",
+	 "Name" : "Collège de la vaillance",
+	  "ACBonus" : 0
+	  },
+	"DECEPTION_FIELD":  {
+	 "Code" : "DECEPTION_FIELD",
+	 "Class" : "CLERK",
+	 "Name" : "Domaine de la duperie",
+	  "ACBonus" : 0
+	  },
+	"WAR_FIELD":  {
+	 "Code" : "WAR_FIELD",
+	 "Class" : "CLERK",
+	 "Name" : "Domaine de la guerre",
+	  "ACBonus" : 0
+	  },
+	"LIGHT_FIELD":  {
+	 "Code" : "LIGHT_FIELD",
+	 "Class" : "CLERK",
+	 "Name" : "Domaine de la lumière",
+	  "ACBonus" : 0
+	  },
+	"NATURE_FIELD":  {
+	 "Code" : "NATURE_FIELD",
+	 "Class" : "CLERK",
+	 "Name" : "Domaine de la nature",
+	  "ACBonus" : 0
+	  },
+	"KNOWLEDGE_FIELD":  {
+	 "Code" : "KNOWLEDGE_FIELD",
+	 "Class" : "CLERK",
+	 "Name" : "Domaine du savoir",
+	  "ACBonus" : 0
+	  },
+	"STORM_FIELD":  {
+	 "Code" : "STORM_FIELD",
+	 "Class" : "CLERK",
+	 "Name" : "Domaine de la tempête",
+	  "ACBonus" : 0
+	  },
+	"LIFE_FIELD":  {
+	 "Code" : "LIFE_FIELD",
+	 "Class" : "CLERK",
+	 "Name" : "Domaine de la vie",
+	  "ACBonus" : 0
+	  },
+	"STORM_FIELD":  {
+	 "Code" : "STORM_FIELD",
+	 "Class" : "CLERK",
+	 "Name" : "Domaine de la tempête",
+	  "ACBonus" : 0
+	  },
+	"LIFE_FIELD":  {
+	 "Code" : "LIFE_FIELD",
+	 "Class" : "CLERK",
+	 "Name" : "Domaine de la vie",
+	  "ACBonus" : 0
+	  },
+	"FORGE_FIELD":  {
+	 "Code" : "FORGE_FIELD",
+	 "Class" : "CLERK",
+	 "Name" : "Domaine de la forge",
+	  "ACBonus" : 0
+	  },
+	"EARTH_GROUP":  {
+	 "Code" : "EARTH_GROUP",
+	 "Class" : "DRUID",
+	 "Name" : "Cercle de la terre",
+	  "ACBonus" : 0
+	  },
+	"MOON_GROUP":  {
+	 "Code" : "MOON_GROUP",
+	 "Class" : "DRUID",
+	 "Name" : "Cercle de la lune",
+	  "ACBonus" : 0
+	  },
+	"DRAGON_BORN":  {
+	 "Code" : "DRAGON_BORN",
+	 "Class" : "SORCERER",
+	 "Name" : "Lignée draconique",
+	 "ACBonusArmor" : false, "ACBonus" : 3
+	  },
+	"WILD_MAGIC":  {
+	 "Code" : "WILD_MAGIC",
+	 "Class" : "SORCERER",
+	 "Name" : "Magie sauvage",
+	  "ACBonus" : 0
+	  },
+	"WARRIOR_ARCHERY":  {
+	 "Code" : "WARRIOR_ARCHERY",
+	 "Class" : "WARRIOR",
+	 "Name" : "Archerie",
+	  "ACBonus" : 0
+	  },
+	"WARRIOR_TWO_HAND_WEAPON":  {
+	 "Code" : "WARRIOR_TWO_HAND_WEAPON",
+	 "Class" : "WARRIOR",
+	 "Name" : "Arme à deux mains",
+	  "ACBonus" : 0
+	  },
+	"WARRIOR_TWO_HAND_FIGHT":  {
+	 "Code" : "WARRIOR_TWO_HAND_FIGHT",
+	 "Class" : "WARRIOR",
+	 "Name" : "Combat à deux armes",
+	  "ACBonus" : 0
+	  },
+	"WARRIOR_DEFENSE":  {
+	 "Code" : "WARRIOR_DEFENSE",
+	 "Class" : "WARRIOR",
+	 "Name" : "Défense",
+	 "ACBonusArmor" : true, "ACBonus" : 1
+	  },
+	"WARRIOR_DUEL":  {
+	 "Code" : "WARRIOR_DUEL",
+	 "Class" : "WARRIOR",
+	 "Name" : "Duel",
+	  "ACBonus" : 0
+	  },
+	"WARRIOR_DEFENSE":  {
+	 "Code" : "WARRIOR_DEFENSE",
+	 "Class" : "WARRIOR",
+	 "Name" : "Défense",
+	 "ACBonusArmor" : true, "ACBonus" : 1
+	  },
+	"WARRIOR_DUEL":  {
+	 "Code" : "WARRIOR_DUEL",
+	 "Class" : "WARRIOR",
+	 "Name" : "Duel",
+	  "ACBonus" : 0
+	  },
+	"WARRIOR_PROTECTION":  {
+	 "Code" : "WARRIOR_PROTECTION",
+	 "Class" : "WARRIOR",
+	 "Name" : "Protection",
+	  "ACBonus" : 0
+	  },
+	"RECANTATION":  {
+	 "Code" : "RECANTATION",
+	 "Class" : "MAGICIAN",
+	 "Name" : "Abjuration",
+	  "ACBonus" : 0
+	  },
+	"DIVINATION":  {
+	 "Code" : "DIVINATION",
+	 "Class" : "MAGICIAN",
+	 "Name" : "Divination",
+	  "ACBonus" : 0
+	  },
+	"ENCHANTMENT":  {
+	 "Code" : "ENCHANTMENT",
+	 "Class" : "MAGICIAN",
+	 "Name" : "Enchantement",
+	  "ACBonus" : 0
+	  },
+	"EVOCATION":  {
+	 "Code" : "EVOCATION",
+	 "Class" : "MAGICIAN",
+	 "Name" : "Evocation",
+	  "ACBonus" : 0
+	  },
+	"ILLUSUION":  {
+	 "Code" : "ILLUSUION",
+	 "Class" : "MAGICIAN",
+	 "Name" : "Illusion",
+	  "ACBonus" : 0
+	  },
+	"INVOCATION":  {
+	 "Code" : "INVOCATION",
+	 "Class" : "MAGICIAN",
+	 "Name" : "Invocation",
+	  "ACBonus" : 0
+	  },
+	"NECROMANCY":  {
+	 "Code" : "NECROMANCY",
+	 "Class" : "MAGICIAN",
+	 "Name" : "Nécromancie ",
+	  "ACBonus" : 0
+	  },
+	"TRANSMUTATION":  {
+	 "Code" : "TRANSMUTATION",
+	 "Class" : "MAGICIAN",
+	 "Name" : "Transmutation",
+	  "ACBonus" : 0
+	  },
+	"OPENED_HAND_WAY":  {
+	 "Code" : "OPENED_HAND_WAY",
+	 "Class" : "MONK",
+	 "Name" : "Voie de la main ouverte",
+	  "ACBonus" : 0
+	  },
+	"TRANSMUTATION":  {
+	 "Code" : "TRANSMUTATION",
+	 "Class" : "MAGICIAN",
+	 "Name" : "Transmutation",
+	  "ACBonus" : 0
+	  },
+	"OPENED_HAND_WAY":  {
+	 "Code" : "OPENED_HAND_WAY",
+	 "Class" : "MONK",
+	 "Name" : "Voie de la main ouverte",
+	  "ACBonus" : 0
+	  },
+	"SHADOW_WAY":  {
+	 "Code" : "SHADOW_WAY",
+	 "Class" : "MONK",
+	 "Name" : "Voie de l'ombre",
+	  "ACBonus" : 0
+	  },
+	"ELEMENTS_WAY":  {
+	 "Code" : "ELEMENTS_WAY",
+	 "Class" : "MONK",
+	 "Name" : "Voie des quatre éléments",
+	  "ACBonus" : 0
+	  },
+	"PALADIN_TWO_HAND_WEAPON":  {
+	 "Code" : "PALADIN_TWO_HAND_WEAPON",
+	 "Class" : "PALADIN",
+	 "Name" : "Arme à deux mains",
+	  "ACBonus" : 0
+	  },
+	"PALADIN_DEFENSE":  {
+	 "Code" : "PALADIN_DEFENSE",
+	 "Class" : "PALADIN",
+	 "Name" : "Défense",
+	 "ACBonusArmor" : true, "ACBonus" : 1
+	  },
+	"PALADIN_DUEL":  {
+	 "Code" : "PALADIN_DUEL",
+	 "Class" : "PALADIN",
+	 "Name" : "Duel",
+	  "ACBonus" : 0
+	  },
+	"PALADIN_PROTECTION":  {
+	 "Code" : "PALADIN_PROTECTION",
+	 "Class" : "PALADIN",
+	 "Name" : "Protection",
+	  "ACBonus" : 0
+	  },
+	"PROWLER_ARCHERY":  {
+	 "Code" : "PROWLER_ARCHERY",
+	 "Class" : "PROWLER",
+	 "Name" : "Archerie",
+	  "ACBonus" : 0
+	  },
+	"PROWLER_TWO_HAND_FIGHT":  {
+	 "Code" : "PROWLER_TWO_HAND_FIGHT",
+	 "Class" : "PROWLER",
+	 "Name" : "Combat à deux armes",
+	  "ACBonus" : 0
+	  },
+	"PROWLER_DEFENSE":  {
+	 "Code" : "PROWLER_DEFENSE",
+	 "Class" : "PROWLER",
+	 "Name" : "Défense",
+	 "ACBonusArmor" : true, "ACBonus" : 1
+	  },
+	"PROWLER_DUEL":  {
+	 "Code" : "PROWLER_DUEL",
+	 "Class" : "PROWLER",
+	 "Name" : "Duel",
+	  "ACBonus" : 0
+	  },
+	"ASSASSIN":  {
+	 "Code" : "ASSASSIN",
+	 "Class" : "WILY",
+	 "Name" : "Assassin",
+	  "ACBonus" : 0
+	  },
+	"ROBBER":  {
+	 "Code" : "ROBBER",
+	 "Class" : "WILY",
+	 "Name" : "Voleur",
+	  "ACBonus" : 0
+	  },
+	"ARCANE_SWINDLER":  {
+	 "Code" : "ARCANE_SWINDLER",
+	 "Class" : "WILY",
+	 "Name" : "Escroc arcanique",
+	  "ACBonus" : 0
+	  },
+	"CONSPIRATOR":  {
+	 "Code" : "CONSPIRATOR",
+	 "Class" : "WILY",
+	 "Name" : "Conspirateur",
+	  "ACBonus" : 0
+	  },
+	"ARCHFAIRY":  {
+	 "Code" : "ARCHFAIRY",
+	 "Class" : "WIZARD",
+	 "Name" : "Archifée",
+	  "ACBonus" : 0
+	  },
+	"FIENDISH":  {
+	 "Code" : "FIENDISH",
+	 "Class" : "WIZARD",
+	 "Name" : "Fiélon",
+	  "ACBonus" : 0
+	  },
+	"GREAT_OLD":  {
+	 "Code" : "GREAT_OLD",
+	 "Class" : "WIZARD",
+	 "Name" : "Grand Ancien",
+	  "ACBonus" : 0
+	  }
   },
   "Spells" : {
     "Absorption des éléments" : {

@@ -26,7 +26,7 @@ export const SubRacePropType = PropTypes.shape({
     Wisdom: PropTypes.number.isRequired,
     Charisma: PropTypes.number.isRequired,
     Speed: PropTypes.number.isRequired,
-    ArmorCategories: PropTypes.arrayOf(PropTypes.string),
+    ArmorCategories: PropTypes.arrayOf(PropTypes.number),
     Languages: PropTypes.arrayOf(PropTypes.string),
     Resistances: PropTypes.arrayOf(PropTypes.string),
     SaveAdvantages: PropTypes.arrayOf(PropTypes.string)
@@ -236,6 +236,7 @@ export const CharacterPropType = PropTypes.shape({
     Name: PropTypes.string.isRequired,
     SubRace: PropTypes.string.isRequired,
     Class: PropTypes.string.isRequired,
+    Specialisation: PropTypes.string,
     ChargeCapacity: PropTypes.number.isRequired,
     Skills: PropTypes.arrayOf(PropTypes.string),
     MasterWeapons: PropTypes.arrayOf(PropTypes.string),

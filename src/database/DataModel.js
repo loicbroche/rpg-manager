@@ -54,7 +54,21 @@ export const DATA_MODEL = {
                 BONUS_ATTACK_NAME: { name: "BonusAttackName" },
                 WEAPON_CATEGORIES: { name: "WeaponCategories", optional: true },
                 WEAPONS: { name: "Weapons", optional: true },
-                ARMOR_CATEGORIES: { name: "ArmorCategories", optional: true }
+                ARMOR_CATEGORIES: { name: "ArmorCategories", optional: true },
+                AC_BONUS: { name: "ACBonus" },
+                AC_BONUS_ARMOR: { name: "ACBonusArmor", optional: true },
+                AC_BONUS_SHIELD: { name: "ACBonusShield", optional: true }
+            }
+        },
+        SPECIALISATIONS:
+        {
+            name: 'Specialisations',
+            columns: {
+                CODE: { name: "Code" },
+                CLASS: { name: "Class" },
+                NAME: { name: "Name" },
+                AC_BONUS: { name: "ACBonus" },
+                AC_BONUS_ARMOR: { name: "ACBonusArmor", optional: true }
             }
         },
         CAPACITIES:
@@ -328,6 +342,7 @@ export const DATA_MODEL = {
                 SUB_RACE: { name: "SubRace", optional: true },
                 GENDER: { name: "Gender" },
                 CLASS: { name: "Class" },
+                SPECIALISATION: { name: "Specialisation", optional: true },
                 CHARGE_CAPACITY: { name: "ChargeCapacity" },
                 SKILLS: { name: "Skills", optional: true },
                 MASTER_WEAPONS: { name: "MasterWeapons", optional: true },

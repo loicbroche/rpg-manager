@@ -39,6 +39,7 @@ class Character extends Component {
         Name: null,
         Race: null,
         Class: null,
+        Specialisation: null,
         ChargeCapacity: null,
         MasterBonus: null,
         Skills: null,
@@ -102,7 +103,7 @@ class Character extends Component {
         const { caracteristics, levels} = this.props;
         const { Name, SubRace: subRaceId, Gender, Class: classId, Historic: historicId, History, Skills: masterSkills,
                 XP, HP, MaxHP, Specials, Spells, Armor, Shield, Weapon, DistanceWeapon, MasterWeapons, MasterObjects, Alterations,
-                Resistances, Saves, SaveAdvantages, Health, Dexterity  } = this.state
+                Resistances, Saves, SaveAdvantages, Health, Strength } = this.state
         const caracteristicsBonus = caracteristics && Object.values(caracteristics).reduce((accum, caracteristic) => {
             accum[caracteristic.Code] = this.state[caracteristic.OV];
             return accum;
@@ -159,8 +160,8 @@ class Character extends Component {
 
                         <div className="stats">
                             <div className="complements">
-                                <ACComponent dexterityPoints={Dexterity} subRaceId={subRaceId}  classId={classId} armorId={Armor} shieldId={Shield} />
-                                <SpeedComponent subRaceId={subRaceId} classId={classId} armorId={Armor} level={characterLevel} />
+                                <ACComponent character={this.state} />
+                                <SpeedComponent subRaceId={subRaceId} classId={classId} armorId={Armor} strength={Strength} level={characterLevel} />
                             </div>
                             <div className="caracteristics">
                             {   caracteristics && 
@@ -184,7 +185,7 @@ class Character extends Component {
                                     caracteristicsBonus={caracteristicsBonus}
                                     subRaceId={subRaceId}
                                     onClick={(skillId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.SKILLS.name, skillId) }} />
-                            <SavesComponent saves={Saves} advantages={SaveAdvantages} subRaceId={subRaceId} classId={classId}
+                            <SavesComponent saves={Saves} advantages={SaveAdvantages} subRaceId={subRaceId} classId={classId} XP={XP}
                                             onClick={(alterationId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.SAVES.name, alterationId) }}
                                             onAdvantageClick={(alterationId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.SAVE_ADVANTAGES.name, alterationId) }}/>
                         </div>

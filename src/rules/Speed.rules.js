@@ -1,0 +1,1 @@
+export const INSUFFICIENT_STRENGTH_MALUS = 3;

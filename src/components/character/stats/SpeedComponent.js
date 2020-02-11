@@ -4,11 +4,12 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
 import './SpeedComponent.css'
+import {INSUFFICIENT_STRENGTH_MALUS} from 'rules/Speed.rules';
 
 class SpeedComponent extends Component {
 
   render() {
-    const { races, subRaces, capacities, armors, subRaceId, classId, armorId, level} = this.props;
+    const { races, subRaces, capacities, armors, subRaceId, classId, armorId, strength, level} = this.props;
 
     const subRace = subRaces && subRaces[subRaceId];
     const race = subRace && races && races[subRace.Race];
@@ -16,12 +17,19 @@ class SpeedComponent extends Component {
     const capacity = capacities && capacities[classId+"-"+level];
     const baseSpeed = (subRace && subRace.Speed) || (race && race.Speed);
     const bonusSpeed = (!armor && capacity && capacity.ArmorlessSpeed) || 0;
-    const speed = baseSpeed + (bonusSpeed||0);
+    const totalStrength = strength + (race?race.Strength:0) + (subRace?subRace.Strength:0);
+    const malusSpeed = (armor && totalStrength < armor.Strength && INSUFFICIENT_STRENGTH_MALUS) || 0;
+    const speed = baseSpeed + bonusSpeed - malusSpeed;
 
     return (
-      <div className="speedComponent" title={`Vitesse de déplacement ${ (capacity && capacity.ArmorlessSpeed)
-                                                                        ?(bonusSpeed?`avec bonus "Sans armure" ${bonusSpeed} m`
-                                                                        :`sans bonus "Sans armure"`):""} `}>
+      <div className="speedComponent" title={ `Vitesse de déplacement `
+                                              +`${ (capacity && capacity.ArmorlessSpeed)
+                                                  ?(bonusSpeed?`avec bonus "Sans armure" ${bonusSpeed} m`
+                                                  :`sans bonus "Sans armure"`):""}`
+                                              +`${ malusSpeed
+                                                ?`\nMalus -${malusSpeed} pour force insuffisante pour l'armure portée (${armor.Strength})`
+                                                :""}`
+                                            }>
           <span>{speed} m</span>
       </div>
     )
@@ -32,6 +40,7 @@ SpeedComponent.propTypes = {
   subRaceId: PropTypes.string,
   classId: PropTypes.string,
   armorId: PropTypes.string,
+  strength: PropTypes.number,
   level: PropTypes.number
 }
 

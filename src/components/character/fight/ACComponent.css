@@ -52,8 +52,21 @@
   display: inline-block;
 }
 
+.ac-dexterity-value {
+  position: absolute;
+  left: 60%;
+  top: 55%;
+  font-size: 0.75rem;
+  min-width: 1rem;
+  text-align: center;
+  border-radius: 50%;
+  background-color: var(--background-color-1);
+  border: 1px solid var(--color-Dexterity);
+  color: var(--color-Dexterity);
+}
+
 .ac-no-value {
-  /*visibility: hidden;*/
+  visibility: hidden;
 }
 
 .ac-total-value {

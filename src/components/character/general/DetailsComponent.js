@@ -16,8 +16,16 @@ class DetailsComponent extends Component {
 
   render() {
 
-    const { alignments, character, onChange, onClickElement } = this.props;
+    const { alignments, armors, weapons, character, onChange, onClickElement } = this.props;
+    const armor = armors && character && armors[character.Armor];
+    const shield = armors && character && armors[character.Shield];
+    const weapon = weapons && character && weapons[character.Weapon];
+    const distanceWeapon = weapons && character && weapons[character.DistanceWeapon];
 
+    const equipmentsWeight =  (armor?armor.Weight:0)
+                              + (shield?shield.Weight:0)
+                              + (weapon?weapon.Weight:0)
+                              + (distanceWeapon?distanceWeapon.Weight:0);
     return (
       <div className="detailsComponent">
         <ExpendableComponent extensorTitle="les détails"
@@ -56,7 +64,10 @@ class DetailsComponent extends Component {
                       onChange={(event) => onChange(DATA_MODEL.CHARACTERS.columns.AGE.name, parseInt(event.target.value) || 0)}
                       className="age"
                       disabled={!onChange} />
-              <Weight weight={character.Weight} onChange={(value) => onChange(DATA_MODEL.CHARACTERS.columns.WEIGHT.name, value)} />
+              <span>
+                  <Weight weight={character.Weight} onChange={(value) => onChange(DATA_MODEL.CHARACTERS.columns.WEIGHT.name, value)} />
+                  <span className="equipment-weight" title="Poids de l'équipmenent porté"> (+<Weight weight={equipmentsWeight} />)</span>
+              </span>
               <input  name="eyes" 
                       type="text"
                       autoComplete="eyes"
@@ -124,6 +135,8 @@ DetailsComponent.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-  alignments: state.referential.alignments
+  alignments: state.referential.alignments,
+  armors: state.referential.armors,
+  weapons: state.referential.weapons
 })
 export default connect(mapStateToProps)(DetailsComponent)

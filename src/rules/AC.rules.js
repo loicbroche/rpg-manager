@@ -2,8 +2,8 @@ import PropTypes from 'prop-types'
 import { RacePropType, SubRacePropType, ClassPropType, ArmorPropType } from 'PropTypes';
 import { calculateTotalBonus, MAX_CARACTERISTIC, BONUS_STEP  } from './Caracteristics.rules'
 
-const CA_CARACTERISTIC_CODE = "DEX";
-const CA_CARACTERISTIC_NAME = "Dexterity";
+export const CA_CARACTERISTIC_CODE = "DEX";
+export const CA_CARACTERISTIC_NAME = "Dexterity";
 export const CA_BASE = 10;
 
 export const getArmorBonusAC = (race, subRace, characterClass, armor, dexterityPoints) => {

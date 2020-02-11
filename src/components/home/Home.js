@@ -63,6 +63,7 @@ class Home extends Component {
       character.ChargeCapacity = 20000;
       character.Charisma = 10;
       character.Class = "BARBARIAN";
+      character.Specialisation = "";/**/
       character.Constitution = 10;
       character.Defects = "";
       character.Dexterity = 10;

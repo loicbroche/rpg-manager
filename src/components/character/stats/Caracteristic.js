@@ -20,7 +20,7 @@ class Caracteristic extends Component {
 
     return (
       <div className={`caracteristic ${caracteristicName}`}>
-        <span className="bonus-caracteristic">
+        <span className="bonus-caracteristic" title="Modificateur de jets de la caractéristique">
         <CaracteristicBonus caracteristicName={caracteristicName}
                             value={value}
                             maxVal={maxVal}
@@ -35,10 +35,11 @@ class Caracteristic extends Component {
                 max={maxVal}
                 step={1}
                 onChange={this.handleValueUpdate}
-                className="caracteristic-value" />
+                className="caracteristic-value"
+                title="Valeur de caractéristique"/>
         <div className="character-bonus">
-          { (raceBonus !== 0) && <span className="race-bonus">+{ raceBonus }</span>}
-          { (subRaceBonus !== 0) && <span className="subRace-bonus">+{ subRaceBonus }</span>}
+          { (raceBonus !== 0) && <span className="race-bonus" title={`Valeur bonus de race ${race.Name}`}>+{ raceBonus }</span>}
+          { (subRaceBonus !== 0) && <span className="subRace-bonus" title={`Valeur bonus de race ${subRace.Name}`}>+{ subRaceBonus }</span>}
         </div>
       </div>
     )

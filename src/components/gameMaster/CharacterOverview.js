@@ -56,11 +56,8 @@ class CharacterOverview extends Component {
                                     historicId={character.Historic} />
                 </div>
                 <div className="stats-overview">
-                    <ACComponent dexterityPoints={character.Dexterity}/>
-                    <ACComponent    dexterityPoints={character.Dexterity}
-                                    subRaceId={character.SubRace} classId={character.Class}
-                                    armorId={character.Armor} shieldId={character.Shield} />
-                    <SpeedComponent subRaceId={character.SubRace} classId={character.Class} armorId={character.Armor} level={characterLevel} />
+                    <ACComponent character={character}  />
+                    <SpeedComponent subRaceId={character.SubRace} classId={character.Class} armorId={character.Armor} strength={character.Strength} level={characterLevel} />
                 </div>
 
                 <div className="equipments-overview">
