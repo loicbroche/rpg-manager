@@ -28,8 +28,10 @@ class CharacterOverview extends Component {
         return (
             <div className="character-overview">
                 <h1 className="overview-header">
+                    <ACComponent character={character} />
                     <span className="overview-name">{character.Name}</span>
                     <XPComponent XP={character.XP} onChange={(value) =>{ updateCharacterCaracteristic(character.Id, DATA_MODEL.CHARACTERS.columns.XP.name, value);}}/>
+                    <SpeedComponent subRaceId={character.SubRace} classId={character.Class} armorId={character.Armor} strength={character.Strength} level={characterLevel} />
                 </h1>
                 <HPComponent val={character.HP} maxVal={character.MaxHP} classId={character.Class} />
                 <AlterationsComponent characterAlterations={character.Alterations} resistances={character.Resistances}
@@ -54,10 +56,6 @@ class CharacterOverview extends Component {
                                     master={character.Skills}
                                     XP={character.XP}
                                     historicId={character.Historic} />
-                </div>
-                <div className="stats-overview">
-                    <ACComponent character={character}  />
-                    <SpeedComponent subRaceId={character.SubRace} classId={character.Class} armorId={character.Armor} strength={character.Strength} level={characterLevel} />
                 </div>
 
                 <div className="equipments-overview">

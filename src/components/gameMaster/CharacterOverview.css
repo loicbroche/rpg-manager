@@ -6,7 +6,7 @@
 .overview-header {
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .overview-name {
@@ -16,15 +16,13 @@
     top: -0.1rem;
 }
 
+.overview-header .acComponent {
+    z-index: 2;
+}
+
 .caracteristics-overview {
     display: flex;
     flex-direction: column;
-}
-
-.stats-overview {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
 }
 
 .caracteristics-overview {

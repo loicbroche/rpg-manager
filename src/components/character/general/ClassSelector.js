@@ -2,13 +2,25 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+
+import { getLevelNumber } from 'rules/Levels.rules'
 import './ClassSelector.css'
+
+const classBorderImage = require("images/classes/class_border.png");
 
 class ClassSelector extends Component {
 
   render() {
-    const { classes, classId } = this.props;
-    const classBorderImage = require("images/classes/class_border.png");
+    const { classes, specialisations, levels, classId, specialisationId, XP } = this.props;
+
+    const characterClass = classes && classes[classId];
+    const specialisationLevel = characterClass && characterClass.SpecialisationLevel;
+    const specialisable = specialisationLevel <= getLevelNumber(levels, XP);
+    const specialisation = specialisations && specialisations[specialisationId];
+    const isValidSpecialisation = specialisable && specialisation && specialisation.Class === classId;
+
+console.log("ClassSelector spécialisation", specialisationLevel, specialisation, isValidSpecialisation);
+
     let classImage;
     try {
       classImage = require(`images/classes/${classId}.png`);
@@ -32,6 +44,15 @@ class ClassSelector extends Component {
               ))}
             </select>
           )}
+
+          { specialisable && specialisations && (
+            <select className="selector-select" value={specialisation.Code} onChange={this.handleSpecialisationValueUpdate}>
+              <option value="" disabled>Choisissez une spécialisation</option>
+              { Object.values(specialisations).filter((specialisation) => specialisation.Class === classId).map(({Code, Name}) => (
+                <option key={Code} value={Code}>{Name}</option>
+              ))}
+            </select>
+          )}
         </div>
       </div>
     )
@@ -42,14 +63,25 @@ class ClassSelector extends Component {
     const selectedClass = event.target.value;
     this.props.onChange(selectedClass);
   }
+
+    // Arrow fx for binding
+    handleSpecialisationValueUpdate = (event) => {
+      const selectedSpecialisation = event.target.value;
+      this.props.onSpecialisationChange(selectedSpecialisation);
+    }
 }
 
 ClassSelector.propTypes = {
   classId: PropTypes.string,
-  onChange: PropTypes.func.isRequired
+  specialisationId: PropTypes.string,
+  XP: PropTypes.number,
+  onChange: PropTypes.func.isRequired,
+  onSpecialisationChange: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => ({
-  classes: state.referential.classes
+  classes: state.referential.classes,
+  specialisations: state.referential.specialisations,
+  levels: state.referential.levels
 })
 export default connect(mapStateToProps)(ClassSelector)

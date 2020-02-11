@@ -1792,6 +1792,7 @@
       "PersonnalityTraits" : "Serein",
       "Skills" : [ "Acrobatie", "Discrétion" ],
       "Skin" : "Bleu clair",
+	  "Specialisation": "SHADOW_WAY",
       "Specials" : 2,
       "Spells" : [ null, 3, 2, 0, 0, 0, 0, 0, 0, 0 ],
       "Strength" : 12,

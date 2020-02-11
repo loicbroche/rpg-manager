@@ -6,6 +6,8 @@ import PropTypes from 'prop-types'
 import './SpeedComponent.css'
 import {INSUFFICIENT_STRENGTH_MALUS} from 'rules/Speed.rules';
 
+const speedImage = require("images/speed.png");
+
 class SpeedComponent extends Component {
 
   render() {
@@ -30,7 +32,8 @@ class SpeedComponent extends Component {
                                                 ?`\nMalus -${malusSpeed} pour force insuffisante pour l'armure portée (${armor.Strength})`
                                                 :""}`
                                             }>
-          <span>{speed} m</span>
+          <img src={speedImage} className="speed-background-image" alt="" />
+          <span className="speed-label">{speed} m</span>
       </div>
     )
   }

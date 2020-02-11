@@ -101,7 +101,7 @@ class Character extends Component {
 
     render() {
         const { caracteristics, levels} = this.props;
-        const { Name, SubRace: subRaceId, Gender, Class: classId, Historic: historicId, History, Skills: masterSkills,
+        const { Name, SubRace: subRaceId, Gender, Class: classId, Specialisation, Historic: historicId, History, Skills: masterSkills,
                 XP, HP, MaxHP, Specials, Spells, Armor, Shield, Weapon, DistanceWeapon, MasterWeapons, MasterObjects, Alterations,
                 Resistances, Saves, SaveAdvantages, Health, Strength } = this.state
         const caracteristicsBonus = caracteristics && Object.values(caracteristics).reduce((accum, caracteristic) => {
@@ -122,8 +122,9 @@ class Character extends Component {
                                         gender={Gender}
                                         onRaceChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SUB_RACE.name, value);}}
                                         onGenderChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.GENDER.name, value);}} />
-                        <ClassSelector  classId={classId}
-                                    onChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.CLASS.name, value);}} />
+                        <ClassSelector  classId={classId} specialisationId={Specialisation} XP={XP}
+                                        onChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.CLASS.name, value);}}
+                                        onSpecialisationChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPECIALISATION.name, value);}} />
                         <HistoricSelector   historicId={historicId}
                                             history={History}
                                             onHistoricChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HISTORIC.name, value);}}

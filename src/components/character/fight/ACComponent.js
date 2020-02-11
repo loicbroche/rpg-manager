@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 import { CharacterPropType } from 'PropTypes'
 import './ACComponent.css'
-import { CA_BASE, CA_CARACTERISTIC_CODE, getArmorBonusAC  } from 'rules/AC.rules'
+import { CA_BASE, CA_CARACTERISTIC_NAME, getArmorBonusAC  } from 'rules/AC.rules'
 import { calculateTotalBonus } from 'rules/Caracteristics.rules'
 import { getLevelNumber } from 'rules/Levels.rules'
 
@@ -22,7 +22,8 @@ class ACComponent extends Component {
 
     const armorBonus = (armor && armor.AC) || 0;
     const shieldBonus = (shield && shield.AC) || 0;
-    const dexterityBonus = getArmorBonusAC(race, subRace, characterClass, armor, character && character[CA_CARACTERISTIC_CODE]);
+    const dexterityBonus = getArmorBonusAC(race, subRace, characterClass, armor, character && character[CA_CARACTERISTIC_NAME]);
+
     const classCaracteristicBonus = (caracteristics && characterClass && characterClass.ACBonus && caracteristics[characterClass.ACBonus]);
       const caracteristicName = classCaracteristicBonus && classCaracteristicBonus.OV;
       const raceBonus = race && race[caracteristicName];
