@@ -16,18 +16,24 @@ class ClassSelector extends Component {
     const characterClass = classes && classes[classId];
     const specialisationLevel = characterClass && characterClass.SpecialisationLevel;
     const specialisable = specialisationLevel <= getLevelNumber(levels, XP);
-    const specialisation = specialisations && specialisations[specialisationId];
+    let specialisation = specialisations && specialisations[specialisationId];
     const isValidSpecialisation = specialisable && specialisation && specialisation.Class === classId;
-
-console.log("ClassSelector spécialisation", specialisationLevel, specialisation, isValidSpecialisation);
+    specialisation = isValidSpecialisation && specialisation;
 
     let classImage;
     try {
       classImage = require(`images/classes/${classId}.png`);
     } catch (ex) {
-      classImage = require("images/classes/no_class.png");
+      classImage = require("images/classes/no_image.png");
     }
 
+    let specialisationImage;
+    try {
+      specialisationImage = require(`images/classes/specialisations/${specialisation && specialisation.Code}.png`);
+    } catch (ex) {
+      specialisationImage = require("images/classes/specialisations/no_image.png");
+    }
+console.log("specialisation", specialisation, specialisation && specialisation.Code);
     return (
       <div className="selector class-selector">
         <div className="selector-icon class-icon">
@@ -37,17 +43,23 @@ console.log("ClassSelector spécialisation", specialisationLevel, specialisation
         <div className="selector-value">
           <span>Classe</span>
           { classes && (
-            <select className="selector-select" value={classId} onChange={this.handleValueUpdate}>
-              <option value="" disabled>Choisissez une classe</option>
+            <select className="selector-select" value={(characterClass && classId) || "-"} onChange={this.handleValueUpdate}>
+              <option value="-" disabled>Choisissez une classe</option>
               { Object.entries(classes).map(([key, value]) => (
                 <option key={key} value={key}>{value.Name}</option>
               ))}
             </select>
           )}
 
+          { specialisable && specialisations &&
+            <div className="selector-icon specialisation-icon">
+              <img src={specialisationImage} className="selector-image" alt="" />
+              <img src={classBorderImage} className="selector-image" alt="" />
+            </div>
+          }
           { specialisable && specialisations && (
-            <select className="selector-select" value={specialisation.Code} onChange={this.handleSpecialisationValueUpdate}>
-              <option value="" disabled>Choisissez une spécialisation</option>
+            <select className="selector-select specialisation" value={(specialisation && specialisation.Code) || "-"} onChange={this.handleSpecialisationValueUpdate}>
+              <option value="-" disabled>Choisissez une spécialisation</option>
               { Object.values(specialisations).filter((specialisation) => specialisation.Class === classId).map(({Code, Name}) => (
                 <option key={Code} value={Code}>{Name}</option>
               ))}

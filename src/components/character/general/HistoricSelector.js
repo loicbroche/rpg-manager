@@ -40,8 +40,8 @@ class HistoricSelector extends Component {
           <div className="selector-value">
           <span>Historique:&nbsp;</span>
             { historics && (
-              <select className="selector-select" value={historicId} onChange={this.handleValueUpdate}>
-                <option value="" disabled>Choisissez un historique</option>
+              <select className="selector-select" value={historicId || "-"} onChange={this.handleValueUpdate}>
+                <option value="-" disabled>Choisissez un historique</option>
                 { Object.entries(historics).map(([key, value]) => (
                   <option key={key} value={key}>{value.Name}</option>
                 ))}

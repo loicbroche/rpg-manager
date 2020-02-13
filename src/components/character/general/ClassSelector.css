@@ -1,0 +1,23 @@
+
+.class-selector .selector-value {
+    position: relative;
+}
+
+.specialisation {
+    margin-left: 1rem;
+    padding-left: calc((var(--height-icons) - 0.75rem)/2);
+}
+
+.specialisation-icon {
+    position: absolute;
+    height: calc(var(--height-icons) - 0.75rem);
+    width: calc(var(--height-icons) - 0.75rem);
+    left: calc(var(--height-icons)/-2);
+    z-index: 2;
+}
+
+.selector-icon.specialisation-icon > img {
+    height: calc(var(--height-icons) - 0.75rem);
+    width: calc(var(--height-icons) - 0.75rem);
+    position:absolute;
+}

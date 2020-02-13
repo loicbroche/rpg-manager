@@ -35,7 +35,7 @@ class Weapons extends Component {
     const classWeaponCategories = characterClass && (characterClass.WeaponCategories || []);
     const classWeapons = characterClass && (characterClass.Weapons || []);
     const masteryBonus = levels && levels[level] && levels[level].MasteryBonus;
-    const isClassMasterCategory = classWeaponCategories.includes(category && category.Code);
+    const isClassMasterCategory = classWeaponCategories && classWeaponCategories.includes(category && category.Code);
 
     return availableWeapons && availableWeapons.length > 0 &&
       <div key={category && category.Code}>
@@ -44,7 +44,7 @@ class Weapons extends Component {
           {availableWeapons &&
             Object.values(availableWeapons).map(({Name, Damage, DamageType}, index) => {
               const isMaster = master && master.includes(Name);
-              const isClassMaster = isClassMasterCategory || classWeapons.includes(Name);
+              const isClassMaster = isClassMasterCategory || (classWeapons && classWeapons.includes(Name));
               return (
               <li key={index} className={"weapon "+(isClassMaster?"locked":"activable")} onClick={() => !isClassMaster && onClick(Name)}
                   title={(isClassMaster?"Maîtrise héritée de la classe "+characterClass.Name:(isMaster?"Oublier":"Apprendre")+` la maîtrise de ${Name}`)+`\nDégâts : ${Damage} ${DamageType}`}>

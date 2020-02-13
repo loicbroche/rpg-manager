@@ -26,8 +26,8 @@ class RaceSelector extends Component {
         <div className="selector-value">
           <span>Race</span>
           { races && subRaces && (
-            <select className="selector-select" value={subRaceId} onChange={(event) => this.props.onRaceChange(event.target.value)}>
-              <option value="" disabled>Choisissez une race</option>
+            <select className="selector-select" value={subRaceId || "-" } onChange={(event) => this.props.onRaceChange(event.target.value)}>
+              <option value="-" disabled>Choisissez une race</option>
               { Object.entries(races).map(([key, value]) => this.getSubRacesOptionElement(key))}
             </select>
           )}
