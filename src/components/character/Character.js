@@ -155,7 +155,7 @@ class Character extends Component {
                                     <SpellsComponent spells={Spells} classId={classId} level={characterLevel}
                                             onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPELLS.name, value); }} />
                                 </div>
-                                <SpellBookComponent />
+                                <SpellBookComponent classId={classId} level={characterLevel} />
                             </div>
                         </div>
 

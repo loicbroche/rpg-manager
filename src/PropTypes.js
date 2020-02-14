@@ -200,7 +200,8 @@ export const SpellPropType = PropTypes.shape({
     School: PropTypes.string.isRequired,
     Incantation: PropTypes.string.isRequired,
     Type: PropTypes.string.isRequired,
-    Description: PropTypes.string.isRequired
+    Description: PropTypes.string.isRequired,
+    Classes: PropTypes.arrayOf(PropTypes.string).isRequired
 })
 
 export const AlterationPropType = PropTypes.shape({

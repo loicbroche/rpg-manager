@@ -33,7 +33,7 @@ class ClassSelector extends Component {
     } catch (ex) {
       specialisationImage = require("images/classes/specialisations/no_image.png");
     }
-console.log("specialisation", specialisation, specialisation && specialisation.Code);
+
     return (
       <div className="selector class-selector">
         <div className="selector-icon class-icon">

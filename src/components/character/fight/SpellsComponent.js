@@ -78,6 +78,6 @@ SpellsComponent.defaultProps = {
 }
 
 const mapStateToProps = (state) => ({
-  capacities: state.referential.capacities,
+  capacities: state.referential.capacities
 })
 export default connect(mapStateToProps)(SpellsComponent)

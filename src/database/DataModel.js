@@ -287,7 +287,8 @@ export const DATA_MODEL = {
                 SCHOOL: { name: "School" },
                 INCANTATION: { name: "Incantation" },
                 TYPE: { name: "Type" },
-                DESCRIPTION: { name: "Description" }
+                DESCRIPTION: { name: "Description" },
+                CLASSES: { name: "Classes" }
             }
         },
 

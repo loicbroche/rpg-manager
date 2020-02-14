@@ -1,4 +1,15 @@
 .spellBookComponent {
-  border: 1px dashed purple;
+}
+
+.spells {
+  display: flex;
+  flex-direction: column;
+  max-height: 50vh;
+  padding-inline-start: 0;
   color: purple;
+}
+
+.spell {
+  font-family: var(--font-family-tertiary);
+  font-size: 1.5rem;
 }
