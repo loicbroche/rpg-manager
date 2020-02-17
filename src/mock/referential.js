@@ -514,422 +514,422 @@ export const referentialMock = {
 	  "BARD-1" : {
 		"Capacities" : "Incantations, Inspiration bardique (d6)",
 		"Locations" : [ null, 2, 0, 0, 0, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 2,
-		"Spells" : 4
+		"MinorSpellsNb" : 2,
+		"SpellsNb" : 4
 	  },
 	  "BARD-10" : {
 		"Capacities" : "Inspiration bardique (d10), Expertise, Secrets magiques",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 0, 0, 0, 0 ],
-		"MinorSpells" : 4,
-		"Spells" : 14
+		"MinorSpellsNb" : 4,
+		"SpellsNb" : 14
 	  },
 	  "BARD-11" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 0, 0, 0 ],
-		"MinorSpells" : 4,
-		"Spells" : 15
+		"MinorSpellsNb" : 4,
+		"SpellsNb" : 15
 	  },
 	  "BARD-12" : {
 		"Capacities" : "Amélioration de caractéristiques",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 0, 0, 0 ],
-		"MinorSpells" : 4,
-		"Spells" : 15
+		"MinorSpellsNb" : 4,
+		"SpellsNb" : 15
 	  },
 	  "BARD-13" : {
 		"Capacities" : "Chant de repos (d10)",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 1, 0, 0 ],
-		"MinorSpells" : 4,
-		"Spells" : 16
+		"MinorSpellsNb" : 4,
+		"SpellsNb" : 16
 	  },
 	  "BARD-14" : {
 		"Capacities" : "Secrets magiques, Capacité de collège bardique",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 1, 0, 0 ],
-		"MinorSpells" : 4,
-		"Spells" : 18
+		"MinorSpellsNb" : 4,
+		"SpellsNb" : 18
 	  },
 	  "BARD-15" : {
 		"Capacities" : "Inspiration bardique (d12)",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 1, 1, 0 ],
-		"MinorSpells" : 4,
-		"Spells" : 19
+		"MinorSpellsNb" : 4,
+		"SpellsNb" : 19
 	  },
 	  "BARD-16" : {
 		"Capacities" : "Amélioration de caractéristiques",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 1, 1, 0 ],
-		"MinorSpells" : 4,
-		"Spells" : 19
+		"MinorSpellsNb" : 4,
+		"SpellsNb" : 19
 	  },
 	  "BARD-17" : {
 		"Capacities" : "Chant de repos (d12)",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 1, 1, 1 ],
-		"MinorSpells" : 4,
-		"Spells" : 20
+		"MinorSpellsNb" : 4,
+		"SpellsNb" : 20
 	  },
 	  "BARD-18" : {
 		"Capacities" : "Secrets magiques",
 		"Locations" : [ null, 4, 3, 3, 3, 3, 1, 1, 1, 1 ],
-		"MinorSpells" : 4,
-		"Spells" : 22
+		"MinorSpellsNb" : 4,
+		"SpellsNb" : 22
 	  },
 	  "BARD-19" : {
 		"Capacities" : "Amélioration de caractéristiques",
 		"Locations" : [ null, 4, 3, 3, 3, 3, 2, 1, 1, 1 ],
-		"MinorSpells" : 4,
-		"Spells" : 22
+		"MinorSpellsNb" : 4,
+		"SpellsNb" : 22
 	  },
 	  "BARD-2" : {
 		"Capacities" : "Touche-à-tout, Chant de repos (d6)",
 		"Locations" : [ null, 3, 0, 0, 0, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 2,
-		"Spells" : 5
+		"MinorSpellsNb" : 2,
+		"SpellsNb" : 5
 	  },
 	  "BARD-20" : {
 		"Capacities" : "Inspiration supérieure",
 		"Locations" : [ null, 4, 3, 3, 3, 3, 2, 2, 1, 1 ],
-		"MinorSpells" : 4,
-		"Spells" : 22
+		"MinorSpellsNb" : 4,
+		"SpellsNb" : 22
 	  },
 	  "BARD-3" : {
 		"Capacities" : "Collège bardique, Expertise",
 		"Locations" : [ null, 4, 2, 0, 0, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 2,
-		"Spells" : 6
+		"MinorSpellsNb" : 2,
+		"SpellsNb" : 6
 	  },
 	  "BARD-4" : {
 		"Capacities" : "Amélioration de caractéristiques",
 		"Locations" : [ null, 4, 3, 0, 0, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 3,
-		"Spells" : 7
+		"MinorSpellsNb" : 3,
+		"SpellsNb" : 7
 	  },
 	  "BARD-5" : {
 		"Capacities" : "Inspiration bardique (d8), Source d'inspiration",
 		"Locations" : [ null, 4, 3, 2, 0, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 3,
-		"Spells" : 8
+		"MinorSpellsNb" : 3,
+		"SpellsNb" : 8
 	  },
 	  "BARD-6" : {
 		"Capacities" : "Contre charme, Capacité de collège bardique",
 		"Locations" : [ null, 4, 3, 3, 0, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 3,
-		"Spells" : 9
+		"MinorSpellsNb" : 3,
+		"SpellsNb" : 9
 	  },
 	  "BARD-7" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 3, 3, 1, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 3,
-		"Spells" : 10
+		"MinorSpellsNb" : 3,
+		"SpellsNb" : 10
 	  },
 	  "BARD-8" : {
 		"Capacities" : "Amélioration de caractéristiques",
 		"Locations" : [ null, 4, 3, 3, 2, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 3,
-		"Spells" : 11
+		"MinorSpellsNb" : 3,
+		"SpellsNb" : 11
 	  },
 	  "BARD-9" : {
 		"Capacities" : "Chant de repos (d8)",
 		"Locations" : [ null, 4, 3, 3, 3, 1, 0, 0, 0, 0 ],
-		"MinorSpells" : 3,
-		"Spells" : 12
+		"MinorSpellsNb" : 3,
+		"SpellsNb" : 12
 	  },
 	  "CLERK-1" : {
 		"Capacities" : "Incantations, Domaine divin",
 		"Locations" : [ null, 2, 0, 0, 0, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 3
+		"MinorSpellsNb" : 3
 	  },
 	  "CLERK-10" : {
 		"Capacities" : "Intervention divine",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 0, 0, 0, 0 ],
-		"MinorSpells" : 5
+		"MinorSpellsNb" : 5
 	  },
 	  "CLERK-11" : {
 		"Capacities" : "Destruction des morts-vivants (FP 2)",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 0, 0, 0 ],
-		"MinorSpells" : 5
+		"MinorSpellsNb" : 5
 	  },
 	  "CLERK-12" : {
 		"Capacities" : "Amélioration de caractéristiques",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 0, 0, 0 ],
-		"MinorSpells" : 5
+		"MinorSpellsNb" : 5
 	  },
 	  "CLERK-13" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 1, 0, 0 ],
-		"MinorSpells" : 5
+		"MinorSpellsNb" : 5
 	  },
 	  "CLERK-14" : {
 		"Capacities" : "Destruction des morts-vivants (FP 3)",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 1, 0, 0 ],
-		"MinorSpells" : 5
+		"MinorSpellsNb" : 5
 	  },
 	  "CLERK-15" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 1, 1, 0 ],
-		"MinorSpells" : 5
+		"MinorSpellsNb" : 5
 	  },
 	  "CLERK-16" : {
 		"Capacities" : "Amélioration de caractéristiques",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 1, 1, 0 ],
-		"MinorSpells" : 5
+		"MinorSpellsNb" : 5
 	  },
 	  "CLERK-17" : {
 		"Capacities" : "Destruction des morts-vivants (FP 4), Capacité de domaine divin",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 1, 1, 1 ],
-		"MinorSpells" : 5
+		"MinorSpellsNb" : 5
 	  },
 	  "CLERK-18" : {
 		"Capacities" : "Canalisation d’énergie divine (3)",
 		"Locations" : [ null, 4, 3, 3, 3, 3, 1, 1, 1, 1 ],
-		"MinorSpells" : 5
+		"MinorSpellsNb" : 5
 	  },
 	  "CLERK-19" : {
 		"Capacities" : "Amélioration de caractéristiques",
 		"Locations" : [ null, 4, 3, 3, 3, 3, 2, 1, 1, 1 ],
-		"MinorSpells" : 5
+		"MinorSpellsNb" : 5
 	  },
 	  "CLERK-2" : {
 		"Capacities" : "Canalisation d’énergie divine (1), Capacité de domaine divin",
 		"Locations" : [ null, 3, 0, 0, 0, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 3
+		"MinorSpellsNb" : 3
 	  },
 	  "CLERK-20" : {
 		"Capacities" : "Intervention divine améliorée",
 		"Locations" : [ null, 4, 3, 3, 3, 3, 2, 2, 1, 1 ],
-		"MinorSpells" : 5
+		"MinorSpellsNb" : 5
 	  },
 	  "CLERK-3" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 2, 0, 0, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 3
+		"MinorSpellsNb" : 3
 	  },
 	  "CLERK-4" : {
 		"Capacities" : "Amélioration de caractéristiques",
 		"Locations" : [ null, 4, 3, 0, 0, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 4
+		"MinorSpellsNb" : 4
 	  },
 	  "CLERK-5" : {
 		"Capacities" : "Destruction des morts-vivants (FP 1/2)",
 		"Locations" : [ null, 4, 3, 2, 0, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 4
+		"MinorSpellsNb" : 4
 	  },
 	  "CLERK-6" : {
 		"Capacities" : "Canalisation d’énergie divine (2), Capacité de domaine divin",
 		"Locations" : [ null, 4, 3, 3, 0, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 4
+		"MinorSpellsNb" : 4
 	  },
 	  "CLERK-7" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 3, 3, 1, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 4
+		"MinorSpellsNb" : 4
 	  },
 	  "CLERK-8" : {
 		"Capacities" : "Amélioration de caractéristiques, Capacité de domaine divin,Destruction des morts-vivants (FP 1)",
 		"Locations" : [ null, 4, 3, 3, 2, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 4
+		"MinorSpellsNb" : 4
 	  },
 	  "CLERK-9" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 3, 3, 3, 1, 0, 0, 0, 0 ],
-		"MinorSpells" : 4
+		"MinorSpellsNb" : 4
 	  },
 	  "DRUID-1" : {
 		"Capacities" : "Druidique, Incantations",
 		"Locations" : [ null, 2, 0, 0, 0, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 2
+		"MinorSpellsNb" : 2
 	  },
 	  "DRUID-10" : {
 		"Capacities" : "Capacité de cercle druidique",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 0, 0, 0, 0 ],
-		"MinorSpells" : 4
+		"MinorSpellsNb" : 4
 	  },
 	  "DRUID-11" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 0, 0, 0 ],
-		"MinorSpells" : 4
+		"MinorSpellsNb" : 4
 	  },
 	  "DRUID-12" : {
 		"Capacities" : "Amélioration de caractéristiques",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 0, 0, 0 ],
-		"MinorSpells" : 4
+		"MinorSpellsNb" : 4
 	  },
 	  "DRUID-13" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 1, 0, 0 ],
-		"MinorSpells" : 4
+		"MinorSpellsNb" : 4
 	  },
 	  "DRUID-14" : {
 		"Capacities" : "Capacité de cercle druidique",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 1, 0, 0 ],
-		"MinorSpells" : 4
+		"MinorSpellsNb" : 4
 	  },
 	  "DRUID-15" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 1, 1, 0 ],
-		"MinorSpells" : 4
+		"MinorSpellsNb" : 4
 	  },
 	  "DRUID-16" : {
 		"Capacities" : "Amélioration de caractéristiques",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 1, 1, 0 ],
-		"MinorSpells" : 4
+		"MinorSpellsNb" : 4
 	  },
 	  "DRUID-17" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 1, 1, 1 ],
-		"MinorSpells" : 4
+		"MinorSpellsNb" : 4
 	  },
 	  "DRUID-18" : {
 		"Capacities" : "Jeunesse éternelle, Incantation animale",
 		"Locations" : [ null, 4, 3, 3, 3, 3, 1, 1, 1, 1 ],
-		"MinorSpells" : 4
+		"MinorSpellsNb" : 4
 	  },
 	  "DRUID-19" : {
 		"Capacities" : "Amélioration de caractéristiques",
 		"Locations" : [ null, 4, 3, 3, 3, 3, 2, 1, 1, 1 ],
-		"MinorSpells" : 4
+		"MinorSpellsNb" : 4
 	  },
 	  "DRUID-2" : {
 		"Capacities" : "Forme sauvage, Cercle druidique",
 		"Locations" : [ null, 3, 0, 0, 0, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 2
+		"MinorSpellsNb" : 2
 	  },
 	  "DRUID-20" : {
 		"Capacities" : "Archidruide",
 		"Locations" : [ null, 4, 3, 3, 3, 3, 2, 2, 1, 1 ],
-		"MinorSpells" : 4
+		"MinorSpellsNb" : 4
 	  },
 	  "DRUID-3" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 2, 0, 0, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 2
+		"MinorSpellsNb" : 2
 	  },
 	  "DRUID-4" : {
 		"Capacities" : "Forme sauvage améliorée, Amélioration de caractéristiques",
 		"Locations" : [ null, 4, 3, 0, 0, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 3
+		"MinorSpellsNb" : 3
 	  },
 	  "DRUID-5" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 3, 2, 0, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 3
+		"MinorSpellsNb" : 3
 	  },
 	  "DRUID-6" : {
 		"Capacities" : "Capacité de cercle druidique",
 		"Locations" : [ null, 4, 3, 3, 0, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 3
+		"MinorSpellsNb" : 3
 	  },
 	  "DRUID-7" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 3, 3, 1, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 3
+		"MinorSpellsNb" : 3
 	  },
 	  "DRUID-8" : {
 		"Capacities" : "Forme sauvage améliorée, Amélioration de caractéristiques",
 		"Locations" : [ null, 4, 3, 3, 2, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 3
+		"MinorSpellsNb" : 3
 	  },
 	  "DRUID-9" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 3, 3, 3, 1, 0, 0, 0, 0 ],
-		"MinorSpells" : 3
+		"MinorSpellsNb" : 3
 	  },
 	  "MAGICIAN-1" : {
 		"Capacities" : "Incantations, Récupération arcanique",
 		"Locations" : [ null, 2, 0, 0, 0, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 3
+		"MinorSpellsNb" : 3
 	  },
 	  "MAGICIAN-10" : {
 		"Capacities" : "Capacité de la tradition arcanique",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 0, 0, 0, 0 ],
-		"MinorSpells" : 5
+		"MinorSpellsNb" : 5
 	  },
 	  "MAGICIAN-11" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 0, 0, 0 ],
-		"MinorSpells" : 5
+		"MinorSpellsNb" : 5
 	  },
 	  "MAGICIAN-12" : {
 		"Capacities" : "Amélioration de caractéristiques",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 0, 0, 0 ],
-		"MinorSpells" : 5
+		"MinorSpellsNb" : 5
 	  },
 	  "MAGICIAN-13" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 1, 0, 0 ],
-		"MinorSpells" : 5
+		"MinorSpellsNb" : 5
 	  },
 	  "MAGICIAN-14" : {
 		"Capacities" : "Capacité de la tradition arcanique",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 1, 0, 0 ],
-		"MinorSpells" : 5
+		"MinorSpellsNb" : 5
 	  },
 	  "MAGICIAN-15" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 1, 1, 0 ],
-		"MinorSpells" : 5
+		"MinorSpellsNb" : 5
 	  },
 	  "MAGICIAN-16" : {
 		"Capacities" : "Amélioration de caractéristiques",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 1, 1, 0 ],
-		"MinorSpells" : 5
+		"MinorSpellsNb" : 5
 	  },
 	  "MAGICIAN-17" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 1, 1, 1 ],
-		"MinorSpells" : 5
+		"MinorSpellsNb" : 5
 	  },
 	  "MAGICIAN-18" : {
 		"Capacities" : "Maîtrise des sorts",
 		"Locations" : [ null, 4, 3, 3, 3, 3, 1, 1, 1, 1 ],
-		"MinorSpells" : 5
+		"MinorSpellsNb" : 5
 	  },
 	  "MAGICIAN-19" : {
 		"Capacities" : "Amélioration de caractéristiques",
 		"Locations" : [ null, 4, 3, 3, 3, 3, 2, 1, 1, 1 ],
-		"MinorSpells" : 5
+		"MinorSpellsNb" : 5
 	  },
 	  "MAGICIAN-2" : {
 		"Capacities" : "Tradition arcanique",
 		"Locations" : [ null, 3, 0, 0, 0, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 3
+		"MinorSpellsNb" : 3
 	  },
 	  "MAGICIAN-20" : {
 		"Capacities" : "Sorts de prédilection",
 		"Locations" : [ null, 4, 3, 3, 3, 3, 2, 2, 1, 1 ],
-		"MinorSpells" : 5
+		"MinorSpellsNb" : 5
 	  },
 	  "MAGICIAN-3" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 2, 0, 0, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 3
+		"MinorSpellsNb" : 3
 	  },
 	  "MAGICIAN-4" : {
 		"Capacities" : "Amélioration de caractéristiques",
 		"Locations" : [ null, 4, 3, 0, 0, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 4
+		"MinorSpellsNb" : 4
 	  },
 	  "MAGICIAN-5" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 3, 2, 0, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 4
+		"MinorSpellsNb" : 4
 	  },
 	  "MAGICIAN-6" : {
 		"Capacities" : "Capacité de la tradition arcanique",
 		"Locations" : [ null, 4, 3, 3, 0, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 4
+		"MinorSpellsNb" : 4
 	  },
 	  "MAGICIAN-7" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 3, 3, 1, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 4
+		"MinorSpellsNb" : 4
 	  },
 	  "MAGICIAN-8" : {
 		"Capacities" : "Amélioration de caractéristiques",
 		"Locations" : [ null, 4, 3, 3, 2, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 4
+		"MinorSpellsNb" : 4
 	  },
 	  "MAGICIAN-9" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 3, 3, 3, 1, 0, 0, 0, 0 ],
-		"MinorSpells" : 4
+		"MinorSpellsNb" : 4
 	  },
 	  "MONK-1" : {
 		"ArmorlessSpeed" : 0,
@@ -1134,242 +1134,242 @@ export const referentialMock = {
 	  "PROWLER-1" : {
 		"Capacities" : "Ennemi juré, Explorateur-né",
 		"Locations" : [ null, 0, 0, 0, 0, 0 ],
-		"Spells" : 0
+		"SpellsNb" : 0
 	  },
 	  "PROWLER-10" : {
 		"Capacities" : "Amélioration de l'Explorateur-né, Camouflage naturel",
 		"Locations" : [ null, 4, 3, 2, 0, 0 ],
-		"Spells" : 6
+		"SpellsNb" : 6
 	  },
 	  "PROWLER-11" : {
 		"Capacities" : "Capacité de l'archétype de rôdeur",
 		"Locations" : [ null, 4, 3, 3, 0, 0 ],
-		"Spells" : 7
+		"SpellsNb" : 7
 	  },
 	  "PROWLER-12" : {
 		"Capacities" : "Amélioration de caractéristiques",
 		"Locations" : [ null, 4, 3, 3, 0, 0 ],
-		"Spells" : 7
+		"SpellsNb" : 7
 	  },
 	  "PROWLER-13" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 3, 3, 1, 0 ],
-		"Spells" : 8
+		"SpellsNb" : 8
 	  },
 	  "PROWLER-14" : {
 		"Capacities" : "Amélioration de l'Ennemi juré, Disparition",
 		"Locations" : [ null, 4, 3, 3, 1, 0 ],
-		"Spells" : 8
+		"SpellsNb" : 8
 	  },
 	  "PROWLER-15" : {
 		"Capacities" : "Capacité de l'archétype de rôdeur",
 		"Locations" : [ null, 4, 3, 3, 2, 0 ],
-		"Spells" : 9
+		"SpellsNb" : 9
 	  },
 	  "PROWLER-16" : {
 		"Capacities" : "Amélioration de caractéristiques",
 		"Locations" : [ null, 4, 3, 3, 2, 0 ],
-		"Spells" : 9
+		"SpellsNb" : 9
 	  },
 	  "PROWLER-17" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 3, 3, 3, 1 ],
-		"Spells" : 10
+		"SpellsNb" : 10
 	  },
 	  "PROWLER-18" : {
 		"Capacities" : "Sens sauvages",
 		"Locations" : [ null, 4, 3, 3, 3, 1 ],
-		"Spells" : 10
+		"SpellsNb" : 10
 	  },
 	  "PROWLER-19" : {
 		"Capacities" : "Amélioration de caractéristiques",
 		"Locations" : [ null, 4, 3, 3, 3, 2 ],
-		"Spells" : 11
+		"SpellsNb" : 11
 	  },
 	  "PROWLER-2" : {
 		"Capacities" : "Style de combat, Incantations",
 		"Locations" : [ null, 2, 0, 0, 0, 0 ],
-		"Spells" : 2
+		"SpellsNb" : 2
 	  },
 	  "PROWLER-20" : {
 		"Capacities" : "Tueur d'ennemis",
 		"Locations" : [ null, 4, 3, 3, 3, 2 ],
-		"Spells" : 11
+		"SpellsNb" : 11
 	  },
 	  "PROWLER-3" : {
 		"Capacities" : "Archétype de rôdeur, Sens primitifs",
 		"Locations" : [ null, 3, 0, 0, 0, 0 ],
-		"Spells" : 3
+		"SpellsNb" : 3
 	  },
 	  "PROWLER-4" : {
 		"Capacities" : "Amélioration de caractéristiques",
 		"Locations" : [ null, 3, 0, 0, 0, 0 ],
-		"Spells" : 3
+		"SpellsNb" : 3
 	  },
 	  "PROWLER-5" : {
 		"Capacities" : "Attaque supplémentaire",
 		"Locations" : [ null, 4, 2, 0, 0, 0 ],
-		"Spells" : 4
+		"SpellsNb" : 4
 	  },
 	  "PROWLER-6" : {
 		"Capacities" : "Amélioration de l'Ennemi juré et de l'Explorateur-né",
 		"Locations" : [ null, 4, 2, 0, 0, 0 ],
-		"Spells" : 4
+		"SpellsNb" : 4
 	  },
 	  "PROWLER-7" : {
 		"Capacities" : "Capacité de l'archétype de rôdeur",
 		"Locations" : [ null, 4, 3, 0, 0, 0 ],
-		"Spells" : 5
+		"SpellsNb" : 5
 	  },
 	  "PROWLER-8" : {
 		"Capacities" : "Amélioration de caractéristiques, Traversée des terrains",
 		"Locations" : [ null, 4, 3, 0, 0, 0 ],
-		"Spells" : 5
+		"SpellsNb" : 5
 	  },
 	  "PROWLER-9" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 3, 2, 0, 0 ],
-		"Spells" : 6
+		"SpellsNb" : 6
 	  },
 	  "SORCERER-1" : {
 		"Capacities" : "Incantations, Origine magique",
 		"Locations" : [ null, 2, 0, 0, 0, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 4,
+		"MinorSpellsNb" : 4,
 		"Specials" : 0,
-		"Spells" : 2
+		"SpellsNb" : 2
 	  },
 	  "SORCERER-10" : {
 		"Capacities" : "Métamagie",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 0, 5, 0, 0 ],
-		"MinorSpells" : 6,
+		"MinorSpellsNb" : 6,
 		"Specials" : 10,
-		"Spells" : 11
+		"SpellsNb" : 11
 	  },
 	  "SORCERER-11" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 1, 0, 0 ],
-		"MinorSpells" : 6,
+		"MinorSpellsNb" : 6,
 		"Specials" : 11,
-		"Spells" : 12
+		"SpellsNb" : 12
 	  },
 	  "SORCERER-12" : {
 		"Capacities" : "Amélioration de caractéristiques",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 1, 0, 0 ],
-		"MinorSpells" : 6,
+		"MinorSpellsNb" : 6,
 		"Specials" : 12,
-		"Spells" : 12
+		"SpellsNb" : 12
 	  },
 	  "SORCERER-13" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 1, 0, 0 ],
-		"MinorSpells" : 6,
+		"MinorSpellsNb" : 6,
 		"Specials" : 13,
-		"Spells" : 13
+		"SpellsNb" : 13
 	  },
 	  "SORCERER-14" : {
 		"Capacities" : "Capacité de l'origine magique",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 1, 0, 0 ],
-		"MinorSpells" : 6,
+		"MinorSpellsNb" : 6,
 		"Specials" : 14,
-		"Spells" : 13
+		"SpellsNb" : 13
 	  },
 	  "SORCERER-15" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 1, 1, 0 ],
-		"MinorSpells" : 6,
+		"MinorSpellsNb" : 6,
 		"Specials" : 15,
-		"Spells" : 14
+		"SpellsNb" : 14
 	  },
 	  "SORCERER-16" : {
 		"Capacities" : "Amélioration de caractéristiques",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 1, 1, 0 ],
-		"MinorSpells" : 6,
+		"MinorSpellsNb" : 6,
 		"Specials" : 16,
-		"Spells" : 14
+		"SpellsNb" : 14
 	  },
 	  "SORCERER-17" : {
 		"Capacities" : "Métamagie",
 		"Locations" : [ null, 4, 3, 3, 3, 2, 1, 1, 1, 1 ],
-		"MinorSpells" : 6,
+		"MinorSpellsNb" : 6,
 		"Specials" : 17,
-		"Spells" : 15
+		"SpellsNb" : 15
 	  },
 	  "SORCERER-18" : {
 		"Capacities" : "Capacité de l'origine magique",
 		"Locations" : [ null, 4, 3, 3, 3, 3, 1, 1, 1, 1 ],
-		"MinorSpells" : 6,
+		"MinorSpellsNb" : 6,
 		"Specials" : 18,
-		"Spells" : 15
+		"SpellsNb" : 15
 	  },
 	  "SORCERER-19" : {
 		"Capacities" : "Amélioration de caractéristiques",
 		"Locations" : [ null, 4, 3, 3, 3, 3, 2, 2, 1, 1 ],
-		"MinorSpells" : 6,
+		"MinorSpellsNb" : 6,
 		"Specials" : 19,
-		"Spells" : 15
+		"SpellsNb" : 15
 	  },
 	  "SORCERER-2" : {
 		"Capacities" : "Source de magie",
 		"Locations" : [ null, 3, 0, 0, 0, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 4,
+		"MinorSpellsNb" : 4,
 		"Specials" : 2,
-		"Spells" : 3
+		"SpellsNb" : 3
 	  },
 	  "SORCERER-20" : {
 		"Capacities" : "Restauration magique",
 		"Locations" : [ null, 4, 3, 3, 3, 3, 2, 2, 1, 1 ],
-		"MinorSpells" : 6,
+		"MinorSpellsNb" : 6,
 		"Specials" : 20,
-		"Spells" : 15
+		"SpellsNb" : 15
 	  },
 	  "SORCERER-3" : {
 		"Capacities" : "Métamagie",
 		"Locations" : [ null, 4, 2, 0, 0, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 4,
+		"MinorSpellsNb" : 4,
 		"Specials" : 3,
-		"Spells" : 4
+		"SpellsNb" : 4
 	  },
 	  "SORCERER-4" : {
 		"Capacities" : "Amélioration de caractéristiques",
 		"Locations" : [ null, 4, 3, 0, 0, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 5,
+		"MinorSpellsNb" : 5,
 		"Specials" : 4,
-		"Spells" : 5
+		"SpellsNb" : 5
 	  },
 	  "SORCERER-5" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 3, 2, 0, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 5,
+		"MinorSpellsNb" : 5,
 		"Specials" : 5,
-		"Spells" : 6
+		"SpellsNb" : 6
 	  },
 	  "SORCERER-6" : {
 		"Capacities" : "Capacité de l'origine magique",
 		"Locations" : [ null, 4, 3, 3, 0, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 5,
+		"MinorSpellsNb" : 5,
 		"Specials" : 6,
-		"Spells" : 7
+		"SpellsNb" : 7
 	  },
 	  "SORCERER-7" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 3, 3, 1, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 5,
+		"MinorSpellsNb" : 5,
 		"Specials" : 7,
-		"Spells" : 8
+		"SpellsNb" : 8
 	  },
 	  "SORCERER-8" : {
 		"Capacities" : "Amélioration de caractéristiques",
 		"Locations" : [ null, 4, 3, 3, 2, 0, 0, 0, 0, 0 ],
-		"MinorSpells" : 5,
+		"MinorSpellsNb" : 5,
 		"Specials" : 8,
-		"Spells" : 9
+		"SpellsNb" : 9
 	  },
 	  "SORCERER-9" : {
 		"Capacities" : "-",
 		"Locations" : [ null, 4, 3, 3, 3, 1, 0, 0, 0, 0 ],
-		"MinorSpells" : 5,
+		"MinorSpellsNb" : 5,
 		"Specials" : 9,
-		"Spells" : 10
+		"SpellsNb" : 10
 	  },
 	  "WARRIOR-1" : {
 		"Capacities" : "Style de combat, Second souffle"
@@ -1515,8 +1515,8 @@ export const referentialMock = {
 		"Capacities" : "Patron d'Outremonde, Magie de pacte",
 		"Invocations" : 0,
 		"Locations" : [ null, 1 ],
-		"MinorSpells" : 2,
-		"Spells" : 2
+		"MinorSpellsNb" : 2,
+		"SpellsNb" : 2
 	  },
 	  "WIZARD-10" : {
 		"Capacities" : "Capacité de patron d'Outremonde",
@@ -1524,8 +1524,8 @@ export const referentialMock = {
 		"Locations" : {
 		  "5" : 2
 		},
-		"MinorSpells" : 4,
-		"Spells" : 10
+		"MinorSpellsNb" : 4,
+		"SpellsNb" : 10
 	  },
 	  "WIZARD-11" : {
 		"Capacities" : "Arcanum mystique (niveau 6)",
@@ -1533,8 +1533,8 @@ export const referentialMock = {
 		"Locations" : {
 		  "5" : 3
 		},
-		"MinorSpells" : 4,
-		"Spells" : 11
+		"MinorSpellsNb" : 4,
+		"SpellsNb" : 11
 	  },
 	  "WIZARD-12" : {
 		"Capacities" : "Amélioration de caractéristiques",
@@ -1542,8 +1542,8 @@ export const referentialMock = {
 		"Locations" : {
 		  "5" : 3
 		},
-		"MinorSpells" : 4,
-		"Spells" : 11
+		"MinorSpellsNb" : 4,
+		"SpellsNb" : 11
 	  },
 	  "WIZARD-13" : {
 		"Capacities" : "Arcanum mystique (niveau 7)",
@@ -1551,8 +1551,8 @@ export const referentialMock = {
 		"Locations" : {
 		  "5" : 3
 		},
-		"MinorSpells" : 4,
-		"Spells" : 12
+		"MinorSpellsNb" : 4,
+		"SpellsNb" : 12
 	  },
 	  "WIZARD-14" : {
 		"Capacities" : "Capacité de patron d'Outremonde",
@@ -1560,8 +1560,8 @@ export const referentialMock = {
 		"Locations" : {
 		  "5" : 3
 		},
-		"MinorSpells" : 4,
-		"Spells" : 12
+		"MinorSpellsNb" : 4,
+		"SpellsNb" : 12
 	  },
 	  "WIZARD-15" : {
 		"Capacities" : "Arcanum mystique (niveau 8)",
@@ -1569,8 +1569,8 @@ export const referentialMock = {
 		"Locations" : {
 		  "5" : 3
 		},
-		"MinorSpells" : 4,
-		"Spells" : 13
+		"MinorSpellsNb" : 4,
+		"SpellsNb" : 13
 	  },
 	  "WIZARD-16" : {
 		"Capacities" : "Amélioration de caractéristiques",
@@ -1578,8 +1578,8 @@ export const referentialMock = {
 		"Locations" : {
 		  "5" : 3
 		},
-		"MinorSpells" : 4,
-		"Spells" : 13
+		"MinorSpellsNb" : 4,
+		"SpellsNb" : 13
 	  },
 	  "WIZARD-17" : {
 		"Capacities" : "Arcanum mystique (niveau 9)",
@@ -1587,8 +1587,8 @@ export const referentialMock = {
 		"Locations" : {
 		  "5" : 4
 		},
-		"MinorSpells" : 4,
-		"Spells" : 14
+		"MinorSpellsNb" : 4,
+		"SpellsNb" : 14
 	  },
 	  "WIZARD-18" : {
 		"Capacities" : "-",
@@ -1596,8 +1596,8 @@ export const referentialMock = {
 		"Locations" : {
 		  "5" : 4
 		},
-		"MinorSpells" : 4,
-		"Spells" : 14
+		"MinorSpellsNb" : 4,
+		"SpellsNb" : 14
 	  },
 	  "WIZARD-19" : {
 		"Capacities" : "Amélioration de caractéristiques",
@@ -1605,15 +1605,15 @@ export const referentialMock = {
 		"Locations" : {
 		  "5" : 4
 		},
-		"MinorSpells" : 4,
-		"Spells" : 15
+		"MinorSpellsNb" : 4,
+		"SpellsNb" : 15
 	  },
 	  "WIZARD-2" : {
 		"Capacities" : "Invocations occultes",
 		"Invocations" : 2,
 		"Locations" : [ null, 2 ],
-		"MinorSpells" : 2,
-		"Spells" : 3
+		"MinorSpellsNb" : 2,
+		"SpellsNb" : 3
 	  },
 	  "WIZARD-20" : {
 		"Capacities" : "Maître de l'occulte",
@@ -1621,8 +1621,8 @@ export const referentialMock = {
 		"Locations" : {
 		  "5" : 4
 		},
-		"MinorSpells" : 4,
-		"Spells" : 15
+		"MinorSpellsNb" : 4,
+		"SpellsNb" : 15
 	  },
 	  "WIZARD-3" : {
 		"Capacities" : "Faveur de pacte",
@@ -1630,8 +1630,8 @@ export const referentialMock = {
 		"Locations" : {
 		  "2" : 2
 		},
-		"MinorSpells" : 2,
-		"Spells" : 4
+		"MinorSpellsNb" : 2,
+		"SpellsNb" : 4
 	  },
 	  "WIZARD-4" : {
 		"Capacities" : "Amélioration de caractéristiques",
@@ -1639,8 +1639,8 @@ export const referentialMock = {
 		"Locations" : {
 		  "2" : 2
 		},
-		"MinorSpells" : 3,
-		"Spells" : 5
+		"MinorSpellsNb" : 3,
+		"SpellsNb" : 5
 	  },
 	  "WIZARD-5" : {
 		"Capacities" : "-",
@@ -1648,8 +1648,8 @@ export const referentialMock = {
 		"Locations" : {
 		  "3" : 2
 		},
-		"MinorSpells" : 3,
-		"Spells" : 6
+		"MinorSpellsNb" : 3,
+		"SpellsNb" : 6
 	  },
 	  "WIZARD-6" : {
 		"Capacities" : "Capacité de patron d'Outremonde",
@@ -1657,8 +1657,8 @@ export const referentialMock = {
 		"Locations" : {
 		  "3" : 2
 		},
-		"MinorSpells" : 3,
-		"Spells" : 7
+		"MinorSpellsNb" : 3,
+		"SpellsNb" : 7
 	  },
 	  "WIZARD-7" : {
 		"Capacities" : "-",
@@ -1666,8 +1666,8 @@ export const referentialMock = {
 		"Locations" : {
 		  "4" : 2
 		},
-		"MinorSpells" : 3,
-		"Spells" : 8
+		"MinorSpellsNb" : 3,
+		"SpellsNb" : 8
 	  },
 	  "WIZARD-8" : {
 		"Capacities" : "Amélioration de caractéristiques",
@@ -1675,8 +1675,8 @@ export const referentialMock = {
 		"Locations" : {
 		  "4" : 2
 		},
-		"MinorSpells" : 3,
-		"Spells" : 9
+		"MinorSpellsNb" : 3,
+		"SpellsNb" : 9
 	  },
 	  "WIZARD-9" : {
 		"Capacities" : "-",
@@ -1684,8 +1684,8 @@ export const referentialMock = {
 		"Locations" : {
 		  "5" : 2
 		},
-		"MinorSpells" : 3,
-		"Spells" : 10
+		"MinorSpellsNb" : 3,
+		"SpellsNb" : 10
 	  }
 	},
 	"Caracteristics" : {

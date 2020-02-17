@@ -11,7 +11,8 @@
 }
 
 .detailsComponent,
-.historicComponent {
+.historicComponent,
+.spellBookComponent {
     z-index: 3;
 }
 

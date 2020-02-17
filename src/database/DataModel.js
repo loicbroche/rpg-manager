@@ -79,8 +79,8 @@ export const DATA_MODEL = {
                 SPECIALS: { name: "Specials", optional: true },
                 BONUS_ATTACK: { name: "BonusAttack", optional: true },
                 DAMAGES: { name: "Damages", optional: true },
-                MINOR_SPELLS: { name: "MinorSpells", optional: true },
-                SPELLS: { name: "Spells", optional: true },
+                MINOR_SPELLS_NB: { name: "MinorSpellsNb", optional: true },
+                SPELLS_NB: { name: "SpellsNb", optional: true },
                 LOCATIONS: { name: "Locations", optional: true },
                 INVOCATIONS: { name: "Invocations", optional: true },
                 ARMORLESS_SPEED: { name: "ArmorlessSpeed", optional: true }
@@ -384,6 +384,8 @@ export const DATA_MODEL = {
                 MONEY: { name: "Money" },
                 OBJECTS: { name: "Objects" },
                 SPECIALS: { name: "Specials", optional: true },
+                SPELLS_LOCATIONS: { name: "SpellsLocations", optional: true },
+                MINOR_SPELLS: { name: "MinorSpells", optional: true },
                 SPELLS: { name: "Spells", optional: true }
             }
         }

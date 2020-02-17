@@ -233,15 +233,31 @@ li.locked {
   align-self: flex-end;
   border-radius: 0.25rem;
 }
+.extensor.horizontal {
+  align-self: flex-start;
+}
 .extensor img {
   height: 100%;
 }
 
-.opened::before {
+.opened:not(.reverse)::before,
+.closed.reverse::before {
   font-size: 0.33rem;
   content: "⮝";
 }
-.closed::before {
+.closed:not(.reverse)::before,
+.opened.reverse::before {
   font-size: 0.33rem;
   content: "⮟";
+}
+
+.opened.horizontal:not(.reverse)::before,
+.closed.horizontal.reverse::before {
+  font-size: 0.33rem;
+  content: "⮜";
+}
+.closed.horizontal:not(.reverse)::before,
+.opened.horizontal.reverse::before {
+  font-size: 0.33rem;
+  content: "⮞";
 }

@@ -54,8 +54,8 @@ export const CapacityPropType = PropTypes.shape({
     Specials: PropTypes.number,
     BonusAttack: PropTypes.string,
     Damages: PropTypes.number,
-    MinorSpells: PropTypes.number,
-    Spells: PropTypes.number,
+    MinorSpellsNb: PropTypes.number,
+    SpellsNb: PropTypes.number,
     Locations: PropTypes.arrayOf(PropTypes.number),
     Invocations: PropTypes.string,
     ArmorlessSpeed: PropTypes.number
@@ -277,5 +277,7 @@ export const CharacterPropType = PropTypes.shape({
     Money: PropTypes.number.isRequired,
     Objects: PropTypes.arrayOf(PropTypes.string),
     Specials: PropTypes.number,
-    Spells: PropTypes.arrayOf(PropTypes.number)
+    SpellsLocations: PropTypes.arrayOf(PropTypes.number),
+    MinorSpells: PropTypes.arrayOf(PropTypes.string),
+    Spells: PropTypes.arrayOf(PropTypes.string)
 })

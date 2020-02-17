@@ -13,17 +13,17 @@ class ExpendableComponent extends Component {
   }
 
   render() {
-    const { extensorTitle, header, extensor} = this.props;
+    const { extensorTitle, header, extensor, horizontal, reverse} = this.props;
     const { showContent } = this.state;
 
     const title=showContent?"Masquer "+extensorTitle:"Ouvrir "+extensorTitle;
     const extensorElement = extensor || <img src={defaultExpendImage} alt={title} />
 
     return (
-    <div className='expendableComponent'>
+    <div className={`expendableComponent ${horizontal?"horizontal":""} ${reverse?"reverse":""}`}>
       <h1 className="expendable-header">
         {header}
-        <span className={`activable extensor ${showContent?"opened":"closed"}`} onClick={this.onShowContentUpdate} title={title} >
+        <span className={`activable extensor ${showContent?"opened":"closed"} ${horizontal?"horizontal":""} ${reverse?"reverse":""}`} onClick={this.onShowContentUpdate} title={title} >
           {extensorElement}
         </span>
       </h1>
@@ -43,7 +43,14 @@ class ExpendableComponent extends Component {
 }
 
 ExpendableComponent.propTypes = {
-  extensorTitle: PropTypes.string
+  extensorTitle: PropTypes.string,
+  horizontal: PropTypes.bool,
+  reverse: PropTypes.bool
+}
+
+ExpendableComponent.dzfaultProps = {
+  horizontal: false,
+  reverse: false
 }
 
 export default ExpendableComponent

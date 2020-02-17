@@ -90,6 +90,8 @@ class Home extends Component {
       character.Skills = [];
       character.Skin = "";
       character.Specials = 0;/**/
+      character.SpellsLocations = [];/**/
+      character.MinorSpells = [];/**/
       character.Spells = [];/**/
       character.Strength = 10;/**/
       character.SubRace = "AARAKOCRA";

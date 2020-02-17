@@ -8,7 +8,7 @@ import './SpellsComponent.css'
 class SpellsComponent extends Component {
 
   render() {
-    const {spells, classId, level, capacities} = this.props;
+    const {spellsLocations, classId, level, capacities} = this.props;
     const capacity = capacities && classId && level && capacities[classId+"-"+level];
     const maxSpells = capacity && capacity.Locations;
     const spellsLocationMax = maxSpells && Math.max(...Object.keys(maxSpells));
@@ -16,7 +16,7 @@ class SpellsComponent extends Component {
     const spellsPoints = [];
     for (let location = 1; location <= spellsLocationMax; location++) {
       let locationPoints = [];
-      const val = spells && spells[location]
+      const val = spellsLocations && spellsLocations[location]
       const maxVal = maxSpells && maxSpells[location];
       for(let i = 0; i < maxVal; i++) {
         locationPoints[i] = i < val;
@@ -30,7 +30,7 @@ class SpellsComponent extends Component {
               const locationImage = require(`images/spells/${location}.png`);
               return (maxSpells && maxSpells[location] > 0 &&
               <div className="location" key={location}>
-                <span className={`currentModifier decrease-value spell-modifier ${spells && spells[location]===0 &&"disabled"}`}
+                <span className={`currentModifier decrease-value spell-modifier ${spellsLocations && spellsLocations[location]===0 &&"disabled"}`}
                       onClick={(event) => {this.handleValueChange(-1, maxSpells[location], location)}}
                       title={`Utiliser un point de sort de niveau ${location}`}></span>
                 <div className="spell-points">
@@ -42,7 +42,7 @@ class SpellsComponent extends Component {
                       </div>)
                   }
                 </div>
-                <span className={`currentModifier increase-value spell-modifier ${spells && spells[location]===maxSpells[location] &&"disabled"}`}
+                <span className={`currentModifier increase-value spell-modifier ${spellsLocations && spellsLocations[location]===maxSpells[location] &&"disabled"}`}
                       onClick={(event) => {this.handleValueChange(1, maxSpells[location], location)}}
                       title={`Récupérer un point de sort de niveau ${location}`}></span>
               </div>)
@@ -54,12 +54,12 @@ class SpellsComponent extends Component {
 
   // Arrow fx for binding
   handleValueChange = (value, maxVal, location) => {
-    const {spells, onValChange} = this.props;
-    const val = spells && spells[location];
+    const {spellsLocations, onValChange} = this.props;
+    const val = spellsLocations && spellsLocations[location];
     const newVal = Math.min(Math.max(val+value, 0), maxVal);
     
     if (newVal !== val) {
-      let newSpells = {...spells};
+      let newSpells = {...spellsLocations};
       newSpells[location] = newVal;
       onValChange(newSpells);
     }
@@ -67,7 +67,7 @@ class SpellsComponent extends Component {
 }
 
 SpellsComponent.propTypes = {
-  spells: PropTypes.arrayOf(PropTypes.number).isRequired,
+  spellsLocations: PropTypes.arrayOf(PropTypes.number).isRequired,
   classId: PropTypes.string.isRequired,
   level: PropTypes.number,
   onValChange: PropTypes.func.isRequired
