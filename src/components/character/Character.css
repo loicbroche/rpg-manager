@@ -15,6 +15,12 @@
 .spellBookComponent {
     z-index: 3;
 }
+.spellBookComponent {
+    flex-grow: 1;
+}
+.equipment-selector {
+    max-width: 20rem;
+}
 
 .character-name {
     font-weight: bold;
@@ -34,7 +40,8 @@
     width: 50%;
 }
 .fight > *:not(:nth-child(1)):not(:empty),
-.stats > *:not(:nth-child(1)):not(:empty) {
+.stats > *:not(:nth-child(1)):not(:empty),
+.caracteristics-relative > *:not(:nth-child(1)):not(:empty) {
     margin-top: var(--components-separator-margin);
 }
 
@@ -62,15 +69,19 @@
 }
 
 .stats {
+    margin-left: 2rem;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
 }
+.caracteristics-relative {
+    align-self: flex-end;
+}
+
 
 .caracteristics {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 .caracteristics > * {
     margin: 0 0.25rem;
@@ -102,8 +113,12 @@
 }
 
 /* Equipments */
-.equipment,
-.equipment-weapons,
+.equipment {
+    display: flex;
+    flex-direction: column;
+}
+
+.weapons-selectors,
 .equipment-armors {
     display: flex;
     flex-direction: row;
@@ -124,7 +139,6 @@
     display: flex;
     flex-direction: row;
 }
-.equipment > *:not(:nth-child(1)):not(:empty),
 .weapons-selectors > *:not(:nth-child(1)):not(:empty),
 .equipment-armors > *:not(:nth-child(1)):not(:empty) {
     margin-left: var(--components-separator-margin);

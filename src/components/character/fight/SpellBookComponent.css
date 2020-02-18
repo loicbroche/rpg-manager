@@ -8,6 +8,14 @@
   width: 100%;
 }
 
+.spellBookComponent ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+}
+
 .levelSpells {
   display: flex;
   flex-direction: column;
@@ -47,13 +55,6 @@
 .spells .extensor {
   color: var(--color-Spell);
 }
-.spells ul {
-  margin-block-start: 0;
-  margin-block-end: 0;
-  margin-inline-start: 0;
-  margin-inline-end: 0;
-  padding-inline-start: 0;
-}
 
 .spellBookComponent .expendable-content.show-content {
   height: auto;
@@ -71,6 +72,7 @@
 }
 .spell-level-image {
   border-radius: 50%;
+  height: 1rem;
   background-image: radial-gradient(var(--color-Spell), transparent);
 }
 

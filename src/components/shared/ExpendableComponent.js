@@ -9,7 +9,7 @@ class ExpendableComponent extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { showContent: false };
+    this.state = { showContent: props.defaultExtended };
   }
 
   render() {
@@ -44,11 +44,13 @@ class ExpendableComponent extends Component {
 
 ExpendableComponent.propTypes = {
   extensorTitle: PropTypes.string,
+  defaultExtended: PropTypes.bool,
   horizontal: PropTypes.bool,
   reverse: PropTypes.bool
 }
 
 ExpendableComponent.dzfaultProps = {
+  defaultExtended: false,
   horizontal: false,
   reverse: false
 }

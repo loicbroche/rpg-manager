@@ -27,6 +27,7 @@ class WeaponSelector extends Component {
 /**/const equipmentLabel = distance?"une arme à distance":"une arme";
 
 /**/const level = getLevel(levels, wearingCharacter && wearingCharacter.XP);
+
 /**/const masterBonus = level && level.MasteryBonus;
 /**/const isMaster = this.isMaster(equipment);
 /**/const bonusContent = equipment &&
@@ -83,16 +84,17 @@ class WeaponSelector extends Component {
           <div className="equipment-illustration">
             <img src={equipmentImage} className="equipment-image" alt="" />
           </div>
-          <div className="equipment-description">
-            <div className="equipment-description-line"><span className="description-line-title">{equipment?"Dégâts:":'\u00A0'}</span>
-                                                        <span className="description-line-value">{equipment && equipment.Damage+" "+equipment.DamageType}</span></div>
-            <div className="equipment-description-line"><span className="description-line-title">{equipment?"Propriété:":'\u00A0'}</span>
-                                                        <span className="description-line-value">{equipment && equipment.Properties}</span></div>
-            <div className="equipment-description-line"><span className="description-line-title">{equipment?"Poids:":'\u00A0'}</span>
-                                                        {equipment && <Weight weight={equipment.Weight} />}</div>
-            <div className="equipment-description-line"><span className="description-line-title">{equipment?"Prix:":'\u00A0'}</span>
-                                                        {equipment && <Money amount={equipment.Price} />}</div>
-          </div>
+          {equipment &&
+            <div className="equipment-description">
+              <div className="equipment-description-line"><span className="description-line-title">{equipment?"Dégâts:":'\u00A0'}</span>
+                                                          <span className="description-line-value">{equipment && equipment.Damage+" "+equipment.DamageType}</span></div>
+              <div className="equipment-description-line"><span className="description-line-title">{equipment?"Propriété:":'\u00A0'}</span>
+                                                          <span className="description-line-value">{equipment && equipment.Properties}</span></div>
+              <div className="equipment-description-line"><span className="description-line-title">{equipment?"Poids:":'\u00A0'}</span>
+                                                          {equipment && <Weight weight={equipment.Weight} />}</div>
+              <div className="equipment-description-line"><span className="description-line-title">{equipment?"Prix:":'\u00A0'}</span>
+                                                          {equipment && <Money amount={equipment.Price} />}</div>
+          </div>}
       </div>
     )
   }

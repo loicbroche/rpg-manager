@@ -170,69 +170,71 @@ class Character extends Component {
                                 <ACComponent character={this.state} />
                                 <SpeedComponent subRaceId={subRaceId} classId={classId} armorId={Armor} strength={Strength} level={characterLevel} />
                             </div>
-                            <div className="caracteristics">
-                            {   caracteristics && 
-                                Object.values(caracteristics).map((caracteristic) => (
-                                    <div key={caracteristic.Name}>
-                                        <span className={`caracteristic-name ${caracteristic.OV}`}>{caracteristic.Name}</span>
-                                        <Caracteristic
-                                            caracteristicName={caracteristic.OV}
-                                            value={this.state[caracteristic.OV]}
-                                            subRaceId={ subRaceId }
-                                            classId={ classId }
-                                            onChange={(value) =>{ this.updateCaracteristic(caracteristic.OV, value);}}/>
-                                    </div>
+                            <div className="caracteristics-relative">
+                                <div className="caracteristics">
+                                {   caracteristics && 
+                                    Object.values(caracteristics).map((caracteristic) => (
+                                        <div key={caracteristic.Name}>
+                                            <span className={`caracteristic-name ${caracteristic.OV}`}>{caracteristic.Name}</span>
+                                            <Caracteristic
+                                                caracteristicName={caracteristic.OV}
+                                                value={this.state[caracteristic.OV]}
+                                                subRaceId={ subRaceId }
+                                                classId={ classId }
+                                                onChange={(value) =>{ this.updateCaracteristic(caracteristic.OV, value);}}/>
+                                        </div>
+                                        )
                                     )
-                                )
-                            }
+                                }
+                                </div>
+                                <Skills master={masterSkills}
+                                        historicId={historicId}
+                                        XP={XP}
+                                        caracteristicsBonus={caracteristicsBonus}
+                                        subRaceId={subRaceId}
+                                        onClick={(skillId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.SKILLS.name, skillId) }} />
                             </div>
-                            <Skills master={masterSkills}
-                                    historicId={historicId}
-                                    XP={XP}
-                                    caracteristicsBonus={caracteristicsBonus}
-                                    subRaceId={subRaceId}
-                                    onClick={(skillId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.SKILLS.name, skillId) }} />
                             <SavesComponent saves={Saves} advantages={SaveAdvantages} subRaceId={subRaceId} classId={classId} XP={XP}
                                             onClick={(alterationId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.SAVES.name, alterationId) }}
                                             onAdvantageClick={(alterationId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.SAVE_ADVANTAGES.name, alterationId) }}/>
-                        </div>
-                    </div>
-                    <div className="equipment">
-                        <div className="equipment-weapons">
-                            <div className="weapons-selectors">
-                                <WeaponSelector equipmentId={Weapon}
-                                                wearingCharacter={ this.state }
-                                                onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.WEAPON.name, value); }} />
-                                <WeaponSelector equipmentId={DistanceWeapon}
-                                                wearingCharacter={ this.state }
-                                                distance={true}
-                                                onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.DISTANCE_WEAPON.name, value); }}
-                                                onAmmunitionChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.AMMUNITION.name, value);  }} />
+                            <div className="equipment">
+                                <div className="equipment-weapons">
+                                    <div className="weapons-selectors">
+                                        <WeaponSelector equipmentId={DistanceWeapon}
+                                                        wearingCharacter={ this.state }
+                                                        distance={true}
+                                                        onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.DISTANCE_WEAPON.name, value); }}
+                                                        onAmmunitionChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.AMMUNITION.name, value);  }} />
+                                        <WeaponSelector equipmentId={Weapon}
+                                                        wearingCharacter={ this.state }
+                                                        onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.WEAPON.name, value); }} />
+                                    </div>
+                                    <Weapons master={MasterWeapons}
+                                            classId={classId}
+                                            level={characterLevel}
+                                            onClick={(weaponId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.MASTER_WEAPONS.name, weaponId) }} />
+                                </div>
+                                <div className="equipment-armors">
+                                    <ArmorSelector equipmentId={Armor}
+                                                    wearingCharacter={ this.state }
+                                                    classId={classId}
+                                                    subRaceId={subRaceId}
+                                                    onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.ARMOR.name, value); }}/>
+                                    <ArmorSelector equipmentId={Shield}
+                                                    wearingCharacter={ this.state }
+                                                    shield={true}
+                                                    classId={classId}
+                                                    subRaceId={subRaceId}
+                                                    onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SHIELD.name, value); }}/>
+                                </div>
+                                <div className="equipment-bag">
+                                    <BagComponent />
+                                    <Objects master={MasterObjects}
+                                        classId={classId}
+                                        historicId={historicId}
+                                        onClick={(objectId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.MASTER_OBJECTS.name, objectId) }} />
+                                </div>
                             </div>
-                            <Weapons master={MasterWeapons}
-                                    classId={classId}
-                                    level={characterLevel}
-                                    onClick={(weaponId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.MASTER_WEAPONS.name, weaponId) }} />
-                        </div>
-                        <div className="equipment-bag">
-                            <BagComponent />
-                            <Objects master={MasterObjects}
-                                classId={classId}
-                                historicId={historicId}
-                                onClick={(objectId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.MASTER_OBJECTS.name, objectId) }} />
-                        </div>
-                        <div className="equipment-armors">
-                            <ArmorSelector equipmentId={Armor}
-                                            wearingCharacter={ this.state }
-                                            classId={classId}
-                                            subRaceId={subRaceId}
-                                            onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.ARMOR.name, value); }}/>
-                            <ArmorSelector equipmentId={Shield}
-                                            wearingCharacter={ this.state }
-                                            shield={true}
-                                            classId={classId}
-                                            subRaceId={subRaceId}
-                                            onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SHIELD.name, value); }}/>
                         </div>
                     </div>
                 </div>

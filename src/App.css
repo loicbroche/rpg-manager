@@ -116,14 +116,20 @@ h1 {
   cursor: pointer;
 }
 .activable:hover,
-.activable:focus {
+.activable:focus,
+.hoverable:hover,
+.hoverable:focus {
   background-color: var(--highlight-background-color-1);
 }
+
+
 .activable:active {
   background-color: var(--active-background-color-1);
 }
 .activable.transparent:hover,
-.activable.transparent:focus {
+.activable.transparent:focus,
+.hoverable.transparent:hover,
+.hoverable.transparent:focus {
   background-color: var(--highlight-background-transparent-color-1);
 }
 .activable.transparent:active {
@@ -134,7 +140,6 @@ li.skill:focus,
 li.locked {
   border: 1px solid var(--color-primary);
 }
-
 
 .body {
   margin: 1rem;
@@ -240,24 +245,31 @@ li.locked {
   height: 100%;
 }
 
-.opened:not(.reverse)::before,
-.closed.reverse::before {
+.opened,
+.closed {
   font-size: 0.33rem;
-  content: "⮝";
-}
-.closed:not(.reverse)::before,
-.opened.reverse::before {
-  font-size: 0.33rem;
-  content: "⮟";
 }
 
-.opened.horizontal:not(.reverse)::before,
-.closed.horizontal.reverse::before {
-  font-size: 0.33rem;
-  content: "⮜";
-}
-.closed.horizontal:not(.reverse)::before,
-.opened.horizontal.reverse::before {
-  font-size: 0.33rem;
+.closed:not(.horizontal)::before {
   content: "⮞";
+}
+.opened:not(.horizontal):not(.reverse)::before {
+  content: "⮟";
+}
+.opened:not(.horizontal).reverse::before {
+  content: "⮝";
+}
+
+.closed.horizontal:not(.reverse)::after {
+  content: "⮝";
+}
+.closed.horizontal.reverse::before {
+  content: "⮝";
+}
+
+.opened.horizontal:not(.reverse)::after {
+  content: "⮞";
+}
+.opened.horizontal.reverse::before {
+  content: "⮜";
 }

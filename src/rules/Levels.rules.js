@@ -15,7 +15,7 @@ XP: PropTypes.number
 
 export const getLevel = (levels, XP) => {
     const levelNumber = getLevelNumber(levels, XP);
-    return levelNumber && levels[levelNumber];
+    return levelNumber && levels[levelNumber-1];
 }
 getLevel.propTypes = {
   levels: PropTypes.arrayOf(LevelPropType).isRequired,

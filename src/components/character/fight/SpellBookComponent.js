@@ -33,7 +33,32 @@ class SpellBookComponent extends Component {
         { (availableMinorSpellsNb > 0 ||availableSpellsNb >0) &&
           <ExpendableComponent extensorTitle="le livre des sorts"
                                 header={<span>{`Livre de sorts ${titleNumbers}`}</span>}
-                                extensor={<img src={spellBookImage} alt="Livre des sorts" />}>
+                                extensor={<img src={spellBookImage} alt="Livre des sorts" />}
+                                defaultExtended={true} >
+            <div className="known-spells">
+              <ul className="levelSpells">
+              {availableSpells && availableSpells.map((levelAvailableSpells, index) => {
+                const levelImage = require(`images/spells/${index}.png`);
+                
+                return levelAvailableSpells && levelAvailableSpells.map((spell) => {
+                    const known = (knownMinorSpells && knownMinorSpells.includes(spell.Name)) || (knownSpells && knownSpells.includes(spell.Name));
+                    const description = (index===0?"Sort mineur":`Sort de niveau ${index}`)+`\nEcole : ${spell.School}\nIncantation : ${spell.Incantation}\n${spell.Type?spell.Type+"\n":""}${spell.Description}`;
+                    let schoolImage;
+                    try {
+                    schoolImage = require(`images/spells/${spell.School}.png`);
+                    } finally {}
+                    return known &&
+                      <li key={spell.Name} className={`spell hoverable transparent`}
+                          title={description}>
+                        <img src={levelImage} className="spell-level-image" alt={index} />
+                        <span key={spell.Name} className="spell-name" >{spell.Name}</span>
+                        <img src={schoolImage} className="spell-school-image" alt={spell.School} />
+                      </li>
+                  })
+                })
+              }
+              </ul>
+            </div>
             <div className="spells">
               {availableSpells &&
                 availableSpells.map((levelAvailableSpells, index) => {
@@ -44,7 +69,7 @@ class SpellBookComponent extends Component {
                                               extensorTitle={index===0?"les sorts mineurs disponibles":`les sorts disponibles de niveau ${index}`}
                                               extensor={<img src={levelImage} className="spell-level-image" alt={index} />}
                                               horizontal={true} 
-                                              reverse={false} 
+                                              reverse={true} 
                                               >
                           <ul className="levelSpells">
                               { levelAvailableSpells.map((spell) => {

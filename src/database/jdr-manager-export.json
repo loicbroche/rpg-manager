@@ -5356,7 +5356,7 @@
 	  "BBE" : "",
 	  "School" : "Divination",
 	  "Incantation" : "1 action",
-	  "Type" : "ConcentrationRituel",
+	  "Type" : "Concentration Rituel",
 	  "Description" : "Le lanceur détecte toutes émanations magiques dans un rayon de 9 m et en détermine l'école.",
 	  "Classes" :["BARD", "CLERK", "DRUID", "SORCERER", "MAGICIAN", "PALADIN", "PROWLER"]
 	   },
@@ -5378,7 +5378,7 @@
 	  "BBE" : "",
 	  "School" : "Divination",
 	  "Incantation" : "1 action",
-	  "Type" : "ConcentrationRituel",
+	  "Type" : "Concentration Rituel",
 	  "Description" : "Le lanceur détecte et identifie poisons, créatures venimeuses et maladies à 9 mètres.",
 	  "Classes" :["CLERK", "DRUID", "PALADIN", "PROWLER"]
 	   },
@@ -6105,7 +6105,7 @@
 	  "BBE" : "",
 	  "School" : "Transmutation",
 	  "Incantation" : "1 action",
-	  "Type" : "ConcentrationRituel",
+	  "Type" : "Concentration Rituel",
 	  "Description" : "Crée jusqu'à 10 mots dans les nuages.",
 	  "Classes" :["BARD", "DRUID", "MAGICIAN"]
 	   },
@@ -6512,7 +6512,7 @@
 	  "BBE" : "",
 	  "School" : "Divination",
 	  "Incantation" : "1 action",
-	  "Type" : "ConcentrationRituel",
+	  "Type" : "Concentration Rituel",
 	  "Description" : "Le lanceur peut voir/entendre/sentir à travers les sens d'une bête consentante.",
 	  "Classes" :["DRUID", "PROWLER"]
 	   },
@@ -6534,7 +6534,7 @@
 	  "BBE" : "",
 	  "School" : "Illusion",
 	  "Incantation" : "1 action",
-	  "Type" : "ConcentrationRituel",
+	  "Type" : "Concentration Rituel",
 	  "Description" : "Bloque tous les sons dans une sphère de 6m de rayon.",
 	  "Classes" :["BARD",  "CLERK", "PROWLER"]
 	   },
