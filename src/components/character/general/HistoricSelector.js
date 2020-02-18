@@ -4,17 +4,18 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import './HistoricSelector.css'
 
+const S_KEY_CODE = 83;
+
 class HistoricSelector extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { showHistory: false, history: props.history };
+    this.state = { showHistory: false, changed: false, history: props.history };
   }
 
   render() {
     const { historics, historicId } = this.props;
-    const { history } = this.state;
-    const { showHistory } = this.state;
+    const { history, showHistory} = this.state;
     const historicBorderImage = require("images/historics/historic_border.png");
     const inkWellImage = require('images/inkwell.png');
 
@@ -28,10 +29,15 @@ class HistoricSelector extends Component {
     return (
         <div className="selector historic-selector">
           <div className={`history-container ${showHistory&&"show-history"}`}>
-            <span className={`activable transparent extensor ${showHistory?"opened":"closed"}`} onClick={this.onHistoryUpdate} title={title} >
+            <span className={`activable transparent extensor ${showHistory?"opened":"closed"}`} onClick={this.onShowHistory} title={title} >
               <img src={inkWellImage} alt={title} />
             </span>  
-              <textarea className={`narrative history ${showHistory&&"show-history"}`} value={history} onChange={this.onHistoryChange}></textarea>
+              <textarea className={`narrative history ${showHistory&&"show-history"}`}
+                        value={history}
+                        onChange={this.onHistoryChange}
+                        onKeyUp={(event) => (event.ctrlKey && event.keyCode === S_KEY_CODE) && this.onHistorySave() }
+                        onBlur={this.onHistorySave}>
+              </textarea>
           </div>
           <div className="selector-icon historic-icon">
             <img src={historicImage} className="selector-image" alt="" />
@@ -59,16 +65,23 @@ class HistoricSelector extends Component {
   }
 
   // Arrow fx for binding
-  onHistoryUpdate = (event) => {
-    const { history } = this.state;
+  onShowHistory = () => {
     this.setState({showHistory: !this.state.showHistory})
-    this.props.onHistoryChange(history);
   }
+
+    // Arrow fx for binding
+  onHistorySave = () => {
+      const { history, changed } = this.state;
+      if (changed) {
+        this.setState({changed: false})
+        this.props.onHistoryChange(history);
+      }
+    }
 
   // Arrow fx for binding
   onHistoryChange = (event) => {
     const history = event.target.value;
-    this.setState({history: history})
+    this.setState({history: history, changed: true})
   }
 }
 

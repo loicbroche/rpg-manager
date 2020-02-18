@@ -41,7 +41,9 @@
 }
 .fight > *:not(:nth-child(1)):not(:empty),
 .stats > *:not(:nth-child(1)):not(:empty),
-.caracteristics-relative > *:not(:nth-child(1)):not(:empty) {
+.caracteristics-relative > *:not(:nth-child(1)):not(:empty),
+.personnalNotesComponent,
+.generalNotesComponent {
     margin-top: var(--components-separator-margin);
 }
 

@@ -63,7 +63,6 @@ class Home extends Component {
       character.ChargeCapacity = 20000;
       character.Charisma = 10;
       character.Class = "BARBARIAN";
-      character.Specialisation = "";/**/
       character.Constitution = 10;
       character.Defects = "";
       character.Dexterity = 10;
@@ -83,12 +82,14 @@ class Home extends Component {
       character.MasterWeapons = [];/**/
       character.MaxHP = 8;
       character.Money = 1000;
+      character.Notes = "";/**/
       character.Objects = [];/**/
       character.PersonnalityTraits = "";
       character.Resistances= [];/**/
       character.Shield = "-";/**/
       character.Skills = [];
       character.Skin = "";
+      character.Specialisation = "";/**/
       character.Specials = 0;/**/
       character.SpellsLocations = [];/**/
       character.MinorSpells = [];/**/

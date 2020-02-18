@@ -232,6 +232,12 @@ export const LanguagePropType = PropTypes.shape({
     TypicalRaces: PropTypes.string.isRequired
 })
 
+
+export const NotePropType = PropTypes.shape({
+    Character: PropTypes.string.isRequired,
+    Note: PropTypes.string.isRequired
+})
+
 export const CharacterPropType = PropTypes.shape({
     Id: PropTypes.string.isRequired,
     Name: PropTypes.string.isRequired,
@@ -279,5 +285,6 @@ export const CharacterPropType = PropTypes.shape({
     Specials: PropTypes.number,
     SpellsLocations: PropTypes.arrayOf(PropTypes.number),
     MinorSpells: PropTypes.arrayOf(PropTypes.string),
-    Spells: PropTypes.arrayOf(PropTypes.string)
+    Spells: PropTypes.arrayOf(PropTypes.string),
+    Notes: PropTypes.string
 })

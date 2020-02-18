@@ -1788,6 +1788,7 @@
       "MaxHP" : 24,
       "Money" : 1000,
       "Name" : "Saphir",
+	  "Notes": "L'aventure débute niveau 3 dans un petit village nommé \"?\"\nRencontre des personnages.",
       "Objects" : [ "Outils de cartographe" ],
       "PersonnalityTraits" : "Serein",
       "Skills" : [ "Acrobatie", "Discrétion" ],

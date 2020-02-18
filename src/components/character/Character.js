@@ -29,51 +29,59 @@ import AlterationsComponent from './fight/AlterationsComponent'
 import ArmorSelector from './equipment/ArmorSelector';
 import WeaponSelector from './equipment/WeaponSelector';
 import BagComponent from './equipment/BagComponent';
+import PersonnalNotesComponent from 'components/user/PersonnalNotesComponent';
+import GeneralNotesComponent from 'components/user/GeneralNotesComponent';
+
+const ALL_CHARACTERS_ID = "*";
 
 class Character extends Component {
     constructor (props) {
       super(props);
       const characterId = this.props.match.params.characterId;
       this.state = {
-        Id: characterId,
-        Name: null,
-        Race: null,
-        Class: null,
-        Specialisation: null,
-        ChargeCapacity: null,
-        MasterBonus: null,
-        Skills: null,
-        MasterWeapons: null,
-        MasterObjects: null,
-        Historic: null,
-        Alignment: null,
-        Age: null,
-        Height: null,
-        Width: null,
-        Eyes: null,
-        Skin: null,
-        Hairs: null,
-        PersonnalityTraits: null,
-        Ideals: null,
-        Links: null,
-        Defects: null,
-        History: null,
-        Languages: null,
-        XP: null,
-        Level: null,
-        MaxHP: null,
-        HP: null,
-        AC: null,
-        Weapon: null,
-        DistanceWeapon: null,
-        Armor: null,
-        Money: null,
-        Objects: null,
-        Alterations: null,
-        Resistances: null,
-        Saves: null,
-        SaveAdvantages: null,
-        Dexterity: null
+          characterInfos: {
+            Id: characterId,
+            Name: null,
+            Race: null,
+            Class: null,
+            Specialisation: null,
+            ChargeCapacity: null,
+            MasterBonus: null,
+            Skills: null,
+            MasterWeapons: null,
+            MasterObjects: null,
+            Historic: null,
+            Alignment: null,
+            Age: null,
+            Height: null,
+            Width: null,
+            Eyes: null,
+            Skin: null,
+            Hairs: null,
+            PersonnalityTraits: null,
+            Ideals: null,
+            Links: null,
+            Defects: null,
+            History: null,
+            Languages: null,
+            XP: null,
+            Level: null,
+            MaxHP: null,
+            HP: null,
+            AC: null,
+            Weapon: null,
+            DistanceWeapon: null,
+            Armor: null,
+            Money: null,
+            Objects: null,
+            Alterations: null,
+            Resistances: null,
+            Saves: null,
+            SaveAdvantages: null,
+            Dexterity: null
+          },
+          generalNotes: [],
+          personnalNotes: []
       }
       this.characterRef = database.ref(DATA_MODEL.CHARACTERS.name+"/"+characterId);
       this.updateCharacter = (snapshot) => {
@@ -90,25 +98,41 @@ class Character extends Component {
           newState.MinorSpells = newState.MinorSpells || [];
           newState.Spells = newState.Spells || [];
 
-          this.setState({...newState});
+          this.setState({characterInfos: {...newState}});
+        }
+        this.generalNotesRef = database.ref(DATA_MODEL.NOTES.name+"/"+ALL_CHARACTERS_ID);
+        this.personnalNotesRef = database.ref(DATA_MODEL.NOTES.name+"/"+characterId);
+        this.updateGeneralNotes = (snapshot) => {
+            const newState = snapshot.val();
+            this.setState({generalNotes: newState});
+        }
+        this.updatePersonnalNotes = (snapshot) => {
+            const newState = snapshot.val();
+            this.setState({personnalNotes: newState});
         }
     }
 
     componentDidMount() {
         this.characterRef.on('value', this.updateCharacter);
+        this.generalNotesRef.on('value', this.updateGeneralNotes);
+        this.personnalNotesRef.on('value', this.updatePersonnalNotes);
     }
 
     componentWillUnmount() {
         this.characterRef.off('value', this.updateCharacter);
+        this.generalNotesRef.off('value', this.updateGeneralNotes);
+        this.personnalNotesRef.off('value', this.updatePersonnalNotes);
     }
 
     render() {
         const { caracteristics, levels} = this.props;
         const { Name, SubRace: subRaceId, Gender, Class: classId, Specialisation, Historic: historicId, History, Skills: masterSkills,
                 XP, HP, MaxHP, Specials, SpellsLocations, MinorSpells, Spells, Armor, Shield, Weapon, DistanceWeapon, MasterWeapons, MasterObjects, Alterations,
-                Resistances, Saves, SaveAdvantages, Health, Strength } = this.state
+                Resistances, Saves, SaveAdvantages, Health, Strength, Notes} = this.state.characterInfos;
+        const { generalNotes } = this.state;
+
         const caracteristicsBonus = caracteristics && Object.values(caracteristics).reduce((accum, caracteristic) => {
-            accum[caracteristic.Code] = this.state[caracteristic.OV];
+            accum[caracteristic.Code] = this.state.characterInfos[caracteristic.OV];
             return accum;
         }, {});
         const characterLevel = getLevelNumber(levels, XP);
@@ -118,7 +142,7 @@ class Character extends Component {
             { Name !== null && (
                 <div>
                     <div className="character-header">
-                        <DetailsComponent   character={this.state}
+                        <DetailsComponent   character={this.state.characterInfos}
                                             onChange={(caracteristicName, value) => { this.updateCaracteristic(caracteristicName, value); }}
                                             onClickElement={(elementName, value) => { this.toggleElement(elementName, value); }} />
                         <RaceSelector   subRaceId={subRaceId}
@@ -167,7 +191,7 @@ class Character extends Component {
 
                         <div className="stats">
                             <div className="complements">
-                                <ACComponent character={this.state} />
+                                <ACComponent character={this.state.characterInfos} />
                                 <SpeedComponent subRaceId={subRaceId} classId={classId} armorId={Armor} strength={Strength} level={characterLevel} />
                             </div>
                             <div className="caracteristics-relative">
@@ -178,7 +202,7 @@ class Character extends Component {
                                             <span className={`caracteristic-name ${caracteristic.OV}`}>{caracteristic.Name}</span>
                                             <Caracteristic
                                                 caracteristicName={caracteristic.OV}
-                                                value={this.state[caracteristic.OV]}
+                                                value={this.state.characterInfos[caracteristic.OV]}
                                                 subRaceId={ subRaceId }
                                                 classId={ classId }
                                                 onChange={(value) =>{ this.updateCaracteristic(caracteristic.OV, value);}}/>
@@ -201,12 +225,12 @@ class Character extends Component {
                                 <div className="equipment-weapons">
                                     <div className="weapons-selectors">
                                         <WeaponSelector equipmentId={DistanceWeapon}
-                                                        wearingCharacter={ this.state }
+                                                        wearingCharacter={ this.state.characterInfos }
                                                         distance={true}
                                                         onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.DISTANCE_WEAPON.name, value); }}
                                                         onAmmunitionChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.AMMUNITION.name, value);  }} />
                                         <WeaponSelector equipmentId={Weapon}
-                                                        wearingCharacter={ this.state }
+                                                        wearingCharacter={ this.state.characterInfos }
                                                         onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.WEAPON.name, value); }} />
                                     </div>
                                     <Weapons master={MasterWeapons}
@@ -216,12 +240,12 @@ class Character extends Component {
                                 </div>
                                 <div className="equipment-armors">
                                     <ArmorSelector equipmentId={Armor}
-                                                    wearingCharacter={ this.state }
+                                                    wearingCharacter={ this.state.characterInfos }
                                                     classId={classId}
                                                     subRaceId={subRaceId}
                                                     onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.ARMOR.name, value); }}/>
                                     <ArmorSelector equipmentId={Shield}
-                                                    wearingCharacter={ this.state }
+                                                    wearingCharacter={ this.state.characterInfos }
                                                     shield={true}
                                                     classId={classId}
                                                     subRaceId={subRaceId}
@@ -237,6 +261,8 @@ class Character extends Component {
                             </div>
                         </div>
                     </div>
+                    <PersonnalNotesComponent notes={Notes} onChange={(value) =>  this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.NOTES.name, value) } />
+                    <GeneralNotesComponent notes={generalNotes} onChange={(value) =>  console.log("onChange general notes", value) } />
                 </div>
             )}
         </div>
@@ -244,7 +270,7 @@ class Character extends Component {
     }
 
     toggleElement = (elementName, elementId) => {
-        const { Id: characterId } = this.state;
+        const { Id: characterId } = this.state.characterInfos;
         const elements = this.state[elementName];
         if (characterId !== null) {
             const index = elements?elements.findIndex((name) => name === elementId):-1;
@@ -257,7 +283,7 @@ class Character extends Component {
     }
 
     toggleResistance = (alterationId) => {
-        const { Id: characterId, Resistances, Alterations } = this.state;
+        const { Id: characterId, Resistances, Alterations } = this.state.characterInfos;
         if (characterId !== null) {
             const index = Resistances?Resistances.findIndex((name) => name === alterationId):-1;
             if (index === -1) {
@@ -273,44 +299,44 @@ class Character extends Component {
     }
 
     updateCaracteristic = (caracteristicName, value) => {
-        const { Id: characterId } = this.state;
+        const { Id: characterId } = this.state.characterInfos;
         updateCharacterCaracteristic(characterId, caracteristicName, value);
     }
 
     equals(character) {
         return character
-            && this.state.Age === character.Age
-            && this.state.Alignment === character.Alignment
-            && JSON.stringify(this.state.Alterations) === JSON.stringify(character.Alterations)
-            && this.state.Armor === character.Armor
-            && this.state.ChargeCapacity === character.ChargeCapacity
-            && this.state.Class === character.Class
-            && this.state.Defects === character.Defects
-            && this.state.DistanceWeapon === character.DistanceWeapon
-            && this.state.Eyes === character.Eyes
-            && this.state.Hairs === character.Hairs
-            && this.state.Height === character.Height
-            && this.state.Historic === character.Historic
-            && this.state.History === character.History
-            && this.state.HP === character.HP
-            && this.state.Id === character.Id
-            && this.state.Ideals === character.Ideals
-            && JSON.stringify(this.state.Languages) === JSON.stringify(character.Languages)
-            && this.state.Links === character.Links
-            && JSON.stringify(this.state.MasterArmors) === JSON.stringify(character.MasterArmors)
-            && JSON.stringify(this.state.MasterObjects) === JSON.stringify(character.MasterObjects)
-            && JSON.stringify(this.state.MasterWeapons) === JSON.stringify(character.MasterWeapons)
-            && this.state.MaxHP === character.MaxHP
-            && this.state.Money === character.Money
-            && this.state.Name === character.Name
-            && JSON.stringify(this.state.Objects) === JSON.stringify(character.Objects)
-            && this.state.PersonnalityTraits === character.PersonnalityTraits
-            && this.state.Race === character.Race
-            && JSON.stringify(this.state.Resistances) === JSON.stringify(character.Resistances)
-            && JSON.stringify(this.state.Skills) === JSON.stringify(character.Skills)
-            && this.state.Skin === character.Skin
-            && this.state.Weapon === character.Weapon
-            && this.state.Width === character.Width;
+            && this.state.characterInfos.Age === character.Age
+            && this.state.characterInfos.Alignment === character.Alignment
+            && JSON.stringify(this.state.characterInfos.Alterations) === JSON.stringify(character.Alterations)
+            && this.state.characterInfos.Armor === character.Armor
+            && this.state.characterInfos.ChargeCapacity === character.ChargeCapacity
+            && this.state.characterInfos.Class === character.Class
+            && this.state.characterInfos.Defects === character.Defects
+            && this.state.characterInfos.DistanceWeapon === character.DistanceWeapon
+            && this.state.characterInfos.Eyes === character.Eyes
+            && this.state.characterInfos.Hairs === character.Hairs
+            && this.state.characterInfos.Height === character.Height
+            && this.state.characterInfos.Historic === character.Historic
+            && this.state.characterInfos.History === character.History
+            && this.state.characterInfos.HP === character.HP
+            && this.state.characterInfos.Id === character.Id
+            && this.state.characterInfos.Ideals === character.Ideals
+            && JSON.stringify(this.state.characterInfos.Languages) === JSON.stringify(character.Languages)
+            && this.state.characterInfos.Links === character.Links
+            && JSON.stringify(this.state.characterInfos.MasterArmors) === JSON.stringify(character.MasterArmors)
+            && JSON.stringify(this.state.characterInfos.MasterObjects) === JSON.stringify(character.MasterObjects)
+            && JSON.stringify(this.state.characterInfos.MasterWeapons) === JSON.stringify(character.MasterWeapons)
+            && this.state.characterInfos.MaxHP === character.MaxHP
+            && this.state.characterInfos.Money === character.Money
+            && this.state.characterInfos.Name === character.Name
+            && JSON.stringify(this.state.characterInfos.Objects) === JSON.stringify(character.Objects)
+            && this.state.characterInfos.PersonnalityTraits === character.PersonnalityTraits
+            && this.state.characterInfos.Race === character.Race
+            && JSON.stringify(this.state.characterInfos.Resistances) === JSON.stringify(character.Resistances)
+            && JSON.stringify(this.state.characterInfos.Skills) === JSON.stringify(character.Skills)
+            && this.state.characterInfos.Skin === character.Skin
+            && this.state.characterInfos.Weapon === character.Weapon
+            && this.state.characterInfos.Width === character.Width;
     }
 }
 

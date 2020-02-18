@@ -4,7 +4,8 @@ import { CharacterPropType } from 'PropTypes';
 import { ActionTypes } from '../actions/ActionTypes';
 
 const initialState = {
-    characters: null
+    characters: null,
+    notes: null
 }
 
 function gameReducer(state = initialState, action) {
@@ -25,6 +26,12 @@ function gameReducer(state = initialState, action) {
                     characters: characters
                 }
                 return nextState;
+        case ActionTypes.CHARACTERS.LOAD_NOTES:
+            nextState = {
+                ...state,
+                characters: action.value
+            }
+            return nextState;
         default:
             return state;
     }
