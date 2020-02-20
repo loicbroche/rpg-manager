@@ -3323,6 +3323,14 @@
       "Speed" : 12
     }
   },
+  "Notes": {
+	"*": [
+		{"Content": "Hello"},
+		{"Content": "Bonjour"},
+		{"Content": "Holà", "Locked": true},
+		{"Content": "Buongiorno"}
+	]
+  },
   "ObjectCategories" : {
     "ARTISAN" : {
       "Code" : "ARTISAN",

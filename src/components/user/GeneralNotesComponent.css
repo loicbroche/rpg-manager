@@ -31,12 +31,29 @@
     visibility: collapse;
 }
 
-.note {
-    background-color: transparent;
-    border: 0;
-}
-
 .show-notes {
     visibility: visible;
     height: auto;
+}
+
+.note-container {
+    display: flex;
+    flex-direction: row;
+}
+.note-movers {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: 0.75rem;
+    cursor: default;
+}
+.note-movers .disabled {
+    color: var(--background-color-2);
+}
+.note {
+    flex-grow: 1;
+    height: 2.5rem;
+    margin-bottom: var(--components-separator-margin);
+    background-color: transparent;
+    border: 0;
 }

@@ -79,11 +79,3 @@
 .spell-school-image {
   height: 1.5rem;
 }
-
-.forbidden {
-  cursor: not-allowed;
-}
-.activable.forbidden:hover,
-.activable.forbidden:focus {
-  border: 1px solid var(--color-error);
-}

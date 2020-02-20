@@ -5,6 +5,7 @@
   --background-color-error: #D88;
   --highlight-background-color-1: #333;
   --highlight-background-color-2: #D2D2D2;
+  --background-transparent-color-1: rgba(34, 34, 34, 0.5);
   --highlight-background-transparent-color-1: rgba(51, 51, 51, 0.5);
   --color-header: #333;
   --active-background-color-1: #444;
@@ -45,6 +46,7 @@
   --components-separator-margin: 0.75rem;
 }
 
+/*Global HTML elements*/
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -84,16 +86,7 @@ h1 {
   color: var(--color-primary);
 }
 
-.menu {
-  font-family: var(--font-family-secondary);
-}
-
-.narrative,
-.narrative input {
-  font-family: var(--font-family-tertiary);
-  font-size: 2rem;
-}
-
+/*Static style General classes*/
 .error-message {
   background-color: var(--background-color-error);
   color: var(--color-error);
@@ -101,36 +94,26 @@ h1 {
   font-size: 1rem;
 }
 
-.header {
-  height: 2rem;
-  width: fit-content;
-  margin: auto;
-  text-align: center;
-  background: var(--background-color-1);
-  border: 1px solid var(--color-secondary);
-  color: var(--color-secondary);
+.menu {
   font-family: var(--font-family-secondary);
-  font-size: 1.75rem;
 }
 
+.narrative,
+.narrative input,
+.narrative textarea {
+  font-family: var(--font-family-tertiary);
+  font-size: 2rem;
+}
+
+/*Dynamic style Generalclasses*/
 .activable {
   cursor: pointer;
 }
-input.activable,
-.activable input {
-  cursor: text;
-}
-
 .activable:hover,
 .activable:focus,
 .hoverable:hover,
 .hoverable:focus {
   background-color: var(--highlight-background-color-1);
-}
-
-
-.activable:active {
-  background-color: var(--active-background-color-1);
 }
 .activable.transparent:hover,
 .activable.transparent:focus,
@@ -138,8 +121,17 @@ input.activable,
 .hoverable.transparent:focus {
   background-color: var(--highlight-background-transparent-color-1);
 }
+.activable:active {
+  background-color: var(--active-background-color-1);
+}
 .activable.transparent:active {
   background-color: var(--active-background-transparent-color-1);
+}
+input.activable:not(.forbidden),
+.activable:not(.forbidden) input,
+textarea.activable:not(.forbidden),
+.activable:not(.forbidden) textarea {
+  cursor: text;
 }
 li.activable:hover,
 li.skill:focus,
@@ -147,8 +139,12 @@ li.locked {
   border: 1px solid var(--color-primary);
 }
 
-.body {
-  margin: 1rem;
+.forbidden {
+  cursor: not-allowed;
+}
+.activable.forbidden:hover,
+.activable.forbidden:focus {
+  border: 1px solid var(--color-error);
 }
 
 .option {
@@ -157,7 +153,6 @@ li.locked {
   border-radius: 50%;
   border: 1px solid var(--color-primary);
 }
-
 .option.filled {
  background-color: var(--color-primary);
 }
@@ -166,7 +161,6 @@ li.locked {
   display: flex;
   flex-direction: row;
 }
-
 .selector-icon {
   z-index: 2;
   height: var(--height-icons);
@@ -174,19 +168,16 @@ li.locked {
   border-radius: 50%;
   background-color: var(--background-color-1);
 }
-
 .selector-icon > img {
   height: var(--height-icons);
   width: var(--height-icons);
   position:absolute;
 }
-
 .selector-value {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
-
 .selector-select {
   position: relative;
   left: calc(-1* var(--height-icons)/2);
@@ -205,7 +196,6 @@ li.locked {
   color: var(--color-primary);
   font-weight: bold;
 }
-
 .currentModifier:not(.disabled):hover,
 .currentModifier:not(.disabled):focus,
 .maxModifier:not(.disabled):hover,
@@ -255,7 +245,6 @@ li.locked {
 .closed {
   font-size: 0.33rem;
 }
-
 .closed:not(.horizontal)::before {
   content: "⮞";
 }
@@ -265,17 +254,32 @@ li.locked {
 .opened:not(.horizontal).reverse::before {
   content: "⮝";
 }
-
 .closed.horizontal:not(.reverse)::after {
   content: "⮝";
 }
 .closed.horizontal.reverse::before {
   content: "⮝";
 }
-
 .opened.horizontal:not(.reverse)::after {
   content: "⮞";
 }
 .opened.horizontal.reverse::before {
   content: "⮜";
+}
+
+/*App specific*/
+.header {
+  height: 2rem;
+  width: fit-content;
+  margin: auto;
+  text-align: center;
+  background: var(--background-color-1);
+  border: 1px solid var(--color-secondary);
+  color: var(--color-secondary);
+  font-family: var(--font-family-secondary);
+  font-size: 1.75rem;
+}
+
+.body {
+  margin: 1rem;
 }

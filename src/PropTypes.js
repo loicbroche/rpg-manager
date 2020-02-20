@@ -234,8 +234,12 @@ export const LanguagePropType = PropTypes.shape({
 
 
 export const NotePropType = PropTypes.shape({
-    Character: PropTypes.string.isRequired,
-    Note: PropTypes.string.isRequired
+    Name: PropTypes.string,
+    Content: PropTypes.string.isRequired,
+    Description: PropTypes.string,
+    Top: PropTypes.number,
+    Left: PropTypes.number,
+    Locked: PropTypes.string
 })
 
 export const CharacterPropType = PropTypes.shape({

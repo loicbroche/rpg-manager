@@ -1,6 +1,8 @@
 
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { NotePropType } from 'PropTypes';
+
 import './GeneralNotesComponent.css'
 
 const S_KEY_CODE = 83;
@@ -9,22 +11,33 @@ class GeneralNotesComponent extends Component {
 
   constructor(props) {
     super(props);
-    console.log("Constructor props", props);
     this.state = {
       showNotes: false,
-      notes: props.notes,
-      changed: false
+      note: null,
+      changed: false,
+      changedIndex: null,
     };
   }
 
-  render() {
-    const { showNotes } = this.state;
-    const { notes } = this.props;
-    const inkWellImage = require('images/inkwell.png');
-console.log("generalComponent state", this.state);
-console.log("generalComponent props", this.props);
-    const title = showNotes?"Masquer les notes générales":"Lire/Modifier les notes générales";
+  componentWillReceiveProps() {
+    const {notes, editorCharacter} = this.props;    
+    const notesNb = notes && notes.length;
+    for(let i= 0; i < notesNb; i++) {
+      const textAreaId = `note-${editorCharacter}-${i}`;
+      this.autosizeAndSave(null, textAreaId);
+    }
+  }
 
+  render() {
+    const { showNotes, changed, changedIndex, note } = this.state;
+    const { notes, editorCharacter } = this.props;
+    if (changed) {
+      notes[changedIndex] = {Content: note};
+    }
+
+    const inkWellImage = require('images/inkwell.png');
+    const title = showNotes?"Masquer les notes générales":"Lire/Modifier les notes générales";
+    const notesNb = notes && Object.values(notes).length
     return (
         <div className="generalNotesComponent">
           <div className={`notes-container ${showNotes&&"show-notes"}`}>
@@ -34,56 +47,118 @@ console.log("generalComponent props", this.props);
                 <img src={inkWellImage} alt={title} />
               </span>
             </div>
-            <div className={`narrative notes ${showNotes&&"show-notes"}`}>
-                { notes && notes.map((note, index) =>
-                  
-                  <input key={index} className="note activable transparent"
-                          type="text"
-                          value={note}
-                          onFocus={() => { this.onNoteEdit(index)}}
-                          onBlur={() => { this.onNoteSave(index)}}
-                          onChange={(event) => { this.onNoteChange(event, index)}}
-                          />
+            <div id="notes" className={`narrative notes ${showNotes&&"show-notes"}`}>
+                { notes && Object.values(notes).map((note, index) => {
+                  const locked = (note.Locked===editorCharacter)?false:note.Locked;
+                  const textAreaId = `note-${editorCharacter}-${index}`;
+                  return <div key={index} className="note-container">
+                    <div className="note-movers">
+                      <span className={index===0?"disabled":"activable transparent"}
+                            title="Monter le paragraphe"
+                            onClick={() => this.moveNote(index, index-1)}>
+                      ⮝</span>
+                      <span className={index===notesNb-1?"disabled":"activable transparent"}
+                            title="Descendre le paragraphe"
+                            onClick={() => this.moveNote(index, index+1)}>
+                      ⮟</span>
+                    </div>
+                    <textarea   id={textAreaId}
+                                className={`note activable transparent ${locked?"forbidden":""}`}
+                                disabled={locked}
+                                type="text"
+                                value={note.Content}
+                                title={locked?"Vérouillé par "+locked:"Éditer"}
+                                onFocus={() => { this.onNoteEdit(index)}}
+                                onBlur={() => { this.onNoteSave(index)}}
+                                onChange={(event) => { this.onNoteChange(event, index)}}
+                                onKeyUp={(event) => this.autosizeAndSave(event, textAreaId)}
+                      ></textarea>
+                    </div>
+                    }
                   )}
+                  <div className="add-note">
+                    <span className="activable transparent"
+                          title="Ajouter un nouveau paragraphe"
+                          onClick={() => this.addNote()}
+                          >+</span>
+                  </div>
             </div>
           </div>
         </div>
     )
   }
 
+  autosizeAndSave(event, textAreaId) {
+    var textArea = (event && event.target) || document.getElementById(textAreaId);
+    if (textArea) {
+      if (event && event.ctrlKey && event.keyCode === S_KEY_CODE) {
+        //Blur will call save
+        textArea.blur();
+      } else {
+        setTimeout(function(){
+          textArea.style.cssText = 'height:2.5rem;';
+          textArea.style.cssText = 'height:' + textArea.scrollHeight + 'px';
+        },0);
+      }
+    }
+  }
+
   // Arrow fx for binding
   onShowNotes = () => {
-    this.setState({showNotes: !this.state.showNotes})
+    const newState = !this.state.showNotes
+    this.setState({showNotes: newState});
   }
 
   // Arrow fx for binding
   onNoteEdit = (index) => {
-    const { notes } = this.props;
-    this.setState({note: notes && notes[index]})
-    console.log("onNoteEdit");
+    const { notes, editorCharacter } = this.props;
+    const noteContent = notes && notes[index] && notes[index].Content;
+    this.setState({note: noteContent})
+    notes[index] = {...notes[index], Locked:(editorCharacter||"un autre utilisateur")}
+    this.props.onChange(notes);
   }
 
   // Arrow fx for binding
-  onNoteChange = (event) => {
+  onNoteChange = (event, index) => {
     const note = event.target.value;
-    this.setState({note: note, changed: true})
-    console.log("onNoteChange", note);
+    this.setState({note: note, changed: true, changedIndex: index})
   }
 
   // Arrow fx for binding
   onNoteSave = (index) => {
     const { note, changed } = this.state;
-
-    if (changed) {
-      console.log("Save note "+index, note);
-      this.setState({changed: false, note: null})
-      //this.props.onChange(notes);
+    const { notes } = this.props;
+    const noteContent = changed?note:notes[index].Content;
+    if (noteContent) {
+      notes[index] = {Content: noteContent, Locked: null};
+    } else {
+      notes.splice(index, 1);
     }
+    this.setState({changed: false, changedIndex: null, note: null})
+    this.props.onChange(notes);
+  }
+
+  // Arrow fx for binding
+  addNote = () => {
+    let { notes } = this.props;
+    notes = notes || []; 
+    notes[notes.length] = {Content:""}
+    this.props.onChange(notes);
+  }
+
+  // Arrow fx for binding
+  moveNote = (index, targetIndex) => {
+    const { notes } = this.props;
+    const note = notes[index];
+    notes.splice(index, 1);
+    notes.splice(targetIndex, 0, note);
+    this.props.onChange(notes);
   }
 }
 
 GeneralNotesComponent.propTypes = {
-  notes: PropTypes.arrayOf(PropTypes.string),
+  notes: PropTypes.arrayOf(NotePropType),
+  editorCharacter: PropTypes.string,
   onChange: PropTypes.func.isRequired
 }
 

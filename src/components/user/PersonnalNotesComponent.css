@@ -1,34 +1,35 @@
 .personnalNotesComponent {
     color: var(--background-color-1);
 }
-.notes-container {
+.personnal-notes-container {
     height: 1.5rem;
     display: flex;
     flex-direction: column;
     background-image: url("../../images/parchment.png");
 }
-.notes-header {
+.personnal-notes-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     font-weight: bold;
 }
-.notes-header img {
+.personnal-notes-header img {
     height: 1rem;
 }
-.notes-name {
+.personnal-notes-name {
     padding: 0 1rem;
 }
 
-.notes {
+.global-note {
     height: 100%;
+    flex-grow: 1;
     padding: 1rem;
+    visibility: collapse;
     background-color: transparent;
     border: 0;
-    visibility: collapse;
 }
 
-.show-notes {
+.show-personnal-notes {
     visibility: visible;
     height: auto;
 }

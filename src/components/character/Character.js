@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { database } from 'database/InitializeDatabase'
 import { DATA_MODEL } from 'database/DataModel'
 import { updateCharacterCaracteristic, insertCharacterElement, deleteCharacterElement } from 'database/PersistCharacter';
+import { updateNotes, ALL_CHARACTERS_ID } from 'database/PersistNotes';
 import { getLevelNumber } from 'rules/Levels.rules'
 
 import './Character.css'
@@ -31,8 +32,7 @@ import WeaponSelector from './equipment/WeaponSelector';
 import BagComponent from './equipment/BagComponent';
 import PersonnalNotesComponent from 'components/user/PersonnalNotesComponent';
 import GeneralNotesComponent from 'components/user/GeneralNotesComponent';
-
-const ALL_CHARACTERS_ID = "*";
+import FlyingNotesComponent from '../user/FlyingNotesComponent';
 
 class Character extends Component {
     constructor (props) {
@@ -129,7 +129,7 @@ class Character extends Component {
         const { Name, SubRace: subRaceId, Gender, Class: classId, Specialisation, Historic: historicId, History, Skills: masterSkills,
                 XP, HP, MaxHP, Specials, SpellsLocations, MinorSpells, Spells, Armor, Shield, Weapon, DistanceWeapon, MasterWeapons, MasterObjects, Alterations,
                 Resistances, Saves, SaveAdvantages, Health, Strength, Notes} = this.state.characterInfos;
-        const { generalNotes } = this.state;
+        const { generalNotes, personnalNotes } = this.state;
 
         const caracteristicsBonus = caracteristics && Object.values(caracteristics).reduce((accum, caracteristic) => {
             accum[caracteristic.Code] = this.state.characterInfos[caracteristic.OV];
@@ -142,9 +142,12 @@ class Character extends Component {
             { Name !== null && (
                 <div>
                     <div className="character-header">
-                        <DetailsComponent   character={this.state.characterInfos}
-                                            onChange={(caracteristicName, value) => { this.updateCaracteristic(caracteristicName, value); }}
-                                            onClickElement={(elementName, value) => { this.toggleElement(elementName, value); }} />
+                        <div>
+                            <DetailsComponent   character={this.state.characterInfos}
+                                        onChange={(caracteristicName, value) => { this.updateCaracteristic(caracteristicName, value); }}
+                                        onClickElement={(elementName, value) => { this.toggleElement(elementName, value); }} />
+                            <FlyingNotesComponent notes={personnalNotes} onNotesChange={(value) =>  updateNotes(value, Name) } />
+                        </div>
                         <RaceSelector   subRaceId={subRaceId}
                                         gender={Gender}
                                         onRaceChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SUB_RACE.name, value);}}
@@ -261,8 +264,8 @@ class Character extends Component {
                             </div>
                         </div>
                     </div>
-                    <PersonnalNotesComponent notes={Notes} onChange={(value) =>  this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.NOTES.name, value) } />
-                    <GeneralNotesComponent notes={generalNotes} onChange={(value) =>  console.log("onChange general notes", value) } />
+                    <PersonnalNotesComponent globalNotes={Notes} onGlobalNotesChange={(value) =>  this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.NOTES.name, value) }  />
+                    <GeneralNotesComponent notes={generalNotes} editorCharacter={Name} onChange={(value) => updateNotes(value, ALL_CHARACTERS_ID) } />
                 </div>
             )}
         </div>

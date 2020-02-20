@@ -338,8 +338,12 @@ export const DATA_MODEL = {
         {
             name: 'Notes',
             columns: {
-                CHARACTER: { name: "Character" },
-                NOTE: { name: "Note" }
+                NAME: { name: "Name" },
+                CONTENT: { name: "Content" },
+                DESCRIPTION: { name: "Description" },
+                TOP: { name: "Top" },
+                LEFT: { name: "Left" },
+                LOCKED: { name: "Locked" }
             }
         },
 
