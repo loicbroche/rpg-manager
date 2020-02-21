@@ -128,7 +128,7 @@ class Character extends Component {
         const { caracteristics, levels} = this.props;
         const { Name, SubRace: subRaceId, Gender, Class: classId, Specialisation, Historic: historicId, History, Skills: masterSkills,
                 XP, HP, MaxHP, Specials, SpellsLocations, MinorSpells, Spells, Armor, Shield, Weapon, DistanceWeapon, MasterWeapons, MasterObjects, Alterations,
-                Resistances, Saves, SaveAdvantages, Health, Strength, Notes} = this.state.characterInfos;
+                Resistances, Saves, SaveAdvantages, Health, Strength, Notes, Money} = this.state.characterInfos;
         const { generalNotes, personnalNotes } = this.state;
 
         const caracteristicsBonus = caracteristics && Object.values(caracteristics).reduce((accum, caracteristic) => {
@@ -255,7 +255,7 @@ class Character extends Component {
                                                     onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SHIELD.name, value); }}/>
                                 </div>
                                 <div className="equipment-bag">
-                                    <BagComponent />
+                                    <BagComponent money={Money} onMoneyChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.MONEY.name, value); }} />
                                     <Objects master={MasterObjects}
                                         classId={classId}
                                         historicId={historicId}

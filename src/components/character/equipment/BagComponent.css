@@ -1,4 +1,6 @@
 .bagComponent {
+  display: flex;
+  flex-direction: column;
   border: 1px dashed purple;
   color: purple;
 }

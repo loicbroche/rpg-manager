@@ -1,3 +1,14 @@
+
+.money input[type=number] {
+  background-color: transparent;
+  border: 0;
+  color: inherit;
+  min-width: 2rem;
+}
+.money input[type=number]:disabled {
+  appearance: none;
+}
+
 .money-image {
   height: 1rem;
   margin-left: 0.2rem;
