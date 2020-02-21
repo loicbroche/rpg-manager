@@ -160,3 +160,16 @@
     max-height: 20rem;
     overflow-y: scroll;
 }
+
+/* Notes */
+.user-notes {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+}
+.user-notes > * {
+    flex-grow: 1;
+}
+.user-notes > *:not(:nth-child(1)):not(:empty) {
+    margin-left: var(--components-separator-margin);
+}
