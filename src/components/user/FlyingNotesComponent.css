@@ -1,23 +1,36 @@
 .flyingNotesComponent {
+    cursor: default;
+    background-image: url("../../images/parchment.png");
     color: var(--background-color-1);
 }
 .flying-notes-container {
     height: 1.5rem;
     display: flex;
     flex-direction: column;
-    background-image: url("../../images/parchment.png");
 }
 .flying-notes-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     font-weight: bold;
+    padding: 0.2rem 0;
 }
-.flying-notes-header img {
+.show-button img,
+.repatriation-button img {
     height: 1rem;
+    margin: 0 0.2rem;
 }
-.flying-notes-name {
-    padding: 0 1rem;
+.flying-notes-component-name,
+.add-flying-note {
+    height: 100%;
+    line-height: 100%;
+}
+.show-button {
+    display: inline-flex;
+}
+.hidden {
+    visibility: hidden;
 }
 
 .flying-notes {
@@ -26,12 +39,6 @@
     flex-direction: column;
     visibility: collapse;
     height: 2.5rem;
-}
-
-.flying-note-control {
-    height: 2.5rem;
-    width: 2.5rem;
-    border: 1px solid blue;
 }
 
 .flying-note {
@@ -60,5 +67,4 @@
 
 .show-flying-notes {
     visibility: visible;
-    height: auto;
 }

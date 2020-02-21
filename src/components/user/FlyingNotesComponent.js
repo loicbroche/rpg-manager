@@ -10,7 +10,7 @@ class FlyingNotesComponent extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { showNotes: false};
+    this.state = { showNotes: true};
   }
 
   componentWillReceiveProps() {
@@ -24,17 +24,23 @@ class FlyingNotesComponent extends Component {
   render() {
     const { showNotes } = this.state;
     const { notes } = this.props;
-    const inkWellImage = require('images/inkwell.png');
+    const showImage = require('images/show.png');
+    const hiddenImage = require('images/hide.png');
+    const repatriateImage = require('images/repatriate.png');
 
     const title = showNotes?"Masquer les notes volantes":"Afficher les notes volantes";
     return ( 
         <div className="flyingNotesComponent">
           <div className={`flying-notes-container ${showNotes&&"show-flying-notes"}`}>
             <div className="flying-notes-header">
-              <span className="flying-notes-name">Notes</span>
-              <span className={`activable transparent extensor ${showNotes?"opened":"closed"}`} onClick={this.onShowNotes} title={title} >
-                <img src={inkWellImage} alt={title} />
-              </span>
+              <div className="show-button activable transparent" onClick={this.onShowNotes} title={title} >
+                <img src={showNotes?showImage:hiddenImage} alt={title} />
+              </div>
+              <span className="flying-notes-component-name">Notes</span>
+              <div className={`repatriation-button activable transparent ${!showNotes?"hidden":""}`} onClick={this.onRepatriateNotes} title="Réinitialiser la position des notes volantes">
+                  <img src={repatriateImage} alt={"Réinitialiser la position"} />
+              </div>
+              <span className="add-flying-note activable transparent">+</span>
             </div>
             <div className={`flying-notes ${showNotes&&"show-flying-notes"}`}>
               { notes &&
@@ -96,6 +102,17 @@ class FlyingNotesComponent extends Component {
         elmnt.style.right = "";
       };
     }
+  }
+
+  // Arrow fx for binding
+  onRepatriateNotes = () => {
+    const { notes, onNotesChange } = this.props;
+    const notesNb = notes && notes.length;
+    for(let i= 0; i < notesNb; i++) {
+      notes[i].Top = null;
+      notes[i].Left = null;
+    }
+    onNotesChange(notes);
   }
 
   // Arrow fx for binding
