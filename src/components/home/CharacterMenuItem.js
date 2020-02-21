@@ -8,10 +8,10 @@ import { ROUTE_CHARACTER } from 'App'
 const deleteImage = require('images/delete-character-icone.png');
 const CharacterMenuItem = ({ id, name, onRemove }) => (
       <div className="character-menu-item">
-        <Link to={`${ROUTE_CHARACTER}/${name}`}>
+        <Link to={`${ROUTE_CHARACTER}/${name}`} title={`Accéder à la fiche personnage de ${name}`}>
           {name}
         </Link>
-        <button className="delete-button" title="Supprimer le personnage"
+        <button className="delete-button" title={`Supprimer la fiche personnage de ${name}`}
         onClick={() => {if(window.confirm(`Êtes-vous certain de vouloir supprimer la fiche personnage de ${name} ?`)) {onRemove(id);}} }>
           <img src={deleteImage} alt={`Supprimer la fiche personnage de ${name}`} className="delete-image" />
         </button>

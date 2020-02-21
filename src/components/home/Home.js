@@ -32,7 +32,7 @@ class Home extends Component {
     const { characters} = this.state
     return (
       <div className="menu">
-        <Link to={ROUTE_GAME_MASTER} className="menu-item activable gm">
+        <Link to={ROUTE_GAME_MASTER} className="menu-item activable gm" title="Accéder à l'écran du maître du jeu">
             Maître du jeu
         </Link>
         {characters && Object.values(characters).map(({ Id, Name}) => (

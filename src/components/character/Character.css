@@ -14,14 +14,17 @@
 .spellBookComponent {
     z-index: 3;
 }
+.personnalNotesComponent {
+    z-index: 5;
+}
+.flyingNotesComponent {
+    z-index: 10;
+}
 .spellBookComponent {
     flex-grow: 1;
 }
 .equipment-selector {
     max-width: 20rem;
-}
-.personnalNotesComponent {
-    z-index: 5;
 }
 
 .character-name {

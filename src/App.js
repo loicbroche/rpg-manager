@@ -232,7 +232,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <header role="banner">
-          <Link to={ROUTE_HOME}>
+          <Link to={ROUTE_HOME} title="Retour à l'accueil">
             <div className="header activable">
               <span>JdR Manager</span>
             </div>
