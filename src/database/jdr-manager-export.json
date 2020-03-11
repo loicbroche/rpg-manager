@@ -3366,7 +3366,17 @@
       "Code" : "VEHICLE_RELATIVE",
       "Name" : "Composants de véhicules",
       "OV" : "Vehicles relative"
-    }
+    },
+    "VARIOUS" : {
+      "Code" : "VARIOUS",
+      "Name" : "Divers",
+      "OV" : "Various"
+    },
+	"EQUIPMENT": {
+	  "Code": "EQUIPMENT",
+	  "Name": "Equipement",
+	  "OV": "Equipment"
+	}
   },
   "Objects" : {
     "Barde" : {

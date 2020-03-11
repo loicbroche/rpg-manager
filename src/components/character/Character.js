@@ -6,6 +6,7 @@ import { DATA_MODEL } from 'database/DataModel'
 import { updateCharacterCaracteristic, insertCharacterElement, deleteCharacterElement } from 'database/PersistCharacter';
 import { updateNotes, ALL_CHARACTERS_ID } from 'database/PersistNotes';
 import { getLevelNumber } from 'rules/Levels.rules'
+import { getChargeCapacity, SATCHEL_CHARGE_CAPACITY } from 'rules/Character.rules'
 
 import './Character.css'
 import Skills from './stats/Skills'
@@ -74,6 +75,7 @@ class Character extends Component {
             Armor: null,
             Money: null,
             Objects: null,
+            SatchelObjects: null,
             Alterations: null,
             Resistances: null,
             Saves: null,
@@ -91,7 +93,8 @@ class Character extends Component {
           newState.Skills = newState.Skills || [];
           newState.Alterations = newState.Alterations || [];
           newState.Resistances = newState.Resistances || [];
-          newState.Objects = newState.MasterObjects || [];
+          newState.Objects = newState.Objects || [];
+          newState.SatchelObjects = newState.SatchelObjects || [];
           newState.Languages = newState.Languages || [];
           newState.Saves = newState.Saves || [];
           newState.SaveAdvantages = newState.SaveAdvantages || [];
@@ -125,10 +128,10 @@ class Character extends Component {
     }
 
     render() {
-        const { caracteristics, levels} = this.props;
+        const { caracteristics, levels, races, subRaces, weapons, armors} = this.props;
         const { Name, SubRace: subRaceId, Gender, Class: classId, Specialisation, Historic: historicId, History, Skills: masterSkills,
                 XP, HP, MaxHP, Specials, SpellsLocations, MinorSpells, Spells, Armor, Shield, Weapon, DistanceWeapon, MasterWeapons, MasterObjects, Alterations,
-                Resistances, Saves, SaveAdvantages, Health, Strength, Notes, Money} = this.state.characterInfos;
+                Resistances, Saves, SaveAdvantages, Health, Strength, Notes, Money, Objects: characterObjects, SatchelObjects} = this.state.characterInfos;
         const { generalNotes, personnalNotes } = this.state;
 
         const caracteristicsBonus = caracteristics && Object.values(caracteristics).reduce((accum, caracteristic) => {
@@ -137,13 +140,28 @@ class Character extends Component {
         }, {});
         const characterLevel = getLevelNumber(levels, XP);
 
+        const armor = armors && armors[Armor];
+        const shield = armors && armors[Shield];
+        const weapon = weapons && weapons[Weapon];
+        const distanceWeapon = weapons && weapons[DistanceWeapon];
+        const equipmentsWeight =  (armor?armor.Weight:0)
+                                + (shield?shield.Weight:0)
+                                + (weapon?weapon.Weight:0)
+                                + (distanceWeapon?distanceWeapon.Weight:0);
+
+        const subRace = subRaces && subRaces[subRaceId];
+        const race = subRace && races && races[subRace.Race];
+        const raceBonus = race && race[DATA_MODEL.CHARACTERS.columns.STRENGTH.name];
+        const subRaceBonus = subRace && subRace[DATA_MODEL.CHARACTERS.columns.STRENGTH.name];
+        const capacityCharge = getChargeCapacity(Strength + raceBonus + subRaceBonus) - equipmentsWeight;
+
         return (
         <div className="character">
             { Name !== null && (
                 <div>
                     <div className="character-header">
                         <div>
-                            <DetailsComponent   character={this.state.characterInfos}
+                            <DetailsComponent character={this.state.characterInfos}
                                         onChange={(caracteristicName, value) => { this.updateCaracteristic(caracteristicName, value); }}
                                         onClickElement={(elementName, value) => { this.toggleElement(elementName, value); }} />
                             <FlyingNotesComponent notes={personnalNotes} onNotesChange={(value) =>  updateNotes(value, Name) } />
@@ -255,7 +273,19 @@ class Character extends Component {
                                                     onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SHIELD.name, value); }}/>
                                 </div>
                                 <div className="equipment-bag">
-                                    <BagComponent money={Money} onMoneyChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.MONEY.name, value); }} />
+                                    <div className="bags">
+                                        <BagComponent name="Besace"
+                                                    capacityCharge={SATCHEL_CHARGE_CAPACITY}
+                                                    money={Money}
+                                                    onMoneyChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.MONEY.name, value); }}
+                                                    characterObjects={SatchelObjects}
+                                                    onObjectsChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SATCHEL_OBJECTS.name, value); }} />
+                                        <BagComponent name="Sac de voyage"
+                                                    capacityCharge={capacityCharge-SATCHEL_CHARGE_CAPACITY}
+                                                    displayMoney={false}
+                                                    characterObjects={characterObjects}
+                                                    onObjectsChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.OBJECTS.name, value); }} />
+                                    </div>                                                  
                                     <Objects master={MasterObjects}
                                         classId={classId}
                                         historicId={historicId}
@@ -347,6 +377,10 @@ class Character extends Component {
 
 const mapStateToProps = (state) => ({
     levels: state.referential.levels,
-    caracteristics: state.referential.caracteristics
+    caracteristics: state.referential.caracteristics,
+    subRaces: state.referential.subRaces,
+    races: state.referential.races,
+    armors: state.referential.armors,
+    weapons: state.referential.weapons
 });
 export default connect(mapStateToProps)(Character)

@@ -7,15 +7,13 @@
     align-items: center;
     padding: 0.5rem;
     border: 1px solid var(--color-primary);
+    z-index: 5;
 }
 
 .detailsComponent,
 .historicComponent,
 .spellBookComponent {
     z-index: 3;
-}
-.personnalNotesComponent {
-    z-index: 5;
 }
 .flyingNotesComponent {
     z-index: 10;
@@ -150,6 +148,11 @@
 .weapons-selectors > *:not(:nth-child(1)):not(:empty),
 .equipment-armors > *:not(:nth-child(1)):not(:empty) {
     margin-left: var(--components-separator-margin);
+}
+
+.bags {
+    display: flex;
+    flex-direction: column;
 }
 
 /* Skills selection */

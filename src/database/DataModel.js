@@ -396,6 +396,7 @@ export const DATA_MODEL = {
             SHIELD: { name: "Shield", optional: true },
             MONEY: { name: "Money" },
             OBJECTS: { name: "Objects" },
+            SATCHEL_OBJECTS: { name: "SatchelObjects" },
             SPECIALS: { name: "Specials", optional: true },
             SPELLS_LOCATIONS: { name: "SpellsLocations", optional: true },
             MINOR_SPELLS: { name: "MinorSpells", optional: true },

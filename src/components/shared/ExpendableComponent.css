@@ -15,6 +15,10 @@
 .expendableComponent.horizontal.reverse {
   flex-direction: row-reverse;
 }
+.expendableComponent.reverse .expendable-content {
+  bottom: 0;
+}
+
 .expendable-header {
   display: flex;
   flex-direction: row;

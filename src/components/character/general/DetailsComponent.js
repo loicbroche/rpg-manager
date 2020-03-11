@@ -16,7 +16,7 @@ class DetailsComponent extends Component {
 
   render() {
 
-    const { alignments, armors, weapons, character, onChange, onClickElement } = this.props;
+    const { alignments, armors, weapons, objects, character, onChange, onClickElement } = this.props;
     const armor = armors && character && armors[character.Armor];
     const shield = armors && character && armors[character.Shield];
     const weapon = weapons && character && weapons[character.Weapon];
@@ -26,6 +26,13 @@ class DetailsComponent extends Component {
                               + (shield?shield.Weight:0)
                               + (weapon?weapon.Weight:0)
                               + (distanceWeapon?distanceWeapon.Weight:0);
+    let objectsWeight = 0;
+    if (objects && character && character.Objects) {
+      for (let i = 0; i < character.Objects.length; i++) {
+        const obj = objects[character.Objects[i]];
+        objectsWeight += !obj?0:obj.Weight;
+      }
+    }
     return (
       <div className="detailsComponent">
         <ExpendableComponent extensorTitle="les détails"
@@ -66,7 +73,7 @@ class DetailsComponent extends Component {
                       disabled={!onChange} />
               <span>
                   <Weight weight={character.Weight} onChange={(value) => onChange(DATA_MODEL.CHARACTERS.columns.WEIGHT.name, value)} />
-                  <span className="equipment-weight" title="Poids de l'équipmenent porté"> (+<Weight weight={equipmentsWeight} />)</span>
+                  <span className="equipment-weight" title="Poids de l'équipmenent porté"> (+<Weight weight={equipmentsWeight + objectsWeight} />)</span>
               </span>
               <input  name="eyes" 
                       type="text"
@@ -137,6 +144,7 @@ DetailsComponent.propTypes = {
 const mapStateToProps = (state) => ({
   alignments: state.referential.alignments,
   armors: state.referential.armors,
-  weapons: state.referential.weapons
+  weapons: state.referential.weapons,
+  objects: state.referential.objects
 })
 export default connect(mapStateToProps)(DetailsComponent)

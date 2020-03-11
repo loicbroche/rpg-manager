@@ -86,6 +86,7 @@ class Home extends Component {
       character.Objects = [];/**/
       character.PersonnalityTraits = "";
       character.Resistances= [];/**/
+      character.SatchelObjects = [];/**/
       character.Shield = "-";/**/
       character.Skills = [];
       character.Skin = "";

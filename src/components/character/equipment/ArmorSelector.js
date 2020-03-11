@@ -80,7 +80,7 @@ class ArmorSelector extends Component {
               <div className="equipment-description-line"><span className="description-line-title">{equipment?"Poids:":'\u00A0'}</span>
                                                           {equipment && <Weight weight={equipment.Weight} />}</div>
               <div className="equipment-description-line"><span className="description-line-title">{equipment?"Prix:":'\u00A0'}</span>
-                                                          {equipment && <Money amount={equipment.Price} />}</div>
+                                                          {equipment && <Money id={equipmentTitleLabel} amount={equipment.Price} />}</div>
           </div>}
       </div>
     )

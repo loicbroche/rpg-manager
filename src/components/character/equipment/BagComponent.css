@@ -1,6 +1,88 @@
 .bagComponent {
   display: flex;
   flex-direction: column;
-  border: 1px dashed purple;
-  color: purple;
+  cursor: default;
+  background-image: url("../../../images/tissu.png");
+}
+.bagComponent,
+.bagComponent h1 {
+  color: var(--background-color-1);
+}
+
+.bagComponent .expendable-content {
+  width: 100%;
+  background-image: url("../../../images/tissu.png");
+}
+.bagComponent .expendable-header {
+  background: transparent;
+}
+
+.bagComponent .activable:hover,
+.bagComponent .activable:focus {
+  background-color: var(--highlight-background-transparent-color-1);
+}
+.bagComponent .activable:active{
+  background-color: var(--active-background-transparent-color-1);
+}
+
+.bagComponent-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.bagComponent .weightComponent{
+  margin: 0 0.5rem;
+}
+
+.bagItems {
+  display: flex;
+  flex-direction: column;
+}
+.categoryName {
+  border-radius: 0;
+  font-weight: bold;
+  background-color: var(--background-transparent-color-1);
+  color: var(--color-primary);
+  padding-left: 0.25rem;
+}
+.bagItem {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+.item-name {
+  flex-grow: 1;
+}
+
+.add-object {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.delete-object {
+  display: inline-flex;
+}
+
+.add-object img,
+.delete-object img {
+  height: 1rem;
+}
+
+.delete-object img {
+  visibility: hidden;
+}
+.delete-object:hover img,
+.delete-object:focus img {
+  visibility: visible;
+}
+
+.add-object.disabled img {
+  opacity: var(--opacity-inactive);
+}
+
+.new-object-infos {
+  display: flex;
 }

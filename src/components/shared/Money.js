@@ -11,7 +11,7 @@ const pcImage = require("images/money/pc.png");
 const ppImage = require("images/money/pp.png");
 const peImage = require("images/money/pe.png");
 
-const Money = ({ amount, fullDisplay, alternativeDisplay, onChange }) => {
+const Money = ({ id, amount, fullDisplay, alternativeDisplay, onChange }) => {
     const po = getPoNumber(amount);
     const pa = getPaNumber(amount);
     const pc = getPcNumber(amount);
@@ -24,46 +24,46 @@ const Money = ({ amount, fullDisplay, alternativeDisplay, onChange }) => {
       alternativeDisplay
       ?<span className="money">
         { (fullDisplay || pp>0) && <span>
-            <input id="ppInput" type="number" dir="rtl" min={0} step={1} value={pp} className={onChange?"activable transparent":""} disabled={!onChange}
+            <input id={id+"_ppInput"} type="number" dir="rtl" min={0} step={1} value={pp} className={onChange?"activable transparent":""} disabled={!onChange}
                     onChange={(event) => {if (onChange) { onChange(getNumberForPp(event.target.value)+getNumberForPe(pe)+pcbis); resize(event)}}}/>
             <img src={ppImage} className="money-image" alt="pp" title="Pièces de platine" />
-            <script>{resize(null, "ppInput")}</script>
+            <script>{resize(null, id+"_ppInput")}</script>
           </span> }
         { ( fullDisplay || (pp>0 && pe>0)) && <span>&nbsp;</span> }
         { (fullDisplay || pe>0) && <span>
-            <input id="peInput" type="number" dir="rtl" step={1} value={pe} className={onChange?"activable transparent":""} disabled={!onChange}
+            <input id={id+"_peInput"} type="number" dir="rtl" step={1} value={pe} className={onChange?"activable transparent":""} disabled={!onChange}
                     onChange={(event) => {if (onChange) { onChange(getNumberForPp(pp)+getNumberForPe(event.target.value)+pcbis); resize(event)}}}/>
             <img src={peImage} className="money-image" alt="pe" title="Pièces d'electron"/>
-            <script>{resize(null, "peInput")}</script>
+            <script>{resize(null, id+"_peInput")}</script>
           </span> }
         { ( fullDisplay || (pe>0 && pcbis>0)) && <span>&nbsp;</span> }
         { (fullDisplay || pcbis>0 || (pp===0 && pe===0)) && <span>
-            <input id="pcbisInput" type="number" dir="rtl" step={1} value={pcbis} className={onChange?"activable transparent":""} disabled={!onChange}
+            <input id={id+"_pcbisInput"} type="number" dir="rtl" step={1} value={pcbis} className={onChange?"activable transparent":""} disabled={!onChange}
                     onChange={(event) => {if (onChange) { onChange(getNumberForPp(pp)+getNumberForPe(pe)+(parseInt(event.target.value)||0)); resize(event)}}}/>
             <img src={pcImage} className="money-image" alt="pc" title="Pièces de cuivre"/>
-            <script>{resize(null, "pcbisInput")}</script>
+            <script>{resize(null, id+"_pcbisInput")}</script>
           </span> }
       </span>
       :<span className="money">
         { (fullDisplay || po>0) && <span>
-            <input id="poInput" type="number" dir="rtl" min={0} step={1} value={po} className={onChange?"activable transparent":""} disabled={!onChange}
+            <input id={id+"_poInput"} type="number" dir="rtl" min={0} step={1} value={po} className={onChange?"activable transparent":""} disabled={!onChange}
                     onChange={(event) => {if (onChange) { onChange(getNumberForPo(event.target.value)+getNumberForPa(pa)+pc); resize(event)}}} />
             <img src={poImage} className="money-image" alt="po" title="Pièces d'or" />
-            <script>{resize(null, "poInput")}</script>
+            <script>{resize(null, id+"_poInput")}</script>
         </span> }
         { ( fullDisplay || (po>0 && pa>0)) && <span>&nbsp;</span> }
         { (fullDisplay || pa>0) && <span>
-            <input id="paInput" type="number" dir="rtl" step={1} value={pa} className={onChange?"activable transparent":""} disabled={!onChange}
+            <input id={id+"_paInput"} type="number" dir="rtl" step={1} value={pa} className={onChange?"activable transparent":""} disabled={!onChange}
                     onChange={(event) => {if (onChange) { onChange(getNumberForPo(po)+getNumberForPa(event.target.value)+pc); resize(event)}}}/>
             <img src={paImage} className="money-image" alt="pa" title="Pièces d'argent"/>
-            <script>{resize(null, "paInput")}</script>
+            <script>{resize(null, id+"_paInput")}</script>
         </span> }
         { ( fullDisplay || (pa>0 && pc>0)) && <span>&nbsp;</span> }
         { (fullDisplay || pc>0 || (po===0 && pa===0)) && <span>
-            <input id="pcInput" type="number" dir="rtl" step={1} value={pc} className={onChange?"activable transparent":""} disabled={!onChange}
+            <input id={id+"_pcInput"} type="number" dir="rtl" step={1} value={pc} className={onChange?"activable transparent":""} disabled={!onChange}
                     onChange={(event) => {if (onChange) { onChange(getNumberForPo(po)+getNumberForPa(pa)+(parseInt(event.target.value)||0)); resize(event)}}}/>
             <img src={pcImage} className="money-image" alt="pc" title="Pièces de cuivre"/>
-            <script>{resize(null, "pcInput")}</script>
+            <script>{resize(null, id+"_pcInput")}</script>
         </span> }
       </span>
     )
@@ -78,6 +78,7 @@ function resize(event, elementId) {
 }
 
 Money.propTypes = {
+  id: PropTypes.string,
   amount: PropTypes.number,
   fullDisplay: PropTypes.bool.isRequired,
   alternativeDisplay: PropTypes.bool.isRequired,
@@ -85,6 +86,7 @@ Money.propTypes = {
 }
 
 Money.defaultProps = {
+  id: "",
   amount: 0,
   fullDisplay: false,
   alternativeDisplay: false
