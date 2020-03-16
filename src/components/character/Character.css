@@ -50,6 +50,9 @@
 .generalNotesComponent {
     margin-top: var(--components-separator-margin);
 }
+.specialsComponent {
+    align-self: flex-start;
+}
 
 .health {
     display: flex;
@@ -125,13 +128,14 @@
 }
 
 .weapons-selectors,
-.equipment-armors {
+.armors-selectors {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-top: var(--components-separator-margin);
 }
-.equipment-weapons {
+.equipment-weapons,
+.equipment-armors {
     flex-grow: 2;
     display: flex;
     flex-direction: column;
@@ -141,12 +145,13 @@
     display: flex;
     flex-direction: column;
 }
-.weapons-selectors {
+.weapons-selectors,
+.armors-selectors {
     display: flex;
     flex-direction: row;
 }
 .weapons-selectors > *:not(:nth-child(1)):not(:empty),
-.equipment-armors > *:not(:nth-child(1)):not(:empty) {
+.armors-selectors > *:not(:nth-child(1)):not(:empty) {
     margin-left: var(--components-separator-margin);
 }
 

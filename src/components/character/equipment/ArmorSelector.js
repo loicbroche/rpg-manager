@@ -24,13 +24,14 @@ class ArmorSelector extends Component {
 /**/const equipmentTitleLabel = shield?"Bouclier":"Armure";
 /**/const equipmentLabel = shield?"un bouclier":"une armure";
 /**/const filteredCategories = equipmentCategories && (shield?filterShieldsCategories(equipmentCategories):filterArmorsCategories(equipmentCategories));
-    const isMaster = this.isMasterCategory(equipment && equipment.Category);
+
+    const isMaster = equipment && (this.isMasterCategory(equipment.Category) || (wearingCharacter && wearingCharacter.MasterArmors && wearingCharacter.MasterArmors.includes(equipmentId)));
 /**/const bonusCaracteristic = caracteristics && equipment && equipment.BonusAC && caracteristics[equipment.BonusAC];
     const caracteristicName = bonusCaracteristic && bonusCaracteristic.OV;
 /**/const bonusContent = equipment && 
                          <div className={`main-stat-bonus-label ${ isMaster?(equipment && equipment.BonusAC):"not-master-equipment"}`}>
                             {isMaster
-                              ?(equipment && equipment.BonusAC && <CaracteristicBonus caracteristicName={caracteristicName}
+                              ?(equipment && equipment.BonusAC &&  caracteristicName && <CaracteristicBonus caracteristicName={caracteristicName}
                                                   value={wearingCharacter && wearingCharacter[caracteristicName]}
                                                   bonusMax={Number.isNaN(equipment.MaxBonusAC)?null:equipment.MaxBonusAC}
                                                   subRaceId={wearingCharacter && wearingCharacter.SubRace} />)
@@ -93,7 +94,7 @@ class ArmorSelector extends Component {
   }
 
   getEquipmentsOptionElement(equipmentCategoryId) {
-    const { equipmentCategories, equipments, subRaces, subRaceId, classes, classId} = this.props;
+    const { equipmentCategories, equipments, subRaces, subRaceId, classes, classId, wearingCharacter} = this.props;
     const characterClass = classes && classes[classId];
     const subRace = subRaces && subRaces[subRaceId];
 
@@ -101,10 +102,13 @@ class ArmorSelector extends Component {
     const isClassMasterCategory = this.isClassMasterCategory(equipmentCategoryId);
     const isRaceMasterCategory = this.isRaceMasterCategory(equipmentCategoryId);
     const isMasterCategory = isClassMasterCategory || isRaceMasterCategory;
+
     return availableEquipments && availableEquipments.length > 0 && 
            <optgroup key={equipmentCategoryId} label={equipmentCategories && equipmentCategories[equipmentCategoryId].Name} >
-            { availableEquipments.map((equipment) => (
-              <option key={equipment.Name} value={equipment.Id} className={isMasterCategory?"master-equipment":""}
+            { availableEquipments.map((equipment) => {
+              const isMasterEquipment = isMasterCategory || (wearingCharacter && wearingCharacter.MasterArmors && wearingCharacter.MasterArmors.includes(equipment.Id));
+              return (
+              <option key={equipment.Name} value={equipment.Id} className={isMasterEquipment?"master-equipment":""}
                       title={ (isRaceMasterCategory
                               ?"Maîtrise héritée de la race "+subRace.Name
                               :(  isClassMasterCategory
@@ -116,8 +120,12 @@ class ArmorSelector extends Component {
                                                                                       :""}`
                                                             :""}
                                   `}>{equipment.Name}</option>
-            ))}
+            )})}
           </optgroup>
+  }
+
+  isMaster(armorCategoryId) {
+    return this.isClassMasterCategory(armorCategoryId) || this.isRaceMasterCategory(armorCategoryId);
   }
 
   isMasterCategory(armorCategoryId) {

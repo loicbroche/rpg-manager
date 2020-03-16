@@ -78,6 +78,7 @@ class Home extends Component {
       character.Intelligence = 10;
       character.Languages = [];/**/
       character.Links = "";
+      character.MasterArmors = [];/**/
       character.MasterObjects = [];/**/
       character.MasterWeapons = [];/**/
       character.MaxHP = 8;

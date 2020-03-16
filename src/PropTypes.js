@@ -250,6 +250,7 @@ export const CharacterPropType = PropTypes.shape({
     Specialisation: PropTypes.string,
     ChargeCapacity: PropTypes.number.isRequired,
     Skills: PropTypes.arrayOf(PropTypes.string),
+    MasterArmors: PropTypes.arrayOf(PropTypes.string),
     MasterWeapons: PropTypes.arrayOf(PropTypes.string),
     MasterObjects: PropTypes.arrayOf(PropTypes.string),
     Historic: PropTypes.string.isRequired,

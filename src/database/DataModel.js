@@ -86,6 +86,13 @@ export const DATA_MODEL = {
                 ARMORLESS_SPEED: { name: "ArmorlessSpeed", optional: true }
             }
         },
+        SPECIALISATION_CAPACITIES:
+        {
+            name: 'SpecialisationCapacities',
+            columns: {
+                CAPACITIES: { name: "Capacities", optional: true }
+            }
+        },
     HISTORICS:
         {
             name: 'Historics',
@@ -360,6 +367,7 @@ export const DATA_MODEL = {
             CHARGE_CAPACITY: { name: "ChargeCapacity" },
             SKILLS: { name: "Skills", optional: true },
             MASTER_WEAPONS: { name: "MasterWeapons", optional: true },
+            MASTER_ARMORS: { name: "MasterArmors", optional: true },
             MASTER_OBJECTS: { name: "MasterObjects", optional: true },
             HISTORIC: { name: "Historic" },
             ALIGNMENT: { name: "Alignment" },

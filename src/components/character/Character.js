@@ -10,6 +10,7 @@ import { getChargeCapacity, SATCHEL_CHARGE_CAPACITY } from 'rules/Character.rule
 
 import './Character.css'
 import Skills from './stats/Skills'
+import Armors from './stats/Armors'
 import Weapons from './stats/Weapons'
 import Objects from './stats/Objects'
 import Caracteristic from './stats/Caracteristic'
@@ -50,6 +51,7 @@ class Character extends Component {
             MasterBonus: null,
             Skills: null,
             MasterWeapons: null,
+            MasterArmors: null,
             MasterObjects: null,
             Historic: null,
             Alignment: null,
@@ -88,6 +90,7 @@ class Character extends Component {
       this.characterRef = database.ref(DATA_MODEL.CHARACTERS.name+"/"+characterId);
       this.updateCharacter = (snapshot) => {
           const newState = snapshot.val();
+          newState.MasterArmors = newState.MasterArmors || [];
           newState.MasterWeapons = newState.MasterWeapons || [];
           newState.MasterObjects = newState.MasterObjects || [];
           newState.Skills = newState.Skills || [];
@@ -130,7 +133,7 @@ class Character extends Component {
     render() {
         const { caracteristics, levels, races, subRaces, weapons, armors} = this.props;
         const { Name, SubRace: subRaceId, Gender, Class: classId, Specialisation, Historic: historicId, History, Skills: masterSkills,
-                XP, HP, MaxHP, Specials, SpellsLocations, MinorSpells, Spells, Armor, Shield, Weapon, DistanceWeapon, MasterWeapons, MasterObjects, Alterations,
+                XP, HP, MaxHP, Specials, SpellsLocations, MinorSpells, Spells, Armor, Shield, Weapon, DistanceWeapon, MasterWeapons, MasterArmors, MasterObjects, Alterations,
                 Resistances, Saves, SaveAdvantages, Health, Strength, Notes, Money, Objects: characterObjects, SatchelObjects} = this.state.characterInfos;
         const { generalNotes, personnalNotes } = this.state;
 
@@ -196,7 +199,7 @@ class Character extends Component {
                             <div className="special">
                                 <SpecialsComponent val={Specials} classId={classId} level={characterLevel}
                                                     onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPECIALS.name, value); }} />
-                                <SpecialCapacitiesComponent />
+                                <SpecialCapacitiesComponent classId={classId} specialisationId={Specialisation} level={characterLevel} />
                             </div>
                             <div className="status">
                                 <div className="points">
@@ -260,17 +263,22 @@ class Character extends Component {
                                             onClick={(weaponId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.MASTER_WEAPONS.name, weaponId) }} />
                                 </div>
                                 <div className="equipment-armors">
-                                    <ArmorSelector equipmentId={Armor}
-                                                    wearingCharacter={ this.state.characterInfos }
-                                                    classId={classId}
-                                                    subRaceId={subRaceId}
-                                                    onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.ARMOR.name, value); }}/>
-                                    <ArmorSelector equipmentId={Shield}
-                                                    wearingCharacter={ this.state.characterInfos }
-                                                    shield={true}
-                                                    classId={classId}
-                                                    subRaceId={subRaceId}
-                                                    onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SHIELD.name, value); }}/>
+                                    <div className="armors-selectors">
+                                        <ArmorSelector equipmentId={Armor}
+                                                        wearingCharacter={ this.state.characterInfos }
+                                                        classId={classId}
+                                                        subRaceId={subRaceId}
+                                                        onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.ARMOR.name, value); }}/>
+                                        <ArmorSelector equipmentId={Shield}
+                                                        wearingCharacter={ this.state.characterInfos }
+                                                        shield={true}
+                                                        classId={classId}
+                                                        subRaceId={subRaceId}
+                                                        onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SHIELD.name, value); }}/>
+                                    </div>
+                                    <Armors master={MasterArmors}
+                                            classId={classId}
+                                            onClick={(armorId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.MASTER_ARMORS.name, armorId) }} />
                                 </div>
                                 <div className="equipment-bag">
                                     <div className="bags">
@@ -306,7 +314,7 @@ class Character extends Component {
 
     toggleElement = (elementName, elementId) => {
         const { Id: characterId } = this.state.characterInfos;
-        const elements = this.state[elementName];
+        const elements = this.state.characterInfos[elementName];
         if (characterId !== null) {
             const index = elements?elements.findIndex((name) => name === elementId):-1;
             if (index === -1) {

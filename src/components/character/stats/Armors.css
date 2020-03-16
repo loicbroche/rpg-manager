@@ -1,0 +1,29 @@
+.armorsComponent {
+  cursor: default;
+}
+
+.armors-category {
+  margin: 0.1rem 0 0.1rem auto
+}
+
+.armors {
+  max-height: 50vh;
+}
+
+.armor {
+  display: flex;
+  flex-direction: row;
+  margin: 0.1rem auto;
+  border-width: 0;
+  color: var(--color-primary);
+}
+
+.armor-name {
+  flex-grow: 1;
+  margin: 0 0.5rem;
+}
+
+.armor-bonus {
+  width: 2rem;
+  color: var(--color-master-bonus);
+}
