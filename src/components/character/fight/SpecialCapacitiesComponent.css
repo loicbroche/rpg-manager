@@ -45,3 +45,21 @@
 .capacity-source img {
   height: 1rem;
 }
+
+.show-hidden-capacities {
+  height: 1rem;
+  margin-left: 1rem;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+}
+
+.hide-capacity img {
+  height: 1rem;
+  visibility: hidden;
+}
+
+.hidden-capacity img,
+.hide-capacity:hover img,
+.hide-capacity:focus img {
+  visibility: visible;
+}

@@ -1028,83 +1028,226 @@
       "Capacities" : [ "Déplacement sans armure amélioré" ],
       "Specials" : 9
     },
-    "PALADIN-1" : {
-      "Capacities" : [ "Sens divin", "Imposition des mains" ],
-      "Locations" : [ null, 0, 0, 0, 0, 0 ]
-    },
-    "PALADIN-10" : {
-      "Capacities" : [ "Aura de courage" ],
-      "Locations" : [ null, 4, 3, 2, 0, 0 ]
-    },
-    "PALADIN-11" : {
-      "Capacities" : [ "Châtiment divin amélioré" ],
-      "Locations" : [ null, 4, 3, 3, 0, 0 ]
-    },
-    "PALADIN-12" : {
-      "Capacities" : [ "Amélioration de caractéristiques" ],
-      "Locations" : [ null, 4, 3, 3, 0, 0 ]
-    },
-    "PALADIN-13" : {
-      "Locations" : [ null, 4, 3, 3, 1, 0 ]
-    },
-    "PALADIN-14" : {
-      "Capacities" : [ "Contact purifiant" ],
-      "Locations" : [ null, 4, 3, 3, 1, 0 ]
-    },
-    "PALADIN-15" : {
-      "Capacities" : [ "Capacité de serment sacré" ],
-      "Locations" : [ null, 4, 3, 3, 2, 0 ]
-    },
-    "PALADIN-16" : {
-      "Capacities" : [ "Amélioration de caractéristiques" ],
-      "Locations" : [ null, 4, 3, 3, 2, 0 ]
-    },
-    "PALADIN-17" : {
-      "Locations" : [ null, 4, 3, 3, 3, 1 ]
-    },
-    "PALADIN-18" : {
-      "Capacities" : [ "Amélioration des auras" ],
-      "Locations" : [ null, 4, 3, 3, 3, 1 ]
-    },
-    "PALADIN-19" : {
-      "Capacities" : [ "Amélioration de caractéristiques" ],
-      "Locations" : [ null, 4, 3, 3, 3, 2 ]
-    },
-    "PALADIN-2" : {
-      "Capacities" : [ "Style de combat", "Incantations", "Châtiment divin" ],
-      "Locations" : [ null, 2, 0, 0, 0, 0 ]
-    },
-    "PALADIN-20" : {
-      "Capacities" : [ "Capacité de serment sacré" ],
-      "Locations" : [ null, 4, 3, 3, 3, 2 ]
-    },
-    "PALADIN-3" : {
-      "Capacities" : [ "Santé divine", "Serment sacré" ],
-      "Locations" : [ null, 3, 0, 0, 0, 0 ]
-    },
-    "PALADIN-4" : {
-      "Capacities" : [ "Amélioration de caractéristiques" ],
-      "Locations" : [ null, 3, 0, 0, 0, 0 ]
-    },
-    "PALADIN-5" : {
-      "Capacities" : [ "Attaque supplémentaire" ],
-      "Locations" : [ null, 4, 2, 0, 0, 0 ]
-    },
-    "PALADIN-6" : {
-      "Capacities" : [ "Aura de protection" ],
-      "Locations" : [ null, 4, 2, 0, 0, 0 ]
-    },
-    "PALADIN-7" : {
-      "Capacities" : [ "Capacité de serment sacré" ],
-      "Locations" : [ null, 4, 3, 0, 0, 0 ]
-    },
-    "PALADIN-8" : {
-      "Capacities" : [ "Amélioration de caractéristiques" ],
-      "Locations" : [ null, 4, 3, 0, 0, 0 ]
-    },
-    "PALADIN-9" : {
-      "Locations" : [ null, 4, 3, 2, 0, 0 ]
-    },
+	"PALADIN-1" : {
+	"Capacities":["Sens divin", "Imposition des mains"],
+	"SpellsNb": 1,
+	"BonusSpellsNb": "CHA",
+	"Locations": {
+	"1":0,
+	"2":0,
+	"3":0,
+	"4":0,
+	"5":0}
+	},
+	"PALADIN-2" : {
+	"Capacities":["Style de combat", "Incantations", "Châtiment divin"],
+	"SpellsNb": 1,
+	"BonusSpellsNb": "CHA",
+	"Locations": {
+	"1":2,
+	"2":0,
+	"3":0,
+	"4":0,
+	"5":0}
+	},
+	"PALADIN-3" : {
+	"Capacities":["Santé divine", "Serment sacré"],
+	"SpellsNb": 1,
+	"BonusSpellsNb": "CHA",
+	"Locations": {
+	"1":3,
+	"2":0,
+	"3":0,
+	"4":0,
+	"5":0}
+	},
+	"PALADIN-4" : {
+	"Capacities":["Amélioration de caractéristiques"],
+	"SpellsNb": 2,
+	"BonusSpellsNb": "CHA",
+	"Locations": {
+	"1":3,
+	"2":0,
+	"3":0,
+	"4":0,
+	"5":0}
+	},
+	"PALADIN-5" : {
+	"Capacities":["Attaque supplémentaire"],
+	"SpellsNb": 2,
+	"BonusSpellsNb": "CHA",
+	"Locations": {
+	"1":4,
+	"2":2,
+	"3":0,
+	"4":0,
+	"5":0}
+	},
+	"PALADIN-6" : {
+	"Capacities":["Aura de protection"],
+	"SpellsNb": 3,
+	"BonusSpellsNb": "CHA",
+	"Locations": {
+	"1":4,
+	"2":2,
+	"3":0,
+	"4":0,
+	"5":0}
+	},
+	"PALADIN-7" : {
+	"Capacities":["Capacité de serment sacré"],
+	"SpellsNb": 3,
+	"BonusSpellsNb": "CHA",
+	"Locations": {
+	"1":4,
+	"2":3,
+	"3":0,
+	"4":0,
+	"5":0}
+	},
+	"PALADIN-8" : {
+	"Capacities":["Amélioration de caractéristiques"],
+	"SpellsNb": 4,
+	"BonusSpellsNb": "CHA",
+	"Locations": {
+	"1":4,
+	"2":3,
+	"3":0,
+	"4":0,
+	"5":0}
+	},
+	"PALADIN-9" : {
+	"Capacities":[],
+	"SpellsNb": 4,
+	"BonusSpellsNb": "CHA",
+	"Locations": {
+	"1":4,
+	"2":3,
+	"3":2,
+	"4":0,
+	"5":0}
+	},
+	"PALADIN-10" : {
+	"Capacities":["Aura de courage"],
+	"SpellsNb": 5,
+	"BonusSpellsNb": "CHA",
+	"Locations": {
+	"1":4,
+	"2":3,
+	"3":2,
+	"4":0,
+	"5":0}
+	},
+	"PALADIN-11" : {
+	"Capacities":["Châtiment divin amélioré"],
+	"SpellsNb": 5,
+	"BonusSpellsNb": "CHA",
+	"Locations": {
+	"1":4,
+	"2":3,
+	"3":3,
+	"4":0,
+	"5":0}
+	},
+	"PALADIN-12" : {
+	"Capacities":["Amélioration de caractéristiques"],
+	"SpellsNb": 6,
+	"BonusSpellsNb": "CHA",
+	"Locations": {
+	"1":4,
+	"2":3,
+	"3":3,
+	"4":0,
+	"5":0}
+	},
+	"PALADIN-13" : {
+	"Capacities":[],
+	"SpellsNb": 6,
+	"BonusSpellsNb": "CHA",
+	"Locations": {
+	"1":4,
+	"2":3,
+	"3":3,
+	"4":1,
+	"5":0}
+	},
+	"PALADIN-14" : {
+	"Capacities":["Contact purifiant"],
+	"SpellsNb": 7,
+	"BonusSpellsNb": "CHA",
+	"Locations": {
+	"1":4,
+	"2":3,
+	"3":3,
+	"4":1,
+	"5":0}
+	},
+	"PALADIN-15" : {
+	"Capacities":["Capacité de serment sacré"],
+	"SpellsNb": 7,
+	"BonusSpellsNb": "CHA",
+	"Locations": {
+	"1":4,
+	"2":3,
+	"3":3,
+	"4":2,
+	"5":0}
+	},
+	"PALADIN-16" : {
+	"Capacities":["Amélioration de caractéristiques"],
+	"SpellsNb": 8,
+	"BonusSpellsNb": "CHA",
+	"Locations": {
+	"1":4,
+	"2":3,
+	"3":3,
+	"4":2,
+	"5":0}
+	},
+	"PALADIN-17" : {
+	"Capacities":[],
+	"SpellsNb": 8,
+	"BonusSpellsNb": "CHA",
+	"Locations": {
+	"1":4,
+	"2":3,
+	"3":3,
+	"4":3,
+	"5":1}
+	},
+	"PALADIN-18" : {
+	"Capacities":["Amélioration des auras"],
+	"SpellsNb": 9,
+	"BonusSpellsNb": "CHA",
+	"Locations": {
+	"1":4,
+	"2":3,
+	"3":3,
+	"4":3,
+	"5":1}
+	},
+	"PALADIN-19" : {
+	"Capacities":["Amélioration de caractéristiques"],
+	"SpellsNb": 9,
+	"BonusSpellsNb": "CHA",
+	"Locations": {
+	"1":4,
+	"2":3,
+	"3":3,
+	"4":3,
+	"5":2}
+	},
+	"PALADIN-20" : {
+	"Capacities":["Capacité de serment sacré"],
+	"SpellsNb": 10,
+	"BonusSpellsNb": "CHA",
+	"Locations": {
+	"1":4,
+	"2":3,
+	"3":3,
+	"4":3,
+	"5":2}
+	},
     "PROWLER-1" : {
       "Capacities" : [ "Ennemi juré", "Explorateur-né" ],
       "Locations" : [ null, 0, 0, 0, 0, 0 ],
@@ -1396,86 +1539,246 @@
     "WARRIOR-9" : {
       "Capacities" : [ "Indomptable (1)" ]
     },
-    "WILY-1" : {
-      "BonusAttack" : "1d6",
-      "Capacities" : [ "Expertise", "Attaque sournoise", "Jargon des voleurs" ]
-    },
-    "WILY-10" : {
-      "BonusAttack" : "5d6",
-      "Capacities" : [ "Amélioration de caractéristiques" ]
-    },
-    "WILY-11" : {
-      "BonusAttack" : "6d6",
-      "Capacities" : [ "Talent" ]
-    },
-    "WILY-12" : {
-      "BonusAttack" : "6d6",
-      "Capacities" : [ "Amélioration de caractéristiques" ]
-    },
-    "WILY-13" : {
-      "BonusAttack" : "7d6",
-      "Capacities" : [ "Capacité de l'archétype de roublard" ]
-    },
-    "WILY-14" : {
-      "BonusAttack" : "7d6",
-      "Capacities" : [ "Ouïe fine" ]
-    },
-    "WILY-15" : {
-      "BonusAttack" : "8d6",
-      "Capacities" : [ "Esprit impénétrable" ]
-    },
-    "WILY-16" : {
-      "BonusAttack" : "8d6",
-      "Capacities" : [ "Amélioration de caractéristiques" ]
-    },
-    "WILY-17" : {
-      "BonusAttack" : "9d6",
-      "Capacities" : [ "Capacité de l'archétype de roublard" ]
-    },
-    "WILY-18" : {
-      "BonusAttack" : "9d6",
-      "Capacities" : [ "Insaisissable" ]
-    },
-    "WILY-19" : {
-      "BonusAttack" : "10d6",
-      "Capacities" : [ "Amélioration de caractéristiques" ]
-    },
-    "WILY-2" : {
-      "BonusAttack" : "1d6",
-      "Capacities" : [ "Ruse" ]
-    },
-    "WILY-20" : {
-      "BonusAttack" : "10d6",
-      "Capacities" : [ "Coup de chance" ]
-    },
-    "WILY-3" : {
-      "BonusAttack" : "2d6",
-      "Capacities" : [ "Archétype de roublard" ]
-    },
-    "WILY-4" : {
-      "BonusAttack" : "2d6",
-      "Capacities" : [ "Amélioration de caractéristiques" ]
-    },
-    "WILY-5" : {
-      "BonusAttack" : "3d6",
-      "Capacities" : [ "Esquive instinctive" ]
-    },
-    "WILY-6" : {
-      "BonusAttack" : "3d6",
-      "Capacities" : [ "Expertise" ]
-    },
-    "WILY-7" : {
-      "BonusAttack" : "4d6",
-      "Capacities" : [ "Dérobade" ]
-    },
-    "WILY-8" : {
-      "BonusAttack" : "4d6",
-      "Capacities" : [ "Amélioration de caractéristiques" ]
-    },
-    "WILY-9" : {
-      "BonusAttack" : "5d6",
-      "Capacities" : [ "Capacité de l'archétype de roublard" ]
-    },
+	"WILY-1" : {
+	"Capacities":["Expertise", "Attaque sournoise", "Jargon des voleurs"],
+	"BonusAttack": "1d6",
+	"MinorSpellsNb": 0,
+	"SpellsNb": 0,
+	"Locations": {
+	"1":0,
+	"2":0,
+	"3":0,
+	"4":0
+	}
+	},
+	"WILY-2" : {
+	"Capacities":["Ruse"],
+	"BonusAttack": "1d6",
+	"MinorSpellsNb": 0,
+	"SpellsNb": 0,
+	"Locations": {
+	"1":0,
+	"2":0,
+	"3":0,
+	"4":0
+	}
+	},
+	"WILY-3" : {
+	"Capacities":["Archétype de roublard"],
+	"BonusAttack": "2d6",
+	"MinorSpellsNb": 3,
+	"SpellsNb": 3,
+	"Locations": {
+	"1":2,
+	"2":0,
+	"3":0,
+	"4":0
+	}
+	},
+	"WILY-4" : {
+	"Capacities":["Amélioration de caractéristiques"],
+	"BonusAttack": "2d6",
+	"MinorSpellsNb": 3,
+	"SpellsNb": 4,
+	"Locations": {
+	"1":3,
+	"2":0,
+	"3":0,
+	"4":0
+	}
+	},
+	"WILY-5" : {
+	"Capacities":["Esquive instinctive"],
+	"BonusAttack": "3d6",
+	"MinorSpellsNb": 3,
+	"SpellsNb": 4,
+	"Locations": {
+	"1":3,
+	"2":0,
+	"3":0,
+	"4":0
+	}
+	},
+	"WILY-6" : {
+	"Capacities":["Expertise"],
+	"BonusAttack": "3d6",
+	"MinorSpellsNb": 3,
+	"SpellsNb": 4,
+	"Locations": {
+	"1":3,
+	"2":0,
+	"3":0,
+	"4":0
+	}
+	},
+	"WILY-7" : {
+	"Capacities":["Dérobade"],
+	"BonusAttack": "4d6",
+	"MinorSpellsNb": 3,
+	"SpellsNb": 5,
+	"Locations": {
+	"1":4,
+	"2":2,
+	"3":0,
+	"4":0
+	}
+	},
+	"WILY-8" : {
+	"Capacities":["Amélioration de caractéristiques"],
+	"BonusAttack": "4d6",
+	"MinorSpellsNb": 3,
+	"SpellsNb": 6,
+	"Locations": {
+	"1":4,
+	"2":2,
+	"3":0,
+	"4":0
+	}
+	},
+	"WILY-9" : {
+	"Capacities":["Capacité de l'archétype de roublard"],
+	"BonusAttack": "5d6",
+	"MinorSpellsNb": 3,
+	"SpellsNb": 6,
+	"Locations": {
+	"1":4,
+	"2":2,
+	"3":0,
+	"4":0
+	}
+	},
+	"WILY-10" : {
+	"Capacities":["Amélioration de caractéristiques"],
+	"BonusAttack": "5d6",
+	"MinorSpellsNb": 4,
+	"SpellsNb": 7,
+	"Locations": {
+	"1":4,
+	"2":3,
+	"3":0,
+	"4":0
+	}
+	},
+	"WILY-11" : {
+	"Capacities":["Talent"],
+	"BonusAttack": "6d6",
+	"MinorSpellsNb": 4,
+	"SpellsNb": 8,
+	"Locations": {
+	"1":4,
+	"2":3,
+	"3":0,
+	"4":0
+	}
+	},
+	"WILY-12" : {
+	"Capacities":["Amélioration de caractéristiques"],
+	"BonusAttack": "6d6",
+	"MinorSpellsNb": 4,
+	"SpellsNb": 8,
+	"Locations": {
+	"1":4,
+	"2":3,
+	"3":0,
+	"4":0
+	}
+	},
+	"WILY-13" : {
+	"Capacities":["Capacité de l'archétype de roublard"],
+	"BonusAttack": "7d6",
+	"MinorSpellsNb": 4,
+	"SpellsNb": 9,
+	"Locations": {
+	"1":4,
+	"2":3,
+	"3":2,
+	"4":0
+	}
+	},
+	"WILY-14" : {
+	"Capacities":["Ouïe fine"],
+	"BonusAttack": "7d6",
+	"MinorSpellsNb": 4,
+	"SpellsNb": 10,
+	"Locations": {
+	"1":4,
+	"2":3,
+	"3":2,
+	"4":0
+	}
+	},
+	"WILY-15" : {
+	"Capacities":["Esprit impénétrable"],
+	"BonusAttack": "8d6",
+	"MinorSpellsNb": 4,
+	"SpellsNb": 10,
+	"Locations": {
+	"1":4,
+	"2":3,
+	"3":2,
+	"4":0
+	}
+	},
+	"WILY-16" : {
+	"Capacities":["Amélioration de caractéristiques"],
+	"BonusAttack": "8d6",
+	"MinorSpellsNb": 4,
+	"SpellsNb": 11,
+	"Locations": {
+	"1":4,
+	"2":3,
+	"3":3,
+	"4":0
+	}
+	},
+	"WILY-17" : {
+	"Capacities":["Capacité de l'archétype de roublard"],
+	"BonusAttack": "9d6",
+	"MinorSpellsNb": 4,
+	"SpellsNb": 11,
+	"Locations": {
+	"1":4,
+	"2":3,
+	"3":3,
+	"4":0
+	}
+	},
+	"WILY-18" : {
+	"Capacities":["Insaisissable"],
+	"BonusAttack": "9d6",
+	"MinorSpellsNb": 4,
+	"SpellsNb": 11,
+	"Locations": {
+	"1":4,
+	"2":3,
+	"3":3,
+	"4":0
+	}
+	},
+	"WILY-19" : {
+	"Capacities":["Amélioration de caractéristiques"],
+	"BonusAttack": "10d6",
+	"MinorSpellsNb": 4,
+	"SpellsNb": 12,
+	"Locations": {
+	"1":4,
+	"2":3,
+	"3":3,
+	"4":1
+	}
+	},
+	"WILY-20" : {
+	"Capacities":["Coup de chance"],
+	"BonusAttack": "10d6",
+	"MinorSpellsNb": 4,
+	"SpellsNb": 13,
+	"Locations": {
+	"1":4,
+	"2":3,
+	"3":3,
+	"4":1
+	}
+	},
     "WIZARD-1" : {
       "Capacities" : [ "Patron d'Outremonde", "Magie de pacte" ],
       "Invocations" : 0,
@@ -2714,254 +3017,294 @@
     }
   },
   "Classes" : {
-    "BARBARIAN" : {
-      "ACBonus" : "CON",
-      "ACBonusArmor" : false,
-      "ArmorCategories" : [ "1_LIGHT", "2_MID", "0_SHIELD" ],
-      "BonusAttackName" : "",
-      "Charisma" : 0,
-      "Constitution" : 0,
-      "Dexterity" : 0,
-      "HD" : 12,
-      "Intelligence" : 0,
-      "MultiSpecialisation" : false,
-      "Name" : "Barbare",
-      "OV" : "Barbarian",
-      "Saves" : [ "FOR", "CON" ],
-      "SpecialisationLevel" : 3,
-      "SpecialisationName" : "Voie primitive",
-      "SpecialsName" : "Rage",
-      "Strength" : 0,
-      "WeaponCategories" : [ "C_MEL", "C_DIS", "W_MEL", "W_DIS" ],
-      "Wisdom" : 0
-    },
-    "BARD" : {
-      "ACBonus" : "",
-      "ArmorCategories" : [ "1_LIGHT" ],
-      "BonusAttackName" : "",
-      "Charisma" : 0,
-      "Constitution" : 0,
-      "Dexterity" : 0,
-      "HD" : 8,
-      "Intelligence" : 0,
-      "MultiSpecialisation" : false,
-      "Name" : "Barde",
-      "OV" : "Bard",
-      "Saves" : [ "DEX", "CHA" ],
-      "SpecialisationLevel" : 3,
-      "SpecialisationName" : "Collège  bardique",
-      "SpecialsName" : "",
-      "Strength" : 0,
-      "WeaponCategories" : [ "C_MEL", "C_DIS" ],
-      "Weapons" : [ "Arbalète de poing", "Épée courte", "Épée longue", "Rapière" ],
-      "Wisdom" : 0
-    },
-    "CLERK" : {
-      "ACBonus" : "",
-      "ArmorCategories" : [ "1_LIGHT", "2_MID", "0_SHIELD" ],
-      "BonusAttackName" : "",
-      "Charisma" : 0,
-      "Constitution" : 0,
-      "Dexterity" : 0,
-      "HD" : 8,
-      "Intelligence" : 0,
-      "MultiSpecialisation" : false,
-      "Name" : "Clerc",
-      "OV" : "Clerk",
-      "Saves" : [ "SAG", "CHA" ],
-      "SpecialisationLevel" : 1,
-      "SpecialisationName" : "Domaine divin",
-      "SpecialsName" : "",
-      "Strength" : 0,
-      "WeaponCategories" : [ "C_MEL", "C_DIS" ],
-      "Wisdom" : 0
-    },
-    "DRUID" : {
-      "ACBonus" : "",
-      "ArmorCategories" : [ "1_LIGHT", "2_MID", "0_SHIELD" ],
-      "BonusAttackName" : "",
-      "Charisma" : 0,
-      "Constitution" : 0,
-      "Dexterity" : 0,
-      "HD" : 8,
-      "Intelligence" : 0,
-      "MultiSpecialisation" : false,
-      "Name" : "Druide",
-      "OV" : "Druid",
-      "Objects" : [ "Kit d'herboriste" ],
-      "Saves" : [ "INT", "SAG" ],
-      "SpecialisationLevel" : 2,
-      "SpecialisationName" : "Cercle druidique",
-      "SpecialsName" : "",
-      "StartingObjects" : [ "Kit d'herboriste" ],
-      "Strength" : 0,
-      "Weapons" : [ "Gourdin", "Dague", "Fléchette", "Javeline", "Masse d'armes", "Bâton", "Cimeterre", "Fronde", "Serpe", "Lance" ],
-      "Wisdom" : 0
-    },
-    "MAGICIAN" : {
-      "ACBonus" : "",
-      "BonusAttackName" : "",
-      "Charisma" : 0,
-      "Constitution" : 0,
-      "Dexterity" : 0,
-      "HD" : 6,
-      "Intelligence" : 0,
-      "MultiSpecialisation" : false,
-      "Name" : "Magicien",
-      "OV" : "Magician",
-      "Saves" : [ "INT", "SAG" ],
-      "SpecialisationLevel" : 2,
-      "SpecialisationName" : "Tradiction arcanique",
-      "SpecialsName" : "",
-      "StartingObjects" : [ "Grimoire" ],
-      "Strength" : 0,
-      "Weapons" : [ "Dague", "Fléchette", "Fronde", "Bâton", "Arbalète légère" ],
-      "Wisdom" : 0
-    },
-    "MONK" : {
-      "ACBonus" : "SAG",
-      "ACBonusArmor" : false,
-      "ACBonusShield" : false,
-      "BonusAttackName" : "Arts-Martiaux",
-      "Charisma" : 0,
-      "Constitution" : 0,
-      "Dexterity" : 0,
-      "HD" : 8,
-      "Intelligence" : 0,
-      "MultiSpecialisation" : false,
-      "Name" : "Moine",
-      "OV" : "Monk",
-      "Saves" : [ "FOR", "DEX" ],
-      "SpecialisationLevel" : 3,
-      "SpecialisationName" : "Tradition monastique",
-      "SpecialsName" : "Ki",
-      "Strength" : 0,
-      "WeaponCategories" : [ "C_MEL", "C_DIS" ],
-      "Weapons" : [ "Épée courte" ],
-      "Wisdom" : 0
-    },
-    "PALADIN" : {
-      "ACBonus" : "",
-      "ArmorCategories" : [ "1_LIGHT", "2_MID", "3_HEAVY", "0_SHIELD" ],
-      "BonusAttackName" : "",
-      "Charisma" : 0,
-      "Constitution" : 0,
-      "Dexterity" : 0,
-      "HD" : 10,
-      "Intelligence" : 0,
-      "MultiSpecialisation" : false,
-      "Name" : "Paladin",
-      "OV" : "Paladin",
-      "Saves" : [ "SAG", "CHA" ],
-      "SpecialisationLevel" : 2,
-      "SpecialisationName" : "Style de combat",
-      "SpecialsName" : "",
-      "Strength" : 0,
-      "WeaponCategories" : [ "C_MEL", "C_DIS", "W_MEL", "W_DIS" ],
-      "Wisdom" : 0
-    },
-    "PROWLER" : {
-      "ACBonus" : "",
-      "ArmorCategories" : [ "1_LIGHT", "2_MID", "0_SHIELD" ],
-      "BonusAttackName" : "",
-      "Charisma" : 0,
-      "Constitution" : 0,
-      "Dexterity" : 0,
-      "HD" : 10,
-      "Intelligence" : 0,
-      "MultiSpecialisation" : false,
-      "Name" : "Rôdeur",
-      "OV" : "Prowler",
-      "Objects" : [ "Outils de voleur" ],
-      "Saves" : [ "FOR", "DEX" ],
-      "SpecialisationLevel" : 2,
-      "SpecialisationName" : "Style de combat",
-      "SpecialsName" : "",
-      "StartingObjects" : [ "Outils de voleur" ],
-      "Strength" : 0,
-      "WeaponCategories" : [ "C_MEL", "C_DIS", "W_MEL", "W_DIS" ],
-      "Wisdom" : 0
-    },
-    "SORCERER" : {
-      "ACBonus" : "",
-      "BonusAttackName" : "",
-      "Charisma" : 0,
-      "Constitution" : 0,
-      "Dexterity" : 0,
-      "HD" : 6,
-      "Intelligence" : 0,
-      "MultiSpecialisation" : false,
-      "Name" : "Ensorceleur",
-      "OV" : "Sorcerer",
-      "Saves" : [ "CON", "CHA" ],
-      "SpecialisationLevel" : 1,
-      "SpecialisationName" : "Origine magique",
-      "SpecialsName" : "Sorcellerie",
-      "Strength" : 0,
-      "Weapons" : [ "Dague", "Fléchette", "Fronde", "Bâton", "Arbalète légère" ],
-      "Wisdom" : 0
-    },
-    "WARRIOR" : {
-      "ACBonus" : "",
-      "ArmorCategories" : [ "1_LIGHT", "2_MID", "3_HEAVY", "0_SHIELD" ],
-      "BonusAttackName" : "",
-      "Charisma" : 0,
-      "Constitution" : 0,
-      "Dexterity" : 0,
-      "HD" : 10,
-      "Intelligence" : 0,
-      "MultiSpecialisation" : true,
-      "Name" : "Guerrier",
-      "OV" : "Warrior",
-      "Saves" : [ "FOR", "CON" ],
-      "SpecialisationLevel" : 1,
-      "SpecialisationName" : "Style de combat",
-      "SpecialsName" : "",
-      "Strength" : 0,
-      "WeaponCategories" : [ "C_MEL", "C_DIS", "W_MEL", "W_DIS" ],
-      "Wisdom" : 0
-    },
-    "WILY" : {
-      "ACBonus" : "",
-      "ArmorCategories" : [ "1_LIGHT" ],
-      "BonusAttackName" : "Attaque sournoise",
-      "Charisma" : 0,
-      "Constitution" : 0,
-      "Dexterity" : 0,
-      "HD" : 8,
-      "Intelligence" : 0,
-      "MultiSpecialisation" : false,
-      "Name" : "Roublard",
-      "OV" : "Wily",
-      "Saves" : [ "DEX", "INT" ],
-      "SpecialisationLevel" : 3,
-      "SpecialisationName" : "Archétype de roublard",
-      "SpecialsName" : "",
-      "Strength" : 0,
-      "WeaponCategories" : [ "C_MEL", "C_DIS" ],
-      "Weapons" : [ "Arbalète de poing", "Épée courte", "Épée longue", "Rapière" ],
-      "Wisdom" : 0
-    },
-    "WIZARD" : {
-      "ACBonus" : "",
-      "ArmorCategories" : [ "1_LIGHT" ],
-      "BonusAttackName" : "",
-      "Charisma" : 0,
-      "Constitution" : 0,
-      "Dexterity" : 0,
-      "HD" : 8,
-      "Intelligence" : 0,
-      "MultiSpecialisation" : false,
-      "Name" : "Sorcier",
-      "OV" : "Wizard",
-      "Saves" : [ "SAG", "CHA" ],
-      "SpecialisationLevel" : 1,
-      "SpecialisationName" : "Patron d'Outremonde",
-      "SpecialsName" : "",
-      "Strength" : 0,
-      "WeaponCategories" : [ "C_MEL", "C_DIS" ],
-      "Wisdom" : 0
-    }
+	"BARBARIAN":  {
+	 "Name" : "Barbare",
+	 "OV" : "Barbarian",
+	 "Strength" : 0,
+	 "Constitution" : 0,
+	 "Dexterity" : 0,
+	 "Intelligence" : 0,
+	 "Wisdom" : 0,
+	 "Charisma" : 0,
+	 "ACBonus" : "CON",
+	 "ACBonusArmor" : false,
+	 "HD" : 12,
+	 "SpecialsName" : "Rage",
+	 "BonusAttackName" : "",
+	 "SpecialisationName" : "Voie primitive",
+	 "SpecialisationLevel" : 3,
+	 "MultiSpecialisation" : false ,
+	 "WeaponCategories" : ["C_MEL", "C_DIS", "W_MEL", "W_DIS"],
+	 "Weapons" : [],
+	 "ArmorCategories" : ["1_LIGHT", "2_MID",  "0_SHIELD"],
+	 "Saves" : ["FOR", "CON"],
+	 "Objects" : [],
+	 "StartingObjects" : []
+	  },
+	"BARD":  {
+	 "Name" : "Barde",
+	 "OV" : "Bard",
+	 "Strength" : 0,
+	 "Constitution" : 0,
+	 "Dexterity" : 0,
+	 "Intelligence" : 0,
+	 "Wisdom" : 0,
+	 "Charisma" : 0,
+	 "ACBonus" : "",
+	 
+	 "HD" : 8,
+	 "SpecialsName" : "",
+	 "BonusAttackName" : "",
+	 "SpecialisationName" : "Collège  bardique",
+	 "SpecialisationLevel" : 3,
+	 "MultiSpecialisation" : false ,
+	 "WeaponCategories" : ["C_MEL", "C_DIS"],
+	 "Weapons" : ["Arbalète de poing", "Épée courte", "Épée longue",  "Rapière"],
+	 "ArmorCategories" : ["1_LIGHT"],
+	 "Saves" : ["DEX", "CHA"],
+	 "Objects" : [],
+	 "StartingObjects" : []
+	  },
+	"CLERK":  {
+	 "Name" : "Clerc",
+	 "OV" : "Clerk",
+	 "Strength" : 0,
+	 "Constitution" : 0,
+	 "Dexterity" : 0,
+	 "Intelligence" : 0,
+	 "Wisdom" : 0,
+	 "Charisma" : 0,
+	 "ACBonus" : "",
+	 
+	 "HD" : 8,
+	 "SpecialsName" : "",
+	 "BonusAttackName" : "",
+	 "SpecialisationName" : "Domaine divin",
+	 "SpecialisationLevel" : 1,
+	 "MultiSpecialisation" : false ,
+	 "WeaponCategories" : ["C_MEL", "C_DIS"],
+	 "Weapons" : [],
+	 "ArmorCategories" : ["1_LIGHT", "2_MID",  "0_SHIELD"],
+	 "Saves" : ["SAG", "CHA"],
+	 "Objects" : [],
+	 "StartingObjects" : []
+	  },
+	"DRUID":  {
+	 "Name" : "Druide",
+	 "OV" : "Druid",
+	 "Strength" : 0,
+	 "Constitution" : 0,
+	 "Dexterity" : 0,
+	 "Intelligence" : 0,
+	 "Wisdom" : 0,
+	 "Charisma" : 0,
+	 "ACBonus" : "",
+	 
+	 "HD" : 8,
+	 "SpecialsName" : "",
+	 "BonusAttackName" : "",
+	 "SpecialisationName" : "Cercle druidique",
+	 "SpecialisationLevel" : 2,
+	 "MultiSpecialisation" : false ,
+	 "WeaponCategories" : [],
+	 "Weapons" : ["Gourdin", "Dague", "Fléchette", "Javeline", "Masse d'armes", "Bâton", "Cimeterre", "Fronde", "Serpe", "Lance"],
+	 "ArmorCategories" : ["1_LIGHT", "2_MID",  "0_SHIELD"],
+	 "Saves" : ["INT", "SAG"],
+	 "Objects" : ["Kit d'herboriste"],
+	 "StartingObjects" : ["Kit d'herboriste"]
+	  },
+	"SORCERER":  {
+	 "Name" : "Ensorceleur",
+	 "OV" : "Sorcerer",
+	 "Strength" : 0,
+	 "Constitution" : 0,
+	 "Dexterity" : 0,
+	 "Intelligence" : 0,
+	 "Wisdom" : 0,
+	 "Charisma" : 0,
+	 "ACBonus" : "",
+	 
+	 "HD" : 6,
+	 "SpecialsName" : "Sorcellerie",
+	 "BonusAttackName" : "",
+	 "SpecialisationName" : "Origine magique",
+	 "SpecialisationLevel" : 1,
+	 "MultiSpecialisation" : false ,
+	 "WeaponCategories" : [],
+	 "Weapons" : ["Dague", "Fléchette", "Fronde", "Bâton", "Arbalète légère"],
+	 "ArmorCategories" : [],
+	 "Saves" : ["CON", "CHA"],
+	 "Objects" : [],
+	 "StartingObjects" : []
+	  },
+	"WARRIOR":  {
+	 "Name" : "Guerrier",
+	 "OV" : "Warrior",
+	 "Strength" : 0,
+	 "Constitution" : 0,
+	 "Dexterity" : 0,
+	 "Intelligence" : 0,
+	 "Wisdom" : 0,
+	 "Charisma" : 0,
+	 "ACBonus" : "",
+	 
+	 "HD" : 10,
+	 "SpecialsName" : "",
+	 "BonusAttackName" : "",
+	 "SpecialisationName" : "Archétypes martiaux",
+	 "SpecialisationLevel" : 3,"FightStyleLevel" : 1,
+	 "MultiSpecialisation" : true ,
+	 "WeaponCategories" : ["C_MEL", "C_DIS", "W_MEL", "W_DIS"],
+	 "Weapons" : [],
+	 "ArmorCategories" : ["1_LIGHT", "2_MID", "3_HEAVY", "0_SHIELD"],
+	 "Saves" : ["FOR", "CON"],
+	 "Objects" : [],
+	 "StartingObjects" : []
+	  },
+	"MAGICIAN":  {
+	 "Name" : "Magicien",
+	 "OV" : "Magician",
+	 "Strength" : 0,
+	 "Constitution" : 0,
+	 "Dexterity" : 0,
+	 "Intelligence" : 0,
+	 "Wisdom" : 0,
+	 "Charisma" : 0,
+	 "ACBonus" : "",
+	 
+	 "HD" : 6,
+	 "SpecialsName" : "",
+	 "BonusAttackName" : "",
+	 "SpecialisationName" : "Tradiction arcanique",
+	 "SpecialisationLevel" : 2,
+	 "MultiSpecialisation" : false ,
+	 "WeaponCategories" : [],
+	 "Weapons" : ["Dague", "Fléchette", "Fronde", "Bâton", "Arbalète légère"],
+	 "ArmorCategories" : [],
+	 "Saves" : ["INT", "SAG"],
+	 "Objects" : [],
+	 "StartingObjects" : ["Grimoire"]
+	  },
+	"MONK":  {
+	 "Name" : "Moine",
+	 "OV" : "Monk",
+	 "Strength" : 0,
+	 "Constitution" : 0,
+	 "Dexterity" : 0,
+	 "Intelligence" : 0,
+	 "Wisdom" : 0,
+	 "Charisma" : 0,
+	 "ACBonus" : "SAG",
+	 "ACBonusArmor" : false,"ACBonusShield" : false,
+	 "HD" : 8,
+	 "SpecialsName" : "Ki",
+	 "BonusAttackName" : "Arts-Martiaux",
+	 "SpecialisationName" : "Tradition monastique",
+	 "SpecialisationLevel" : 3,
+	 "MultiSpecialisation" : false ,
+	 "WeaponCategories" : ["C_MEL", "C_DIS"],
+	 "Weapons" : ["Épée courte"],
+	 "ArmorCategories" : [],
+	 "Saves" : ["FOR", "DEX"],
+	 "Objects" : [],
+	 "StartingObjects" : []
+	  },
+	"PALADIN":  {
+	 "Name" : "Paladin",
+	 "OV" : "Paladin",
+	 "Strength" : 0,
+	 "Constitution" : 0,
+	 "Dexterity" : 0,
+	 "Intelligence" : 0,
+	 "Wisdom" : 0,
+	 "Charisma" : 0,
+	 "ACBonus" : "",
+	 
+	 "HD" : 10,
+	 "SpecialsName" : "",
+	 "BonusAttackName" : "",
+	 "SpecialisationName" : "Serment sacré",
+	 "SpecialisationLevel" : 3,"FightStyleLevel" : 2,
+	 "MultiSpecialisation" : false ,
+	 "WeaponCategories" : ["C_MEL", "C_DIS", "W_MEL", "W_DIS"],
+	 "Weapons" : [],
+	 "ArmorCategories" : ["1_LIGHT", "2_MID", "3_HEAVY", "0_SHIELD"],
+	 "Saves" : ["SAG", "CHA"],
+	 "Objects" : [],
+	 "StartingObjects" : []
+	  },
+	"PROWLER":  {
+	 "Name" : "Rôdeur",
+	 "OV" : "Prowler",
+	 "Strength" : 0,
+	 "Constitution" : 0,
+	 "Dexterity" : 0,
+	 "Intelligence" : 0,
+	 "Wisdom" : 0,
+	 "Charisma" : 0,
+	 "ACBonus" : "",
+	 
+	 "HD" : 10,
+	 "SpecialsName" : "",
+	 "BonusAttackName" : "",
+	 "SpecialisationName" : "Archétype de rôdeur",
+	 "SpecialisationLevel" : 3,"FightStyleLevel" : 2,
+	 "MultiSpecialisation" : false ,
+	 "WeaponCategories" : ["C_MEL", "C_DIS", "W_MEL", "W_DIS"],
+	 "Weapons" : [],
+	 "ArmorCategories" : ["1_LIGHT", "2_MID",  "0_SHIELD"],
+	 "Saves" : ["FOR", "DEX"],
+	 "Objects" : ["Outils de voleur"],
+	 "StartingObjects" : ["Outils de voleur"]
+	  },
+	"WILY":  {
+	 "Name" : "Roublard",
+	 "OV" : "Wily",
+	 "Strength" : 0,
+	 "Constitution" : 0,
+	 "Dexterity" : 0,
+	 "Intelligence" : 0,
+	 "Wisdom" : 0,
+	 "Charisma" : 0,
+	 "ACBonus" : "",
+	 
+	 "HD" : 8,
+	 "SpecialsName" : "",
+	 "BonusAttackName" : "Attaque sournoise",
+	 "SpecialisationName" : "Archétype de roublard",
+	 "SpecialisationLevel" : 3,
+	 "MultiSpecialisation" : false ,
+	 "WeaponCategories" : ["C_MEL", "C_DIS"],
+	 "Weapons" : ["Arbalète de poing", "Épée courte", "Épée longue",  "Rapière"],
+	 "ArmorCategories" : ["1_LIGHT"],
+	 "Saves" : ["DEX", "INT"],
+	 "Objects" : [],
+	 "StartingObjects" : []
+	  },
+	"WIZARD":  {
+	 "Name" : "Sorcier",
+	 "OV" : "Wizard",
+	 "Strength" : 0,
+	 "Constitution" : 0,
+	 "Dexterity" : 0,
+	 "Intelligence" : 0,
+	 "Wisdom" : 0,
+	 "Charisma" : 0,
+	 "ACBonus" : "",
+	 
+	 "HD" : 8,
+	 "SpecialsName" : "",
+	 "BonusAttackName" : "",
+	 "SpecialisationName" : "Patron d'Outremonde",
+	 "SpecialisationLevel" : 1,
+	 "MultiSpecialisation" : false ,
+	 "WeaponCategories" : ["C_MEL", "C_DIS"],
+	 "Weapons" : [],
+	 "ArmorCategories" : ["1_LIGHT"],
+	 "Saves" : ["SAG", "CHA"],
+	 "Objects" : [],
+	 "StartingObjects" : []
+	  }
   },
   "EquipmentCategories" : {
     "AMMUNITION" : {
@@ -5400,7 +5743,7 @@
   "Spells" : {
     "Absorption des éléments" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN", "PROWLER" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER", "PROWLER" ],
       "Description" : "Le lanceur a la résistance aux dégâts reçus et inflige 1d6 dégâts extra du même type à sa prochaine attaque (dégâts/niv).",
       "Incantation" : "1 réaction",
       "Level" : 1,
@@ -5411,7 +5754,7 @@
     },
     "Agrandissement-Rapetissement" : {
       "BBE" : "Agrandir/Rétrécir",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Double ou réduit de moitié la taille d'une créature (JdS de Con) ou d'un objet.",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -5433,7 +5776,7 @@
     },
     "Alarme" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN", "PROWLER" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER", "PROWLER" ],
       "Description" : "Alerte le lanceur ou active une alarme si une créature de taille TP ou supérieure pénètre dans un cube surveillé de 6 m.",
       "Incantation" : "1 minute",
       "Level" : 1,
@@ -5455,7 +5798,7 @@
     },
     "Amis" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Le lanceur obtient l'avantage aux jets de Charisme contre une créature choisie qui ne lui est pas hostile.",
       "Incantation" : "1 action",
       "Level" : 0,
@@ -5488,7 +5831,7 @@
     },
     "Amélioration de compétences" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "La cible double son bonus de maîtrise pour une compétence.",
       "Incantation" : "1 action",
       "Level" : 5,
@@ -5499,7 +5842,7 @@
     },
     "Animation d'objets" : {
       "BBE" : "Animation des objets",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Anime jusqu'à 10 objets non magiques et contrôle leurs actions jusqu'à 150 m (+2 objets/niv).",
       "Incantation" : "1 action",
       "Level" : 5,
@@ -5510,7 +5853,7 @@
     },
     "Animation des morts" : {
       "BBE" : "",
-      "Classes" : [ "CLERK", "MAGICIAN" ],
+      "Classes" : [ "CLERK", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée un squelette à partir d'os ou un zombi à partir d'un cadavre, qui est sous le contrôle du lanceur (+2 créatures/niv).",
       "Incantation" : "1 minute",
       "Level" : 3,
@@ -5532,7 +5875,7 @@
     },
     "Apparence trompeuse" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Change l'apparence physique et vestimentaire de cibles (JdS si non consentante).",
       "Incantation" : "1 action",
       "Level" : 5,
@@ -5543,7 +5886,7 @@
     },
     "Appel de familier" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Invoque un petit animal qui obéit au lanceur du sort et qui partage ses sens avec lui par télépathie.",
       "Incantation" : "1 heure",
       "Level" : 1,
@@ -5587,7 +5930,7 @@
     },
     "Arme magique" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN", "PALADIN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER", "PALADIN" ],
       "Description" : "Transforme une arme en arme magique +1 à l'attaque et aux dégâts (bonus de +2 ou +3/niv).",
       "Incantation" : "1 action bonus",
       "Level" : 2,
@@ -5642,7 +5985,7 @@
     },
     "Armure de mage" : {
       "BBE" : "Armure du mage",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "La cible, si elle est consentante et ne porte pas d'armure, obtient une CA de 13+Mod.Dex.",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -5653,7 +5996,7 @@
     },
     "Arrêt du temps" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Arrête le temps durant 1d4+1 tours pour tout le monde sauf pour le lanceur.",
       "Incantation" : "1 action",
       "Level" : 9,
@@ -5664,7 +6007,7 @@
     },
     "Aspersion d'acide" : {
       "BBE" : "Aspersion acide",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "1 ou 2 créatures dans un rayon de 1,50 m doivent réussir un JdS de Dex. ou subir 1d6 dégâts d'acide (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 0,
@@ -5675,7 +6018,7 @@
     },
     "Assassin imaginaire" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "La cible doit réussir un JdS de Sag. ou être effrayée puis subir 4d10 dégâts psychiques (dégâts/niv) à chacun de ses tours.",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -5708,7 +6051,7 @@
     },
     "Aube" : {
       "BBE" : "",
-      "Classes" : [ "CLERK", "MAGICIAN" ],
+      "Classes" : [ "CLERK", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures dans un cylindre de 9 x 12 m doivent réussir un JdS de Con. ou subir 4d10 dégâts radiants.",
       "Incantation" : "1 action",
       "Level" : 5,
@@ -5774,7 +6117,7 @@
     },
     "Aura magique de Nystul" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Révèle de fausses informations au sujet d'une créature ou d'un objet qui serait la cible d'un sort de divination.",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -5818,7 +6161,7 @@
     },
     "Bannissement" : {
       "BBE" : "",
-      "Classes" : [ "CLERK", "SORCERER", "MAGICIAN", "PALADIN", "WIZARD" ],
+      "Classes" : [ "CLERK", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "PALADIN", "WIZARD" ],
       "Description" : "La cible doit réussir un JdS de Cha. ou être envoyée sur un demi-plan non-dangereux (+1 créature/niv).",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -5862,7 +6205,7 @@
     },
     "Bouche magique" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "MAGICIAN" ],
+      "Classes" : [ "BARD", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée une bouche magique qui répétera un message de 25 mots max lorsqu'une condition de déclenchement est remplie.",
       "Incantation" : "1 minute",
       "Level" : 2,
@@ -5873,7 +6216,7 @@
     },
     "Bouclier" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "En réaction, la lanceur gagne un bonus de +5 à la CA et ne prend aucun dégât du sort projectile magique.",
       "Incantation" : "1 réaction",
       "Level" : 1,
@@ -5884,7 +6227,7 @@
     },
     "Bouclier de feu" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Le lanceur obtient la résistance aux dégâts de froid ou de feu, et fait subir 2d8 dégâts aux attaquants à 1,50 m qui touchent.",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -5906,7 +6249,7 @@
     },
     "Boule de feu" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures dans un rayon de 6 m doivent réussir un JdS de Dex. ou subir 8d6 dégâts de feu (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -5917,7 +6260,7 @@
     },
     "Boule de feu à retardement" : {
       "BBE" : "Boule de feu à explosion retardée",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures dans une shpère de 6 m de rayon doivent réussir un JdS de Dex. ou subir 12d6 dégâts de feu (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 7,
@@ -5928,7 +6271,7 @@
     },
     "Bourrasque" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures sur une ligne de 18 x 3 m doivent réussir un JdS de For. ou être repoussées de 4,50 m.",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -5950,7 +6293,7 @@
     },
     "Cage de force" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Crée une cage de 6 m ou une boite de 3 m de force magique qui emprisonne une créature. Évasion possible par magie uniquement.",
       "Incantation" : "1 action",
       "Level" : 7,
@@ -5961,7 +6304,7 @@
     },
     "Cage des âmes" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Vole une âme pour gagner des pv, lui poser des questions, obtenir l'avantage à un dé ou voir un lieu qu'elle connaissait.",
       "Incantation" : "1 reaction",
       "Level" : 6,
@@ -5983,7 +6326,7 @@
     },
     "Catapulte" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "La cible doit réussir un JdS de Dex. ou subir 3d8 dégâts contondants d'un objet de 2,5 kg max (+2,5 kg et +1d8/niv).",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -5994,7 +6337,7 @@
     },
     "Cercle de mort" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Les créatures dans une sphère de 18 m de rayon doivent réussir un JdS de Con. ou subir 8d6 dégâts nécrotiques (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 6,
@@ -6016,7 +6359,7 @@
     },
     "Cercle de téléportation" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée un cercle permettant à quiconque d’être téléporté vers un autre cercle de téléportation connu du lanceur.",
       "Incantation" : "1 minute",
       "Level" : 5,
@@ -6027,7 +6370,7 @@
     },
     "Cercle magique" : {
       "BBE" : "",
-      "Classes" : [ "CLERK", "MAGICIAN", "PALADIN", "WIZARD" ],
+      "Classes" : [ "CLERK", "MAGICIAN", "ARCANE_SWINDLER", "PALADIN", "WIZARD" ],
       "Description" : "Crée un cylindre de 6 x 6 m qui protège des célestes, élémentaires, fées, fiélons et/ou morts-vivants (+1 h/niv).",
       "Incantation" : "1 minute",
       "Level" : 3,
@@ -6038,7 +6381,7 @@
     },
     "Champ antimagie" : {
       "BBE" : "",
-      "Classes" : [ "CLERK", "MAGICIAN" ],
+      "Classes" : [ "CLERK", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée une sphère de 3 m de rayon dans laquelle les sorts et les objets magiques ne fonctionnent plus.",
       "Incantation" : "1 action",
       "Level" : 8,
@@ -6049,7 +6392,7 @@
     },
     "Changement de forme" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "MAGICIAN" ],
+      "Classes" : [ "DRUID", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Le lanceur prend la forme d'une créature qu'il a déjà vue d'un FP égal ou inférieur à son niveau.",
       "Incantation" : "1 action",
       "Level" : 9,
@@ -6060,7 +6403,7 @@
     },
     "Changement de plan" : {
       "BBE" : "",
-      "Classes" : [ "CLERK", "DRUID", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "CLERK", "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Le lanceur et jusqu'à 8 créatures sont transportés dans un autre plan d'existence, ou une créature est bannie (JdS de Cha).",
       "Incantation" : "1 action",
       "Level" : 7,
@@ -6071,7 +6414,7 @@
     },
     "Charme-monstre" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "DRUID", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible doit réussir un JdS de Sag. ou être charmée par le lanceur (+1 créature/niv).",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -6082,7 +6425,7 @@
     },
     "Charme-personne" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "DRUID", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible humanoïde doit réussir un JdS de Sag. ou être charmée par le lanceur (+1 créature/niv).",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -6093,7 +6436,7 @@
     },
     "Chaîne d'éclairs" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Jusqu'à 4 cibles différentes doivent réussir un JdS de Dex. ou subir 10d8 dégâts de foudre (+1 cible/niv).",
       "Incantation" : "1 action",
       "Level" : 6,
@@ -6104,7 +6447,7 @@
     },
     "Chien de garde de Mordenkainen" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Invoque un chien de garde invisible qui aboie à l'approche de créatures et les attaque (4d8 dégâts perforants).",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -6192,7 +6535,7 @@
     },
     "Clairvoyance" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "CLERK", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "BARD", "CLERK", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée un détecteur invisible dans un lieu familier à 1,5 km ou moins, permettant de voir ou d'entendre (au choix, modifiable).",
       "Incantation" : "10 minutes",
       "Level" : 3,
@@ -6203,7 +6546,7 @@
     },
     "Clignotement" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Le lanceur a 50% de chance de passer dans le plan éthéré, puis il revient dans l'espace qu'il occupait au tour suivant.",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -6214,7 +6557,7 @@
     },
     "Clone" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée en 120 jours le double inerte d'une créature vivante. Si la créature originale meurt, son âme est transférée dans le clone.",
       "Incantation" : "1 heure",
       "Level" : 8,
@@ -6225,7 +6568,7 @@
     },
     "Coffre secret de Léomund" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Cache un coffre (90 x 60 x 60 cm) et son contenu dans le plan éthéré.",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -6236,7 +6579,7 @@
     },
     "Collet" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "MAGICIAN", "PROWLER" ],
+      "Classes" : [ "DRUID", "MAGICIAN", "ARCANE_SWINDLER", "PROWLER" ],
       "Description" : "Crée un piège magique (JdS de Dex. ou la créature de taille P à G est hissée en l'air).",
       "Incantation" : "1 minute",
       "Level" : 1,
@@ -6291,7 +6634,7 @@
     },
     "Communication à distance" : {
       "BBE" : "Envoi de message",
-      "Classes" : [ "BARD", "CLERK", "MAGICIAN" ],
+      "Classes" : [ "BARD", "CLERK", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Envoie un message de 25 mots à une créature familière, quelle que soit la distance ou le plan. Elle peut y répondre.",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -6324,7 +6667,7 @@
     },
     "Compréhension des langues" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Le lanceur comprend toutes les langues parlées ou écrites (1 min/page). Ne décode pas les messages secrets.",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -6346,7 +6689,7 @@
     },
     "Confusion" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "DRUID", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "BARD", "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures dans un rayon de 3 m doivent réussir un JdS de Sag. ou ne plus pouvoir agir normalement (+1,50 m de rayon/niv).",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -6357,7 +6700,7 @@
     },
     "Contact avec un autre plan" : {
       "BBE" : "Contacter un autre plan",
-      "Classes" : [ "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Contacte une entité extérieure afin de lui poser 5 questions si un JdS d'Int. est réussi. Sinon, 6d6 dégâts psychiques.",
       "Incantation" : "1 minute",
       "Level" : 5,
@@ -6368,7 +6711,7 @@
     },
     "Contact glacial" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Si l'attaque avec un sort touche, inflige 1d8 dégâts nécrotiques (dégâts/niv) et la cible ne peut récupérer ses pv de suite.",
       "Incantation" : "1 action",
       "Level" : 0,
@@ -6401,7 +6744,7 @@
     },
     "Contrat" : {
       "BBE" : "Entrave planaire",
-      "Classes" : [ "BARD", "CLERK", "DRUID", "MAGICIAN" ],
+      "Classes" : [ "BARD", "CLERK", "DRUID", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "La cible (céleste, élémentaire, fée ou fiélon) doit réussir un JdS de Cha. ou servir le lanceur (durée/niv).",
       "Incantation" : "1 heure",
       "Level" : 5,
@@ -6412,7 +6755,7 @@
     },
     "Contresort" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "En réaction, fait échouer un sort de niveau 3 ou inférieur. Jet de Carac.Inc pour un sort de niveau 4 ou supérieur (seuil/niv).",
       "Incantation" : "1 réaction",
       "Level" : 3,
@@ -6423,7 +6766,7 @@
     },
     "Contrôle de l'eau" : {
       "BBE" : "",
-      "Classes" : [ "CLERK", "DRUID", "MAGICIAN" ],
+      "Classes" : [ "CLERK", "DRUID", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Contrôle l'eau dans un cube de 30 m (provoquer une crue, scinder l'eau, diriger le courant, créer un tourbillon).",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -6434,7 +6777,7 @@
     },
     "Contrôle des flammes" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Contrôle les feux non magiques pour les allumer, éteindre, faire grossir, faire apparaître des formes simples, etc.",
       "Incantation" : "1 action",
       "Level" : 0,
@@ -6445,7 +6788,7 @@
     },
     "Contrôle des vents" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Contrôle l'air dans un cube de 30 m et produit un effet (Rafales, Écrasement ou Ascension).",
       "Incantation" : "1 action",
       "Level" : 5,
@@ -6456,7 +6799,7 @@
     },
     "Contrôle du climat" : {
       "BBE" : "",
-      "Classes" : [ "CLERK", "DRUID", "MAGICIAN" ],
+      "Classes" : [ "CLERK", "DRUID", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Modifie progressivement les conditions climatiques en extérieur (précipitation, température et force du vent).",
       "Incantation" : "10 minutes",
       "Level" : 8,
@@ -6467,7 +6810,7 @@
     },
     "Convocations instantanées de Drawmij" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Marque un objet de 5 kg max et permet par la suite de le téléporter dans la main du lanceur, où qu'il soit, s'il n'est pas tenu.",
       "Incantation" : "1 minute",
       "Level" : 6,
@@ -6489,7 +6832,7 @@
     },
     "Corde enchantée" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Fait se dresser verticalement une corde qui donne dans un espace extradimensionnel qui peut contenir 8 créatures de taille M.",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -6511,7 +6854,7 @@
     },
     "Couleurs dansantes" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "6d10 pv de créatures sont éblouies par ordre croissant de leurs pv actuels (+2d10 pv/niv).",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -6522,7 +6865,7 @@
     },
     "Coup au but" : {
       "BBE" : "Viser juste",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Le lanceur obtient l'avantage à son prochain jet d'attaque contre une cible.",
       "Incantation" : "1 action",
       "Level" : 0,
@@ -6533,7 +6876,7 @@
     },
     "Coup de tonnerre" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "DRUID", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Les créatures dans un rayon de 1,50 m doivent réussir un JdS de Con. ou subir 1d6 dégâts tonnerre (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 0,
@@ -6544,7 +6887,7 @@
     },
     "Couronne d'étoiles" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Si l'attaque avec un sort touche, 7 atomes infligent chacun 4d12 dégâts radiants (+1 atome/niv).",
       "Incantation" : "1 action",
       "Level" : 7,
@@ -6555,7 +6898,7 @@
     },
     "Couronne du dément" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible doit réussir un JdS de Sag. ou être charmée. Elle peut alors attaquer une cible désignée par le lanceur.",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -6566,7 +6909,7 @@
     },
     "Couteau de glace" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Si l'attaque avec un sort touche, inflige 1d10 dégâts perforants + JdS de Dex. ou 2d6 dégâts de froid (dégâts/niv) à 1,50 m.",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -6599,7 +6942,7 @@
     },
     "Création" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée un objet non vivant fait de matières végétales ou minérales et pas plus grand qu'un cube de 1,50 m (+1,50 m/niv).",
       "Incantation" : "1 minute",
       "Level" : 5,
@@ -6610,7 +6953,7 @@
     },
     "Création d'homoncule" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée un homunculus auquel le lanceur peut transférer ses points de vie jusqu'à son prochain repos long.",
       "Incantation" : "1 heure",
       "Level" : 6,
@@ -6621,7 +6964,7 @@
     },
     "Création de mort-vivant" : {
       "BBE" : "",
-      "Classes" : [ "CLERK", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "CLERK", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Jusqu'à 3 cadavres humanoïdes M ou P deviennent une goule qui obéit au lanceur durant 24 h (nbre et type de créatures/niv).",
       "Incantation" : "1 minute",
       "Level" : 6,
@@ -6654,7 +6997,7 @@
     },
     "Cécité-Surdité" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "CLERK", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "BARD", "CLERK", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "La cible doit réussir un JdS de Con. ou devenir aveuglée ou assourdie (+1 créature/niv).",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -6676,7 +7019,7 @@
     },
     "Cône de froid" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures dans un cône de 18 m doivent réussir un JdS de Con. ou subir 8d8 dégâts de froid (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 5,
@@ -6687,7 +7030,7 @@
     },
     "Danse Macabre" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Jusqu'à 5 corps de taille M ou P deviennent des zombies ou des squelettes sous le contrôle du lanceur (+2 corps/niv).",
       "Incantation" : "1 action",
       "Level" : 5,
@@ -6698,7 +7041,7 @@
     },
     "Danse irrésistible d'Otto" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "MAGICIAN" ],
+      "Classes" : [ "BARD", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "La cible doit réussir un JdS de Sag. ou danser (désavantage aux JdS de Dex. et à l'attaque).",
       "Incantation" : "1 action",
       "Level" : 6,
@@ -6709,7 +7052,7 @@
     },
     "Demi-plan" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Crée une porte qui conduit à un demi-plan (cube de 9 m). Les créatures encore dans le demi-plan à la fin du sort sont piégées.",
       "Incantation" : "1 action",
       "Level" : 8,
@@ -6720,7 +7063,7 @@
     },
     "Disque flottant de Tenser" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée un plateau flottant de 90 cm de diamètre qui peut supporter jusqu'à 250 kg et suit le lanceur.",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -6731,7 +7074,7 @@
     },
     "Dissimulation" : {
       "BBE" : "Séquestration",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Protège une créature consentante (qui devient invisible et inconsciente) ou un objet contre les sorts de divination.",
       "Incantation" : "1 action",
       "Level" : 7,
@@ -6742,7 +7085,7 @@
     },
     "Dissipation de la magie" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "CLERK", "DRUID", "SORCERER", "MAGICIAN", "PALADIN", "WIZARD" ],
+      "Classes" : [ "BARD", "CLERK", "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "PALADIN", "WIZARD" ],
       "Description" : "Met fin aux sorts de niveau 3 ou inférieur sur une cible. Jet de Carac.Inc pour les sorts de niveau 4 ou supérieur (seuil/niv).",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -6764,7 +7107,7 @@
     },
     "Diversion" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Jusqu'à 5 créatures sont téléportées (JdS de Sag. si non consentantes) dans un rayon de 36 m.",
       "Incantation" : "1 action",
       "Level" : 6,
@@ -6786,7 +7129,7 @@
     },
     "Doigt de mort" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible doit réussir un JdS de Con. ou subir 7d8+30 dégâts nécrotiques. Si elle meurt elle devient un zombi contrôlé.",
       "Incantation" : "1 action",
       "Level" : 7,
@@ -6797,7 +7140,7 @@
     },
     "Domination d'humanoïde" : {
       "BBE" : "Dominer un humanoïde",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Un humanoïde doit réussir un JdS de Sag. ou être charmé et obéir au lanceur (durée/niv).",
       "Incantation" : "1 action",
       "Level" : 5,
@@ -6819,7 +7162,7 @@
     },
     "Domination de monstre" : {
       "BBE" : "Dominer un monstre",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible doit réussir un JdS de Sag. ou être charmée et obéir au lanceur (durée/niv).",
       "Incantation" : "1 action",
       "Level" : 8,
@@ -6830,7 +7173,7 @@
     },
     "Double illusoire" : {
       "BBE" : "Tromperie",
-      "Classes" : [ "BARD", "MAGICIAN" ],
+      "Classes" : [ "BARD", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Le lanceur devient invisible et crée un double qui se déplace, agit et parle. Le lanceur peut voir et entendre via ce double.",
       "Incantation" : "1 action",
       "Level" : 5,
@@ -6841,7 +7184,7 @@
     },
     "Dragon illusoire" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures qui voient le dragon illusoire de taille TG doivent réussir un JdS de Sag. ou être effrayées durant 1 min.",
       "Incantation" : "1 action",
       "Level" : 8,
@@ -6874,7 +7217,7 @@
     },
     "Déblocage" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Déverrouille ou débloque 1 objet (porte, coffre, cadenas, menottes, etc) ou supprime le sort verrou magique pour 10 minutes.",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -6896,7 +7239,7 @@
     },
     "Déguisement" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Modifie l'apparence du lanceur (son physique et son équipement) grâce à une illusion.",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -6907,7 +7250,7 @@
     },
     "Délivrance des malédictions" : {
       "BBE" : "Lever une malédiction",
-      "Classes" : [ "CLERK", "MAGICIAN", "PALADIN", "WIZARD" ],
+      "Classes" : [ "CLERK", "MAGICIAN", "ARCANE_SWINDLER", "PALADIN", "WIZARD" ],
       "Description" : "Met fin à toutes les malédictions affligeant une créature ou un objet.",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -6918,7 +7261,7 @@
     },
     "Déluge d'énergie négative" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible doit réussir un JdS de Con. ou subir 5d12 dégâts nécrotiques. Morte, la cible devient un zombie.",
       "Incantation" : "1 action",
       "Level" : 5,
@@ -6929,7 +7272,7 @@
     },
     "Désintégration" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "La cible doit réussir un JdS de Dex. ou subir 10d6+40 dégâts de force (dégâts/niv). Un objet de taille G est désintégré.",
       "Incantation" : "1 action",
       "Level" : 6,
@@ -6940,7 +7283,7 @@
     },
     "Détection de la magie" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "CLERK", "DRUID", "SORCERER", "MAGICIAN", "PALADIN", "PROWLER" ],
+      "Classes" : [ "BARD", "CLERK", "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "PALADIN", "PROWLER" ],
       "Description" : "Le lanceur détecte toutes émanations magiques dans un rayon de 9 m et en détermine l'école.",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -6951,7 +7294,7 @@
     },
     "Détection des pensées" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Le lanceur détecte les pensées superficielles d'une créature à 9 m, et les plus approfondies si la cible rate un JdS de Sag.",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -6984,7 +7327,7 @@
     },
     "Embrasement" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Les créatures dans un cube de 1,50 m doivent réussir un JdS de Dex. ou subir 1d8 dégâts de feu (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 0,
@@ -6995,7 +7338,7 @@
     },
     "Emprisonnement" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible à 9 m doit réussir un JdS de Sag. ou être retenue prisonnière. La forme est à choisir parmi 6 options.",
       "Incantation" : "1 minute",
       "Level" : 9,
@@ -7017,7 +7360,7 @@
     },
     "Ennemi subconscient" : {
       "BBE" : "Étrangeté",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures dans un rayon de 9 m doivent réussir un JdS de Sag. ou être effrayées et subir 4d10 psychiques à leur tour.",
       "Incantation" : "1 action",
       "Level" : 9,
@@ -7028,7 +7371,7 @@
     },
     "Ennemis à foison" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible doit réussir un JdS d'Int. ou ne plus pouvoir distinguer amis et ennemis ",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -7050,7 +7393,7 @@
     },
     "Esprit faible" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "DRUID", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "DRUID", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible subit 4d6 dégâts psychiques et doit réussir un JdS d'Int. ou son Charisme et son Intelligence tombent à 1.",
       "Incantation" : "1 action",
       "Level" : 8,
@@ -7072,7 +7415,7 @@
     },
     "Esprit impénétrable" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "MAGICIAN" ],
+      "Classes" : [ "BARD", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "La cible est immunisée contre les dégâts psychiques, la lecture des pensées, les sorts de divination et la condition charmé.",
       "Incantation" : "1 action",
       "Level" : 8,
@@ -7094,7 +7437,7 @@
     },
     "Explosion de lames" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Les créatures dans un rayon de 1,50 m doivent réussir un JdS de Dex. ou subir 1d6 de force (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 0,
@@ -7105,7 +7448,7 @@
     },
     "Fabrication" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Convertit des matériaux bruts en objets simples de taille G ou inférieure de la même matière.",
       "Incantation" : "10 minutes",
       "Level" : 4,
@@ -7138,7 +7481,7 @@
     },
     "Façonnage de l'eau" : {
       "BBE" : "Modeler l'eau",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Contrôle l'eau pour obtenir divers effets mineurs comme changer sa couleur, la faire geler, changer le sens du courant, etc.",
       "Incantation" : "1 action",
       "Level" : 0,
@@ -7149,7 +7492,7 @@
     },
     "Façonnage de la pierre" : {
       "BBE" : "",
-      "Classes" : [ "CLERK", "DRUID", "MAGICIAN" ],
+      "Classes" : [ "CLERK", "DRUID", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Donne à un bloc de pierre de 1,50 m de côté n'importe quelle forme, ou y crée une ouverture.",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -7160,7 +7503,7 @@
     },
     "Façonnage de la terre" : {
       "BBE" : "Modeler la terre",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Contrôle la terre où la pierre pour la creuser, créer des formes, la transformer en terrain difficile, etc.",
       "Incantation" : "1 action",
       "Level" : 0,
@@ -7182,7 +7525,7 @@
     },
     "Feuille morte" : {
       "BBE" : "Léger comme une plume",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Jusqu'à 5 créatures tombent à une vitesse de 18 mètres par round et ne subissent pas de dégâts de chute si le sort est actif.",
       "Incantation" : "1 réaction",
       "Level" : 1,
@@ -7193,7 +7536,7 @@
     },
     "Flambée d'Aganazzar" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures sur une ligne de 9 x 1,50 m doivent réussir un JdS de Dex. ou subir 3d8 dégâts de feu (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -7215,7 +7558,7 @@
     },
     "Flamme éternelle" : {
       "BBE" : "",
-      "Classes" : [ "CLERK", "MAGICIAN" ],
+      "Classes" : [ "CLERK", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée une flamme qui produit une lumière équivalente à celle d'une torche, mais qui ne dégage aucune chaleur.",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -7226,7 +7569,7 @@
     },
     "Flou" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Le corps du lanceur devient flou et les créatures qui l'attaquent ont un désavantage au jet d'attaque contre lui.",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -7237,7 +7580,7 @@
     },
     "Flèche acide de Melf" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Si l'attaque avec un sort touche, inflige 4d4 dégâts d'acide, puis 2d4 dégâts d'acide au round suivant (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -7259,7 +7602,7 @@
     },
     "Flèches enflammées" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "PROWLER" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "PROWLER" ],
       "Description" : "12 flèches/carreaux infligent 1d6 dégâts de feu extra (+2 munitions/niv).",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -7292,7 +7635,7 @@
     },
     "Fléau élémentaire" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "DRUID", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible doit réussir un JdS de Con. ou subir 2d6 dégâts extra d'un type de dégâts spécifique (+1 cible/niv).",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -7303,7 +7646,7 @@
     },
     "Flétrissement" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible doit réussir un JdS de Con. ou subir 8d8 dégâts nécrotiques (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -7314,7 +7657,7 @@
     },
     "Flétrissure épouvantable d'Abi-Dalzim" : {
       "BBE" : "Épouvantable flétrissure d'Abi-Dalzim",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures dans un cube de 9 m doivent réussir un JdS de Con. ou subir 12d8 dégâts nécrotiques. Les plantes meurent.",
       "Incantation" : "1 action",
       "Level" : 8,
@@ -7325,7 +7668,7 @@
     },
     "Force fantasmagorique" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "La cible doit réussir un JdS d'Int. ou percevoir comme réel un objet ou une créature crée par le lanceur (avec son).",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -7336,7 +7679,7 @@
     },
     "Forme gazeuse" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible se transforme en nuage, obtient une vitesse de vol de 3 m et peut passer par de petits trous.",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -7347,7 +7690,7 @@
     },
     "Forme éthérée" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Le lanceur est projetté dans le plan éthéré (nbre de créatures/niv).",
       "Incantation" : "1 action",
       "Level" : 7,
@@ -7369,7 +7712,7 @@
     },
     "Forteresse majestueuse" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Fait apparaitre une forteresse de pierre sur une surface de 36 x 36 m pour 7 jours.",
       "Incantation" : "1 minute",
       "Level" : 8,
@@ -7380,7 +7723,7 @@
     },
     "Fou rire de Tasha" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "MAGICIAN" ],
+      "Classes" : [ "BARD", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "La cible doit réussir un JdS de Sag. ou être prise d'une intense crise de fou rire, tomber à terre et être incapable d'agir.",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -7391,7 +7734,7 @@
     },
     "Fouet foudroyant" : {
       "BBE" : "Fouet électrique",
-      "Classes" : [ "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible doit réussir un JdS de For. ou subir 1d8 dégâts de foudre (dégâts/niv) et être poussée de 3 m.",
       "Incantation" : "1 action",
       "Level" : 0,
@@ -7413,7 +7756,7 @@
     },
     "Fracassement" : {
       "BBE" : "Briser",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Les créatures dans une sphère de 3 m de rayon doivent réussir un JdS de Con. ou subir 3d8 dégâts de tonnerre (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -7424,7 +7767,7 @@
     },
     "Frappe du vent d'acier" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN", "PROWLER" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER", "PROWLER" ],
       "Description" : "Si l'attaque avec un sort touche, inflige 6d10 dégâts de force à 5 créatures, puis le lanceur se téléporte.",
       "Incantation" : "1 action",
       "Level" : 5,
@@ -7457,7 +7800,7 @@
     },
     "Frayeur" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible doit réussir un JdS de Sag. ou être effrayée (nbre de cibles/niv).",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -7512,7 +7855,7 @@
     },
     "Gelure" : {
       "BBE" : "",
-      "Classes" : [ "CLERK", "DRUID", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "CLERK", "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible doit réussir un JdS de Con. ou subir 1d6 dégâts de froid et avoir un désavantage à l'attaque (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 0,
@@ -7523,7 +7866,7 @@
     },
     "Glas funèbre" : {
       "BBE" : "Sonner le glas",
-      "Classes" : [ "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible doit réussir un JdS de Sag. ou subir 1d8 ou 1d12 dégâts nécrotiques (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 0,
@@ -7534,7 +7877,7 @@
     },
     "Globe d'invulnérabilité" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Bloque les sorts de niveau 5 ou inférieur dans un rayon de 3 m (seuil/niv).",
       "Incantation" : "1 action",
       "Level" : 6,
@@ -7545,7 +7888,7 @@
     },
     "Glyphe de protection" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "CLERK", "MAGICIAN" ],
+      "Classes" : [ "BARD", "CLERK", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Un glyphe sur un objet inflige 5d8 dégâts dans un rayon de 4,50 m (dégâts/niv) ou lance un sort niv 3 (niv/niv) si déclenché.",
       "Incantation" : "1 heure",
       "Level" : 3,
@@ -7567,7 +7910,7 @@
     },
     "Graisse" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures dans un carré de 3 m (terrain difficile) doivent réussir un JdS de Dex. pour ne pas tomber.",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -7578,7 +7921,7 @@
     },
     "Grande foulée" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "DRUID", "MAGICIAN", "PROWLER" ],
+      "Classes" : [ "BARD", "DRUID", "MAGICIAN", "ARCANE_SWINDLER", "PROWLER" ],
       "Description" : "La cible obtient une vitesse augmentée de 3 m (+1 créature/niv).",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -7622,7 +7965,7 @@
     },
     "Hurlement psychique" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Jusqu'à 10 créatures doivent réussir un JdS d'Int. ou subir 14d6 dégâts psychiques.",
       "Incantation" : "1 action",
       "Level" : 9,
@@ -7633,7 +7976,7 @@
     },
     "Hâte" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "La cible voit sa vitesse doublée. Elle gagne aussi un bonus de +2 à la CA, l'avantage aux JdS de Dex. et 1 action extra.",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -7655,7 +7998,7 @@
     },
     "Identification" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "MAGICIAN" ],
+      "Classes" : [ "BARD", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Le lanceur obtient les propriétés d'un objet magique (lien, charges) ou est informé si un sort affecte un objet ou une créature.",
       "Incantation" : "1 minute",
       "Level" : 1,
@@ -7666,7 +8009,7 @@
     },
     "Illusion mineure" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Crée l'illusion d'un son ou d'une image immobile pas plus grande qu'un cube de 1,50 m.",
       "Incantation" : "1 action",
       "Level" : 0,
@@ -7677,7 +8020,7 @@
     },
     "Illusion programmée" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "MAGICIAN" ],
+      "Classes" : [ "BARD", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée l'image d'un objet ou d'une créature animée, avec sons, durant 5 min, suite à un déclencheur.",
       "Incantation" : "1 action",
       "Level" : 6,
@@ -7688,7 +8031,7 @@
     },
     "Image majeure" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Crée l'image d'un objet ou d'une créature animée, avec sons et odeurs (sans concentration/niv).",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -7699,7 +8042,7 @@
     },
     "Image miroir" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Crée 3 duplicatas illusoires du lanceur qui possèdent chacun une CA de 10+Mod.Dex et sont détruits s'ils sont touchés.",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -7710,7 +8053,7 @@
     },
     "Image silencieuse" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée l'image d'un objet ou d'une créature (sans son et de la taille d'un cube de 4,50 m max) et permet de la faire bouger.",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -7721,7 +8064,7 @@
     },
     "Immobilisation de monstre" : {
       "BBE" : "Immobiliser un monstre",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible doit réussir un JdS de Sag. ou être paralysée (+1 créature/niv).",
       "Incantation" : "1 action",
       "Level" : 5,
@@ -7732,7 +8075,7 @@
     },
     "Immobilisation de personne" : {
       "BBE" : "Immobiliser un humanoïde",
-      "Classes" : [ "BARD", "CLERK", "DRUID", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "CLERK", "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible doit réussir un JdS de Sag. ou être paralysée (+1 créature/niv).",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -7743,7 +8086,7 @@
     },
     "Immolation" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "La cible à 27 m doit réussir un JdS de Dex. ou subir 8d6 dégâts de feu et 4d6 dégâts de feu par la suite.",
       "Incantation" : "1 action",
       "Level" : 5,
@@ -7754,7 +8097,7 @@
     },
     "Infestation" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible doit réussir un JdS de Con. ou subir 1d6 dégâts de poison et se déplacer de 1,50 m au hasard (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 0,
@@ -7798,7 +8141,7 @@
     },
     "Inversion de la gravité" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Inverse la gravité dans un cylindre de 30 x 30 m.",
       "Incantation" : "1 action",
       "Level" : 7,
@@ -7809,7 +8152,7 @@
     },
     "Invisibilité" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible devient invisible 1 heure ou jusqu'à ce qu'elle attaque ou lance un sort (+1 créature/niv).",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -7820,7 +8163,7 @@
     },
     "Invisibilité supérieure" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "La cible devient invisible durant 1 minute.",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -7842,7 +8185,7 @@
     },
     "Invocation d'élémentaire" : {
       "BBE" : "Invoquer un élémentaire",
-      "Classes" : [ "DRUID", "MAGICIAN" ],
+      "Classes" : [ "DRUID", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Invoque 1 élémentaire FP 5 amical (FP +1/niv).",
       "Incantation" : "1 minute",
       "Level" : 5,
@@ -7853,7 +8196,7 @@
     },
     "Invocation d'élémentaires mineurs" : {
       "BBE" : "Invoquer des élémentaires mineurs",
-      "Classes" : [ "DRUID", "MAGICIAN" ],
+      "Classes" : [ "DRUID", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Invoque de 1 élémentaire FP 2 à 8 élémentaires FP 1/4 amicaux (nbre de créatures/niv).",
       "Incantation" : "1 minute",
       "Level" : 4,
@@ -7886,7 +8229,7 @@
     },
     "Invocation de démon supérieur" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Invoque de 1 démon FP 5 qui obéit aux ordres du lanceur (FP +1/niv).",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -7897,7 +8240,7 @@
     },
     "Invocation de démons inférieurs" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Invoque de 2 démons FP 1 à 8 démons FP 1/4 hostiles (nbre de créatures/niv).",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -7941,7 +8284,7 @@
     },
     "Invocation infernale" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Invoque 1 diable FP 6 hostile (+1 FP/niv)",
       "Incantation" : "1 minute",
       "Level" : 5,
@@ -7952,7 +8295,7 @@
     },
     "Invulnérabilité" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Le lanceur gagne l'immunité à tous les dégàts.",
       "Incantation" : "1 action",
       "Level" : 9,
@@ -7963,7 +8306,7 @@
     },
     "Labyrinthe" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Bannit une créature dans un demi-plan labyrinthique. Jet d'Intelligence pour s'évader avant la fin du sort.",
       "Incantation" : "1 action",
       "Level" : 8,
@@ -7974,7 +8317,7 @@
     },
     "Lame aux flammes vertes" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Si une attaque avec une arme touche, inflige aussi des dégâts de feu égaux au Mod.Carac.Inc à une autre créature (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 0,
@@ -7985,7 +8328,7 @@
     },
     "Lame d'ombres" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Crée une arme qui inflige 2d8 dégâts psychiques avec les propriétés finesse, légère et lancer (dégâts/niv).",
       "Incantation" : "1 action bonus",
       "Level" : 2,
@@ -8007,7 +8350,7 @@
     },
     "Lame tonnante" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Si une attaque avec une arme touche, inflige 1d8 dégâts de tonnerre si la cible bouge (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 0,
@@ -8018,7 +8361,7 @@
     },
     "Langues" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "CLERK", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "CLERK", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible comprend et parle toutes les langues parlées qu'elle entend.",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -8029,7 +8372,7 @@
     },
     "Lenteur" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Jusqu'à 6 cibles doivent réussir un JdS de Sag. ou avoir leur vitesse et leurs actions réduites, -2 en CA et aux JdS de Dex.",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -8084,7 +8427,7 @@
     },
     "Lien télépathique de Rary" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée un lien télépathique entre un maximum de 8 personnes dans un rayon de 9 m pendant 1 heure.",
       "Incantation" : "1 action",
       "Level" : 5,
@@ -8106,7 +8449,7 @@
     },
     "Localisation d'objet" : {
       "BBE" : "Localiser un objet",
-      "Classes" : [ "BARD", "CLERK", "DRUID", "MAGICIAN", "PALADIN", "PROWLER" ],
+      "Classes" : [ "BARD", "CLERK", "DRUID", "MAGICIAN", "ARCANE_SWINDLER", "PALADIN", "PROWLER" ],
       "Description" : "Le lanceur sent la direction dans laquelle se trouve un objet familier, dans un rayon de 300 m.",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -8117,7 +8460,7 @@
     },
     "Localisation de créature" : {
       "BBE" : "Localiser une créature",
-      "Classes" : [ "BARD", "CLERK", "DRUID", "MAGICIAN", "PALADIN", "PROWLER" ],
+      "Classes" : [ "BARD", "CLERK", "DRUID", "MAGICIAN", "ARCANE_SWINDLER", "PALADIN", "PROWLER" ],
       "Description" : "Le lanceur ressent la direction dans laquelle se trouve une créature familière dans un rayon de 300 m.",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -8150,7 +8493,7 @@
     },
     "Lumière" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "CLERK", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "BARD", "CLERK", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Fait qu'un objet émette une lumière vive sur 6 m et une lumière faible sur 6 m supplémentaires.",
       "Incantation" : "1 action",
       "Level" : 0,
@@ -8172,7 +8515,7 @@
     },
     "Lumières dansantes" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée jusqu'à 4 lumières de la taille d'une torche qui émettent une lumière faible sur 3 m et qu'on peut déplacer jusqu'à 18 m.",
       "Incantation" : "1 action",
       "Level" : 0,
@@ -8183,7 +8526,7 @@
     },
     "Légende" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "CLERK", "MAGICIAN" ],
+      "Classes" : [ "BARD", "CLERK", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Le lanceur obtient des informations sur une personne, un lieu ou un objet sous forme de contes ou d'histoires.",
       "Incantation" : "10 minutes",
       "Level" : 5,
@@ -8194,7 +8537,7 @@
     },
     "Lévitation" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "1 créature ou objet de moins de 250 kg s'élève verticalement jusqu'à 6 m et reste en lévitation.",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -8216,7 +8559,7 @@
     },
     "Main de Bigby" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée une main de taille G et de Force 26 qui peut frapper (4d8 dégâts de force), pousser, agripper ou protéger (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 5,
@@ -8227,7 +8570,7 @@
     },
     "Main de mage" : {
       "BBE" : "Main du mage",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Crée une main spectrale qui peut dans un rayon de 9 m manipuler un objet, ouvrir une porte, saisir un objet, etc.",
       "Incantation" : "1 action",
       "Level" : 0,
@@ -8238,7 +8581,7 @@
     },
     "Mains brûlantes" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures dans un cône de 4,50 m doivent réussir un JdS de Dex. ou subir 3d6 dégâts de feu (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -8249,7 +8592,7 @@
     },
     "Malédiction" : {
       "BBE" : "Jeter une malédiction",
-      "Classes" : [ "BARD", "CLERK", "MAGICIAN" ],
+      "Classes" : [ "BARD", "CLERK", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "La cible doit réussir un JdS de Sag. ou subir un effet comme un désavantage à un jet ou perdre une action (durée/niv).",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -8271,7 +8614,7 @@
     },
     "Manoir somptueux de Mordenkainen" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "MAGICIAN" ],
+      "Classes" : [ "BARD", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée un manoir extradimensionnel qui peut abriter le lanceur et d'autres créatures et possède tout le confort.",
       "Incantation" : "1 minute",
       "Level" : 7,
@@ -8315,7 +8658,7 @@
     },
     "Mauvais oeil" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible dans un rayon de 18 m doit réussir un JdS de Sag. ou subir un des effets suivants : sommeil, panique ou fièvre.",
       "Incantation" : "1 action",
       "Level" : 6,
@@ -8326,7 +8669,7 @@
     },
     "Message" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Le lanceur murmure un message à une créature à 36 m qui sera la seule à l'entendre. Elle pourra répondre de la même façon.",
       "Incantation" : "1 action",
       "Level" : 0,
@@ -8348,7 +8691,7 @@
     },
     "Minuscules météores de Melf" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures à 1,50 m doivent réussir un JdS de Dex. ou subir 2d6 dégâts de feu pour chacune des 6 météores (+2 météores/niv).",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -8359,7 +8702,7 @@
     },
     "Mirage" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "DRUID", "MAGICIAN" ],
+      "Classes" : [ "BARD", "DRUID", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Transforme l'apparence (à la vue, à l'ouïe, à l'odorat et au toucher) d'un carré de 1,5 km.",
       "Incantation" : "10 minutes",
       "Level" : 7,
@@ -8370,7 +8713,7 @@
     },
     "Mission" : {
       "BBE" : "Coercition mystique",
-      "Classes" : [ "BARD", "CLERK", "DRUID", "MAGICIAN", "PALADIN" ],
+      "Classes" : [ "BARD", "CLERK", "DRUID", "MAGICIAN", "ARCANE_SWINDLER", "PALADIN" ],
       "Description" : "La cible doit réussir un JdS de Sag. ou être charmée et subir 5d10 dégâts psychiques si elle n'obéit pas (durée/niv).",
       "Incantation" : "1 minute",
       "Level" : 5,
@@ -8381,7 +8724,7 @@
     },
     "Modification d'apparence" : {
       "BBE" : "Modifier son apparence",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Donne une nouvelle forme suivant l'option choisie (Adaptation aquatique, Changement d'apparence ou Armes naturelles).",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -8392,7 +8735,7 @@
     },
     "Modification de mémoire" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "MAGICIAN" ],
+      "Classes" : [ "BARD", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "La cible doit réussir un JdS de Sag. ou être charmée et sa mémoire altérée (ancienneté des souvenirs/niv).",
       "Incantation" : "1 action",
       "Level" : 5,
@@ -8403,7 +8746,7 @@
     },
     "Monture fantôme" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée une créature semi-réelle de taille G ressemblant à un cheval et tout le nécessaire pour la monter.",
       "Incantation" : "1 minute",
       "Level" : 3,
@@ -8425,7 +8768,7 @@
     },
     "Mort simulée" : {
       "BBE" : "Feindre la mort",
-      "Classes" : [ "BARD", "CLERK", "DRUID", "MAGICIAN" ],
+      "Classes" : [ "BARD", "CLERK", "DRUID", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "La cible consentante passe pour morte auprès de toute personne ne faisant pas une inspection approfondie.",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -8458,7 +8801,7 @@
     },
     "Mot de pouvoir douloureux" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible (100 pv max) a sa vitesse réduite à 3 m, un désavantage aux d20 et doit faire un JdS de Con. pour lancer des sorts.",
       "Incantation" : "1 action",
       "Level" : 7,
@@ -8480,7 +8823,7 @@
     },
     "Mot de pouvoir mortel" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible (100 pv max) meurt !",
       "Incantation" : "1 action",
       "Level" : 9,
@@ -8491,7 +8834,7 @@
     },
     "Mot de pouvoir étourdissant" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible (150 pv max) est étourdie jusqu'à ce qu'elle réussisse un JdS de Con.",
       "Incantation" : "1 action",
       "Level" : 8,
@@ -8524,7 +8867,7 @@
     },
     "Motif hypnotique" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Les créatures dans un cube de 9 m doivent réussir un JdS de Sag. ou être charmées et incapables d'agir, avec une vitesse de 0.",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -8535,7 +8878,7 @@
     },
     "Mur d'eau" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée un mur d'eau de 9 m x 3 m x 30 cm qui donne un désavantage aux attaques à distance et réduit les dégâts de feu.",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -8557,7 +8900,7 @@
     },
     "Mur de feu" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée un mur de feu de 18 m x 6 m x 30 cm. Les créatures dans ou à 3 m du mur d'un côté subissent 5d8 dégâts de feu (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -8568,7 +8911,7 @@
     },
     "Mur de force" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée un mur de force infranchissable physiquement (dix panneaux de 3 m) immunisé à tous les types de dégâts.",
       "Incantation" : "1 action",
       "Level" : 5,
@@ -8579,7 +8922,7 @@
     },
     "Mur de glace" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée un mur de glace (dix panneaux de 3 m) qui peut être détruit et peut infliger 5d6 de froid si on le traverse (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 6,
@@ -8590,7 +8933,7 @@
     },
     "Mur de lumière" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Crée un mur de lumière de 18 x 3 x 1,50 m qui peut infliger 4d8 dégâts radiants à une cible à chaque tour (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 5,
@@ -8601,7 +8944,7 @@
     },
     "Mur de pierre" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée un mur de pierre non magique de (dix panneaux de 3 m) qui peut être détruit.",
       "Incantation" : "1 action",
       "Level" : 5,
@@ -8612,7 +8955,7 @@
     },
     "Mur de sable" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée un mur de sable de 9 x 3 x 3 m qui bloque la vue (aveuglé) mais pas les mouvements.",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -8634,7 +8977,7 @@
     },
     "Mur prismatique" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée un mur de plusieurs couches qui infligent des effets et dégâts différents suivant la couche.",
       "Incantation" : "1 action",
       "Level" : 9,
@@ -8667,7 +9010,7 @@
     },
     "Métamorphose" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "DRUID", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "BARD", "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Transforme une cible en une nouvelle forme de bête de FP/niveau au plus égal au FP/niveau de la cible.",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -8678,7 +9021,7 @@
     },
     "Métamorphose de groupe" : {
       "BBE" : "Métamorphose de masse",
-      "Classes" : [ "BARD", "MAGICIAN" ],
+      "Classes" : [ "BARD", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Transforme jusqu'à 10 créatures en nouvelles formes de bêtes de FP/niveau au plus égal au FP/niveau de la cible.",
       "Incantation" : "1 action",
       "Level" : 9,
@@ -8689,7 +9032,7 @@
     },
     "Métamorphose suprême" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Transforme une créature ou un objet en une nouvelle forme (créature <-> objet) de FP/niv au plus égal au FP/niv de la créa",
       "Incantation" : "1 action",
       "Level" : 9,
@@ -8700,7 +9043,7 @@
     },
     "Nappe de brouillard" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "PROWLER" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "PROWLER" ],
       "Description" : "Rend la visibilité nulle dans une sphère de 6 m de rayon (+6 m/niv).",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -8711,7 +9054,7 @@
     },
     "Non-détection" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "MAGICIAN", "PROWLER" ],
+      "Classes" : [ "BARD", "MAGICIAN", "ARCANE_SWINDLER", "PROWLER" ],
       "Description" : "Protège une créature ou un objet de toute divination ou détection magique.",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -8722,7 +9065,7 @@
     },
     "Nuage incendiaire" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures dans une sphère de 6 m de rayon doivent réussir un JdS de Dex. ou subir 10d8 dégâts de feu.",
       "Incantation" : "1 action",
       "Level" : 8,
@@ -8733,7 +9076,7 @@
     },
     "Nuage mortel" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures dans une sphère de 6 m de rayon doivent réussir un JdS de Con. ou subir 5d8 dégâts de poison (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 5,
@@ -8744,7 +9087,7 @@
     },
     "Nuage puant" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures dans une sphère de 6 m de rayon doivent réussir un JdS de Con. ou être prises de nausée et perdre leur action.",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -8755,7 +9098,7 @@
     },
     "Nuée de boules de neige de Snilloc" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures dans une sphère de 1,50 m de rayon doivent réussir un JdS de Dex. ou subir 3d6 dégâts de froid (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -8766,7 +9109,7 @@
     },
     "Nuée de dagues" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Les créatures dans un cube de 1,50 m subissent automatiquement 4d4 dégâts tranchants (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -8777,7 +9120,7 @@
     },
     "Nuée de météores" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures dans un rayon de 12 m doivent réussir un JdS de Dex. ou subir 20d6 dégâts de feu et 20d6 dégâts contondants.",
       "Incantation" : "1 action",
       "Level" : 9,
@@ -8788,7 +9131,7 @@
     },
     "Oeil magique" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée un oeil invisible avec vision dans le noir qui envoie au lanceur l'image mentale de ce qu'il voit.",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -8810,7 +9153,7 @@
     },
     "Onde de choc" : {
       "BBE" : "Vague tonnante",
-      "Classes" : [ "BARD", "DRUID", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "BARD", "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures dans un cube de 4,50 m doivent réussir un JdS de Con. ou subir 2d8 dégâts de tonnerre (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -8821,7 +9164,7 @@
     },
     "Orbe chromatique" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Si l'attaque avec un sort touche, inflige 3d8 dégâts d'un type préalablement déterminé (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -8854,7 +9197,7 @@
     },
     "Pas brumeux" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Le lanceur est téléporté jusqu'à 9 mètres.",
       "Incantation" : "1 action bonus",
       "Level" : 2,
@@ -8865,7 +9208,7 @@
     },
     "Pas de tonnerre" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Le lanceur se téleporte et les créatures dans un rayon de 3 m doivent réussir un JdS de Con. ou subir 3d10 dégâts de tonnerre.",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -8876,7 +9219,7 @@
     },
     "Pas lointain" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Téléporte le lanceur à 18 m à chaque round par une action bonus.",
       "Incantation" : "1 action bonus",
       "Level" : 5,
@@ -8909,7 +9252,7 @@
     },
     "Passe-muraille" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Ouvre un passage de 1,50 x 2,50 x 6 m à travers de la pierre, du bois ou du plâtre.",
       "Incantation" : "1 action",
       "Level" : 5,
@@ -8920,7 +9263,7 @@
     },
     "Pattes d'araignée" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible peut se déplacer le long de surfaces verticales tout en laissant ses mains libres et gagne une vitesse d'escalade.",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -8942,7 +9285,7 @@
     },
     "Peau de pierre" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "PROWLER" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "PROWLER" ],
       "Description" : "La cible obtient la résistante aux dégâts non magiques contondants, perforants et tranchants.",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -8953,7 +9296,7 @@
     },
     "Perturbations synaptiques" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Les créatures dans un rayon de 6 m doivent réussir un JdS d'Int. ou subir 8d6 dégâts psychiques.",
       "Incantation" : "1 action",
       "Level" : 5,
@@ -8964,7 +9307,7 @@
     },
     "Petite hutte de Léomund" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "MAGICIAN" ],
+      "Classes" : [ "BARD", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée un dôme de 3 m de rayon qui peut abriter et protéger 9 créatures de taille M avec le lanceur.",
       "Incantation" : "1 minute",
       "Level" : 3,
@@ -8975,7 +9318,7 @@
     },
     "Peur" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Les créatures dans un cône de 9 m doivent réussir un JdS de Sag. ou lâcher ce qu'elles tiennent, être effrayées et s'enfuir.",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -8997,7 +9340,7 @@
     },
     "Poigne terreuse de Maximilien" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "La cible doit réussir un JdS de For. ou subir 2d6 dégâts contondants et être entravée.",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -9008,7 +9351,7 @@
     },
     "Poigne électrique" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Si l'attaque avec un sort touche, inflige 1d8 dégâts de foudre (dégâts/niv) et la cible ne peut pas prendre de réaction.",
       "Incantation" : "1 action",
       "Level" : 0,
@@ -9019,7 +9362,7 @@
     },
     "Portail" : {
       "BBE" : "",
-      "Classes" : [ "CLERK", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "CLERK", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée un portail vers un autre plan. Permet aussi d'invoquer une créature d'un autre plan.",
       "Incantation" : "1 action",
       "Level" : 9,
@@ -9030,7 +9373,7 @@
     },
     "Portail magique" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Crée 2 portails séparés de 150 m max et permet de passer de l'un à l'autre de manière transparente.",
       "Incantation" : "1 action",
       "Level" : 6,
@@ -9041,7 +9384,7 @@
     },
     "Porte dimensionnelle" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Le lanceur et une autre créature de même taille sont téléportés à un maximum de 150 mètres.",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -9052,7 +9395,7 @@
     },
     "Prestidigitation" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Tour de magie (effet sensoriel, allume une torche, nettoie un objet, réchauffe, fait apparaître un symbole, crée une babiole).",
       "Incantation" : "1 action",
       "Level" : 0,
@@ -9063,7 +9406,7 @@
     },
     "Prison mentale" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible doit réussir un JdS d'Int. ou subir 5d10 dégâts psychiques et se croire entouré par des flammes ou autre danger.",
       "Incantation" : "1 action",
       "Level" : 6,
@@ -9096,7 +9439,7 @@
     },
     "Projectile magique" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "3 projectiles infligent automatiquement 1d4+1 dégâts de force chacun à une ou plusieurs créatures (+1 projectile/niv).",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -9107,7 +9450,7 @@
     },
     "Projection astrale" : {
       "BBE" : "",
-      "Classes" : [ "CLERK", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "CLERK", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Le lanceur et jusqu'à 8 créatures sont projetés dans le plan Astral.",
       "Incantation" : "1 heure",
       "Level" : 9,
@@ -9118,7 +9461,7 @@
     },
     "Projection d'image" : {
       "BBE" : "Image projetée",
-      "Classes" : [ "BARD", "MAGICIAN" ],
+      "Classes" : [ "BARD", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée un double du lanceur qui l'imite, se déplace et émet des sons. Le lanceur peut voir et entendre à travers ce double.",
       "Incantation" : "1 action",
       "Level" : 7,
@@ -9140,7 +9483,7 @@
     },
     "Protection contre le mal et le bien" : {
       "BBE" : "",
-      "Classes" : [ "CLERK", "MAGICIAN", "PALADIN", "WIZARD" ],
+      "Classes" : [ "CLERK", "MAGICIAN", "ARCANE_SWINDLER", "PALADIN", "WIZARD" ],
       "Description" : "La cible est protégée (désavantage à l'attaque) des aberrations, célestes, élémentaires, fées, fiélons et morts-vivants.",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -9162,7 +9505,7 @@
     },
     "Protection contre les armes" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Le lanceur obtient la résistance contre les dégâts contondants, tranchants et perforants infligés par des attaques avec arme.",
       "Incantation" : "1 action",
       "Level" : 0,
@@ -9173,7 +9516,7 @@
     },
     "Protection contre une énergie" : {
       "BBE" : "Protection contre l'énergie",
-      "Classes" : [ "CLERK", "DRUID", "SORCERER", "MAGICIAN", "PROWLER" ],
+      "Classes" : [ "CLERK", "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "PROWLER" ],
       "Description" : "La cible obtient la résistance à un type de dégâts (acide, froid, feu, foudre ou tonnerre).",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -9195,7 +9538,7 @@
     },
     "Protections et sceaux" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "MAGICIAN" ],
+      "Classes" : [ "BARD", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée une défense magique qui protège un carré de 15 m. Possibilité de définir un mot de passe pour immuniser des individus.",
       "Incantation" : "10 minutes",
       "Level" : 6,
@@ -9206,7 +9549,7 @@
     },
     "Prémonition" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "DRUID", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "DRUID", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "1 créature voit son futur proche, ne peut être surprise et a l'avantage à ses jets. Les attaque contre elle ont un désavantage.",
       "Incantation" : "1 minute",
       "Level" : 9,
@@ -9217,7 +9560,7 @@
     },
     "Préservation des morts" : {
       "BBE" : "Doux repos",
-      "Classes" : [ "CLERK", "MAGICIAN" ],
+      "Classes" : [ "CLERK", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Protège un cadavre du pourrissement ou de devenir un mort-vivant.",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -9228,7 +9571,7 @@
     },
     "Prévoyance" : {
       "BBE" : "Contingence",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Conditionne l'activation d'un sort de niveau 5 ou inférieur qui peut cibler le lanceur.",
       "Incantation" : "10 minutes",
       "Level" : 6,
@@ -9250,7 +9593,7 @@
     },
     "Pyrotechnie" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Cible des flammes à 18 m et les fait exploser (JdS de Con. ou aveuglée) ou échapper une épaisse fumée (visibilité nulle).",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -9261,7 +9604,7 @@
     },
     "Pétrification" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible à 18 m doit réussir un JdS de Con. ou être entravée, voire pétrifiée après 3 échecs.",
       "Incantation" : "1 action",
       "Level" : 6,
@@ -9272,7 +9615,7 @@
     },
     "Rafale de vent" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Contrôle l'air afin de déplacer des objets ou des créatures (taille M max) ou de créer des effets sensoriels inoffensifs.",
       "Incantation" : "1 action",
       "Level" : 0,
@@ -9294,7 +9637,7 @@
     },
     "Rayon affaiblissant" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Si l'attaque avec un sort touche, la cible n'inflige que la moitié des dégâts avec une arme qui utilise la Force (JdS de Con).",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -9305,7 +9648,7 @@
     },
     "Rayon ardent" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Si les attaques touchent, 3 rayons infligent chacun 2d6 dégâts de feu (+1 rayon/niv).",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -9316,7 +9659,7 @@
     },
     "Rayon de givre" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Si l'attaque avec un sort touche, inflige 1d8 dégâts de froid (dégâts/niv) et la vitesse de la cible est réduite de 3 m.",
       "Incantation" : "1 action",
       "Level" : 0,
@@ -9338,7 +9681,7 @@
     },
     "Rayon de soleil" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures sur une ligne de 1,50 x 18 m doivent réussir un JdS de Con. ou subir 6d8 radiants et être aveuglées.",
       "Incantation" : "1 action",
       "Level" : 6,
@@ -9349,7 +9692,7 @@
     },
     "Rayon empoisonné" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Si l'attaque touche, inflige 2d8 dégâts de poison (dégâts/niv) et la cible peut être empoisonnée (JdS de Con).",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -9360,7 +9703,7 @@
     },
     "Rayonnement écoeurant" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Les créatures dans un rayon de 9 m doivent réussir un JdS de Con. ou subir 4d10 dégâts radiants et un niveau d'épuisement.",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -9371,7 +9714,7 @@
     },
     "Rayons prismatiques" : {
       "BBE" : "Embruns prismatiques",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures dans un cône de 18 m doivent réussir un JdS de Dex. ou subir 10d6 dégâts d'un type déterminé au hasard.",
       "Incantation" : "1 action",
       "Level" : 7,
@@ -9382,7 +9725,7 @@
     },
     "Raz-de-marée" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures dans une zone de 9 x 3 x 3 m doivent réussir un JdS de Dex. ou subir 4d8 dégâts contondants et tomber à terre.",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -9393,7 +9736,7 @@
     },
     "Repli expéditif" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Le lanceur peut effectuer l'action Foncer en utilisant une action bonus.",
       "Incantation" : "1 action bonus",
       "Level" : 1,
@@ -9415,7 +9758,7 @@
     },
     "Respiration aquatique" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "PROWLER" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "PROWLER" ],
       "Description" : "Jusqu'à 10 créatures obtiennent la capacité de respirer sous l'eau.",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -9481,7 +9824,7 @@
     },
     "Réparation" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "CLERK", "DRUID", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "BARD", "CLERK", "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Répare fissure, déchirure, fêlure d'un objet (maillon de chaîne cassé, clé brisée, accroc sur un manteau, fuite d'une gourde).",
       "Incantation" : "1 minute",
       "Level" : 0,
@@ -9492,7 +9835,7 @@
     },
     "Répulsion-Attirance" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "MAGICIAN" ],
+      "Classes" : [ "DRUID", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Attire ou répulse (JdS de Sag. pour ne pas être attiré ou effrayé) une sorte de créature désignée dans un rayon de 18 m.",
       "Incantation" : "1 heure",
       "Level" : 8,
@@ -9536,7 +9879,7 @@
     },
     "Rêve" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Façonne les rêves d'une créature qui dort et peut faire subir 3d6 dégâts psychiques en cas d'échec à un JdS de Sag.",
       "Incantation" : "1 minute",
       "Level" : 5,
@@ -9547,7 +9890,7 @@
     },
     "Sacre de la glace" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Les créatures dans un cône de 4,50 m doivent réussir un JdS de Con. ou subir 4d6 dégâts de froid. Immunité et résistance.",
       "Incantation" : "1 action",
       "Level" : 6,
@@ -9558,7 +9901,7 @@
     },
     "Sacre de la pierre" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Les créatures dans un rayon de 4,50 m doivent réussir un JdS de Dex. ou tomber à terre. Résistance et traverser la terre/pierre.",
       "Incantation" : "1 action",
       "Level" : 6,
@@ -9569,7 +9912,7 @@
     },
     "Sacre des flammes" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Les créatures sur une ligne de 4,50 m doivent réussir un JdS de Dex. ou subir 4d8 dégâts de feu. Immunité et résistance.",
       "Incantation" : "1 action",
       "Level" : 6,
@@ -9580,7 +9923,7 @@
     },
     "Sacre du vent" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Les créatures dans un cube de 4,50 m doivent réussir un JdS de Con. ou subir 2d10 dégâts contondants. Vitesse de vol 18 m.",
       "Incantation" : "1 action",
       "Level" : 6,
@@ -9613,7 +9956,7 @@
     },
     "Sanctuaire privé de Mordenkainen" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée un cube sécurisé jusqu'à 30 m de côté. Le type de protection est à choisir (+30 m de côté/niv).",
       "Incantation" : "10 minutes",
       "Level" : 4,
@@ -9624,7 +9967,7 @@
     },
     "Saut" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "PROWLER" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "PROWLER" ],
       "Description" : "La cible obtient une distance de saut multipliée par 3.",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -9646,7 +9989,7 @@
     },
     "Scrutation" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "CLERK", "DRUID", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "CLERK", "DRUID", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Permet de voir et entendre une créature spécifique (on peut aussi cibler un lieu) sur le même plan (JdS de Sag).",
       "Incantation" : "10 minutes",
       "Level" : 5,
@@ -9657,7 +10000,7 @@
     },
     "Secousse sismique" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "DRUID", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "BARD", "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures dans un rayon de 3m doivent réussir un JdS de Dex. ou subir 1d6 dégâts contondants et tomber à terre (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -9701,7 +10044,7 @@
     },
     "Serviteur invisible" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Crée un serviteur invisible qui exécute des tâches simples (rapporter qq chose, nettoyer, entretenir un feu, servir, etc).",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -9712,7 +10055,7 @@
     },
     "Serviteur miniature" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Transforme un objet de taille TP en une créature avec bras et jambes qui obéit au lanceur (+2 objets/niv).",
       "Incantation" : "1 minute",
       "Level" : 3,
@@ -9723,7 +10066,7 @@
     },
     "Sieste" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "3 créatures consentantes tombent inconcientes et bénéficient d'un repos court (+1 créature/niv).",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -9745,7 +10088,7 @@
     },
     "Simulacre" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée un double d'une bête ou d'un humanoïde avec les mêmes capacités, la moitié des pv et sans équipement.",
       "Incantation" : "12 heures",
       "Level" : 7,
@@ -9756,7 +10099,7 @@
     },
     "Simulacre de vie" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Le lanceur gagne 1d4+4 pv temporaires (+5 pv/niv).",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -9789,7 +10132,7 @@
     },
     "Sommeil" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "5d8 pv de créatures s'endorment, par ordre croissant de leurs pv actuels (+2d8 pv/niv).",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -9800,7 +10143,7 @@
     },
     "Souffle du dragon" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Émet un cône de 4,50 m qui inflige 3d6 dégâts d'acide, froid, feu, foudre ou poison en cas d'échec à un JdS de Dex (dégâts/niv).",
       "Incantation" : "1 action bonus",
       "Level" : 2,
@@ -9811,7 +10154,7 @@
     },
     "Souhait" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Duplique un sort de niveau 8 ou inférieur sans composantes, ou crée un autre effet à la discrétion du MD.",
       "Incantation" : "1 action",
       "Level" : 9,
@@ -9822,7 +10165,7 @@
     },
     "Sphère aqueuse" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Jusqu'à 4 créatures de taille M ou 1 de taille G dans un rayon de 3 m doivent réussir un JdS de For. ou être entravées.",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -9833,7 +10176,7 @@
     },
     "Sphère de feu" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "MAGICIAN" ],
+      "Classes" : [ "DRUID", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures à 3 m d'une sphère de 3 m de diamètre doivent réussir un JdS de Dex. ou subir 2d6 dégâts de feu (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -9844,7 +10187,7 @@
     },
     "Sphère de tempête" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures dans une sphère de 6 m de rayon doivent réussir un JdS de For. ou subir 2d6 dégâts contondants (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -9855,7 +10198,7 @@
     },
     "Sphère de vitriol" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures à 6 m doivent réussir un JdS de Dex. ou subir 10d4 dégâts d'acide (dégâts/niv) puis 5d4 dégâts d'acide à son tour.",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -9866,7 +10209,7 @@
     },
     "Sphère glaciale d'Otiluke" : {
       "BBE" : "Sphère glacée d'Otiluke",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures dans une sphère de 18 m de rayon doivent réussir un JdS de Con. ou subir 10d6 dégâts de froid (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 6,
@@ -9877,7 +10220,7 @@
     },
     "Sphère résiliente d'Otiluke" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "La cible de taille G ou inférieure doit réussir un JdS de Dex. ou être emprisonnée pour la durée du sort.",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -9899,7 +10242,7 @@
     },
     "Suggestion" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible doit réussir un JdS de Sag. ou suivre la suggestion que lui donne le lanceur en une ou deux phrases.",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -9910,7 +10253,7 @@
     },
     "Suggestion de groupe" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Jusqu'à 12 cibles doivent réussir un JdS de Sag. ou suivre la suggestion que leur donne le lanceur (durée/niv).",
       "Incantation" : "1 action",
       "Level" : 6,
@@ -9921,7 +10264,7 @@
     },
     "Symbole" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "CLERK", "MAGICIAN" ],
+      "Classes" : [ "BARD", "CLERK", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Défini le déclencheur et l'effet d'un glyphe sur un objet (mort, discorde, peur, désespoir, démence, douleur, sommeil, etc).",
       "Incantation" : "1 minute",
       "Level" : 7,
@@ -9954,7 +10297,7 @@
     },
     "Tempête de grêle" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures dans un cylindre de 12 x 12 m doivent réussir un JdS de Dex. ou subir 2d8 dégâts contondants et 4d6 de froid.",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -9965,7 +10308,7 @@
     },
     "Tempête de neige" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures dans un cylindre de 12 x 6 m (visibilité nulle) doivent réussir un JdS de Dex. ou tomber à terre.",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -9998,7 +10341,7 @@
     },
     "Tentacules noirs d'Evard" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures dans un carré de 6 m doivent réussir un JdS de Dex. ou subir 3d6 dégâts contondants et être entravées.",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -10009,7 +10352,7 @@
     },
     "Terraformage" : {
       "BBE" : "Déplacer la terre",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Façonne la terre, le sable ou l'argile, mais pas la pierre (élever, abaisser, aplatir, etc) d'un carré de 12 m en 10 min.",
       "Incantation" : "1 action",
       "Level" : 6,
@@ -10020,7 +10363,7 @@
     },
     "Terrain hallucinatoire" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "DRUID", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "DRUID", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Fait paraître un terrain naturel pour un autre type (par exemple une route devient un marais ou une crevasse).",
       "Incantation" : "10 minutes",
       "Level" : 4,
@@ -10031,7 +10374,7 @@
     },
     "Texte illusoire" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Rédige un message secret qui ne peut être lu que par une cible désignée ou une créature qui possède vision véritable.",
       "Incantation" : "1 minute",
       "Level" : 1,
@@ -10053,7 +10396,7 @@
     },
     "Toile d'araignée" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée un cube de 6 m de toiles d'araignées collantes (terrain difficile) qui peuvent entraver des créatures (JdS de Dex).",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -10064,7 +10407,7 @@
     },
     "Toucher du vampire" : {
       "BBE" : "Caresse du vampire",
-      "Classes" : [ "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Si l'attaque avec un sort touche, inflige 3d6 dégâts nécrotiques (dégâts/niv) et le lanceur récupère 50% de ces pv .",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -10075,7 +10418,7 @@
     },
     "Tourbillon" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures dans un cylindre de 3 x 9 m doivent réussir un JdS de Dex. ou subir 10d6 dégâts contondants.",
       "Incantation" : "1 action",
       "Level" : 7,
@@ -10086,7 +10429,7 @@
     },
     "Tourbillon de poussière" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures dans un rayon de 1,50 m doivent réussir un JdS de For. ou subir 1d8 dégâts contondants (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -10097,7 +10440,7 @@
     },
     "Trait de feu" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Si l'attaque avec un sort touche, inflige 1d10 dégâts de feu (dégâts/niv). Un objet peut prendre feu.",
       "Incantation" : "1 action",
       "Level" : 0,
@@ -10108,7 +10451,7 @@
     },
     "Transfert de vie" : {
       "BBE" : "",
-      "Classes" : [ "CLERK", "MAGICIAN" ],
+      "Classes" : [ "CLERK", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Le lanceur subit 4d8 dégâts nécrotiques et une autre créature récupère 2 fois le montant (+1d8 pv/niv).",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -10119,7 +10462,7 @@
     },
     "Transformation de Tenser" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "La lanceur gagne 50 pv, l'avantage aux jets d'attaque, 2d12 extra de dégâts de force, des maîtrises martiales et deux attaques.",
       "Incantation" : "1 action",
       "Level" : 6,
@@ -10130,7 +10473,7 @@
     },
     "Transmutation de la pierre" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "MAGICIAN" ],
+      "Classes" : [ "DRUID", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Transforme un cube de 12 m de roche en boue ou de boue en roche.",
       "Incantation" : "1 action",
       "Level" : 5,
@@ -10174,7 +10517,7 @@
     },
     "Télékinésie" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Déplace une créature (taille TG max) ou un objet (jusqu'à 500 kg) par la pensée en cas de jet d'opposition réussi.",
       "Incantation" : "1 action",
       "Level" : 5,
@@ -10185,7 +10528,7 @@
     },
     "Télépathie" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Communique par télépathie avec une créature connue et consentante sur le même plan d'existence.",
       "Incantation" : "1 action",
       "Level" : 8,
@@ -10196,7 +10539,7 @@
     },
     "Téléportation" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Le lanceur et 8 créatures sont téléportés n'importe où sur le même plan. Risque d'échec selon la familiarité de la destination.",
       "Incantation" : "1 action",
       "Level" : 7,
@@ -10207,7 +10550,7 @@
     },
     "Ténèbres" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Remplit une sphère de 4,50 m de rayon de ténèbres magiques.",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -10218,7 +10561,7 @@
     },
     "Ténèbres oppressantes" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Les créatures dans une sphère de ténèbres de 18 m de rayon doivent réussir un JdS de Sag. ou subir 8d8 dégâts psychiques.",
       "Incantation" : "1 action",
       "Level" : 8,
@@ -10229,7 +10572,7 @@
     },
     "Urne magique" : {
       "BBE" : "Possession",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Le lanceur projette son âme dans une urne pour ensuite retourner dans son corps ou posséder le corps d'un humanoïde.",
       "Incantation" : "1 minute",
       "Level" : 6,
@@ -10251,7 +10594,7 @@
     },
     "Vaporisation de poison" : {
       "BBE" : "Bouffée de poison",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible doit réussir un JdS de Con. ou subir 1d12 dégâts de poison (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 0,
@@ -10262,7 +10605,7 @@
     },
     "Vent protecteur" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "DRUID", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "BARD", "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée un vent fort (30 km/h) dans un rayon de 3 m (rend sourd, éteint les flammes, dissipe le gaz, terrain difficile, etc).",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -10273,7 +10616,7 @@
     },
     "Verrou magique" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN" ],
+      "Classes" : [ "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Verrouille un objet (porte, fenêtre, coffre, etc) et le lanceur peut définir un mot de passe pour supprimer le sort 1 minute.",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -10284,7 +10627,7 @@
     },
     "Vision dans le noir" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "PROWLER" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "PROWLER" ],
       "Description" : "La cible peut voir dans le noir à 18 mètres.",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -10295,7 +10638,7 @@
     },
     "Vision suprême" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "CLERK", "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "BARD", "CLERK", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible obtient vision véritable, voit les portes secrètes magiques et dans le plan éthéré.",
       "Incantation" : "1 action",
       "Level" : 6,
@@ -10306,7 +10649,7 @@
     },
     "Voir l'invisible" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Le lanceur voit les créatures ou objets invisibles, et dans le plan éthéré.",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -10317,7 +10660,7 @@
     },
     "Vol" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible obtient une vitesse de vol de 18 mètres (+1 créature/niv).",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -10339,7 +10682,7 @@
     },
     "Éclair" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures sur une ligne de 30 x 1,50 m doivent réussir un JdS de Dex. ou subir 8d6 dégâts de foudre (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -10361,7 +10704,7 @@
     },
     "Éclair de sorcière" : {
       "BBE" : "Carreau ensorcelé",
-      "Classes" : [ "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "Si l'attaque avec un sort touche, inflige 1d12 dégâts de foudre (dégâts/niv) à chaque round.",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -10383,7 +10726,7 @@
     },
     "Éclat du soleil" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures dans un rayon de 18 m doivent réussir un JdS de Con. ou subir 12d6 dégâts radiants et être aveuglées 1 min.",
       "Incantation" : "1 action",
       "Level" : 8,
@@ -10394,7 +10737,7 @@
     },
     "Écrire dans le ciel" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "DRUID", "MAGICIAN" ],
+      "Classes" : [ "BARD", "DRUID", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Crée jusqu'à 10 mots dans les nuages.",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -10405,7 +10748,7 @@
     },
     "Énervation" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible doit réussir un JdS de Dex. ou subir 4d8 dégâts nécrotiques à chaque round (+1d8/niv).",
       "Incantation" : "1 action",
       "Level" : 5,
@@ -10416,7 +10759,7 @@
     },
     "Épine mentale" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "WIZARD" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "ARCANE_SWINDLER", "WIZARD" ],
       "Description" : "La cible doit réussir un JdS de Sag. ou subir 3d8 dégâts psychiques (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -10427,7 +10770,7 @@
     },
     "Épée de Mordenkainen" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "MAGICIAN" ],
+      "Classes" : [ "BARD", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Si l'attaque avec un sort touche, inflige 3d10 dégâts de force. L'épée peut se déplacer.",
       "Incantation" : "1 action",
       "Level" : 7,
@@ -10438,7 +10781,7 @@
     },
     "Éruption de terre" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "ARCANE_SWINDLER" ],
       "Description" : "Les créatures dans un cube de 6 m (terrain difficile) doivent réussir un JdS de Dex. ou subir 3d12 contondants (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 3,

@@ -68,9 +68,11 @@ class Home extends Component {
       character.Dexterity = 10;
       character.DistanceWeapon = "-";/**/
       character.Eyes = "";
+      character.FightStyles = [];/**/
       character.Hairs = "";
       character.Health = 4;
       character.Height = 0;
+      character.HiddenCapacities = [];/**/
       character.Historic = "ACOLYTE";
       character.History = "";
       character.HP = 8;

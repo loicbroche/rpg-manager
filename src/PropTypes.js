@@ -47,15 +47,36 @@ export const ClassPropType = PropTypes.shape({
     WeaponCategories: PropTypes.arrayOf(PropTypes.string),
     Weapons: PropTypes.arrayOf(PropTypes.string),
     ArmorCategories: PropTypes.arrayOf(PropTypes.string),
+    SpecialisationName: PropTypes.string.isRequired,
+    SpecialisationLevel: PropTypes.number.isRequired,
+    FightStyleLevel: PropTypes.number,
+})
+
+
+export const SpecialisationPropType = PropTypes.shape({
+    Code: PropTypes.string.isRequired,
+    Class: PropTypes.string.isRequired,
+    Name: PropTypes.string.isRequired,
+    ACBonus: PropTypes.number,
+    ACBonusArmor: PropTypes.bool
+})
+
+export const FightStylePropType = PropTypes.shape({
+    Code: PropTypes.string.isRequired,
+    Class: PropTypes.string.isRequired,
+    Name: PropTypes.string.isRequired,
+    ACBonus: PropTypes.number,
+    ACBonusArmor: PropTypes.bool
 })
 
 export const CapacityPropType = PropTypes.shape({
-    Capacities: PropTypes.string.isRequired,
+    Capacities: PropTypes.string,
     Specials: PropTypes.number,
     BonusAttack: PropTypes.string,
     Damages: PropTypes.number,
     MinorSpellsNb: PropTypes.number,
     SpellsNb: PropTypes.number,
+    BonusSpellsNb: PropTypes.string,
     Locations: PropTypes.arrayOf(PropTypes.number),
     Invocations: PropTypes.string,
     ArmorlessSpeed: PropTypes.number
@@ -248,6 +269,7 @@ export const CharacterPropType = PropTypes.shape({
     SubRace: PropTypes.string.isRequired,
     Class: PropTypes.string.isRequired,
     Specialisation: PropTypes.string,
+    FightStyles: PropTypes.arrayOf(PropTypes.string),
     ChargeCapacity: PropTypes.number.isRequired,
     Skills: PropTypes.arrayOf(PropTypes.string),
     MasterArmors: PropTypes.arrayOf(PropTypes.string),
@@ -291,5 +313,6 @@ export const CharacterPropType = PropTypes.shape({
     SpellsLocations: PropTypes.arrayOf(PropTypes.number),
     MinorSpells: PropTypes.arrayOf(PropTypes.string),
     Spells: PropTypes.arrayOf(PropTypes.string),
-    Notes: PropTypes.string
+    Notes: PropTypes.string,
+    hiddenCapacities: PropTypes.arrayOf(PropTypes.string)
 })

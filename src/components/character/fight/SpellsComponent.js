@@ -3,12 +3,14 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
+import { SPELL_MAX_LEVEL } from 'rules/Spells.rules'
+
 import './SpellsComponent.css'
 
 class SpellsComponent extends Component {
 
   render() {
-    const {spellsLocations, classId, level, capacities} = this.props;
+    const {capacities, spells, spellsLocations, classId, specialisationId, level} = this.props;
     const capacity = capacities && classId && level && capacities[classId+"-"+level];
     const maxSpells = capacity && capacity.Locations;
     const spellsLocationMax = maxSpells && Math.max(...Object.keys(maxSpells));
@@ -24,9 +26,17 @@ class SpellsComponent extends Component {
       spellsPoints[location] = locationPoints;
     }
 
+    const classAvailableSpells = spells && Object.values(spells).filter((spell) => spell.Classes.includes(classId) || spell.Classes.includes(specialisationId) );
+    let learnableSpellsNb = 0;
+    for(let i = 0; i <= SPELL_MAX_LEVEL; i++) {
+      const levelSpells = classAvailableSpells && classAvailableSpells.filter((spell) => spell.Level === i && capacity && capacity.Locations && (i === 0 || capacity.Locations[spell.Level] >= 1));
+      learnableSpellsNb += levelSpells?levelSpells.length:0;
+    }
+
     return (
       <div className="spellsComponent">
-          { Object.entries(spellsPoints).map(([location, locationPoints]) => {
+          { learnableSpellsNb > 0 &&
+            Object.entries(spellsPoints).map(([location, locationPoints]) => {
               const locationImage = require(`images/spells/${location}.png`);
               return (maxSpells && maxSpells[location] > 0 &&
               <div className="location" key={location}>
@@ -69,6 +79,7 @@ class SpellsComponent extends Component {
 SpellsComponent.propTypes = {
   spellsLocations: PropTypes.arrayOf(PropTypes.number).isRequired,
   classId: PropTypes.string.isRequired,
+  specialisationId: PropTypes.string,
   level: PropTypes.number,
   onValChange: PropTypes.func.isRequired
 }
@@ -78,6 +89,7 @@ SpellsComponent.defaultProps = {
 }
 
 const mapStateToProps = (state) => ({
-  capacities: state.referential.capacities
+  capacities: state.referential.capacities,
+  spells: state.referential.spells
 })
 export default connect(mapStateToProps)(SpellsComponent)

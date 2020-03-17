@@ -86,6 +86,7 @@ class ClassSelector extends Component {
 ClassSelector.propTypes = {
   classId: PropTypes.string,
   specialisationId: PropTypes.string,
+  fightStyleIds: PropTypes.arrayOf(PropTypes.string),
   XP: PropTypes.number,
   onChange: PropTypes.func.isRequired,
   onSpecialisationChange: PropTypes.func.isRequired
@@ -94,6 +95,7 @@ ClassSelector.propTypes = {
 const mapStateToProps = (state) => ({
   classes: state.referential.classes,
   specialisations: state.referential.specialisations,
+  fightStyles: state.referential.fightStyles,
   levels: state.referential.levels
 })
 export default connect(mapStateToProps)(ClassSelector)

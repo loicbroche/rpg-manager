@@ -57,7 +57,10 @@ export const DATA_MODEL = {
                 ARMOR_CATEGORIES: { name: "ArmorCategories", optional: true },
                 AC_BONUS: { name: "ACBonus" },
                 AC_BONUS_ARMOR: { name: "ACBonusArmor", optional: true },
-                AC_BONUS_SHIELD: { name: "ACBonusShield", optional: true }
+                AC_BONUS_SHIELD: { name: "ACBonusShield", optional: true },
+                SPECIALISATION_NAME: { name: "SpecialisationName" },
+                SPECIALISATION_LEVEL: { name: "SpecialisationLevel" },
+                FIGHT_STYLE_LEVEL: { name: "FightStyleLevel", optional: true }
             }
         },
         SPECIALISATIONS:
@@ -71,16 +74,28 @@ export const DATA_MODEL = {
                 AC_BONUS_ARMOR: { name: "ACBonusArmor", optional: true }
             }
         },
+        FIGHT_STYLES:
+        {
+            name: 'FightStyles',
+            columns: {
+                CODE: { name: "Code" },
+                CLASS: { name: "Class" },
+                NAME: { name: "Name" },
+                AC_BONUS: { name: "ACBonus" },
+                AC_BONUS_ARMOR: { name: "ACBonusArmor", optional: true }
+            }
+        },
         CAPACITIES:
         {
             name: 'Capacities',
             columns: {
-                CAPACITIES: { name: "Capacities" },
+                CAPACITIES: { name: "Capacities", optional: true },
                 SPECIALS: { name: "Specials", optional: true },
                 BONUS_ATTACK: { name: "BonusAttack", optional: true },
                 DAMAGES: { name: "Damages", optional: true },
                 MINOR_SPELLS_NB: { name: "MinorSpellsNb", optional: true },
                 SPELLS_NB: { name: "SpellsNb", optional: true },
+                BONUS_SPELLS_NB: { name: "BonusSpellsNb", optional: true },
                 LOCATIONS: { name: "Locations", optional: true },
                 INVOCATIONS: { name: "Invocations", optional: true },
                 ARMORLESS_SPEED: { name: "ArmorlessSpeed", optional: true }
@@ -364,6 +379,7 @@ export const DATA_MODEL = {
             GENDER: { name: "Gender" },
             CLASS: { name: "Class" },
             SPECIALISATION: { name: "Specialisation", optional: true },
+            FIGHT_STYLES: { name: "FightStyles", optional: true },
             CHARGE_CAPACITY: { name: "ChargeCapacity" },
             SKILLS: { name: "Skills", optional: true },
             MASTER_WEAPONS: { name: "MasterWeapons", optional: true },
@@ -409,7 +425,8 @@ export const DATA_MODEL = {
             SPELLS_LOCATIONS: { name: "SpellsLocations", optional: true },
             MINOR_SPELLS: { name: "MinorSpells", optional: true },
             SPELLS: { name: "Spells", optional: true },
-            NOTES: { name: "Notes", optional: true }
+            NOTES: { name: "Notes", optional: true },
+            HIDDEN_CAPACITIES: { name: "HiddenCapacities", optional: true }
         }
     }
 }

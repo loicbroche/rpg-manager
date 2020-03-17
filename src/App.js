@@ -45,6 +45,13 @@ class App extends Component {
       this.props.dispatch(action);
     });
 
+    this.fightStylesRef = database.ref(DATA_MODEL.FIGHT_STYLES.name);
+    this.fightStylesRef.once('value', snapshot => {
+      //referentialReducer: state.referential.fightStyles
+      const action = { type: ActionTypes.REFERENTIAL.LOAD_FIGHT_STYLES, value: objectToArray(snapshot.val()) }
+      this.props.dispatch(action);
+    });
+
     this.capacitiesRef = database.ref(DATA_MODEL.CAPACITIES.name);
     this.capacitiesRef.once('value', snapshot => {
       //referentialReducer: state.referential.capacities
@@ -58,7 +65,6 @@ class App extends Component {
       const action = { type: ActionTypes.REFERENTIAL.LOAD_SPECIALISATION_CAPACITIES, value: objectToArray(snapshot.val()) }
       this.props.dispatch(action);
     });
-
 
     this.historicsRef = database.ref(DATA_MODEL.HISTORICS.name);
     this.historicsRef.once('value', snapshot => {

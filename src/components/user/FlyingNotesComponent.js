@@ -9,6 +9,11 @@ const NAME_MAX_LENGTH = 10;
 const CONTENT_MAX_LENGTH = 10;
 const DESCRIPTION_MAX_LENGTH = 255;
 
+const showImage = require('images/show.png');
+const hiddenImage = require('images/hide.png');
+const repatriateImage = require('images/repatriate.png');
+const deleteImage = require('images/delete.png');
+
 class FlyingNotesComponent extends Component {
 
   constructor(props) {
@@ -41,10 +46,6 @@ class FlyingNotesComponent extends Component {
   render() {
     const { showNotes, creationMode } = this.state;
     const { notes } = this.props;
-    const showImage = require('images/show.png');
-    const hiddenImage = require('images/hide.png');
-    const repatriateImage = require('images/repatriate.png');
-    const deleteImage = require('images/delete.png');
 
     const title = showNotes?"Masquer les notes volantes":"Afficher les notes volantes";
     return ( 

@@ -47,6 +47,7 @@ class Character extends Component {
             Race: null,
             Class: null,
             Specialisation: null,
+            FightStyles: null,
             ChargeCapacity: null,
             MasterBonus: null,
             Skills: null,
@@ -132,9 +133,9 @@ class Character extends Component {
 
     render() {
         const { caracteristics, levels, races, subRaces, weapons, armors} = this.props;
-        const { Name, SubRace: subRaceId, Gender, Class: classId, Specialisation, Historic: historicId, History, Skills: masterSkills,
-                XP, HP, MaxHP, Specials, SpellsLocations, MinorSpells, Spells, Armor, Shield, Weapon, DistanceWeapon, MasterWeapons, MasterArmors, MasterObjects, Alterations,
-                Resistances, Saves, SaveAdvantages, Health, Strength, Notes, Money, Objects: characterObjects, SatchelObjects} = this.state.characterInfos;
+        const { Name, SubRace: subRaceId, Gender, Class: classId, Specialisation, FightStyles, Historic: historicId, History, Skills: masterSkills,
+                XP, HP, MaxHP, Specials, SpellsLocations, Armor, Shield, Weapon, DistanceWeapon, MasterWeapons, MasterArmors, MasterObjects, Alterations,
+                Resistances, Saves, SaveAdvantages, Health, Strength, Notes, Money, Objects: characterObjects, SatchelObjects, HiddenCapacities} = this.state.characterInfos;
         const { generalNotes, personnalNotes } = this.state;
 
         const caracteristicsBonus = caracteristics && Object.values(caracteristics).reduce((accum, caracteristic) => {
@@ -173,7 +174,7 @@ class Character extends Component {
                                         gender={Gender}
                                         onRaceChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SUB_RACE.name, value);}}
                                         onGenderChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.GENDER.name, value);}} />
-                        <ClassSelector  classId={classId} specialisationId={Specialisation} XP={XP}
+                        <ClassSelector  classId={classId} specialisationId={Specialisation} fightStyleIds={FightStyles} XP={XP}
                                         onChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.CLASS.name, value);}}
                                         onSpecialisationChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPECIALISATION.name, value);}} />
                         <HistoricSelector   historicId={historicId}
@@ -199,15 +200,16 @@ class Character extends Component {
                             <div className="special">
                                 <SpecialsComponent val={Specials} classId={classId} level={characterLevel}
                                                     onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPECIALS.name, value); }} />
-                                <SpecialCapacitiesComponent classId={classId} specialisationId={Specialisation} level={characterLevel} />
+                                <SpecialCapacitiesComponent classId={classId} specialisationId={Specialisation} level={characterLevel}
+                                                            hiddenCapacities={HiddenCapacities}
+                                                            onVisibilityClick={(capacityId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.HIDDEN_CAPACITIES.name, capacityId) }} />
                             </div>
                             <div className="status">
                                 <div className="points">
-                                    <SpellsComponent spellsLocations={SpellsLocations} classId={classId} level={characterLevel}
+                                    <SpellsComponent spellsLocations={SpellsLocations} classId={classId} specialisationId={Specialisation} level={characterLevel}
                                             onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPELLS_LOCATIONS.name, value); }} />
                                 </div>
-                                <SpellBookComponent classId={classId} level={characterLevel}
-                                                    knownMinorSpells={MinorSpells} knownSpells={Spells}
+                                <SpellBookComponent character={ this.state.characterInfos }
                                                     onMinorSpellClick={(spellId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.MINOR_SPELLS.name, spellId) }}
                                                     onSpellClick={(spellId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.SPELLS.name, spellId) }}/>
                             </div>
