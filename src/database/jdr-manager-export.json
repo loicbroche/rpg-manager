@@ -2812,85 +2812,85 @@
 	 "Code" : "WARRIOR_ARCHERY",
 	 "Class" : "WARRIOR",
 	 "Name" : "Archerie",
-	  "ACBonus" : 0
+	  "ACBonus" : 0, "DistanceBonus" : 2, "weaponBonus" : 0, "Description" : "Vous obtenez un bonus de +2 aux jets d'attaque avec une arme à distance."
 	  },
 	"WARRIOR_TWO_HAND_WEAPON":  {
 	 "Code" : "WARRIOR_TWO_HAND_WEAPON",
 	 "Class" : "WARRIOR",
 	 "Name" : "Arme à deux mains",
-	  "ACBonus" : 0
+	  "ACBonus" : 0, "DistanceBonus" : 0, "weaponBonus" : 0, "Description" : "Lorsque vous obtenez 1 ou 2 à un dé de dégâts lors d'une attaque que vous effectuez avec une arme de corps à corps que vous tenez avec vos deux mains, vous pouvez relancer le dé et obligatoirement prendre le nouveau résultat, même si celui-ci est un 1 ou un 2. L'arme doit avoir la propriété à deux mains ou polyvalente pour octroyer cet avantage."
 	  },
 	"WARRIOR_TWO_HAND_FIGHT":  {
 	 "Code" : "WARRIOR_TWO_HAND_FIGHT",
 	 "Class" : "WARRIOR",
 	 "Name" : "Combat à deux armes",
-	  "ACBonus" : 0
+	  "ACBonus" : 0, "DistanceBonus" : 0, "weaponBonus" : 0, "Description" : "Lorsque vous vous engagez dans un combat avec deux armes en mains, vous pouvez ajouter votre modificateur de caractéristique aux dégâts de la seconde attaque."
 	  },
 	"WARRIOR_DEFENSE":  {
 	 "Code" : "WARRIOR_DEFENSE",
 	 "Class" : "WARRIOR",
 	 "Name" : "Défense",
-	 "ACBonusArmor" : true, "ACBonus" : 1
+	 "ACBonusArmor" : true, "ACBonus" : 1, "DistanceBonus" : 0, "weaponBonus" : 0, "Description" : "Si vous portez une armure, vous obtenez un bonus de +1 à la CA."
 	  },
 	"WARRIOR_DUEL":  {
 	 "Code" : "WARRIOR_DUEL",
 	 "Class" : "WARRIOR",
 	 "Name" : "Duel",
-	  "ACBonus" : 0
+	  "ACBonus" : 0, "DistanceBonus" : 0, "weaponBonus" : 2, "Description" : "Lorsque vous attaquez avec une arme de corps à corps dans une main et aucune autre arme, vous obtenez un bonus de +2 aux dégâts avec cette arme."
 	  },
 	"WARRIOR_PROTECTION":  {
 	 "Code" : "WARRIOR_PROTECTION",
 	 "Class" : "WARRIOR",
 	 "Name" : "Protection",
-	  "ACBonus" : 0
+	  "ACBonus" : 0, "DistanceBonus" : 0, "weaponBonus" : 0, "Description" : "Quand une créature que vous pouvez voir attaque une cible autre que vous-même et qui se trouve à 1,50 mètre ou moins de vous, vous pouvez utiliser votre réaction pour imposer un désavantage à son jet d'attaque. Vous devez pour cela porter un bouclier."
 	  },
 	"PALADIN_TWO_HAND_WEAPON":  {
 	 "Code" : "PALADIN_TWO_HAND_WEAPON",
 	 "Class" : "PALADIN",
 	 "Name" : "Arme à deux mains",
-	  "ACBonus" : 0
+	  "ACBonus" : 0, "DistanceBonus" : 0, "weaponBonus" : 0, "Description" : "Lorsque vous obtenez 1 ou 2 à un dé de dégâts lors d'une attaque que vous effectuez avec une arme de corps à corps que vous tenez avec vos deux mains, vous pouvez relancer le dé et obligatoirement prendre le nouveau résultat, même si celui-ci est un 1 ou un 2. L'arme doit avoir la propriété à deux mains ou polyvalente pour octroyer cet avantage."
 	  },
 	"PALADIN_DEFENSE":  {
 	 "Code" : "PALADIN_DEFENSE",
 	 "Class" : "PALADIN",
 	 "Name" : "Défense",
-	 "ACBonusArmor" : true, "ACBonus" : 1
+	 "ACBonusArmor" : true, "ACBonus" : 1, "DistanceBonus" : 0, "weaponBonus" : 0, "Description" : "Si vous portez une armure, vous obtenez un bonus de +1 à la CA."
 	  },
 	"PALADIN_DUEL":  {
 	 "Code" : "PALADIN_DUEL",
 	 "Class" : "PALADIN",
 	 "Name" : "Duel",
-	  "ACBonus" : 0
+	  "ACBonus" : 0, "DistanceBonus" : 0, "weaponBonus" : 2, "Description" : "Lorsque vous attaquez avec une arme de corps à corps dans une main et aucune autre arme, vous obtenez un bonus de +2 aux dégâts avec cette arme."
 	  },
 	"PALADIN_PROTECTION":  {
 	 "Code" : "PALADIN_PROTECTION",
 	 "Class" : "PALADIN",
 	 "Name" : "Protection",
-	  "ACBonus" : 0
+	  "ACBonus" : 0, "DistanceBonus" : 0, "weaponBonus" : 0, "Description" : "Quand une créature que vous pouvez voir attaque une cible autre que vous-même et qui se trouve à 1,50 mètre ou moins de vous, vous pouvez utiliser votre réaction pour imposer un désavantage à son jet d'attaque. Vous devez pour cela porter un bouclier."
 	  },
 	"PROWLER_ARCHERY":  {
 	 "Code" : "PROWLER_ARCHERY",
 	 "Class" : "PROWLER",
 	 "Name" : "Archerie",
-	  "ACBonus" : 0
+	  "ACBonus" : 0, "DistanceBonus" : 2, "weaponBonus" : 0, "Description" : "Vous obtenez un bonus de +2 aux jets d'attaque avec une arme à distance."
 	  },
 	"PROWLER_TWO_HAND_FIGHT":  {
 	 "Code" : "PROWLER_TWO_HAND_FIGHT",
 	 "Class" : "PROWLER",
 	 "Name" : "Combat à deux armes",
-	  "ACBonus" : 0
+	  "ACBonus" : 0, "DistanceBonus" : 0, "weaponBonus" : 0, "Description" : "Lorsque vous vous engagez dans un combat avec deux armes en mains, vous pouvez ajouter votre modificateur de caractéristique aux dégâts de la seconde attaque."
 	  },
 	"PROWLER_DEFENSE":  {
 	 "Code" : "PROWLER_DEFENSE",
 	 "Class" : "PROWLER",
 	 "Name" : "Défense",
-	 "ACBonusArmor" : true, "ACBonus" : 1
+	 "ACBonusArmor" : true, "ACBonus" : 1, "DistanceBonus" : 0, "weaponBonus" : 0, "Description" : "Si vous portez une armure, vous obtenez un bonus de +1 à la CA."
 	  },
 	"PROWLER_DUEL":  {
 	 "Code" : "PROWLER_DUEL",
 	 "Class" : "PROWLER",
 	 "Name" : "Duel",
-	  "ACBonus" : 0
+	  "ACBonus" : 0, "DistanceBonus" : 0, "weaponBonus" : 2, "Description" : "Lorsque vous attaquez avec une arme de corps à corps dans une main et aucune autre arme, vous obtenez un bonus de +2 aux dégâts avec cette arme."
 	  }
   },
   "Characters" : {

@@ -13,13 +13,13 @@ const ACImage = require("images/AC.png");
 class ACComponent extends Component {
 
   render() {
-    const { races, subRaces, armors, classes, specialisations, levels, caracteristics, character} = this.props;
+    const { races, subRaces, armors, classes, specialisations, fightStyles, levels, caracteristics, character} = this.props;
     const subRace = subRaces && character && subRaces[character.SubRace];
     const race = subRace && races && races[subRace.Race];
     const characterClass = classes  && character && classes[character.Class];
     const armor = armors && character && armors[character.Armor];
     const shield = armors && character && armors[character.Shield];
-
+    const level = getLevelNumber(levels, character.XP);
     const armorBonus = (armor && armor.AC) || 0;
     const shieldBonus = (shield && shield.AC) || 0;
     const dexterityBonus = getArmorBonusAC(race, subRace, characterClass, armor, character && character[CA_CARACTERISTIC_NAME]);
@@ -40,20 +40,35 @@ class ACComponent extends Component {
       const specialisationLevel = characterClass && characterClass.SpecialisationLevel;
 
       const isValidSpecialisation = specialisation && character &&
-                                    specialisationLevel <= getLevelNumber(levels, character.XP)
+                                    specialisationLevel <= level
                                     && specialisation.Class === character.Class;
       const isValidArmorSpecialCondition = specialisation && ((!specialisation.ACBonusArmor && specialisation.ACBonusArmor !== false) || (specialisation.ACBonusArmor && armor) || (specialisation.ACBonusArmor === false && !armor)) 
       const specialisationBonus = (specialisation && isValidSpecialisation && isValidArmorSpecialCondition &&  specialisation.ACBonus) ||0;
 
-      const specialBonusValue = classBonusValue + specialisationBonus;
-      const specialBonusTitle = (!classBonusValue?"":`Bonus de classe ${characterClass && characterClass.Name} : Modificateur de ${classCaracteristicBonus.Name}`
-                                                          +`${(characterClass.ACBonusArmor)?"\nSi porte une armure":((characterClass.ACBonusArmor === false)?"\nSi ne porte pas d'armure":"")}`
-                                                          +`${(characterClass.ACBonusShield)?"\nSi porte un bouclier":((characterClass.ACBonusShield === false)?"\nSi ne porte pas de bouclier":"")}`)
-                                + ((!specialisation || !specialisationBonus)?"":`${classBonusValue?"\n":""}Bonus de spécialisation ${specialisation.Name} +${specialisation.ACBonus}`
-                                                          +`${(specialisation.ACBonusArmor)?"\nSi porte une armure":((specialisation.ACBonusArmor === false)?"\nSi ne porte pas d'armure":"")}`)
+      const selectedFightStyles = fightStyles && character && Object.values(fightStyles).filter((style) => (character.FightStyles && character.FightStyles.includes(style.Code)));
+      const fightStyleLevel = characterClass && characterClass.FightStyleLevel;
 
+      let fightStyleTitle = "";
+      const fightStyleBonus = (character
+                                && fightStyleLevel <= level
+                                && selectedFightStyles && selectedFightStyles.length > 0
+                                && selectedFightStyles.reduce((sum, fightStyle) => {
+                                        const isValidArmorFightStyleCondition = fightStyle && ((!fightStyle.ACBonusArmor && fightStyle.ACBonusArmor !== false) || (fightStyle.ACBonusArmor && armor) || (fightStyle.ACBonusArmor === false && !armor)) 
+                                        const bonus = (fightStyle.Class === character.Class && isValidArmorFightStyleCondition && (sum+fightStyle.ACBonus)) || sum;
+                                        fightStyleTitle += (!fightStyle.ACBonus?"":`${fightStyleTitle?"\n":""}Bonus de Style de combat ${fightStyle.Name} +${fightStyle.ACBonus}`
+                                                            +`${(fightStyle.ACBonusArmor)?"\nSi porte une armure":((fightStyle.ACBonusArmor === false)?"\nSi ne porte pas d'armure":"")}`)                                        
+                                        return bonus;
+                                    }, 0)
+                              ) || 0;
 
+    const specialBonusValue = classBonusValue + specialisationBonus + fightStyleBonus;
     const ac = CA_BASE + armorBonus + shieldBonus + specialBonusValue;
+    const specialBonusTitle = (!classBonusValue?"":`Bonus de classe ${characterClass && characterClass.Name} : Modificateur de ${classCaracteristicBonus.Name}`
+                                  +`${(characterClass.ACBonusArmor)?"\nSi porte une armure":((characterClass.ACBonusArmor === false)?"\nSi ne porte pas d'armure":"")}`
+                                  +`${(characterClass.ACBonusShield)?"\nSi porte un bouclier":((characterClass.ACBonusShield === false)?"\nSi ne porte pas de bouclier":"")}`)
+                              + ((!specialisation || !specialisationBonus)?"":`${classBonusValue?"\n":""}Bonus de spécialisation ${specialisation.Name} +${specialisation.ACBonus}`
+                                  +`${(specialisation.ACBonusArmor)?"\nSi porte une armure":((specialisation.ACBonusArmor === false)?"\nSi ne porte pas d'armure":"")}`)
+                              + (classBonusValue ||(specialisation && specialisationBonus)?"\n":"")+fightStyleTitle;
 
     return (
       <div className="acComponent" title="Classe d'armure">
@@ -86,6 +101,7 @@ const mapStateToProps = (state) => ({
   subRaces: state.referential.subRaces,
   classes: state.referential.classes,
   specialisations: state.referential.specialisations,
+  fightStyles: state.referential.fightStyles,
   armors: state.referential.armors,
   caracteristics: state.referential.caracteristics,
   levels: state.referential.levels

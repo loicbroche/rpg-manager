@@ -176,7 +176,8 @@ class Character extends Component {
                                         onGenderChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.GENDER.name, value);}} />
                         <ClassSelector  classId={classId} specialisationId={Specialisation} fightStyleIds={FightStyles} XP={XP}
                                         onChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.CLASS.name, value);}}
-                                        onSpecialisationChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPECIALISATION.name, value);}} />
+                                        onSpecialisationChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPECIALISATION.name, value);}}
+                                        onFightStyleChange ={(value) =>{ this.toggleElement(DATA_MODEL.CHARACTERS.columns.FIGHT_STYLES.name, value);}}/>
                         <HistoricSelector   historicId={historicId}
                                             history={History}
                                             onHistoricChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HISTORIC.name, value);}}

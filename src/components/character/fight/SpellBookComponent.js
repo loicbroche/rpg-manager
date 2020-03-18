@@ -30,8 +30,10 @@ class SpellBookComponent extends Component {
       learnableSpellsNb += availableSpells[i]?availableSpells[i].length:0;
     }
 
-    const knownMinorSpellsNb = (character.MinorSpells && character.MinorSpells.length) || 0;
-    const knownSpellsNb = (character.Spells && character.Spells.length) || 0;
+    const knownMinorSpells = classAvailableSpells && character.MinorSpells && classAvailableSpells.filter((spell) => character.MinorSpells.includes(spell.Name));
+    const knownSpells = classAvailableSpells && character.Spells && classAvailableSpells.filter((spell) => character.Spells.includes(spell.Name));
+    const knownMinorSpellsNb = (knownMinorSpells && knownMinorSpells.length) || 0;
+    const knownSpellsNb = (knownSpells && knownSpells.length) || 0;
     const availableMinorSpellsNb = capacity && capacity.MinorSpellsNb;
 
     const caracteristic = (caracteristics && capacity && capacity.BonusSpellsNb && caracteristics[capacity.BonusSpellsNb]);

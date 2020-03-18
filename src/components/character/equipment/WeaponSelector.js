@@ -18,7 +18,7 @@ const notMasterImage = require("images/cross.png");
 class WeaponSelector extends Component {
 
   render() {
-/**/const { equipmentCategories, equipments, levels, equipmentId, distance, wearingCharacter } = this.props;
+/**/const { equipmentCategories, equipments, levels, classes, fightStyles, equipmentId, distance, wearingCharacter } = this.props;
 /**/const filteredCategories = equipmentCategories && (distance?filterDistanceCategories(equipmentCategories):filterHtHCategories(equipmentCategories));
     const equipment = equipments && equipments[equipmentId];
 
@@ -30,15 +30,35 @@ class WeaponSelector extends Component {
 
 /**/const masterBonus = level && level.MasteryBonus;
 /**/const isMaster = this.isMaster(equipment);
+
+const characterClass = classes && classes[wearingCharacter.Class];
+const selectedFightStyles = fightStyles && wearingCharacter && Object.values(fightStyles).filter((style) => (wearingCharacter.FightStyles && wearingCharacter.FightStyles.includes(style.Code)));
+const fightStyleLevel = characterClass && characterClass.FightStyleLevel;
+let fightStyleTitle = "";
+const fightStyleBonus = (wearingCharacter
+                          && level && fightStyleLevel <= level.Level
+                          && selectedFightStyles && selectedFightStyles.length > 0
+                          && selectedFightStyles.reduce((sum, fightStyle) => {
+                                  const bonus = fightStyle.Class === wearingCharacter.Class && (sum+(distance?fightStyle.DistanceBonus:fightStyle.weaponBonus));
+                                  fightStyleTitle += (!bonus?"":`${fightStyleTitle?"\n":""}Bonus de Style de combat ${fightStyle.Name} +${distance?fightStyle.DistanceBonus:fightStyle.weaponBonus}`
+                                                      +`\n${fightStyle.Description}`)                                        
+                                  return bonus || sum;
+                              }, 0)
+                        ) || 0;
+
 /**/const bonusContent = equipment &&
+                      <div>
+                        { fightStyleBonus && <span className="main-stat-bonus-label weapon-special-bonus" title={fightStyleTitle}>+{fightStyleBonus}</span>}
                         <div className={`main-stat-bonus-label ${ isMaster?"master-bonus":"not-master-equipment"}`}>
-                          { isMaster?("+"+masterBonus):<img src={notMasterImage} className="not-master-image" alt="" title="Non maîtrisé"/>}
+                          { isMaster?<span title="Bonus maîtrise">+{masterBonus}</span>:<img src={notMasterImage} className="not-master-image" alt="" title="Non maîtrisé"/>}
                         </div>
+                      </div>
 
 /**/const bonusCode = "Dégâts";
 /**/const bonusTitle = "Dégâts";
 /**/const mainValue = equipment && equipment.Damage;
 /**/const ammunitions = [];
+
     for(let i = 0; i < wearingCharacter.Ammunition; i++) {
       ammunitions[i] = true;
     }
@@ -163,6 +183,7 @@ const mapStateToProps = (state) => ({
   equipmentCategories: state.referential.weaponCategories,
   equipments: state.referential.weapons,
   levels: state.referential.levels,
-  classes: state.referential.classes
+  classes: state.referential.classes,
+  fightStyles: state.referential.fightStyles
 })
 export default connect(mapStateToProps)(WeaponSelector)

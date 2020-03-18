@@ -1,4 +1,12 @@
 
+.class-style-selector {
+    display: flex;
+    flex-direction: column;
+}
+.class-selector {
+    display: flex;
+    flex-direction: row;
+}
 .class-selector .selector-value {
     position: relative;
 }
@@ -20,4 +28,21 @@
     height: calc(var(--height-icons) - 0.75rem);
     width: calc(var(--height-icons) - 0.75rem);
     position:absolute;
+}
+
+.fight-styles {
+    display: flex;
+    flex-direction: row;
+    padding-left: calc(var(--height-icons) - 0.75rem);
+}
+
+.fight-style {
+    border-radius: 50%;
+    padding: 0.25rem;
+}
+.fight-style img {
+    height: 1rem;
+}
+.fight-style.inactive img {
+    opacity: var(--opacity-inactive)
 }

@@ -23,3 +23,9 @@
     color: var(--color-master-bonus);
     border-color: var(--color-master-bonus);
 }
+
+.weapon-special-bonus {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    right: 1rem;
+}
