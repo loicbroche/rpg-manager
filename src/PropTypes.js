@@ -82,6 +82,13 @@ export const CapacityPropType = PropTypes.shape({
     ArmorlessSpeed: PropTypes.number
 })
 
+export const CapacityDescriptionPropType = PropTypes.shape({
+    Code: PropTypes.string.isRequired,
+    Class: PropTypes.string.isRequired,
+    Description: PropTypes.string.isRequired,
+    Specialisation: PropTypes.string
+})
+
 export const HistoricPropType = PropTypes.shape({
     Name: PropTypes.string.isRequired,
     Skills: PropTypes.arrayOf(PropTypes.string)

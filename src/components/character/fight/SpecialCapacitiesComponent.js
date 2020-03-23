@@ -17,7 +17,7 @@ class SpecialCapacities extends Component {
   }
 
   render() {
-    const { capacities, specialisationCapacities, classes, specialisations, classId, specialisationId, level,
+    const { capacities, capacitiesDescriptions, specialisationCapacities, classes, specialisations, classId, specialisationId, level,
             hiddenCapacities, onVisibilityClick } = this.props;
     const {showHidden} = this.state;
     const characterClass = classes && classes[classId];
@@ -58,8 +58,11 @@ class SpecialCapacities extends Component {
           <ul>
           {knownCapacities.map((capacity) => {
             const hidden = hiddenCapacities && hiddenCapacities.includes(capacity.name);
-            return (!hidden || showHidden) && <li key={capacity.name} className="capacity hoverable transparent"
-                                              title={`Compétence de niveau ${capacity.level}\nDescription de la compétence à venir`}>
+            const capacityDescription = capacitiesDescriptions && capacitiesDescriptions[capacity.name];
+            const description = (capacityDescription && (!classId || capacityDescription.Class === classId) && capacityDescription.Description ) || "";
+            const autoManaged = capacityDescription && capacityDescription.Auto;
+            return (!hidden || showHidden) && <li key={capacity.name} className={`capacity hoverable transparent ${autoManaged?"auto-managed":""}`}
+                                              title={`Compétence de niveau ${capacity.level}\n${description}`}>
                                                 <span>{capacity.name}</span>
                                                 <span>
                                                   <span className="capacity-source">
@@ -98,6 +101,7 @@ const mapStateToProps = (state) => ({
   classes: state.referential.classes,
   specialisations: state.referential.specialisations,
   capacities: state.referential.capacities,
+  capacitiesDescriptions: state.referential.capacitiesDescriptions,
   specialisationCapacities: state.referential.specialisationCapacities
 })
 export default connect(mapStateToProps)(SpecialCapacities)

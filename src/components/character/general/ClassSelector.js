@@ -73,16 +73,17 @@ class ClassSelector extends Component {
             )}
 
             { specialisable && specialisations &&
-              <div className="selector-icon specialisation-icon">
+              <div className="selector-icon specialisation-icon" title={(specialisation?specialisation.Description:"")}>
                 <img src={specialisationImage} className="selector-image" alt="" />
                 <img src={classBorderImage} className="selector-image" alt="" />
               </div>
             }
             { specialisable && specialisations && (
-              <select className="selector-select specialisation" value={(specialisation && specialisation.Code) || "-"} onChange={this.handleSpecialisationValueUpdate}>
+              <select className="selector-select specialisation" value={(specialisation && specialisation.Code) || "-"}
+                      title={(specialisation?specialisation.Description:"")} onChange={this.handleSpecialisationValueUpdate}>
                 <option value="-" disabled>Choisissez une spécialisation</option>
-                { Object.values(specialisations).filter((specialisation) => specialisation.Class === classId).map(({Code, Name}) => (
-                  <option key={Code} value={Code}>{Name}</option>
+                { Object.values(specialisations).filter((specialisation) => specialisation.Class === classId).map(({Code, Name, Description}) => (
+                  <option key={Code} value={Code} title={Description}>{Name}</option>
                 ))}
               </select>
             )}

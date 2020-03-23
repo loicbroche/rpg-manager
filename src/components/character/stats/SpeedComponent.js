@@ -18,14 +18,14 @@ class SpeedComponent extends Component {
     const armor = armors && armors[armorId];
     const capacity = capacities && capacities[classId+"-"+level];
     const baseSpeed = (subRace && subRace.Speed) || (race && race.Speed);
-    const bonusSpeed = (!armor && capacity && capacity.ArmorlessSpeed) || 0;
+    const bonusSpeed = (!armor && capacity && capacity.ArmourlessSpeed) || 0;
     const totalStrength = strength + (race?race.Strength:0) + (subRace?subRace.Strength:0);
     const malusSpeed = (armor && totalStrength < armor.Strength && INSUFFICIENT_STRENGTH_MALUS) || 0;
     const speed = baseSpeed + bonusSpeed - malusSpeed;
 
     return (
       <div className="speedComponent" title={ `Vitesse de déplacement `
-                                              +`${ (capacity && capacity.ArmorlessSpeed)
+                                              +`${ (capacity && capacity.ArmourlessSpeed)
                                                   ?(bonusSpeed?`avec bonus "Sans armure" ${bonusSpeed} m`
                                                   :`sans bonus "Sans armure"`):""}`
                                               +`${ malusSpeed

@@ -101,6 +101,16 @@ export const DATA_MODEL = {
                 ARMORLESS_SPEED: { name: "ArmorlessSpeed", optional: true }
             }
         },
+        CAPACITIES_DESCRIPTIONS:
+        {
+            name: 'CapacitiesDescriptions',
+            columns: {
+                CODE: { name: "Code" },
+                CLASS: { name: "Class" },
+                DESCRIPTION: { name: "Description" },
+                SPECIALISATION: { name: "Specialisation", optional: true }
+            }
+        },
         SPECIALISATION_CAPACITIES:
         {
             name: 'SpecialisationCapacities',

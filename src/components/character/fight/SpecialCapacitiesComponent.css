@@ -45,6 +45,9 @@
 .capacity-source img {
   height: 1rem;
 }
+.auto-managed {
+  color: var(--background-color-2);
+}
 
 .show-hidden-capacities {
   height: 1rem;
