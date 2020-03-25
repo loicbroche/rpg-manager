@@ -25,8 +25,11 @@ class SpecialCapacities extends Component {
     const specialisationLevel = characterClass && characterClass.SpecialisationLevel;
     const isValidSpecialisation = specialisationLevel <= level && specialisation && specialisation.Class === classId;
     specialisation = isValidSpecialisation && specialisation;
-  
+    const specialImage = characterClass && characterClass.SpecialsName && require(`images/specials/${characterClass.SpecialsName}.png`);
+    const statsImage =  require(`images/stats.png`);
+    const autoImage =  require(`images/auto.png`);
     let knownCapacities = [];
+
 
     let specialisationImage;
     try {
@@ -56,14 +59,31 @@ class SpecialCapacities extends Component {
                             extensor={<img src={capacitiesImage} alt="Compétences de clases" />}
                             defaultExtended={true} >
           <ul>
-          {knownCapacities.map((capacity) => {
+          {knownCapacities.map((capacity, index) => {
             const hidden = hiddenCapacities && hiddenCapacities.includes(capacity.name);
-            const capacityDescription = capacitiesDescriptions && capacitiesDescriptions[capacity.name];
-            const description = (capacityDescription && (!classId || capacityDescription.Class === classId) && capacityDescription.Description ) || "";
+            const capacityDescription = capacitiesDescriptions && capacitiesDescriptions[classId+"-"+capacity.name];
+            const description = (capacityDescription && capacityDescription.Description ) || "";
             const autoManaged = capacityDescription && capacityDescription.Auto;
+            const specialCapacity = capacityDescription && capacityDescription.Special;
+            const statsCapacity = capacityDescription && capacityDescription.Stats;
+            const capacityUseNumber = capacityDescription && capacityDescription.UseNumber;
             return (!hidden || showHidden) && <li key={capacity.name} className={`capacity hoverable transparent ${autoManaged?"auto-managed":""}`}
                                               title={`Compétence de niveau ${capacity.level}\n${description}`}>
-                                                <span>{capacity.name}</span>
+                                                <div className="capacity-title">
+                                                  {specialCapacity
+                                                    ? <div className={`use-condition ${characterClass && characterClass.SpecialsName}`}>
+                                                        <img src={specialImage} title={`Compétence utilisant des points de ${characterClass && characterClass.SpecialsName}`} alt="" />
+                                                      </div>
+                                                    :(  statsCapacity
+                                                        ?<div className="use-condition">
+                                                            {autoManaged
+                                                              ?<img src={autoImage} title="Compétence de caractéristiques gérée automatiquement" alt="" />
+                                                              :<img src={statsImage} title="Compétence de caractéristiques à configurer" alt="" />}
+                                                          </div>
+                                                        :<span className="use-number">{capacityUseNumber}</span>)
+                                                  }
+                                                  <span>{capacity.name}</span>
+                                                </div>
                                                 <span>
                                                   <span className="capacity-source">
                                                     {capacity.specialisation
@@ -87,7 +107,7 @@ class SpecialCapacities extends Component {
 }
 
 SpecialCapacities.propTypes = {
-  classId: PropTypes.string,
+  classId: PropTypes.string.isRequired,
   specialisationId: PropTypes.string,
   level: PropTypes.number,
   hiddenCapacities: PropTypes.arrayOf(PropTypes.string),

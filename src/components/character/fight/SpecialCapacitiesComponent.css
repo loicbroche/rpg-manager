@@ -46,7 +46,7 @@
   height: 1rem;
 }
 .auto-managed {
-  color: var(--background-color-2);
+  opacity: 0.7;
 }
 
 .show-hidden-capacities {
@@ -65,4 +65,30 @@
 .hide-capacity:hover img,
 .hide-capacity:focus img {
   visibility: visible;
+}
+
+.capacity-title {
+  display: flex;
+  align-items: center;
+}
+.use-condition {
+  display: flex;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.use-condition img {
+  height: 1rem;
+}
+.use-number {
+  display: inline-block;
+  min-width: 1rem;
+  text-align: center;
+}
+
+.use-condition,
+.use-number {
+  margin-right: 0.5rem;
 }

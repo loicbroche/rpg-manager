@@ -13,7 +13,7 @@ class SpecialsComponent extends Component {
     const capacity = capacities && level && capacities[classId+"-"+level];
     const maxVal = capacity && capacity.Specials;
     const specialPoints = [];
-    const locationImage = characterClass && characterClass.SpecialsName && require(`images/specials/${characterClass.SpecialsName}.png`);
+    const specialImage = characterClass && characterClass.SpecialsName && require(`images/specials/${characterClass.SpecialsName}.png`);
     for(let i = 0; i < maxVal; i++) {
       specialPoints[i] = i < val;
     }
@@ -27,7 +27,7 @@ class SpecialsComponent extends Component {
           {  Object.entries(specialPoints).map(([index, available]) => 
               <div key={index} className={`special-point ${available&&"special-available"} ${characterClass && characterClass.SpecialsName}`}
                    title={characterClass && `Point de ${characterClass.SpecialsName} ${available?"disponible":"utilisé"}` }>
-                     {available && <img src={locationImage} className="special-image" alt={characterClass.SpecialsName} />}
+                     {available && <img src={specialImage} className="special-image" alt={characterClass.SpecialsName} />}
                    </div>)
           }
         </div>}
