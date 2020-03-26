@@ -10,6 +10,7 @@ export const RacePropType = PropTypes.shape({
     Wisdom: PropTypes.number.isRequired,
     Charisma: PropTypes.number.isRequired,
     Speed: PropTypes.number.isRequired,
+    Weapons: PropTypes.arrayOf(PropTypes.string),
     Languages: PropTypes.arrayOf(PropTypes.string).isRequired,
     Resistances: PropTypes.arrayOf(PropTypes.string),
     SaveAdvantages: PropTypes.arrayOf(PropTypes.string)
@@ -26,7 +27,8 @@ export const SubRacePropType = PropTypes.shape({
     Wisdom: PropTypes.number.isRequired,
     Charisma: PropTypes.number.isRequired,
     Speed: PropTypes.number.isRequired,
-    ArmorCategories: PropTypes.arrayOf(PropTypes.number),
+    ArmorCategories: PropTypes.arrayOf(PropTypes.string),
+    Weapons: PropTypes.arrayOf(PropTypes.string),
     Languages: PropTypes.arrayOf(PropTypes.string),
     Resistances: PropTypes.arrayOf(PropTypes.string),
     SaveAdvantages: PropTypes.arrayOf(PropTypes.string)
@@ -86,7 +88,22 @@ export const CapacityDescriptionPropType = PropTypes.shape({
     Code: PropTypes.string.isRequired,
     Class: PropTypes.string.isRequired,
     Description: PropTypes.string.isRequired,
-    Specialisation: PropTypes.string
+    Specialisation: PropTypes.string,
+    Stats: PropTypes.bool,
+    Auto: PropTypes.bool,
+    Special: PropTypes.bool,
+    UseNumber: PropTypes.number
+})
+
+export const RaceCapacityDescriptionPropType = PropTypes.shape({
+    Code: PropTypes.string.isRequired,
+    Race: PropTypes.string,
+    SubRace: PropTypes.string,
+    Description: PropTypes.string.isRequired,
+    Stats: PropTypes.bool,
+    Auto: PropTypes.bool,
+    RequiredLevel: PropTypes.number,
+    UseNumber: PropTypes.number
 })
 
 export const HistoricPropType = PropTypes.shape({

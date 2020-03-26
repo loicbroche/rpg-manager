@@ -14,6 +14,7 @@ const initialState = {
     fightStyles: null,
     capacities: null,
     capacitiesDescriptions: null,
+    raceCapacitiesDescriptions: null,
     specialisationCapacities: null,
     historics: null,
     weaponCategories: null,
@@ -85,6 +86,12 @@ function referentialReducer(state = initialState, action) {
             nextState = {
                 ...state,
                 capacitiesDescriptions: action.value
+            }
+            return nextState;
+        case ActionTypes.REFERENTIAL.LOAD_RACE_CAPACITIES_DESCRIPTIONS:
+            nextState = {
+                ...state,
+                raceCapacitiesDescriptions: action.value
             }
             return nextState;
         case ActionTypes.REFERENTIAL.LOAD_SPECIALISATION_CAPACITIES:

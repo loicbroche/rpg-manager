@@ -66,6 +66,13 @@ class App extends Component {
       this.props.dispatch(action);
     });
 
+    this.raceCapacitiesDescriptionsRef = database.ref(DATA_MODEL.RACE_CAPACITIES_DESCRIPTIONS.name);
+    this.raceCapacitiesDescriptionsRef.once('value', snapshot => {
+      //referentialReducer: state.referential.raceCapacitiesDescriptions
+      const action = { type: ActionTypes.REFERENTIAL.LOAD_RACE_CAPACITIES_DESCRIPTIONS, value: objectToArray(snapshot.val()) }
+      this.props.dispatch(action);
+    });
+
     this.specialisationCapacitiesRef = database.ref(DATA_MODEL.SPECIALISATION_CAPACITIES.name);
     this.specialisationCapacitiesRef.once('value', snapshot => {
       //referentialReducer: state.referential.specialisationCapacities

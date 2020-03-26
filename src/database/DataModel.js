@@ -12,6 +12,7 @@ export const DATA_MODEL = {
                 WISDOM: { name: "Wisdom" },
                 CHARISMA: { name: "Charisma" },
                 SPEED: { name: "Speed" },
+                WEAPONS: { name: "Weapons", optional: true },
                 LANGUAGES: { name: "Languages" },
                 RESISTANCES: { name: "ArmorCategories", optional: true },
                 SAVE_ADVANTAGES: { name: "SaveAdvantages", optional: true }
@@ -32,6 +33,7 @@ export const DATA_MODEL = {
                 CHARISMA: { name: "Charisma" },
                 SPEED: { name: "Speed" },
                 ARMOR_CATEGORIES: { name: "ArmorCategories", optional: true },
+                WEAPONS: { name: "Weapons", optional: true },
                 LANGUAGES: { name: "Languages", optional: true },
                 RESISTANCES: { name: "ArmorCategories", optional: true },
                 SAVE_ADVANTAGES: { name: "SaveAdvantages", optional: true }
@@ -108,9 +110,28 @@ export const DATA_MODEL = {
                 CODE: { name: "Code" },
                 CLASS: { name: "Class" },
                 DESCRIPTION: { name: "Description" },
-                SPECIALISATION: { name: "Specialisation", optional: true }
+                SPECIALISATION: { name: "Specialisation", optional: true },
+                STATS: { name: "Stats", optional: true },
+                AUTO: { name: "Auto", optional: true },
+                SPECIAL: { name: "Special", optional: true },
+                USE_NUMBER: { name: "UseNumber", optional: true }
             }
         },
+        RACE_CAPACITIES_DESCRIPTIONS:
+        {
+            name: 'RaceCapacitiesDescriptions',
+            columns: {
+                CODE: { name: "Code" },
+                RACE: { name: "Race" },
+                SUB_RACE: { name: "SubRace" },
+                DESCRIPTION: { name: "Description" },
+                STATS: { name: "Stats", optional: true },
+                AUTO: { name: "Auto", optional: true },
+                REQUIRED_LEVEL: { name: "RequiredLevel", optional: true },
+                USE_NUMBER: { name: "UseNumber", optional: true }
+            }
+        },
+
         SPECIALISATION_CAPACITIES:
         {
             name: 'SpecialisationCapacities',

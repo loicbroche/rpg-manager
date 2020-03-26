@@ -17,8 +17,8 @@ class SpecialCapacities extends Component {
   }
 
   render() {
-    const { capacities, capacitiesDescriptions, specialisationCapacities, classes, specialisations, classId, specialisationId, level,
-            hiddenCapacities, onVisibilityClick } = this.props;
+    const { capacities, capacitiesDescriptions, raceCapacitiesDescriptions, specialisationCapacities, classes, subRaces, specialisations,
+            subRaceId, classId, specialisationId, level, hiddenCapacities, onVisibilityClick } = this.props;
     const {showHidden} = this.state;
     const characterClass = classes && classes[classId];
     let specialisation = specialisations && specialisations[specialisationId];
@@ -28,8 +28,15 @@ class SpecialCapacities extends Component {
     const specialImage = characterClass && characterClass.SpecialsName && require(`images/specials/${characterClass.SpecialsName}.png`);
     const statsImage =  require(`images/stats.png`);
     const autoImage =  require(`images/auto.png`);
-    let knownCapacities = [];
-
+    let raceImage;
+    try {
+      raceImage = require(`images/races/${subRaceId}.png`);
+    } catch (ex) {
+      raceImage = require("images/races/no_race.png");
+    }
+    const subRace = subRaces && subRaces[subRaceId];
+    const raceId = subRace && subRace.Race;
+    const raceCapacities = raceCapacitiesDescriptions && Object.values(raceCapacitiesDescriptions).filter((capacity) => capacity.Race === raceId || capacity.SubRace === subRaceId);
 
     let specialisationImage;
     try {
@@ -38,6 +45,7 @@ class SpecialCapacities extends Component {
       specialisationImage = require("images/classes/specialisations/no_image.png");
     }
 
+    let knownCapacities = [];
     for (let i = 1; i <= level; i++) {
       const capacity = capacities && capacities[classId+"-"+i];
       const specialisationCapacity = specialisation && specialisationCapacities && specialisationCapacities[specialisationId+"-"+i];
@@ -59,7 +67,41 @@ class SpecialCapacities extends Component {
                             extensor={<img src={capacitiesImage} alt="Compétences de clases" />}
                             defaultExtended={true} >
           <ul>
-          {knownCapacities.map((capacity, index) => {
+          {raceCapacities && raceCapacities.map((capacityDescription) => {
+            const hidden = hiddenCapacities && hiddenCapacities.includes(capacityDescription.Code);
+            const description = (capacityDescription && capacityDescription.Description ) || "";
+            const autoManaged = capacityDescription && capacityDescription.Auto;
+            const statsCapacity = capacityDescription && capacityDescription.Stats;
+            const capacityUseNumber = capacityDescription && capacityDescription.UseNumber;
+            return (!hidden || showHidden) && <li key={capacityDescription.Code} className={`capacity hoverable transparent ${autoManaged?"auto-managed":""}`}
+                                              title={(capacityDescription.RequiredLevel?`Compétence de niveau ${capacityDescription.RequiredLevel}\n`:"")+`${description}`}>
+                                                <div className="capacity-title">
+                                                  { statsCapacity
+                                                    ?<div className="use-condition">
+                                                        {autoManaged
+                                                          ?<img src={autoImage} title="Compétence de caractéristiques gérée automatiquement" alt="" />
+                                                          :<img src={statsImage} title="Compétence de caractéristiques à configurer" alt="" />}
+                                                      </div>
+                                                    :<span className="use-number" title= {capacityUseNumber===-1?"Utilisation illimitée":"Nombre d'utilisations sans repos long"}>
+                                                        {capacityUseNumber===-1?"∞":capacityUseNumber}
+                                                      </span>
+                                                  }
+                                                  <span>{capacityDescription.Code}</span>
+                                                </div>
+                                                <span>
+                                                  <span className={`hide-capacity activable transparent ${hidden?"hidden-capacity":""}`} title={hidden?"Afficher":"Masquer"}
+                                                        onClick={() => {onVisibilityClick(capacityDescription.Code)}}>
+                                                    <img src={hidden?hideImage:showImage} alt={hidden?"Afficher":"Masquer"} />
+                                                  </span>
+                                                  <span className="capacity-source">
+                                                    <img src={raceImage}
+                                                          alt={`Compétence de la race ${subRace.Name}`}
+                                                          title={`Compétence de la race ${subRace.Name}`}/>
+                                                  </span>
+                                                </span>
+                                              </li>
+          })}
+          {knownCapacities.map((capacity) => {
             const hidden = hiddenCapacities && hiddenCapacities.includes(capacity.name);
             const capacityDescription = capacitiesDescriptions && capacitiesDescriptions[classId+"-"+capacity.name];
             const description = (capacityDescription && capacityDescription.Description ) || "";
@@ -80,21 +122,23 @@ class SpecialCapacities extends Component {
                                                               ?<img src={autoImage} title="Compétence de caractéristiques gérée automatiquement" alt="" />
                                                               :<img src={statsImage} title="Compétence de caractéristiques à configurer" alt="" />}
                                                           </div>
-                                                        :<span className="use-number">{capacityUseNumber}</span>)
+                                                        :<span className="use-number" title= {capacityUseNumber===-1?"Utilisation illimitée":"Nombre d'utilisations sans repos long"}>
+                                                          {capacityUseNumber===-1?"∞":capacityUseNumber}
+                                                        </span>)
                                                   }
                                                   <span>{capacity.name}</span>
                                                 </div>
                                                 <span>
+                                                  <span className={`hide-capacity activable transparent ${hidden?"hidden-capacity":""}`} title={hidden?"Afficher":"Masquer"}
+                                                        onClick={() => {onVisibilityClick(capacity.name)}}>
+                                                    <img src={hidden?hideImage:showImage} alt={hidden?"Afficher":"Masquer"} />
+                                                  </span>
                                                   <span className="capacity-source">
                                                     {capacity.specialisation
                                                     && <img src={specialisationImage}
                                                             alt={`Compétence de la spécialisation ${specialisation && specialisation.Name}`}
                                                             title={`Compétence de la spécialisation ${specialisation && specialisation.Name}`}/>
                                                     }
-                                                  </span>
-                                                  <span className={`hide-capacity activable transparent ${hidden?"hidden-capacity":""}`} title={hidden?"Afficher":"Masquer"}
-                                                        onClick={() => {onVisibilityClick(capacity.name)}}>
-                                                    <img src={hidden?hideImage:showImage} alt={hidden?"Afficher":"Masquer"} />
                                                   </span>
                                                 </span>
                                               </li>
@@ -108,6 +152,7 @@ class SpecialCapacities extends Component {
 
 SpecialCapacities.propTypes = {
   classId: PropTypes.string.isRequired,
+  subRaceId: PropTypes.string,
   specialisationId: PropTypes.string,
   level: PropTypes.number,
   hiddenCapacities: PropTypes.arrayOf(PropTypes.string),
@@ -119,9 +164,11 @@ SpecialCapacities.defaultProps = {
 
 const mapStateToProps = (state) => ({
   classes: state.referential.classes,
+  subRaces: state.referential.subRaces,
   specialisations: state.referential.specialisations,
   capacities: state.referential.capacities,
   capacitiesDescriptions: state.referential.capacitiesDescriptions,
+  raceCapacitiesDescriptions: state.referential.raceCapacitiesDescriptions,
   specialisationCapacities: state.referential.specialisationCapacities
 })
 export default connect(mapStateToProps)(SpecialCapacities)

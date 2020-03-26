@@ -28,12 +28,16 @@ class Weapons extends Component {
   }
 
   getWeapons(category) {
-    const { weapons, classes, levels, master, classId, level, onClick } = this.props;
+    const { weapons, classes, races, subRaces, levels, master, classId, subRaceId, level, onClick } = this.props;
     const availableWeapons = weapons && Object.values(weapons).filter((weapon) => category && weapon.Category === category.Code);
 
     const characterClass = classes && classes[classId];
+    const subRace = subRaces && subRaces[subRaceId];
+    const race = subRace && races && races[subRace.Race];
     const classWeaponCategories = characterClass && (characterClass.WeaponCategories || []);
     const classWeapons = characterClass && (characterClass.Weapons || []);
+    const raceWeapons = race && (race.Weapons || []);
+    const subRaceWeapons = subRace && (subRace.Weapons || []);
     const masteryBonus = levels && levels[level] && levels[level].MasteryBonus;
     const isClassMasterCategory = classWeaponCategories && classWeaponCategories.includes(category && category.Code);
 
@@ -45,12 +49,20 @@ class Weapons extends Component {
             Object.values(availableWeapons).map(({Name, Damage, DamageType}, index) => {
               const isMaster = master && master.includes(Name);
               const isClassMaster = isClassMasterCategory || (classWeapons && classWeapons.includes(Name));
+              const isRaceMaster = (raceWeapons && raceWeapons.includes(Name));
+              const isSubRaceMaster = (subRaceWeapons && subRaceWeapons.includes(Name));
+              const isLockedMaster = isClassMaster || isSubRaceMaster || isRaceMaster;
+              const lockedMasterTitle = isRaceMaster
+                                        ?"Maîtrise héritée de la race "+race.Name
+                                        :(  isSubRaceMaster
+                                            ?"Maîtrise héritée de la race "+subRace.Name
+                                            :isClassMaster?"Maîtrise héritée de la classe "+characterClass.Name:"");
               return (
-              <li key={index} className={"weapon "+(isClassMaster?"locked":"activable")} onClick={() => !isClassMaster && onClick(Name)}
-                  title={(isClassMaster?"Maîtrise héritée de la classe "+characterClass.Name:(isMaster?"Oublier":"Apprendre")+` la maîtrise de ${Name}`)+`\nDégâts : ${Damage} ${DamageType}`}>
-                <div className={"option "+((isClassMaster||isMaster)&&"filled")}></div>
+              <li key={index} className={"weapon "+(isLockedMaster?"locked":"activable")} onClick={() => !isLockedMaster && onClick(Name)}
+                  title={(isLockedMaster?lockedMasterTitle:(isMaster?"Oublier":"Apprendre")+` la maîtrise de ${Name}`)+`\nDégâts : ${Damage} ${DamageType}`}>
+                <div className={"option "+((isLockedMaster||isMaster)&&"filled")}></div>
                 <span className="weapon-name">{Name}</span>
-                <span className="weapon-bonus">{ (isClassMaster||isMaster) && `+${masteryBonus}`}</span> 
+                <span className="weapon-bonus">{ (isLockedMaster||isMaster) && `+${masteryBonus}`}</span> 
               </li>
             )}
           )}
@@ -62,6 +74,7 @@ class Weapons extends Component {
 Weapons.propTypes = {
   master: PropTypes.arrayOf(PropTypes.string),
   classId: PropTypes.string,
+  subRaceId: PropTypes.string,
   level: PropTypes.number,
   onClick: PropTypes.func.isRequired
 }
@@ -74,6 +87,8 @@ const mapStateToProps = (state) => ({
   weaponCategories: state.referential.weaponCategories,
   weapons: state.referential.weapons,
   classes: state.referential.classes,
+  races: state.referential.races,
+  subRaces: state.referential.subRaces,
   levels: state.referential.levels
 })
 export default connect(mapStateToProps)(Weapons)

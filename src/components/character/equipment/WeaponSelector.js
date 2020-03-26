@@ -136,34 +136,55 @@ const fightStyleBonus = (wearingCharacter
   }
 
   getEquipmentsOptionElement(equipmentCategoryId) {
-    const { equipmentCategories, equipments, classes, wearingCharacter} = this.props;
+    const { equipmentCategories, equipments, classes, races, subRaces, wearingCharacter} = this.props;
     const characterClass = classes && classes[wearingCharacter.Class];
+    const subRace = subRaces && subRaces[wearingCharacter.SubRace];
+    const race = subRace && races && races[subRace.Race];
     const className = characterClass?characterClass.Name:"";
     const isClassMaster = characterClass && characterClass.WeaponCategories && characterClass.WeaponCategories.includes(equipmentCategoryId);
+    const raceWeapons = race && (race.Weapons || []);
+    const subRaceWeapons = subRace && (subRace.Weapons || []);
 
     const availableEquipments = Object.values(equipments).filter((equipment) => equipment.Category === equipmentCategoryId);
     return availableEquipments && availableEquipments.length > 0 && 
            <optgroup key={equipmentCategoryId} label={equipmentCategories && equipmentCategories[equipmentCategoryId].Name}>
-            { availableEquipments.map((equipment) => (
+            { availableEquipments.map((equipment) => {
+              const isRaceMaster = (raceWeapons && raceWeapons.includes(equipment && equipment.Name));
+              const isSubRaceMaster = (subRaceWeapons && subRaceWeapons.includes(equipment && equipment.Name));
+              return (
               <option key={equipment.Name} value={equipment.Id} className={this.isMaster(equipment)?"master-equipment":""}
-              title={(isClassMaster?"Maîtrise héritée de la classe "+className:"Non maîtrisé")+`\nDégâts : ${equipment.Damage} ${equipment.DamageType}`}>{equipment.Name}</option>
-            ))}
+              title={(  isRaceMaster
+                        ?"Maîtrise héritée de la race "+race.Name
+                        :(  isSubRaceMaster
+                            ?"Maîtrise héritée de la race "+subRace.Name
+                            :( isClassMaster
+                              ?"Maîtrise héritée de la classe "+className
+                              :"Non maîtrisé")
+                          )
+                      ) +`\nDégâts : ${equipment.Damage} ${equipment.DamageType}`}>{equipment.Name}</option>
+            )})}
           </optgroup>
   }
 
   isMaster(weapon) {
-    const { classes, wearingCharacter } = this.props;
+    const { classes, races, subRaces, wearingCharacter } = this.props;
   
     const master = wearingCharacter.MasterWeapons;
     const characterClass = classes && classes[wearingCharacter.Class];
+    const subRace = subRaces && subRaces[wearingCharacter.SubRace];
+    const race = subRace && races && races[subRace.Race];
     const classWeaponCategories = characterClass && (characterClass.WeaponCategories || []);
     const classWeapons = characterClass && (characterClass.Weapons || []);
+    const raceWeapons = race && (race.Weapons || []);
+    const subRaceWeapons = subRace && (subRace.Weapons || []);
   
     const isMaster = master && master.includes(weapon && weapon.Name);
     const isClassMaster = (classWeapons && classWeapons.includes(weapon && weapon.Name)) ||
                           (classWeaponCategories && classWeaponCategories.includes(weapon && weapon.Category));
+   const isRaceMaster = (raceWeapons && raceWeapons.includes(weapon && weapon.Name));
+   const isSubRaceMaster = (subRaceWeapons && subRaceWeapons.includes(weapon && weapon.Name));
 
-    return isMaster || isClassMaster;
+    return isMaster || isClassMaster || isRaceMaster || isSubRaceMaster;
   }
 }
 
@@ -184,6 +205,8 @@ const mapStateToProps = (state) => ({
   equipments: state.referential.weapons,
   levels: state.referential.levels,
   classes: state.referential.classes,
+  races: state.referential.races,
+  subRaces: state.referential.subRaces,
   fightStyles: state.referential.fightStyles
 })
 export default connect(mapStateToProps)(WeaponSelector)

@@ -201,7 +201,7 @@ class Character extends Component {
                             <div className="special">
                                 <SpecialsComponent val={Specials} classId={classId} level={characterLevel}
                                                     onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPECIALS.name, value); }} />
-                                <SpecialCapacitiesComponent classId={classId} specialisationId={Specialisation} level={characterLevel}
+                                <SpecialCapacitiesComponent subRaceId={subRaceId} classId={classId} specialisationId={Specialisation} level={characterLevel}
                                                             hiddenCapacities={HiddenCapacities}
                                                             onVisibilityClick={(capacityId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.HIDDEN_CAPACITIES.name, capacityId) }} />
                             </div>
@@ -262,6 +262,7 @@ class Character extends Component {
                                     </div>
                                     <Weapons master={MasterWeapons}
                                             classId={classId}
+                                            subRaceId={subRaceId}
                                             level={characterLevel}
                                             onClick={(weaponId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.MASTER_WEAPONS.name, weaponId) }} />
                                 </div>
