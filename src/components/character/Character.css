@@ -74,7 +74,6 @@
     justify-content: space-between;
     align-items: flex-end;
     margin-left: 1rem;
-    margin-right: 1rem;
 }
 
 .health > .healthComponent {
@@ -102,7 +101,7 @@
 }
 
 .stats {
-    margin-left: 2rem;
+    margin-left: var(--components-separator-margin);
     display: flex;
     flex-direction: column;
 }
@@ -130,7 +129,8 @@
 .complements {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    align-self: flex-start;
+    margin-left: 0.5rem;
 }
 
 /* Equipments */

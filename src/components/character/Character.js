@@ -228,8 +228,8 @@ class Character extends Component {
                                                         onClick={(alterationId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.ALTERATIONS.name, alterationId) }}
                                                         onResistanceClick={this.toggleResistance}/>
                                 <div className="complements">
-                                    <ACComponent character={this.state.characterInfos} />
-                                    <SpeedComponent subRaceId={subRaceId} classId={classId} armorId={Armor} strength={Strength} level={characterLevel} />
+                                    <ACComponent character={this.state.characterInfos} />    
+                                    <SpeedComponent subRaceId={subRaceId} classId={classId} armorId={Armor} strength={Strength} level={characterLevel} />    
                                 </div>
                             </div>
 

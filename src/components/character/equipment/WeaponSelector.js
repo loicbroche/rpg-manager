@@ -141,7 +141,8 @@ const fightStyleBonus = (wearingCharacter
     const subRace = subRaces && subRaces[wearingCharacter.SubRace];
     const race = subRace && races && races[subRace.Race];
     const className = characterClass?characterClass.Name:"";
-    const isClassMaster = characterClass && characterClass.WeaponCategories && characterClass.WeaponCategories.includes(equipmentCategoryId);
+    const isClassMasterCategory = characterClass && characterClass.WeaponCategories && characterClass.WeaponCategories.includes(equipmentCategoryId);
+    const classWeapons = characterClass && (characterClass.Weapons || []);
     const raceWeapons = race && (race.Weapons || []);
     const subRaceWeapons = subRace && (subRace.Weapons || []);
 
@@ -151,6 +152,7 @@ const fightStyleBonus = (wearingCharacter
             { availableEquipments.map((equipment) => {
               const isRaceMaster = (raceWeapons && raceWeapons.includes(equipment && equipment.Name));
               const isSubRaceMaster = (subRaceWeapons && subRaceWeapons.includes(equipment && equipment.Name));
+              const isClassMaster = isClassMasterCategory || (classWeapons && classWeapons.includes(equipment.Name));
               return (
               <option key={equipment.Name} value={equipment.Id} className={this.isMaster(equipment)?"master-equipment":""}
               title={(  isRaceMaster
