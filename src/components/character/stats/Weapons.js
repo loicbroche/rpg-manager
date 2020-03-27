@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
+import { getLevel } from 'rules/Levels.rules'
+
 import './Weapons.css'
 import ExpendableComponent from 'components/shared/ExpendableComponent';
 
@@ -28,9 +30,9 @@ class Weapons extends Component {
   }
 
   getWeapons(category) {
-    const { weapons, classes, races, subRaces, levels, master, classId, subRaceId, level, onClick } = this.props;
+    const { weapons, classes, races, subRaces, levels, master, classId, subRaceId, XP, onClick } = this.props;
     const availableWeapons = weapons && Object.values(weapons).filter((weapon) => category && weapon.Category === category.Code);
-
+    const level = getLevel(levels, XP);
     const characterClass = classes && classes[classId];
     const subRace = subRaces && subRaces[subRaceId];
     const race = subRace && races && races[subRace.Race];
@@ -38,7 +40,7 @@ class Weapons extends Component {
     const classWeapons = characterClass && (characterClass.Weapons || []);
     const raceWeapons = race && (race.Weapons || []);
     const subRaceWeapons = subRace && (subRace.Weapons || []);
-    const masteryBonus = levels && levels[level] && levels[level].MasteryBonus;
+    const masteryBonus = level && level.MasteryBonus;
     const isClassMasterCategory = classWeaponCategories && classWeaponCategories.includes(category && category.Code);
 
     return availableWeapons && availableWeapons.length > 0 &&
@@ -75,12 +77,12 @@ Weapons.propTypes = {
   master: PropTypes.arrayOf(PropTypes.string),
   classId: PropTypes.string,
   subRaceId: PropTypes.string,
-  level: PropTypes.number,
+  XP: PropTypes.number,
   onClick: PropTypes.func.isRequired
 }
 
 Weapons.defaultProps = {
-  level: 1
+  XP: 0
 }
 
 const mapStateToProps = (state) => ({

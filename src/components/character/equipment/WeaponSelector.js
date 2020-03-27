@@ -62,7 +62,7 @@ const fightStyleBonus = (wearingCharacter
     for(let i = 0; i < wearingCharacter.Ammunition; i++) {
       ammunitions[i] = true;
     }
-    const additionalInfo = distance && wearingCharacter && 
+    const additionalInfo = distance && wearingCharacter && equipment &&
       <div className="ammunitions">
         <span className={`currentModifier decrease-value ${wearingCharacter.Ammunition===0 &&"disabled"}`} onClick={(event) => {this.handleAmmunitionUpdate(-1)}}
                         title={`Utiliser une munition`}></span>
@@ -101,9 +101,9 @@ const fightStyleBonus = (wearingCharacter
                 {bonusContent}
             </div>
           </div>
-          <div className="equipment-illustration">
+          {equipment && <div className="equipment-illustration">
             <img src={equipmentImage} className="equipment-image" alt="" />
-          </div>
+          </div>}
           {equipment &&
             <div className="equipment-description">
               <div className="equipment-description-line"><span className="description-line-title">{equipment?"Dégâts:":'\u00A0'}</span>

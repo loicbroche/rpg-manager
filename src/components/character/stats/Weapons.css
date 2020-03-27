@@ -2,6 +2,10 @@
   cursor: default;
 }
 
+.weaponsComponent .expendable-container {
+  justify-content: flex-start;
+}
+
 .weapons-category {
   margin: 0.1rem 0 0.1rem auto
 }

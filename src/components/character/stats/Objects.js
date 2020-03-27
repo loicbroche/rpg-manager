@@ -16,6 +16,7 @@ class Objects extends Component {
     return (
     <div className='objectsComponent'>
           <ExpendableComponent extensorTitle="les maîtrises d'objet"
+                                header={<span>Maîtrise d'objets</span>}
                                 extensor={<img src={detailsImage} alt="Maîtrises d'objet" />}>
             <div className="objects">
               {objectCategories &&

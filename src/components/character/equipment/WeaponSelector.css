@@ -29,3 +29,12 @@
     border-color: var(--color-primary);
     right: 1rem;
 }
+
+.equipment-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.additional-info {
+    align-self: flex-start;
+}

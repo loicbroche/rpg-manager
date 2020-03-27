@@ -36,7 +36,10 @@ class SpecialCapacities extends Component {
     }
     const subRace = subRaces && subRaces[subRaceId];
     const raceId = subRace && subRace.Race;
-    const raceCapacities = raceCapacitiesDescriptions && Object.values(raceCapacitiesDescriptions).filter((capacity) => capacity.Race === raceId || capacity.SubRace === subRaceId);
+    const raceCapacities = raceCapacitiesDescriptions &&
+                            Object.values(raceCapacitiesDescriptions).filter((capacity) =>
+                                (capacity.Race === raceId || capacity.SubRace === subRaceId)
+                                && (!capacity.RequiredLevel || capacity.RequiredLevel <= level));
 
     let specialisationImage;
     try {

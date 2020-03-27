@@ -1,0 +1,8 @@
+.damagesComponent {
+  position: relative;
+  cursor: default;
+}
+
+.damagesComponent img {
+  width: 100%;
+}

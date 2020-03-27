@@ -69,9 +69,9 @@ class ArmorSelector extends Component {
                 {bonusContent}
             </div>
           </div>
-          <div className="equipment-illustration">
+          {equipment && <div className="equipment-illustration">
             <img src={equipmentImage} className="equipment-image" alt="" />
-          </div>
+          </div>}
           {equipment &&
             <div className="equipment-description">
               <div className="equipment-description-line"><span className="description-line-title">{equipment?"Discretion:":'\u00A0'}</span>
