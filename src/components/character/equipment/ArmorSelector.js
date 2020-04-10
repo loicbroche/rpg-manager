@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
@@ -14,34 +14,34 @@ import './EquipmentSelector.css'
 const mainStatImage = require("images/AC.png");
 const notMasterImage = require("images/cross.png");
 
-class ArmorSelector extends Component {
+class ArmorSelector extends PureComponent {
 
   render() {
 /**/const { equipmentCategories, equipments, caracteristics, equipmentId, shield, wearingCharacter } = this.props;
-    const equipment = equipments && equipments[equipmentId];
+    const equipment = equipments?.[equipmentId];
     
 /**/const equipmentType = shield?"shield":"armor";
 /**/const equipmentTitleLabel = shield?"Bouclier":"Armure";
 /**/const equipmentLabel = shield?"un bouclier":"une armure";
 /**/const filteredCategories = equipmentCategories && (shield?filterShieldsCategories(equipmentCategories):filterArmorsCategories(equipmentCategories));
 
-    const isMaster = equipment && (this.isMasterCategory(equipment.Category) || (wearingCharacter && wearingCharacter.MasterArmors && wearingCharacter.MasterArmors.includes(equipmentId)));
-/**/const bonusCaracteristic = caracteristics && equipment && equipment.BonusAC && caracteristics[equipment.BonusAC];
-    const caracteristicName = bonusCaracteristic && bonusCaracteristic.OV;
+    const isMaster = this.isMasterCategory(equipment?.Category) || wearingCharacter?.MasterArmors?.includes(equipmentId);
+/**/const bonusCaracteristic = caracteristics?.[equipment?.BonusAC];
+    const caracteristicName = bonusCaracteristic?.OV;
 /**/const bonusContent = equipment && 
-                         <div className={`main-stat-bonus-label ${ isMaster?(equipment && equipment.BonusAC):"not-master-equipment"}`}>
+                         <div className={`main-stat-bonus-label ${ isMaster?(equipment?.BonusAC):"not-master-equipment"}`}>
                             {isMaster
-                              ?(equipment && equipment.BonusAC &&  caracteristicName && <CaracteristicBonus caracteristicName={caracteristicName}
-                                                  value={wearingCharacter && wearingCharacter[caracteristicName]}
+                              ?(equipment?.BonusAC && caracteristicName && <CaracteristicBonus caracteristicName={caracteristicName}
+                                                  value={wearingCharacter?.[caracteristicName]}
                                                   bonusMax={Number.isNaN(equipment.MaxBonusAC)?null:equipment.MaxBonusAC}
-                                                  subRaceId={wearingCharacter && wearingCharacter.SubRace} />)
+                                                  subRaceId={wearingCharacter?.SubRace} />)
                               :<img src={notMasterImage} className="not-master-image" alt="" title="Non maîtrisé"/>
                             }
                           </div>
 
 /**/const bonusCode = "CA";
 /**/const bonusTitle = "Classe d'armure";
-/**/const mainValue = equipment && equipment.AC;
+/**/const mainValue = equipment?.AC;
 
     let equipmentImage;
     try {
@@ -75,13 +75,13 @@ class ArmorSelector extends Component {
           {equipment &&
             <div className="equipment-description">
               <div className="equipment-description-line"><span className="description-line-title">{equipment?"Discretion:":'\u00A0'}</span>
-                                                          <span className="description-line-value">{equipment && equipment.Discretion}</span></div>
+                                                          <span className="description-line-value">{equipment?.Discretion}</span></div>
               <div className="equipment-description-line"><span className="description-line-title">{equipment?"Force:":'\u00A0'}</span>
-                                                          <span className="description-line-value">{equipment && equipment.Strength}</span></div>
+                                                          <span className="description-line-value">{equipment?.Strength}</span></div>
               <div className="equipment-description-line"><span className="description-line-title">{equipment?"Poids:":'\u00A0'}</span>
-                                                          {equipment && <Weight weight={equipment.Weight} />}</div>
+                                                          <Weight weight={equipment.Weight} /></div>
               <div className="equipment-description-line"><span className="description-line-title">{equipment?"Prix:":'\u00A0'}</span>
-                                                          {equipment && <Money id={equipmentTitleLabel} amount={equipment.Price} />}</div>
+                                                          <Money id={equipmentTitleLabel} amount={equipment.Price} /></div>
           </div>}
       </div>
     )
@@ -95,18 +95,18 @@ class ArmorSelector extends Component {
 
   getEquipmentsOptionElement(equipmentCategoryId) {
     const { equipmentCategories, equipments, subRaces, subRaceId, classes, classId, wearingCharacter} = this.props;
-    const characterClass = classes && classes[classId];
-    const subRace = subRaces && subRaces[subRaceId];
+    const characterClass = classes?.[classId];
+    const subRace = subRaces?.[subRaceId];
 
     const availableEquipments = Object.values(equipments).filter((equipment) => equipment.Category === equipmentCategoryId);
     const isClassMasterCategory = this.isClassMasterCategory(equipmentCategoryId);
     const isRaceMasterCategory = this.isRaceMasterCategory(equipmentCategoryId);
     const isMasterCategory = isClassMasterCategory || isRaceMasterCategory;
 
-    return availableEquipments && availableEquipments.length > 0 && 
-           <optgroup key={equipmentCategoryId} label={equipmentCategories && equipmentCategories[equipmentCategoryId].Name} >
+    return availableEquipments?.length > 0 && 
+           <optgroup key={equipmentCategoryId} label={equipmentCategories?.[equipmentCategoryId].Name} >
             { availableEquipments.map((equipment) => {
-              const isMasterEquipment = isMasterCategory || (wearingCharacter && wearingCharacter.MasterArmors && wearingCharacter.MasterArmors.includes(equipment.Id));
+              const isMasterEquipment = isMasterCategory || (wearingCharacter?.MasterArmors?.includes(equipment.Id));
               return (
               <option key={equipment.Name} value={equipment.Id} className={isMasterEquipment?"master-equipment":""}
                       title={ (isRaceMasterCategory
@@ -134,19 +134,19 @@ class ArmorSelector extends Component {
 
   isClassMasterCategory(armorCategoryId) {
     const { classes, classId } = this.props;
-    const characterClass = classes && classes[classId];
-    const classArmorCategories = characterClass && (characterClass.ArmorCategories || []);
+    const characterClass = classes?.[classId];
+    const classArmorCategories = (characterClass?.ArmorCategories || []);
 
-    return (classArmorCategories && classArmorCategories.includes(armorCategoryId));
+    return classArmorCategories?.includes(armorCategoryId);
   }
 
   isRaceMasterCategory(armorCategoryId) {
     const { subRaces, subRaceId } = this.props;
 
-    const subRace = subRaces && subRaces[subRaceId];
-    const subRaceArmorCategories =  subRace && (subRace.ArmorCategories || []);
+    const subRace = subRaces?.[subRaceId];
+    const subRaceArmorCategories =  subRace?.ArmorCategories || [];
 
-    return (subRaceArmorCategories && subRaceArmorCategories.includes(armorCategoryId));
+    return subRaceArmorCategories?.includes(armorCategoryId);
   }
 }
 

@@ -6,3 +6,82 @@
 .damagesComponent img {
   width: 100%;
 }
+
+.image-container {
+  position: relative;
+}
+.damage-marker {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 1px solid var(--background-color-1);
+  background-color: #CCC;
+  opacity: 0.5;
+}
+.damage-marker.hurt {
+  opacity: 0.8;
+  background-color: var(--color-Damage);
+}
+.damage-marker:hover,
+.damage-marker:focus {
+  opacity: 1;
+}
+
+.head-damage-marker {
+  top: 5%;
+}
+.torso-damage-marker,
+.right-arm-damage-marker,
+.left-arm-damage-marker {
+  top: 25%;
+}
+.right-forearm-damage-marker,
+.left-forearm-damage-marker {
+  top: 35%;
+}
+.right-thigh-damage-marker,
+.left-thigh-damage-marker {
+  bottom: 40%;
+}
+.right-shin-damage-marker,
+.left-shin-damage-marker {
+  bottom: 25%;
+}
+
+.head-damage-marker,
+.torso-damage-marker {
+  left: calc(50% - 0.5rem);
+}
+
+.right-arm-damage-marker,
+.right-forearm-damage-marker,
+.right-thigh-damage-marker,
+.right-shin-damage-marker {
+  left: 25%;
+}
+
+.left-arm-damage-marker,
+.left-forearm-damage-marker,
+.left-thigh-damage-marker,
+.left-shin-damage-marker {
+  right: 25%;
+}
+
+.damagesComponent input[type="file"].activable:not(.forbidden) {
+  cursor: pointer;
+  display: none;
+}
+.custom-file-input {
+  border-radius: 0.25rem;
+  border: 1px solid var(--color-primary);
+  color: transparent;
+}
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.custom-file-input::before {
+  display: inline-block;
+  width: 1rem;
+}

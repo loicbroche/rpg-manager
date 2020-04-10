@@ -1,11 +1,11 @@
 
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
 import './AlterationsComponent.css'
 
-class AlterationsComponent extends Component {
+class AlterationsComponent extends PureComponent {
 
   render() {
     const { alterationTypes} = this.props;
@@ -15,12 +15,12 @@ class AlterationsComponent extends Component {
         <div className="alterations">
         <div className="savable">
             {alterationTypes &&
-              Object.values(alterationTypes).map((type) => type.Savable &&  <span key={type.Code} className="alteration-category">{this.getAlterations(type)}</span>)
+              Object.values(alterationTypes).map((type) => type.Savable && <span key={type.Code} className="alteration-category">{this.getAlterations(type)}</span>)
             }
           </div>
           <div className="unsavable">
             {alterationTypes &&
-              Object.values(alterationTypes).map((type) => !type.Savable &&  <span key={type.Code} className="alteration-category">{this.getAlterations(type)}</span>)
+              Object.values(alterationTypes).map((type) => !type.Savable && <span key={type.Code} className="alteration-category">{this.getAlterations(type)}</span>)
             }
           </div>
         </div>
@@ -32,12 +32,12 @@ class AlterationsComponent extends Component {
     const { alterations,  races, subRaces, resistances, characterAlterations, subRaceId, onClick, onResistanceClick} = this.props;
     const availableAlterations = alterations && Object.values(alterations).filter((alteration) => alteration.Type === alterationType.Code);
 
-    const subRace = subRaces && subRaces[subRaceId];
-    const race = subRace && races && races[subRace.Race];
-    const raceName = race?race.Name:"";
-    const raceResistances = race && race.Resistances;
-    const subRaceResistances = subRace && subRace.Resistances;
-    const subRaceName = subRace?subRace.Name:"";
+    const subRace = subRaces?.[subRaceId];
+    const race = races?.[subRace?.Race];
+    const raceName = race?.Name || "";
+    const raceResistances = race?.Resistances;
+    const subRaceResistances = subRace?.Resistances;
+    const subRaceName = subRace?.Name || "";
 
     return (
       Object.values(availableAlterations).map((alteration) => {
@@ -48,17 +48,17 @@ class AlterationsComponent extends Component {
           alterationImage = require(`images/alterations/no_image.png`);
         }
 
-        const alterated = characterAlterations && characterAlterations.find((alt) => alt === alteration.Code);
-        let raceResistant = raceResistances && raceResistances.find((resistance) => resistance === alteration.Code);
+        const alterated = characterAlterations?.find((alt) => alt === alteration.Code);
+        let raceResistant = raceResistances?.find((resistance) => resistance === alteration.Code);
         let raceResistantTitle = `Résistance ${alteration.Name}\nHéritée de la race ${raceName}`;
-        const subRaceResistant = subRaceResistances && subRaceResistances.find((resistance) => resistance === alteration.Code);
+        const subRaceResistant = subRaceResistances?.find((resistance) => resistance === alteration.Code);
         if (!raceResistant && subRaceResistant) {
           raceResistant = true;
           raceResistantTitle = `Résistance ${alteration.Name}\nHéritée de la race ${subRaceName}`;
         }         
-        const resistant = raceResistant || (resistances && resistances.find((resistance) => resistance === alteration.Code));
+        const resistant = raceResistant || resistances?.find((resistance) => resistance === alteration.Code);
 
-        return <span key={alteration.Code} onClick={() => { !resistant && onClick && onClick(alteration.Code)}}
+        return <span key={alteration.Code} role="button" onClick={() => { !resistant && onClick && onClick(alteration.Code)}}
                       className={`alteration ${( !resistant && onClick)?"activable":""}`}
                       title={resistant?`Résistance ${alteration.Name}`:
                             ( onClick

@@ -1,20 +1,20 @@
 
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
 import { getLevelNumber, getNextLevel } from 'rules/Levels.rules'
 import './XPComponent.css'
 
-class XPComponent extends Component {
+class XPComponent extends PureComponent {
 
   render() {
     const { levels, XP } = this.props;
 
     const levelNumber = getLevelNumber(levels, XP);
     const nextLevel = getNextLevel(levels, XP);
-    const nextLevelXp = nextLevel && nextLevel.XP;
-    const maxXP = levels && levels[levels.length-1] && levels[levels.length-1].XP;
+    const nextLevelXp = nextLevel?.XP;
+    const maxXP = levels?.[levels.length-1]?.XP;
 
     return (
       <div className="XPComponent">

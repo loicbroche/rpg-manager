@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { database } from 'database/InitializeDatabase'
 import { DATA_MODEL } from 'database/DataModel'
 import { objectToArray } from 'database/Tools'
@@ -6,7 +6,7 @@ import { objectToArray } from 'database/Tools'
 import './GameMaster.css'
 import CharacterOverview from './CharacterOverview'
 
-class GameMaster extends Component {
+class GameMaster extends PureComponent {
     constructor (props) {
         super(props);
         this.state = {

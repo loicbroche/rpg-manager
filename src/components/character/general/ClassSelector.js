@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
@@ -8,19 +8,19 @@ import './ClassSelector.css'
 
 const classBorderImage = require("images/classes/class_border.png");
 
-class ClassSelector extends Component {
+class ClassSelector extends PureComponent {
 
   render() {
     const { classes, specialisations, fightStyles, fightStyleIds, levels, classId, specialisationId, XP, onFightStyleChange} = this.props;
 
     const classFightStyles = fightStyles && Object.values(fightStyles).filter((style) => style.Class === classId);
-    const characterClass = classes && classes[classId];
-    const fightStyleLevel = characterClass && characterClass.FightStyleLevel;
-    const specialisationLevel = characterClass && characterClass.SpecialisationLevel;
+    const characterClass = classes?.[classId];
+    const fightStyleLevel = characterClass?.FightStyleLevel;
+    const specialisationLevel = characterClass?.SpecialisationLevel;
     const level = getLevelNumber(levels, XP);
     const specialisable = specialisationLevel <= level;
     const figthStylable = fightStyleLevel <= level;
-    let specialisation = specialisations && specialisations[specialisationId];
+    let specialisation = specialisations?.[specialisationId];
     const isValidSpecialisation = specialisable && specialisation && specialisation.Class === classId;
     specialisation = isValidSpecialisation && specialisation;
 
@@ -33,7 +33,7 @@ class ClassSelector extends Component {
 
     let specialisationImage;
     try {
-      specialisationImage = require(`images/classes/specialisations/${specialisation && specialisation.Code}.png`);
+      specialisationImage = require(`images/classes/specialisations/${specialisation?.Code}.png`);
     } catch (ex) {
       specialisationImage = require("images/classes/specialisations/no_image.png");
     }
@@ -41,18 +41,17 @@ class ClassSelector extends Component {
     return (
       <div className="class-style-selector">
         {figthStylable && <div className="fight-styles">
-          {classFightStyles &&
-            classFightStyles.map((style) => {
+          { classFightStyles?.map((style) => {
               let fightStyleImage;
               try {
                 fightStyleImage = require(`images/classes/fightStyles/${style.Code}.png`);
               } catch (ex) {
                 fightStyleImage = require("images/classes/no_image.png");
               }
-              const active = fightStyleIds && fightStyleIds.includes(style.Code);
+              const active = fightStyleIds?.includes(style.Code);
               const title=`${style.Name}\n${style.Description}`;
             return <span key={style.Code} className={`fight-style activable ${active?"":"inactive"}`} title={title}
-                          onClick={() => {onFightStyleChange(style.Code)}}>
+                          role="button" onClick={() => {onFightStyleChange(style.Code)}}>
                       <img src={fightStyleImage} alt={style.Name} />
             </span>})}
         </div>}
@@ -73,13 +72,13 @@ class ClassSelector extends Component {
             )}
 
             { specialisable && specialisations &&
-              <div className="selector-icon specialisation-icon" title={(specialisation?specialisation.Description:"")}>
+              <div className="selector-icon specialisation-icon" title={specialisation?.Description || ""}>
                 <img src={specialisationImage} className="selector-image" alt="" />
                 <img src={classBorderImage} className="selector-image" alt="" />
               </div>
             }
             { specialisable && specialisations && (
-              <select className="selector-select specialisation" value={(specialisation && specialisation.Code) || "-"}
+              <select className="selector-select specialisation" value={specialisation?.Code || "-"}
                       title={(specialisation?specialisation.Description:"")} onChange={this.handleSpecialisationValueUpdate}>
                 <option value="-" disabled>Choisissez une spécialisation</option>
                 { Object.values(specialisations).filter((specialisation) => specialisation.Class === classId).map(({Code, Name, Description}) => (

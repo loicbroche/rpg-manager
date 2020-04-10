@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { MAX_CARACTERISTIC, BONUS_STEP } from 'rules/Caracteristics.rules'
@@ -7,16 +7,16 @@ import { MAX_CARACTERISTIC, BONUS_STEP } from 'rules/Caracteristics.rules'
 import './Caracteristic.css'
 import CaracteristicBonus from 'components/shared/CaracteristicBonus'
 
-class Caracteristic extends Component {
+class Caracteristic extends PureComponent {
 
   render() {
     const { races, subRaces, caracteristicName, value, subRaceId, maxVal, bonusStep} = this.props;
 
-    const subRace = subRaces && subRaces[subRaceId];
-    const race = subRace && races && races[subRace.Race];
+    const subRace = subRaces?.[subRaceId];
+    const race = races?.[subRace?.Race];
 
-    const raceBonus = race && race[caracteristicName];
-    const subRaceBonus = subRace && subRace[caracteristicName];
+    const raceBonus = race?.[caracteristicName];
+    const subRaceBonus = subRace?.[caracteristicName];
 
     return (
       <div className={`caracteristic ${caracteristicName}`}>

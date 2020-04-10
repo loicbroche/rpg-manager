@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {PureComponent} from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
@@ -8,7 +8,7 @@ import { filterMasterableCategories } from 'rules/Objects.rules'
 
 const detailsImage = require('images/details.png');
 
-class Objects extends Component {
+class Objects extends PureComponent {
 
   render() {
     const { objectCategories } = this.props;
@@ -32,23 +32,23 @@ class Objects extends Component {
     const { objects, classes, historics, master, classId, historicId, onClick } = this.props;
     const availableObjects = objects && Object.values(objects).filter((object) => category && object.Category === category.Code);
 
-    const characterClass = classes && classes[classId];
-    const historic = historics && historics[historicId];
-    const classObjects = characterClass && (characterClass.Objects || []);
-    const historicObjects = historic && (historic.Objects || []);
+    const characterClass = classes?.[classId];
+    const historic = historics?.[historicId];
+    const classObjects = characterClass?.Objects || [];
+    const historicObjects = historic?.Objects || [];
 
-    return availableObjects && availableObjects.length > 0 &&
-      <div key={category && category.Code}>
-        <h1 className={`objects-category-name`}>{(category && category.Name)}</h1>
+    return availableObjects?.length > 0 &&
+      <div key={category?.Code}>
+        <h1 className={`objects-category-name`}>{category?.Name}</h1>
         <ul className="objects-category">
           {availableObjects &&
             Object.values(availableObjects).map(({Name}, index) => {
               const isMaster = master && master.includes(Name);
-              const isClassMaster = classObjects && classObjects.includes(Name);
-              const isHistoricMaster = historicObjects && historicObjects.includes(Name);
+              const isClassMaster = classObjects?.includes(Name);
+              const isHistoricMaster = historicObjects?.includes(Name);
               return (
               <li key={index} className={"object "+(isClassMaster || isHistoricMaster?"locked":"activable")}
-                  onClick={() => !(isClassMaster || isHistoricMaster) && onClick(Name)}
+                  role="button" onClick={() => !(isClassMaster || isHistoricMaster) && onClick(Name)}
                   title={ isClassMaster
                           ?"Maîtrise héritée de la classe "+characterClass.Name
                           :(  isHistoricMaster

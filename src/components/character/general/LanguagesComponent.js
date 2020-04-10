@@ -1,33 +1,33 @@
 
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
 import './LanguagesComponent.css'
 
-class LanguagesComponent extends Component {
+class LanguagesComponent extends PureComponent {
   render() {
     const {languages, races, subRaces, knownLanguages, subRaceId, onClick} = this.props;
 
-    const subRace = subRaces && subRaces[subRaceId];
-    const race = subRace && races && races[subRace.Race];
-    const raceLanguages = race && race.Languages;
-    const subRaceLanguages = subRace && subRace.Languages;
+    const subRace = subRaces?.[subRaceId];
+    const race = races?.[subRace?.Race];
+    const raceLanguages = race?.Languages;
+    const subRaceLanguages = subRace?.Languages;
 
     return (
       <ul className='languages'>
       {languages &&
         Object.values(languages).map((language) => {
-          const isKnown = knownLanguages && knownLanguages.includes(language.Code);
-          let isRaceKnown = raceLanguages && raceLanguages.includes(language.Code);
+          const isKnown = knownLanguages?.includes(language.Code);
+          let isRaceKnown = raceLanguages?.includes(language.Code);
           let raceKnownTitle = `Langue ${language.Name} connue de la race ${race.Name}`;
-          const isSubRaceKnown = subRaceLanguages && subRaceLanguages.includes(language.Code);
+          const isSubRaceKnown = subRaceLanguages?.includes(language.Code);
           if (!isRaceKnown && isSubRaceKnown) {
             isRaceKnown = true;
             raceKnownTitle = `Langue ${language.Name} connue de la race ${subRace.Name}`;
           }     
           return (
-          <li key={language.Code} className={"language "+(isRaceKnown?"race-known":"activable")} onClick={() => !isRaceKnown && onClick(language.Code)}
+          <li key={language.Code} className={"language "+(isRaceKnown?"race-known":"activable")} role="button" onClick={() => !isRaceKnown && onClick(language.Code)}
               title={ ( isRaceKnown
                         ?raceKnownTitle
                         :(isKnown?`Oublier`:`Apprendre`)+` la langue ${language.Name}`

@@ -101,7 +101,7 @@
 }
 
 .stats {
-    margin-left: var(--components-separator-margin);
+    margin-left: 2rem;
     display: flex;
     flex-direction: column;
 }

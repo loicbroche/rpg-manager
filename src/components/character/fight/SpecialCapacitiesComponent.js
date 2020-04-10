@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
@@ -9,7 +9,7 @@ import './SpecialCapacitiesComponent.css'
 const capacitiesImage = require('images/details.png');
 const showImage = require('images/show.png');
 const hideImage = require('images/hide.png');
-class SpecialCapacities extends Component {
+class SpecialCapacities extends PureComponent {
 
   constructor(props) {
     super(props);
@@ -20,12 +20,12 @@ class SpecialCapacities extends Component {
     const { capacities, capacitiesDescriptions, raceCapacitiesDescriptions, specialisationCapacities, classes, subRaces, specialisations,
             subRaceId, classId, specialisationId, level, hiddenCapacities, onVisibilityClick } = this.props;
     const {showHidden} = this.state;
-    const characterClass = classes && classes[classId];
-    let specialisation = specialisations && specialisations[specialisationId];
-    const specialisationLevel = characterClass && characterClass.SpecialisationLevel;
-    const isValidSpecialisation = specialisationLevel <= level && specialisation && specialisation.Class === classId;
+    const characterClass = classes?.[classId];
+    let specialisation = specialisations?.[specialisationId];
+    const specialisationLevel = characterClass?.SpecialisationLevel;
+    const isValidSpecialisation = specialisationLevel <= level && specialisation?.Class === classId;
     specialisation = isValidSpecialisation && specialisation;
-    const specialImage = characterClass && characterClass.SpecialsName && require(`images/specials/${characterClass.SpecialsName}.png`);
+    const specialImage = characterClass?.SpecialsName && require(`images/specials/${characterClass.SpecialsName}.png`);
     const statsImage =  require(`images/stats.png`);
     const autoImage =  require(`images/auto.png`);
     let raceImage;
@@ -34,8 +34,8 @@ class SpecialCapacities extends Component {
     } catch (ex) {
       raceImage = require("images/races/no_race.png");
     }
-    const subRace = subRaces && subRaces[subRaceId];
-    const raceId = subRace && subRace.Race;
+    const subRace = subRaces?.[subRaceId];
+    const raceId = subRace?.Race;
     const raceCapacities = raceCapacitiesDescriptions &&
                             Object.values(raceCapacitiesDescriptions).filter((capacity) =>
                                 (capacity.Race === raceId || capacity.SubRace === subRaceId)
@@ -50,11 +50,11 @@ class SpecialCapacities extends Component {
 
     let knownCapacities = [];
     for (let i = 1; i <= level; i++) {
-      const capacity = capacities && capacities[classId+"-"+i];
-      const specialisationCapacity = specialisation && specialisationCapacities && specialisationCapacities[specialisationId+"-"+i];
+      const capacity = capacities?.[classId+"-"+i];
+      const specialisationCapacity = specialisation && specialisationCapacities?.[specialisationId+"-"+i];
 
-      knownCapacities = knownCapacities.concat(capacity&&capacity.Capacities?capacity.Capacities.map((c) => ({level: i, name: c, specialisation: false})):[]);
-      knownCapacities = knownCapacities.concat(specialisationCapacity&&specialisationCapacity.Capacities?specialisationCapacity.Capacities.map((c) => ({level: i, name: c, specialisation: true})):[]);
+      knownCapacities = knownCapacities.concat(capacity?.Capacities?.map((c) => ({level: i, name: c, specialisation: false})) || []);
+      knownCapacities = knownCapacities.concat(specialisationCapacity?.Capacities?.map((c) => ({level: i, name: c, specialisation: true})) || []);
     }
 
     const title = showHidden?"Masquer les compétences superflues":"Afficher les compétences masquées";
@@ -65,17 +65,17 @@ class SpecialCapacities extends Component {
                             <img className="show-hidden-capacities activable transparent"
                                   src={showHidden?showImage:hideImage}
                                   alt={title} title={title}
-                                  onClick={() => {this.setState({showHidden: !showHidden})}}/>
+                                  role="button" onClick={() => {this.setState({showHidden: !showHidden})}}/>
                             </span>}
                             extensor={<img src={capacitiesImage} alt="Compétences de clases" />}
                             defaultExtended={true} >
           <ul>
-          {raceCapacities && raceCapacities.map((capacityDescription) => {
-            const hidden = hiddenCapacities && hiddenCapacities.includes(capacityDescription.Code);
-            const description = (capacityDescription && capacityDescription.Description ) || "";
-            const autoManaged = capacityDescription && capacityDescription.Auto;
-            const statsCapacity = capacityDescription && capacityDescription.Stats;
-            const capacityUseNumber = capacityDescription && capacityDescription.UseNumber;
+          {raceCapacities?.map((capacityDescription) => {
+            const hidden = hiddenCapacities?.includes(capacityDescription.Code);
+            const description = capacityDescription?.Description || "";
+            const autoManaged = capacityDescription?.Auto;
+            const statsCapacity = capacityDescription?.Stats;
+            const capacityUseNumber = capacityDescription?.UseNumber;
             return (!hidden || showHidden) && <li key={capacityDescription.Code} className={`capacity hoverable transparent ${autoManaged?"auto-managed":""}`}
                                               title={(capacityDescription.RequiredLevel?`Compétence de niveau ${capacityDescription.RequiredLevel}\n`:"")+`${description}`}>
                                                 <div className="capacity-title">
@@ -93,7 +93,7 @@ class SpecialCapacities extends Component {
                                                 </div>
                                                 <span>
                                                   <span className={`hide-capacity activable transparent ${hidden?"hidden-capacity":""}`} title={hidden?"Afficher":"Masquer"}
-                                                        onClick={() => {onVisibilityClick(capacityDescription.Code)}}>
+                                                        role="button" onClick={() => {onVisibilityClick(capacityDescription.Code)}}>
                                                     <img src={hidden?hideImage:showImage} alt={hidden?"Afficher":"Masquer"} />
                                                   </span>
                                                   <span className="capacity-source">
@@ -105,19 +105,19 @@ class SpecialCapacities extends Component {
                                               </li>
           })}
           {knownCapacities.map((capacity) => {
-            const hidden = hiddenCapacities && hiddenCapacities.includes(capacity.name);
-            const capacityDescription = capacitiesDescriptions && capacitiesDescriptions[classId+"-"+capacity.name];
-            const description = (capacityDescription && capacityDescription.Description ) || "";
-            const autoManaged = capacityDescription && capacityDescription.Auto;
-            const specialCapacity = capacityDescription && capacityDescription.Special;
-            const statsCapacity = capacityDescription && capacityDescription.Stats;
-            const capacityUseNumber = capacityDescription && capacityDescription.UseNumber;
+            const hidden = hiddenCapacities?.includes(capacity.name);
+            const capacityDescription = capacitiesDescriptions?.[classId+"-"+capacity.name];
+            const description = capacityDescription?.Description || "";
+            const autoManaged = capacityDescription?.Auto;
+            const specialCapacity = capacityDescription?.Special;
+            const statsCapacity = capacityDescription?.Stats;
+            const capacityUseNumber = capacityDescription?.UseNumber;
             return (!hidden || showHidden) && <li key={capacity.name} className={`capacity hoverable transparent ${autoManaged?"auto-managed":""}`}
                                               title={`Compétence de niveau ${capacity.level}\n${description}`}>
                                                 <div className="capacity-title">
                                                   {specialCapacity
-                                                    ? <div className={`use-condition ${characterClass && characterClass.SpecialsName}`}>
-                                                        <img src={specialImage} title={`Compétence utilisant des points de ${characterClass && characterClass.SpecialsName}`} alt="" />
+                                                    ? <div className={`use-condition ${characterClass?.SpecialsName}`}>
+                                                        <img src={specialImage} title={`Compétence utilisant des points de ${characterClass?.SpecialsName}`} alt="" />
                                                       </div>
                                                     :(  statsCapacity
                                                         ?<div className="use-condition">
@@ -133,7 +133,7 @@ class SpecialCapacities extends Component {
                                                 </div>
                                                 <span>
                                                   <span className={`hide-capacity activable transparent ${hidden?"hidden-capacity":""}`} title={hidden?"Afficher":"Masquer"}
-                                                        onClick={() => {onVisibilityClick(capacity.name)}}>
+                                                        role="button" onClick={() => {onVisibilityClick(capacity.name)}}>
                                                     <img src={hidden?hideImage:showImage} alt={hidden?"Afficher":"Masquer"} />
                                                   </span>
                                                   <span className="capacity-source">

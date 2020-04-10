@@ -1,11 +1,11 @@
-import React, {Component} from 'react'
+import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 
 import './ExpendableComponent.css'
 
 const defaultExpendImage = require('images/details.png');
 
-class ExpendableComponent extends Component {
+class ExpendableComponent extends PureComponent {
 
   constructor(props) {
     super(props);
@@ -23,7 +23,8 @@ class ExpendableComponent extends Component {
     <div className={`expendableComponent ${horizontal?"horizontal":""} ${reverse?"reverse":""}`}>
       <h1 className="expendable-header">
         {header}
-        <span className={`activable extensor ${showContent?"opened":"closed"} ${horizontal?"horizontal":""} ${reverse?"reverse":""}`} onClick={this.onShowContentUpdate} title={title} >
+        <span className={`activable extensor ${showContent?"opened":"closed"} ${horizontal?"horizontal":""} ${reverse?"reverse":""}`}
+              role="button" onClick={this.onShowContentUpdate} title={title} >
           {extensorElement}
         </span>
       </h1>

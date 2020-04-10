@@ -71,7 +71,7 @@ const Money = ({ id, amount, fullDisplay, alternativeDisplay, onChange }) => {
 
 const DIGIT_WIDTH = 0.75;
 function resize(event, elementId) {
-  const el = (event && event.target) ||document.getElementById(elementId);
+  const el = event?.target ||document.getElementById(elementId);
   if (el) {
     el.style.width = ((el.value.length+1) * DIGIT_WIDTH) + 'rem';
   }

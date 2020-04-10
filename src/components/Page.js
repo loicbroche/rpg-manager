@@ -1,6 +1,6 @@
-import React, { Component } from "react"
+import React, { PureComponent } from "react"
 
-class Page extends Component {
+class Page extends PureComponent {
   componentDidMount() {
     document.title = this.props.title
   }

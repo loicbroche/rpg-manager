@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { CharacterPropType } from 'PropTypes';
 
@@ -16,7 +16,7 @@ import ACComponent from 'components/character/fight/ACComponent';
 import AlterationsComponent from 'components/character/fight/AlterationsComponent'
 import SpeedComponent from 'components/character/stats/SpeedComponent'
 
-class CharacterOverview extends Component {
+class CharacterOverview extends PureComponent {
     render() {
         const { caracteristics, levels, character } = this.props;
         const characterLevel = getLevelNumber(levels, character.XP);

@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {PureComponent} from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
@@ -10,17 +10,17 @@ import SkillSelector from 'components/shared//SkillSelector';
 
 const detailsImage = require('images/details.png');
 
-class Skills extends Component {
+class Skills extends PureComponent {
 
 
   render() {
     const { skills, caracteristics, historics, levels,
             master, onClick, historicId, caracteristicsBonus, subRaceId, XP} = this.props;
     
-    const historic = historics && historics[historicId];
-    const historicSkills = historic && (historic.Skills || []);
+    const historic = historics?.[historicId];
+    const historicSkills = historic?.Skills || [];
     const level = getLevel(levels, XP);
-    const masteryBonus = level && level.MasteryBonus;
+    const masteryBonus = level?.MasteryBonus;
 
     return (
       <div className='skillsComponent'>
@@ -34,13 +34,13 @@ class Skills extends Component {
           <ul className="skills">
             {skills &&
               Object.values(skills).map(({Caracteristic: caracteristicCode, Name}, index) => {
-                const isMaster = master && master.includes(Name);
+                const isMaster = master?.includes(Name);
                 const isHistoricMaster = historicSkills.includes(Name);
-                const caracteristic = caracteristics && caracteristics[caracteristicCode];
-                const caracteristicBonus = caracteristicsBonus && caracteristicsBonus[caracteristicCode];
+                const caracteristic = caracteristics?.[caracteristicCode];
+                const caracteristicBonus = caracteristicsBonus?.[caracteristicCode];
 
                 return (
-                <li key={index} className={"skill "+(isHistoricMaster?"locked":"activable")} onClick={() => !isHistoricMaster && onClick(Name)}
+                <li key={index} className={"skill "+(isHistoricMaster?"locked":"activable")} role="button" onClick={() => !isHistoricMaster && onClick(Name)}
                     title={isHistoricMaster?"Maîtrise héritée de l'historique "+historic.Name:(isMaster?"Oublier la compétence "+Name:"Apprendre la compétence "+Name)}>
                   <div className={"option "+((isHistoricMaster||isMaster)&&"filled")}></div>
                   <span className="skill-name">{Name}</span>

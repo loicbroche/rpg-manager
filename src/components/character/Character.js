@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 
 import { database } from 'database/InitializeDatabase'
@@ -37,7 +37,7 @@ import PersonnalNotesComponent from 'components/user/PersonnalNotesComponent';
 import GeneralNotesComponent from 'components/user/GeneralNotesComponent';
 import FlyingNotesComponent from '../user/FlyingNotesComponent';
 
-class Character extends Component {
+class Character extends PureComponent {
     constructor (props) {
       super(props);
       const characterId = this.props.match.params.characterId;
@@ -84,7 +84,8 @@ class Character extends Component {
             Resistances: null,
             Saves: null,
             SaveAdvantages: null,
-            Dexterity: null
+            Dexterity: null,
+            Damages: null
           },
           generalNotes: [],
           personnalNotes: []
@@ -105,6 +106,7 @@ class Character extends Component {
           newState.SaveAdvantages = newState.SaveAdvantages || [];
           newState.MinorSpells = newState.MinorSpells || [];
           newState.Spells = newState.Spells || [];
+          newState.Damages = newState.Damages || [];
 
           this.setState({characterInfos: {...newState}});
         }
@@ -136,7 +138,7 @@ class Character extends Component {
         const { caracteristics, levels, races, subRaces, weapons, armors} = this.props;
         const { Name, SubRace: subRaceId, Gender, Class: classId, Specialisation, FightStyles, Historic: historicId, History, Skills: masterSkills,
                 XP, HP, MaxHP, Specials, SpellsLocations, Armor, Shield, Weapon, DistanceWeapon, MasterWeapons, MasterArmors, MasterObjects, Alterations,
-                Resistances, Saves, SaveAdvantages, Health, Strength, Notes, Money, Objects: characterObjects, SatchelObjects, HiddenCapacities} = this.state.characterInfos;
+                Resistances, Saves, SaveAdvantages, Health, Strength, Notes, Money, Objects: characterObjects, SatchelObjects, HiddenCapacities, Damages} = this.state.characterInfos;
         const { generalNotes, personnalNotes } = this.state;
 
         const caracteristicsBonus = caracteristics && Object.values(caracteristics).reduce((accum, caracteristic) => {
@@ -145,19 +147,19 @@ class Character extends Component {
         }, {});
         const characterLevel = getLevelNumber(levels, XP);
 
-        const armor = armors && armors[Armor];
-        const shield = armors && armors[Shield];
-        const weapon = weapons && weapons[Weapon];
-        const distanceWeapon = weapons && weapons[DistanceWeapon];
+        const armor = armors?.[Armor];
+        const shield = armors?.[Shield];
+        const weapon = weapons?.[Weapon];
+        const distanceWeapon = weapons?.[DistanceWeapon];
         const equipmentsWeight =  (armor?armor.Weight:0)
                                 + (shield?shield.Weight:0)
                                 + (weapon?weapon.Weight:0)
                                 + (distanceWeapon?distanceWeapon.Weight:0);
 
-        const subRace = subRaces && subRaces[subRaceId];
-        const race = subRace && races && races[subRace.Race];
-        const raceBonus = race && race[DATA_MODEL.CHARACTERS.columns.STRENGTH.name];
-        const subRaceBonus = subRace && subRace[DATA_MODEL.CHARACTERS.columns.STRENGTH.name];
+        const subRace = subRaces?.[subRaceId];
+        const race = races?.[subRace?.Race];
+        const raceBonus = race?.[DATA_MODEL.CHARACTERS.columns.STRENGTH.name];
+        const subRaceBonus = subRace?.[DATA_MODEL.CHARACTERS.columns.STRENGTH.name];
         const capacityCharge = getChargeCapacity(Strength + raceBonus + subRaceBonus) - equipmentsWeight;
 
         return (
@@ -189,7 +191,8 @@ class Character extends Component {
                     <div className="character-capacities">
                         <div className="health-overview">
                             <HealthComponent value={Health} onChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HEALTH.name, value); }} />
-                            <DamagesComponent characterId={Name} subRaceId={subRaceId} />
+                            <DamagesComponent characterId={Name} subRaceId={subRaceId} damages={Damages}
+                                                onDamageChange={ (value) =>{ this.toggleElement(DATA_MODEL.CHARACTERS.columns.DAMAGES.name, value); }} />
                             <WeaponSelector equipmentId={Weapon}
                                             wearingCharacter={ this.state.characterInfos }
                                             onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.WEAPON.name, value); }} />

@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {PureComponent} from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { getLevel } from 'rules/Levels.rules'
@@ -6,7 +6,7 @@ import { getLevel } from 'rules/Levels.rules'
 import './SkillSelector.css'
 import CaracteristicBonus from 'components/shared/CaracteristicBonus'
 
-class SkillSelector extends Component {
+class SkillSelector extends PureComponent {
 
   constructor(props) {
     super(props);
@@ -17,16 +17,16 @@ class SkillSelector extends Component {
     const { skills, caracteristics,  historics, levels,
             caracteristicsBonus, subRaceId, master, historicId, XP} = this.props;
     const {selectedSkillName} = this.state;
-    const selectedSkill = skills && skills[selectedSkillName];
-    const caracteristic = caracteristics && selectedSkill && caracteristics[selectedSkill.Caracteristic];
-    const caracteristicBonus = caracteristicsBonus && caracteristic && caracteristicsBonus[caracteristic.Code];
+    const selectedSkill = skills?.[selectedSkillName];
+    const caracteristic = caracteristics?.[selectedSkill?.Caracteristic];
+    const caracteristicBonus = caracteristicsBonus?.[caracteristic?.Code];
     const level = getLevel(levels, XP);
-    const masteryBonus = level && level.MasteryBonus;
+    const masteryBonus = level?.MasteryBonus;
 
-    const historic = historics && historics[historicId];
-    const historicSkills = historic?historic.Skills:[];
+    const historic = historics?.[historicId];
+    const historicSkills = historic?.Skills || [];
 
-    const isMaster = master && master.includes(selectedSkillName);
+    const isMaster = master?.includes(selectedSkillName);
     const isHistoricMaster = historicSkills.includes(selectedSkillName);
 
     return (
@@ -40,7 +40,7 @@ class SkillSelector extends Component {
         )}
       </select>
       { caracteristicBonus &&
-        <CaracteristicBonus caracteristicName={ caracteristic && caracteristic.OV}
+        <CaracteristicBonus caracteristicName={ caracteristic?.OV}
                                                 value={caracteristicBonus}
                                                 subRaceId={subRaceId}/>
       }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { Link } from 'react-router-dom'
 import { database } from 'database/InitializeDatabase'
 import { DATA_MODEL } from 'database/DataModel'
@@ -10,7 +10,7 @@ import { ROUTE_GAME_MASTER } from 'App'
 import CharacterInput from './CharacterInput'
 import CharacterMenuItem from './CharacterMenuItem'
 
-class Home extends Component {
+class Home extends PureComponent {
   constructor (props) {
     super(props);
     this.state = {

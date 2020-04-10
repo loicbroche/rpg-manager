@@ -7,17 +7,17 @@ export const CA_CARACTERISTIC_NAME = "Dexterity";
 export const CA_BASE = 10;
 
 export const getArmorBonusAC = (race, subRace, characterClass, armor, dexterityPoints) => {
-    const subRaceArmorCategories =  subRace && (subRace.ArmorCategories || []);
-    const classArmorCategories = characterClass && (characterClass.ArmorCategories || []);
+    const subRaceArmorCategories =  subRace?.ArmorCategories || [];
+    const classArmorCategories = characterClass?.ArmorCategories || [];
     const isMasterArmor = armor
-                          && (  (classArmorCategories && classArmorCategories.includes(armor.Category))
-                                || (subRaceArmorCategories && subRaceArmorCategories.includes(armor.Category))
+                          && (  classArmorCategories?.includes(armor.Category)
+                                || subRaceArmorCategories?.includes(armor.Category)
                              )
 
-    const raceBonus = race && race[CA_CARACTERISTIC_NAME];
-    const subRaceBonus = subRace && subRace[CA_CARACTERISTIC_NAME];
+    const raceBonus = race?.[CA_CARACTERISTIC_NAME];
+    const subRaceBonus = subRace?.[CA_CARACTERISTIC_NAME];
 
-    const bonusMax = armor && isMasterArmor && armor.MaxBonusAC;
+    const bonusMax = isMasterArmor && armor?.MaxBonusAC;
     return ((!armor || (isMasterArmor && armor.BonusAC === CA_CARACTERISTIC_CODE)) && calculateTotalBonus(dexterityPoints, raceBonus, subRaceBonus, MAX_CARACTERISTIC, BONUS_STEP, bonusMax)) || 0;
 }
 getArmorBonusAC.propTypes = {

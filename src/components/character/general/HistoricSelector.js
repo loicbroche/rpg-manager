@@ -1,12 +1,12 @@
 
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import './HistoricSelector.css'
 
 const S_KEY_CODE = 83;
 
-class HistoricSelector extends Component {
+class HistoricSelector extends PureComponent {
 
   constructor(props) {
     super(props);
@@ -29,7 +29,7 @@ class HistoricSelector extends Component {
     return (
         <div className="selector historic-selector">
           <div className={`history-container ${showHistory&&"show-history"}`}>
-            <span className={`activable transparent extensor ${showHistory?"opened":"closed"}`} onClick={this.onShowHistory} title={title} >
+            <span className={`activable transparent extensor ${showHistory?"opened":"closed"}`} role="button" onClick={this.onShowHistory} title={title} >
               <img src={inkWellImage} alt={title} />
             </span>  
               <textarea className={`narrative history ${showHistory&&"show-history"}`}

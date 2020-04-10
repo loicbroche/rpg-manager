@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { CharacterPropType } from 'PropTypes';
@@ -12,22 +12,22 @@ import LanguagesComponent from './LanguagesComponent'
 
 const detailsImage = require('images/inkwell_primary.png');
 
-class DetailsComponent extends Component {
+class DetailsComponent extends PureComponent {
 
   render() {
 
     const { alignments, armors, weapons, objects, character, onChange, onClickElement } = this.props;
-    const armor = armors && character && armors[character.Armor];
-    const shield = armors && character && armors[character.Shield];
-    const weapon = weapons && character && weapons[character.Weapon];
-    const distanceWeapon = weapons && character && weapons[character.DistanceWeapon];
+    const armor = armors?.[character?.Armor];
+    const shield = armors?.[character?.Shield];
+    const weapon = weapons?.[character?.Weapon];
+    const distanceWeapon = weapons?.[character?.DistanceWeapon];
 
     const equipmentsWeight =  (armor?armor.Weight:0)
                               + (shield?shield.Weight:0)
                               + (weapon?weapon.Weight:0)
                               + (distanceWeapon?distanceWeapon.Weight:0);
     let objectsWeight = 0;
-    if (objects && character && character.Objects) {
+    if (objects && character?.Objects) {
       for (let i = 0; i < character.Objects.length; i++) {
         const obj = objects[character.Objects[i]];
         objectsWeight += !obj?0:obj.Weight;
@@ -126,7 +126,7 @@ class DetailsComponent extends Component {
                       disabled={!onChange} />
               <LanguagesComponent knownLanguages={character[DATA_MODEL.CHARACTERS.columns.LANGUAGES.name]}
                                   subRaceId={character[DATA_MODEL.CHARACTERS.columns.SUB_RACE.name]}
-                                  onClick={(value) => onClickElement(DATA_MODEL.CHARACTERS.columns.LANGUAGES.name, value)} />
+                                  role="button" onClick={(value) => onClickElement(DATA_MODEL.CHARACTERS.columns.LANGUAGES.name, value)} />
             </div>
           </div>
         </ExpendableComponent>

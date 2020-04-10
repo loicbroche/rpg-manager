@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {PureComponent} from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
@@ -7,7 +7,7 @@ import ExpendableComponent from 'components/shared/ExpendableComponent';
 
 const detailsImage = require('images/details.png');
 
-class Armors extends Component {
+class Armors extends PureComponent {
 
   render() {
     const { armorCategories } = this.props;
@@ -29,23 +29,23 @@ class Armors extends Component {
 
   getArmors(category) {
     const { armors, classes, master, classId, onClick } = this.props;
-    const availableArmors = armors && Object.values(armors).filter((armor) => category && armor.Category === category.Code);
+    const availableArmors = armors && Object.values(armors).filter((armor) => armor.Category === category?.Code);
 
-    const characterClass = classes && classes[classId];
-    const classArmorCategories = characterClass && (characterClass.ArmorCategories || []);
-    const classArmors = characterClass && (characterClass.Armors || []);
-    const isClassMasterCategory = classArmorCategories && classArmorCategories.includes(category && category.Code);
+    const characterClass = classes?.[classId];
+    const classArmorCategories = characterClass?.ArmorCategories || [];
+    const classArmors = characterClass?.Armors || [];
+    const isClassMasterCategory = classArmorCategories?.includes(category?.Code);
 
-    return availableArmors && availableArmors.length > 0 &&
-      <div key={category && category.Code}>
-        <h1 className={`armors-category-name ${(isClassMasterCategory?"locked":"")}`}>{(category && category.Name)}</h1>
+    return availableArmors?.length > 0 &&
+      <div key={category?.Code}>
+        <h1 className={`armors-category-name ${(isClassMasterCategory?"locked":"")}`}>{category?.Name}</h1>
         <ul className="armors-category">
           {availableArmors &&
             Object.values(availableArmors).map(({Name, AC, BonusAC, MaxBonusAC}, index) => {
-              const isMaster = master && master.includes(Name);
-              const isClassMaster = isClassMasterCategory || (classArmors && classArmors.includes(Name));
+              const isMaster = master?.includes(Name);
+              const isClassMaster = isClassMasterCategory || classArmors?.includes(Name);
               return (
-              <li key={index} className={"armor "+(isClassMaster?"locked":"activable")} onClick={() => !isClassMaster && onClick(Name)}
+              <li key={index} className={"armor "+(isClassMaster?"locked":"activable")} role="button" onClick={() => !isClassMaster && onClick(Name)}
                   title={(isClassMaster?"Maîtrise héritée de la classe "+characterClass.Name:(isMaster?"Oublier":"Apprendre")+` la maîtrise de ${Name}`)
                           +`\nCA : ${AC} ${BonusAC?`+${BonusAC+(MaxBonusAC?`(${MaxBonusAC})`:"")}`:""}`}>
                 <div className={"option "+((isClassMaster||isMaster)&&"filled")}></div>

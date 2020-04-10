@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {PureComponent} from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
@@ -9,7 +9,7 @@ import ExpendableComponent from 'components/shared/ExpendableComponent';
 
 const detailsImage = require('images/details.png');
 
-class Weapons extends Component {
+class Weapons extends PureComponent {
 
   render() {
     const { weaponCategories } = this.props;
@@ -33,26 +33,26 @@ class Weapons extends Component {
     const { weapons, classes, races, subRaces, levels, master, classId, subRaceId, XP, onClick } = this.props;
     const availableWeapons = weapons && Object.values(weapons).filter((weapon) => category && weapon.Category === category.Code);
     const level = getLevel(levels, XP);
-    const characterClass = classes && classes[classId];
-    const subRace = subRaces && subRaces[subRaceId];
-    const race = subRace && races && races[subRace.Race];
-    const classWeaponCategories = characterClass && (characterClass.WeaponCategories || []);
-    const classWeapons = characterClass && (characterClass.Weapons || []);
-    const raceWeapons = race && (race.Weapons || []);
-    const subRaceWeapons = subRace && (subRace.Weapons || []);
-    const masteryBonus = level && level.MasteryBonus;
-    const isClassMasterCategory = classWeaponCategories && classWeaponCategories.includes(category && category.Code);
+    const characterClass = classes?.[classId];
+    const subRace = subRaces?.[subRaceId];
+    const race = races?.[subRace?.Race];
+    const classWeaponCategories = characterClass?.WeaponCategories || [];
+    const classWeapons = characterClass?.Weapons || [];
+    const raceWeapons = race?.Weapons || [];
+    const subRaceWeapons = subRace?.Weapons || [];
+    const masteryBonus = level?.MasteryBonus;
+    const isClassMasterCategory = classWeaponCategories?.includes(category?.Code);
 
-    return availableWeapons && availableWeapons.length > 0 &&
-      <div key={category && category.Code}>
-        <h1 className={`weapons-category-name ${(isClassMasterCategory?"locked":"")}`}>{(category && category.Name)}</h1>
+    return availableWeapons?.length > 0 &&
+      <div key={category?.Code}>
+        <h1 className={`weapons-category-name ${(isClassMasterCategory?"locked":"")}`}>{category?.Name}</h1>
         <ul className="weapons-category">
           {availableWeapons &&
             Object.values(availableWeapons).map(({Name, Damage, DamageType}, index) => {
-              const isMaster = master && master.includes(Name);
-              const isClassMaster = isClassMasterCategory || (classWeapons && classWeapons.includes(Name));
-              const isRaceMaster = (raceWeapons && raceWeapons.includes(Name));
-              const isSubRaceMaster = (subRaceWeapons && subRaceWeapons.includes(Name));
+              const isMaster = master?.includes(Name);
+              const isClassMaster = isClassMasterCategory || classWeapons?.includes(Name);
+              const isRaceMaster = raceWeapons?.includes(Name);
+              const isSubRaceMaster = subRaceWeapons?.includes(Name);
               const isLockedMaster = isClassMaster || isSubRaceMaster || isRaceMaster;
               const lockedMasterTitle = isRaceMaster
                                         ?"Maîtrise héritée de la race "+race.Name
@@ -60,7 +60,7 @@ class Weapons extends Component {
                                             ?"Maîtrise héritée de la race "+subRace.Name
                                             :isClassMaster?"Maîtrise héritée de la classe "+characterClass.Name:"");
               return (
-              <li key={index} className={"weapon "+(isLockedMaster?"locked":"activable")} onClick={() => !isLockedMaster && onClick(Name)}
+              <li key={index} className={"weapon "+(isLockedMaster?"locked":"activable")} role="button" onClick={() => !isLockedMaster && onClick(Name)}
                   title={(isLockedMaster?lockedMasterTitle:(isMaster?"Oublier":"Apprendre")+` la maîtrise de ${Name}`)+`\nDégâts : ${Damage} ${DamageType}`}>
                 <div className={"option "+((isLockedMaster||isMaster)&&"filled")}></div>
                 <span className="weapon-name">{Name}</span>

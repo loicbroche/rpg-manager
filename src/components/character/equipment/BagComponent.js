@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
@@ -15,7 +15,7 @@ const VARIOUS_CATEGORY = "VARIOUS";
 const deleteImage = require('images/delete.png');
 const addImage = require('images/add.png');
 
-class BagComponent extends Component {
+class BagComponent extends PureComponent {
 
   constructor(props) {
     super(props);
@@ -41,8 +41,8 @@ class BagComponent extends Component {
       }
     }
 
-    const newObject = objects && objects[this.state.newObject];
-    const id = name && name.replace(/ /g, "-");
+    const newObject = objects?.[this.state.newObject];
+    const id = name?.replace(/ /g, "-");
 
     return (
       <div className="bagComponent">
@@ -55,15 +55,15 @@ class BagComponent extends Component {
                                 extensor={<img src={bagImage} alt={name} />}
                                 reverse={true}>                   
             { Object.entries(objs).map(([categoryId, categoryObjects]) => {
-                const category = objectCategories && objectCategories[categoryId];
+                const category = objectCategories?.[categoryId];
                 return <div className="bagItems" key={categoryId}>
-                  <span className="categoryName">{category && category.Name}</span>
+                  <span className="categoryName">{category?.Name}</span>
                   { Object.values(categoryObjects).map((obj) => {
                     return <div className="bagItem" key={obj.Name}>
                     <span className="item-name">{obj.Name}</span>
                       <Weight weight={obj.Weight} />
                       <Money id={"bag-"+id+"-"+obj.Name} amount={obj.Price} />
-                      <span className="delete-object activable transparent" title="Supprimer" onClick={() => this.deleteObject(obj.Name)}>
+                      <span className="delete-object activable transparent" title="Supprimer" role="button" onClick={() => this.deleteObject(obj.Name)}>
                         <img src={deleteImage} alt="Supprimer" />
                       </span>
                     </div>
@@ -91,7 +91,7 @@ class BagComponent extends Component {
               <span className="new-object-infos">
                 <Weight weight={newObject?newObject.Weight:0} />
                 <Money id={`bag-${id}-new-object`} amount={newObject?newObject.Price:0} />
-                <span className={`add-object ${this.state.newObject !== "-"?"activable transparent":"disabled"}`} title="Ajouter" onClick={() => this.addObject()}>
+                <span className={`add-object ${this.state.newObject !== "-"?"activable transparent":"disabled"}`} title="Ajouter" role="button" onClick={() => this.addObject()}>
                   <img src={addImage} alt="Ajouter" />
                 </span>
               </span>

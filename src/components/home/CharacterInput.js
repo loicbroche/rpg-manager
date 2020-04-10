@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
 import './CharacterInput.css'
 
-class CharacterInput extends Component {
+class CharacterInput extends PureComponent {
   state = { name: '', error: null }
 
   render() {

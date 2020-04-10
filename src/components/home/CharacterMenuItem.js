@@ -12,7 +12,7 @@ const CharacterMenuItem = ({ id, name, onRemove }) => (
           {name}
         </Link>
         <button className="delete-button" title={`Supprimer la fiche personnage de ${name}`}
-        onClick={() => {if(window.confirm(`Êtes-vous certain de vouloir supprimer la fiche personnage de ${name} ?`)) {onRemove(id);}} }>
+                onClick={() => {if(window.confirm(`Êtes-vous certain de vouloir supprimer la fiche personnage de ${name} ?`)) {onRemove(id);}} }>
           <img src={deleteImage} alt={`Supprimer la fiche personnage de ${name}`} className="delete-image" />
         </button>
       </div>

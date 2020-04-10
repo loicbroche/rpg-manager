@@ -338,5 +338,6 @@ export const CharacterPropType = PropTypes.shape({
     MinorSpells: PropTypes.arrayOf(PropTypes.string),
     Spells: PropTypes.arrayOf(PropTypes.string),
     Notes: PropTypes.string,
-    hiddenCapacities: PropTypes.arrayOf(PropTypes.string)
+    hiddenCapacities: PropTypes.arrayOf(PropTypes.string),
+    Damages: PropTypes.arrayOf(PropTypes.string)
 })

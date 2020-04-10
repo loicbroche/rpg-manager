@@ -2,9 +2,9 @@ import PropTypes from 'prop-types'
 import { LevelPropType } from 'PropTypes';
 
 export const getLevelNumber = (levels, XP) => {
-  const maxLevel = levels && levels[levels.length-1];
-  const maxXP = maxLevel && maxLevel.XP;
-  const levelNumber = levels && Math.max(...levels.filter((lev) => lev && lev.XP <= Math.min(XP, maxXP)).map((lev) => lev.Level));
+  const maxLevel = levels?.[levels.length-1];
+  const maxXP = maxLevel?.XP;
+  const levelNumber = levels && Math.max(...levels.filter((lev) => lev?.XP <= Math.min(XP, maxXP)).map((lev) => lev.Level));
 
   return levelNumber;
 }
@@ -23,10 +23,10 @@ getLevel.propTypes = {
 }
 
 export const getNextLevel = (levels, XP) => {
-  const maxLevel = levels && levels[levels.length-1];
-  const maxXP = maxLevel && maxLevel.XP;
+  const maxLevel = levels?.[levels.length-1];
+  const maxXP = maxLevel?.XP;
   const level = getLevelNumber(levels, XP);
-  const nextLevel = XP>=maxXP?maxLevel: (levels && levels.find((lev) => lev && lev.Level === (level+1)));
+  const nextLevel = XP>=maxXP?maxLevel: levels?.find((lev) => lev && lev.Level === (level+1));
   return nextLevel;
 }
 getNextLevel.propTypes = {

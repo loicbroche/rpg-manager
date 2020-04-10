@@ -457,7 +457,8 @@ export const DATA_MODEL = {
             MINOR_SPELLS: { name: "MinorSpells", optional: true },
             SPELLS: { name: "Spells", optional: true },
             NOTES: { name: "Notes", optional: true },
-            HIDDEN_CAPACITIES: { name: "HiddenCapacities", optional: true }
+            HIDDEN_CAPACITIES: { name: "HiddenCapacities", optional: true },
+            DAMAGES: { name: "Damages", optional: true }
         }
     }
 }

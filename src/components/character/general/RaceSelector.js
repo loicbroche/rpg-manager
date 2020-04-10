@@ -1,10 +1,10 @@
 
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import './RaceSelector.css'
 
-class RaceSelector extends Component {
+class RaceSelector extends PureComponent {
 
   render() {
     const { races, subRaces, subRaceId, gender } = this.props;
@@ -49,7 +49,7 @@ class RaceSelector extends Component {
     return availableSubRaces.length === 1
             ? <option key={availableSubRaces[0].Id} value={availableSubRaces[0].Id}>{availableSubRaces[0].Name}</option>
             : (
-              <optgroup key={raceId} label={races && races[raceId].Name}>
+              <optgroup key={raceId} label={races?.[raceId]?.Name}>
                 { availableSubRaces.map((subRace) => (
                   <option key={subRace.Id} value={subRace.Id}>{subRace.Name}</option>
                 ))}

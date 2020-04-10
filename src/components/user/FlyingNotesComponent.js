@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { NotePropType } from 'PropTypes';
 
@@ -14,7 +14,7 @@ const hiddenImage = require('images/hide.png');
 const repatriateImage = require('images/repatriate.png');
 const deleteImage = require('images/delete.png');
 
-class FlyingNotesComponent extends Component {
+class FlyingNotesComponent extends PureComponent {
 
   constructor(props) {
     super(props);
@@ -29,7 +29,7 @@ class FlyingNotesComponent extends Component {
 
   componentWillReceiveProps() {
     const { notes } = this.props;
-    const notesNb = notes && notes.length;
+    const notesNb = notes?.length;
     for(let i= 0; i < notesNb; i++) {
       this.dragElement(document.getElementById(`flying-note-${i}`), i);
     }
@@ -37,7 +37,7 @@ class FlyingNotesComponent extends Component {
 
   componentDidUpdate() {
     const { notes } = this.props;
-    const notesNb = notes && notes.length;
+    const notesNb = notes?.length;
     for(let i= 0; i < notesNb; i++) {
       this.dragElement(document.getElementById(`flying-note-${i}`), i);
     }
@@ -52,16 +52,16 @@ class FlyingNotesComponent extends Component {
         <div className="flyingNotesComponent">
           <div className={`flying-notes-container ${showNotes&&"show-flying-notes"}`}>
             <div className="flying-notes-header">
-              <div className="show-button activable transparent" onClick={this.onShowNotes} title={title} >
+              <div className="show-button activable transparent" role="button" onClick={this.onShowNotes} title={title} >
                 <img src={showNotes?showImage:hiddenImage} alt={title} />
               </div>
               <span className="flying-notes-component-name">Notes</span>
-              <div className={`repatriation-button activable transparent ${!showNotes?"hidden":""}`} onClick={this.onRepatriateNotes} title="Réinitialiser la position des notes volantes">
+              <div className={`repatriation-button activable transparent ${!showNotes?"hidden":""}`} role="button" onClick={this.onRepatriateNotes} title="Réinitialiser la position des notes volantes">
                   <img src={repatriateImage} alt="Réinitialiser la position" />
               </div>
               <span className={`add-flying-note activable transparent ${!showNotes?"hidden":""}`}
                     title={creationMode?"Annuler la création de la note volante":"Créer une note volante"}
-                    onClick={this.onCreateNote}>+</span>
+                    role="button" onClick={this.onCreateNote}>+</span>
             </div>
             <div className={`flying-notes ${showNotes&&"show-flying-notes"}`}>
               { notes &&
@@ -70,7 +70,7 @@ class FlyingNotesComponent extends Component {
                       style={{left: note.Left, top: note.Top || (index*2.5)+"rem"}} >
                       <div className="flying-note-header activable transparent">
                           <span className="flying-note-name" id={`flying-note-${index}-header`}>{note.Name}</span>
-                          <span className="delete-flying-note activable transparent" title="Supprimer" onClick={() => this.deleteNote(index)}>
+                          <span className="delete-flying-note activable transparent" title="Supprimer" role="button" onClick={() => this.deleteNote(index)}>
                             <img src={deleteImage} alt="Supprimer" />
                           </span>
                       </div>
@@ -79,7 +79,7 @@ class FlyingNotesComponent extends Component {
                 )
               }
               { creationMode &&
-                <div className="flying-note-creation">
+                <form onSubmit={this.createNote} className="flying-note-creation">
                   <input  name="new-flying-note-name" 
                           type="text"
                           placeholder="Titre"
@@ -98,8 +98,8 @@ class FlyingNotesComponent extends Component {
                           value={this.state.description}
                           maxLength={DESCRIPTION_MAX_LENGTH}
                           onChange={(event) => this.setState({description:  event.target.value})}/>
-                  <button className="create-note" onClick={this.createNote}>Créer</button>
-              </div>
+                  <button type="submit" className="create-note" onClick={this.createNote}>Créer</button>
+              </form>
               }
             </div>
           </div>
@@ -112,7 +112,7 @@ class FlyingNotesComponent extends Component {
     if (elmnt) {
       var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
       const { notes, onNotesChange } = this.props;
-      let note = notes && notes[index];
+      let note = notes?.[index];
       const header = document.getElementById(elmnt.id + "-header");
   
       if (header) {
@@ -158,7 +158,7 @@ class FlyingNotesComponent extends Component {
   // Arrow fx for binding
   onRepatriateNotes = () => {
     const { notes, onNotesChange } = this.props;
-    const notesNb = notes && notes.length;
+    const notesNb = notes?.length;
     for(let i= 0; i < notesNb; i++) {
       notes[i].Top = null;
       notes[i].Left = null;
@@ -177,7 +177,8 @@ class FlyingNotesComponent extends Component {
   }
 
   // Arrow fx for binding
-  createNote = () => {
+  createNote = (event) => {
+    event.preventDefault();
     let { notes, onNotesChange } = this.props;
     const {name, content, description} = this.state;
     notes = notes || [];

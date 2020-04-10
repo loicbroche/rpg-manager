@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { NotePropType } from 'PropTypes';
 
@@ -7,7 +7,7 @@ import './GeneralNotesComponent.css'
 
 const S_KEY_CODE = 83;
 
-class GeneralNotesComponent extends Component {
+class GeneralNotesComponent extends PureComponent {
 
   constructor(props) {
     super(props);
@@ -21,7 +21,7 @@ class GeneralNotesComponent extends Component {
 
   componentWillReceiveProps() {
     const {notes, editorCharacter} = this.props;    
-    const notesNb = notes && notes.length;
+    const notesNb = notes?.length;
     for(let i= 0; i < notesNb; i++) {
       const textAreaId = `note-${editorCharacter}-${i}`;
       this.autosizeAndSave(null, textAreaId);
@@ -43,7 +43,8 @@ class GeneralNotesComponent extends Component {
           <div className={`notes-container ${showNotes&&"show-notes"}`}>
             <div className="notes-header">
               <span className="notes-name">Notes générales</span>
-              <span className={`activable transparent extensor ${showNotes?"opened":"closed"}`} onClick={this.onShowNotes} title={title} >
+              <span className={`activable transparent extensor ${showNotes?"opened":"closed"}`}
+                    role="button" onClick={this.onShowNotes} title={title} >
                 <img src={inkWellImage} alt={title} />
               </span>
             </div>
@@ -55,11 +56,11 @@ class GeneralNotesComponent extends Component {
                     <div className="note-movers">
                       <span className={index===0?"disabled":"activable transparent"}
                             title="Monter le paragraphe"
-                            onClick={() => this.moveNote(index, index-1)}>
+                            role="button" onClick={() => this.moveNote(index, index-1)}>
                       ⮝</span>
                       <span className={index===notesNb-1?"disabled":"activable transparent"}
                             title="Descendre le paragraphe"
-                            onClick={() => this.moveNote(index, index+1)}>
+                            role="button" onClick={() => this.moveNote(index, index+1)}>
                       ⮟</span>
                     </div>
                     <textarea   id={textAreaId}
@@ -79,7 +80,7 @@ class GeneralNotesComponent extends Component {
                   <div className="add-note">
                     <span className="activable transparent"
                           title="Ajouter un nouveau paragraphe"
-                          onClick={() => this.addNote()}
+                          role="button" onClick={() => this.addNote()}
                           >+</span>
                   </div>
             </div>
@@ -89,9 +90,9 @@ class GeneralNotesComponent extends Component {
   }
 
   autosizeAndSave(event, textAreaId) {
-    var textArea = (event && event.target) || document.getElementById(textAreaId);
+    var textArea = event?.target || document.getElementById(textAreaId);
     if (textArea) {
-      if (event && event.ctrlKey && event.keyCode === S_KEY_CODE) {
+      if (event?.ctrlKey && event?.keyCode === S_KEY_CODE) {
         //Blur will call save
         textArea.blur();
       } else {
@@ -112,7 +113,7 @@ class GeneralNotesComponent extends Component {
   // Arrow fx for binding
   onNoteEdit = (index) => {
     const { notes, editorCharacter } = this.props;
-    const noteContent = notes && notes[index] && notes[index].Content;
+    const noteContent = notes?.[index]?.Content;
     this.setState({note: noteContent})
     notes[index] = {...notes[index], Locked:(editorCharacter||"un autre utilisateur")}
     this.props.onChange(notes);
