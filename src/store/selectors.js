@@ -1,0 +1,226 @@
+import { createSelector } from 'reselect';
+import { getChargeCapacity } from 'rules/Character.rules'
+import { MAX_CARACTERISTIC, BONUS_STEP } from 'rules/Caracteristics.rules'
+import { CA_CARACTERISTIC_NAME, CA_CARACTERISTIC_CODE } from 'rules/AC.rules'
+
+const HTH_CATEGORY_CODES = ["C_MEL", "W_MEL"];
+const DISTANCE_CATEGORY_CODES = ["C_DIS", "W_DIS"];
+const SHIELD_CATEGORY_CODE = "0_SHIELD";
+const MASTERABLE_CATEGORIES = ["ARTISAN", "GAME", "KIT", "MUSIC", "VEHICLE"];
+
+export const selectSubRacesMap = state => state.referential.subRaces;
+export const selectSubRaces = state => state.referential.subRaces && Object.values(state.referential.subRaces);
+export const selectSubRaceById = (state, id) => state.referential.subRaces?.[id];
+
+export const selectRacesMap = state => state.referential.races;
+export const selectRaces = state => state.referential.races && Object.values(state.referential.races);
+export const selectRaceById = (state, id) => state.referential.races?.[id];
+export const selectRaceBySubRaceId = (state, id) => state.referential.races?.[selectSubRaceById(state, id)?.Race];
+
+export const selectClasses = state => state.referential.classes && Object.values(state.referential.classes);
+export const selectClassById = (state, id) => state.referential.classes?.[id];
+
+export const selectLevels = state => state.referential.levels && Object.values(state.referential.levels);
+export const selectLevelById = (state, id) => state.referential.levels?.[id-1];
+export const selectMaxLevel = createSelector(selectLevels, (levels) => (levels?.[levels.length-1]));
+
+export const selectLevelNumberByXP = (state, xp) =>  {
+    const levels = selectLevels(state);
+    const maxLevel = selectMaxLevel(state);
+    const maxXP = maxLevel?.XP;
+    const levelNumber = levels && Math.max(...levels.filter((lev) => lev?.XP <= Math.min(xp, maxXP)).map((lev) => lev.Level));
+  
+    return levelNumber;
+};
+export const selectLevelByXP = (state, xp) =>  selectLevelById(state, selectLevelNumberByXP(state, xp));
+export const selectNextLevelByXP = (state, xp) => {
+    const maxLevel = selectMaxLevel(state);
+    const maxXP = maxLevel?.XP;
+    const levelNumber = selectLevelNumberByXP(state, xp);
+    return xp>=maxXP?maxLevel: selectLevelById(state, levelNumber+1);
+};
+
+export const selectSpecialisations = state => state.referential.specialisations && Object.values(state.referential.specialisations);
+export const selectSpecialisationById = (state, id) => state.referential.specialisations?.[id];
+export const selectValidSpecialisation = (state, specialisationId, classId, xp) => {
+    const specialisation = selectSpecialisationById(state, specialisationId);
+    const characterClass = selectClassById(state, classId);
+    const levelNumber = selectLevelNumberByXP(state, xp);
+    return specialisation?.Class === classId && characterClass?.SpecialisationLevel <= levelNumber && specialisation;
+};
+export const selectMasteryBonusByXP = (state, xp) =>  selectLevelByXP(state, xp)?.MasteryBonus;
+
+export const selectSkillsMap = state => state.referential.skills;
+export const selectSkills = state => state.referential.skills && Object.values(state.referential.skills);
+export const selectSkillById = (state, id) => state.referential.skills?.[id];
+
+export const selectClassCapacities = state => state.referential.capacities && Object.values(state.referential.capacities);
+export const selectClassCapacitiesById = (state, id) => state.referential.capacities?.[id];
+export const selectClassCapacityByClassIdLevel = (state, classId, levelNumber) => selectClassCapacitiesById(state, classId+"-"+levelNumber);
+export const selectClassCapacityByClassIdXP = (state, classId, xp) => selectClassCapacityByClassIdLevel(state, classId, selectLevelNumberByXP(state, xp));
+
+export const selectSpecialisationCapacities = state => state.referential.specialisationCapacities && Object.values(state.referential.specialisationCapacities);
+export const selectSpecialisationCapacityById = (state, id) => state.referential.specialisationCapacities?.[id];
+export const selectSpecialisationCapacityBySpeIdLevel = (state, specialisationId, levelNumber) => selectSpecialisationCapacityById(state, specialisationId+"-"+levelNumber);
+export const selectSpecialisationBySpeIdXP = (state, specialisationId, xp) => selectSpecialisationCapacityBySpeIdLevel(state, specialisationId, selectLevelNumberByXP(state, xp));
+
+export const selectClassCapacitiesDescriptions = state => state.referential.capacitiesDescriptions && Object.values(state.referential.capacitiesDescriptions);
+export const selectClassCapacityDescriptionById = (state, id) => state.referential.capacitiesDescriptions?.[id];
+export const selectClassCapacityDescriptionByClassId = (state, classId, capacityName) => selectClassCapacityDescriptionById(state, classId+"-"+capacityName);
+export const selectClassCapacitiesDescriptionsByXP = (state, classId, specialisationId, xp) => {
+    const levelNumber = selectLevelNumberByXP(state, xp);
+    let knownCapacities = [];
+    for (let i = 1; i <= levelNumber; i++) {
+      const capacity = selectClassCapacityByClassIdLevel(state, classId, i);
+      const specialisationCapacity = selectSpecialisationCapacityBySpeIdLevel(state, specialisationId, i);
+
+      knownCapacities = knownCapacities.concat(capacity?.Capacities?.map((c) => ({level: i, name: c, specialisation: false, description: selectClassCapacityDescriptionByClassId(state, classId, c)})) || []);
+      knownCapacities = knownCapacities.concat(specialisationCapacity?.Capacities?.map((c) => ({level: i, name: c, specialisation: true, description: selectClassCapacityDescriptionByClassId(state, specialisationId, c)})) || []);
+    }
+
+    return knownCapacities;
+}
+
+export const selectRaceCapacitiesDescriptions = state => state.referential.raceCapacitiesDescriptions && Object.values(state.referential.raceCapacitiesDescriptions);
+export const selectRaceCapacityDescriptionById = (state, id) => state.referential.raceCapacitiesDescriptions?.[id];
+export const selectRaceCapacityDescriptionBySubRaceId = (state, subRaceId, capacityName) => selectRaceCapacityDescriptionById(state, subRaceId+"-"+capacityName);
+export const selectRaceCapacitiesDescriptionsBySubRaceIdXP = (state, subRaceId, xp) => {
+    const raceCapacitiesDescriptions = selectRaceCapacitiesDescriptions(state);
+    const levelNumber = selectLevelNumberByXP(state, xp);
+    const raceId = selectRaceBySubRaceId(state, subRaceId)?.Id;
+    return raceCapacitiesDescriptions &&
+            Object.values(raceCapacitiesDescriptions).filter((capacity) =>
+                (capacity.Race === raceId || capacity.SubRace === subRaceId)
+                && (!capacity.RequiredLevel || capacity.RequiredLevel <= levelNumber));
+}
+
+export const selectAlterationTypes = state => state.referential.alterationTypes && Object.values(state.referential.alterationTypes);
+export const selectAlterationTypeById = (state, id) => state.referential.alterationTypes?.[id];
+
+export const selectAlterations = state => state.referential.alterations && Object.values(state.referential.alterations);
+export const selectAlterationById = (state, id) => state.referential.alterations?.[id];
+
+export const selectAlignments = state => state.referential.alignments && Object.values(state.referential.alignments);
+export const selectAlignmentById = (state, id) => state.referential.alignments?.[id];
+
+export const selectLanguages = state => state.referential.languages && Object.values(state.referential.languages);
+export const selectLanguageById = (state, id) => state.referential.languages?.[id];
+export const selectLanguagesBySubRace = (state, subRaceId) => selectSubRaceById(state, subRaceId)?.Languages || [];
+export const selectLanguagesByRace = (state, subRaceId) => selectRaceBySubRaceId(state, subRaceId)?.Languages || [];
+
+export const selectObjectCategories = state => state.referential.objectCategories && Object.values(state.referential.objectCategories);
+export const selectMasterableObjectCategories = createSelector(selectObjectCategories, (objectCategories) => objectCategories?.filter((category) => MASTERABLE_CATEGORIES.includes(category.Code)));
+
+export const selectObjectsMap = state => state.referential.objects;
+export const selectObjects = state => state.referential.objects && Object.values(state.referential.objects);
+export const selectObjectById = (state, id) => state.referential.objects?.[id];
+export const selectChargeCapacity = (state, strength, subRaceId) => {
+    const raceBonus = selectRaceBySubRaceId(state, subRaceId)?.Strength;
+    const subRaceBonus = selectSubRaceById(state, subRaceId)?.Strength;
+    return getChargeCapacity(strength + raceBonus + subRaceBonus);
+} 
+
+export const selectFightStyles = state => state.referential.fightStyles && Object.values(state.referential.fightStyles);
+export const selectFightStylesByClassId = (state, classId) => selectFightStyles(state)?.filter((style) => style.Class === classId);
+
+export const selectHistorics = state => state.referential.historics && Object.values(state.referential.historics);
+export const selectHistoricById = (state, id) => state.referential.historics?.[id];
+
+export const selectFightStylesByIds = (state, ids) => {
+    const fightStyles = selectFightStyles(state);
+    return fightStyles && Object.values(fightStyles).filter((style) => ids?.includes(style.Code));
+}
+
+export const selectSpells = state => state.referential.spells && Object.values(state.referential.spells);
+export const selectSpellById = (state, id) => state.referential.spells?.[id];
+export const selectSpellByClassSpecialisation = (state, classId, specialisationId) => {
+    const spells = selectSpells(state);
+    return spells?.filter( (spell) => spell.Classes.includes(classId) || spell.Classes.includes(specialisationId) );
+}
+
+export const selectWeaponCategoriesMap = state => state.referential.weaponCategories;
+export const selectWeaponCategories = state => state.referential.weaponCategories && Object.values(state.referential.weaponCategories);
+export const selectWeaponCategoryById = (state, id) => state.referential.weaponCategories?.[id];
+export const selectWeaponCategoriesByType = (state, distance) => {
+    const weaponCategories = selectWeaponCategories(state);
+    return weaponCategories?.filter((category) => distance
+                                                ?DISTANCE_CATEGORY_CODES.includes(category.Code)
+                                                :HTH_CATEGORY_CODES.includes(category.Code));
+}
+export const selectWeaponCategoriesByClassId = (state, classId) => selectClassById(state, classId)?.WeaponCategories || [];
+
+export const selectArmorCategoriesMap = state => state.referential.armorCategories;
+export const selectArmorCategories = state => state.referential.armorCategories && Object.values(state.referential.armorCategories);
+export const selectArmorCategoryById = (state, id) => state.referential.armorCategories?.[id];
+export const selectArmorCategoriesByType = (state, shield) => {
+    const armorCategories = selectArmorCategories(state);
+    return armorCategories?.filter((category) => shield
+                                                ?category.Code === SHIELD_CATEGORY_CODE
+                                                :category.Code !== SHIELD_CATEGORY_CODE);
+}
+export const selectArmorCategoriesByClassId = (state, classId) => selectClassById(state, classId)?.ArmorCategories || [];
+export const selectArmorCategoriesBySubRaceId = (state, subRaceId) => selectSubRaceById(state, subRaceId)?.ArmorCategories || [];
+
+export const selectArmorsMap = state => state.referential.armors;
+export const selectArmors = state => state.referential.armors && Object.values(state.referential.armors);
+export const selectArmorById = (state, id) => state.referential.armors?.[id];
+export const selectArmorsByClassId = (state, classId) => selectClassById(state, classId)?.Armors || [];
+
+export const selectWeaponsMap = state => state.referential.weapons;
+export const selectWeapons = state => state.referential.weapons && Object.values(state.referential.weapons);
+export const selectWeaponById = (state, id) => state.referential.weapons?.[id];
+export const selectWeaponsByClassId = (state, classId) => selectClassById(state, classId)?.Weapons || [];
+export const selectWeaponsBySubRace = (state, subRaceId) => selectSubRaceById(state, subRaceId)?.Weapons || [];
+export const selectWeaponsByRace = (state, subRaceId) => selectRaceBySubRaceId(state, subRaceId)?.Weapons || [];
+
+export const selectCaracteristicsMap = state => state.referential.caracteristics;
+export const selectCaracteristics = state => state.referential.caracteristics && Object.values(state.referential.caracteristics);
+export const selectCaracteristicById = (state, id) => state.referential.caracteristics?.[id];
+export const selectACBonusCaracteristicByArmorId = (state, armorId) => selectCaracteristicById(state, selectArmorById(state, armorId)?.ACBonus);
+export const selectACBonusCaracteristicByClassId = (state, classId) => selectCaracteristicById(state, selectClassById(state, classId)?.ACBonus);
+export const selectCaracteristicBonus = (state, caracteristicName, caracteristicValue, subRaceId, maxVal = MAX_CARACTERISTIC, bonusStep = BONUS_STEP, bonusMax = null) => {
+    const subRaceBonus = selectSubRaceById(state, subRaceId)?.[caracteristicName];
+    const raceBonus = selectRaceBySubRaceId(state, subRaceId)?.[caracteristicName];
+    const totalValue = caracteristicValue + raceBonus + subRaceBonus;
+    const bonus = Math.floor((totalValue-(maxVal/2))/bonusStep);
+    return ((bonusMax || bonusMax === 0)?Math.min(bonus, bonusMax):bonus) || 0;
+}
+export const selectSpellsNbBonusByClassXP = (state, character) => {
+    const capacity = selectClassCapacityByClassIdXP(state, character?.Class, character?.XP);
+    const caracteristicName = selectCaracteristicById(state, capacity?.SpellsNbBonus)?.OV;
+    return selectCaracteristicBonus(state, caracteristicName, character?.[caracteristicName] || 0, character.SubRace)
+}
+export const selectClassACBonus = (state, character) => {
+    const ACBonusCaracteristic = selectACBonusCaracteristicByClassId(state, character?.Class);
+    const caracteristicName = ACBonusCaracteristic?.OV;
+    console.log("selectClassACBonus "+ACBonusCaracteristic, character);
+    return selectCaracteristicBonus(state, caracteristicName, character?.[caracteristicName] || 0, character.SubRace)
+}
+export const selectArmorACBonus = (state, armorId, subRaceId, classId, dexterityPoints, masterArmors) => {
+    const armor = selectArmorById(state, armorId);
+    const subRaceArmorCategories = selectArmorCategoriesBySubRaceId(state, subRaceId);
+    const classArmorCategories = selectArmorCategoriesByClassId(state, classId);
+    const isMasterArmor = armor
+                          && (  classArmorCategories?.includes(armor.Category)
+                                || subRaceArmorCategories?.includes(armor.Category)
+                                || masterArmors?.includes(armor.Category)
+                             );
+
+    const bonusMax = isMasterArmor && armor?.MaxACBonus;
+    return (!armor || (isMasterArmor && armor.ACBonus === CA_CARACTERISTIC_CODE))
+            && selectCaracteristicBonus(state, CA_CARACTERISTIC_NAME, dexterityPoints, subRaceId, MAX_CARACTERISTIC, BONUS_STEP, bonusMax);
+}
+selectArmorACBonus.defaultProps = {
+    dexterityPoints: MAX_CARACTERISTIC/2
+}
+
+export const selectEquipmentCategories = state => state.referential.equipmentCategories && Object.values(state.referential.equipmentCategories);
+export const selectEquipments = state => state.referential.equipments && Object.values(state.referential.equipments);
+export const selectHostelCategories = state => state.referential.hostelCategories && Object.values(state.referential.hostelCategories);
+export const selectHostelServices = state => state.referential.hostelServices && Object.values(state.referential.hostelServices);
+export const selectServiceCategories = state => state.referential.serviceCategories && Object.values(state.referential.serviceCategories);
+export const selectServices = state => state.referential.services && Object.values(state.referential.services);
+export const selectTrinkets = state => state.referential.trinkets && Object.values(state.referential.trinkets);
+export const selectMounts = state => state.referential.mounts && Object.values(state.referential.mounts);
+export const selectShips = state => state.referential.ships && Object.values(state.referential.ships);
+export const selectWares = state => state.referential.wares && Object.values(state.referential.wares);

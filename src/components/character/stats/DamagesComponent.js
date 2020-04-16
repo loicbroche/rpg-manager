@@ -40,10 +40,13 @@ class DamagesComponent extends PureComponent {
           <img src={characterImage} alt="" />
           { DAMAGES_LOCATIONS.map((damageLocation) => {
               const hurt = damages?.includes(damageLocation.code);
+              const damageSymbol = "";
+              const damageTitle = damageLocation.label;
               return <div key={damageLocation.code}
                           className={`damage-marker ${damageLocation.code}-damage-marker ${hurt?"hurt":""}`}
-                          title={damageLocation.label}
+                          title={damageTitle}
                           role="button" onClick={() => onDamageChange && onDamageChange(damageLocation.code)}>
+                            <span className="damage-symbol">{damageSymbol}</span>
                       </div>
             })}
         </div>
@@ -65,7 +68,6 @@ class DamagesComponent extends PureComponent {
 
 DamagesComponent.propTypes = {
   characterId: PropTypes.string,
-  subRaceId: PropTypes.string,
   damages: PropTypes.arrayOf(PropTypes.string),
   onDamageChange: PropTypes.func
 }

@@ -46,7 +46,6 @@ HealthComponent.defaultProps = {
   value: 0
 }
 
-
 const mapStateToProps = (state) => ({
 })
 export default connect(mapStateToProps)(HealthComponent)

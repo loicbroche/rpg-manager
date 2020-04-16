@@ -1,6 +1,7 @@
 
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import { selectSubRaceById, selectRaceBySubRaceId } from 'store/selectors';
 import PropTypes from 'prop-types'
 import { MAX_CARACTERISTIC, BONUS_STEP } from 'rules/Caracteristics.rules'
 
@@ -10,10 +11,7 @@ import CaracteristicBonus from 'components/shared/CaracteristicBonus'
 class Caracteristic extends PureComponent {
 
   render() {
-    const { races, subRaces, caracteristicName, value, subRaceId, maxVal, bonusStep} = this.props;
-
-    const subRace = subRaces?.[subRaceId];
-    const race = races?.[subRace?.Race];
+    const { race, subRace, caracteristicName, value, maxVal, bonusStep} = this.props;
 
     const raceBonus = race?.[caracteristicName];
     const subRaceBonus = subRace?.[caracteristicName];
@@ -25,7 +23,7 @@ class Caracteristic extends PureComponent {
                             value={value}
                             maxVal={maxVal}
                             bonusStep={bonusStep}
-                            subRaceId={subRaceId} />
+                            subRaceId={subRace?.Id} />
         </span>
         <input  type="number"
                 name={caracteristicName}  
@@ -66,8 +64,8 @@ Caracteristic.defaultProps = {
   bonusStep: BONUS_STEP
 }
 
-const mapStateToProps = (state) => ({
-  races: state.referential.races,
-  subRaces: state.referential.subRaces
+const mapStateToProps = (state, props) => ({
+  subRace: selectSubRaceById(state, props.subRaceId),
+  race: selectRaceBySubRaceId(state, props.subRaceId)
 })
 export default connect(mapStateToProps)(Caracteristic)

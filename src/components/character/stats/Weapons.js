@@ -1,8 +1,9 @@
 import React, {PureComponent} from 'react'
 import { connect } from 'react-redux'
-import PropTypes from 'prop-types'
+import { selectSubRaceById, selectRaceBySubRaceId, selectClassById, selectMasteryBonusByXP, selectWeaponCategories,
+         selectWeaponCategoriesByClassId, selectWeapons, selectWeaponsByClassId, selectWeaponsBySubRace } from 'store/selectors';
 
-import { getLevel } from 'rules/Levels.rules'
+import PropTypes from 'prop-types'
 
 import './Weapons.css'
 import ExpendableComponent from 'components/shared/ExpendableComponent';
@@ -20,8 +21,7 @@ class Weapons extends PureComponent {
                               header={<span>Maîtrises d'armes</span>}
                               extensor={<img src={detailsImage} alt="Maîtrises d'armes" />}>
           <div className="weapons">
-            {weaponCategories &&
-              Object.values(weaponCategories).map(( category ) => this.getWeapons(category))
+            {weaponCategories?.map(( category ) => this.getWeapons(category))
             }
           </div>
         </ExpendableComponent>
@@ -30,17 +30,10 @@ class Weapons extends PureComponent {
   }
 
   getWeapons(category) {
-    const { weapons, classes, races, subRaces, levels, master, classId, subRaceId, XP, onClick } = this.props;
-    const availableWeapons = weapons && Object.values(weapons).filter((weapon) => category && weapon.Category === category.Code);
-    const level = getLevel(levels, XP);
-    const characterClass = classes?.[classId];
-    const subRace = subRaces?.[subRaceId];
-    const race = races?.[subRace?.Race];
-    const classWeaponCategories = characterClass?.WeaponCategories || [];
-    const classWeapons = characterClass?.Weapons || [];
-    const raceWeapons = race?.Weapons || [];
-    const subRaceWeapons = subRace?.Weapons || [];
-    const masteryBonus = level?.MasteryBonus;
+    const { weapons, classWeaponCategories, classWeapons, raceWeapons, subRaceWeapons,
+           class: characterClass, race, subRace, masteryBonus, master, onClick } = this.props;
+
+    const availableWeapons = weapons?.filter((weapon) => category && weapon.Category === category.Code);
     const isClassMasterCategory = classWeaponCategories?.includes(category?.Code);
 
     return availableWeapons?.length > 0 &&
@@ -55,9 +48,9 @@ class Weapons extends PureComponent {
               const isSubRaceMaster = subRaceWeapons?.includes(Name);
               const isLockedMaster = isClassMaster || isSubRaceMaster || isRaceMaster;
               const lockedMasterTitle = isRaceMaster
-                                        ?"Maîtrise héritée de la race "+race.Name
+                                        ?"Maîtrise héritée de la race "+race?.Name
                                         :(  isSubRaceMaster
-                                            ?"Maîtrise héritée de la race "+subRace.Name
+                                            ?"Maîtrise héritée de la race "+subRace?.Name
                                             :isClassMaster?"Maîtrise héritée de la classe "+characterClass.Name:"");
               return (
               <li key={index} className={"weapon "+(isLockedMaster?"locked":"activable")} role="button" onClick={() => !isLockedMaster && onClick(Name)}
@@ -85,12 +78,15 @@ Weapons.defaultProps = {
   XP: 0
 }
 
-const mapStateToProps = (state) => ({
-  weaponCategories: state.referential.weaponCategories,
-  weapons: state.referential.weapons,
-  classes: state.referential.classes,
-  races: state.referential.races,
-  subRaces: state.referential.subRaces,
-  levels: state.referential.levels
+const mapStateToProps = (state, props) => ({
+  weaponCategories: selectWeaponCategories(state),
+  classWeaponCategories : selectWeaponCategoriesByClassId(state, props.classId),
+  weapons: selectWeapons(state),
+  classWeapons: selectWeaponsByClassId(state, props.classId),
+  subRaceWeapons: selectWeaponsBySubRace(state, props.subRaceId),
+  class: selectClassById(state, props.classId),
+  subRace: selectSubRaceById(state, props.subRaceId),
+  race: selectRaceBySubRaceId(state, props.subRaceId),
+  masteryBonus: selectMasteryBonusByXP(state, props.XP)
 })
 export default connect(mapStateToProps)(Weapons)

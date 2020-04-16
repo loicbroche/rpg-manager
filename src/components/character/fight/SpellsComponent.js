@@ -2,6 +2,7 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import { selectClassCapacityByClassIdXP, selectSpellByClassSpecialisation } from 'store/selectors';
 
 import { SPELL_MAX_LEVEL } from 'rules/Spells.rules'
 
@@ -10,8 +11,7 @@ import './SpellsComponent.css'
 class SpellsComponent extends PureComponent {
 
   render() {
-    const {capacities, spells, spellsLocations, classId, specialisationId, level} = this.props;
-    const capacity = capacities?.[classId+"-"+level];
+    const {capacity, classAvailableSpells, spellsLocations} = this.props;
     const maxSpells = capacity?.Locations;
     const spellsLocationMax = maxSpells && Math.max(...Object.keys(maxSpells));
 
@@ -26,7 +26,6 @@ class SpellsComponent extends PureComponent {
       spellsPoints[location] = locationPoints;
     }
 
-    const classAvailableSpells = spells && Object.values(spells).filter((spell) => spell.Classes.includes(classId) || spell.Classes.includes(specialisationId) );
     let learnableSpellsNb = 0;
     for(let i = 0; i <= SPELL_MAX_LEVEL; i++) {
       const levelSpells = classAvailableSpells?.filter((spell) => spell.Level === i && capacity && capacity.Locations && (i === 0 || capacity.Locations[spell.Level] >= 1));
@@ -80,16 +79,16 @@ SpellsComponent.propTypes = {
   spellsLocations: PropTypes.arrayOf(PropTypes.number).isRequired,
   classId: PropTypes.string.isRequired,
   specialisationId: PropTypes.string,
-  level: PropTypes.number,
+  XP: PropTypes.number,
   onValChange: PropTypes.func.isRequired
 }
 
 SpellsComponent.defaultProps = {
-  level: 1
+  XP: 0
 }
 
-const mapStateToProps = (state) => ({
-  capacities: state.referential.capacities,
-  spells: state.referential.spells
+const mapStateToProps = (state, props) => ({
+  capacity: selectClassCapacityByClassIdXP(state, props.classId, props.XP),
+  classAvailableSpells: selectSpellByClassSpecialisation(state, props.classId, props.specialisationId)
 })
 export default connect(mapStateToProps)(SpellsComponent)

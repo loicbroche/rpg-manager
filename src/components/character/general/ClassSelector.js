@@ -1,9 +1,10 @@
 
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import { selectClasses, selectClassById, selectLevelNumberByXP, selectSpecialisations,
+         selectValidSpecialisation, selectFightStylesByClassId } from 'store/selectors';
 import PropTypes from 'prop-types'
 
-import { getLevelNumber } from 'rules/Levels.rules'
 import './ClassSelector.css'
 
 const classBorderImage = require("images/classes/class_border.png");
@@ -11,18 +12,12 @@ const classBorderImage = require("images/classes/class_border.png");
 class ClassSelector extends PureComponent {
 
   render() {
-    const { classes, specialisations, fightStyles, fightStyleIds, levels, classId, specialisationId, XP, onFightStyleChange} = this.props;
+    const { classes, class: characterClass, classId, specialisations, specialisation, classFightStyles, fightStyleIds, levelNumber, onFightStyleChange} = this.props;
 
-    const classFightStyles = fightStyles && Object.values(fightStyles).filter((style) => style.Class === classId);
-    const characterClass = classes?.[classId];
     const fightStyleLevel = characterClass?.FightStyleLevel;
     const specialisationLevel = characterClass?.SpecialisationLevel;
-    const level = getLevelNumber(levels, XP);
-    const specialisable = specialisationLevel <= level;
-    const figthStylable = fightStyleLevel <= level;
-    let specialisation = specialisations?.[specialisationId];
-    const isValidSpecialisation = specialisable && specialisation && specialisation.Class === classId;
-    specialisation = isValidSpecialisation && specialisation;
+    const specialisable = specialisationLevel <= levelNumber;
+    const figthStylable = fightStyleLevel <= levelNumber;
 
     let classImage;
     try {
@@ -65,13 +60,13 @@ class ClassSelector extends PureComponent {
             { classes && (
               <select className="selector-select" value={(characterClass && classId) || "-"} onChange={this.handleValueUpdate}>
                 <option value="-" disabled>Choisissez une classe</option>
-                { Object.entries(classes).map(([key, value]) => (
-                  <option key={key} value={key}>{value.Name}</option>
+                { classes?.map((currentClass) => (
+                  <option key={currentClass.Id} value={currentClass.Id}>{currentClass.Name}</option>
                 ))}
               </select>
             )}
 
-            { specialisable && specialisations &&
+            { specialisable &&
               <div className="selector-icon specialisation-icon" title={specialisation?.Description || ""}>
                 <img src={specialisationImage} className="selector-image" alt="" />
                 <img src={classBorderImage} className="selector-image" alt="" />
@@ -81,7 +76,7 @@ class ClassSelector extends PureComponent {
               <select className="selector-select specialisation" value={specialisation?.Code || "-"}
                       title={(specialisation?specialisation.Description:"")} onChange={this.handleSpecialisationValueUpdate}>
                 <option value="-" disabled>Choisissez une spécialisation</option>
-                { Object.values(specialisations).filter((specialisation) => specialisation.Class === classId).map(({Code, Name, Description}) => (
+                { specialisations?.filter((specialisation) => specialisation.Class === classId).map(({Code, Name, Description}) => (
                   <option key={Code} value={Code} title={Description}>{Name}</option>
                 ))}
               </select>
@@ -115,10 +110,12 @@ ClassSelector.propTypes = {
   onFightStyleChange: PropTypes.func.isRequired
 }
 
-const mapStateToProps = (state) => ({
-  classes: state.referential.classes,
-  specialisations: state.referential.specialisations,
-  fightStyles: state.referential.fightStyles,
-  levels: state.referential.levels
+const mapStateToProps = (state, props) => ({
+  classes: selectClasses(state),
+  class: selectClassById(state, props.classId),
+  specialisations: selectSpecialisations(state),
+  specialisation: selectValidSpecialisation(state, props.specialisationId, props.classId, props.XP),
+  classFightStyles: selectFightStylesByClassId(state, props.classId),
+  levelNumber: selectLevelNumberByXP(state, props.XP)
 })
 export default connect(mapStateToProps)(ClassSelector)

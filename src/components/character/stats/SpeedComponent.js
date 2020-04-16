@@ -1,6 +1,7 @@
 
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import { selectSubRaceById, selectRaceBySubRaceId, selectClassCapacityByClassIdXP, selectArmorById } from 'store/selectors';
 import PropTypes from 'prop-types'
 
 import './SpeedComponent.css'
@@ -11,12 +12,8 @@ const speedImage = require("images/speed.png");
 class SpeedComponent extends PureComponent {
 
   render() {
-    const { races, subRaces, capacities, armors, subRaceId, classId, armorId, strength, level} = this.props;
+    const { race, subRace, capacity, armor, strength} = this.props;
 
-    const subRace = subRaces?.[subRaceId];
-    const race = races?.[subRace?.Race];
-    const armor = armors?.[armorId];
-    const capacity = capacities?.[classId+"-"+level];
     const baseSpeed = subRace?.Speed || race?.Speed;
     const bonusSpeed = (!armor && capacity?.ArmourlessSpeed) || 0;
     const totalStrength = strength + (race?race.Strength:0) + (subRace?subRace.Strength:0);
@@ -44,13 +41,13 @@ SpeedComponent.propTypes = {
   classId: PropTypes.string,
   armorId: PropTypes.string,
   strength: PropTypes.number,
-  level: PropTypes.number
+  XP: PropTypes.number
 }
 
-const mapStateToProps = (state) => ({
-  races: state.referential.races,
-  subRaces: state.referential.subRaces,
-  capacities: state.referential.capacities,
-  armors: state.referential.armors,
+const mapStateToProps = (state, props) => ({
+  subRace: selectSubRaceById(state, props.subRaceId),
+  race: selectRaceBySubRaceId(state, props.subRaceId),
+  capacity: selectClassCapacityByClassIdXP(state, props.classId, props.XP),
+  armor: selectArmorById(state, props.armorId)
 })
 export default connect(mapStateToProps)(SpeedComponent)

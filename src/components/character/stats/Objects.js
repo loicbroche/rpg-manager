@@ -1,17 +1,17 @@
 import React, {PureComponent} from 'react'
 import { connect } from 'react-redux'
+import { selectClassById, selectMasterableObjectCategories, selectObjects, selectHistoricById } from 'store/selectors';
 import PropTypes from 'prop-types'
 
 import './Objects.css'
 import ExpendableComponent from 'components/shared/ExpendableComponent';
-import { filterMasterableCategories } from 'rules/Objects.rules'
 
 const detailsImage = require('images/details.png');
 
 class Objects extends PureComponent {
 
   render() {
-    const { objectCategories } = this.props;
+    const { masterableObjectCategories } = this.props;
 
     return (
     <div className='objectsComponent'>
@@ -19,8 +19,7 @@ class Objects extends PureComponent {
                                 header={<span>Maîtrise d'objets</span>}
                                 extensor={<img src={detailsImage} alt="Maîtrises d'objet" />}>
             <div className="objects">
-              {objectCategories &&
-                Object.values(filterMasterableCategories(objectCategories)).map(( category ) => this.getObjects(category))
+              {masterableObjectCategories?.map(( category ) => this.getObjects(category))
               }
             </div>
           </ExpendableComponent>
@@ -29,11 +28,9 @@ class Objects extends PureComponent {
   }
 
   getObjects(category) {
-    const { objects, classes, historics, master, classId, historicId, onClick } = this.props;
-    const availableObjects = objects && Object.values(objects).filter((object) => category && object.Category === category.Code);
+    const { objects, class: characterClass, historic, master, onClick } = this.props;
+    const availableObjects = objects?.filter((object) => category && object.Category === category.Code);
 
-    const characterClass = classes?.[classId];
-    const historic = historics?.[historicId];
     const classObjects = characterClass?.Objects || [];
     const historicObjects = historic?.Objects || [];
 
@@ -41,8 +38,7 @@ class Objects extends PureComponent {
       <div key={category?.Code}>
         <h1 className={`objects-category-name`}>{category?.Name}</h1>
         <ul className="objects-category">
-          {availableObjects &&
-            Object.values(availableObjects).map(({Name}, index) => {
+          {availableObjects?.map(({Name}, index) => {
               const isMaster = master && master.includes(Name);
               const isClassMaster = classObjects?.includes(Name);
               const isHistoricMaster = historicObjects?.includes(Name);
@@ -73,11 +69,11 @@ Objects.propTypes = {
   onClick: PropTypes.func.isRequired
 }
 
-const mapStateToProps = (state) => ({
-  objectCategories: state.referential.objectCategories,
-  objects: state.referential.objects,
-  classes: state.referential.classes,
-  historics: state.referential.historics
+const mapStateToProps = (state, props) => ({
+  masterableObjectCategories: selectMasterableObjectCategories(state),
+  objects: selectObjects(state),
+  class: selectClassById(state, props.classId),
+  historic: selectHistoricById(state, props.historicId)
 
 })
 export default connect(mapStateToProps)(Objects)

@@ -1,23 +1,18 @@
 
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import { selectLanguages, selectLanguagesBySubRace, selectLanguagesByRace, selectSubRaceById, selectRaceBySubRaceId} from 'store/selectors';
 import PropTypes from 'prop-types'
 
 import './LanguagesComponent.css'
 
 class LanguagesComponent extends PureComponent {
   render() {
-    const {languages, races, subRaces, knownLanguages, subRaceId, onClick} = this.props;
-
-    const subRace = subRaces?.[subRaceId];
-    const race = races?.[subRace?.Race];
-    const raceLanguages = race?.Languages;
-    const subRaceLanguages = subRace?.Languages;
+    const {languages, race, subRace, raceLanguages, subRaceLanguages, knownLanguages, onClick} = this.props;
 
     return (
       <ul className='languages'>
-      {languages &&
-        Object.values(languages).map((language) => {
+      {languages?.map((language) => {
           const isKnown = knownLanguages?.includes(language.Code);
           let isRaceKnown = raceLanguages?.includes(language.Code);
           let raceKnownTitle = `Langue ${language.Name} connue de la race ${race.Name}`;
@@ -49,9 +44,11 @@ LanguagesComponent.propTypes = {
   onClick: PropTypes.func.isRequired
 }
 
-const mapStateToProps = (state) => ({
-  languages: state.referential.languages,
-  races: state.referential.races,
-  subRaces: state.referential.subRaces
+const mapStateToProps = (state, props) => ({
+  languages: selectLanguages(state),
+  subRace: selectSubRaceById(state, props.subRaceId),
+  race: selectRaceBySubRaceId(state, props.subRaceId),
+  subRaceLanguages: selectLanguagesByRace(state, props.subRaceId),
+  raceLanguages: selectLanguagesBySubRace(state, props.subRaceId)
 })
 export default connect(mapStateToProps)(LanguagesComponent)

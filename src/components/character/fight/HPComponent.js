@@ -1,6 +1,7 @@
 
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import { selectClassById } from 'store/selectors';
 import PropTypes from 'prop-types'
 
 import './HPComponent.css'
@@ -8,8 +9,7 @@ import './HPComponent.css'
 class HPComponent extends PureComponent {
 
   render() {
-    const {val, maxVal, classId, classes, onValChange, onMaxValChange} = this.props;
-    const characterClass = classes?.[classId];
+    const {val, maxVal, class: characterClass, onValChange, onMaxValChange} = this.props;
     const diceImage = characterClass && require(`images/dices/D${characterClass.HD}.png`);
     return (
       <div className="hpComponent" title="Points de vie">
@@ -57,7 +57,7 @@ HPComponent.propTypes = {
   onMaxValChange: PropTypes.func
 }
 
-const mapStateToProps = (state) => ({
-  classes: state.referential.classes
+const mapStateToProps = (state, props) => ({
+  class: selectClassById(state, props.classId)
 })
 export default connect(mapStateToProps)(HPComponent)

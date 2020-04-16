@@ -1,9 +1,12 @@
 import React, {PureComponent} from 'react'
 import { connect } from 'react-redux'
+import { selectClassById, selectArmorCategories, selectArmors, selectArmorsByClassId,
+         selectArmorCategoriesByClassId, selectArmorCategoriesBySubRaceId } from 'store/selectors';
 import PropTypes from 'prop-types'
 
 import './Armors.css'
 import ExpendableComponent from 'components/shared/ExpendableComponent';
+import { selectSubRaceById } from '../../../store/selectors';
 
 const detailsImage = require('images/details.png');
 
@@ -18,8 +21,7 @@ class Armors extends PureComponent {
                               header={<span>Maîtrises d'armures</span>}
                               extensor={<img src={detailsImage} alt="Maîtrises d'armures" />}>
           <div className="armors">
-            {armorCategories &&
-              Object.values(armorCategories).map(( category ) => this.getArmors(category))
+            {armorCategories?.map(( category ) => this.getArmors(category))
             }
           </div>
         </ExpendableComponent>
@@ -28,26 +30,26 @@ class Armors extends PureComponent {
   }
 
   getArmors(category) {
-    const { armors, classes, master, classId, onClick } = this.props;
-    const availableArmors = armors && Object.values(armors).filter((armor) => armor.Category === category?.Code);
-
-    const characterClass = classes?.[classId];
-    const classArmorCategories = characterClass?.ArmorCategories || [];
-    const classArmors = characterClass?.Armors || [];
+    const { classArmorCategories, subRaceArmorCategories, armors, classArmors, class: characterClass, subRace, master, onClick } = this.props;
+    const availableArmors = armors?.filter((armor) => armor.Category === category?.Code);
     const isClassMasterCategory = classArmorCategories?.includes(category?.Code);
+    const isSubRaceMasterCategory = subRaceArmorCategories?.includes(category?.Code);
 
     return availableArmors?.length > 0 &&
       <div key={category?.Code}>
-        <h1 className={`armors-category-name ${(isClassMasterCategory?"locked":"")}`}>{category?.Name}</h1>
+        <h1 className={`armors-category-name ${(isClassMasterCategory || isSubRaceMasterCategory?"locked":"")}`}>{category?.Name}</h1>
         <ul className="armors-category">
-          {availableArmors &&
-            Object.values(availableArmors).map(({Name, AC, BonusAC, MaxBonusAC}, index) => {
+          {availableArmors?.map(({Name, AC, ACBonus, MaxACBonus}, index) => {
               const isMaster = master?.includes(Name);
+              const isSubRaceMasterCategory = subRaceArmorCategories?.includes(category?.Code);
               const isClassMaster = isClassMasterCategory || classArmors?.includes(Name);
+              const lockedTitle = isClassMaster
+                                  ?"Maîtrise héritée de la classe "+characterClass.Name
+                                  :(isSubRaceMasterCategory?"Maîtrise héritée de la race "+subRace.Name:"");
               return (
-              <li key={index} className={"armor "+(isClassMaster?"locked":"activable")} role="button" onClick={() => !isClassMaster && onClick(Name)}
-                  title={(isClassMaster?"Maîtrise héritée de la classe "+characterClass.Name:(isMaster?"Oublier":"Apprendre")+` la maîtrise de ${Name}`)
-                          +`\nCA : ${AC} ${BonusAC?`+${BonusAC+(MaxBonusAC?`(${MaxBonusAC})`:"")}`:""}`}>
+              <li key={index} className={"armor "+(isClassMaster||isSubRaceMasterCategory?"locked":"activable")} role="button" onClick={() => !isClassMaster && onClick(Name)}
+                  title={(isClassMaster||isSubRaceMasterCategory?lockedTitle:(isMaster?"Oublier":"Apprendre")+` la maîtrise de ${Name}`)
+                          +`\nCA : ${AC} ${ACBonus?`+${ACBonus+(MaxACBonus?`(${MaxACBonus})`:"")}`:""}`}>
                 <div className={"option "+((isClassMaster||isMaster)&&"filled")}></div>
                 <span className="armor-name">{Name}</span>
               </li>
@@ -64,9 +66,14 @@ Armors.propTypes = {
   onClick: PropTypes.func.isRequired
 }
 
-const mapStateToProps = (state) => ({
-  armorCategories: state.referential.armorCategories,
-  armors: state.referential.armors,
-  classes: state.referential.classes
+const mapStateToProps = (state, props) => ({
+  armorCategories: selectArmorCategories(state),
+  
+  classArmorCategories: selectArmorCategoriesByClassId(state, props.classId),
+  subRaceArmorCategories: selectArmorCategoriesBySubRaceId(state, props.subRaceId),
+  armors: selectArmors(state),
+  classArmors: selectArmorsByClassId(state, props.classId),
+  class: selectClassById(state, props.classId),
+  subRace: selectSubRaceById(state, props.subRaceId)
 })
 export default connect(mapStateToProps)(Armors)

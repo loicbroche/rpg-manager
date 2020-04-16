@@ -1,6 +1,8 @@
 
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import { selectSubRaceById, selectClassById, selectValidSpecialisation,
+         selectClassCapacitiesDescriptionsByXP, selectRaceCapacitiesDescriptionsBySubRaceIdXP } from 'store/selectors';
 import PropTypes from 'prop-types'
 
 import ExpendableComponent from 'components/shared/ExpendableComponent';
@@ -17,44 +19,25 @@ class SpecialCapacities extends PureComponent {
   }
 
   render() {
-    const { capacities, capacitiesDescriptions, raceCapacitiesDescriptions, specialisationCapacities, classes, subRaces, specialisations,
-            subRaceId, classId, specialisationId, level, hiddenCapacities, onVisibilityClick } = this.props;
+    const { raceCapacitiesDescriptions, class: characterClass, subRace,
+            specialisation, knownCapacities, hiddenCapacities, onVisibilityClick } = this.props;
     const {showHidden} = this.state;
-    const characterClass = classes?.[classId];
-    let specialisation = specialisations?.[specialisationId];
-    const specialisationLevel = characterClass?.SpecialisationLevel;
-    const isValidSpecialisation = specialisationLevel <= level && specialisation?.Class === classId;
-    specialisation = isValidSpecialisation && specialisation;
+
     const specialImage = characterClass?.SpecialsName && require(`images/specials/${characterClass.SpecialsName}.png`);
     const statsImage =  require(`images/stats.png`);
     const autoImage =  require(`images/auto.png`);
     let raceImage;
     try {
-      raceImage = require(`images/races/${subRaceId}.png`);
+      raceImage = require(`images/races/${subRace?.Id}.png`);
     } catch (ex) {
       raceImage = require("images/races/no_race.png");
     }
-    const subRace = subRaces?.[subRaceId];
-    const raceId = subRace?.Race;
-    const raceCapacities = raceCapacitiesDescriptions &&
-                            Object.values(raceCapacitiesDescriptions).filter((capacity) =>
-                                (capacity.Race === raceId || capacity.SubRace === subRaceId)
-                                && (!capacity.RequiredLevel || capacity.RequiredLevel <= level));
 
     let specialisationImage;
     try {
-      specialisationImage = require(`images/classes/specialisations/${specialisationId}.png`);
+      specialisationImage = require(`images/classes/specialisations/${specialisation?.Code}.png`);
     } catch (ex) {
       specialisationImage = require("images/classes/specialisations/no_image.png");
-    }
-
-    let knownCapacities = [];
-    for (let i = 1; i <= level; i++) {
-      const capacity = capacities?.[classId+"-"+i];
-      const specialisationCapacity = specialisation && specialisationCapacities?.[specialisationId+"-"+i];
-
-      knownCapacities = knownCapacities.concat(capacity?.Capacities?.map((c) => ({level: i, name: c, specialisation: false})) || []);
-      knownCapacities = knownCapacities.concat(specialisationCapacity?.Capacities?.map((c) => ({level: i, name: c, specialisation: true})) || []);
     }
 
     const title = showHidden?"Masquer les compétences superflues":"Afficher les compétences masquées";
@@ -70,13 +53,14 @@ class SpecialCapacities extends PureComponent {
                             extensor={<img src={capacitiesImage} alt="Compétences de clases" />}
                             defaultExtended={true} >
           <ul>
-          {raceCapacities?.map((capacityDescription) => {
-            const hidden = hiddenCapacities?.includes(capacityDescription.Code);
+          {raceCapacitiesDescriptions?.map((capacityDescription) => {
+            const capacityKey = capacityDescription.RequiredLevel+"-"+capacityDescription.Code
+            const hidden = hiddenCapacities?.includes(capacityKey);
             const description = capacityDescription?.Description || "";
             const autoManaged = capacityDescription?.Auto;
             const statsCapacity = capacityDescription?.Stats;
             const capacityUseNumber = capacityDescription?.UseNumber;
-            return (!hidden || showHidden) && <li key={capacityDescription.Code} className={`capacity hoverable transparent ${autoManaged?"auto-managed":""}`}
+            return (!hidden || showHidden) && <li key={capacityKey} className={`capacity hoverable transparent ${autoManaged?"auto-managed":""}`}
                                               title={(capacityDescription.RequiredLevel?`Compétence de niveau ${capacityDescription.RequiredLevel}\n`:"")+`${description}`}>
                                                 <div className="capacity-title">
                                                   { statsCapacity
@@ -93,7 +77,7 @@ class SpecialCapacities extends PureComponent {
                                                 </div>
                                                 <span>
                                                   <span className={`hide-capacity activable transparent ${hidden?"hidden-capacity":""}`} title={hidden?"Afficher":"Masquer"}
-                                                        role="button" onClick={() => {onVisibilityClick(capacityDescription.Code)}}>
+                                                        role="button" onClick={() => {onVisibilityClick(capacityKey)}}>
                                                     <img src={hidden?hideImage:showImage} alt={hidden?"Afficher":"Masquer"} />
                                                   </span>
                                                   <span className="capacity-source">
@@ -105,14 +89,15 @@ class SpecialCapacities extends PureComponent {
                                               </li>
           })}
           {knownCapacities.map((capacity) => {
-            const hidden = hiddenCapacities?.includes(capacity.name);
-            const capacityDescription = capacitiesDescriptions?.[classId+"-"+capacity.name];
+            const capacityKey = capacity.level+"-"+capacity.name;
+            const hidden = hiddenCapacities?.includes(capacityKey);
+            const capacityDescription = capacity.description;
             const description = capacityDescription?.Description || "";
             const autoManaged = capacityDescription?.Auto;
             const specialCapacity = capacityDescription?.Special;
             const statsCapacity = capacityDescription?.Stats;
             const capacityUseNumber = capacityDescription?.UseNumber;
-            return (!hidden || showHidden) && <li key={capacity.name} className={`capacity hoverable transparent ${autoManaged?"auto-managed":""}`}
+            return (!hidden || showHidden) && <li key={capacityKey} className={`capacity hoverable transparent ${autoManaged?"auto-managed":""}`}
                                               title={`Compétence de niveau ${capacity.level}\n${description}`}>
                                                 <div className="capacity-title">
                                                   {specialCapacity
@@ -133,14 +118,14 @@ class SpecialCapacities extends PureComponent {
                                                 </div>
                                                 <span>
                                                   <span className={`hide-capacity activable transparent ${hidden?"hidden-capacity":""}`} title={hidden?"Afficher":"Masquer"}
-                                                        role="button" onClick={() => {onVisibilityClick(capacity.name)}}>
+                                                        role="button" onClick={() => {onVisibilityClick(capacityKey)}}>
                                                     <img src={hidden?hideImage:showImage} alt={hidden?"Afficher":"Masquer"} />
                                                   </span>
                                                   <span className="capacity-source">
                                                     {capacity.specialisation
                                                     && <img src={specialisationImage}
-                                                            alt={`Compétence de la spécialisation ${specialisation && specialisation.Name}`}
-                                                            title={`Compétence de la spécialisation ${specialisation && specialisation.Name}`}/>
+                                                            alt={`Compétence de la spécialisation ${specialisation?.Name}`}
+                                                            title={`Compétence de la spécialisation ${specialisation?.Name}`}/>
                                                     }
                                                   </span>
                                                 </span>
@@ -157,21 +142,19 @@ SpecialCapacities.propTypes = {
   classId: PropTypes.string.isRequired,
   subRaceId: PropTypes.string,
   specialisationId: PropTypes.string,
-  level: PropTypes.number,
+  XP: PropTypes.number,
   hiddenCapacities: PropTypes.arrayOf(PropTypes.string),
   onVisibilityClick: PropTypes.func.isRequired
 }
 SpecialCapacities.defaultProps = {
-  level: 1
+  XP: 0
 }
 
-const mapStateToProps = (state) => ({
-  classes: state.referential.classes,
-  subRaces: state.referential.subRaces,
-  specialisations: state.referential.specialisations,
-  capacities: state.referential.capacities,
-  capacitiesDescriptions: state.referential.capacitiesDescriptions,
-  raceCapacitiesDescriptions: state.referential.raceCapacitiesDescriptions,
-  specialisationCapacities: state.referential.specialisationCapacities
+const mapStateToProps = (state, props) => ({
+  class: selectClassById(state, props.classId),
+  subRace: selectSubRaceById(state, props.subRaceId),
+  specialisation: selectValidSpecialisation(state, props.specialisationId, props.classId, props.XP),
+  raceCapacitiesDescriptions: selectRaceCapacitiesDescriptionsBySubRaceIdXP(state, props.subRaceId, props.XP),
+  knownCapacities: selectClassCapacitiesDescriptionsByXP(state, props.classId, props.specialisationId, props.XP)
 })
 export default connect(mapStateToProps)(SpecialCapacities)

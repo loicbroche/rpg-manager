@@ -1,6 +1,7 @@
 
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import { selectSubRaceById, selectRaceBySubRaceId, selectAlterationTypes, selectAlterations } from 'store/selectors';
 import PropTypes from 'prop-types'
 
 import './AlterationsComponent.css'
@@ -8,19 +9,17 @@ import './AlterationsComponent.css'
 class AlterationsComponent extends PureComponent {
 
   render() {
-    const { alterationTypes} = this.props;
+    const { alterationTypes } = this.props;
 
     return (
       <div className="alterationsComponent">
         <div className="alterations">
         <div className="savable">
-            {alterationTypes &&
-              Object.values(alterationTypes).map((type) => type.Savable && <span key={type.Code} className="alteration-category">{this.getAlterations(type)}</span>)
+            {alterationTypes?.map((type) => type.Savable && <span key={type.Code} className="alteration-category">{this.getAlterations(type)}</span>)
             }
           </div>
           <div className="unsavable">
-            {alterationTypes &&
-              Object.values(alterationTypes).map((type) => !type.Savable && <span key={type.Code} className="alteration-category">{this.getAlterations(type)}</span>)
+            {alterationTypes?.map((type) => !type.Savable && <span key={type.Code} className="alteration-category">{this.getAlterations(type)}</span>)
             }
           </div>
         </div>
@@ -29,18 +28,16 @@ class AlterationsComponent extends PureComponent {
   }
 
   getAlterations(alterationType) {
-    const { alterations,  races, subRaces, resistances, characterAlterations, subRaceId, onClick, onResistanceClick} = this.props;
-    const availableAlterations = alterations && Object.values(alterations).filter((alteration) => alteration.Type === alterationType.Code);
+    const { alterations,  race, subRace, resistances, characterAlterations, onClick, onResistanceClick} = this.props;
+    const availableAlterations = alterations?.filter((alteration) => alteration.Type === alterationType.Code);
 
-    const subRace = subRaces?.[subRaceId];
-    const race = races?.[subRace?.Race];
     const raceName = race?.Name || "";
     const raceResistances = race?.Resistances;
     const subRaceResistances = subRace?.Resistances;
     const subRaceName = subRace?.Name || "";
 
     return (
-      Object.values(availableAlterations).map((alteration) => {
+      availableAlterations?.map((alteration) => {
         let alterationImage;
         try {
           alterationImage = require(`images/alterations/${alteration.Code}.png`);
@@ -90,11 +87,11 @@ AlterationsComponent.propTypes = {
   onResistanceClick: PropTypes.func
 }
 
-const mapStateToProps = (state) => ({
-  alterationTypes: state.referential.alterationTypes,
-  alterations: state.referential.alterations,
-  races: state.referential.races,
-  subRaces: state.referential.subRaces
+const mapStateToProps = (state, props) => ({
+  alterationTypes: selectAlterationTypes(state),
+  alterations: selectAlterations(state),
+  subRace: selectSubRaceById(state, props.subRaceId),
+  race: selectRaceBySubRaceId(state, props.subRaceId)
 })
 
 export default connect(mapStateToProps)(AlterationsComponent)

@@ -1,22 +1,15 @@
 
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import { selectSubRaceById, selectRaceBySubRaceId, selectCaracteristicBonus } from 'store/selectors';
 import PropTypes from 'prop-types'
-import { calculateTotalBonus, MAX_CARACTERISTIC, BONUS_STEP } from 'rules/Caracteristics.rules'
+import { MAX_CARACTERISTIC, BONUS_STEP } from 'rules/Caracteristics.rules'
 import './CaracteristicBonus.css'
 
 class CaracteristicBonus extends PureComponent {
 
   render() {
-    const { races, subRaces, caracteristicName, value, subRaceId, maxVal, bonusStep, bonusMax } = this.props;
-
-    const subRace = subRaces?.[subRaceId];
-    const race = races?.[subRace?.Race];
-
-    const raceBonus = race?.[caracteristicName];
-    const subRaceBonus = subRace?.[caracteristicName];
-    const bonus = calculateTotalBonus(value, raceBonus, subRaceBonus, maxVal, bonusStep, bonusMax);
-
+    const { caracteristicName, bonus } = this.props;
     return <span className={caracteristicName}>{(bonus>=0?"+":"")+bonus}</span>
   }
 }
@@ -36,8 +29,11 @@ CaracteristicBonus.defaultProps = {
   bonusStep: BONUS_STEP
 }
 
-const mapStateToProps = (state) => ({
-  races: state.referential.races,
-  subRaces: state.referential.subRaces
+const mapStateToProps = (state, props) => ({
+  
+  subRace: selectSubRaceById(state, props.subRaceId),
+  race: selectRaceBySubRaceId(state, props.subRaceId),
+  bonus: selectCaracteristicBonus(state, props.caracteristicName, props.value,
+                                  props.subRaceId, props.maxVal, props.bonusStep, props.bonusMax)
 })
 export default connect(mapStateToProps)(CaracteristicBonus)

@@ -35,6 +35,7 @@ export const SubRacePropType = PropTypes.shape({
 })
 
 export const ClassPropType = PropTypes.shape({
+    Id: PropTypes.string.isRequired,
     Name: PropTypes.string.isRequired,
     OV: PropTypes.string.isRequired,
     Strength: PropTypes.number.isRequired,
@@ -78,7 +79,7 @@ export const CapacityPropType = PropTypes.shape({
     Damages: PropTypes.number,
     MinorSpellsNb: PropTypes.number,
     SpellsNb: PropTypes.number,
-    BonusSpellsNb: PropTypes.string,
+    SpellsNbBonus: PropTypes.string,
     Locations: PropTypes.arrayOf(PropTypes.number),
     Invocations: PropTypes.string,
     ArmorlessSpeed: PropTypes.number
@@ -107,6 +108,7 @@ export const RaceCapacityDescriptionPropType = PropTypes.shape({
 })
 
 export const HistoricPropType = PropTypes.shape({
+    Id: PropTypes.string.isRequired,
     Name: PropTypes.string.isRequired,
     Skills: PropTypes.arrayOf(PropTypes.string)
 })
@@ -138,8 +140,8 @@ export const ArmorPropType = PropTypes.shape({
     OV: PropTypes.string.isRequired,
     Category: PropTypes.string.isRequired,
     AC: PropTypes.string.isRequired,
-    BonusAC: PropTypes.string,
-    MaxBonusAC: PropTypes.string,
+    ACBonus: PropTypes.string,
+    MaxACBonus: PropTypes.string,
     Weight: PropTypes.string.isRequired,
     Price: PropTypes.string.isRequired,
     Properties: PropTypes.string.isRequired,

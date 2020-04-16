@@ -1,11 +1,11 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import { selectSubRacesMap, selectRacesMap, selectArmorsMap, selectWeaponsMap, selectCaracteristics } from 'store/selectors';
 
 import { database } from 'database/InitializeDatabase'
 import { DATA_MODEL } from 'database/DataModel'
 import { updateCharacterCaracteristic, insertCharacterElement, deleteCharacterElement } from 'database/PersistCharacter';
 import { updateNotes, ALL_CHARACTERS_ID } from 'database/PersistNotes';
-import { getLevelNumber } from 'rules/Levels.rules'
 import { getChargeCapacity, SATCHEL_CHARGE_CAPACITY } from 'rules/Character.rules'
 
 import './Character.css'
@@ -45,7 +45,7 @@ class Character extends PureComponent {
           characterInfos: {
             Id: characterId,
             Name: null,
-            Race: null,
+            SubRace: null,
             Class: null,
             Specialisation: null,
             FightStyles: null,
@@ -108,7 +108,7 @@ class Character extends PureComponent {
           newState.Spells = newState.Spells || [];
           newState.Damages = newState.Damages || [];
 
-          this.setState({characterInfos: {...newState}});
+          this.setState({characterInfos: newState});
         }
         this.generalNotesRef = database.ref(DATA_MODEL.NOTES.name+"/"+ALL_CHARACTERS_ID);
         this.personnalNotesRef = database.ref(DATA_MODEL.NOTES.name+"/"+characterId);
@@ -135,30 +135,28 @@ class Character extends PureComponent {
     }
 
     render() {
-        const { caracteristics, levels, races, subRaces, weapons, armors} = this.props;
+        const { caracteristics, weaponsMap, armorsMap, racesMap, subRacesMap} = this.props;
         const { Name, SubRace: subRaceId, Gender, Class: classId, Specialisation, FightStyles, Historic: historicId, History, Skills: masterSkills,
                 XP, HP, MaxHP, Specials, SpellsLocations, Armor, Shield, Weapon, DistanceWeapon, MasterWeapons, MasterArmors, MasterObjects, Alterations,
                 Resistances, Saves, SaveAdvantages, Health, Strength, Notes, Money, Objects: characterObjects, SatchelObjects, HiddenCapacities, Damages} = this.state.characterInfos;
         const { generalNotes, personnalNotes } = this.state;
 
-        const caracteristicsBonus = caracteristics && Object.values(caracteristics).reduce((accum, caracteristic) => {
+        const caracteristicsBonus = caracteristics?.reduce((accum, caracteristic) => {
             accum[caracteristic.Code] = this.state.characterInfos[caracteristic.OV];
             return accum;
         }, {});
-        const characterLevel = getLevelNumber(levels, XP);
 
-        const armor = armors?.[Armor];
-        const shield = armors?.[Shield];
-        const weapon = weapons?.[Weapon];
-        const distanceWeapon = weapons?.[DistanceWeapon];
+        const armor = armorsMap?.[Armor];
+        const shield = armorsMap?.[Shield];
+        const weapon = weaponsMap?.[Weapon];
+        const distanceWeapon = weaponsMap?.[DistanceWeapon];
         const equipmentsWeight =  (armor?armor.Weight:0)
                                 + (shield?shield.Weight:0)
                                 + (weapon?weapon.Weight:0)
                                 + (distanceWeapon?distanceWeapon.Weight:0);
 
-        const subRace = subRaces?.[subRaceId];
-        const race = races?.[subRace?.Race];
-        const raceBonus = race?.[DATA_MODEL.CHARACTERS.columns.STRENGTH.name];
+        const subRace = subRacesMap?.[subRaceId];
+        const raceBonus = racesMap?.[subRace?.Race]?.[DATA_MODEL.CHARACTERS.columns.STRENGTH.name];
         const subRaceBonus = subRace?.[DATA_MODEL.CHARACTERS.columns.STRENGTH.name];
         const capacityCharge = getChargeCapacity(Strength + raceBonus + subRaceBonus) - equipmentsWeight;
 
@@ -191,12 +189,12 @@ class Character extends PureComponent {
                     <div className="character-capacities">
                         <div className="health-overview">
                             <HealthComponent value={Health} onChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HEALTH.name, value); }} />
-                            <DamagesComponent characterId={Name} subRaceId={subRaceId} damages={Damages}
+                            <DamagesComponent characterId={Name} damages={Damages}
                                                 onDamageChange={ (value) =>{ this.toggleElement(DATA_MODEL.CHARACTERS.columns.DAMAGES.name, value); }} />
-                            <WeaponSelector equipmentId={Weapon}
+                            <WeaponSelector weaponId={Weapon}
                                             wearingCharacter={ this.state.characterInfos }
                                             onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.WEAPON.name, value); }} />
-                            <WeaponSelector equipmentId={DistanceWeapon}
+                            <WeaponSelector weaponId={DistanceWeapon}
                                             wearingCharacter={ this.state.characterInfos }
                                             distance={true}
                                             onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.DISTANCE_WEAPON.name, value); }}
@@ -206,12 +204,12 @@ class Character extends PureComponent {
                                     subRaceId={subRaceId}
                                     XP={XP}
                                     onClick={(weaponId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.MASTER_WEAPONS.name, weaponId) }} />
-                            <ArmorSelector equipmentId={Armor}
+                            <ArmorSelector armorId={Armor}
                                             wearingCharacter={ this.state.characterInfos }
                                             classId={classId}
                                             subRaceId={subRaceId}
                                             onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.ARMOR.name, value); }}/>
-                            <ArmorSelector equipmentId={Shield}
+                            <ArmorSelector armorId={Shield}
                                             wearingCharacter={ this.state.characterInfos }
                                             shield={true}
                                             classId={classId}
@@ -219,6 +217,7 @@ class Character extends PureComponent {
                                             onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SHIELD.name, value); }}/>
                             <Armors master={MasterArmors}
                                     classId={classId}
+                                    subRaceId={subRaceId}
                                     onClick={(armorId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.MASTER_ARMORS.name, armorId) }} />
                         </div>
 
@@ -232,21 +231,21 @@ class Character extends PureComponent {
                                                         onResistanceClick={this.toggleResistance}/>
                                 <div className="complements">
                                     <ACComponent character={this.state.characterInfos} />    
-                                    <SpeedComponent subRaceId={subRaceId} classId={classId} armorId={Armor} strength={Strength} level={characterLevel} />    
+                                    <SpeedComponent subRaceId={subRaceId} classId={classId} armorId={Armor} strength={Strength} XP={XP} />    
                                 </div>
                             </div>
 
                             <div className="special">
-                                <SpecialsComponent val={Specials} classId={classId} level={characterLevel}
+                                <SpecialsComponent val={Specials} classId={classId} XP={XP}
                                                     onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPECIALS.name, value); }} />
-                                <SpecialCapacitiesComponent subRaceId={subRaceId} classId={classId} specialisationId={Specialisation} level={characterLevel}
+                                <SpecialCapacitiesComponent subRaceId={subRaceId} classId={classId} specialisationId={Specialisation} XP={XP}
                                                             hiddenCapacities={HiddenCapacities}
                                                             onVisibilityClick={(capacityId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.HIDDEN_CAPACITIES.name, capacityId) }} />
                             </div>
                             <div className="status">
                                 <div className="points">
-                                    <SpellsComponent spellsLocations={SpellsLocations} classId={classId} specialisationId={Specialisation} level={characterLevel}
-                                            onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPELLS_LOCATIONS.name, value); }} />
+                                    <SpellsComponent spellsLocations={SpellsLocations} classId={classId} specialisationId={Specialisation} XP={XP}
+                                                     onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPELLS_LOCATIONS.name, value); }} />
                                 </div>
                                 <SpellBookComponent character={ this.state.characterInfos }
                                                     onMinorSpellClick={(spellId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.MINOR_SPELLS.name, spellId) }}
@@ -257,8 +256,7 @@ class Character extends PureComponent {
                         <div className="stats">
                             <div className="caracteristics-relative">
                                 <div className="caracteristics">
-                                {   caracteristics && 
-                                    Object.values(caracteristics).map((caracteristic) => (
+                                {   caracteristics?.map((caracteristic) => (
                                         <div key={caracteristic.Name}>
                                             <span className={`caracteristic-name ${caracteristic.OV}`}>{caracteristic.Name}</span>
                                             <Caracteristic
@@ -384,12 +382,11 @@ class Character extends PureComponent {
     }
 }
 
-const mapStateToProps = (state) => ({
-    levels: state.referential.levels,
-    caracteristics: state.referential.caracteristics,
-    subRaces: state.referential.subRaces,
-    races: state.referential.races,
-    armors: state.referential.armors,
-    weapons: state.referential.weapons
+const mapStateToProps = (state, props) => ({
+    caracteristics: selectCaracteristics(state),
+    subRacesMap: selectSubRacesMap(state),
+    racesMap: selectRacesMap(state),
+    armorsMap: selectArmorsMap(state),
+    weaponsMap: selectWeaponsMap(state)
 });
 export default connect(mapStateToProps)(Character)

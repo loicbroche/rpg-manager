@@ -255,7 +255,7 @@
   "Armors" : {
     "Bouclier" : {
       "AC" : 2,
-      "BonusAC" : "",
+      "ACBonus" : "",
       "Category" : "0_SHIELD",
       "Discretion" : "-",
       "Name" : "Bouclier",
@@ -266,7 +266,7 @@
     },
     "Broigne" : {
       "AC" : 14,
-      "BonusAC" : "",
+      "ACBonus" : "",
       "Category" : "3_HEAVY",
       "Discretion" : "Désavantage",
       "Name" : "Broigne",
@@ -277,10 +277,10 @@
     },
     "Chemise de mailles" : {
       "AC" : 13,
-      "BonusAC" : "DEX",
+      "ACBonus" : "DEX",
       "Category" : "2_MID",
       "Discretion" : "-",
-      "MaxBonusAC" : 2,
+      "MaxACBonus" : 2,
       "Name" : "Chemise de mailles",
       "OV" : "Chain shirt",
       "Price" : 5000,
@@ -289,7 +289,7 @@
     },
     "Clibanion" : {
       "AC" : 17,
-      "BonusAC" : "",
+      "ACBonus" : "",
       "Category" : "3_HEAVY",
       "Discretion" : "Désavantage",
       "Name" : "Clibanion",
@@ -300,7 +300,7 @@
     },
     "Cotte de mailles" : {
       "AC" : 16,
-      "BonusAC" : "",
+      "ACBonus" : "",
       "Category" : "3_HEAVY",
       "Discretion" : "Désavantage",
       "Name" : "Cotte de mailles",
@@ -311,7 +311,7 @@
     },
     "Cuir" : {
       "AC" : 11,
-      "BonusAC" : "DEX",
+      "ACBonus" : "DEX",
       "Category" : "1_LIGHT",
       "Discretion" : "-",
       "Name" : "Cuir",
@@ -322,7 +322,7 @@
     },
     "Cuir clouté" : {
       "AC" : 12,
-      "BonusAC" : "DEX",
+      "ACBonus" : "DEX",
       "Category" : "1_LIGHT",
       "Discretion" : "-",
       "Name" : "Cuir clouté",
@@ -333,10 +333,10 @@
     },
     "Cuirasse" : {
       "AC" : 14,
-      "BonusAC" : "DEX",
+      "ACBonus" : "DEX",
       "Category" : "2_MID",
       "Discretion" : "-",
-      "MaxBonusAC" : 2,
+      "MaxACBonus" : 2,
       "Name" : "Cuirasse",
       "OV" : "Breastplate",
       "Price" : 40000,
@@ -345,10 +345,10 @@
     },
     "Demi-plate" : {
       "AC" : 15,
-      "BonusAC" : "DEX",
+      "ACBonus" : "DEX",
       "Category" : "2_MID",
       "Discretion" : "Désavantage",
-      "MaxBonusAC" : 2,
+      "MaxACBonus" : 2,
       "Name" : "Demi-plate",
       "OV" : "Half plate",
       "Price" : 75000,
@@ -357,7 +357,7 @@
     },
     "Harnois" : {
       "AC" : 18,
-      "BonusAC" : "",
+      "ACBonus" : "",
       "Category" : "3_HEAVY",
       "Discretion" : "Désavantage",
       "Name" : "Harnois",
@@ -368,7 +368,7 @@
     },
     "Matelassée" : {
       "AC" : 11,
-      "BonusAC" : "DEX",
+      "ACBonus" : "DEX",
       "Category" : "1_LIGHT",
       "Discretion" : "Désavantage",
       "Name" : "Matelassée",
@@ -379,10 +379,10 @@
     },
     "Peau" : {
       "AC" : 12,
-      "BonusAC" : "DEX",
+      "ACBonus" : "DEX",
       "Category" : "2_MID",
       "Discretion" : "-",
-      "MaxBonusAC" : 2,
+      "MaxACBonus" : 2,
       "Name" : "Peau",
       "OV" : "Hide",
       "Price" : 1000,
@@ -391,10 +391,10 @@
     },
     "Écailles" : {
       "AC" : 14,
-      "BonusAC" : "DEX",
+      "ACBonus" : "DEX",
       "Category" : "2_MID",
       "Discretion" : "Désavantage",
-      "MaxBonusAC" : 2,
+      "MaxACBonus" : 2,
       "Name" : "Écailles",
       "OV" : "Scale mail",
       "Price" : 5000,
@@ -1019,119 +1019,119 @@
       "Specials" : 9
     },
     "PALADIN-1" : {
-      "BonusSpellsNb" : "CHA",
+      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Sens divin", "Imposition des mains" ],
       "Locations" : [ null, 0, 0, 0, 0, 0 ],
       "SpellsNb" : 1
     },
     "PALADIN-10" : {
-      "BonusSpellsNb" : "CHA",
+      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Aura de courage" ],
       "Locations" : [ null, 4, 3, 2, 0, 0 ],
       "SpellsNb" : 5
     },
     "PALADIN-11" : {
-      "BonusSpellsNb" : "CHA",
+      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Châtiment divin amélioré" ],
       "Locations" : [ null, 4, 3, 3, 0, 0 ],
       "SpellsNb" : 5
     },
     "PALADIN-12" : {
-      "BonusSpellsNb" : "CHA",
+      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Amélioration de caractéristiques" ],
       "Locations" : [ null, 4, 3, 3, 0, 0 ],
       "SpellsNb" : 6
     },
     "PALADIN-13" : {
-      "BonusSpellsNb" : "CHA",
+      "SpellsNbBonus" : "CHA",
       "Locations" : [ null, 4, 3, 3, 1, 0 ],
       "SpellsNb" : 6
     },
     "PALADIN-14" : {
-      "BonusSpellsNb" : "CHA",
+      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Contact purifiant" ],
       "Locations" : [ null, 4, 3, 3, 1, 0 ],
       "SpellsNb" : 7
     },
     "PALADIN-15" : {
-      "BonusSpellsNb" : "CHA",
+      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Capacité de serment sacré" ],
       "Locations" : [ null, 4, 3, 3, 2, 0 ],
       "SpellsNb" : 7
     },
     "PALADIN-16" : {
-      "BonusSpellsNb" : "CHA",
+      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Amélioration de caractéristiques" ],
       "Locations" : [ null, 4, 3, 3, 2, 0 ],
       "SpellsNb" : 8
     },
     "PALADIN-17" : {
-      "BonusSpellsNb" : "CHA",
+      "SpellsNbBonus" : "CHA",
       "Locations" : [ null, 4, 3, 3, 3, 1 ],
       "SpellsNb" : 8
     },
     "PALADIN-18" : {
-      "BonusSpellsNb" : "CHA",
+      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Amélioration des auras" ],
       "Locations" : [ null, 4, 3, 3, 3, 1 ],
       "SpellsNb" : 9
     },
     "PALADIN-19" : {
-      "BonusSpellsNb" : "CHA",
+      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Amélioration de caractéristiques" ],
       "Locations" : [ null, 4, 3, 3, 3, 2 ],
       "SpellsNb" : 9
     },
     "PALADIN-2" : {
-      "BonusSpellsNb" : "CHA",
+      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Style de combat", "Incantations", "Châtiment divin" ],
       "Locations" : [ null, 2, 0, 0, 0, 0 ],
       "SpellsNb" : 1
     },
     "PALADIN-20" : {
-      "BonusSpellsNb" : "CHA",
+      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Capacité de serment sacré" ],
       "Locations" : [ null, 4, 3, 3, 3, 2 ],
       "SpellsNb" : 10
     },
     "PALADIN-3" : {
-      "BonusSpellsNb" : "CHA",
+      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Santé divine", "Serment sacré" ],
       "Locations" : [ null, 3, 0, 0, 0, 0 ],
       "SpellsNb" : 1
     },
     "PALADIN-4" : {
-      "BonusSpellsNb" : "CHA",
+      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Amélioration de caractéristiques" ],
       "Locations" : [ null, 3, 0, 0, 0, 0 ],
       "SpellsNb" : 2
     },
     "PALADIN-5" : {
-      "BonusSpellsNb" : "CHA",
+      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Attaque supplémentaire" ],
       "Locations" : [ null, 4, 2, 0, 0, 0 ],
       "SpellsNb" : 2
     },
     "PALADIN-6" : {
-      "BonusSpellsNb" : "CHA",
+      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Aura de protection" ],
       "Locations" : [ null, 4, 2, 0, 0, 0 ],
       "SpellsNb" : 3
     },
     "PALADIN-7" : {
-      "BonusSpellsNb" : "CHA",
+      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Capacité de serment sacré" ],
       "Locations" : [ null, 4, 3, 0, 0, 0 ],
       "SpellsNb" : 3
     },
     "PALADIN-8" : {
-      "BonusSpellsNb" : "CHA",
+      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Amélioration de caractéristiques" ],
       "Locations" : [ null, 4, 3, 0, 0, 0 ],
       "SpellsNb" : 4
     },
     "PALADIN-9" : {
-      "BonusSpellsNb" : "CHA",
+      "SpellsNbBonus" : "CHA",
       "Locations" : [ null, 4, 3, 2, 0, 0 ],
       "SpellsNb" : 4
     },
@@ -4369,6 +4369,7 @@
       "Constitution" : 0,
       "Dexterity" : 0,
       "HD" : 12,
+      "Id" : "BARBARIAN",
       "Intelligence" : 0,
       "MultiSpecialisation" : false,
       "Name" : "Barbare",
@@ -4389,6 +4390,7 @@
       "Constitution" : 0,
       "Dexterity" : 0,
       "HD" : 8,
+      "Id" : "BARD",
       "Intelligence" : 0,
       "MultiSpecialisation" : false,
       "Name" : "Barde",
@@ -4410,6 +4412,7 @@
       "Constitution" : 0,
       "Dexterity" : 0,
       "HD" : 8,
+      "Id" : "CLERK",
       "Intelligence" : 0,
       "MultiSpecialisation" : false,
       "Name" : "Clerc",
@@ -4430,6 +4433,7 @@
       "Constitution" : 0,
       "Dexterity" : 0,
       "HD" : 8,
+      "Id" : "DRUID",
       "Intelligence" : 0,
       "MultiSpecialisation" : false,
       "Name" : "Druide",
@@ -4451,6 +4455,7 @@
       "Constitution" : 0,
       "Dexterity" : 0,
       "HD" : 6,
+      "Id" : "MAGICIAN",
       "Intelligence" : 0,
       "MultiSpecialisation" : false,
       "Name" : "Magicien",
@@ -4473,6 +4478,7 @@
       "Constitution" : 0,
       "Dexterity" : 0,
       "HD" : 8,
+      "Id" : "MONK",
       "Intelligence" : 0,
       "MultiSpecialisation" : false,
       "Name" : "Moine",
@@ -4495,6 +4501,7 @@
       "Dexterity" : 0,
       "FightStyleLevel" : 2,
       "HD" : 10,
+      "Id" : "PALADIN",
       "Intelligence" : 0,
       "MultiSpecialisation" : false,
       "Name" : "Paladin",
@@ -4516,6 +4523,7 @@
       "Dexterity" : 0,
       "FightStyleLevel" : 2,
       "HD" : 10,
+      "Id" : "PROWLER",
       "Intelligence" : 0,
       "MultiSpecialisation" : false,
       "Name" : "Rôdeur",
@@ -4537,6 +4545,7 @@
       "Constitution" : 0,
       "Dexterity" : 0,
       "HD" : 6,
+      "Id" : "SORCERER",
       "Intelligence" : 0,
       "MultiSpecialisation" : false,
       "Name" : "Ensorceleur",
@@ -4558,6 +4567,7 @@
       "Dexterity" : 0,
       "FightStyleLevel" : 1,
       "HD" : 10,
+      "Id" : "WARRIOR",
       "Intelligence" : 0,
       "MultiSpecialisation" : true,
       "Name" : "Guerrier",
@@ -4578,6 +4588,7 @@
       "Constitution" : 0,
       "Dexterity" : 0,
       "HD" : 8,
+      "Id" : "WILY",
       "Intelligence" : 0,
       "MultiSpecialisation" : false,
       "Name" : "Roublard",
@@ -4599,6 +4610,7 @@
       "Constitution" : 0,
       "Dexterity" : 0,
       "HD" : 8,
+      "Id" : "WIZARD",
       "Intelligence" : 0,
       "MultiSpecialisation" : false,
       "Name" : "Sorcier",
@@ -5466,12 +5478,14 @@
   },
   "Historics" : {
     "ACOLYTE" : {
+      "Id" : "ACOLYTE",
       "Name" : "Acolyte",
       "Skills" : [ "Perspicacité", "Religion" ],
       "StartingMoney" : 1500,
       "StartingObjects" : [ "Symbole sacré", "Livre de prières", "5 bâtons d'encens", "Habits de cérémonie", "Vêtements communs" ]
     },
     "ARTIST" : {
+      "Id" : "ARTIST",
       "Name" : "Artiste",
       "Objects" : [ "Kit de déguisement" ],
       "Skills" : [ "Acrobatie", "Représentation" ],
@@ -5479,17 +5493,20 @@
       "StartingObjects" : [ "Cadeau d'un admirateur (une lettre d'amour, une mèche de cheveux, une babiole)", "Costume" ]
     },
     "BOUNTY_HUNTER" : {
+      "Id" : "BOUNTY_HUNTER",
       "Name" : "Chasseur De Primes",
       "StartingMoney" : 2000,
       "StartingObjects" : [ "Vêtements appropriés à votre fonction" ]
     },
     "CAPTIVE" : {
+      "Id" : "CAPTIVE",
       "Name" : "Captif *",
       "Skills" : [ "Nature", "Survie" ],
       "StartingMoney" : 500,
       "StartingObjects" : [ "Vêtements communs", "Bougie", "Gamelle", "Couverture" ]
     },
     "CHARLATAN" : {
+      "Id" : "CHARLATAN",
       "Name" : "Charlatan",
       "Objects" : [ "Kit de déguisement", "Kit de contrefaçon" ],
       "Skills" : [ "Escamotage", "Tromperie" ],
@@ -5497,6 +5514,7 @@
       "StartingObjects" : [ "Kit de déguisement", "Vêtements fins" ]
     },
     "CRIMINAL" : {
+      "Id" : "CRIMINAL",
       "Name" : "Criminel",
       "Objects" : [ "Outils de voleur" ],
       "Skills" : [ "Discrétion", "Tromperie" ],
@@ -5504,12 +5522,14 @@
       "StartingObjects" : [ "Pied-de-biche", "Vêtements communs sombres avec une capuche" ]
     },
     "GUILD_ARTISAN" : {
+      "Id" : "GUILD_ARTISAN",
       "Name" : "Artisan De Guilde",
       "Skills" : [ "Perspicacité", "Persuasion" ],
       "StartingMoney" : 1500,
       "StartingObjects" : [ "Lettre de recommandation de votre guilde", "Vêtements de voyage" ]
     },
     "HERMIT" : {
+      "Id" : "HERMIT",
       "Name" : "Ermite",
       "Objects" : [ "Kit d'herboriste" ],
       "Skills" : [ "Médecine", "Religion" ],
@@ -5517,6 +5537,7 @@
       "StartingObjects" : [ "Kit d'herboriste", "Etui à parchemin remplis de notes sur vos études ou vos prières", "Couverture pour l'hiver", "Vêtements communs" ]
     },
     "MARINE" : {
+      "Id" : "MARINE",
       "Name" : "Marin",
       "Objects" : [ "Outils de navigateur", "Véhicules (aquatiques)" ],
       "Skills" : [ "Athlétisme", "Perception" ],
@@ -5524,12 +5545,14 @@
       "StartingObjects" : [ "Corde en soie (15 m.)", "Porte bonheur", "Vêtements communs" ]
     },
     "NOBLE" : {
+      "Id" : "NOBLE",
       "Name" : "Noble",
       "Skills" : [ "Histoire", "Persuasion" ],
       "StartingMoney" : 2500,
       "StartingObjects" : [ "Vêtements fins", "Chevalière", "Lettre de noblesse" ]
     },
     "PEOPLE_HERO" : {
+      "Id" : "PEOPLE_HERO",
       "Name" : "Héros Du Peuple",
       "Objects" : [ "Véhicules (terrestres)" ],
       "Skills" : [ "Dressage", "Survie" ],
@@ -5537,12 +5560,14 @@
       "StartingObjects" : [ "Pelle", "Pot en fer", "Vêtements communs" ]
     },
     "SAUVAGEON" : {
+      "Id" : "SAUVAGEON",
       "Name" : "Sauvageon",
       "Skills" : [ "Athlétisme", "Survie" ],
       "StartingMoney" : 1000,
       "StartingObjects" : [ "Piège à mâchoires", "Trophée d'animal que vous avez tué", "Vêtements de voyage " ]
     },
     "SOLDIER" : {
+      "Id" : "SOLDIER",
       "Name" : "Soldat",
       "Objects" : [ "Véhicules (terrestres)", "Barde", "Carrosse", "Char", "Chariot", "Charrette", "Traîneau" ],
       "Skills" : [ "Athlétisme", "Intimidation" ],
@@ -5550,6 +5575,7 @@
       "StartingObjects" : [ "Insigne de grade", "Trophée pris sur un ennemi mort (une dague, une lame brisée, un morceau de bannière)", "Jjeu de dés en os ou un jeu de cartes", "Vêtements communs" ]
     },
     "STREETS_CHILD" : {
+      "Id" : "STREETS_CHILD",
       "Name" : "Enfant Des Rues",
       "Objects" : [ "Kit de déguisement", "Outils de voleur" ],
       "Skills" : [ "Discrétion", "Escamotage" ],
@@ -5557,23 +5583,27 @@
       "StartingObjects" : [ "Petit couteau", "Carte de la ville dans laquelle vous avez grandi", "Souris domestiquée", "Souvenir de vos parents", "Vêtements communs" ]
     },
     "TORMENTED" : {
+      "Id" : "TORMENTED",
       "Name" : "Tourmenté",
       "StartingMoney" : 0,
       "StartingObjects" : [ "Vêtements communs", "Babiole ayant une signification particulière pour vous" ]
     },
     "TRAVELER" : {
+      "Id" : "TRAVELER",
       "Name" : "Voyageur *",
       "Skills" : [ "Survie", "Persuasion" ],
       "StartingMoney" : 1000,
       "StartingObjects" : [ "Bâton de marche", "Souvenir venu d’un pays lointain", "Livre rempli de notes sur vos périples ou de dessins", "Bouteille d'encre", "Plune", "Vêtements de voyage" ]
     },
     "VILLAGE_IDIOT" : {
+      "Id" : "VILLAGE_IDIOT",
       "Name" : "Idiot Du Village *",
       "Skills" : [ "Discrétion", "Représentation" ],
       "StartingMoney" : 0,
       "StartingObjects" : [ "Sifflet", "Vêtements communs rapiécés", "Bourse contenant de jolis cailloux et un autre objet au choix" ]
     },
     "WISE" : {
+      "Id" : "WISE",
       "Name" : "Sage",
       "Skills" : [ "Arcanes", "Histoire" ],
       "StartingMoney" : 1000,
@@ -6843,7 +6873,7 @@
       "Languages" : [ "COMMON", "ELVISH" ],
       "Name" : "Elfe",
       "OV" : "Elf",
-      "SaveAdvantages" : [ "CHARME" ],
+      "SaveAdvantages" : [ "CHARM" ],
       "Speed" : 9,
       "Strength" : 0,
       "Wisdom" : 0
@@ -8026,7 +8056,7 @@
       "Class" : "MAGICIAN",
       "Code" : "EVOCATION",
       "Description" : "Vous concentrez vos études sur la magie qui crée des effets élémentaires puissants telles qu'un froid glacial, une flamme brûlante, un roulement de tonnerre, une foudre qui crépite ou bien encore de l'acide brûlant. Certains évocateurs se font employer par les forces militaires, servant d'artillerie pour faire sauter les armées ennemies de loin. D'autres utilisent leurs pouvoirs spectaculaires pour protéger les faibles, tandis que d'autres servent leur propre intérêt comme des bandits, des aventuriers ou des tyrans en herbe.",
-      "Name" : "Evocation"
+      "Name" : "Évocation"
     },
     "FIENDISH" : {
       "ACBonus" : 0,
@@ -11282,7 +11312,7 @@
       "Level" : 9,
       "Name" : "Mot de pouvoir guérisseur",
       "OV" : "Power Word Heal",
-      "School" : "Evocation",
+      "School" : "Évocation",
       "Type" : ""
     },
     "Mot de pouvoir mortel" : {

@@ -13,7 +13,7 @@ class GameMaster extends PureComponent {
           characters: null
         }
         this.charactersRef = database.ref(DATA_MODEL.CHARACTERS.name);
-        this.updateCharacters = (snapshot)  => { this.setState({ characters: objectToArray(snapshot.val()) }); }
+        this.updateCharacters = (snapshot)  => { this.setState({ characters: snapshot.val() && Object.values(objectToArray(snapshot.val())) }); }
     }
 
     componentDidMount() {
@@ -29,7 +29,7 @@ class GameMaster extends PureComponent {
             <div className="game-master">
                 <span className="intro narrative">Bienvenu grand maître du jeu ! Ici tu gardera un oeil sur tous les personnages jouables</span>
                 <div className="characters-overview">
-                    {characters && Object.values(characters).map((character) => (
+                    {characters?.map((character) => (
                         <CharacterOverview key={character.Id} character={character} />
                     ))}
                 </div>

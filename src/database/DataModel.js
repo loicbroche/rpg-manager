@@ -43,6 +43,7 @@ export const DATA_MODEL = {
         {
             name: 'Classes',
             columns: {
+                ID: { name: "Id" },
                 NAME: { name: "Name" },
                 OV: { name: "OV" },
                 STRENGTH: { name: "Strength" },
@@ -97,7 +98,7 @@ export const DATA_MODEL = {
                 DAMAGES: { name: "Damages", optional: true },
                 MINOR_SPELLS_NB: { name: "MinorSpellsNb", optional: true },
                 SPELLS_NB: { name: "SpellsNb", optional: true },
-                BONUS_SPELLS_NB: { name: "BonusSpellsNb", optional: true },
+                BONUS_SPELLS_NB: { name: "SpellsNbBonus", optional: true },
                 LOCATIONS: { name: "Locations", optional: true },
                 INVOCATIONS: { name: "Invocations", optional: true },
                 ARMORLESS_SPEED: { name: "ArmorlessSpeed", optional: true }
@@ -143,6 +144,7 @@ export const DATA_MODEL = {
         {
             name: 'Historics',
             columns: {
+                ID: { name: "Id" },
                 NAME: { name: "Name" },
                 SKILLS: { name: "Skills" }
             }
@@ -185,8 +187,8 @@ export const DATA_MODEL = {
                 OV: { name: "OV" },
                 CATEGORY_CODE: { name: "Category" },
                 AC: { name: "AC" },
-                BONUS_AC: { name: "BonusAC", optional: true },
-                MAX_BONUS_AC: { name: "MaxBonusAC", optional: true },
+                BONUS_AC: { name: "ACBonus", optional: true },
+                MAX_BONUS_AC: { name: "MaxACBonus", optional: true },
                 WEIGHT: { name: "Weight" },
                 PRICE: { name: "Price" },
                 DISCRETION: { name: "Discretion" },

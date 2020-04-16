@@ -1,6 +1,8 @@
 
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import { selectAlignments, selectObjectsMap, selectArmorById, selectWeaponById } from 'store/selectors';
+
 import PropTypes from 'prop-types'
 import { CharacterPropType } from 'PropTypes';
 import { DATA_MODEL } from 'database/DataModel'
@@ -16,20 +18,16 @@ class DetailsComponent extends PureComponent {
 
   render() {
 
-    const { alignments, armors, weapons, objects, character, onChange, onClickElement } = this.props;
-    const armor = armors?.[character?.Armor];
-    const shield = armors?.[character?.Shield];
-    const weapon = weapons?.[character?.Weapon];
-    const distanceWeapon = weapons?.[character?.DistanceWeapon];
+    const { alignments, armor, shield, weapon, distanceWeapon, objectsMap, character, onChange, onClickElement } = this.props;
 
     const equipmentsWeight =  (armor?armor.Weight:0)
                               + (shield?shield.Weight:0)
                               + (weapon?weapon.Weight:0)
                               + (distanceWeapon?distanceWeapon.Weight:0);
     let objectsWeight = 0;
-    if (objects && character?.Objects) {
+    if (objectsMap && character?.Objects) {
       for (let i = 0; i < character.Objects.length; i++) {
-        const obj = objects[character.Objects[i]];
+        const obj = objectsMap[character.Objects[i]];
         objectsWeight += !obj?0:obj.Weight;
       }
     }
@@ -57,7 +55,7 @@ class DetailsComponent extends PureComponent {
                   <select value={character.Alignment} disabled={!onChange}
                           onChange={(event) => onChange(DATA_MODEL.CHARACTERS.columns.ALIGNMENT.name, event.target.value)}>
                     <option value="" disabled>Choisissez un alignement</option>
-                    { Object.values(alignments).map((alignment) => {
+                    { alignments?.map((alignment) => {
                       return <option key={alignment.Code} value={alignment.Code} title={alignment.Description}>{alignment.Name}</option>
                     })}
                   </select>
@@ -141,10 +139,12 @@ DetailsComponent.propTypes = {
   onClickElement: PropTypes.func.isRequired
 }
 
-const mapStateToProps = (state) => ({
-  alignments: state.referential.alignments,
-  armors: state.referential.armors,
-  weapons: state.referential.weapons,
-  objects: state.referential.objects
+const mapStateToProps = (state, props) => ({
+  alignments: selectAlignments(state),
+  armor: selectArmorById(state, props.character?.Armor),
+  shield: selectArmorById(state, props.character?.Shield),
+  weapon: selectWeaponById(state, props.character?.weapon),
+  distanceWeapon: selectWeaponById(state, props.character?.distanceWeapon),
+  objectsMap: selectObjectsMap(state)
 })
 export default connect(mapStateToProps)(DetailsComponent)

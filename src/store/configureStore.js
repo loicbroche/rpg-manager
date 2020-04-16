@@ -9,4 +9,5 @@ const reducers = combineReducers(
   }
 );
 
-export default createStore(reducers);
+const store = createStore(reducers);
+export default store;

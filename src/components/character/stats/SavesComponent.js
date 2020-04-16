@@ -1,24 +1,21 @@
 
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import { selectSubRaceById, selectRaceBySubRaceId, selectClassById, selectCaracteristics,
+        selectMasteryBonusByXP, selectAlterationTypes, selectAlterations } from 'store/selectors';
+
 import PropTypes from 'prop-types'
-import { getLevel } from 'rules/Levels.rules'
 
 import './SavesComponent.css'
 
 class SavesComponent extends PureComponent {
 
   render() {
-    const { alterationTypes, caracteristics, races, subRaces, classes, saves, advantages, levels, subRaceId, classId, XP, onClick, onAdvantageClick} = this.props;
+    const { alterationTypes, caracteristics, race, subRace, class: characterClass, saves, advantages, masteryBonus, onClick, onAdvantageClick} = this.props;
 
-    const level = getLevel(levels, XP) || 0;
-    const masteryBonus = level?.MasteryBonus;
-    const characterClass = classes?.[classId];
     const classSaves = characterClass?.Saves;
     const className = characterClass?.Name || "";
 
-    const subRace = subRaces?.[subRaceId];
-    const race = races?.[subRace?.Race];
     const raceSaveAdvantages = race?.SaveAdvantages;
     const subRaceSaveAdvantages = subRace?.SaveAdvantages;
 
@@ -27,8 +24,7 @@ class SavesComponent extends PureComponent {
         <h1>Jets de sauvegarde</h1>
         <div className="saves">
           <div className="caracteristics-saves">
-            { caracteristics &&
-              Object.values(caracteristics).map((caracteristic) => {
+            { caracteristics?.map((caracteristic) => {
                 let saveImage;
                 try {
                   saveImage = require(`images/caracteristics/${caracteristic.Code}_icon.png`);
@@ -68,8 +64,7 @@ class SavesComponent extends PureComponent {
             }
           </div>
           <div className="alteration-saves">
-            {alterationTypes &&
-              Object.values(alterationTypes).map((type) => type.Savable && this.getAlterations(type))
+            {alterationTypes?.map((type) => type.Savable && this.getAlterations(type))
             }
           </div>
         </div>
@@ -78,18 +73,14 @@ class SavesComponent extends PureComponent {
   }
 
   getAlterations(alterationType) {
-    const { alterations, races, subRaces, saves, advantages, levels, subRaceId, XP, onClick, onAdvantageClick} = this.props;
-    const availableAlterations = alterations && Object.values(alterations).filter((alteration) => alteration.Type === alterationType.Code);
+    const { alterations, race, subRace, saves, advantages, masteryBonus, onClick, onAdvantageClick} = this.props;
+    const availableAlterations = alterations?.filter((alteration) => alteration.Type === alterationType.Code);
 
-    const level = getLevel(levels, XP) ||0;
-    const masteryBonus = level?.MasteryBonus;
-    const subRace = subRaces?.[subRaceId];
-    const race = races?.[subRace?.Race];
     const raceSaveAdvantages = race?.SaveAdvantages;
     const subRaceSaveAdvantages = subRace?.SaveAdvantages;
 
     return (
-      Object.values(availableAlterations).map((alteration) => {
+      availableAlterations?.map((alteration) => {
         let saveImage;
         try {
           saveImage = require(`images/alterations/${alteration.Code}.png`);
@@ -138,14 +129,14 @@ SavesComponent.propTypes = {
   onAdvantageClick: PropTypes.func
 }
 
-const mapStateToProps = (state) => ({
-  alterationTypes: state.referential.alterationTypes,
-  alterations: state.referential.alterations,
-  caracteristics: state.referential.caracteristics,
-  races: state.referential.races,
-  subRaces: state.referential.subRaces,
-  classes: state.referential.classes,
-  levels: state.referential.levels
+const mapStateToProps = (state, props) => ({
+  alterationTypes: selectAlterationTypes(state),
+  alterations: selectAlterations(state),
+  caracteristics: selectCaracteristics(state),
+  subRace: selectSubRaceById(state, props.subRaceId),
+  race: selectRaceBySubRaceId(state, props.subRaceId),
+  class: selectClassById(state, props.classId),
+  masteryBonus: selectMasteryBonusByXP(state, props.XP)
 })
 
 export default connect(mapStateToProps)(SavesComponent)

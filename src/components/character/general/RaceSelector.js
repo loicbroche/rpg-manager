@@ -2,6 +2,7 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import { selectRaces, selectSubRaces } from 'store/selectors';
 import './RaceSelector.css'
 
 class RaceSelector extends PureComponent {
@@ -28,7 +29,7 @@ class RaceSelector extends PureComponent {
           { races && subRaces && (
             <select className="selector-select" value={subRaceId || "-" } onChange={(event) => this.props.onRaceChange(event.target.value)}>
               <option value="-" disabled>Choisissez une race</option>
-              { Object.entries(races).map(([key, value]) => this.getSubRacesOptionElement(key))}
+              {races?.map((race) => this.getSubRacesOptionElement(race))}
             </select>
           )}
         </div>
@@ -43,13 +44,13 @@ class RaceSelector extends PureComponent {
     )
   }
 
-  getSubRacesOptionElement(raceId) {
-    const { races, subRaces } = this.props;
-    const availableSubRaces = Object.values(subRaces).filter((subRace) => subRace.Race === raceId);
+  getSubRacesOptionElement(race) {
+    const { subRaces } = this.props;
+    const availableSubRaces = subRaces?.filter((subRace) => subRace.Race === race?.Id);
     return availableSubRaces.length === 1
             ? <option key={availableSubRaces[0].Id} value={availableSubRaces[0].Id}>{availableSubRaces[0].Name}</option>
             : (
-              <optgroup key={raceId} label={races?.[raceId]?.Name}>
+              <optgroup key={race?.Id} label={race?.Name}>
                 { availableSubRaces.map((subRace) => (
                   <option key={subRace.Id} value={subRace.Id}>{subRace.Name}</option>
                 ))}
@@ -67,7 +68,7 @@ RaceSelector.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-  races: state.referential.races,
-  subRaces: state.referential.subRaces
+  races: selectRaces(state),
+  subRaces: selectSubRaces(state)
 })
 export default connect(mapStateToProps)(RaceSelector)

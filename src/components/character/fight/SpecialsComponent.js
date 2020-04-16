@@ -1,6 +1,7 @@
 
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import { selectClassById, selectClassCapacityByClassIdXP } from 'store/selectors';
 import PropTypes from 'prop-types'
 
 import './SpecialsComponent.css'
@@ -8,9 +9,8 @@ import './SpecialsComponent.css'
 class SpecialsComponent extends PureComponent {
 
   render() {
-    const {val, classId, level, classes, capacities, onValChange} = this.props;
-    const characterClass = classes?.[classId];
-    const capacity = capacities?.[classId+"-"+level];
+    const {val, class: characterClass, capacity, onValChange} = this.props;
+
     const maxVal = capacity?.Specials;
     const specialPoints = [];
     const specialImage = characterClass?.SpecialsName && require(`images/specials/${characterClass.SpecialsName}.png`);
@@ -52,16 +52,16 @@ class SpecialsComponent extends PureComponent {
 SpecialsComponent.propTypes = {
   val: PropTypes.number.isRequired,
   classId: PropTypes.string.isRequired,
-  level: PropTypes.number,
+  XP: PropTypes.number,
   onValChange: PropTypes.func
 }
 
 SpecialsComponent.defaultProps = {
-  level: 1
+  XP: 0
 }
 
-const mapStateToProps = (state) => ({
-  classes: state.referential.classes,
-  capacities: state.referential.capacities,
+const mapStateToProps = (state, props) => ({
+  class: selectClassById(state, props.classId),
+  capacity: selectClassCapacityByClassIdXP(state, props.classId, props.XP)
 })
 export default connect(mapStateToProps)(SpecialsComponent)

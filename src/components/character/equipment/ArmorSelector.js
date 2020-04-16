@@ -2,12 +2,13 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import { selectSubRaceById, selectClassById, selectArmors, selectArmorById, selectACBonusCaracteristicByArmorId,
+         selectArmorCategoriesByType, selectArmorCategoriesMap, selectArmorCategoriesByClassId, selectArmorCategoriesBySubRaceId } from 'store/selectors';
 
 import { CharacterPropType } from 'PropTypes'
 import Money from 'components/shared/Money'
 import Weight from 'components/shared/Weight'
 import CaracteristicBonus from 'components/shared/CaracteristicBonus'
-import { filterArmorsCategories, filterShieldsCategories } from 'rules/Armors.rules'
 
 import './EquipmentSelector.css'
 
@@ -17,23 +18,20 @@ const notMasterImage = require("images/cross.png");
 class ArmorSelector extends PureComponent {
 
   render() {
-/**/const { equipmentCategories, equipments, caracteristics, equipmentId, shield, wearingCharacter } = this.props;
-    const equipment = equipments?.[equipmentId];
+/**/const { armorCategories, armors, armor, ACBonusCaracteristic, armorId, shield, wearingCharacter } = this.props;
     
-/**/const equipmentType = shield?"shield":"armor";
-/**/const equipmentTitleLabel = shield?"Bouclier":"Armure";
-/**/const equipmentLabel = shield?"un bouclier":"une armure";
-/**/const filteredCategories = equipmentCategories && (shield?filterShieldsCategories(equipmentCategories):filterArmorsCategories(equipmentCategories));
+/**/const armorType = shield?"shield":"armor";
+/**/const armorTitleLabel = shield?"Bouclier":"Armure";
+/**/const armorLabel = shield?"un bouclier":"une armure";
 
-    const isMaster = this.isMasterCategory(equipment?.Category) || wearingCharacter?.MasterArmors?.includes(equipmentId);
-/**/const bonusCaracteristic = caracteristics?.[equipment?.BonusAC];
-    const caracteristicName = bonusCaracteristic?.OV;
-/**/const bonusContent = equipment && 
-                         <div className={`main-stat-bonus-label ${ isMaster?(equipment?.BonusAC):"not-master-equipment"}`}>
+    const isMaster = this.isMasterCategory(armor?.Category) || wearingCharacter?.MasterArmors?.includes(armorId);
+    const caracteristicName = ACBonusCaracteristic?.OV;
+/**/const bonusContent = armor && 
+                         <div className={`main-stat-bonus-label ${ isMaster?(armor?.ACBonus):"not-master-equipment"}`}>
                             {isMaster
-                              ?(equipment?.BonusAC && caracteristicName && <CaracteristicBonus caracteristicName={caracteristicName}
+                              ?(armor?.ACBonus && caracteristicName && <CaracteristicBonus caracteristicName={caracteristicName}
                                                   value={wearingCharacter?.[caracteristicName]}
-                                                  bonusMax={Number.isNaN(equipment.MaxBonusAC)?null:equipment.MaxBonusAC}
+                                                  bonusMax={Number.isNaN(armor.MaxACBonus)?null:armor.MaxACBonus}
                                                   subRaceId={wearingCharacter?.SubRace} />)
                               :<img src={notMasterImage} className="not-master-image" alt="" title="Non maîtrisé"/>
                             }
@@ -41,47 +39,47 @@ class ArmorSelector extends PureComponent {
 
 /**/const bonusCode = "CA";
 /**/const bonusTitle = "Classe d'armure";
-/**/const mainValue = equipment?.AC;
+/**/const mainValue = armor?.AC;
 
-    let equipmentImage;
+    let armorImage;
     try {
-      equipmentImage = equipment?require(`images/equipments/${equipmentType}/${equipment.OV}.png`):require(`images/equipments/${equipmentType}/without.png`);
+      armorImage = armor?require(`images/equipments/${armorType}/${armor.OV}.png`):require(`images/equipments/${armorType}/without.png`);
     } catch (ex) {
-      equipmentImage = require(`images/equipments/${equipmentType}/no_image.png`);
+      armorImage = require(`images/equipments/${armorType}/no_image.png`);
     }
 
     return (
       <div className="equipment-selector">
           <h1 className="equipment-name">
-            <span>{equipmentTitleLabel}</span>
+            <span>{armorTitleLabel}</span>
           </h1>
           <div className="equipment-title">
-            { equipmentCategories && equipments && (
-              <select className="equipment-select" value={equipmentId} onChange={this.handleValueUpdate}>
-                <option value="" disabled>Choisissez {equipmentLabel}</option>
+            { armorCategories && armors && (
+              <select className="equipment-select" value={armorId} onChange={this.handleValueUpdate}>
+                <option value="" disabled>Choisissez {armorLabel}</option>
                 <option value="-">Sans</option>
-                { filteredCategories.map((category) => this.getEquipmentsOptionElement(category.Code))}
+                { armorCategories.map((category) => this.getArmorsOptionElement(category.Code))}
               </select>
             )}
             <div className="main-stat-value">
-                {equipment && <img src={mainStatImage} className="main-stat-image" alt={bonusCode} title={bonusTitle}/>}
+                {armor && <img src={mainStatImage} className="main-stat-image" alt={bonusCode} title={bonusTitle}/>}
                 <span className="main-stat-label">{mainValue}</span>
                 {bonusContent}
             </div>
           </div>
-          {equipment && <div className="equipment-illustration">
-            <img src={equipmentImage} className="equipment-image" alt="" />
+          {armor && <div className="equipment-illustration">
+            <img src={armorImage} className="equipment-image" alt="" />
           </div>}
-          {equipment &&
+          {armor &&
             <div className="equipment-description">
-              <div className="equipment-description-line"><span className="description-line-title">{equipment?"Discretion:":'\u00A0'}</span>
-                                                          <span className="description-line-value">{equipment?.Discretion}</span></div>
-              <div className="equipment-description-line"><span className="description-line-title">{equipment?"Force:":'\u00A0'}</span>
-                                                          <span className="description-line-value">{equipment?.Strength}</span></div>
-              <div className="equipment-description-line"><span className="description-line-title">{equipment?"Poids:":'\u00A0'}</span>
-                                                          <Weight weight={equipment.Weight} /></div>
-              <div className="equipment-description-line"><span className="description-line-title">{equipment?"Prix:":'\u00A0'}</span>
-                                                          <Money id={equipmentTitleLabel} amount={equipment.Price} /></div>
+              <div className="equipment-description-line"><span className="description-line-title">{armor?"Discretion:":'\u00A0'}</span>
+                                                          <span className="description-line-value">{armor?.Discretion}</span></div>
+              <div className="equipment-description-line"><span className="description-line-title">{armor?"Force:":'\u00A0'}</span>
+                                                          <span className="description-line-value">{armor?.Strength}</span></div>
+              <div className="equipment-description-line"><span className="description-line-title">{armor?"Poids:":'\u00A0'}</span>
+                                                          <Weight weight={armor.Weight} /></div>
+              <div className="equipment-description-line"><span className="description-line-title">{armor?"Prix:":'\u00A0'}</span>
+                                                          <Money id={armorTitleLabel} amount={armor.Price} /></div>
           </div>}
       </div>
     )
@@ -89,43 +87,37 @@ class ArmorSelector extends PureComponent {
 
   // Arrow fx for binding
   handleValueUpdate = (event) => {
-    const selectedEquipment = event.target.value;
-    this.props.onChange(selectedEquipment);
+    const selectedArmor = event.target.value;
+    this.props.onChange(selectedArmor);
   }
 
-  getEquipmentsOptionElement(equipmentCategoryId) {
-    const { equipmentCategories, equipments, subRaces, subRaceId, classes, classId, wearingCharacter} = this.props;
-    const characterClass = classes?.[classId];
-    const subRace = subRaces?.[subRaceId];
+  getArmorsOptionElement(armorCategoryId) {
+    const { armorCategoriesMap, armors, subRace, class: characterClass, wearingCharacter} = this.props;
 
-    const availableEquipments = Object.values(equipments).filter((equipment) => equipment.Category === equipmentCategoryId);
-    const isClassMasterCategory = this.isClassMasterCategory(equipmentCategoryId);
-    const isRaceMasterCategory = this.isRaceMasterCategory(equipmentCategoryId);
+    const availableArmors = armors?.filter((armor) => armor.Category === armorCategoryId);
+    const isClassMasterCategory = this.isClassMasterCategory(armorCategoryId);
+    const isRaceMasterCategory = this.isRaceMasterCategory(armorCategoryId);
     const isMasterCategory = isClassMasterCategory || isRaceMasterCategory;
 
-    return availableEquipments?.length > 0 && 
-           <optgroup key={equipmentCategoryId} label={equipmentCategories?.[equipmentCategoryId].Name} >
-            { availableEquipments.map((equipment) => {
-              const isMasterEquipment = isMasterCategory || (wearingCharacter?.MasterArmors?.includes(equipment.Id));
+    return availableArmors?.length > 0 && 
+           <optgroup key={armorCategoryId} label={armorCategoriesMap?.[armorCategoryId].Name} >
+            { availableArmors.map((armor) => {
+              const isMasterArmor = isMasterCategory || (wearingCharacter?.MasterArmors?.includes(armor.Id));
               return (
-              <option key={equipment.Name} value={equipment.Id} className={isMasterEquipment?"master-equipment":""}
+              <option key={armor.Name} value={armor.Id} className={isMasterArmor?"master-equipment":""}
                       title={ (isRaceMasterCategory
                               ?"Maîtrise héritée de la race "+subRace.Name
                               :(  isClassMasterCategory
                                   ?"Maîtrise héritée de la classe "+characterClass.Name
                                   :"Non maîtrisé"
-                              ))+`\nCA : ${equipment.AC} ${equipment.BonusAC
-                                                            ?`+${equipment.BonusAC} ${equipment.MaxBonusAC
-                                                                                      ?`(max ${equipment.MaxBonusAC})`
+                              ))+`\nCA : ${armor.AC} ${armor.ACBonus
+                                                            ?`+${armor.ACBonus} ${armor.MaxACBonus
+                                                                                      ?`(max ${armor.MaxACBonus})`
                                                                                       :""}`
                                                             :""}
-                                  `}>{equipment.Name}</option>
+                                  `}>{armor.Name}</option>
             )})}
           </optgroup>
-  }
-
-  isMaster(armorCategoryId) {
-    return this.isClassMasterCategory(armorCategoryId) || this.isRaceMasterCategory(armorCategoryId);
   }
 
   isMasterCategory(armorCategoryId) {
@@ -133,19 +125,12 @@ class ArmorSelector extends PureComponent {
   }
 
   isClassMasterCategory(armorCategoryId) {
-    const { classes, classId } = this.props;
-    const characterClass = classes?.[classId];
-    const classArmorCategories = (characterClass?.ArmorCategories || []);
-
+    const { classArmorCategories } = this.props;
     return classArmorCategories?.includes(armorCategoryId);
   }
 
   isRaceMasterCategory(armorCategoryId) {
-    const { subRaces, subRaceId } = this.props;
-
-    const subRace = subRaces?.[subRaceId];
-    const subRaceArmorCategories =  subRace?.ArmorCategories || [];
-
+    const { subRaceArmorCategories } = this.props;
     return subRaceArmorCategories?.includes(armorCategoryId);
   }
 }
@@ -163,11 +148,15 @@ ArmorSelector.defaultProps = {
   shield: false
 }
 
-const mapStateToProps = (state) => ({
-  equipmentCategories: state.referential.armorCategories,
-  equipments: state.referential.armors,
-  classes: state.referential.classes,
-  subRaces: state.referential.subRaces,
-  caracteristics: state.referential.caracteristics
+const mapStateToProps = (state, props) => ({
+  armorCategories: selectArmorCategoriesByType(state, props.shield),
+  armorCategoriesMap: selectArmorCategoriesMap(state),
+  classArmorCategories: selectArmorCategoriesByClassId(state, props.classId),
+  subRaceArmorCategories: selectArmorCategoriesBySubRaceId(state, props.subRaceId),
+  armors: selectArmors(state),
+  armor: selectArmorById(state, props.armorId),
+  class: selectClassById(state, props.classId),
+  subRace: selectSubRaceById(state, props.subRaceId),
+  ACBonusCaracteristic: selectACBonusCaracteristicByArmorId(state, props.armorId)
 })
 export default connect(mapStateToProps)(ArmorSelector)

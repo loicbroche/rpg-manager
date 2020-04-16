@@ -2,12 +2,12 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-
 import { CharacterPropType } from 'PropTypes'
+import { selectSubRaceById, selectRaceBySubRaceId, selectClassById, selectLevelByXP, selectMasteryBonusByXP,
+         selectFightStylesByIds, selectWeaponCategoriesByType, selectWeaponCategoriesMap, selectWeaponById,
+         selectWeapons, selectWeaponsByClassId, selectWeaponCategoriesByClassId, selectWeaponsBySubRace, selectWeaponsByRace} from 'store/selectors';
 import Money from 'components/shared/Money'
 import Weight from 'components/shared/Weight'
-import { filterDistanceCategories, filterHtHCategories } from 'rules/Weapons.rules'
-import { getLevel } from 'rules/Levels.rules'
 
 import './EquipmentSelector.css'
 import './WeaponSelector.css'
@@ -18,51 +18,43 @@ const notMasterImage = require("images/cross.png");
 class WeaponSelector extends PureComponent {
 
   render() {
-/**/const { equipmentCategories, equipments, levels, classes, fightStyles, equipmentId, distance, wearingCharacter } = this.props;
-/**/const filteredCategories = equipmentCategories && (distance?filterDistanceCategories(equipmentCategories):filterHtHCategories(equipmentCategories));
-    const equipment = equipments?.[equipmentId];
+/**/const { armorCategories, weapon, masteryBonus, level, class: characterClass, selectedFightStyles, weaponId, distance, wearingCharacter } = this.props;
 
-/**/const equipmentType = distance?"distance-weapon":"weapon";
-/**/const equipmentTitleLabel = distance?"Arme à distance":"Arme";
-/**/const equipmentLabel = distance?"une arme à distance":"une arme";
+/**/const weaponType = distance?"distance-weapon":"weapon";
+/**/const weaponTitleLabel = distance?"Arme à distance":"Arme";
+/**/const weaponLabel = distance?"une arme à distance":"une arme";
+/**/const isMaster = this.isMaster(weapon);
 
-/**/const level = getLevel(levels, wearingCharacter?.XP);
-
-/**/const masterBonus = level?.MasteryBonus;
-/**/const isMaster = this.isMaster(equipment);
-
-const characterClass = classes?.[wearingCharacter.Class];
-const selectedFightStyles = fightStyles && Object.values(fightStyles).filter((style) => wearingCharacter?.FightStyles?.includes(style.Code));
 const fightStyleLevel = characterClass?.FightStyleLevel;
 let fightStyleTitle = "";
-const fightStyleBonus = (wearingCharacter
+const fightStyleBonus = (characterClass
                           && fightStyleLevel <= level?.Level
                           && selectedFightStyles?.length > 0
                           && selectedFightStyles?.reduce((sum, fightStyle) => {
-                                  const bonus = fightStyle.Class === wearingCharacter.Class && (sum+(distance?fightStyle.DistanceBonus:fightStyle.weaponBonus));
+                                  const bonus = fightStyle.Class === characterClass?.Id && (sum+(distance?fightStyle.DistanceBonus:fightStyle.weaponBonus));
                                   fightStyleTitle += (!bonus?"":`${fightStyleTitle?"\n":""}Bonus de Style de combat ${fightStyle.Name} +${distance?fightStyle.DistanceBonus:fightStyle.weaponBonus}`
                                                       +`\n${fightStyle.Description}`)                                        
                                   return bonus || sum;
                               }, 0)
                         ) || 0;
 
-/**/const bonusContent = equipment &&
+/**/const bonusContent = weapon &&
                       <div>
                         { fightStyleBonus && <span className="main-stat-bonus-label weapon-special-bonus" title={fightStyleTitle}>+{fightStyleBonus}</span>}
                         <div className={`main-stat-bonus-label ${ isMaster?"master-bonus":"not-master-equipment"}`}>
-                          { isMaster?<span title="Bonus maîtrise">+{masterBonus}</span>:<img src={notMasterImage} className="not-master-image" alt="" title="Non maîtrisé"/>}
+                          { isMaster?<span title="Bonus maîtrise">+{masteryBonus}</span>:<img src={notMasterImage} className="not-master-image" alt="" title="Non maîtrisé"/>}
                         </div>
                       </div>
 
 /**/const bonusCode = "Dégâts";
 /**/const bonusTitle = "Dégâts";
-/**/const mainValue = equipment && equipment.Damage;
+/**/const mainValue = weapon?.Damage;
 /**/const ammunitions = [];
 
     for(let i = 0; i < wearingCharacter.Ammunition; i++) {
       ammunitions[i] = true;
     }
-    const additionalInfo = distance && wearingCharacter && equipment &&
+    const additionalInfo = distance && wearingCharacter && weapon &&
       <div className="ammunitions">
         <span className={`currentModifier decrease-value ${wearingCharacter.Ammunition===0 &&"disabled"}`} role="button" onClick={(event) => {this.handleAmmunitionUpdate(-1)}}
                         title={`Utiliser une munition`}></span>
@@ -74,46 +66,46 @@ const fightStyleBonus = (wearingCharacter
       </div>
     ;
 
-    let equipmentImage;
+    let weaponImage;
     try {
-      equipmentImage = equipment?require(`images/equipments/${equipmentType}/${equipment.OV}.png`):require(`images/equipments/${equipmentType}/without.png`);
+      weaponImage = weapon?require(`images/equipments/${weaponType}/${weapon.OV}.png`):require(`images/equipments/${weaponType}/without.png`);
     } catch (ex) {
-      equipmentImage = require(`images/equipments/${equipmentType}/no_image.png`);
+      weaponImage = require(`images/equipments/${weaponType}/no_image.png`);
     }
   
     return (
       <div className="equipment-selector">
           <h1 className="equipment-name">
-            <span>{equipmentTitleLabel}</span>
+            <span>{weaponTitleLabel}</span>
             <span className="additional-info">{additionalInfo}</span>
           </h1>
           <div className="equipment-title">
-            { equipmentCategories && equipments && (
-              <select className="equipment-select" value={equipmentId} onChange={this.handleValueUpdate}>
-                <option value="" disabled>Choisissez {equipmentLabel}</option>
+            { armorCategories && (
+              <select className="equipment-select" value={weaponId} onChange={this.handleValueUpdate}>
+                <option value="" disabled>Choisissez {weaponLabel}</option>
                 <option value="-">Sans</option>
-                { filteredCategories.map((category) => this.getEquipmentsOptionElement(category.Code))}
+                { armorCategories.map((category) => this.getWeaponsOptionElement(category.Code))}
               </select>
             )}
             <div className="main-stat-value">
-                {equipment && <img src={mainStatImage} className="main-stat-image" alt={bonusCode} title={bonusTitle}/>}
+                {weapon && <img src={mainStatImage} className="main-stat-image" alt={bonusCode} title={bonusTitle}/>}
                 <span className="main-stat-label">{mainValue}</span>
                 {bonusContent}
             </div>
           </div>
-          {equipment && <div className="equipment-illustration">
-            <img src={equipmentImage} className="equipment-image" alt="" />
+          {weapon && <div className="equipment-illustration">
+            <img src={weaponImage} className="equipment-image" alt="" />
           </div>}
-          {equipment &&
+          {weapon &&
             <div className="equipment-description">
-              <div className="equipment-description-line"><span className="description-line-title">{equipment?"Dégâts:":'\u00A0'}</span>
-                                                          <span className="description-line-value">{equipment?.Damage+" "+equipment.DamageType}</span></div>
-              <div className="equipment-description-line"><span className="description-line-title">{equipment?"Propriété:":'\u00A0'}</span>
-                                                          <span className="description-line-value">{equipment?.Properties}</span></div>
-              <div className="equipment-description-line"><span className="description-line-title">{equipment?"Poids:":'\u00A0'}</span>
-                                                          <Weight weight={equipment.Weight} /></div>
-              <div className="equipment-description-line"><span className="description-line-title">{equipment?"Prix:":'\u00A0'}</span>
-                                                          <Money id={equipmentTitleLabel} amount={equipment.Price} /></div>
+              <div className="equipment-description-line"><span className="description-line-title">{weapon?"Dégâts:":'\u00A0'}</span>
+                                                          <span className="description-line-value">{weapon?.Damage+" "+weapon.DamageType}</span></div>
+              <div className="equipment-description-line"><span className="description-line-title">{weapon?"Propriété:":'\u00A0'}</span>
+                                                          <span className="description-line-value">{weapon?.Properties}</span></div>
+              <div className="equipment-description-line"><span className="description-line-title">{weapon?"Poids:":'\u00A0'}</span>
+                                                          <Weight weight={weapon.Weight} /></div>
+              <div className="equipment-description-line"><span className="description-line-title">{weapon?"Prix:":'\u00A0'}</span>
+                                                          <Money id={weaponTitleLabel} amount={weapon.Price} /></div>
           </div>}
       </div>
     )
@@ -121,8 +113,8 @@ const fightStyleBonus = (wearingCharacter
 
   // Arrow fx for binding
   handleValueUpdate = (event) => {
-    const selectedEquipment = event.target.value;
-    this.props.onChange(selectedEquipment);
+    const selectedWeapon = event.target.value;
+    this.props.onChange(selectedWeapon);
   }
 
   
@@ -135,26 +127,21 @@ const fightStyleBonus = (wearingCharacter
     }
   }
 
-  getEquipmentsOptionElement(equipmentCategoryId) {
-    const { equipmentCategories, equipments, classes, races, subRaces, wearingCharacter} = this.props;
-    const characterClass = classes?.[wearingCharacter.Class];
-    const subRace = subRaces?.[wearingCharacter.SubRace];
-    const race = races?.[subRace?.Race];
+  getWeaponsOptionElement(weaponCategoryId) {
+    const { armorCategoriesMap, weapons, classWeapons, classWeaponCategories, raceWeapons, subRaceWeapons,
+            class: characterClass, race, subRace} = this.props;
     const className = characterClass?characterClass.Name:"";
-    const isClassMasterCategory = characterClass?.WeaponCategories?.includes(equipmentCategoryId);
-    const classWeapons = characterClass?.Weapons || [];
-    const raceWeapons = race?.Weapons || [];
-    const subRaceWeapons = subRace?.Weapons || [];
+    const isClassMasterCategory = classWeaponCategories?.includes(weaponCategoryId);
 
-    const availableEquipments = Object.values(equipments).filter((equipment) => equipment.Category === equipmentCategoryId);
-    return availableEquipments?.length > 0 && 
-           <optgroup key={equipmentCategoryId} label={equipmentCategories?.[equipmentCategoryId].Name}>
-            { availableEquipments.map((equipment) => {
-              const isRaceMaster = raceWeapons?.includes(equipment?.Name);
-              const isSubRaceMaster = subRaceWeapons?.includes(equipment?.Name);
-              const isClassMaster = isClassMasterCategory || classWeapons?.includes(equipment.Name);
+    const availableWeapons = weapons?.filter((weapon) => weapon.Category === weaponCategoryId);
+    return availableWeapons?.length > 0 && 
+           <optgroup key={weaponCategoryId} label={armorCategoriesMap?.[weaponCategoryId].Name}>
+            { availableWeapons.map((weapon) => {
+              const isRaceMaster = raceWeapons?.includes(weapon?.Name);
+              const isSubRaceMaster = subRaceWeapons?.includes(weapon?.Name);
+              const isClassMaster = isClassMasterCategory || classWeapons?.includes(weapon.Name);
               return (
-              <option key={equipment.Name} value={equipment.Id} className={this.isMaster(equipment)?"master-equipment":""}
+              <option key={weapon.Name} value={weapon.Id} className={this.isMaster(weapon)?"master-equipment":""}
               title={(  isRaceMaster
                         ?"Maîtrise héritée de la race "+race.Name
                         :(  isSubRaceMaster
@@ -163,18 +150,15 @@ const fightStyleBonus = (wearingCharacter
                               ?"Maîtrise héritée de la classe "+className
                               :"Non maîtrisé")
                           )
-                      ) +`\nDégâts : ${equipment.Damage} ${equipment.DamageType}`}>{equipment.Name}</option>
+                      ) +`\nDégâts : ${weapon.Damage} ${weapon.DamageType}`}>{weapon.Name}</option>
             )})}
           </optgroup>
   }
 
   isMaster(weapon) {
-    const { classes, races, subRaces, wearingCharacter } = this.props;
+    const { class: characterClass, race, subRace, wearingCharacter } = this.props;
   
     const master = wearingCharacter.MasterWeapons;
-    const characterClass = classes?.[wearingCharacter.Class];
-    const subRace = subRaces?.[wearingCharacter.SubRace];
-    const race = races?.[subRace?.Race];
     const classWeaponCategories = characterClass?.WeaponCategories || [];
     const classWeapons = characterClass?.Weapons || [];
     const raceWeapons = race?.Weapons || [];
@@ -191,7 +175,7 @@ const fightStyleBonus = (wearingCharacter
 }
 
 WeaponSelector.propTypes = {
-  equipmentId: PropTypes.string,
+  weaponId: PropTypes.string,
   distance: PropTypes.bool,
   wearingCharacter: CharacterPropType,
   onChange: PropTypes.func.isRequired,
@@ -202,13 +186,20 @@ WeaponSelector.defaultProps = {
   distance: false
 }
 
-const mapStateToProps = (state) => ({
-  equipmentCategories: state.referential.weaponCategories,
-  equipments: state.referential.weapons,
-  levels: state.referential.levels,
-  classes: state.referential.classes,
-  races: state.referential.races,
-  subRaces: state.referential.subRaces,
-  fightStyles: state.referential.fightStyles
+const mapStateToProps = (state, props) => ({
+  armorCategories: selectWeaponCategoriesByType(state, props.distance),
+  armorCategoriesMap: selectWeaponCategoriesMap(state),
+  weapons: selectWeapons(state),
+  classWeapons: selectWeaponsByClassId(state, props.wearingCharacter?.Class),
+  classWeaponCategories: selectWeaponCategoriesByClassId(state, props.wearingCharacter?.Class),
+  subRaceWeapons: selectWeaponsBySubRace(state, props.wearingCharacter?.SubRace),
+  raceWeapons: selectWeaponsByRace(state, props.wearingCharacter?.SubRace),
+  weapon: selectWeaponById(state, props.weaponId),
+  masteryBonus: selectMasteryBonusByXP(state, props.wearingCharacter?.XP),
+  level: selectLevelByXP(state, props.wearingCharacter?.XP),
+  class: selectClassById(state, props.wearingCharacter?.Class),
+  subRace: selectSubRaceById(state, props.wearingCharacter?.SubRace),
+  race: selectRaceBySubRaceId(state, props.wearingCharacter?.SubRace),
+  selectedFightStyles: selectFightStylesByIds(state, props.wearingCharacter?.FightStyles)
 })
 export default connect(mapStateToProps)(WeaponSelector)

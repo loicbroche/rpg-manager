@@ -14,11 +14,11 @@ function gameReducer(state = initialState, action) {
         case ActionTypes.CHARACTERS.LOAD:
             nextState = {
                 ...state,
-                characters: action.value
+                characters: action.payload
             }
             return nextState;
         case ActionTypes.CHARACTERS.LOAD_ONE:
-                const character = action.value;
+                const character = action.payload;
                 let characters = { ...state.characters };
                 characters[character.Id] = character;
                 nextState = {
@@ -29,7 +29,7 @@ function gameReducer(state = initialState, action) {
         case ActionTypes.CHARACTERS.LOAD_NOTES:
             nextState = {
                 ...state,
-                characters: action.value
+                characters: action.payload
             }
             return nextState;
         default:
@@ -43,7 +43,7 @@ gameReducer.PropTypes = {
     }),
     action: PropTypes.shape({
         type: PropTypes.string.isRequired,
-        value: PropTypes.any.isRequired
+        payload: PropTypes.any.isRequired
     })
 }
 

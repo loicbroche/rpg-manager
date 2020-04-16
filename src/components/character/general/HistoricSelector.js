@@ -1,6 +1,7 @@
 
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import { selectHistorics } from 'store/selectors';
 import PropTypes from 'prop-types'
 import './HistoricSelector.css'
 
@@ -48,8 +49,8 @@ class HistoricSelector extends PureComponent {
             { historics && (
               <select className="selector-select" value={historicId || "-"} onChange={this.handleValueUpdate}>
                 <option value="-" disabled>Choisissez un historique</option>
-                { Object.entries(historics).map(([key, value]) => (
-                  <option key={key} value={key}>{value.Name}</option>
+                { historics?.map((historic) => (
+                  <option key={historic.Id} value={historic.Id}>{historic.Name}</option>
                 ))}
               </select>
             )}
@@ -93,6 +94,6 @@ HistoricSelector.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-  historics: state.referential.historics
+  historics: selectHistorics(state)
 })
 export default connect(mapStateToProps)(HistoricSelector)

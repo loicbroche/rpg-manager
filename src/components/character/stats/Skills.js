@@ -1,8 +1,8 @@
 import React, {PureComponent} from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import { selectMasteryBonusByXP, selectHistoricById, selectSkills, selectCaracteristicsMap } from 'store/selectors';
 
-import { getLevel } from 'rules/Levels.rules'
 import './Skills.css'
 import ExpendableComponent from 'components/shared/ExpendableComponent';
 import CaracteristicBonus from 'components/shared/CaracteristicBonus'
@@ -14,13 +14,10 @@ class Skills extends PureComponent {
 
 
   render() {
-    const { skills, caracteristics, historics, levels,
-            master, onClick, historicId, caracteristicsBonus, subRaceId, XP} = this.props;
+    const { skills, caracteristicsMap, historic, masteryBonus, XP,
+            master, onClick, historicId, caracteristicsBonus, subRaceId} = this.props;
     
-    const historic = historics?.[historicId];
     const historicSkills = historic?.Skills || [];
-    const level = getLevel(levels, XP);
-    const masteryBonus = level?.MasteryBonus;
 
     return (
       <div className='skillsComponent'>
@@ -32,11 +29,10 @@ class Skills extends PureComponent {
                                         historicId={historicId} />}
                               extensor={<img src={detailsImage} alt="Compétences" />}>
           <ul className="skills">
-            {skills &&
-              Object.values(skills).map(({Caracteristic: caracteristicCode, Name}, index) => {
+            {skills?.map(({Caracteristic: caracteristicCode, Name}, index) => {
                 const isMaster = master?.includes(Name);
                 const isHistoricMaster = historicSkills.includes(Name);
-                const caracteristic = caracteristics?.[caracteristicCode];
+                const caracteristic = caracteristicsMap?.[caracteristicCode];
                 const caracteristicBonus = caracteristicsBonus?.[caracteristicCode];
 
                 return (
@@ -74,10 +70,10 @@ Skills.defaultProps = {
   XP: 0
 }
 
-const mapStateToProps = (state) => ({
-  skills: state.referential.skills,
-  caracteristics: state.referential.caracteristics,
-  historics: state.referential.historics,
-  levels: state.referential.levels
+const mapStateToProps = (state, props) => ({
+  skills: selectSkills(state),
+  caracteristicsMap: selectCaracteristicsMap(state),
+  historic: selectHistoricById(state, props.historicId),
+  masteryBonus: selectMasteryBonusByXP(state, props.XP)
 })
 export default connect(mapStateToProps)(Skills)

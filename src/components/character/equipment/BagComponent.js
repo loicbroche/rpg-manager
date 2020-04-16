@@ -1,6 +1,7 @@
 
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import { selectObjectCategories, selectObjects, selectObjectsMap } from 'store/selectors';
 import PropTypes from 'prop-types'
 
 import './BagComponent.css'
@@ -23,13 +24,13 @@ class BagComponent extends PureComponent {
   }
 
   render() {
-    const { objects, objectCategories, capacityCharge, money, onMoneyChange, displayMoney, characterObjects, name} = this.props;
+    const { objectsMap, objects, objectCategories, capacityCharge, money, onMoneyChange, displayMoney, characterObjects, name} = this.props;
 
     let objectsWeight = 0;
     const objs = []
-    if (objects && characterObjects) {
+    if (objectsMap && characterObjects) {
       for (let i = 0; i < characterObjects.length; i++) {
-        const obj = objects[characterObjects[i]];
+        const obj = objectsMap[characterObjects[i]];
         if (obj) {
           objectsWeight += !obj?0:obj.Weight;
           objs[obj.Category] = objs[obj.Category] || [];
@@ -41,7 +42,7 @@ class BagComponent extends PureComponent {
       }
     }
 
-    const newObject = objects?.[this.state.newObject];
+    const newObject = objectsMap?.[this.state.newObject];
     const id = name?.replace(/ /g, "-");
 
     return (
@@ -58,7 +59,7 @@ class BagComponent extends PureComponent {
                 const category = objectCategories?.[categoryId];
                 return <div className="bagItems" key={categoryId}>
                   <span className="categoryName">{category?.Name}</span>
-                  { Object.values(categoryObjects).map((obj) => {
+                  { categoryObjects?.map((obj) => {
                     return <div className="bagItem" key={obj.Name}>
                     <span className="item-name">{obj.Name}</span>
                       <Weight weight={obj.Weight} />
@@ -76,8 +77,8 @@ class BagComponent extends PureComponent {
               {objectCategories && objects &&
                 <select className="new-object-select" value={this.state.newObject} onChange={(event) => this.setState({newObject: event.target.value}) }>
                   <option value="-">Ajouter un objet</option>
-                  { Object.values(objectCategories).map(({Code, Name}) => {
-                    const categoryObjects = Object.values(objects).filter(({Category}) => Category === Code);
+                  { objectCategories?.map(({Code, Name}) => {
+                    const categoryObjects = objects?.filter(({Category}) => Category === Code);
                     return categoryObjects.length > 0 &&
                           <optgroup key={Code} label={Name} >
                             { categoryObjects.map(({Name, Weight}) => {
@@ -142,7 +143,8 @@ BagComponent.defaultProps = {
 }
 
 const mapStateToProps = (state) => ({
-  objects: state.referential.objects,
-  objectCategories: state.referential.objectCategories
+  objectsMap: selectObjectsMap(state),
+  objects: selectObjects(state),
+  objectCategories: selectObjectCategories(state)
 })
 export default connect(mapStateToProps)(BagComponent)

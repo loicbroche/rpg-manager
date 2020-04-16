@@ -1,11 +1,10 @@
 
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import { selectClassCapacityByClassIdXP, selectSpellByClassSpecialisation, selectSpellsNbBonusByClassXP } from 'store/selectors';
 import PropTypes from 'prop-types'
 
 import { SPELL_MAX_LEVEL } from 'rules/Spells.rules'
-import { getLevelNumber } from 'rules/Levels.rules'
-import { calculateTotalBonus } from 'rules/Caracteristics.rules'
 
 import './SpellBookComponent.css'
 import ExpendableComponent from 'components/shared/ExpendableComponent';
@@ -16,13 +15,8 @@ const spellBookImage = require('images/spell-book.png');
 class SpellBookComponent extends PureComponent {
 
   render() {
-    const { spells, capacities, caracteristics, levels, subRaces, races, character, onMinorSpellClick, onSpellClick } = this.props;
-    const level = getLevelNumber(levels, character.XP);
-    const subRace = subRaces?.[character?.SubRace];
-    const race = races?.[subRace?.Race];
+    const { classAvailableSpells, spellsNbBonus, capacity, character, onMinorSpellClick, onSpellClick } = this.props;
 
-    const capacity = capacities?.[character.Class+"-"+level];
-    const classAvailableSpells = spells && Object.values(spells).filter((spell) => spell.Classes.includes(character.Class) || spell.Classes.includes(character.Specialisation) );
     const availableSpells = [];
     let learnableSpellsNb = 0;
     for(let i = 0; i <= SPELL_MAX_LEVEL; i++) {
@@ -35,15 +29,8 @@ class SpellBookComponent extends PureComponent {
     const knownMinorSpellsNb = (knownMinorSpells && knownMinorSpells.length) || 0;
     const knownSpellsNb = knownSpells?.length || 0;
     const availableMinorSpellsNb = capacity?.MinorSpellsNb;
+    const availableSpellsNb = capacity && (capacity.SpellsNb + spellsNbBonus);   
 
-    const caracteristic = caracteristics?.[capacity?.BonusSpellsNb];
-    const caracteristicName = caracteristic?.OV;
-
-    const raceBonus = race?.[caracteristicName] || 0;
-    const subRaceBonus = subRace?.[caracteristicName] || 0;
-    const caracteristicValue = character?.[caracteristicName] || 0;
-    const bonusSpellNb = (caracteristicName && calculateTotalBonus(caracteristicValue, raceBonus, subRaceBonus)) || 0;
-    const availableSpellsNb = capacity && (capacity.SpellsNb + bonusSpellNb);    
     const titleNumbers = (availableMinorSpellsNb?` - Mineurs ${knownMinorSpellsNb}/${availableMinorSpellsNb}`:"")+
                           (availableSpellsNb?` - Majeurs ${knownSpellsNb}/${availableSpellsNb}`:"");
 
@@ -123,16 +110,9 @@ SpellBookComponent.propTypes = {
   onSpellClick: PropTypes.func
 }
 
-SpellBookComponent.defaultProps = {
-  level: 1
-}
-
-const mapStateToProps = (state) => ({
-  spells: state.referential.spells,
-  capacities: state.referential.capacities,
-  caracteristics: state.referential.caracteristics,
-  levels: state.referential.levels,
-  subRaces: state.referential.subRaces,
-  races: state.referential.races
+const mapStateToProps = (state, props) => ({
+  classAvailableSpells: selectSpellByClassSpecialisation(state, props.character?.Class, props.character?.Specialisation),
+  capacity: selectClassCapacityByClassIdXP(state, props.character?.Class, props.character?.XP),
+  spellsNbBonus: selectSpellsNbBonusByClassXP(state, props.character)
 })
 export default connect(mapStateToProps)(SpellBookComponent)

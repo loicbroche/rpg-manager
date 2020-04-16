@@ -2,19 +2,16 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-
-import { getLevelNumber, getNextLevel } from 'rules/Levels.rules'
+import { selectLevelNumberByXP, selectNextLevelByXP, selectMaxLevel } from 'store/selectors';
 import './XPComponent.css'
 
 class XPComponent extends PureComponent {
 
   render() {
-    const { levels, XP } = this.props;
+    const { levelNumber, nextLevel, maxLevel, XP } = this.props;
 
-    const levelNumber = getLevelNumber(levels, XP);
-    const nextLevel = getNextLevel(levels, XP);
     const nextLevelXp = nextLevel?.XP;
-    const maxXP = levels?.[levels.length-1]?.XP;
+    const maxXP = maxLevel?.XP;
 
     return (
       <div className="XPComponent">
@@ -51,7 +48,9 @@ XPComponent.propTypes = {
   onChange: PropTypes.func.isRequired
 }
 
-const mapStateToProps = (state) => ({
-  levels: state.referential.levels
+const mapStateToProps = (state, props) => ({
+  levelNumber: selectLevelNumberByXP(state, props.XP),
+  nextLevel: selectNextLevelByXP(state, props.XP),
+  maxLevel: selectMaxLevel(state)
 })
 export default connect(mapStateToProps)(XPComponent)
