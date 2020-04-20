@@ -30,7 +30,7 @@ class SpeedComponent extends PureComponent {
                                                 :""}`
                                             }>
           <img src={speedImage} className="speed-background-image" alt="" />
-          <span className="speed-label">{speed} m</span>
+          <span className="speed-label">{isNaN(speed)?"?":speed} m</span>
       </div>
     )
   }

@@ -1,0 +1,710 @@
+{
+    "rules": {
+        ".read": true,
+        ".write": false,
+        "Alignments": {
+            "$id": {
+                ".validate": "newData.child('Code').exists() && newData.child('Name').exists() && newData.child('Description').exists()",
+                ".indexOn": ["Code"],
+                "Code": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 4 && newData.val() == $id"
+                },
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+
+                "Description": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+                }
+            }
+        },
+        "AlterationTypes": {
+            "$id": {
+                ".validate": "newData.child('Code').exists() && newData.child('Name').exists() && newData.child('Savable').exists()",
+                ".indexOn": ["Code"],
+                "Code": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15 && newData.val() == $id"
+                },
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+
+                "Savable": {
+                    ".validate": "newData.isBoolean()"
+                }
+            }
+        },
+        "Alterations": {
+            "$id": {
+                ".validate": "newData.child('Code').exists() && newData.child('Name').exists() && newData.child('Type').exists() && newData.child('Effect').exists() && newData.child('EffectDescription').exists()",
+                ".indexOn": ["Code", "Type"],
+                "Code": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15 && newData.val() == $id"
+                },
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "Type": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+                },
+                "Effect": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "EffectDescription": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+                }
+            }
+        },
+        "ArmorCategories": {
+            "$id": {
+                ".validate": "newData.child('Code').exists() && newData.child('Name').exists() && newData.val() == $id",
+                ".indexOn": ["Code"],
+                "Code": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+                },
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                }
+            }
+        },
+        "Armors": {
+            "$index": {
+                ".validate": "newData.child('Name').exists() && newData.child('OV').exists() && newData.child('Category').exists() && newData.child('AC').exists() && newData.child('Weight').exists() && newData.child('Price').exists() && newData.child('Discretion').exists() && newData.child('Strength').exists()",
+                ".indexOn": ["Name", "Category"],
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "OV": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "Category": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+                },
+                "AC": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 100"
+                },
+                "ACBonus": {
+                    ".validate": "newData.isString() && newData.val().length == 3"
+                },
+                "Weight": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 1000000"
+                },
+                "Price": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 100000000"
+                },
+                "Discretion": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "Strength": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 100"
+                }
+            }
+        },
+        "Capacities": {
+            "$id": {
+                "Capacities": {},
+                "Specials": {
+                    ".validate": "newData.isNumber() && -1 <= newData.val() && newData.val() <= 100"
+                },
+                "BonusAttack": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 5"
+                },
+                "Damages": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 100"
+                },
+                "MinorSpellsNb": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 100"
+                },
+                "SpellsNb": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 100"
+                },
+                "SpellsNbBonus": {
+                    ".validate": "newData.isString() && newData.val().length == 3"
+                },
+                "Locations": {},
+                "Invocations": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 100"
+                },
+                "ArmorlessSpeed": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 100"
+                }
+            }
+        },
+        "CapacitiesDescriptions": {
+            "$id": {
+                ".validate": "newData.child('Code').exists() && newData.child('Class').exists() && newData.child('Description').exists()",
+                ".indexOn": ["Code"],
+                "Code": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255 && newData.val() == $id"
+                },
+                "Class": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "Description": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+                },
+                "Specialisation": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+                },
+                "UseNumber": {
+                    ".validate": "newData.isNumber() && -1 <= newData.val() && newData.val() <= 100"
+                }
+            }
+        },
+        "Caracteristics": {
+            "$id": {
+                ".validate": "newData.child('Code').exists() && newData.child('Name').exists() && newData.child('OV').exists()",
+                ".indexOn": ["Code", "Name"],
+                "Code": {
+                    ".validate": "newData.isString() && newData.val().length == 3 && newData.val() == $id"
+                },
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "OV": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                }
+            }
+        },
+        "Classes": {
+            "$id": {
+                ".validate": "newData.child('Id').exists() && newData.child('Name').exists() && newData.child('OV').exists() && newData.child('Strength').exists() && newData.child('Constitution').exists() && newData.child('Dexterity').exists() && newData.child('Intelligence').exists() && newData.child('Wisdom').exists() && newData.child('Charisma').exists() && newData.child('HD').exists() && newData.child('SpecialisationName').exists() && newData.child('SpecialisationLevel').exists()",
+                ".indexOn": ["Id", "Name"],
+                "Id": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15 && newData.val() == $id"
+                },
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "OV": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "Strength": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Constitution": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Dexterity": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Intelligence": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Wisdom": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Charisma": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "HD": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 100"
+                },
+                "SpecialisationName": {
+                    ".validate": "newData.isString() && 0 <= newData.val().length && newData.val().length <= 50"
+                },
+                "SpecialisationLevel": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 20"
+                },
+                "ACBonus": {
+                    ".validate": "newData.isString() && newData.val().length == 3"
+                },
+                "ACBonusArmor": {
+                    ".validate": "newData.isBoolean()"
+                },
+                "ArmorCategories": {},
+                "BonusAttackName": {
+                    ".validate": "newData.isString() && 0 <= newData.val().length && newData.val().length <= 50"
+                },
+                "SpecialsName": {
+                    ".validate": "newData.isString() && 0 <= newData.val().length && newData.val().length <= 50"
+                },
+                "Saves": {},
+                "WeaponCategories": {}
+            }
+        },
+        "EquipmentCategories": {
+            "$id": {
+                ".validate": "newData.child('Code').exists() && newData.child('Name').exists()",
+                ".indexOn": ["Code"],
+                "Code": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50 && newData.val() == $id"
+                },
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                }
+            }
+        },
+        "Equipments": {
+            "$id": {
+                ".validate": "newData.child('Name').exists() && newData.child('OV').exists() && newData.child('Category').exists() && newData.child('Weight').exists() && newData.child('Price').exists()",
+                ".indexOn": ["Name", "Category"],
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50 && newData.val() == $id"
+                },
+                "OV": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "Category": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 5"
+                },
+                "Weight": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 20000"
+                },
+                "Price": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 100000000"
+                }
+            }
+        },
+        "FightStyles": {
+            "$id": {
+                ".validate": "newData.child('Code').exists() && newData.child('Name').exists() && newData.child('Description').exists()",
+                ".indexOn": ["Code"],
+                "Code": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50 && newData.val() == $id"
+                },
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "Class": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+                },
+                "Description": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+                },
+                "ACBonus": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 100"
+                },
+                "ACBonusArmor": {
+                    ".validate": "newData.isBoolean()"
+                },
+                "weaponBonus": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 100"
+                },
+                "DistanceBonus": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 100"
+                }
+            }
+        },
+        "Historics": {
+            "$id": {
+                ".validate": "newData.child('Id').exists() && newData.child('Name').exists() && newData.child('StartingMoney').exists()",
+                ".indexOn": ["Id"],
+                "Id": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50 && newData.val() == $id"
+                },
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "StartingMoney": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Skills": {},
+                "StartingObjects": {}
+            }
+        },
+        "HostelCategories": {
+            "$id": {
+                ".validate": "newData.child('Code').exists() && newData.child('Name').exists()",
+                "Code": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15 && newData.val() == $id"
+                },
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                }
+            }
+        },
+        "HostelServices": {
+            "$id": {
+                ".validate": "newData.child('Name').exists() && newData.child('Category').exists() && newData.child('Price').exists()",
+                ".indexOn": ["Name", "Category"],
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50 && newData.val() == $id"
+                },
+                "Category": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+                },
+                "Price": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 100000000"
+                }
+            }
+        },
+        "Languages": {
+            "$id": {
+                ".validate": "newData.child('Code').exists() && newData.child('Name').exists() && newData.child('Type').exists() && newData.child('TypicalRaces').exists() && newData.child('Writing').exists()",
+                ".indexOn": ["Code", "Category"],
+                "Code": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15 && newData.val() == $id"
+                },
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "Type": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+                },
+                "TypicalRaces": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "Writing": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                }
+            }
+        },
+        "Levels": {
+            "$index": {
+                ".validate": "newData.child('Level').exists() && newData.child('XP').exists() && newData.child('MasteryBonus').exists()",
+                ".indexOn": ["Level", "XP"],
+                "Level": {
+                    ".validate": "newData.isNumber() && 1 <= newData.val().length && newData.val().length <= 20"
+                },
+                "XP": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 355000"
+                },
+                "MasteryBonus": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val().length && newData.val().length <= 20"
+                }
+            }
+        },
+        "Mounts": {
+            "$id": {
+                ".validate": "newData.child('Name').exists() && newData.child('Speed').exists() && newData.child('ChargeCapacity').exists() && newData.child('Price').exists()",
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50 && newData.val() == $id"
+                },
+                "Speed": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "ChargeCapacity": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 1000000"
+                },
+                "Price": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 100000000"
+                }
+            }
+        },
+        "ObjectCategories": {
+            "$id": {
+                ".validate": "newData.child('Code').exists() && newData.child('Name').exists() && newData.child('OV').exists()",
+                ".indexOn": ["Code"],
+                "Code": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15 && newData.val() == $id"
+                },
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "OV": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                }
+            }
+        },
+        "Objects": {
+            "$id": {
+                ".validate": "newData.child('Name').exists() && newData.child('OV').exists() && newData.child('Category').exists() && newData.child('Weight').exists() && newData.child('Price').exists()",
+                ".indexOn": ["Name", "Category"],
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50 && newData.val() == $id"
+                },
+                "OV": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "Category": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+                },
+                "Weight": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 1000000"
+                },
+                "Price": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 100000000"
+                }
+            }
+        },
+        "RaceCapacitiesDescriptions": {
+            "$id": {
+                ".validate": "newData.child('Code').exists() && newData.child('Description').exists()",
+                ".indexOn": ["Name", "Category"],
+                "Code": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255 && newData.val() == $id"
+                },
+                "Description": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+                },
+                "Race": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+                },
+                "SubRace": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+                },
+                "Weight": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 1000000"
+                },
+                "Price": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 100000000"
+                },
+                "Stats": {
+                    ".validate": "newData.isBoolean()"
+                },
+                "Auto": {
+                    ".validate": "newData.isBoolean()"
+                },
+                "RequiredLevel": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 20"
+                },
+                "UseNumber": {
+                    ".validate": "newData.isNumber() && -1 <= newData.val() && newData.val() <= 100"
+                }
+            }
+        },
+        "Races": {
+            "$id": {
+                ".validate": "newData.child('Id').exists() && newData.child('Name').exists() && newData.child('OV').exists() && newData.child('Strength').exists() && newData.child('Constitution').exists() && newData.child('Dexterity').exists() && newData.child('Intelligence').exists() && newData.child('Wisdom').exists() && newData.child('Charisma').exists() && newData.child('Speed').exists()",
+                ".indexOn": ["Id"],
+                "Id": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15 && newData.val() == $id"
+                },
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "OV": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "Strength": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Constitution": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Dexterity": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Intelligence": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Wisdom": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Charisma": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Speed": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Languages": {}
+            }
+        },
+        "ServiceCategories": {
+            "$id": {
+                ".validate": "newData.child('Code').exists() && newData.child('Name').exists()",
+                ".indexOn": ["Code"],
+                "Code": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15 && newData.val() == $id"
+                },
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                }
+            }
+        },
+        "Services": {
+            "$id": {
+                ".validate": "newData.child('Name').exists() && newData.child('Category').exists() && newData.child('Price').exists()",
+                ".indexOn": ["Name", "Category"],
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50 && newData.val() == $id"
+                },
+                "Category": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+                },
+                "Price": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 100000000"
+                }
+            }
+        },
+        "Ships": {
+            "$id": {
+                ".validate": "newData.child('Name').exists() && newData.child('OV').exists() && newData.child('Speed').exists() && newData.child('Price').exists()",
+                ".indexOn": ["Name"],
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50 && newData.val() == $id"
+                },
+                "OV": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "Speed": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+                },
+                "Price": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 100000000"
+                }
+            }
+        },
+        "Skills": {
+            "$id": {
+                ".validate": "newData.child('Caracteristic').exists() && newData.child('Name').exists()",
+                ".indexOn": ["Caracteristic"],
+                "Caracteristic": {
+                    ".validate": "newData.isString() && newData.val().length == 3 && newData.val() == $id"
+                },
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                }
+            }
+        },
+        "SpecialisationCapacities": {
+            "$index": {
+                "Capacities": {}
+            }
+        },
+        "Specialisations": {
+            "$id": {
+                ".validate": "newData.child('Code').exists() && newData.child('Class').exists() && newData.child('Name').exists()",
+                ".indexOn": ["Id"],
+                "Code": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50 && newData.val() == $id"
+                },
+                "Class": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+                },
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "ACBonus": {
+                    ".validate": "newData.isNumber()"
+                },
+                "ACBonusArmor": {
+                    ".validate": "newData.isBoolean()"
+                }
+            }
+        },
+        "Spells": {
+            "$id": {
+                ".validate": "newData.child('Name').exists() && newData.child('OV').exists() && newData.child('Description').exists() && newData.child('School').exists() && newData.child('Level').exists() && newData.child('BBE').exists() && newData.child('Incantation').exists() && newData.child('Classes').exists()",
+                ".indexOn": ["Name"],
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50 && newData.val() == $id"
+                },
+                "OV": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "Description": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+                },
+                "School": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "BBE": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "Incantation": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "Classes": {},
+                "Level": {
+                    ".validate": "newData.isNumber()"
+                }
+            }
+        },
+        "SubRaces": {
+            "$id": {
+                ".validate": "newData.child('Id').exists() && newData.child('Race').exists() && newData.child('Name').exists() && newData.child('OV').exists() && newData.child('Strength').exists() && newData.child('Constitution').exists() && newData.child('Dexterity').exists() && newData.child('Intelligence').exists() && newData.child('Wisdom').exists() && newData.child('Charisma').exists() && newData.child('Speed').exists()",
+                ".indexOn": ["Id"],
+                "Id": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50 && newData.val() == $id"
+                },
+                "Race": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+                },
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "OV": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "Strength": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Constitution": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Dexterity": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Intelligence": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Wisdom": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Charisma": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Speed": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                }
+            }
+        },
+        "Trinkets": {
+            "$index": {
+                ".validate": "newData.child('Trinket').exists() && newData.child('d100').exists()",
+                ".indexOn": ["d100"],
+                "d100": {
+                    ".validate": "newData.isNumber() && 1 <= newData.val() && newData.val() <= 100"
+                },
+                "Trinket": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+                }
+            }
+        },
+        "Wares": {
+            "$id": {
+                ".validate": "newData.child('Name').exists() && newData.child('Price').exists()",
+                ".indexOn": ["Name"],
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50 && newData.val() == $id"
+                },
+                "Price": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 100000000"
+                }
+            }
+        },
+        "WeaponCategories": {
+            "$id": {
+                ".validate": "newData.child('Code').exists() && newData.child('Name').exists()",
+                "Code": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 5 && newData.val() == $id"
+                },
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                }
+            }
+        },
+        "Weapons": {
+            "$id": {
+                ".validate": "newData.child('Name').exists() && newData.child('OV').exists() && newData.child('Category').exists() && newData.child('Damage').exists()  && newData.child('DamageType').exists() && newData.child('Weight').exists() && newData.child('Price').exists() && newData.child('Properties').exists()",
+                ".indexOn": ["Category"],
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50 && newData.val() == $id"
+                },
+                "OV": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "Category": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 5"
+                },
+                "Damage": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "DamageType": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "Weight": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 1000000"
+                },
+                "Price": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 100000000"
+                },
+                "Properties": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+                }
+            }
+        }
+    }
+}

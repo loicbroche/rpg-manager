@@ -36,8 +36,8 @@ class Caracteristic extends PureComponent {
                 className="caracteristic-value"
                 title="Valeur de caractéristique"/>
         <div className="character-bonus">
-          { (raceBonus !== 0) && <span className="race-bonus" title={`Valeur bonus de race ${race.Name}`}>+{ raceBonus }</span>}
-          { (subRaceBonus !== 0) && <span className="subRace-bonus" title={`Valeur bonus de race ${subRace.Name}`}>+{ subRaceBonus }</span>}
+          { (!isNaN(raceBonus) && raceBonus !== 0) && <span className="race-bonus" title={`Valeur bonus de race ${race?.Name}`}>+{ raceBonus }</span>}
+          { (!isNaN(subRaceBonus) && subRaceBonus !== 0) && <span className="subRace-bonus" title={`Valeur bonus de race ${subRace?.Name}`}>+{ subRaceBonus }</span>}
         </div>
       </div>
     )

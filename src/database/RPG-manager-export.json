@@ -1,0 +1,204 @@
+{
+  "Characters" : {
+    "Ash" : {
+      "Age" : 26,
+      "Alignment" : "2_NB",
+      "Armor" : "Cuir",
+      "Charisma" : 10,
+      "Class" : "BARD",
+      "Constitution" : 10,
+      "Defects" : "Instable et sanguinaire",
+      "Dexterity" : 10,
+      "DistanceWeapon" : "Arbalète légère",
+      "Eyes" : "Saphir",
+      "Gender" : "♂",
+      "HP" : 24,
+      "Hairs" : "Mi-longs blancs bleutés",
+      "Health" : 4,
+      "Height" : 176,
+      "Historic" : "HERMIT",
+      "History" : "Sa mère, séduite par un génie ayant pris forme humaine, l'a abandonné à la naissance aux portes d'un monastère aux centre d'une lorsqu'elle à découvert à quoi elle avait donné naissance.",
+      "Id" : "Ash",
+      "Ideals" : "Logique",
+      "Intelligence" : 10,
+      "Links" : "L'ordre de son monastère",
+      "MaxHP" : 24,
+      "Money" : 1000,
+      "Name" : "Ash",
+      "Objects" : [ "Herboriste", "Cartographe" ],
+      "PersonnalityTraits" : "Serein",
+      "Skills" : [ "Eloquence", "Etiquette", "Narcotique", "Négociation", "Noblesse", "Représentation" ],
+      "Skin" : "Bleu clair",
+      "Specials" : 0,
+      "Strength" : 10,
+      "SubRace" : "WOODEN_ELF",
+      "Weapon" : "Rapière",
+      "Weight" : 68000,
+      "Wisdom" : 10,
+      "XP" : 900
+    },
+    "Saphir" : {
+      "Age" : 26,
+      "Alignment" : "2_NB",
+      "Ammunition" : 10,
+      "Armor" : "-",
+      "Charisma" : 15,
+      "Class" : "MONK",
+      "Constitution" : 17,
+      "Damages" : [ {
+        "Code" : "torso",
+        "Description" : "Blessure infligée par Sorween",
+        "Hurt" : true,
+        "Left" : "38.5366%",
+        "Symbol" : "\\\\\\",
+        "Top" : "24.2972%"
+      }, {
+        "Code" : "head",
+        "Description" : "",
+        "Hurt" : false,
+        "Left" : "38.5366%",
+        "Symbol" : "",
+        "Top" : "7.22892%"
+      }, {
+        "Code" : "left-arm",
+        "Description" : "",
+        "Hurt" : false,
+        "Left" : "72.1951%",
+        "Symbol" : "",
+        "Top" : "27.7108%"
+      }, {
+        "Code" : "right-arm",
+        "Description" : "",
+        "Hurt" : false,
+        "Left" : "15.122%",
+        "Symbol" : "",
+        "Top" : "30.1205%"
+      }, {
+        "Code" : "left-forearm",
+        "Hurt" : false,
+        "Left" : "79.5122%",
+        "Top" : "37.1486%"
+      }, {
+        "Code" : "right-shin",
+        "Description" : "",
+        "Hurt" : false,
+        "Left" : "40%",
+        "Symbol" : "",
+        "Top" : "77.1084%"
+      }, {
+        "Code" : "left-shin",
+        "Description" : "",
+        "Hurt" : false,
+        "Left" : "52.1951%",
+        "Symbol" : "",
+        "Top" : "76.9076%"
+      }, {
+        "Code" : "left-thigh",
+        "Description" : "",
+        "Hurt" : false,
+        "Left" : "51.2195%",
+        "Symbol" : "",
+        "Top" : "58.8353%"
+      }, {
+        "Code" : "right-thigh",
+        "Description" : "",
+        "Hurt" : false,
+        "Left" : "31.7073%",
+        "Symbol" : "",
+        "Top" : "59.0361%"
+      }, {
+        "Code" : "right-forearm",
+        "Description" : "",
+        "Hurt" : false,
+        "Left" : "11.2195%",
+        "Symbol" : "",
+        "Top" : "35.743%"
+      } ],
+      "Defects" : "Instable et sanguinaire",
+      "Dexterity" : 20,
+      "DistanceWeapon" : "Fléchette",
+      "Eyes" : "Saphir",
+      "Gender" : "♂",
+      "HP" : 24,
+      "Hairs" : "Mi-longs blancs bleutés",
+      "Health" : 4,
+      "Height" : 176,
+      "HiddenCapacities" : [ "1-Défense sans armure", "2-Déplacement sans armure", "3-Tradition monastique" ],
+      "Historic" : "HERMIT",
+      "History" : "Sa mère, séduite par un génie ayant pris forme humaine, l'a abandonné à la naissance aux portes d'un monastère aux centre d'un forêt par sa mère lorsqu'elle à découvert à quoi elle avait donné naissance.",
+      "Id" : "Saphir",
+      "Ideals" : "Logique",
+      "Intelligence" : 14,
+      "Languages" : [ "SILVAN" ],
+      "Links" : "L'ordre de son monastère",
+      "MaxHP" : 24,
+      "MinorSpells" : [ "Amis", "Coup de tonnerre", "Gelure", "Explosion de lames" ],
+      "Money" : 1000,
+      "Name" : "Saphir",
+      "Notes" : "L'aventure débute niveau 3 dans un petit village nommé \"?\"\nRencontre des personnages.",
+      "Objects" : [ "Outils de cartographe" ],
+      "PersonnalityTraits" : "Serein",
+      "Skills" : [ "Acrobatie", "Discrétion" ],
+      "Skin" : "Bleu clair",
+      "Specialisation" : "SHADOW_WAY",
+      "Specials" : 2,
+      "Spells" : [ "Armure de mage", "Charme-personne", "Attraction terrestre", "Agrandissement-Rapetissement" ],
+      "SpellsLocations" : [ null, 3, 2, 0, 0, 0, 0, 0, 0, 0 ],
+      "Strength" : 12,
+      "SubRace" : "AIR_GENASI",
+      "Weapon" : "Bâton",
+      "Weight" : 68000,
+      "Wisdom" : 19,
+      "XP" : 900
+    },
+    "Sorwen" : {
+      "Age" : 26,
+      "Alignment" : "2_NB",
+      "Armor" : "Demi-plate",
+      "Charisma" : 10,
+      "Class" : "WARRIOR",
+      "Constitution" : 10,
+      "Defects" : "Instable et sanguinaire",
+      "Dexterity" : 10,
+      "Eyes" : "Saphir",
+      "Gender" : "♂",
+      "HP" : 24,
+      "Hairs" : "Mi-longs blancs bleutés",
+      "Health" : 4,
+      "Height" : 176,
+      "Historic" : "HERMIT",
+      "History" : "Sa mère, séduite par un génie ayant pris forme humaine, l'a abandonné à la naissance aux portes d'un monastère aux centre d'un forêt par sa mère lorsqu'elle à découvert à quoi elle avait donné naissance.",
+      "Id" : "Sorwen",
+      "Ideals" : "Logique",
+      "Intelligence" : 10,
+      "Links" : "L'ordre de son monastère",
+      "MaxHP" : 24,
+      "Money" : 1000,
+      "Name" : "Sorwen",
+      "Objects" : [ "Herboriste", "Cartographe" ],
+      "PersonnalityTraits" : "Serien",
+      "Shield" : "Bouclier",
+      "Skills" : [ "Acrobatie", "Discrétion" ],
+      "Skin" : "Bleu clair",
+      "Specials" : 0,
+      "Strength" : 10,
+      "SubRace" : "AARAKOCRA",
+      "Weapon" : "Épée à deux mains",
+      "Weight" : 68000,
+      "Wisdom" : 10,
+      "XP" : 900
+    }
+  },
+  "Notes" : {
+    "*" : [ {
+      "Content" : "Bonjour"
+    }, {
+      "Content" : "Hello"
+    }, {
+      "Content" : "Holà",
+      "Locked" : "Ash"
+    }, {
+      "Content" : "Buongiorno"
+    } ]
+  }
+}

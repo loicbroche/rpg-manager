@@ -19,7 +19,7 @@ class HPComponent extends PureComponent {
           <div className="hpProgressBar" style={{width:`${Math.ceil(val/maxVal*100)}%`}}>&nbsp;</div>
           <div className="label">
             <span>{`${val} / ${maxVal}`}</span>
-            <img src={diceImage} className="dice-image" alt={`D${characterClass && characterClass.HD}`} title={`D${characterClass && characterClass.HD}`} />
+            <img src={diceImage} className="dice-image" alt={`D${characterClass?.HD||"?"}`} title={`D${characterClass && characterClass.HD}`} />
           </div>
         </div>
         {onValChange && <span className={`currentModifier increase-value ${val===maxVal &&"disabled"}`} role="button" onClick={() => {this.handleValueChange(1)}} title="Récupérer un point de vie"></span>}

@@ -143,9 +143,9 @@ const fightStyleBonus = (characterClass
               return (
               <option key={weapon.Name} value={weapon.Id} className={this.isMaster(weapon)?"master-equipment":""}
               title={(  isRaceMaster
-                        ?"Maîtrise héritée de la race "+race.Name
+                        ?"Maîtrise héritée de la race "+race?.Name
                         :(  isSubRaceMaster
-                            ?"Maîtrise héritée de la race "+subRace.Name
+                            ?"Maîtrise héritée de la race "+subRace?.Name
                             :( isClassMaster
                               ?"Maîtrise héritée de la classe "+className
                               :"Non maîtrisé")

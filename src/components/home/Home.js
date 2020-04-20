@@ -1,7 +1,9 @@
 import React, { PureComponent } from 'react'
 import { Link } from 'react-router-dom'
-import { database } from 'database/InitializeDatabase'
+import { gameDatabase } from 'database/InitializeDatabase'
 import { DATA_MODEL } from 'database/DataModel'
+import {DEFAULT_EMPTY_VALUE, DEFAULT_CARACTERISTIC_VALUE, DEFAULT_HEALTH_VALUE,
+        DEFAULT_HP_VALUE, DEFAULT_MONEY_VALUE} from 'rules/Character.rules'
 import { objectToArray } from 'database/Tools'
 import { insertCharacter, deleteCharacter } from 'database/PersistCharacter';
 
@@ -16,8 +18,8 @@ class Home extends PureComponent {
     this.state = {
       characters: null
     }
-    this.charactersRef = database.ref(DATA_MODEL.CHARACTERS.name);
-    this.updateCharacters = (snapshot)  => { this.setState({ characters: objectToArray(snapshot.val()) }); }
+    this.charactersRef = gameDatabase.ref(DATA_MODEL.CHARACTERS.name);
+    this.updateCharacters = (snapshot)  => { console.log("gameDatabase", gameDatabase, snapshot.val());this.setState({ characters: objectToArray(snapshot.val()) }); }
   }
 
   componentDidMount() {
@@ -56,41 +58,40 @@ class Home extends PureComponent {
   insertCharacter = (character) => {
     if (character.Name) {
       character.Age = 0;
-      character.Alignment = "NB";
+      character.Alignment = DEFAULT_EMPTY_VALUE;
       character.Alterations= [];/**/
       character.Ammunition = 10;/**/
-      character.Armor = "-";/**/
-      character.ChargeCapacity = 20000;
-      character.Charisma = 10;
-      character.Class = "BARBARIAN";
-      character.Constitution = 10;
+      character.Armor = DEFAULT_EMPTY_VALUE;/**/
+      character.Charisma = DEFAULT_CARACTERISTIC_VALUE;
+      character.Class = DEFAULT_EMPTY_VALUE;
+      character.Constitution = DEFAULT_CARACTERISTIC_VALUE;
       character.Defects = "";
-      character.Dexterity = 10;
-      character.DistanceWeapon = "-";/**/
+      character.Dexterity = DEFAULT_CARACTERISTIC_VALUE;
+      character.DistanceWeapon = DEFAULT_EMPTY_VALUE;/**/
       character.Eyes = "";
       character.FightStyles = [];/**/
       character.Hairs = "";
-      character.Health = 4;
+      character.Health = DEFAULT_HEALTH_VALUE;
       character.Height = 0;
       character.HiddenCapacities = [];/**/
-      character.Historic = "ACOLYTE";
+      character.Historic = DEFAULT_EMPTY_VALUE;
       character.History = "";
-      character.HP = 8;
+      character.HP = DEFAULT_HP_VALUE;
       character.Ideals = "";
-      character.Intelligence = 10;
+      character.Intelligence = DEFAULT_CARACTERISTIC_VALUE;
       character.Languages = [];/**/
       character.Links = "";
       character.MasterArmors = [];/**/
       character.MasterObjects = [];/**/
       character.MasterWeapons = [];/**/
-      character.MaxHP = 8;
-      character.Money = 1000;
+      character.MaxHP = DEFAULT_HP_VALUE;
+      character.Money = DEFAULT_MONEY_VALUE;
       character.Notes = "";/**/
       character.Objects = [];/**/
       character.PersonnalityTraits = "";
       character.Resistances= [];/**/
       character.SatchelObjects = [];/**/
-      character.Shield = "-";/**/
+      character.Shield = DEFAULT_EMPTY_VALUE;/**/
       character.Skills = [];
       character.Skin = "";
       character.Specialisation = "";/**/
@@ -98,11 +99,11 @@ class Home extends PureComponent {
       character.SpellsLocations = [];/**/
       character.MinorSpells = [];/**/
       character.Spells = [];/**/
-      character.Strength = 10;/**/
-      character.SubRace = "AARAKOCRA";
-      character.Weapon = "-";
+      character.Strength = DEFAULT_CARACTERISTIC_VALUE;/**/
+      character.SubRace = DEFAULT_EMPTY_VALUE;
+      character.Weapon = DEFAULT_EMPTY_VALUE;
       character.Weight = 0;
-      character.Wisdom = 10;
+      character.Wisdom = DEFAULT_CARACTERISTIC_VALUE;
       character.XP = 0;      
 
       insertCharacter(character);

@@ -64,11 +64,11 @@ class SpellsComponent extends PureComponent {
   // Arrow fx for binding
   handleValueChange = (value, maxVal, location) => {
     const {spellsLocations, onValChange} = this.props;
-    const val = spellsLocations?.[location];
+    const val = spellsLocations?.[location] || 0;
     const newVal = Math.min(Math.max(val+value, 0), maxVal);
     
     if (newVal !== val) {
-      let newSpells = {...spellsLocations};
+      let newSpells = spellsLocations?.slice() || [];
       newSpells[location] = newVal;
       onValChange(newSpells);
     }
@@ -76,7 +76,7 @@ class SpellsComponent extends PureComponent {
 }
 
 SpellsComponent.propTypes = {
-  spellsLocations: PropTypes.arrayOf(PropTypes.number).isRequired,
+  spellsLocations: PropTypes.arrayOf(PropTypes.number),
   classId: PropTypes.string.isRequired,
   specialisationId: PropTypes.string,
   XP: PropTypes.number,

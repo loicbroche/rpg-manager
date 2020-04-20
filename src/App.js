@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import { database } from 'database/InitializeDatabase'
+import { referentialDatabase } from 'database/InitializeDatabase'
 import { DATA_MODEL } from 'database/DataModel'
 import { ActionTypes } from 'store/actions/ActionTypes';
 import * as Actions from 'store/actions/Actions';
@@ -18,7 +18,7 @@ class App extends Component {
   componentDidMount() {
     Object.values(ActionTypes.REFERENTIAL).forEach((tableName) => {
       if (DATA_MODEL?.[tableName]) {
-        const ref = database.ref(DATA_MODEL?.[tableName]?.name);
+        const ref = referentialDatabase.ref(DATA_MODEL?.[tableName]?.name);
         ref.once('value', snapshot => { this.props.loadReferential(tableName, snapshot.val()); });
       }
     });

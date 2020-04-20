@@ -45,7 +45,7 @@ class Armors extends PureComponent {
               const isClassMaster = isClassMasterCategory || classArmors?.includes(Name);
               const lockedTitle = isClassMaster
                                   ?"Maîtrise héritée de la classe "+characterClass.Name
-                                  :(isSubRaceMasterCategory?"Maîtrise héritée de la race "+subRace.Name:"");
+                                  :(isSubRaceMasterCategory?"Maîtrise héritée de la race "+subRace?.Name:"");
               return (
               <li key={index} className={"armor "+(isClassMaster||isSubRaceMasterCategory?"locked":"activable")} role="button" onClick={() => !isClassMaster && onClick(Name)}
                   title={(isClassMaster||isSubRaceMasterCategory?lockedTitle:(isMaster?"Oublier":"Apprendre")+` la maîtrise de ${Name}`)

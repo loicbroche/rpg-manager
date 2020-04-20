@@ -1,0 +1,163 @@
+{
+    "rules": {
+        ".read": true,
+        ".write": true,
+        "Characters": {
+            "$characterId": {
+                ".validate": "newData.child('Id').exists() && newData.child('Name').exists() && newData.child('Health').exists() && newData.child('HP').exists() && newData.child('MaxHP').exists()",
+                "Id": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50 && newData.val() == $characterId"
+                },
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "SubRace": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+                },
+                "Class": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+                },
+                "Specialisation": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "Gender": {
+                    ".validate": "newData.isString() && newData.val().length ==1"
+                },
+                "Strength": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Constitution": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Dexterity": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Intelligence": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Wisdom": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Charisma": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Age": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Height": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Weight": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "XP": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "HP": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "MaxHP": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Alignment": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 4"
+                },
+                "Historic": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "History": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+                },
+                "Eyes": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "Skin": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "Hairs": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "PersonnalityTraits": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+                },
+                "Ideals": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+                },
+                "Links": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+                },
+                "Defects": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+                },
+                "Languages": {},
+                "FightStyles": {},
+                "Skills": {},
+                "MasterArmors": {},
+                "MasterWeapons": {},
+                "MasterObjects": {},
+                "Alterations": {},
+                "Resistances": {},
+                "Saves": {},
+                "SaveAdvantages": {},
+                "Health": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 4"
+                },
+                "Weapon": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "DistanceWeapon": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "Armor": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "Shield": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "Ammunition": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Money": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Specials": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val()"
+                },
+                "Objects": {},
+                "SpellsLocations": {},
+                "MinorSpells": {},
+                "Spells": {},
+                "hiddenCapacities": {},
+                "Damages": {},
+                "Notes": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 2000"
+                }
+            }
+        },
+        "Notes": {
+            "$note-owner": {
+                "$index": {
+                    ".validate": "newData.child('Content').exists()",
+                    "Name": {
+                        ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                    },
+                    "Content": {
+                        ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                    },
+                    "Description": {
+                        ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+                    },
+                    "Top": {
+                        ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                    },
+                    "Left": {
+                        ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                    },
+                    "Locked": {
+                        ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                    }
+                }
+            }
+        }
+    }
+}

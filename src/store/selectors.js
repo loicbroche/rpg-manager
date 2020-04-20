@@ -69,13 +69,14 @@ export const selectClassCapacityDescriptionById = (state, id) => state.referenti
 export const selectClassCapacityDescriptionByClassId = (state, classId, capacityName) => selectClassCapacityDescriptionById(state, classId+"-"+capacityName);
 export const selectClassCapacitiesDescriptionsByXP = (state, classId, specialisationId, xp) => {
     const levelNumber = selectLevelNumberByXP(state, xp);
+    const specialisation = selectValidSpecialisation(state, specialisationId, classId, xp);
     let knownCapacities = [];
     for (let i = 1; i <= levelNumber; i++) {
       const capacity = selectClassCapacityByClassIdLevel(state, classId, i);
-      const specialisationCapacity = selectSpecialisationCapacityBySpeIdLevel(state, specialisationId, i);
+      const specialisationCapacity = specialisation && selectSpecialisationCapacityBySpeIdLevel(state, specialisationId, i);
 
       knownCapacities = knownCapacities.concat(capacity?.Capacities?.map((c) => ({level: i, name: c, specialisation: false, description: selectClassCapacityDescriptionByClassId(state, classId, c)})) || []);
-      knownCapacities = knownCapacities.concat(specialisationCapacity?.Capacities?.map((c) => ({level: i, name: c, specialisation: true, description: selectClassCapacityDescriptionByClassId(state, specialisationId, c)})) || []);
+      knownCapacities = knownCapacities.concat(specialisationCapacity?.Capacities?.map((c) => ({level: i, name: c, specialisation: true, description: selectClassCapacityDescriptionByClassId(state, classId, c)})) || []);
     }
 
     return knownCapacities;
@@ -193,7 +194,6 @@ export const selectSpellsNbBonusByClassXP = (state, character) => {
 export const selectClassACBonus = (state, character) => {
     const ACBonusCaracteristic = selectACBonusCaracteristicByClassId(state, character?.Class);
     const caracteristicName = ACBonusCaracteristic?.OV;
-    console.log("selectClassACBonus "+ACBonusCaracteristic, character);
     return selectCaracteristicBonus(state, caracteristicName, character?.[caracteristicName] || 0, character.SubRace)
 }
 export const selectArmorACBonus = (state, armorId, subRaceId, classId, dexterityPoints, masterArmors) => {

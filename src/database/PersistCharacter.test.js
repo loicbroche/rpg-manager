@@ -27,7 +27,7 @@ describe('database', () => {
       done();
     }
     insertCharacter(newCharacter);
-    database.ref(DATA_MODEL.CHARACTERS.name).once("value", testCharacterInserted);
+    gameDatabase.ref(DATA_MODEL.CHARACTERS.name).once("value", testCharacterInserted);
   });
 
   it('insert character skill', done => {
@@ -38,7 +38,7 @@ describe('database', () => {
       done();
     }
     insertCharacterSkills(newCharacter.Id, newCharacter.Skills.length, newSkill);
-    database.ref(DATA_MODEL.CHARACTERS.name + '/' + newCharacter.Id).once("value", testSkillInserted);
+    gameDatabase.ref(DATA_MODEL.CHARACTERS.name + '/' + newCharacter.Id).once("value", testSkillInserted);
   });
 
   it('delete character skill', done => {
@@ -49,7 +49,7 @@ describe('database', () => {
       done();
     }
     deleteCharacterSkills(newCharacter.Id, newCharacter.Skills.length);
-    database.ref(DATA_MODEL.CHARACTERS.name + '/' + newCharacter.Id).once("value", testSkillDeleted);
+    gameDatabase.ref(DATA_MODEL.CHARACTERS.name + '/' + newCharacter.Id).once("value", testSkillDeleted);
   });
 
   it('delete character', done => {
@@ -58,7 +58,7 @@ describe('database', () => {
       done();
     }
     deleteCharacter(newCharacter.Id);
-    database.ref(DATA_MODEL.CHARACTERS.name).once("value", testCharacterDeleted);
+    gameDatabase.ref(DATA_MODEL.CHARACTERS.name).once("value", testCharacterDeleted);
   });
 
   it('update caracteristic', done => {
@@ -69,6 +69,6 @@ describe('database', () => {
       done();
     }
     updateCharacterCaracteristic(newCharacter.Id, strengthField, newStrength);
-    database.ref(DATA_MODEL.CHARACTERS.name + '/' + newCharacter.Id).once("value", testCaracteristicUpdated);
+    gameDatabase.ref(DATA_MODEL.CHARACTERS.name + '/' + newCharacter.Id).once("value", testCaracteristicUpdated);
   });
 });

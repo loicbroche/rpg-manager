@@ -106,7 +106,7 @@ class ArmorSelector extends PureComponent {
               return (
               <option key={armor.Name} value={armor.Id} className={isMasterArmor?"master-equipment":""}
                       title={ (isRaceMasterCategory
-                              ?"Maîtrise héritée de la race "+subRace.Name
+                              ?"Maîtrise héritée de la race "+subRace?.Name
                               :(  isClassMasterCategory
                                   ?"Maîtrise héritée de la classe "+characterClass.Name
                                   :"Non maîtrisé"

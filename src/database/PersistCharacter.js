@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types'
 import { CharacterPropType } from 'PropTypes';
-import { database } from './InitializeDatabase';
+import { gameDatabase } from './InitializeDatabase';
 import { DATA_MODEL } from './DataModel'
 
 //Characters
 const insertCharacter = (character) => {
     const url = DATA_MODEL.CHARACTERS.name + '/' + character.Id;
-    return database.ref(url).set(character);
+    return gameDatabase.ref(url).set(character);
 }
 insertCharacter.propTypes = {
     character: CharacterPropType.isRequired
@@ -14,7 +14,7 @@ insertCharacter.propTypes = {
 
 const deleteCharacter = (characterId) => {
     const url = DATA_MODEL.CHARACTERS.name + '/' + characterId;
-    return database.ref(url).remove();
+    return gameDatabase.ref(url).remove();
 }
 deleteCharacter.propTypes = {
     characterId: PropTypes.string.isRequired
@@ -25,7 +25,7 @@ export { deleteCharacter };
 
 const updateCharacterCaracteristic = (characterId, caracteristicName, value) => {
     const url = DATA_MODEL.CHARACTERS.name + '/' + characterId + '/'+caracteristicName;
-    return database.ref(url).set(value);
+    return gameDatabase.ref(url).set(value);
 }
 updateCharacterCaracteristic.propTypes = {
     characterId: PropTypes.string.isRequired,
@@ -37,10 +37,10 @@ export { updateCharacterCaracteristic };
 
 const insertCharacterElement = (characterId, caracteristicName, value) => {
     const url = DATA_MODEL.CHARACTERS.name + '/' + characterId + '/'+caracteristicName;
-    database.ref(url).once('value', snapshot => {
+    gameDatabase.ref(url).once('value', snapshot => {
         const elements = snapshot.val()||[];
         elements[elements.length] = value;
-        database.ref(url).set(elements)
+        gameDatabase.ref(url).set(elements)
     });
 }
 insertCharacterElement.propTypes = {
@@ -51,11 +51,11 @@ insertCharacterElement.propTypes = {
 
 const deleteCharacterElement = (characterId, caracteristicName, value) => {
     const url = DATA_MODEL.CHARACTERS.name + '/' + characterId + '/'+caracteristicName;
-    database.ref(url).once('value', snapshot => {
+    gameDatabase.ref(url).once('value', snapshot => {
         const elements = snapshot.val()||[];
         const index = elements.findIndex((name) => name === value);
         elements.splice(index, 1);
-        database.ref(url).set(elements);
+        gameDatabase.ref(url).set(elements);
     });
 }
 deleteCharacterElement.propTypes = {

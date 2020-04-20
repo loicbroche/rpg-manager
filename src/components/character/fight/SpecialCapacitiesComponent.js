@@ -82,8 +82,8 @@ class SpecialCapacities extends PureComponent {
                                                   </span>
                                                   <span className="capacity-source">
                                                     <img src={raceImage}
-                                                          alt={`Compétence de la race ${subRace.Name}`}
-                                                          title={`Compétence de la race ${subRace.Name}`}/>
+                                                          alt={`Compétence de la race ${subRace?.Name}`}
+                                                          title={`Compétence de la race ${subRace?.Name}`}/>
                                                   </span>
                                                 </span>
                                               </li>

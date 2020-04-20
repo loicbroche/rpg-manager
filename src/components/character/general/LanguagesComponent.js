@@ -15,11 +15,11 @@ class LanguagesComponent extends PureComponent {
       {languages?.map((language) => {
           const isKnown = knownLanguages?.includes(language.Code);
           let isRaceKnown = raceLanguages?.includes(language.Code);
-          let raceKnownTitle = `Langue ${language.Name} connue de la race ${race.Name}`;
+          let raceKnownTitle = `Langue ${language.Name} connue de la race ${race?.Name}`;
           const isSubRaceKnown = subRaceLanguages?.includes(language.Code);
           if (!isRaceKnown && isSubRaceKnown) {
             isRaceKnown = true;
-            raceKnownTitle = `Langue ${language.Name} connue de la race ${subRace.Name}`;
+            raceKnownTitle = `Langue ${language.Name} connue de la race ${subRace?.Name}`;
           }     
           return (
           <li key={language.Code} className={"language "+(isRaceKnown?"race-known":"activable")} role="button" onClick={() => !isRaceKnown && onClick(language.Code)}

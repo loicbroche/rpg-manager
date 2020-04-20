@@ -1019,121 +1019,121 @@
       "Specials" : 9
     },
     "PALADIN-1" : {
-      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Sens divin", "Imposition des mains" ],
       "Locations" : [ null, 0, 0, 0, 0, 0 ],
-      "SpellsNb" : 1
+      "SpellsNb" : 1,
+      "SpellsNbBonus" : "CHA"
     },
     "PALADIN-10" : {
-      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Aura de courage" ],
       "Locations" : [ null, 4, 3, 2, 0, 0 ],
-      "SpellsNb" : 5
+      "SpellsNb" : 5,
+      "SpellsNbBonus" : "CHA"
     },
     "PALADIN-11" : {
-      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Châtiment divin amélioré" ],
       "Locations" : [ null, 4, 3, 3, 0, 0 ],
-      "SpellsNb" : 5
+      "SpellsNb" : 5,
+      "SpellsNbBonus" : "CHA"
     },
     "PALADIN-12" : {
-      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Amélioration de caractéristiques" ],
       "Locations" : [ null, 4, 3, 3, 0, 0 ],
-      "SpellsNb" : 6
+      "SpellsNb" : 6,
+      "SpellsNbBonus" : "CHA"
     },
     "PALADIN-13" : {
-      "SpellsNbBonus" : "CHA",
       "Locations" : [ null, 4, 3, 3, 1, 0 ],
-      "SpellsNb" : 6
+      "SpellsNb" : 6,
+      "SpellsNbBonus" : "CHA"
     },
     "PALADIN-14" : {
-      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Contact purifiant" ],
       "Locations" : [ null, 4, 3, 3, 1, 0 ],
-      "SpellsNb" : 7
+      "SpellsNb" : 7,
+      "SpellsNbBonus" : "CHA"
     },
     "PALADIN-15" : {
-      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Capacité de serment sacré" ],
       "Locations" : [ null, 4, 3, 3, 2, 0 ],
-      "SpellsNb" : 7
+      "SpellsNb" : 7,
+      "SpellsNbBonus" : "CHA"
     },
     "PALADIN-16" : {
-      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Amélioration de caractéristiques" ],
       "Locations" : [ null, 4, 3, 3, 2, 0 ],
-      "SpellsNb" : 8
+      "SpellsNb" : 8,
+      "SpellsNbBonus" : "CHA"
     },
     "PALADIN-17" : {
-      "SpellsNbBonus" : "CHA",
       "Locations" : [ null, 4, 3, 3, 3, 1 ],
-      "SpellsNb" : 8
+      "SpellsNb" : 8,
+      "SpellsNbBonus" : "CHA"
     },
     "PALADIN-18" : {
-      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Amélioration des auras" ],
       "Locations" : [ null, 4, 3, 3, 3, 1 ],
-      "SpellsNb" : 9
+      "SpellsNb" : 9,
+      "SpellsNbBonus" : "CHA"
     },
     "PALADIN-19" : {
-      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Amélioration de caractéristiques" ],
       "Locations" : [ null, 4, 3, 3, 3, 2 ],
-      "SpellsNb" : 9
+      "SpellsNb" : 9,
+      "SpellsNbBonus" : "CHA"
     },
     "PALADIN-2" : {
-      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Style de combat", "Incantations", "Châtiment divin" ],
       "Locations" : [ null, 2, 0, 0, 0, 0 ],
-      "SpellsNb" : 1
+      "SpellsNb" : 1,
+      "SpellsNbBonus" : "CHA"
     },
     "PALADIN-20" : {
-      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Capacité de serment sacré" ],
       "Locations" : [ null, 4, 3, 3, 3, 2 ],
-      "SpellsNb" : 10
+      "SpellsNb" : 10,
+      "SpellsNbBonus" : "CHA"
     },
     "PALADIN-3" : {
-      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Santé divine", "Serment sacré" ],
       "Locations" : [ null, 3, 0, 0, 0, 0 ],
-      "SpellsNb" : 1
+      "SpellsNb" : 1,
+      "SpellsNbBonus" : "CHA"
     },
     "PALADIN-4" : {
-      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Amélioration de caractéristiques" ],
       "Locations" : [ null, 3, 0, 0, 0, 0 ],
-      "SpellsNb" : 2
+      "SpellsNb" : 2,
+      "SpellsNbBonus" : "CHA"
     },
     "PALADIN-5" : {
-      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Attaque supplémentaire" ],
       "Locations" : [ null, 4, 2, 0, 0, 0 ],
-      "SpellsNb" : 2
+      "SpellsNb" : 2,
+      "SpellsNbBonus" : "CHA"
     },
     "PALADIN-6" : {
-      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Aura de protection" ],
       "Locations" : [ null, 4, 2, 0, 0, 0 ],
-      "SpellsNb" : 3
+      "SpellsNb" : 3,
+      "SpellsNbBonus" : "CHA"
     },
     "PALADIN-7" : {
-      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Capacité de serment sacré" ],
       "Locations" : [ null, 4, 3, 0, 0, 0 ],
-      "SpellsNb" : 3
+      "SpellsNb" : 3,
+      "SpellsNbBonus" : "CHA"
     },
     "PALADIN-8" : {
-      "SpellsNbBonus" : "CHA",
       "Capacities" : [ "Amélioration de caractéristiques" ],
       "Locations" : [ null, 4, 3, 0, 0, 0 ],
-      "SpellsNb" : 4
+      "SpellsNb" : 4,
+      "SpellsNbBonus" : "CHA"
     },
     "PALADIN-9" : {
-      "SpellsNbBonus" : "CHA",
       "Locations" : [ null, 4, 3, 2, 0, 0 ],
-      "SpellsNb" : 4
+      "SpellsNb" : 4,
+      "SpellsNbBonus" : "CHA"
     },
     "PROWLER-1" : {
       "Capacities" : [ "Ennemi juré", "Explorateur-né" ],
@@ -4236,129 +4236,6 @@
       "OV" : "Wisdom"
     }
   },
-  "Characters" : {
-    "Ash" : {
-      "Age" : 26,
-      "Alignment" : "2_NB",
-      "Armor" : "Cuir",
-      "ChargeCapacity" : 20000,
-      "Charisma" : 10,
-      "Class" : "BARD",
-      "Constitution" : 10,
-      "Defects" : "Instable et sanguinaire",
-      "Dexterity" : 10,
-      "DistanceWeapon" : "Arbalète légère",
-      "Eyes" : "Saphir",
-      "Gender" : "♂",
-      "HP" : 24,
-      "Hairs" : "Mi-longs blancs bleutés",
-      "Health" : 4,
-      "Height" : 176,
-      "Historic" : "HERMIT",
-      "History" : "Sa mère, séduite par un génie ayant pris forme humaine, l'a abandonné à la naissance aux portes d'un monastère aux centre d'une lorsqu'elle à découvert à quoi elle avait donné naissance.",
-      "Id" : "Ash",
-      "Ideals" : "Logique",
-      "Intelligence" : 10,
-      "Links" : "L'ordre de son monastère",
-      "MaxHP" : 24,
-      "Money" : 1000,
-      "Name" : "Ash",
-      "Objects" : [ "Herboriste", "Cartographe" ],
-      "PersonnalityTraits" : "Serein",
-      "Skills" : [ "Eloquence", "Etiquette", "Narcotique", "Négociation", "Noblesse", "Représentation" ],
-      "Skin" : "Bleu clair",
-      "Specials" : 0,
-      "Strength" : 10,
-      "SubRace" : "WOODEN_ELF",
-      "Weapon" : "Rapière",
-      "Weight" : 68000,
-      "Wisdom" : 10,
-      "XP" : 900
-    },
-    "Saphir" : {
-      "Age" : 26,
-      "Alignment" : "2_NB",
-      "Ammunition" : 10,
-      "Armor" : "-",
-      "ChargeCapacity" : 20000,
-      "Charisma" : 14,
-      "Class" : "WARRIOR",
-      "Constitution" : 17,
-      "Defects" : "Instable et sanguinaire",
-      "Dexterity" : 21,
-      "DistanceWeapon" : "Fléchette",
-      "Eyes" : "Saphir",
-      "Gender" : "♂",
-      "HP" : 24,
-      "Hairs" : "Mi-longs blancs bleutés",
-      "Health" : 4,
-      "Height" : 176,
-      "Historic" : "HERMIT",
-      "History" : "Sa mère, séduite par un génie ayant pris forme humaine, l'a abandonné à la naissance aux portes d'un monastère aux centre d'un forêt par sa mère lorsqu'elle à découvert à quoi elle avait donné naissance.",
-      "Id" : "Saphir",
-      "Ideals" : "Logique",
-      "Intelligence" : 14,
-      "Languages" : [ "SILVAN" ],
-      "Links" : "L'ordre de son monastère",
-      "MaxHP" : 24,
-      "MinorSpells" : [ "Amis", "Coup de tonnerre", "Gelure", "Explosion de lames" ],
-      "Money" : 1000,
-      "Name" : "Saphir",
-      "Notes" : "L'aventure débute niveau 3 dans un petit village nommé \"?\"\nRencontre des personnages.",
-      "Objects" : [ "Outils de cartographe" ],
-      "PersonnalityTraits" : "Serein",
-      "Skills" : [ "Acrobatie", "Discrétion" ],
-      "Skin" : "Bleu clair",
-      "Specialisation" : "OCCULT_KNIGHT",
-      "Specials" : 2,
-      "Spells" : [ "Armure de mage", "Charme-personne", "Attraction terrestre", "Agrandissement-Rapetissement" ],
-      "SpellsLocations" : [ null, 3, 2, 0, 0, 0, 0, 0, 0, 0 ],
-      "Strength" : 12,
-      "SubRace" : "AIR_GENASI",
-      "Weapon" : "Bâton",
-      "Weight" : 68000,
-      "Wisdom" : 19,
-      "XP" : 900
-    },
-    "Sorwen" : {
-      "Age" : 26,
-      "Alignment" : "2_NB",
-      "Armor" : "Demi-plate",
-      "ChargeCapacity" : 20000,
-      "Charisma" : 10,
-      "Class" : "WARRIOR",
-      "Constitution" : 10,
-      "Defects" : "Instable et sanguinaire",
-      "Dexterity" : 10,
-      "Eyes" : "Saphir",
-      "Gender" : "♂",
-      "HP" : 24,
-      "Hairs" : "Mi-longs blancs bleutés",
-      "Health" : 4,
-      "Height" : 176,
-      "Historic" : "HERMIT",
-      "History" : "Sa mère, séduite par un génie ayant pris forme humaine, l'a abandonné à la naissance aux portes d'un monastère aux centre d'un forêt par sa mère lorsqu'elle à découvert à quoi elle avait donné naissance.",
-      "Id" : "Sorwen",
-      "Ideals" : "Logique",
-      "Intelligence" : 10,
-      "Links" : "L'ordre de son monastère",
-      "MaxHP" : 24,
-      "Money" : 1000,
-      "Name" : "Sorwen",
-      "Objects" : [ "Herboriste", "Cartographe" ],
-      "PersonnalityTraits" : "Serien",
-      "Shield" : "Bouclier",
-      "Skills" : [ "Acrobatie", "Discrétion" ],
-      "Skin" : "Bleu clair",
-      "Specials" : 0,
-      "Strength" : 10,
-      "SubRace" : "AARAKOCRA",
-      "Weapon" : "Épée à deux mains",
-      "Weight" : 68000,
-      "Wisdom" : 10,
-      "XP" : 900
-    }
-  },
   "Classes" : {
     "BARBARIAN" : {
       "ACBonus" : "CON",
@@ -5950,18 +5827,6 @@
       "Price" : 20000,
       "Speed" : 12
     }
-  },
-  "Notes" : {
-    "*" : [ {
-      "Content" : "Hello"
-    }, {
-      "Content" : "Bonjour"
-    }, {
-      "Content" : "Holà",
-      "Locked" : "Ash"
-    }, {
-      "Content" : "Buongiorno"
-    } ]
   },
   "ObjectCategories" : {
     "ARTISAN" : {

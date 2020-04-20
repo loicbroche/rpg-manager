@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { selectSubRacesMap, selectRacesMap, selectArmorsMap, selectWeaponsMap, selectCaracteristics } from 'store/selectors';
 
-import { database } from 'database/InitializeDatabase'
+import { gameDatabase } from 'database/InitializeDatabase'
 import { DATA_MODEL } from 'database/DataModel'
 import { updateCharacterCaracteristic, insertCharacterElement, deleteCharacterElement } from 'database/PersistCharacter';
 import { updateNotes, ALL_CHARACTERS_ID } from 'database/PersistNotes';
@@ -90,7 +90,7 @@ class Character extends PureComponent {
           generalNotes: [],
           personnalNotes: []
       }
-      this.characterRef = database.ref(DATA_MODEL.CHARACTERS.name+"/"+characterId);
+      this.characterRef = gameDatabase.ref(DATA_MODEL.CHARACTERS.name+"/"+characterId);
       this.updateCharacter = (snapshot) => {
           const newState = snapshot.val();
           newState.MasterArmors = newState.MasterArmors || [];
@@ -110,14 +110,14 @@ class Character extends PureComponent {
 
           this.setState({characterInfos: newState});
         }
-        this.generalNotesRef = database.ref(DATA_MODEL.NOTES.name+"/"+ALL_CHARACTERS_ID);
-        this.personnalNotesRef = database.ref(DATA_MODEL.NOTES.name+"/"+characterId);
+        this.generalNotesRef = gameDatabase.ref(DATA_MODEL.NOTES.name+"/"+ALL_CHARACTERS_ID);
+        this.personnalNotesRef = gameDatabase.ref(DATA_MODEL.NOTES.name+"/"+characterId);
         this.updateGeneralNotes = (snapshot) => {
-            const newState = snapshot.val();
+            const newState = snapshot.val() && Object.values(snapshot.val());
             this.setState({generalNotes: newState});
         }
         this.updatePersonnalNotes = (snapshot) => {
-            const newState = snapshot.val();
+            const newState = snapshot.val() && Object.values(snapshot.val());
             this.setState({personnalNotes: newState});
         }
     }
@@ -162,7 +162,8 @@ class Character extends PureComponent {
 
         return (
         <div className="character">
-            { Name !== null && (
+            { Name !== null
+                ?(
                 <div>
                     <div className="character-header">
                         <div>
@@ -190,7 +191,7 @@ class Character extends PureComponent {
                         <div className="health-overview">
                             <HealthComponent value={Health} onChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HEALTH.name, value); }} />
                             <DamagesComponent characterId={Name} damages={Damages}
-                                                onDamageChange={ (value) =>{ this.toggleElement(DATA_MODEL.CHARACTERS.columns.DAMAGES.name, value); }} />
+                                                onDamageChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.DAMAGES.name, value); }} />
                             <WeaponSelector weaponId={Weapon}
                                             wearingCharacter={ this.state.characterInfos }
                                             onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.WEAPON.name, value); }} />
@@ -306,7 +307,8 @@ class Character extends PureComponent {
                         </div>
                     </div>
                 </div>
-            )}
+            )
+            :(<span className="narrative">Ce personnage n'existe pas</span>)}
         </div>
         )
     }

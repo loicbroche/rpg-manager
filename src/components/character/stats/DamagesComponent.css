@@ -13,7 +13,8 @@
 .damage-marker {
   position: absolute;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
@@ -26,6 +27,23 @@
   opacity: 0.8;
   background-color: var(--color-Damage);
 }
+
+.damage-marker-header {
+  height: 0.25rem;
+  width: 0.75rem;
+  border-radius: 50%;
+  background-color: var(--background-color-1);
+  cursor: grab;
+}
+.damage-symbol {
+  font-size: 0.7rem;
+  line-height: 100%;
+}
+
+.damage-marker-header:active {
+  cursor: grabbing;
+}
+
 .damage-marker:hover,
 .damage-marker:focus {
   opacity: 1;
@@ -41,7 +59,7 @@
 }
 .right-forearm-damage-marker,
 .left-forearm-damage-marker {
-  top: 35%;
+  top: 40%;
 }
 .right-thigh-damage-marker,
 .left-thigh-damage-marker {
@@ -49,7 +67,7 @@
 }
 .right-shin-damage-marker,
 .left-shin-damage-marker {
-  bottom: 25%;
+  bottom: 15%;
 }
 
 .head-damage-marker,
@@ -57,18 +75,26 @@
   left: calc(50% - 0.5rem);
 }
 
-.right-arm-damage-marker,
-.right-forearm-damage-marker,
+.right-arm-damage-marker {
+  left: 20%;
+}
+.right-forearm-damage-marker  {
+  left: 15%;
+}
 .right-thigh-damage-marker,
 .right-shin-damage-marker {
-  left: 25%;
+  left: 35%;
 }
 
-.left-arm-damage-marker,
-.left-forearm-damage-marker,
+.left-arm-damage-marker {
+  right: 20%;
+}
+.left-forearm-damage-marker {
+  right: 15%;
+}
 .left-thigh-damage-marker,
 .left-shin-damage-marker {
-  right: 25%;
+  right: 35%;
 }
 
 .damagesComponent input[type="file"].activable:not(.forbidden) {
@@ -87,8 +113,4 @@
 .custom-file-input::before {
   display: inline-block;
   width: 1rem;
-}
-
-.damage-symbol {
-  line-height: 100%;
 }

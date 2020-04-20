@@ -49,7 +49,7 @@ class GeneralNotesComponent extends PureComponent {
               </span>
             </div>
             <div id="notes" className={`narrative notes ${showNotes&&"show-notes"}`}>
-                { notes && Object.values(notes).map((note, index) => {
+                { notes?.map((note, index) => {
                   const locked = (note.Locked===editorCharacter)?false:note.Locked;
                   const textAreaId = `note-${editorCharacter}-${index}`;
                   return <div key={index} className="note-container">
@@ -73,6 +73,7 @@ class GeneralNotesComponent extends PureComponent {
                                 onBlur={() => { this.onNoteSave(index)}}
                                 onChange={(event) => { this.onNoteChange(event, index)}}
                                 onKeyUp={(event) => this.autosizeAndSave(event, textAreaId)}
+                                autoFocus={!note.Content}
                       ></textarea>
                     </div>
                     }

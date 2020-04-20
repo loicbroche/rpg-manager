@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { database } from 'database/InitializeDatabase'
+import { gameDatabase } from 'database/InitializeDatabase'
 import { DATA_MODEL } from 'database/DataModel'
 import { objectToArray } from 'database/Tools'
 
@@ -12,7 +12,7 @@ class GameMaster extends PureComponent {
         this.state = {
           characters: null
         }
-        this.charactersRef = database.ref(DATA_MODEL.CHARACTERS.name);
+        this.charactersRef = gameDatabase.ref(DATA_MODEL.CHARACTERS.name);
         this.updateCharacters = (snapshot)  => { this.setState({ characters: snapshot.val() && Object.values(objectToArray(snapshot.val())) }); }
     }
 

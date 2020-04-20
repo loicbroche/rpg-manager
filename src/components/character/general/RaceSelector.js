@@ -52,7 +52,7 @@ class RaceSelector extends PureComponent {
             : (
               <optgroup key={race?.Id} label={race?.Name}>
                 { availableSubRaces.map((subRace) => (
-                  <option key={subRace.Id} value={subRace.Id}>{subRace.Name}</option>
+                  <option key={subRace.Id} value={subRace.Id}>{subRace?.Name}</option>
                 ))}
               </optgroup>
             );

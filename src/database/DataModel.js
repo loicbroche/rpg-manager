@@ -413,7 +413,6 @@ export const DATA_MODEL = {
             CLASS: { name: "Class" },
             SPECIALISATION: { name: "Specialisation", optional: true },
             FIGHT_STYLES: { name: "FightStyles", optional: true },
-            CHARGE_CAPACITY: { name: "ChargeCapacity" },
             SKILLS: { name: "Skills", optional: true },
             MASTER_WEAPONS: { name: "MasterWeapons", optional: true },
             MASTER_ARMORS: { name: "MasterArmors", optional: true },

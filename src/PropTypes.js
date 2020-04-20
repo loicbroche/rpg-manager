@@ -69,11 +69,14 @@ export const FightStylePropType = PropTypes.shape({
     Class: PropTypes.string.isRequired,
     Name: PropTypes.string.isRequired,
     ACBonus: PropTypes.number,
-    ACBonusArmor: PropTypes.bool
+    WeaponBonus: PropTypes.number,
+    DistanceBonus: PropTypes.number,
+    ACBonusArmor: PropTypes.bool,
+    Description: PropTypes.string.isRequired,
 })
 
 export const CapacityPropType = PropTypes.shape({
-    Capacities: PropTypes.string,
+    Capacities: PropTypes.arrayOf(PropTypes.string),
     Specials: PropTypes.number,
     BonusAttack: PropTypes.string,
     Damages: PropTypes.number,
@@ -81,7 +84,7 @@ export const CapacityPropType = PropTypes.shape({
     SpellsNb: PropTypes.number,
     SpellsNbBonus: PropTypes.string,
     Locations: PropTypes.arrayOf(PropTypes.number),
-    Invocations: PropTypes.string,
+    Invocations: PropTypes.number,
     ArmorlessSpeed: PropTypes.number
 })
 
@@ -246,7 +249,7 @@ export const SpellPropType = PropTypes.shape({
     BBE: PropTypes.string.isRequired,
     School: PropTypes.string.isRequired,
     Incantation: PropTypes.string.isRequired,
-    Type: PropTypes.string.isRequired,
+    Type: PropTypes.string,
     Description: PropTypes.string.isRequired,
     Classes: PropTypes.arrayOf(PropTypes.string).isRequired
 })
@@ -284,19 +287,29 @@ export const NotePropType = PropTypes.shape({
     Name: PropTypes.string,
     Content: PropTypes.string.isRequired,
     Description: PropTypes.string,
-    Top: PropTypes.number,
-    Left: PropTypes.number,
+    Top: PropTypes.string,
+    Left: PropTypes.string,
     Locked: PropTypes.string
+})
+
+export const DamagePropType = PropTypes.shape({
+    Code: PropTypes.string.isRequired,
+    Hurt: PropTypes.bool,
+    Symbol: PropTypes.string,
+    Description: PropTypes.string,
+    Top: PropTypes.string,
+    Left: PropTypes.string,
+    Title: PropTypes.string
 })
 
 export const CharacterPropType = PropTypes.shape({
     Id: PropTypes.string.isRequired,
     Name: PropTypes.string.isRequired,
-    SubRace: PropTypes.string.isRequired,
-    Class: PropTypes.string.isRequired,
+    SubRace: PropTypes.string,
+    Gender: PropTypes.string,
+    Class: PropTypes.string,
     Specialisation: PropTypes.string,
     FightStyles: PropTypes.arrayOf(PropTypes.string),
-    ChargeCapacity: PropTypes.number.isRequired,
     Skills: PropTypes.arrayOf(PropTypes.string),
     MasterArmors: PropTypes.arrayOf(PropTypes.string),
     MasterWeapons: PropTypes.arrayOf(PropTypes.string),
@@ -341,5 +354,5 @@ export const CharacterPropType = PropTypes.shape({
     Spells: PropTypes.arrayOf(PropTypes.string),
     Notes: PropTypes.string,
     hiddenCapacities: PropTypes.arrayOf(PropTypes.string),
-    Damages: PropTypes.arrayOf(PropTypes.string)
+    Damages: PropTypes.arrayOf(DamagePropType)
 })

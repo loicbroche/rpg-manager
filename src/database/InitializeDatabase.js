@@ -1,11 +1,19 @@
 import * as firebase from 'firebase';
 
-const FirebaseConfig = {
-    apiKey: "AIzaSyB7nrOdJyJZ91JjkQk7uhdMceZO7Pvj7Xw",
-    authDomain: "jdr-manager.firebaseapp.com",
-    databaseURL: "https://jdr-manager.firebaseio.com"
+const ReferentialFirebaseConfig = {
+    apiKey: "AIzaSyA5ikzxaqcNBwcyPQl1kRCQaWDh2qETC94",
+    authDomain: "dd-referential.firebaseapp.com",
+    databaseURL: "https://dd-referential.firebaseio.com/"
 }
-const app = !firebase.apps.length ? firebase.initializeApp(FirebaseConfig) : firebase.app()
-const database = app.database();
+const referentialApp = !firebase.apps?.find((app)=>app.name==="referential") ? firebase.initializeApp(ReferentialFirebaseConfig, "referential") : firebase.app("referential");
+const referentialDatabase = referentialApp.database();
+export { referentialDatabase };
 
-export { database };
+const GameFirebaseConfig = {
+    apiKey: "AIzaSyAp1iZqvZaw-TCAi1ItRGFvfJlKm-7WQxg",
+    authDomain: "rpg-manager-2f59f.firebaseapp.com",
+    databaseURL: "https://rpg-manager-2f59f.firebaseio.com"
+}
+const gameApp = !firebase.apps?.find((app)=>app.name==="game") ? firebase.initializeApp(GameFirebaseConfig, "game") : firebase.app("game");
+const gameDatabase = gameApp.database();
+export { gameDatabase };

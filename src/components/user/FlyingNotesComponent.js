@@ -2,6 +2,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { NotePropType } from 'PropTypes';
+import {dragElement} from 'Tools';
 
 import './FlyingNotesComponent.css'
 
@@ -21,25 +22,25 @@ class FlyingNotesComponent extends PureComponent {
     this.state = {
         showNotes: true,
         creationMode: false,
-        name: null,
-        content: null,
-        description: null
+        name: "",
+        content: "",
+        description: ""
     };
   }
 
-  componentWillReceiveProps() {
-    const { notes } = this.props;
-    const notesNb = notes?.length;
-    for(let i= 0; i < notesNb; i++) {
-      this.dragElement(document.getElementById(`flying-note-${i}`), i);
-    }
-  }
-
   componentDidUpdate() {
-    const { notes } = this.props;
+    const { notes, onNotesChange } = this.props;
     const notesNb = notes?.length;
     for(let i= 0; i < notesNb; i++) {
-      this.dragElement(document.getElementById(`flying-note-${i}`), i);
+      let note = notes[i];
+      dragElement(document.getElementById(`flying-note-${i}`), null,
+                  (newTop, newLeft, changed) => {
+                    if (changed) {
+                      note = {...note, Top: newTop, Left: newLeft };
+                      notes[i] = note;
+                      onNotesChange(notes);
+                    }
+                  });
     }
   }
 
@@ -64,8 +65,7 @@ class FlyingNotesComponent extends PureComponent {
                     role="button" onClick={this.onCreateNote}>+</span>
             </div>
             <div className={`flying-notes ${showNotes&&"show-flying-notes"}`}>
-              { notes &&
-                Object.values(notes).map((note, index) =>
+              { notes?.map((note, index) =>
                   <div key={index} className="flying-note" id={`flying-note-${index}`}
                       style={{left: note.Left, top: note.Top || (index*2.5)+"rem"}} >
                       <div className="flying-note-header activable transparent">
@@ -105,54 +105,6 @@ class FlyingNotesComponent extends PureComponent {
           </div>
         </div>
     )
-  }
-
-  // Arrow fx for binding
-  dragElement = (elmnt, index) => {
-    if (elmnt) {
-      var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-      const { notes, onNotesChange } = this.props;
-      let note = notes?.[index];
-      const header = document.getElementById(elmnt.id + "-header");
-  
-      if (header) {
-        // if present, the header is where you move the DIV from:
-        header.onmousedown = dragMouseDown;
-      } else {
-        // otherwise, move the DIV from anywhere inside the DIV:
-        elmnt.onmousedown = dragMouseDown;
-      }
-    
-      function dragMouseDown(e) {
-        e = e || window.event;
-        e.preventDefault();
-        // get the mouse cursor position at startup:
-        pos3 = e.clientX;
-        pos4 = e.clientY;
-        document.onmouseup = () => {
-          // stop moving when mouse button is released:
-          document.onmouseup = null;
-          document.onmousemove = null;
-          note = {...note, Top: elmnt.offsetTop, Left: elmnt.offsetLeft };
-          notes[index] = note;
-          onNotesChange(notes);
-        };
-        // call a function whenever the cursor moves:
-        document.onmousemove = (e) => {
-          e = e || window.event;
-          e.preventDefault();
-          // calculate the new cursor position:
-          pos1 = pos3 - e.clientX;
-          pos2 = pos4 - e.clientY;
-          pos3 = e.clientX;
-          pos4 = e.clientY;
-          // set the element's new position:
-          elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-          elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-          elmnt.style.right = "";
-        };
-      }
-    }
   }
 
   // Arrow fx for binding

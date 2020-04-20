@@ -34,10 +34,10 @@ class SavesComponent extends PureComponent {
                 const classSaved = classSaves?.find((save) => save === caracteristic.Code);
                 const saved = classSaved || saves?.find((save) => save === caracteristic.Code);
                 let raceAdvantage = raceSaveAdvantages?.find((save) => save === caracteristic.Code);
-                let raceAdvantageTitle = `Avantage au jet de sauvegarde ${caracteristic.Name}\nHérité de la race ${race.Name}`;
+                let raceAdvantageTitle = `Avantage au jet de sauvegarde ${caracteristic.Name}\nHérité de la race ${race?.Name}`;
                 if (!raceAdvantage && subRaceSaveAdvantages?.find((save) => save === caracteristic.Code)) {
                   raceAdvantage = true;
-                  raceAdvantageTitle = `Avantage au jet de sauvegarde ${caracteristic.Name}\nHérité de la race ${subRace.Name}`;
+                  raceAdvantageTitle = `Avantage au jet de sauvegarde ${caracteristic.Name}\nHérité de la race ${subRace?.Name}`;
                 }               
                 const advantage = raceAdvantage || advantages?.find((save) => save === caracteristic.Code);
 
@@ -90,10 +90,10 @@ class SavesComponent extends PureComponent {
 
         const saved = saves?.find((save) => save === alteration.Code);
         let raceAdvantage = raceSaveAdvantages?.find((save) => save === alteration.Code);
-        let raceAdvantageTitle = `Avantage au jet de sauvegarde ${alteration.Name}\nHérité de la race ${race.Name}`;
+        let raceAdvantageTitle = `Avantage au jet de sauvegarde ${alteration.Name}\nHérité de la race ${race?.Name}`;
         if (!raceAdvantage && subRaceSaveAdvantages?.find((save) => save === alteration.Code)) {
           raceAdvantage = true;
-          raceAdvantageTitle = `Avantage au jet de sauvegarde ${alteration.Name}\nHérité de la race ${subRace.Name}`;
+          raceAdvantageTitle = `Avantage au jet de sauvegarde ${alteration.Name}\nHérité de la race ${subRace?.Name}`;
         }               
         const advantage = raceAdvantage || advantages?.find((save) => save === alteration.Code);
 

@@ -54,7 +54,7 @@ class DetailsComponent extends PureComponent {
               { alignments && (
                   <select value={character.Alignment} disabled={!onChange}
                           onChange={(event) => onChange(DATA_MODEL.CHARACTERS.columns.ALIGNMENT.name, event.target.value)}>
-                    <option value="" disabled>Choisissez un alignement</option>
+                    <option value="-" disabled>Choisissez un alignement</option>
                     { alignments?.map((alignment) => {
                       return <option key={alignment.Code} value={alignment.Code} title={alignment.Description}>{alignment.Name}</option>
                     })}
