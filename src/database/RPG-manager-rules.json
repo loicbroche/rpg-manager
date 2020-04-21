@@ -89,16 +89,6 @@
                 "Defects": {
                     ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
                 },
-                "Languages": {},
-                "FightStyles": {},
-                "Skills": {},
-                "MasterArmors": {},
-                "MasterWeapons": {},
-                "MasterObjects": {},
-                "Alterations": {},
-                "Resistances": {},
-                "Saves": {},
-                "SaveAdvantages": {},
                 "Health": {
                     ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 4"
                 },
@@ -123,12 +113,107 @@
                 "Specials": {
                     ".validate": "newData.isNumber() && 0 <= newData.val()"
                 },
-                "Objects": {},
-                "SpellsLocations": {},
-                "MinorSpells": {},
-                "Spells": {},
-                "hiddenCapacities": {},
-                "Damages": {},
+                "Objects": {
+					"$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+					}
+				},
+                "MinorSpells": {
+					"$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+					}
+				},
+                "Spells": {
+					"$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+					}
+				},
+                "hiddenCapacities": {
+					"$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+					}
+				},
+                "Languages": {
+					"$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+					}
+				},
+                "FightStyles": {
+					"$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+					}
+				},
+                "Skills": {
+					"$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+					}
+				},
+                "MasterArmors": {
+					"$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+					}
+				},
+                "MasterWeapons": {
+					"$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+					}
+				},
+                "MasterObjects": {
+					"$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+					}
+				},
+                "Alterations": {
+					"$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+					}
+				},
+                "Resistances": {
+					"$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+					}
+				},
+                "Saves": {
+					"$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+					}
+				},
+                "SaveAdvantages": {
+					"$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+					}
+				},
+				"Damages": {
+					"$index": {
+						".validate": "newData.child('Code').exists()",
+						"Code": {
+							".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 20"
+						},
+						"Hurt": {
+							".validate": "newData.isBoolean()"
+						},
+						"Symbol": {
+							".validate": "newData.isString() && newData.val().length <= 5"
+						},
+						"Description": {
+							".validate": "newData.isString() && newData.val().length <= 255"
+						},
+						"Top": {
+							".validate": "newData.isString() && newData.val().length <= 50"
+						},
+						"Left": {
+							".validate": "newData.isString() && newData.val().length <= 50"
+						},
+						"Title": {
+							".validate": "newData.isString() && newData.val().length <= 50"
+						}
+					}
+				},
+				"SpellsLocations": {
+					"$index": {
+						".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 20"
+					}
+				},
                 "Notes": {
                     ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 2000"
                 }

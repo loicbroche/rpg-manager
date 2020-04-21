@@ -113,7 +113,8 @@ export const RaceCapacityDescriptionPropType = PropTypes.shape({
 export const HistoricPropType = PropTypes.shape({
     Id: PropTypes.string.isRequired,
     Name: PropTypes.string.isRequired,
-    Skills: PropTypes.arrayOf(PropTypes.string)
+    Skills: PropTypes.arrayOf(PropTypes.string),
+    StartingObjects: PropTypes.arrayOf(PropTypes.string)
 })
 
 

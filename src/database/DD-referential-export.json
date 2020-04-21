@@ -102,7 +102,7 @@
     },
     "BLINDED" : {
       "Code" : "BLINDED",
-      "Effect" : "Aveuglé ",
+      "Effect" : "Aveuglé",
       "EffectDescription" : "Une créature aveuglée ne voit pas et rate automatiquement tout jet de caractéristique qui nécessite la vue.\nLes jets d'attaque contre la créature ont l'avantage, et les jets d'attaque de la créature ont un désavantage.",
       "Name" : "Aveuglement",
       "Type" : "5_SENSE"
@@ -123,7 +123,7 @@
     },
     "DEAFENED" : {
       "Code" : "DEAFENED",
-      "Effect" : "Assourdi ",
+      "Effect" : "Assourdi",
       "EffectDescription" : "Une créature assourdie n'entend pas et rate automatiquement tout jet de caractéristique qui nécessite l’ouïe.",
       "Name" : "Assourdissement",
       "Type" : "5_SENSE"
@@ -151,7 +151,7 @@
     },
     "GRAPPLING" : {
       "Code" : "GRAPPLING",
-      "Effect" : "Agrippé ",
+      "Effect" : "Agrippé",
       "EffectDescription" : "La vitesse d'une créature agrippée passe à 0, et elle ne peut bénéficier d'aucun bonus à sa vitesse.\nLa condition prend fin si la créature qui agrippe est incapable d'agir (voir la condition).\nLa condition se termine également si un effet met la créature agrippée hors de portée de la créature ou de l'effet qui l'agrippe, comme par exemple lorsqu'une créature est projetée par le sort onde de choc.",
       "Name" : "Agripper",
       "Type" : "6_POSITION"
@@ -179,7 +179,7 @@
     },
     "PETRIFIED" : {
       "Code" : "PETRIFIED",
-      "Effect" : "Pétrifié ",
+      "Effect" : "Pétrifié",
       "EffectDescription" : "Une créature pétrifiée est transformée, ainsi que tout objet non magique qu'elle porte, en une substance inanimée solide (généralement en pierre). Son poids est multiplié par dix et son vieillissement cesse.\nLa créature est incapable d'agir (voir la condition), ne peut plus bouger ni parler, et n'est plus consciente de ce qui se passe autour d'elle.\nLes jets d'attaque contre la créature ont l'avantage.\nLa créature rate automatiquement ses jets de sauvegarde de Force et de Dextérité.\nLa créature obtient la résistance contre tous les types de dégâts.\nLa créature est immunisée contre le poison et la maladie, mais un poison ou une maladie déjà dans son organisme est seulement suspendu, pas neutralisé.",
       "Name" : "Pétrification",
       "Type" : "6_POSITION"
@@ -207,7 +207,7 @@
     },
     "RESTRAINED" : {
       "Code" : "RESTRAINED",
-      "Effect" : "Entravé ",
+      "Effect" : "Entravé",
       "EffectDescription" : "La vitesse d'une créature entravée passe à 0, et elle ne peut bénéficier d'aucun bonus à sa vitesse.\nLes jets d'attaque contre la créature ont l'avantage, et les jets d'attaque de la créature ont un désavantage.\nLa créature a un désavantage à ses jets de sauvegarde de Dextérité.",
       "Name" : "Entrave",
       "Type" : "6_POSITION"
@@ -221,7 +221,7 @@
     },
     "STUNNED" : {
       "Code" : "STUNNED",
-      "Effect" : "Étourdi ",
+      "Effect" : "Étourdi",
       "EffectDescription" : "Une créature étourdie est incapable d'agir (voir la condition), ne peut plus bouger et parle de manière hésitante.\nLa créature rate automatiquement ses jets de sauvegarde de Force et de Dextérité.\nLes jets d'attaque contre la créature ont l'avantage.",
       "Name" : "Etourdissement",
       "Type" : "6_POSITION"
@@ -3236,7 +3236,7 @@
     "PALADIN-Châtiment divin amélioré" : {
       "Class" : "PALADIN",
       "Code" : "Châtiment divin amélioré",
-      "Description" : "Au niveau 11, vous êtes tellement imprégné de vertus que toutes vos armes de corps à corps portent la puissance divine en elles. Lorsque vous touchez avec une arme de corps à corps, la créature cible subit 1d8 dégâts radiants supplémentaires. ",
+      "Description" : "Au niveau 11, vous êtes tellement imprégné de vertus que toutes vos armes de corps à corps portent la puissance divine en elles. Lorsque vous touchez avec une arme de corps à corps, la créature cible subit 1d8 dégâts radiants supplémentaires.",
       "Specialisation" : "",
       "UseNumber" : -1
     },
@@ -5942,7 +5942,7 @@
     "Flûte" : {
       "Category" : "MUSIC",
       "Name" : "Flûte",
-      "OV" : "  Flute ",
+      "OV" : "  Flute",
       "Price" : 200,
       "Weight" : 500
     },
@@ -5970,7 +5970,7 @@
     "Jeu d'échecs draconiques" : {
       "Category" : "GAME",
       "Name" : "Jeu d'échecs draconiques",
-      "OV" : "  Dragonchess set ",
+      "OV" : "  Dragonchess set",
       "Price" : 100,
       "Weight" : 250
     },
@@ -5991,28 +5991,28 @@
     "Kit d'empoisonneur" : {
       "Category" : "KIT",
       "Name" : "Kit d'empoisonneur",
-      "OV" : "Poisoner's kit ",
+      "OV" : "Poisoner's kit",
       "Price" : 5000,
       "Weight" : 1000
     },
     "Kit d'herboriste" : {
       "Category" : "KIT",
       "Name" : "Kit d'herboriste",
-      "OV" : "Herbalism kit ",
+      "OV" : "Herbalism kit",
       "Price" : 500,
       "Weight" : 1500
     },
     "Kit de contrefaçon" : {
       "Category" : "KIT",
       "Name" : "Kit de contrefaçon",
-      "OV" : "Forgery kit ",
+      "OV" : "Forgery kit",
       "Price" : 1500,
       "Weight" : 2500
     },
     "Kit de déguisement" : {
       "Category" : "KIT",
       "Name" : "Kit de déguisement",
-      "OV" : "Disguise kit ",
+      "OV" : "Disguise kit",
       "Price" : 2500,
       "Weight" : 1500
     },
@@ -6124,7 +6124,7 @@
     "Outils de navigateur" : {
       "Category" : "ARTISAN",
       "Name" : "Outils de navigateur",
-      "OV" : "Navigator's tools ",
+      "OV" : "Navigator's tools",
       "Price" : 2500,
       "Weight" : 1000
     },
@@ -6145,7 +6145,7 @@
     "Outils de tanneur" : {
       "Category" : "ARTISAN",
       "Name" : "Outils de tanneur",
-      "OV" : "  Leatherworker's tools ",
+      "OV" : "  Leatherworker's tools",
       "Price" : 500,
       "Weight" : 2500
     },
@@ -6159,7 +6159,7 @@
     "Outils de voleur" : {
       "Category" : "ARTISAN",
       "Name" : "Outils de voleur",
-      "OV" : "Thieves' tools ",
+      "OV" : "Thieves' tools",
       "Price" : 2500,
       "Weight" : 500
     },
@@ -9731,7 +9731,7 @@
     "Ennemis à foison" : {
       "BBE" : "",
       "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER", "WIZARD" ],
-      "Description" : "La cible doit réussir un JdS d'Int. ou ne plus pouvoir distinguer amis et ennemis ",
+      "Description" : "La cible doit réussir un JdS d'Int. ou ne plus pouvoir distinguer amis et ennemis",
       "Incantation" : "1 action",
       "Level" : 3,
       "Name" : "Ennemis à foison",
@@ -13949,7 +13949,7 @@
   "Weapons" : {
     "Arbalète de poing" : {
       "Category" : "W_DIS",
-      "Damage" : "1d6 ",
+      "Damage" : "1d6",
       "DamageType" : "Perforant",
       "Name" : "Arbalète de poing",
       "OV" : "Crossbow, hand",
@@ -13959,7 +13959,7 @@
     },
     "Arbalète lourde" : {
       "Category" : "W_DIS",
-      "Damage" : "1d10 ",
+      "Damage" : "1d10",
       "DamageType" : "Perforant",
       "Name" : "Arbalète lourde",
       "OV" : "Crossbow, heavy",
@@ -13969,7 +13969,7 @@
     },
     "Arbalète légère" : {
       "Category" : "C_DIS",
-      "Damage" : "1d8 ",
+      "Damage" : "1d8",
       "DamageType" : "Perforant",
       "Name" : "Arbalète légère",
       "OV" : "Crossbow, light",
@@ -13979,7 +13979,7 @@
     },
     "Arc court" : {
       "Category" : "C_DIS",
-      "Damage" : "1d6 ",
+      "Damage" : "1d6",
       "DamageType" : "Perforant",
       "Name" : "Arc court",
       "OV" : "Shortbow",
@@ -13989,7 +13989,7 @@
     },
     "Arc long" : {
       "Category" : "W_DIS",
-      "Damage" : "1d8 ",
+      "Damage" : "1d8",
       "DamageType" : "Perforant",
       "Name" : "Arc long",
       "OV" : "Longbow",
@@ -13999,7 +13999,7 @@
     },
     "Bâton" : {
       "Category" : "C_MEL",
-      "Damage" : "1d6 ",
+      "Damage" : "1d6",
       "DamageType" : "Contondant",
       "Name" : "Bâton",
       "OV" : "Quarterstaff",
@@ -14009,7 +14009,7 @@
     },
     "Cimeterre" : {
       "Category" : "W_MEL",
-      "Damage" : "1d6 ",
+      "Damage" : "1d6",
       "DamageType" : "Tranchant",
       "Name" : "Cimeterre",
       "OV" : "Scimitar",
@@ -14019,7 +14019,7 @@
     },
     "Coutille" : {
       "Category" : "W_MEL",
-      "Damage" : "1d10 ",
+      "Damage" : "1d10",
       "DamageType" : "Tranchant",
       "Name" : "Coutille",
       "OV" : "Glaive",
@@ -14029,7 +14029,7 @@
     },
     "Dague" : {
       "Category" : "C_MEL",
-      "Damage" : "1d4 ",
+      "Damage" : "1d4",
       "DamageType" : "Perforant",
       "Name" : "Dague",
       "OV" : "Dagger",
@@ -14049,7 +14049,7 @@
     },
     "Fléau d'armes" : {
       "Category" : "W_MEL",
-      "Damage" : "1d8 ",
+      "Damage" : "1d8",
       "DamageType" : "Contondant",
       "Name" : "Fléau d'armes",
       "OV" : "Flail",
@@ -14059,7 +14059,7 @@
     },
     "Fléchette" : {
       "Category" : "C_DIS",
-      "Damage" : "1d4 ",
+      "Damage" : "1d4",
       "DamageType" : "Perforant",
       "Name" : "Fléchette",
       "OV" : "Dart",
@@ -14069,7 +14069,7 @@
     },
     "Fouet" : {
       "Category" : "W_MEL",
-      "Damage" : "1d4 ",
+      "Damage" : "1d4",
       "DamageType" : "Tranchant",
       "Name" : "Fouet",
       "OV" : "Whip",
@@ -14079,7 +14079,7 @@
     },
     "Fronde" : {
       "Category" : "C_DIS",
-      "Damage" : "1d4 ",
+      "Damage" : "1d4",
       "DamageType" : "Contondant",
       "Name" : "Fronde",
       "OV" : "Sling",
@@ -14089,7 +14089,7 @@
     },
     "Gourdin" : {
       "Category" : "C_MEL",
-      "Damage" : "1d4 ",
+      "Damage" : "1d4",
       "DamageType" : "Contondant",
       "Name" : "Gourdin",
       "OV" : "Club",
@@ -14099,7 +14099,7 @@
     },
     "Hache d'armes" : {
       "Category" : "W_MEL",
-      "Damage" : "1d8 ",
+      "Damage" : "1d8",
       "DamageType" : "Tranchant",
       "Name" : "Hache d'armes",
       "OV" : "Battleaxe",
@@ -14109,7 +14109,7 @@
     },
     "Hache à deux mains" : {
       "Category" : "W_MEL",
-      "Damage" : "1d12 ",
+      "Damage" : "1d12",
       "DamageType" : "Tranchant",
       "Name" : "Hache à deux mains",
       "OV" : "Greataxe",
@@ -14119,7 +14119,7 @@
     },
     "Hachette" : {
       "Category" : "C_MEL",
-      "Damage" : "1d6 ",
+      "Damage" : "1d6",
       "DamageType" : "Tranchant",
       "Name" : "Hachette",
       "OV" : "Handaxe",
@@ -14129,7 +14129,7 @@
     },
     "Hallebarde" : {
       "Category" : "W_MEL",
-      "Damage" : "1d10 ",
+      "Damage" : "1d10",
       "DamageType" : "Tranchant",
       "Name" : "Hallebarde",
       "OV" : "Halberd",
@@ -14139,7 +14139,7 @@
     },
     "Javeline" : {
       "Category" : "C_MEL",
-      "Damage" : "1d6 ",
+      "Damage" : "1d6",
       "DamageType" : "Perforant",
       "Name" : "Javeline",
       "OV" : "Javelin",
@@ -14149,7 +14149,7 @@
     },
     "Lance" : {
       "Category" : "C_MEL",
-      "Damage" : "1d6 ",
+      "Damage" : "1d6",
       "DamageType" : "Perforant",
       "Name" : "Lance",
       "OV" : "Spear",
@@ -14159,7 +14159,7 @@
     },
     "Lance d’arçon" : {
       "Category" : "W_MEL",
-      "Damage" : "1d12 ",
+      "Damage" : "1d12",
       "DamageType" : "Perforant",
       "Name" : "Lance d’arçon",
       "OV" : "Lance",
@@ -14169,7 +14169,7 @@
     },
     "Maillet" : {
       "Category" : "W_MEL",
-      "Damage" : "2d6 ",
+      "Damage" : "2d6",
       "DamageType" : "Contondant",
       "Name" : "Maillet",
       "OV" : "Maul",
@@ -14179,7 +14179,7 @@
     },
     "Marteau de guerre" : {
       "Category" : "W_MEL",
-      "Damage" : "1d8 ",
+      "Damage" : "1d8",
       "DamageType" : "Contondant",
       "Name" : "Marteau de guerre",
       "OV" : "Warhammer",
@@ -14189,7 +14189,7 @@
     },
     "Marteau léger" : {
       "Category" : "C_MEL",
-      "Damage" : "1d4 ",
+      "Damage" : "1d4",
       "DamageType" : "Contondant",
       "Name" : "Marteau léger",
       "OV" : "Light hammer",
@@ -14199,7 +14199,7 @@
     },
     "Masse d'armes" : {
       "Category" : "C_MEL",
-      "Damage" : "1d6 ",
+      "Damage" : "1d6",
       "DamageType" : "Contondant",
       "Name" : "Masse d'armes",
       "OV" : "Mace",
@@ -14209,7 +14209,7 @@
     },
     "Massue" : {
       "Category" : "C_MEL",
-      "Damage" : "1d8 ",
+      "Damage" : "1d8",
       "DamageType" : "Contondant",
       "Name" : "Massue",
       "OV" : "Greatclub",
@@ -14219,7 +14219,7 @@
     },
     "Morgenstern" : {
       "Category" : "W_MEL",
-      "Damage" : "1d8 ",
+      "Damage" : "1d8",
       "DamageType" : "Perforant",
       "Name" : "Morgenstern",
       "OV" : "Morningstar",
@@ -14229,7 +14229,7 @@
     },
     "Pic de guerre" : {
       "Category" : "W_MEL",
-      "Damage" : "1d8 ",
+      "Damage" : "1d8",
       "DamageType" : "Perforant",
       "Name" : "Pic de guerre",
       "OV" : "War pick",
@@ -14239,7 +14239,7 @@
     },
     "Pique" : {
       "Category" : "W_MEL",
-      "Damage" : "1d10 ",
+      "Damage" : "1d10",
       "DamageType" : "Perforant",
       "Name" : "Pique",
       "OV" : "Pike",
@@ -14249,7 +14249,7 @@
     },
     "Rapière" : {
       "Category" : "W_MEL",
-      "Damage" : "1d8 ",
+      "Damage" : "1d8",
       "DamageType" : "Perforant",
       "Name" : "Rapière",
       "OV" : "Rapier",
@@ -14259,7 +14259,7 @@
     },
     "Sarbacane" : {
       "Category" : "W_DIS",
-      "Damage" : "1 ",
+      "Damage" : "1",
       "DamageType" : "Perforant",
       "Name" : "Sarbacane",
       "OV" : "Blowgun",
@@ -14269,7 +14269,7 @@
     },
     "Serpe" : {
       "Category" : "C_MEL",
-      "Damage" : "1d4 ",
+      "Damage" : "1d4",
       "DamageType" : "Tranchant",
       "Name" : "Serpe",
       "OV" : "Sickle",
@@ -14279,7 +14279,7 @@
     },
     "Trident" : {
       "Category" : "W_MEL",
-      "Damage" : "1d6 ",
+      "Damage" : "1d6",
       "DamageType" : "Perforant",
       "Name" : "Trident",
       "OV" : "Trident",
@@ -14289,7 +14289,7 @@
     },
     "Épée courte" : {
       "Category" : "W_MEL",
-      "Damage" : "1d6 ",
+      "Damage" : "1d6",
       "DamageType" : "Perforant",
       "Name" : "Épée courte",
       "OV" : "Shortsword",
@@ -14299,7 +14299,7 @@
     },
     "Épée longue" : {
       "Category" : "W_MEL",
-      "Damage" : "1d8 ",
+      "Damage" : "1d8",
       "DamageType" : "Tranchant",
       "Name" : "Épée longue",
       "OV" : "Longsword",
@@ -14309,7 +14309,7 @@
     },
     "Épée à deux mains" : {
       "Category" : "W_MEL",
-      "Damage" : "2d6 ",
+      "Damage" : "2d6",
       "DamageType" : "Tranchant",
       "Name" : "Épée à deux mains",
       "OV" : "Greatsword",

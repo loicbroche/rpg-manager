@@ -14,7 +14,7 @@
                 },
 
                 "Description": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 2000"
                 }
             }
         },
@@ -51,16 +51,16 @@
                     ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
                 },
                 "EffectDescription": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+                    ".validate": "newData.isString() && newData.val().length <= 2000"
                 }
             }
         },
         "ArmorCategories": {
             "$id": {
-                ".validate": "newData.child('Code').exists() && newData.child('Name').exists() && newData.val() == $id",
+                ".validate": "newData.child('Code').exists() && newData.child('Name').exists()",
                 ".indexOn": ["Code"],
                 "Code": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15 && newData.val() == $id"
                 },
                 "Name": {
                     ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
@@ -84,7 +84,7 @@
                     ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 100"
                 },
                 "ACBonus": {
-                    ".validate": "newData.isString() && newData.val().length == 3"
+                    ".validate": "newData.isString() && (newData.val().length == 0 || newData.val().length == 3)"
                 },
                 "Weight": {
                     ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 1000000"
@@ -102,7 +102,8 @@
         },
         "Capacities": {
             "$id": {
-                "Capacities": {},
+                "Capacities": {
+				},
                 "Specials": {
                     ".validate": "newData.isNumber() && -1 <= newData.val() && newData.val() <= 100"
                 },
@@ -121,13 +122,17 @@
                 "SpellsNbBonus": {
                     ".validate": "newData.isString() && newData.val().length == 3"
                 },
-                "Locations": {},
                 "Invocations": {
                     ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 100"
                 },
                 "ArmorlessSpeed": {
                     ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 100"
-                }
+                },
+				"Locations": {
+					"$index": {
+						".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 20"
+					}
+				}
             }
         },
         "CapacitiesDescriptions": {
@@ -135,16 +140,16 @@
                 ".validate": "newData.child('Code').exists() && newData.child('Class').exists() && newData.child('Description').exists()",
                 ".indexOn": ["Code"],
                 "Code": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255 && newData.val() == $id"
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
                 },
                 "Class": {
                     ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
                 },
                 "Description": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 10000"
                 },
                 "Specialisation": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+                    ".validate": "newData.isString() && newData.val().length <= 255"
                 },
                 "UseNumber": {
                     ".validate": "newData.isNumber() && -1 <= newData.val() && newData.val() <= 100"
@@ -207,20 +212,32 @@
                     ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 20"
                 },
                 "ACBonus": {
-                    ".validate": "newData.isString() && newData.val().length == 3"
+                    ".validate": "newData.isString() && (newData.val().length == 0 || newData.val().length == 3)"
                 },
                 "ACBonusArmor": {
                     ".validate": "newData.isBoolean()"
                 },
-                "ArmorCategories": {},
                 "BonusAttackName": {
                     ".validate": "newData.isString() && 0 <= newData.val().length && newData.val().length <= 50"
                 },
                 "SpecialsName": {
                     ".validate": "newData.isString() && 0 <= newData.val().length && newData.val().length <= 50"
                 },
-                "Saves": {},
-                "WeaponCategories": {}
+                "Saves": {
+					"$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+					}
+				},
+                "WeaponCategories": {
+					"$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 5"
+					}
+				},
+				"ArmorCategories": {
+					"$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+					}
+				}
             }
         },
         "EquipmentCategories": {
@@ -246,10 +263,10 @@
                     ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
                 },
                 "Category": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 5"
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
                 },
                 "Weight": {
-                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 20000"
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 1000000000"
                 },
                 "Price": {
                     ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 100000000"
@@ -270,7 +287,7 @@
                     ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
                 },
                 "Description": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 2000"
                 },
                 "ACBonus": {
                     ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 100"
@@ -299,8 +316,16 @@
                 "StartingMoney": {
                     ".validate": "newData.isNumber() && 0 <= newData.val()"
                 },
-                "Skills": {},
-                "StartingObjects": {}
+                "Skills": {
+					"$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+					}
+				},
+                "StartingObjects": {
+					"$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+					}
+				}
             }
         },
         "HostelCategories": {
@@ -355,13 +380,13 @@
                 ".validate": "newData.child('Level').exists() && newData.child('XP').exists() && newData.child('MasteryBonus').exists()",
                 ".indexOn": ["Level", "XP"],
                 "Level": {
-                    ".validate": "newData.isNumber() && 1 <= newData.val().length && newData.val().length <= 20"
+                    ".validate": "newData.isNumber() && 1 <= newData.val() && newData.val() <= 20"
                 },
                 "XP": {
                     ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 355000"
                 },
                 "MasteryBonus": {
-                    ".validate": "newData.isNumber() && 0 <= newData.val().length && newData.val().length <= 20"
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 20"
                 }
             }
         },
@@ -387,7 +412,7 @@
                 ".validate": "newData.child('Code').exists() && newData.child('Name').exists() && newData.child('OV').exists()",
                 ".indexOn": ["Code"],
                 "Code": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15 && newData.val() == $id"
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 20 && newData.val() == $id"
                 },
                 "Name": {
                     ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
@@ -408,7 +433,7 @@
                     ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
                 },
                 "Category": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 20"
                 },
                 "Weight": {
                     ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 1000000"
@@ -423,16 +448,16 @@
                 ".validate": "newData.child('Code').exists() && newData.child('Description').exists()",
                 ".indexOn": ["Name", "Category"],
                 "Code": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255 && newData.val() == $id"
-                },
-                "Description": {
                     ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
                 },
+                "Description": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 2000"
+                },
                 "Race": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+                    ".validate": "newData.isString() && newData.val().length <= 15"
                 },
                 "SubRace": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+                    ".validate": "newData.isString() && newData.val().length <= 50"
                 },
                 "Weight": {
                     ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 1000000"
@@ -488,7 +513,26 @@
                 "Speed": {
                     ".validate": "newData.isNumber() && 0 <= newData.val()"
                 },
-                "Languages": {}
+                "Languages": {
+					"$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+					}
+				},
+				"Weapons": {
+					"$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+					}
+				},
+				"Resistances": {
+					"$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+					}
+				},
+				"SaveAdvantages": {
+					"$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+					}
+				}
             }
         },
         "ServiceCategories": {
@@ -514,7 +558,7 @@
                     ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
                 },
                 "Price": {
-                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 100000000"
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
                 }
             }
         },
@@ -541,7 +585,7 @@
                 ".validate": "newData.child('Caracteristic').exists() && newData.child('Name').exists()",
                 ".indexOn": ["Caracteristic"],
                 "Caracteristic": {
-                    ".validate": "newData.isString() && newData.val().length == 3 && newData.val() == $id"
+                    ".validate": "newData.isString() && newData.val().length == 3"
                 },
                 "Name": {
                     ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
@@ -550,7 +594,11 @@
         },
         "SpecialisationCapacities": {
             "$index": {
-                "Capacities": {}
+                "Capacities": {
+					"$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+					}
+				}
             }
         },
         "Specialisations": {
@@ -585,21 +633,25 @@
                     ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
                 },
                 "Description": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 2000"
                 },
                 "School": {
                     ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
                 },
                 "BBE": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                    ".validate": "newData.isString() && newData.val().length <= 50"
                 },
                 "Incantation": {
                     ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
                 },
-                "Classes": {},
                 "Level": {
                     ".validate": "newData.isNumber()"
-                }
+                },
+				"Classes": {
+					"$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+					}
+				}
             }
         },
         "SubRaces": {
@@ -690,10 +742,10 @@
                     ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 5"
                 },
                 "Damage": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                    ".validate": "newData.isString() && newData.val().length <= 5"
                 },
                 "DamageType": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                    ".validate": "newData.isString() && newData.val().length <= 50"
                 },
                 "Weight": {
                     ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 1000000"
