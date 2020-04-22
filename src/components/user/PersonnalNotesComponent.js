@@ -7,6 +7,7 @@ import './PersonnalNotesComponent.css'
 
 
 const S_KEY_CODE = 83;
+const NOTES_MAX_LENGTH = 2000;
 
 class PersonnalNotesComponent extends PureComponent {
 
@@ -41,7 +42,9 @@ class PersonnalNotesComponent extends PureComponent {
                       value={globalNotes}
                       onChange={this.onGlobalNotesUpdate}
                       onKeyUp={this.autosizeAndSave}
-                      onBlur={this.onGlobalNotesSave}>        
+                      onBlur={this.onGlobalNotesSave}
+                      maxLength={NOTES_MAX_LENGTH}
+                      title={`Saisissez vos notes personnelles (${globalNotes?.length||0} / ${NOTES_MAX_LENGTH} caractères)`} >        
             </textarea>
           </div>
         </div>

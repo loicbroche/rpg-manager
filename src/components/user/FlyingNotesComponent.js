@@ -85,18 +85,21 @@ class FlyingNotesComponent extends PureComponent {
                           placeholder="Titre"
                           value={this.state.name}
                           maxLength={NAME_MAX_LENGTH}
+                          title={`Saisissez le titre de la note (${this.state.name?.length||0} / ${NAME_MAX_LENGTH} caractères)`}
                           onChange={(event) => this.setState({name:  event.target.value})}/>
                   <input  name="new-flying-note-content" 
                           type="text"
                           placeholder="Valeur"
                           value={this.state.content}
                           maxLength={CONTENT_MAX_LENGTH}
+                          title={`Saisissez la valeur de la note (${this.state.content?.length||0} / ${CONTENT_MAX_LENGTH} caractères)`}
                           onChange={(event) => this.setState({content:  event.target.value})}/>
                   <input  name="new-flying-note-description" 
                           type="text"
                           placeholder="Description"
                           value={this.state.description}
                           maxLength={DESCRIPTION_MAX_LENGTH}
+                          title={`Saisissez la description/bulle d'aide de la note (${this.state.description?.length||0} / ${DESCRIPTION_MAX_LENGTH} caractères)`}
                           onChange={(event) => this.setState({description:  event.target.value})}/>
                   <button type="submit" className="create-note" onClick={this.createNote}>Créer</button>
               </form>

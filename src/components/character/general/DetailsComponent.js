@@ -13,6 +13,8 @@ import Weight from 'components/shared/Weight'
 import LanguagesComponent from './LanguagesComponent'
 
 const detailsImage = require('images/inkwell_primary.png');
+const SHORT_TEXT_MAX_LENGTH = 50;
+const LONG_TEXT_MAX_LENGTH = 255;
 
 class DetailsComponent extends PureComponent {
 
@@ -66,10 +68,11 @@ class DetailsComponent extends PureComponent {
                       value={character[DATA_MODEL.CHARACTERS.columns.AGE.name]}
                       min={0}
                       step={1}
+                      title={`Saisissez l'âge de votre personnage`}
                       onChange={(event) => onChange(DATA_MODEL.CHARACTERS.columns.AGE.name, parseInt(event.target.value) || 0)}
                       className="age"
                       disabled={!onChange} />
-              <span>
+              <span title={`Saisissez le poids de votre personnage`}>
                   <Weight weight={character.Weight} onChange={(value) => onChange(DATA_MODEL.CHARACTERS.columns.WEIGHT.name, value)} />
                   <span className="equipment-weight" title="Poids de l'équipmenent porté"> (+<Weight weight={equipmentsWeight + objectsWeight} />)</span>
               </span>
@@ -79,49 +82,63 @@ class DetailsComponent extends PureComponent {
                       value={character[DATA_MODEL.CHARACTERS.columns.EYES.name]}
                       onChange={(event) => onChange(DATA_MODEL.CHARACTERS.columns.EYES.name, event.target.value)}
                       className="eyes"
-                      disabled={!onChange} />
+                      disabled={!onChange}
+                      maxLength={SHORT_TEXT_MAX_LENGTH}
+                      title={`Saisissez la description des yeux (${character[DATA_MODEL.CHARACTERS.columns.EYES.name]?.length||0} / ${SHORT_TEXT_MAX_LENGTH} caractères)`} />
               <input  name="skin" 
                       type="text"
                       autoComplete="skin"
                       value={character[DATA_MODEL.CHARACTERS.columns.SKIN.name]}
                       onChange={(event) => onChange(DATA_MODEL.CHARACTERS.columns.SKIN.name, event.target.value)}
                       className="skin"
-                      disabled={!onChange} />
+                      disabled={!onChange}
+                      maxLength={SHORT_TEXT_MAX_LENGTH}
+                      title={`Saisissez la description de la peau (${character[DATA_MODEL.CHARACTERS.columns.SKIN.name]?.length||0} / ${SHORT_TEXT_MAX_LENGTH} caractères)`}/>
               <input  name="hairs" 
                       type="text"
                       autoComplete="hairs"
                       value={character[DATA_MODEL.CHARACTERS.columns.HAIRS.name]}
                       onChange={(event) => onChange(DATA_MODEL.CHARACTERS.columns.HAIRS.name, event.target.value)}
                       className="hairs"
-                      disabled={!onChange} />
+                      disabled={!onChange}
+                      maxLength={SHORT_TEXT_MAX_LENGTH}
+                      title={`Saisissez la description des cheveux (${character[DATA_MODEL.CHARACTERS.columns.HAIRS.name]?.length||0} / ${SHORT_TEXT_MAX_LENGTH} caractères)`}/>
               <input  name="personnalityTraits" 
                       type="text"
                       autoComplete="personnalityTraits"
                       value={character[DATA_MODEL.CHARACTERS.columns.PERSONNALITY.name]}
                       onChange={(event) => onChange(DATA_MODEL.CHARACTERS.columns.PERSONNALITY.name, event.target.value)}
                       className="personnalityTraits"
-                      disabled={!onChange} />
+                      disabled={!onChange}
+                      maxLength={LONG_TEXT_MAX_LENGTH}
+                      title={`Saisissez les traits de personnalité de votre personnage (${character[DATA_MODEL.CHARACTERS.columns.PERSONNALITY.name]?.length||0} / ${LONG_TEXT_MAX_LENGTH} caractères)`} />
               <input   name="ideals" 
                       type="text"
                       autoComplete="ideals"
                       value={character[DATA_MODEL.CHARACTERS.columns.IDEALS.name]}
                       onChange={(event) => onChange(DATA_MODEL.CHARACTERS.columns.IDEALS.name, event.target.value)}
                       className="ideals"
-                      disabled={!onChange} />
+                      disabled={!onChange}
+                      maxLength={LONG_TEXT_MAX_LENGTH}
+                      title={`Saisissez les idéaux de votre personnage (${character[DATA_MODEL.CHARACTERS.columns.IDEALS.name]?.length||0} / ${LONG_TEXT_MAX_LENGTH} caractères)`} />
               <input  name="links" 
                       type="text"
                       autoComplete="links"
                       value={character[DATA_MODEL.CHARACTERS.columns.LINKS.name]}
                       onChange={(event) => onChange(DATA_MODEL.CHARACTERS.columns.LINKS.name, event.target.value)}
                       className="links"
-                      disabled={!onChange} />
+                      disabled={!onChange}
+                      maxLength={LONG_TEXT_MAX_LENGTH}
+                      title={`Saisissez les liens de votre personnage (${character[DATA_MODEL.CHARACTERS.columns.LINKS.name]?.length||0} / ${LONG_TEXT_MAX_LENGTH} caractères)`} />
               <input  name="defects" 
                       type="text"
                       autoComplete="defects"
                       value={character[DATA_MODEL.CHARACTERS.columns.DEFECTS.name]}
                       onChange={(event) => onChange(DATA_MODEL.CHARACTERS.columns.DEFECTS.name, event.target.value)}
                       className="defects"
-                      disabled={!onChange} />
+                      disabled={!onChange}
+                      maxLength={LONG_TEXT_MAX_LENGTH}
+                      title={`Saisissez les défauts de votre personnage (${character[DATA_MODEL.CHARACTERS.columns.DEFECTS.name]?.length||0} / ${LONG_TEXT_MAX_LENGTH} caractères)`} />
               <LanguagesComponent knownLanguages={character[DATA_MODEL.CHARACTERS.columns.LANGUAGES.name]}
                                   subRaceId={character[DATA_MODEL.CHARACTERS.columns.SUB_RACE.name]}
                                   role="button" onClick={(value) => onClickElement(DATA_MODEL.CHARACTERS.columns.LANGUAGES.name, value)} />

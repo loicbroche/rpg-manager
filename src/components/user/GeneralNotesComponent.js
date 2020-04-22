@@ -6,6 +6,7 @@ import { NotePropType } from 'PropTypes';
 import './GeneralNotesComponent.css'
 
 const S_KEY_CODE = 83;
+const NOTES_MAX_LENGTH = 2000;
 
 class GeneralNotesComponent extends PureComponent {
 
@@ -68,12 +69,13 @@ class GeneralNotesComponent extends PureComponent {
                                 disabled={locked}
                                 type="text"
                                 value={note.Content}
-                                title={locked?"Vérouillé par "+locked:"Éditer"}
+                                title={locked?"Vérouillé par "+locked:`Éditer une note collective (${note.Content?.length||0} / ${NOTES_MAX_LENGTH} caractères)`}
                                 onFocus={() => { this.onNoteEdit(index)}}
                                 onBlur={() => { this.onNoteSave(index)}}
                                 onChange={(event) => { this.onNoteChange(event, index)}}
                                 onKeyUp={(event) => this.autosizeAndSave(event, textAreaId)}
                                 autoFocus={!note.Content}
+                                maxLength={NOTES_MAX_LENGTH}
                       ></textarea>
                     </div>
                     }

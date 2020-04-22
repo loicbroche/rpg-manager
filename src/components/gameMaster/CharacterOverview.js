@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-import { selectCaracteristics } from 'store/selectors';
-import { CharacterPropType } from 'PropTypes';
+import { selectCaracteristics } from 'store/selectors'
+import { CharacterPropType } from 'PropTypes'
 
+import {DEFAULT_EMPTY_VALUE} from 'rules/Character.rules'
 import { DATA_MODEL } from 'database/DataModel'
 
 import { updateCharacterCaracteristic, insertCharacterElement, deleteCharacterElement } from 'database/PersistCharacter';
@@ -16,6 +17,8 @@ import SpecialsComponent from 'components/character/fight/SpecialsComponent';
 import ACComponent from 'components/character/fight/ACComponent';
 import AlterationsComponent from 'components/character/fight/AlterationsComponent'
 import SpeedComponent from 'components/character/stats/SpeedComponent'
+import WeaponSelector from 'components/character/equipment/WeaponSelector';
+import ArmorSelector from 'components/character/equipment/ArmorSelector';
 
 class CharacterOverview extends PureComponent {
     render() {
@@ -57,27 +60,30 @@ class CharacterOverview extends PureComponent {
                                     historicId={character.Historic} />
                 </div>
 
-                <div className="equipments-overview">
-                        {character.Weapon &&
-                        <div className="equipment-overview">
-                            <span>Arme</span>
-                            <span>{character.Weapon}</span>
-                        </div>}
-                        {character.DistanceWeapon &&
-                        <div className="equipment-overview">
-                            <span>Arme à distance</span>
-                            <span>{character.DistanceWeapon}</span>
-                        </div>}
-                        {character.Armor &&
-                        <div className="equipment-overview">
-                            <span>Armure</span>
-                            <span>{character.Armor}</span>
-                        </div>}
-                        {character.Shield &&
-                        <div className="equipment-overview">
-                            <span>Bouclier</span>
-                            <span>{character.Shield}</span>
-                        </div>}
+                <div className="weapons-overview">
+                        {character.Weapon && character.Weapon !== DEFAULT_EMPTY_VALUE &&
+                        <WeaponSelector weaponId={character.Weapon} wearingCharacter={ character } details={false} />}
+                        {character.DistanceWeapon && character.DistanceWeapon !== DEFAULT_EMPTY_VALUE &&
+                        <WeaponSelector weaponId={character.DistanceWeapon}
+                                        wearingCharacter={ character }
+                                        distance={true}
+                                        details={false}  />}
+                    </div>
+                    <div className="armors-overview">
+                        {character.Armor && character.Armor !== DEFAULT_EMPTY_VALUE &&
+                        <ArmorSelector armorId={character.Armor}
+                                        wearingCharacter={ character }
+                                        classId={character.Class}
+                                        subRaceId={character.SubRace}
+                                        details={false} />}
+                        {character.Shield && character.Shield !== DEFAULT_EMPTY_VALUE &&
+                        <ArmorSelector armorId={character.Shield}
+                                        wearingCharacter={ character }
+                                        shield={true}
+                                        classId={character.Class}
+                                        subRaceId={character.SubRace}
+                                        details={false} />
+                        }
                     </div>
             </div>
         )

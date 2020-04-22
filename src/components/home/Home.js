@@ -19,7 +19,7 @@ class Home extends PureComponent {
       characters: null
     }
     this.charactersRef = gameDatabase.ref(DATA_MODEL.CHARACTERS.name);
-    this.updateCharacters = (snapshot)  => { console.log("gameDatabase", gameDatabase, snapshot.val());this.setState({ characters: objectToArray(snapshot.val()) }); }
+    this.updateCharacters = (snapshot)  => { this.setState({ characters: objectToArray(snapshot.val()) }); }
   }
 
   componentDidMount() {
@@ -65,36 +65,36 @@ class Home extends PureComponent {
       character.Charisma = DEFAULT_CARACTERISTIC_VALUE;
       character.Class = DEFAULT_EMPTY_VALUE;
       character.Constitution = DEFAULT_CARACTERISTIC_VALUE;
-      character.Defects = "";
+      character.Defects = null;
       character.Dexterity = DEFAULT_CARACTERISTIC_VALUE;
       character.DistanceWeapon = DEFAULT_EMPTY_VALUE;/**/
-      character.Eyes = "";
+      character.Eyes = null;
       character.FightStyles = [];/**/
-      character.Hairs = "";
+      character.Hairs = null;
       character.Health = DEFAULT_HEALTH_VALUE;
       character.Height = 0;
       character.HiddenCapacities = [];/**/
       character.Historic = DEFAULT_EMPTY_VALUE;
-      character.History = "";
+      character.History = null;
       character.HP = DEFAULT_HP_VALUE;
-      character.Ideals = "";
+      character.Ideals = null;
       character.Intelligence = DEFAULT_CARACTERISTIC_VALUE;
       character.Languages = [];/**/
-      character.Links = "";
+      character.Links = null;
       character.MasterArmors = [];/**/
       character.MasterObjects = [];/**/
       character.MasterWeapons = [];/**/
       character.MaxHP = DEFAULT_HP_VALUE;
       character.Money = DEFAULT_MONEY_VALUE;
-      character.Notes = "";/**/
+      character.Notes = null;/**/
       character.Objects = [];/**/
-      character.PersonnalityTraits = "";
+      character.PersonnalityTraits = null;
       character.Resistances= [];/**/
       character.SatchelObjects = [];/**/
       character.Shield = DEFAULT_EMPTY_VALUE;/**/
       character.Skills = [];
-      character.Skin = "";
-      character.Specialisation = "";/**/
+      character.Skin = null;
+      character.Specialisation = null;/**/
       character.Specials = 0;/**/
       character.SpellsLocations = [];/**/
       character.MinorSpells = [];/**/

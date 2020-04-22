@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-between;
 }
-
+r
 .overview-name {
     position: absolute;
     width: 100%;
@@ -25,13 +25,18 @@
     flex-direction: column;
 }
 
-.caracteristics-overview {
-}
-
-.equipment-overview {
+.weapons-overview,
+.armors-overview {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    border: 1px dashed purple;
-    color: purple;
+    margin-top: var(--components-separator-margin);
+}
+
+.weapons-overview > *,
+.armors-overview > * {
+    flex-grow: 1;
+}
+.weapons-overview > *:not(:nth-child(1)):not(:empty),
+.armors-overview > *:not(:nth-child(1)):not(:empty) {
+    margin-left: 1rem;
 }

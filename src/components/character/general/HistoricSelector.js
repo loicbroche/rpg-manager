@@ -6,6 +6,7 @@ import PropTypes from 'prop-types'
 import './HistoricSelector.css'
 
 const S_KEY_CODE = 83;
+const HISTORY_MAX_LENGTH = 2000;
 
 class HistoricSelector extends PureComponent {
 
@@ -37,7 +38,9 @@ class HistoricSelector extends PureComponent {
                         value={history}
                         onChange={this.onHistoryChange}
                         onKeyUp={(event) => (event.ctrlKey && event.keyCode === S_KEY_CODE) && this.onHistorySave() }
-                        onBlur={this.onHistorySave}>
+                        onBlur={this.onHistorySave}
+                        maxLength={HISTORY_MAX_LENGTH}
+                        title={`Saisissez l'histoire de votre personnage (${history?.length||0} / ${HISTORY_MAX_LENGTH} caractères)`} >
               </textarea>
           </div>
           <div className="selector-icon historic-icon">

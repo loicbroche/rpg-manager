@@ -1,13 +1,11 @@
 
 import React, { PureComponent } from 'react'
-import { post } from 'axios'
 import PropTypes from 'prop-types'
 import {DamagePropType} from 'PropTypes'
 import {promptAll, dragElement} from 'Tools'
+import {uploadProfilImage, getProfilImage, deleteProfilImage} from 'database/StoredImages'
 
 import './DamagesComponent.css'
-
-const uploadFolder = "/file-upload";
 
 const DAMAGES_LOCATIONS = [{code: "head", label: "Tête"},
                            {code: "torso", label: "Torse"},
@@ -21,11 +19,13 @@ const DAMAGES_LOCATIONS = [{code: "head", label: "Tête"},
                            {code: "left-shin", label: "Tibiat gauche"}
 ];
 
+const deleteImage = require('images/delete.png');
+
 class DamagesComponent extends PureComponent {
 
   constructor(props) {
     super(props);
-    this.state = {dragged: false};
+    this.state = {dragged: false, uploadingProgression: null, storedCharacterImage: null};
   }
 
   componentDidUpdate() {
@@ -53,20 +53,30 @@ class DamagesComponent extends PureComponent {
 
   render() {
     const {characterId, damages} = this.props;
+    const { storedCharacterImage } = this.state;
     let characterImage;
-    try {
-      characterImage = require(`images/profils/${characterId}.png`);
-    } catch (ex) {
-      characterImage = require("images/profils/no_image.png");
+    if (storedCharacterImage) {
+      characterImage = storedCharacterImage;
+    } else {
+      characterImage = require(`images/profils/no_image.png`);
+      getProfilImage(characterId, (url) => {this.setState({storedCharacterImage: url})});
     }
 
     return (
       <div className="damagesComponent">
-        <input type="file"
-                className="activable custom-file-input"
+        <span className="profil-image-update">
+            <input type="file"
+                className="activable transparent custom-file-input"
                 id="avatar" name="avatar"
-                accept="image/png, image/jpeg"
-                onChange={this.fileChangedHandler} />
+                accept="image/png"
+                onChange={this.fileChangedHandler}
+                title={"Sélectionnez l'illustration de votre personnage"}
+                style={this.state.uploadingProgression!==null?{background: `linear-gradient(to right, var(--color-Progress) ${this.state.uploadingProgression}%, var(--highlight-background-transparent-color-1)`}:null}/>
+              {storedCharacterImage &&
+                <span className="delete-image activable transparent" title="Supprimer" role="button" onClick={() => {deleteProfilImage(characterId, (url) => {this.setState({storedCharacterImage: null})})}}>
+                  <img src={deleteImage} alt="Supprimer" />
+              </span>}
+        </span>
         <div id="image-container" className="image-container">
           <img src={characterImage} alt="" />
           { DAMAGES_LOCATIONS.map((damageLocation) => {
@@ -96,13 +106,12 @@ class DamagesComponent extends PureComponent {
 
   fileChangedHandler = (event) => {
     const imageFile = event.target.files[0];
-    const data = new FormData();
-    data.append('file', imageFile);
-    post(uploadFolder, data, { // receive two parameter endpoint url ,form data 
-      })
-      .then(res => { // then print response status
-        console.log(res.statusText)
-      });
+    const {characterId} = this.props;
+    const fileName = `${characterId}.png`;
+    uploadProfilImage(imageFile,
+                      fileName,
+                      (percentage) => {this.setState({uploadingProgression : percentage})},
+                      (url) => {this.setState({uploadingProgression : null, storedCharacterImage: url})});
   }
 
   updateDamageLabels = (damageCode, title, symbol, description) => {

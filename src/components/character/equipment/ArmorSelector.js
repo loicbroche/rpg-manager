@@ -18,7 +18,7 @@ const notMasterImage = require("images/cross.png");
 class ArmorSelector extends PureComponent {
 
   render() {
-/**/const { armorCategories, armors, armor, ACBonusCaracteristic, armorId, shield, wearingCharacter } = this.props;
+/**/const { armorCategories, armors, armor, ACBonusCaracteristic, armorId, shield, wearingCharacter, details } = this.props;
     
 /**/const armorType = shield?"shield":"armor";
 /**/const armorTitleLabel = shield?"Bouclier":"Armure";
@@ -27,7 +27,7 @@ class ArmorSelector extends PureComponent {
     const isMaster = this.isMasterCategory(armor?.Category) || wearingCharacter?.MasterArmors?.includes(armorId);
     const caracteristicName = ACBonusCaracteristic?.OV;
 /**/const bonusContent = armor && 
-                         <div className={`main-stat-bonus-label ${ isMaster?(armor?.ACBonus):"not-master-equipment"}`}>
+                         <div className={`main-stat-bonus-label ${ !isMaster?"not-master-equipment":""}`}>
                             {isMaster
                               ?(armor?.ACBonus && caracteristicName && <CaracteristicBonus caracteristicName={caracteristicName}
                                                   value={wearingCharacter?.[caracteristicName]}
@@ -55,7 +55,7 @@ class ArmorSelector extends PureComponent {
           </h1>
           <div className="equipment-title">
             { armorCategories && armors && (
-              <select className="equipment-select" value={armorId} onChange={this.handleValueUpdate}>
+              <select className="equipment-select" value={armorId}  disabled={!this.props.onChange} onChange={this.handleValueUpdate}>
                 <option value="" disabled>Choisissez {armorLabel}</option>
                 <option value="-">Sans</option>
                 { armorCategories.map((category) => this.getArmorsOptionElement(category.Code))}
@@ -67,10 +67,10 @@ class ArmorSelector extends PureComponent {
                 {bonusContent}
             </div>
           </div>
-          {armor && <div className="equipment-illustration">
+          {armor && details && <div className="equipment-illustration">
             <img src={armorImage} className="equipment-image" alt="" />
           </div>}
-          {armor &&
+          {armor && details &&
             <div className="equipment-description">
               <div className="equipment-description-line"><span className="description-line-title">{armor?"Discretion:":'\u00A0'}</span>
                                                           <span className="description-line-value">{armor?.Discretion}</span></div>
@@ -141,11 +141,13 @@ ArmorSelector.propTypes = {
   subRaceId: PropTypes.string,
   shield: PropTypes.bool,
   wearingCharacter: CharacterPropType,
-  onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func,
+  details: PropTypes.bool
 }
 
 ArmorSelector.defaultProps = {
-  shield: false
+  shield: false,
+  details: true
 }
 
 const mapStateToProps = (state, props) => ({

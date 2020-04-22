@@ -1,5 +1,6 @@
 .detailsComponent .expendable-container {
   justify-content: flex-start;
+  z-index: 3;
 }
 
 .details {

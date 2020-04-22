@@ -1,6 +1,7 @@
 .skill-selector {
   display: flex;
   flex-direction: row;
+  cursor: default;
 }
 
 .skill-selector select {

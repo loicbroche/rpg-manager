@@ -18,7 +18,8 @@ const notMasterImage = require("images/cross.png");
 class WeaponSelector extends PureComponent {
 
   render() {
-/**/const { armorCategories, weapon, masteryBonus, level, class: characterClass, selectedFightStyles, weaponId, distance, wearingCharacter } = this.props;
+/**/const { armorCategories, weapon, masteryBonus, level, class: characterClass, selectedFightStyles,
+            weaponId, distance, wearingCharacter, details, onAmmunitionChange } = this.props;
 
 /**/const weaponType = distance?"distance-weapon":"weapon";
 /**/const weaponTitleLabel = distance?"Arme à distance":"Arme";
@@ -56,13 +57,13 @@ const fightStyleBonus = (characterClass
     }
     const additionalInfo = distance && wearingCharacter && weapon &&
       <div className="ammunitions">
-        <span className={`currentModifier decrease-value ${wearingCharacter.Ammunition===0 &&"disabled"}`} role="button" onClick={(event) => {this.handleAmmunitionUpdate(-1)}}
-                        title={`Utiliser une munition`}></span>
+        {onAmmunitionChange && <span className={`currentModifier decrease-value ${wearingCharacter.Ammunition===0 &&"disabled"}`} role="button" onClick={(event) => {this.handleAmmunitionUpdate(-1)}}
+                        title={`Utiliser une munition`}></span>}
         <div className="ammunition-points">
           { ammunitions.map((ammunition, index) => <div key={index} className="ammunition" title={`${wearingCharacter.Ammunition} munitions`}></div>) }
         </div>
-        <span className={`currentModifier increase-value`} role="button" onClick={(event) => {this.handleAmmunitionUpdate(+1)}}
-                        title={`Récupérer une munition`}></span>
+        {onAmmunitionChange && <span className={`currentModifier increase-value`} role="button" onClick={(event) => {this.handleAmmunitionUpdate(+1)}}
+                        title={`Récupérer une munition`}></span>}
       </div>
     ;
 
@@ -81,25 +82,25 @@ const fightStyleBonus = (characterClass
           </h1>
           <div className="equipment-title">
             { armorCategories && (
-              <select className="equipment-select" value={weaponId} onChange={this.handleValueUpdate}>
+              <select className="equipment-select" value={weaponId} disabled={!this.props.onChange} onChange={this.handleValueUpdate}>
                 <option value="" disabled>Choisissez {weaponLabel}</option>
                 <option value="-">Sans</option>
                 { armorCategories.map((category) => this.getWeaponsOptionElement(category.Code))}
               </select>
             )}
-            <div className="main-stat-value">
+            <div className="main-stat-value" title={weapon?.Damage+" "+weapon?.DamageType}>
                 {weapon && <img src={mainStatImage} className="main-stat-image" alt={bonusCode} title={bonusTitle}/>}
                 <span className="main-stat-label">{mainValue}</span>
                 {bonusContent}
             </div>
           </div>
-          {weapon && <div className="equipment-illustration">
+          {weapon && details && <div className="equipment-illustration">
             <img src={weaponImage} className="equipment-image" alt="" />
           </div>}
-          {weapon &&
+          {weapon && details &&
             <div className="equipment-description">
               <div className="equipment-description-line"><span className="description-line-title">{weapon?"Dégâts:":'\u00A0'}</span>
-                                                          <span className="description-line-value">{weapon?.Damage+" "+weapon.DamageType}</span></div>
+                                                          <span className="description-line-value">{weapon?.Damage+" "+weapon?.DamageType}</span></div>
               <div className="equipment-description-line"><span className="description-line-title">{weapon?"Propriété:":'\u00A0'}</span>
                                                           <span className="description-line-value">{weapon?.Properties}</span></div>
               <div className="equipment-description-line"><span className="description-line-title">{weapon?"Poids:":'\u00A0'}</span>
@@ -178,12 +179,14 @@ WeaponSelector.propTypes = {
   weaponId: PropTypes.string,
   distance: PropTypes.bool,
   wearingCharacter: CharacterPropType,
-  onChange: PropTypes.func.isRequired,
-  onAmmunitionChange: PropTypes.func
+  onChange: PropTypes.func,
+  onAmmunitionChange: PropTypes.func,
+  details: PropTypes.bool
 }
 
 WeaponSelector.defaultProps = {
-  distance: false
+  distance: false,
+  details: true
 }
 
 const mapStateToProps = (state, props) => ({

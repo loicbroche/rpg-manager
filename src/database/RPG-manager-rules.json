@@ -66,28 +66,28 @@
                     ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
                 },
                 "History": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+                    ".validate": "newData.isString() && newData.val().length <= 2000"
                 },
                 "Eyes": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                    ".validate": "newData.isString() && newData.val().length <= 50"
                 },
                 "Skin": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                    ".validate": "newData.isString() && newData.val().length <= 50"
                 },
                 "Hairs": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                    ".validate": "newData.isString() && newData.val().length <= 50"
                 },
                 "PersonnalityTraits": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+                    ".validate": "newData.isString() && newData.val().length <= 255"
                 },
                 "Ideals": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+                    ".validate": "newData.isString() && newData.val().length <= 255"
                 },
                 "Links": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+                    ".validate": "newData.isString() && newData.val().length <= 255"
                 },
                 "Defects": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+                    ".validate": "newData.isString() && newData.val().length <= 255"
                 },
                 "Health": {
                     ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 4"
@@ -215,7 +215,7 @@
 					}
 				},
                 "Notes": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 2000"
+                    ".validate": "newData.isString() && newData.val().length <= 2000"
                 }
             }
         },
@@ -224,22 +224,22 @@
                 "$index": {
                     ".validate": "newData.child('Content').exists()",
                     "Name": {
-                        ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                        ".validate": "newData.isString() && newData.val().length <= 10"
                     },
                     "Content": {
-                        ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                        ".validate": "newData.isString() && newData.val().length <= 2000"
                     },
                     "Description": {
-                        ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+                        ".validate": "newData.isString() && newData.val().length <= 255"
                     },
                     "Top": {
-                        ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                        ".validate": "newData.isString() && newData.val().length <= 50"
                     },
                     "Left": {
-                        ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                        ".validate": "newData.isString() && newData.val().length <= 50"
                     },
                     "Locked": {
-                        ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                        ".validate": "newData.isString() && newData.val().length <= 50"
                     }
                 }
             }

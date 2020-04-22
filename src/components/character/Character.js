@@ -209,13 +209,13 @@ class Character extends PureComponent {
                                             wearingCharacter={ this.state.characterInfos }
                                             classId={classId}
                                             subRaceId={subRaceId}
-                                            onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.ARMOR.name, value); }}/>
+                                            onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.ARMOR.name, value); }} />
                             <ArmorSelector armorId={Shield}
                                             wearingCharacter={ this.state.characterInfos }
                                             shield={true}
                                             classId={classId}
                                             subRaceId={subRaceId}
-                                            onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SHIELD.name, value); }}/>
+                                            onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SHIELD.name, value); }} />
                             <Armors master={MasterArmors}
                                     classId={classId}
                                     subRaceId={subRaceId}

@@ -13,7 +13,7 @@
 .detailsComponent,
 .historicComponent,
 .spellBookComponent {
-    z-index: 3;
+    z-index: 5;
 }
 .flyingNotesComponent {
     z-index: 10;
@@ -39,7 +39,7 @@
 }
 
 .damagesComponent {
-    margin-left: 1.5rem;
+    margin-left: 1rem;
     margin-right: 1.5rem;
 }
 

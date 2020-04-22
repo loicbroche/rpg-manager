@@ -3,6 +3,7 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { selectObjectCategories, selectObjects, selectObjectsMap } from 'store/selectors';
 import PropTypes from 'prop-types'
+import {confirm} from 'Tools'
 
 import './BagComponent.css'
 import ExpendableComponent from 'components/shared/ExpendableComponent';
@@ -104,12 +105,17 @@ class BagComponent extends PureComponent {
 
   // Arrow fx for binding
   deleteObject = (objectName) => {
-    if(window.confirm(`Êtes-vous certain de vouloir supprimer l'objet "${objectName}" ?`)) {
-      const { characterObjects, onObjectsChange } = this.props;
-      const index = characterObjects?characterObjects.findIndex((name) => name === objectName):-1;
-      characterObjects.splice(index, 1);
-      onObjectsChange(characterObjects);
-    }
+    confirm(`Êtes-vous certain de vouloir supprimer l'objet "${objectName}" ?`,
+            (callbackState) => {
+              if (callbackState) {
+                const { characterObjects, onObjectsChange } = this.props;
+                const index = characterObjects?characterObjects.findIndex((name) => name === objectName):-1;
+                characterObjects.splice(index, 1);
+                onObjectsChange(characterObjects);
+              }
+            },
+            `Suppression de ${objectName}`,
+            "Supprimer");
   }
 
   // Arrow fx for binding
