@@ -30,7 +30,6 @@ export const loadReferentialServiceCategoriesAction = (serviceCategories) => loa
 export const loadReferentialServicesAction = (services) => loadReferentialValuesAction(ActionTypes.REFERENTIAL.LOAD_SERVICES, services);
 export const loadReferentialMountsAction = (mounts) => loadReferentialValuesAction(ActionTypes.REFERENTIAL.LOAD_MOUNTS, mounts);
 export const loadReferentialShipsAction = (ships) => loadReferentialValuesAction(ActionTypes.REFERENTIAL.LOAD_SHIPS, ships);
-export const loadReferentialWaresAction = (wares) => loadReferentialValuesAction(ActionTypes.REFERENTIAL.LOAD_WARES, wares);
 export const loadReferentialTrinketsAction = (trinkets) => loadReferentialValuesAction(ActionTypes.REFERENTIAL.LOAD_TRINKETS, trinkets);
 export const loadReferentialSkillsAction = (skills) => loadReferentialValuesAction(ActionTypes.REFERENTIAL.LOAD_SKILLS, skills);
 export const loadReferentialLevelsAction = (levels) => loadReferentialValuesAction(ActionTypes.REFERENTIAL.LOAD_LEVELS, levels);

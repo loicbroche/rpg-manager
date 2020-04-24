@@ -115,7 +115,16 @@
                 },
                 "Objects": {
 					"$index": {
-						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+					    ".validate": "newData.child('Id').exists() && newData.child('Quantity').exists()",
+						"Id": {
+							".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+						},
+						"Label": {
+							".validate": "newData.isString() && newData.val().length <= 50"
+						},
+						"Quantity": {
+							".validate": "newData.isNumber() && 0 < newData.val()"
+						}
 					}
 				},
                 "MinorSpells": {

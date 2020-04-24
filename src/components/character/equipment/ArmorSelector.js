@@ -79,7 +79,7 @@ class ArmorSelector extends PureComponent {
               <div className="equipment-description-line"><span className="description-line-title">{armor?"Poids:":'\u00A0'}</span>
                                                           <Weight weight={armor.Weight} /></div>
               <div className="equipment-description-line"><span className="description-line-title">{armor?"Prix:":'\u00A0'}</span>
-                                                          <Money id={armorTitleLabel} amount={armor.Price} /></div>
+                                                          <Money amount={armor.Price} /></div>
           </div>}
       </div>
     )

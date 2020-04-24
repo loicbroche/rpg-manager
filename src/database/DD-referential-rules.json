@@ -128,6 +128,11 @@
                 "ArmorlessSpeed": {
                     ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 100"
                 },
+				"ArmourlessCategories": {
+					"$index": {
+						".validate": "newData.isString() && newData.val().length <= 15"
+					}
+				},
 				"Locations": {
 					"$index": {
 						".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 20"
@@ -427,10 +432,10 @@
                 ".validate": "newData.child('Name').exists() && newData.child('OV').exists() && newData.child('Category').exists() && newData.child('Weight').exists() && newData.child('Price').exists()",
                 ".indexOn": ["Name", "Category"],
                 "Name": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50 && newData.val() == $id"
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255 && newData.val() == $id"
                 },
                 "OV": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
                 },
                 "Category": {
                     ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 20"
@@ -695,25 +700,13 @@
         },
         "Trinkets": {
             "$index": {
-                ".validate": "newData.child('Trinket').exists() && newData.child('d100').exists()",
+                ".validate": "newData.child('d100').exists() && newData.child('Name').exists()",
                 ".indexOn": ["d100"],
                 "d100": {
                     ".validate": "newData.isNumber() && 1 <= newData.val() && newData.val() <= 100"
                 },
-                "Trinket": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
-                }
-            }
-        },
-        "Wares": {
-            "$id": {
-                ".validate": "newData.child('Name').exists() && newData.child('Price').exists()",
-                ".indexOn": ["Name"],
                 "Name": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50 && newData.val() == $id"
-                },
-                "Price": {
-                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 100000000"
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
                 }
             }
         },

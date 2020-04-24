@@ -23,7 +23,6 @@ const initialState = {
     equipments: null,
     mounts: null,
     ships: null,
-    wares: null,
     hostelCategories: null,
     hostelServices: null,
     serviceCategories: null,
@@ -186,12 +185,6 @@ function referentialReducer(state = initialState, action) {
                 ships: action.payload
             }
             return nextState;
-        case ActionTypes.REFERENTIAL.LOAD_WARES:
-            nextState = {
-                ...state,
-                wares: action.payload
-            }
-            return nextState;
         case ActionTypes.REFERENTIAL.LOAD_TRINKETS:
             nextState = {
                 ...state,
@@ -269,7 +262,6 @@ referentialReducer.PropTypes = {
         equipments: PropTypes.arrayOf(LocalPropTypes.EquipmentPropType).isRequired,
 		mounts: PropTypes.arrayOf(LocalPropTypes.MountPropType).isRequired,
 		ships: PropTypes.arrayOf(LocalPropTypes.ShipPropType).isRequired,
-		wares: PropTypes.arrayOf(LocalPropTypes.WarePropType).isRequired,
 		hostelCategories: PropTypes.arrayOf(LocalPropTypes.HostelCategoryPropType).isRequired,
 		hostelServices: PropTypes.arrayOf(LocalPropTypes.HostelServicePropType).isRequired,
 		serviceCategories: PropTypes.arrayOf(LocalPropTypes.ServiceCategoryPropType).isRequired,

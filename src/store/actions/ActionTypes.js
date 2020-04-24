@@ -24,7 +24,6 @@ export const ActionTypes = {
         LOAD_SERVICES: "SERVICES",
         LOAD_MOUNTS: "MOUNTS",
         LOAD_SHIPS: "SHIPS",
-        LOAD_WARES: "WARES",
         LOAD_TRINKETS: "TRINKETS",
         LOAD_LEVELS: "LEVELS",
         LOAD_CARACTERISTICS: "CARACTERISTICS",

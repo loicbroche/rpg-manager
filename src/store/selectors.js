@@ -223,4 +223,3 @@ export const selectServices = state => state.referential.services && Object.valu
 export const selectTrinkets = state => state.referential.trinkets && Object.values(state.referential.trinkets);
 export const selectMounts = state => state.referential.mounts && Object.values(state.referential.mounts);
 export const selectShips = state => state.referential.ships && Object.values(state.referential.ships);
-export const selectWares = state => state.referential.wares && Object.values(state.referential.wares);

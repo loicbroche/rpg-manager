@@ -404,101 +404,137 @@
   },
   "Capacities" : {
     "BARBARIAN-1" : {
+      "ArmourlessSpeed" : 0,
       "Capacities" : [ "Rage", "Défense sans armure" ],
       "Damages" : 2,
       "Specials" : 2
     },
     "BARBARIAN-10" : {
+      "ArmourlessCategories" : [ "3_HEAVY" ],
+      "ArmourlessSpeed" : 3,
       "Capacities" : [ "Capacité de voie" ],
       "Damages" : 3,
       "Specials" : 4
     },
     "BARBARIAN-11" : {
+      "ArmourlessCategories" : [ "3_HEAVY" ],
+      "ArmourlessSpeed" : 3,
       "Capacities" : [ "Rage implacable" ],
       "Damages" : 3,
       "Specials" : 4
     },
     "BARBARIAN-12" : {
+      "ArmourlessCategories" : [ "3_HEAVY" ],
+      "ArmourlessSpeed" : 3,
       "Capacities" : [ "Amélioration de caractéristiques" ],
       "Damages" : 3,
       "Specials" : 5
     },
     "BARBARIAN-13" : {
+      "ArmourlessCategories" : [ "3_HEAVY" ],
+      "ArmourlessSpeed" : 3,
       "Capacities" : [ "Critique brutal (2 dés)" ],
       "Damages" : 3,
       "Specials" : 5
     },
     "BARBARIAN-14" : {
+      "ArmourlessCategories" : [ "3_HEAVY" ],
+      "ArmourlessSpeed" : 3,
       "Capacities" : [ "Capacité de voie" ],
       "Damages" : 3,
       "Specials" : 5
     },
     "BARBARIAN-15" : {
+      "ArmourlessCategories" : [ "3_HEAVY" ],
+      "ArmourlessSpeed" : 3,
       "Capacities" : [ "Rage ininterrompue" ],
       "Damages" : 3,
       "Specials" : 5
     },
     "BARBARIAN-16" : {
+      "ArmourlessCategories" : [ "3_HEAVY" ],
+      "ArmourlessSpeed" : 3,
       "Capacities" : [ "Amélioration de caractéristiques" ],
       "Damages" : 4,
       "Specials" : 5
     },
     "BARBARIAN-17" : {
+      "ArmourlessCategories" : [ "3_HEAVY" ],
+      "ArmourlessSpeed" : 3,
       "Capacities" : [ "Critique brutal (3 dés)" ],
       "Damages" : 4,
       "Specials" : 6
     },
     "BARBARIAN-18" : {
+      "ArmourlessCategories" : [ "3_HEAVY" ],
+      "ArmourlessSpeed" : 3,
       "Capacities" : [ "Puissance indomptable" ],
       "Damages" : 4,
       "Specials" : 6
     },
     "BARBARIAN-19" : {
+      "ArmourlessCategories" : [ "3_HEAVY" ],
+      "ArmourlessSpeed" : 3,
       "Capacities" : [ "Amélioration de caractéristiques" ],
       "Damages" : 4,
       "Specials" : 6
     },
     "BARBARIAN-2" : {
+      "ArmourlessSpeed" : 0,
       "Capacities" : [ "Attaque téméraire", "Sens du danger" ],
       "Damages" : 2,
       "Specials" : 2
     },
     "BARBARIAN-20" : {
+      "ArmourlessCategories" : [ "3_HEAVY" ],
+      "ArmourlessSpeed" : 3,
       "Capacities" : [ "Champion primitif" ],
       "Damages" : 4,
       "Specials" : -1
     },
     "BARBARIAN-3" : {
+      "ArmourlessSpeed" : 0,
       "Capacities" : [ "Voie primitive" ],
       "Damages" : 2,
       "Specials" : 3
     },
     "BARBARIAN-4" : {
+      "ArmourlessSpeed" : 0,
       "Capacities" : [ "Amélioration de caractéristiques" ],
       "Damages" : 2,
       "Specials" : 3
     },
     "BARBARIAN-5" : {
+      "ArmourlessCategories" : [ "3_HEAVY" ],
+      "ArmourlessSpeed" : 3,
       "Capacities" : [ "Attaque supplémentaire", "Déplacement rapide" ],
       "Damages" : 2,
       "Specials" : 3
     },
     "BARBARIAN-6" : {
+      "ArmourlessCategories" : [ "3_HEAVY" ],
+      "ArmourlessSpeed" : 3,
       "Capacities" : [ "Capacité de voie" ],
       "Damages" : 2,
       "Specials" : 4
     },
     "BARBARIAN-7" : {
+      "ArmourlessCategories" : [ "3_HEAVY" ],
+      "ArmourlessSpeed" : 3,
       "Capacities" : [ "Instinct sauvage" ],
       "Damages" : 2,
       "Specials" : 4
     },
     "BARBARIAN-8" : {
+      "ArmourlessCategories" : [ "3_HEAVY" ],
+      "ArmourlessSpeed" : 3,
       "Capacities" : [ "Amélioration de caractéristiques" ],
       "Damages" : 2,
       "Specials" : 4
     },
     "BARBARIAN-9" : {
+      "ArmourlessCategories" : [ "3_HEAVY" ],
+      "ArmourlessSpeed" : 3,
       "Capacities" : [ "Critique brutal (1 dé)" ],
       "Damages" : 3,
       "Specials" : 4
@@ -905,114 +941,133 @@
       "Specials" : 0
     },
     "MONK-10" : {
+      "ArmourlessCategories" : [ "1_LIGHT", "2_MID", "3_HEAVY" ],
       "ArmourlessSpeed" : 6,
       "BonusAttack" : "1d6",
       "Capacities" : [ "Pureté du corps" ],
       "Specials" : 10
     },
     "MONK-11" : {
+      "ArmourlessCategories" : [ "1_LIGHT", "2_MID", "3_HEAVY" ],
       "ArmourlessSpeed" : 6,
       "BonusAttack" : "1d8",
       "Capacities" : [ "Capacité de la tradition monastique" ],
       "Specials" : 11
     },
     "MONK-12" : {
+      "ArmourlessCategories" : [ "1_LIGHT", "2_MID", "3_HEAVY" ],
       "ArmourlessSpeed" : 6,
       "BonusAttack" : "1d8",
       "Capacities" : [ "Amélioration de caractéristiques" ],
       "Specials" : 12
     },
     "MONK-13" : {
+      "ArmourlessCategories" : [ "1_LIGHT", "2_MID", "3_HEAVY" ],
       "ArmourlessSpeed" : 6,
       "BonusAttack" : "1d8",
       "Capacities" : [ "Langage du soleil et de la lune" ],
       "Specials" : 13
     },
     "MONK-14" : {
+      "ArmourlessCategories" : [ "1_LIGHT", "2_MID", "3_HEAVY" ],
       "ArmourlessSpeed" : 7.5,
       "BonusAttack" : "1d8",
       "Capacities" : [ "Âme de diamant" ],
       "Specials" : 14
     },
     "MONK-15" : {
+      "ArmourlessCategories" : [ "1_LIGHT", "2_MID", "3_HEAVY" ],
       "ArmourlessSpeed" : 7.5,
       "BonusAttack" : "1d8",
       "Capacities" : [ "Jeunesse éternelle" ],
       "Specials" : 15
     },
     "MONK-16" : {
+      "ArmourlessCategories" : [ "1_LIGHT", "2_MID", "3_HEAVY" ],
       "ArmourlessSpeed" : 7.5,
       "BonusAttack" : "1d8",
       "Capacities" : [ "Amélioration de caractéristiques" ],
       "Specials" : 16
     },
     "MONK-17" : {
+      "ArmourlessCategories" : [ "1_LIGHT", "2_MID", "3_HEAVY" ],
       "ArmourlessSpeed" : 7.5,
       "BonusAttack" : "1d10",
       "Capacities" : [ "Capacité de la tradition monastique" ],
       "Specials" : 17
     },
     "MONK-18" : {
+      "ArmourlessCategories" : [ "1_LIGHT", "2_MID", "3_HEAVY" ],
       "ArmourlessSpeed" : 9,
       "BonusAttack" : "1d10",
       "Capacities" : [ "Corps vide" ],
       "Specials" : 18
     },
     "MONK-19" : {
+      "ArmourlessCategories" : [ "1_LIGHT", "2_MID", "3_HEAVY" ],
       "ArmourlessSpeed" : 9,
       "BonusAttack" : "1d10",
       "Capacities" : [ "Amélioration de caractéristiques" ],
       "Specials" : 19
     },
     "MONK-2" : {
+      "ArmourlessCategories" : [ "1_LIGHT", "2_MID", "3_HEAVY" ],
       "ArmourlessSpeed" : 3,
       "BonusAttack" : "1d4",
       "Capacities" : [ "Défense patiente", "Déluge de coups", "Déplacement aérien", "Déplacement sans armure" ],
       "Specials" : 2
     },
     "MONK-20" : {
+      "ArmourlessCategories" : [ "1_LIGHT", "2_MID", "3_HEAVY" ],
       "ArmourlessSpeed" : 9,
       "BonusAttack" : "1d10",
       "Capacities" : [ "Perfection de l'être" ],
       "Specials" : 20
     },
     "MONK-3" : {
+      "ArmourlessCategories" : [ "1_LIGHT", "2_MID", "3_HEAVY" ],
       "ArmourlessSpeed" : 3,
       "BonusAttack" : "1d4",
       "Capacities" : [ "Parade de projectiles", "Tradition monastique" ],
       "Specials" : 3
     },
     "MONK-4" : {
+      "ArmourlessCategories" : [ "1_LIGHT", "2_MID", "3_HEAVY" ],
       "ArmourlessSpeed" : 3,
       "BonusAttack" : "1d4",
       "Capacities" : [ "Amélioration de caractéristiques", "Chute ralentie" ],
       "Specials" : 4
     },
     "MONK-5" : {
+      "ArmourlessCategories" : [ "1_LIGHT", "2_MID", "3_HEAVY" ],
       "ArmourlessSpeed" : 3,
       "BonusAttack" : "1d6",
       "Capacities" : [ "Attaque supplémentaire", "Frappe étourdissante" ],
       "Specials" : 5
     },
     "MONK-6" : {
+      "ArmourlessCategories" : [ "1_LIGHT", "2_MID", "3_HEAVY" ],
       "ArmourlessSpeed" : 4.5,
       "BonusAttack" : "1d6",
       "Capacities" : [ "Frappes de ki", "Capacité de la tradition monastique" ],
       "Specials" : 6
     },
     "MONK-7" : {
+      "ArmourlessCategories" : [ "1_LIGHT", "2_MID", "3_HEAVY" ],
       "ArmourlessSpeed" : 4.5,
       "BonusAttack" : "1d6",
       "Capacities" : [ "Dérobade", "Tranquillité de l'esprit" ],
       "Specials" : 7
     },
     "MONK-8" : {
+      "ArmourlessCategories" : [ "1_LIGHT", "2_MID", "3_HEAVY" ],
       "ArmourlessSpeed" : 4.5,
       "BonusAttack" : "1d6",
       "Capacities" : [ "Amélioration de caractéristiques" ],
       "Specials" : 8
     },
     "MONK-9" : {
+      "ArmourlessCategories" : [ "1_LIGHT", "2_MID", "3_HEAVY" ],
       "ArmourlessSpeed" : 4.5,
       "BonusAttack" : "1d6",
       "Capacities" : [ "Déplacement sans armure amélioré" ],
@@ -5856,8 +5911,13 @@
     },
     "SADDLE" : {
       "Code" : "SADDLE",
-      "Name" : "Selles",
-      "OV" : "Saddles"
+      "Name" : "Selle",
+      "OV" : "Saddle"
+    },
+    "TRINKETS" : {
+      "Code" : "TRINKETS",
+      "Name" : "Babioles",
+      "OV" : "Trinkets"
     },
     "VARIOUS" : {
       "Code" : "VARIOUS",
@@ -5873,9 +5933,105 @@
       "Code" : "VEHICLE_RELATIVE",
       "Name" : "Composants de véhicules",
       "OV" : "Vehicles relative"
+    },
+    "WARES" : {
+      "Code" : "WARES",
+      "Name" : "Marchandises",
+      "OV" : "Wares"
     }
   },
   "Objects" : {
+    "1 m² de soie ou 1 vache" : {
+      "Category" : "WARES",
+      "Name" : "1 m² de soie ou 1 vache",
+      "OV" : "",
+      "Price" : 1000,
+      "Weight" : 0
+    },
+    "500 g d'argent ou 1 m² de lin" : {
+      "Category" : "WARES",
+      "Name" : "500 g d'argent ou 1 m² de lin",
+      "OV" : "",
+      "Price" : 500,
+      "Weight" : 0
+    },
+    "500 g d'or" : {
+      "Category" : "WARES",
+      "Name" : "500 g d'or",
+      "OV" : "",
+      "Price" : 5000,
+      "Weight" : 0
+    },
+    "500 g de blé" : {
+      "Category" : "WARES",
+      "Name" : "500 g de blé",
+      "OV" : "",
+      "Price" : 1,
+      "Weight" : 0
+    },
+    "500 g de cannelle ou de poivre, ou 1 mouton" : {
+      "Category" : "WARES",
+      "Name" : "500 g de cannelle ou de poivre, ou 1 mouton",
+      "OV" : "",
+      "Price" : 200,
+      "Weight" : 0
+    },
+    "500 g de clous de girofle ou 1 cochon" : {
+      "Category" : "WARES",
+      "Name" : "500 g de clous de girofle ou 1 cochon",
+      "OV" : "",
+      "Price" : 300,
+      "Weight" : 0
+    },
+    "500 g de cuivre ou 1 m² de tissu en coton" : {
+      "Category" : "WARES",
+      "Name" : "500 g de cuivre ou 1 m² de tissu en coton",
+      "OV" : "",
+      "Price" : 50,
+      "Weight" : 0
+    },
+    "500 g de farine ou 1 poulet" : {
+      "Category" : "WARES",
+      "Name" : "500 g de farine ou 1 poulet",
+      "OV" : "",
+      "Price" : 2,
+      "Weight" : 0
+    },
+    "500 g de fer ou 1 m² de toile" : {
+      "Category" : "WARES",
+      "Name" : "500 g de fer ou 1 m² de toile",
+      "OV" : "",
+      "Price" : 10,
+      "Weight" : 0
+    },
+    "500 g de gingembre ou 1 chèvre" : {
+      "Category" : "WARES",
+      "Name" : "500 g de gingembre ou 1 chèvre",
+      "OV" : "",
+      "Price" : 100,
+      "Weight" : 0
+    },
+    "500 g de platine" : {
+      "Category" : "WARES",
+      "Name" : "500 g de platine",
+      "OV" : "",
+      "Price" : 50000,
+      "Weight" : 0
+    },
+    "500 g de safran ou 1 boeuf" : {
+      "Category" : "WARES",
+      "Name" : "500 g de safran ou 1 boeuf",
+      "OV" : "",
+      "Price" : 1500,
+      "Weight" : 0
+    },
+    "500 g de sel" : {
+      "Category" : "WARES",
+      "Name" : "500 g de sel",
+      "OV" : "",
+      "Price" : 5,
+      "Weight" : 0
+    },
     "Barde" : {
       "Category" : "VEHICLE",
       "Name" : "Barde",
@@ -5932,6 +6088,13 @@
       "Price" : 3000,
       "Weight" : 3000
     },
+    "Deux soldats de plomb, l'un avec la tête manquante" : {
+      "Category" : "TRINKETS",
+      "Name" : "Deux soldats de plomb, l'un avec la tête manquante",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
     "Dés" : {
       "Category" : "GAME",
       "Name" : "Dés",
@@ -5942,7 +6105,7 @@
     "Flûte" : {
       "Category" : "MUSIC",
       "Name" : "Flûte",
-      "OV" : "  Flute",
+      "OV" : "  Flute ",
       "Price" : 200,
       "Weight" : 500
     },
@@ -5970,7 +6133,7 @@
     "Jeu d'échecs draconiques" : {
       "Category" : "GAME",
       "Name" : "Jeu d'échecs draconiques",
-      "OV" : "  Dragonchess set",
+      "OV" : "  Dragonchess set ",
       "Price" : 100,
       "Weight" : 250
     },
@@ -5991,30 +6154,51 @@
     "Kit d'empoisonneur" : {
       "Category" : "KIT",
       "Name" : "Kit d'empoisonneur",
-      "OV" : "Poisoner's kit",
+      "OV" : "Poisoner's kit ",
       "Price" : 5000,
       "Weight" : 1000
     },
     "Kit d'herboriste" : {
       "Category" : "KIT",
       "Name" : "Kit d'herboriste",
-      "OV" : "Herbalism kit",
+      "OV" : "Herbalism kit ",
       "Price" : 500,
       "Weight" : 1500
     },
     "Kit de contrefaçon" : {
       "Category" : "KIT",
       "Name" : "Kit de contrefaçon",
-      "OV" : "Forgery kit",
+      "OV" : "Forgery kit ",
       "Price" : 1500,
       "Weight" : 2500
     },
     "Kit de déguisement" : {
       "Category" : "KIT",
       "Name" : "Kit de déguisement",
-      "OV" : "Disguise kit",
+      "OV" : "Disguise kit ",
       "Price" : 2500,
       "Weight" : 1500
+    },
+    "L'acte d'une parcelle de terrain d'un domaine que vous ne connaissez pas" : {
+      "Category" : "TRINKETS",
+      "Name" : "L'acte d'une parcelle de terrain d'un domaine que vous ne connaissez pas",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "La coquille d'un oeuf peint avec des scènes de misère humaine d'un détail troublant" : {
+      "Category" : "TRINKETS",
+      "Name" : "La coquille d'un oeuf peint avec des scènes de misère humaine d'un détail troublant",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "La moitié du plan d'un temple, d'un château, ou d'une autre structure" : {
+      "Category" : "TRINKETS",
+      "Name" : "La moitié du plan d'un temple, d'un château, ou d'une autre structure",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
     },
     "Luth" : {
       "Category" : "MUSIC",
@@ -6124,7 +6308,7 @@
     "Outils de navigateur" : {
       "Category" : "ARTISAN",
       "Name" : "Outils de navigateur",
-      "OV" : "Navigator's tools",
+      "OV" : "Navigator's tools ",
       "Price" : 2500,
       "Weight" : 1000
     },
@@ -6145,7 +6329,7 @@
     "Outils de tanneur" : {
       "Category" : "ARTISAN",
       "Name" : "Outils de tanneur",
-      "OV" : "  Leatherworker's tools",
+      "OV" : "  Leatherworker's tools ",
       "Price" : 500,
       "Weight" : 2500
     },
@@ -6159,7 +6343,7 @@
     "Outils de voleur" : {
       "Category" : "ARTISAN",
       "Name" : "Outils de voleur",
-      "OV" : "Thieves' tools",
+      "OV" : "Thieves' tools ",
       "Price" : 2500,
       "Weight" : 500
     },
@@ -6211,6 +6395,678 @@
       "OV" : "  Dulcimer",
       "Price" : 2500,
       "Weight" : 5000
+    },
+    "Un anneau de cuivre qui ne ternit pas" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un anneau de cuivre qui ne ternit pas",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un badge en argent qui représente une étoile à cinq branches" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un badge en argent qui représente une étoile à cinq branches",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un bloc de 30 grammes d'un matériau inconnu" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un bloc de 30 grammes d'un matériau inconnu",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un bonnet de nuit qui, lorsqu'il est porté, vous donne des rêves agréables" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un bonnet de nuit qui, lorsqu'il est porté, vous donne des rêves agréables",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un bouton de porte en cristal" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un bouton de porte en cristal",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un cadre de monocle en or sans la lentille" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un cadre de monocle en or sans la lentille",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un camée (pendentif) sculpté à l'image d'une personne hideuse" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un camée (pendentif) sculpté à l'image d'une personne hideuse",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un canari mécanique à l'intérieur d'une lampe de gnome" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un canari mécanique à l'intérieur d'une lampe de gnome",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un collier en corde duquel pendent quatre doigts elfes momifiés" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un collier en corde duquel pendent quatre doigts elfes momifiés",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un couteau qui appartenait à un parent" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un couteau qui appartenait à un parent",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un couvercle avec une mosaïque multicolore en surface" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un couvercle avec une mosaïque multicolore en surface",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un crâne en argent de la taille d'une pièce de monnaie" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un crâne en argent de la taille d'une pièce de monnaie",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un cube de 2 centimètres de côté, avec chaque face peinte d'une couleur différente" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un cube de 2 centimètres de côté, avec chaque face peinte d'une couleur différente",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un dispositif métallique et rectangulaire avec deux petites coupes en métal à une extrémité et qui jette des étincelles lorsqu'il est mouillé" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un dispositif métallique et rectangulaire avec deux petites coupes en métal à une extrémité et qui jette des étincelles lorsqu'il est mouillé",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un disque de pierre multicolore" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un disque de pierre multicolore",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un drapeau de pirate noir orné d'un crâne et des os croisés d'un dragon" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un drapeau de pirate noir orné d'un crâne et des os croisés d'un dragon",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un ensemble de tubes d'os" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un ensemble de tubes d'os",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un flacon de sang de dragon" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un flacon de sang de dragon",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un flacon de verre rempli de rognures d'ongles" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un flacon de verre rempli de rognures d'ongles",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un flacon de verre vide qui sent le parfum lorsqu'il est ouvert" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un flacon de verre vide qui sent le parfum lorsqu'il est ouvert",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un fourreau orné dans lequel à ce jour aucune lame ne rentre" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un fourreau orné dans lequel à ce jour aucune lame ne rentre",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un fragment d'obsidienne qui se sent toujours chaud au toucher" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un fragment d'obsidienne qui se sent toujours chaud au toucher",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un fragment d'une belle chanson, écrite avec des notes de musique sur deux morceaux de parchemin" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un fragment d'une belle chanson, écrite avec des notes de musique sur deux morceaux de parchemin",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un gant blanc pailleté aux dimensions d'un humain" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un gant blanc pailleté aux dimensions d'un humain",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un insigne de grade d'un légionnaire perdu" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un insigne de grade d'un légionnaire perdu",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un journal avec sept pages manquantes" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un journal avec sept pages manquantes",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un journal écrit dans une langue que vous ne connaissez pas" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un journal écrit dans une langue que vous ne connaissez pas",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un livre blanc dont les pages refusent de retenir l'encre, la craie, la graphite ou toute autre substance ou marquage" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un livre blanc dont les pages refusent de retenir l'encre, la craie, la graphite ou toute autre substance ou marquage",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un livre qui raconte l'histoire de l'ascension et la chute d'un héros légendaire, avec le dernier chapitre manquant" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un livre qui raconte l'histoire de l'ascension et la chute d'un héros légendaire, avec le dernier chapitre manquant",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un masque d'albâtre" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un masque d'albâtre",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un morceau de cristal qui brille faiblement au clair de lune" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un morceau de cristal qui brille faiblement au clair de lune",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un morceau de tissu d'une vieille bannière" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un morceau de tissu d'une vieille bannière",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un mouchoir violet brodé avec le nom d'un puissant archimage" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un mouchoir violet brodé avec le nom d'un puissant archimage",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un oeuf de 30 grammes avec une coque rouge vif" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un oeuf de 30 grammes avec une coque rouge vif",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un orbe de verre rempli d'eau, dans lequel nage un poisson rouge mécanique" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un orbe de verre rempli d'eau, dans lequel nage un poisson rouge mécanique",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un orbe en cuivre gravé de runes étranges" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un orbe en cuivre gravé de runes étranges",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un orbe en verre rempli de fumée qui se déplace" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un orbe en verre rempli de fumée qui se déplace",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un pentacle de bronze avec la gravure d'une tête de rat au centre" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un pentacle de bronze avec la gravure d'une tête de rat au centre",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un petit bloc de pierre léger" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un petit bloc de pierre léger",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un petit coffre avec de nombreux pieds sculptés sur le fond" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un petit coffre avec de nombreux pieds sculptés sur le fond",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un petit crabe ou araignée mécanique qui se déplace quand il n'est pas observé" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un petit crabe ou araignée mécanique qui se déplace quand il n'est pas observé",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un petit dessin qui représente le portrait d'un gobelin" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un petit dessin qui représente le portrait d'un gobelin",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un petit paquet rempli de poussière rose" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un petit paquet rempli de poussière rose",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un peu de tissu plié qui, une fois déplié, se transforme en un élégant chapeau" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un peu de tissu plié qui, une fois déplié, se transforme en un élégant chapeau",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un pot de verre contenant du lard avec une étiquette qui dit « Graisse de griffon »" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un pot de verre contenant du lard avec une étiquette qui dit « Graisse de griffon »",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un pot en verre contenant un morceau de chair bizarre qui flotte dans un liquide salé" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un pot en verre contenant un morceau de chair bizarre qui flotte dans un liquide salé",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un récépissé de dépôt dans une banque d'une ville très éloignée" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un récépissé de dépôt dans une banque d'une ville très éloignée",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un sac contenant quarante-sept dents humanoïdes, dont l'une est cariée" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un sac contenant quarante-sept dents humanoïdes, dont l'une est cariée",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un scarabée mort de la taille de votre main" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un scarabée mort de la taille de votre main",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un sifflet en bois de couleur or" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un sifflet en bois de couleur or",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un symbole sacré en fer et consacré à un dieu inconnu" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un symbole sacré en fer et consacré à un dieu inconnu",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un trèfle à quatre feuilles à l'intérieur d'un livre qui traite des bonnes manières et de l'étiquette" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un trèfle à quatre feuilles à l'intérieur d'un livre qui traite des bonnes manières et de l'étiquette",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un éventail qui, une fois déplié, montre un chat endormi" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un éventail qui, une fois déplié, montre un chat endormi",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Un œil de verre" : {
+      "Category" : "TRINKETS",
+      "Name" : "Un œil de verre",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une aiguille qui ne se plie pas" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une aiguille qui ne se plie pas",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une ancienne flèche de conception elfique" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une ancienne flèche de conception elfique",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une boucle d'oreille en forme de goutte d'argent faite à partir d'une vraie larme" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une boucle d'oreille en forme de goutte d'argent faite à partir d'une vraie larme",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une bougie qui ne peut pas être allumée" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une bougie qui ne peut pas être allumée",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une bouteille de vin vide portant une jolie étiquette qui dit « Le magicien des vins, Cuvée du Dragon Rouge, 331422-W »" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une bouteille de vin vide portant une jolie étiquette qui dit « Le magicien des vins, Cuvée du Dragon Rouge, 331422-W »",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une boîte en bois avec un fond en céramique qui contient un ver vivant avec une tête à chaque extrémité de son corps" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une boîte en bois avec un fond en céramique qui contient un ver vivant avec une tête à chaque extrémité de son corps",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une boîte métallique qui n'a pas d'ouverture mais qui sonne comme si elle était remplie de liquide, de sable, d'araignées ou de verre brisé (au choix)" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une boîte métallique qui n'a pas d'ouverture mais qui sonne comme si elle était remplie de liquide, de sable, d'araignées ou de verre brisé (au choix)",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une broche ornée de conception naine" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une broche ornée de conception naine",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une carte au trésor indéchiffrable" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une carte au trésor indéchiffrable",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une chausse-trappe unique fabriquée à partir d'un os" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une chausse-trappe unique fabriquée à partir d'un os",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une cloche en argent minuscule et sans battant" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une cloche en argent minuscule et sans battant",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une cuillère d'argent avec un M gravé sur le manche" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une cuillère d'argent avec un M gravé sur le manche",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une dent d'une bête inconnue" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une dent d'une bête inconnue",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une feuille de parchemin sur laquelle est dessiné un engin mécanique complexe" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une feuille de parchemin sur laquelle est dessiné un engin mécanique complexe",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une griffe osseuse d'un dragon suspendue à un collier de cuir lisse" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une griffe osseuse d'un dragon suspendue à un collier de cuir lisse",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une invitation à une fête où un assassinat a eu lieu" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une invitation à une fête où un assassinat a eu lieu",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une main de gobelin momifiée" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une main de gobelin momifiée",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une paire de dés en osselet, chacun portant le symbole d'un crâne sur la face qui montrerait normalement le 6" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une paire de dés en osselet, chacun portant le symbole d'un crâne sur la face qui montrerait normalement le 6",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une paire de vieilles chaussettes" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une paire de vieilles chaussettes",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une patte de lapin" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une patte de lapin",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une petite boîte remplie de boutons de différentes tailles" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une petite boîte remplie de boutons de différentes tailles",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une petite boîte à musique de gnome qui joue une chanson qui vous rappelle vaguement votre enfance" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une petite boîte à musique de gnome qui joue une chanson qui vous rappelle vaguement votre enfance",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une petite cage sans porte" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une petite cage sans porte",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une petite icône d'argent représentant un corbeau" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une petite icône d'argent représentant un corbeau",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une petite idole représentant une créature cauchemardesque qui vous donne des rêves troublants quand vous dormez près d'elle" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une petite idole représentant une créature cauchemardesque qui vous donne des rêves troublants quand vous dormez près d'elle",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une petite poupée de chiffon piquée avec des aiguilles" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une petite poupée de chiffon piquée avec des aiguilles",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une petite statuette en bois d'un halfelin béat" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une petite statuette en bois d'un halfelin béat",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une pierre précieuse qui ressemble à un morceau de charbon pour tout le monde, sauf pour vous" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une pierre précieuse qui ressemble à un morceau de charbon pour tout le monde, sauf pour vous",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une pipe qui fait des bulles" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une pipe qui fait des bulles",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une pixie morte à l'intérieur d'une bouteille en verre transparent" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une pixie morte à l'intérieur d'une bouteille en verre transparent",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une pièce d'or d'une terre inconnue" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une pièce d'or d'une terre inconnue",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une plume vert clair" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une plume vert clair",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une poigne d'épée brisée" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une poigne d'épée brisée",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une pyramide de bâtonnets d'encens noir qui sent très mauvais" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une pyramide de bâtonnets d'encens noir qui sent très mauvais",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une souris pétrifiée" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une souris pétrifiée",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une tabatière en argent vide et portant une inscription sur le dessus qui dit « rêves »" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une tabatière en argent vide et portant une inscription sur le dessus qui dit « rêves »",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une urne en métal contenant les cendres d'un héros" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une urne en métal contenant les cendres d'un héros",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une veste avec une centaine de minuscules poches" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une veste avec une centaine de minuscules poches",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une vieille carte de divination portant votre portrait" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une vieille carte de divination portant votre portrait",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une vieille clé" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une vieille clé",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une vieille pièce d'échecs en verre" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une vieille pièce d'échecs en verre",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
+    },
+    "Une énorme écaille, peut-être d'un dragon" : {
+      "Category" : "TRINKETS",
+      "Name" : "Une énorme écaille, peut-être d'un dragon",
+      "OV" : "",
+      "Price" : 0,
+      "Weight" : 0
     },
     "Ustensiles de cuisinier" : {
       "Category" : "ARTISAN",
@@ -13574,360 +14430,306 @@
     }
   },
   "Trinkets" : [ null, {
-    "Trinket" : "Une main de gobelin momifiée",
+    "Name" : "Une main de gobelin momifiée",
     "d100" : 1
   }, {
-    "Trinket" : "Un morceau de cristal qui brille faiblement au clair de lune",
+    "Name" : "Un morceau de cristal qui brille faiblement au clair de lune",
     "d100" : 2
   }, {
-    "Trinket" : "Une pièce d'or d'une terre inconnue",
+    "Name" : "Une pièce d'or d'une terre inconnue",
     "d100" : 3
   }, {
-    "Trinket" : "Un journal écrit dans une langue que vous ne connaissez pas",
+    "Name" : "Un journal écrit dans une langue que vous ne connaissez pas",
     "d100" : 4
   }, {
-    "Trinket" : "Un anneau de cuivre qui ne ternit pas",
+    "Name" : "Un anneau de cuivre qui ne ternit pas",
     "d100" : 5
   }, {
-    "Trinket" : "Une vieille pièce d'échecs en verre",
+    "Name" : "Une vieille pièce d'échecs en verre",
     "d100" : 6
   }, {
-    "Trinket" : "Une paire de dés en osselet, chacun portant le symbole d'un crâne sur la face qui montrerait normalement le 6",
+    "Name" : "Une paire de dés en osselet, chacun portant le symbole d'un crâne sur la face qui montrerait normalement le 6",
     "d100" : 7
   }, {
-    "Trinket" : "Une petite idole représentant une créature cauchemardesque qui vous donne des rêves troublants quand vous dormez près d'elle",
+    "Name" : "Une petite idole représentant une créature cauchemardesque qui vous donne des rêves troublants quand vous dormez près d'elle",
     "d100" : 8
   }, {
-    "Trinket" : "Un collier en corde duquel pendent quatre doigts elfes momifiés",
+    "Name" : "Un collier en corde duquel pendent quatre doigts elfes momifiés",
     "d100" : 9
   }, {
-    "Trinket" : "L'acte d'une parcelle de terrain d'un domaine que vous ne connaissez pas",
+    "Name" : "L'acte d'une parcelle de terrain d'un domaine que vous ne connaissez pas",
     "d100" : 10
   }, {
-    "Trinket" : "Un bloc de 30 grammes d'un matériau inconnu",
+    "Name" : "Un bloc de 30 grammes d'un matériau inconnu",
     "d100" : 11
   }, {
-    "Trinket" : "Une petite poupée de chiffon piquée avec des aiguilles",
+    "Name" : "Une petite poupée de chiffon piquée avec des aiguilles",
     "d100" : 12
   }, {
-    "Trinket" : "Une dent d'une bête inconnue",
+    "Name" : "Une dent d'une bête inconnue",
     "d100" : 13
   }, {
-    "Trinket" : "Une énorme écaille, peut-être d'un dragon",
+    "Name" : "Une énorme écaille, peut-être d'un dragon",
     "d100" : 14
   }, {
-    "Trinket" : "Une plume vert clair",
+    "Name" : "Une plume vert clair",
     "d100" : 15
   }, {
-    "Trinket" : "Une vieille carte de divination portant votre portrait",
+    "Name" : "Une vieille carte de divination portant votre portrait",
     "d100" : 16
   }, {
-    "Trinket" : "Un orbe en verre rempli de fumée qui se déplace",
+    "Name" : "Un orbe en verre rempli de fumée qui se déplace",
     "d100" : 17
   }, {
-    "Trinket" : "Un oeuf de 30 grammes avec une coque rouge vif",
+    "Name" : "Un oeuf de 30 grammes avec une coque rouge vif",
     "d100" : 18
   }, {
-    "Trinket" : "Une pipe qui fait des bulles",
+    "Name" : "Une pipe qui fait des bulles",
     "d100" : 19
   }, {
-    "Trinket" : "Un pot en verre contenant un morceau de chair bizarre qui flotte dans un liquide salé",
+    "Name" : "Un pot en verre contenant un morceau de chair bizarre qui flotte dans un liquide salé",
     "d100" : 20
   }, {
-    "Trinket" : "Une petite boîte à musique de gnome qui joue une chanson qui vous rappelle vaguement votre enfance",
+    "Name" : "Une petite boîte à musique de gnome qui joue une chanson qui vous rappelle vaguement votre enfance",
     "d100" : 21
   }, {
-    "Trinket" : "Une petite statuette en bois d'un halfelin béat",
+    "Name" : "Une petite statuette en bois d'un halfelin béat",
     "d100" : 22
   }, {
-    "Trinket" : "Un orbe en cuivre gravé de runes étranges",
+    "Name" : "Un orbe en cuivre gravé de runes étranges",
     "d100" : 23
   }, {
-    "Trinket" : "Un disque de pierre multicolore",
+    "Name" : "Un disque de pierre multicolore",
     "d100" : 24
   }, {
-    "Trinket" : "Une petite icône d'argent représentant un corbeau",
+    "Name" : "Une petite icône d'argent représentant un corbeau",
     "d100" : 25
   }, {
-    "Trinket" : "Un sac contenant quarante-sept dents humanoïdes, dont l'une est cariée",
+    "Name" : "Un sac contenant quarante-sept dents humanoïdes, dont l'une est cariée",
     "d100" : 26
   }, {
-    "Trinket" : "Un fragment d'obsidienne qui se sent toujours chaud au toucher",
+    "Name" : "Un fragment d'obsidienne qui se sent toujours chaud au toucher",
     "d100" : 27
   }, {
-    "Trinket" : "Une griffe osseuse d'un dragon suspendue à un collier de cuir lisse",
+    "Name" : "Une griffe osseuse d'un dragon suspendue à un collier de cuir lisse",
     "d100" : 28
   }, {
-    "Trinket" : "Une paire de vieilles chaussettes",
+    "Name" : "Une paire de vieilles chaussettes",
     "d100" : 29
   }, {
-    "Trinket" : "Un livre blanc dont les pages refusent de retenir l'encre, la craie, la graphite ou toute autre substance ou marquage",
+    "Name" : "Un livre blanc dont les pages refusent de retenir l'encre, la craie, la graphite ou toute autre substance ou marquage",
     "d100" : 30
   }, {
-    "Trinket" : "Un badge en argent qui représente une étoile à cinq branches",
+    "Name" : "Un badge en argent qui représente une étoile à cinq branches",
     "d100" : 31
   }, {
-    "Trinket" : "Un couteau qui appartenait à un parent",
+    "Name" : "Un couteau qui appartenait à un parent",
     "d100" : 32
   }, {
-    "Trinket" : "Un flacon de verre rempli de rognures d'ongles",
+    "Name" : "Un flacon de verre rempli de rognures d'ongles",
     "d100" : 33
   }, {
-    "Trinket" : "Un dispositif métallique et rectangulaire avec deux petites coupes en métal à une extrémité et qui jette des étincelles lorsqu'il est mouillé",
+    "Name" : "Un dispositif métallique et rectangulaire avec deux petites coupes en métal à une extrémité et qui jette des étincelles lorsqu'il est mouillé",
     "d100" : 34
   }, {
-    "Trinket" : "Un gant blanc pailleté aux dimensions d'un humain",
+    "Name" : "Un gant blanc pailleté aux dimensions d'un humain",
     "d100" : 35
   }, {
-    "Trinket" : "Une veste avec une centaine de minuscules poches",
+    "Name" : "Une veste avec une centaine de minuscules poches",
     "d100" : 36
   }, {
-    "Trinket" : "Un petit bloc de pierre léger",
+    "Name" : "Un petit bloc de pierre léger",
     "d100" : 37
   }, {
-    "Trinket" : "Un petit dessin qui représente le portrait d'un gobelin",
+    "Name" : "Un petit dessin qui représente le portrait d'un gobelin",
     "d100" : 38
   }, {
-    "Trinket" : "Un flacon de verre vide qui sent le parfum lorsqu'il est ouvert",
+    "Name" : "Un flacon de verre vide qui sent le parfum lorsqu'il est ouvert",
     "d100" : 39
   }, {
-    "Trinket" : "Une pierre précieuse qui ressemble à un morceau de charbon pour tout le monde, sauf pour vous",
+    "Name" : "Une pierre précieuse qui ressemble à un morceau de charbon pour tout le monde, sauf pour vous",
     "d100" : 40
   }, {
-    "Trinket" : "Un morceau de tissu d'une vieille bannière",
+    "Name" : "Un morceau de tissu d'une vieille bannière",
     "d100" : 41
   }, {
-    "Trinket" : "Un insigne de grade d'un légionnaire perdu",
+    "Name" : "Un insigne de grade d'un légionnaire perdu",
     "d100" : 42
   }, {
-    "Trinket" : "Une cloche en argent minuscule et sans battant",
+    "Name" : "Une cloche en argent minuscule et sans battant",
     "d100" : 43
   }, {
-    "Trinket" : "Un canari mécanique à l'intérieur d'une lampe de gnome",
+    "Name" : "Un canari mécanique à l'intérieur d'une lampe de gnome",
     "d100" : 44
   }, {
-    "Trinket" : "Un petit coffre avec de nombreux pieds sculptés sur le fond",
+    "Name" : "Un petit coffre avec de nombreux pieds sculptés sur le fond",
     "d100" : 45
   }, {
-    "Trinket" : "Une pixie morte à l'intérieur d'une bouteille en verre transparent",
+    "Name" : "Une pixie morte à l'intérieur d'une bouteille en verre transparent",
     "d100" : 46
   }, {
-    "Trinket" : "Une boîte métallique qui n'a pas d'ouverture mais qui sonne comme si elle était remplie de liquide, de sable, d'araignées ou de verre brisé (au choix)",
+    "Name" : "Une boîte métallique qui n'a pas d'ouverture mais qui sonne comme si elle était remplie de liquide, de sable, d'araignées ou de verre brisé (au choix)",
     "d100" : 47
   }, {
-    "Trinket" : "Un orbe de verre rempli d'eau, dans lequel nage un poisson rouge mécanique",
+    "Name" : "Un orbe de verre rempli d'eau, dans lequel nage un poisson rouge mécanique",
     "d100" : 48
   }, {
-    "Trinket" : "Une cuillère d'argent avec un M gravé sur le manche",
+    "Name" : "Une cuillère d'argent avec un M gravé sur le manche",
     "d100" : 49
   }, {
-    "Trinket" : "Un sifflet en bois de couleur or",
+    "Name" : "Un sifflet en bois de couleur or",
     "d100" : 50
   }, {
-    "Trinket" : "Un scarabée mort de la taille de votre main",
+    "Name" : "Un scarabée mort de la taille de votre main",
     "d100" : 51
   }, {
-    "Trinket" : "Deux soldats de plomb, l'un avec la tête manquante",
+    "Name" : "Deux soldats de plomb, l'un avec la tête manquante",
     "d100" : 52
   }, {
-    "Trinket" : "Une petite boîte remplie de boutons de différentes tailles",
+    "Name" : "Une petite boîte remplie de boutons de différentes tailles",
     "d100" : 53
   }, {
-    "Trinket" : "Une bougie qui ne peut pas être allumée",
+    "Name" : "Une bougie qui ne peut pas être allumée",
     "d100" : 54
   }, {
-    "Trinket" : "Une petite cage sans porte",
+    "Name" : "Une petite cage sans porte",
     "d100" : 55
   }, {
-    "Trinket" : "Une vieille clé",
+    "Name" : "Une vieille clé",
     "d100" : 56
   }, {
-    "Trinket" : "Une carte au trésor indéchiffrable",
+    "Name" : "Une carte au trésor indéchiffrable",
     "d100" : 57
   }, {
-    "Trinket" : "Une poigne d'épée brisée",
+    "Name" : "Une poigne d'épée brisée",
     "d100" : 58
   }, {
-    "Trinket" : "Une patte de lapin",
+    "Name" : "Une patte de lapin",
     "d100" : 59
   }, {
-    "Trinket" : "Un œil de verre",
+    "Name" : "Un œil de verre",
     "d100" : 60
   }, {
-    "Trinket" : "Un camée (pendentif) sculpté à l'image d'une personne hideuse",
+    "Name" : "Un camée (pendentif) sculpté à l'image d'une personne hideuse",
     "d100" : 61
   }, {
-    "Trinket" : "Un crâne en argent de la taille d'une pièce de monnaie",
+    "Name" : "Un crâne en argent de la taille d'une pièce de monnaie",
     "d100" : 62
   }, {
-    "Trinket" : "Un masque d'albâtre",
+    "Name" : "Un masque d'albâtre",
     "d100" : 63
   }, {
-    "Trinket" : "Une pyramide de bâtonnets d'encens noir qui sent très mauvais",
+    "Name" : "Une pyramide de bâtonnets d'encens noir qui sent très mauvais",
     "d100" : 64
   }, {
-    "Trinket" : "Un bonnet de nuit qui, lorsqu'il est porté, vous donne des rêves agréables",
+    "Name" : "Un bonnet de nuit qui, lorsqu'il est porté, vous donne des rêves agréables",
     "d100" : 65
   }, {
-    "Trinket" : "Une chausse-trappe unique fabriquée à partir d'un os",
+    "Name" : "Une chausse-trappe unique fabriquée à partir d'un os",
     "d100" : 66
   }, {
-    "Trinket" : "Un cadre de monocle en or sans la lentille",
+    "Name" : "Un cadre de monocle en or sans la lentille",
     "d100" : 67
   }, {
-    "Trinket" : "Un cube de 2 centimètres de côté, avec chaque face peinte d'une couleur différente",
+    "Name" : "Un cube de 2 centimètres de côté, avec chaque face peinte d'une couleur différente",
     "d100" : 68
   }, {
-    "Trinket" : "Un bouton de porte en cristal",
+    "Name" : "Un bouton de porte en cristal",
     "d100" : 69
   }, {
-    "Trinket" : "Un petit paquet rempli de poussière rose",
+    "Name" : "Un petit paquet rempli de poussière rose",
     "d100" : 70
   }, {
-    "Trinket" : "Un fragment d'une belle chanson, écrite avec des notes de musique sur deux morceaux de parchemin",
+    "Name" : "Un fragment d'une belle chanson, écrite avec des notes de musique sur deux morceaux de parchemin",
     "d100" : 71
   }, {
-    "Trinket" : "Une boucle d'oreille en forme de goutte d'argent faite à partir d'une vraie larme",
+    "Name" : "Une boucle d'oreille en forme de goutte d'argent faite à partir d'une vraie larme",
     "d100" : 72
   }, {
-    "Trinket" : "La coquille d'un oeuf peint avec des scènes de misère humaine d'un détail troublant",
+    "Name" : "La coquille d'un oeuf peint avec des scènes de misère humaine d'un détail troublant",
     "d100" : 73
   }, {
-    "Trinket" : "Un éventail qui, une fois déplié, montre un chat endormi",
+    "Name" : "Un éventail qui, une fois déplié, montre un chat endormi",
     "d100" : 74
   }, {
-    "Trinket" : "Un ensemble de tubes d'os",
+    "Name" : "Un ensemble de tubes d'os",
     "d100" : 75
   }, {
-    "Trinket" : "Un trèfle à quatre feuilles à l'intérieur d'un livre qui traite des bonnes manières et de l'étiquette",
+    "Name" : "Un trèfle à quatre feuilles à l'intérieur d'un livre qui traite des bonnes manières et de l'étiquette",
     "d100" : 76
   }, {
-    "Trinket" : "Une feuille de parchemin sur laquelle est dessiné un engin mécanique complexe",
+    "Name" : "Une feuille de parchemin sur laquelle est dessiné un engin mécanique complexe",
     "d100" : 77
   }, {
-    "Trinket" : "Un fourreau orné dans lequel à ce jour aucune lame ne rentre",
+    "Name" : "Un fourreau orné dans lequel à ce jour aucune lame ne rentre",
     "d100" : 78
   }, {
-    "Trinket" : "Une invitation à une fête où un assassinat a eu lieu",
+    "Name" : "Une invitation à une fête où un assassinat a eu lieu",
     "d100" : 79
   }, {
-    "Trinket" : "Un pentacle de bronze avec la gravure d'une tête de rat au centre",
+    "Name" : "Un pentacle de bronze avec la gravure d'une tête de rat au centre",
     "d100" : 80
   }, {
-    "Trinket" : "Un mouchoir violet brodé avec le nom d'un puissant archimage",
+    "Name" : "Un mouchoir violet brodé avec le nom d'un puissant archimage",
     "d100" : 81
   }, {
-    "Trinket" : "La moitié du plan d'un temple, d'un château, ou d'une autre structure",
+    "Name" : "La moitié du plan d'un temple, d'un château, ou d'une autre structure",
     "d100" : 82
   }, {
-    "Trinket" : "Un peu de tissu plié qui, une fois déplié, se transforme en un élégant chapeau",
+    "Name" : "Un peu de tissu plié qui, une fois déplié, se transforme en un élégant chapeau",
     "d100" : 83
   }, {
-    "Trinket" : "Un récépissé de dépôt dans une banque d'une ville très éloignée",
+    "Name" : "Un récépissé de dépôt dans une banque d'une ville très éloignée",
     "d100" : 84
   }, {
-    "Trinket" : "Un journal avec sept pages manquantes",
+    "Name" : "Un journal avec sept pages manquantes",
     "d100" : 85
   }, {
-    "Trinket" : "Une tabatière en argent vide et portant une inscription sur le dessus qui dit « rêves »",
+    "Name" : "Une tabatière en argent vide et portant une inscription sur le dessus qui dit « rêves »",
     "d100" : 86
   }, {
-    "Trinket" : "Un symbole sacré en fer et consacré à un dieu inconnu",
+    "Name" : "Un symbole sacré en fer et consacré à un dieu inconnu",
     "d100" : 87
   }, {
-    "Trinket" : "Un livre qui raconte l'histoire de l'ascension et la chute d'un héros légendaire, avec le dernier chapitre manquant",
+    "Name" : "Un livre qui raconte l'histoire de l'ascension et la chute d'un héros légendaire, avec le dernier chapitre manquant",
     "d100" : 88
   }, {
-    "Trinket" : "Un flacon de sang de dragon",
+    "Name" : "Un flacon de sang de dragon",
     "d100" : 89
   }, {
-    "Trinket" : "Une ancienne flèche de conception elfique",
+    "Name" : "Une ancienne flèche de conception elfique",
     "d100" : 90
   }, {
-    "Trinket" : "Une aiguille qui ne se plie pas",
+    "Name" : "Une aiguille qui ne se plie pas",
     "d100" : 91
   }, {
-    "Trinket" : "Une broche ornée de conception naine",
+    "Name" : "Une broche ornée de conception naine",
     "d100" : 92
   }, {
-    "Trinket" : "Une bouteille de vin vide portant une jolie étiquette qui dit « Le magicien des vins, Cuvée du Dragon Rouge, 331422-W »",
+    "Name" : "Une bouteille de vin vide portant une jolie étiquette qui dit « Le magicien des vins, Cuvée du Dragon Rouge, 331422-W »",
     "d100" : 93
   }, {
-    "Trinket" : "Un couvercle avec une mosaïque multicolore en surface",
+    "Name" : "Un couvercle avec une mosaïque multicolore en surface",
     "d100" : 94
   }, {
-    "Trinket" : "Une souris pétrifiée",
+    "Name" : "Une souris pétrifiée",
     "d100" : 95
   }, {
-    "Trinket" : "Un drapeau de pirate noir orné d'un crâne et des os croisés d'un dragon",
+    "Name" : "Un drapeau de pirate noir orné d'un crâne et des os croisés d'un dragon",
     "d100" : 96
   }, {
-    "Trinket" : "Un petit crabe ou araignée mécanique qui se déplace quand il n'est pas observé",
+    "Name" : "Un petit crabe ou araignée mécanique qui se déplace quand il n'est pas observé",
     "d100" : 97
   }, {
-    "Trinket" : "Un pot de verre contenant du lard avec une étiquette qui dit « Graisse de griffon »",
+    "Name" : "Un pot de verre contenant du lard avec une étiquette qui dit « Graisse de griffon »",
     "d100" : 98
   }, {
-    "Trinket" : "Une boîte en bois avec un fond en céramique qui contient un ver vivant avec une tête à chaque extrémité de son corps",
+    "Name" : "Une boîte en bois avec un fond en céramique qui contient un ver vivant avec une tête à chaque extrémité de son corps",
     "d100" : 99
   }, {
-    "Trinket" : "Une urne en métal contenant les cendres d'un héros",
+    "Name" : "Une urne en métal contenant les cendres d'un héros",
     "d100" : 100
   } ],
-  "Wares" : {
-    "1 m² de soie ou 1 vache" : {
-      "Name" : "1 m² de soie ou 1 vache",
-      "Price" : 1000
-    },
-    "500 g d'argent ou 1 m² de lin" : {
-      "Name" : "500 g d'argent ou 1 m² de lin",
-      "Price" : 500
-    },
-    "500 g d'or" : {
-      "Name" : "500 g d'or",
-      "Price" : 5000
-    },
-    "500 g de blé" : {
-      "Name" : "500 g de blé",
-      "Price" : 1
-    },
-    "500 g de cannelle ou de poivre, ou 1 mouton" : {
-      "Name" : "500 g de cannelle ou de poivre, ou 1 mouton",
-      "Price" : 200
-    },
-    "500 g de clous de girofle ou 1 cochon" : {
-      "Name" : "500 g de clous de girofle ou 1 cochon",
-      "Price" : 300
-    },
-    "500 g de cuivre ou 1 m² de tissu en coton" : {
-      "Name" : "500 g de cuivre ou 1 m² de tissu en coton",
-      "Price" : 50
-    },
-    "500 g de farine ou 1 poulet" : {
-      "Name" : "500 g de farine ou 1 poulet",
-      "Price" : 2
-    },
-    "500 g de fer ou 1 m² de toile" : {
-      "Name" : "500 g de fer ou 1 m² de toile",
-      "Price" : 10
-    },
-    "500 g de gingembre ou 1 chèvre" : {
-      "Name" : "500 g de gingembre ou 1 chèvre",
-      "Price" : 100
-    },
-    "500 g de platine" : {
-      "Name" : "500 g de platine",
-      "Price" : 50000
-    },
-    "500 g de safran ou 1 boeuf" : {
-      "Name" : "500 g de safran ou 1 boeuf",
-      "Price" : 1500
-    },
-    "500 g de sel" : {
-      "Name" : "500 g de sel",
-      "Price" : 5
-    }
-  },
   "WeaponCategories" : {
     "C_DIS" : {
       "Code" : "C_DIS",

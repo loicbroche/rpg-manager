@@ -101,7 +101,8 @@ export const DATA_MODEL = {
                 BONUS_SPELLS_NB: { name: "SpellsNbBonus", optional: true },
                 LOCATIONS: { name: "Locations", optional: true },
                 INVOCATIONS: { name: "Invocations", optional: true },
-                ARMORLESS_SPEED: { name: "ArmorlessSpeed", optional: true }
+                ARMORLESS_SPEED: { name: "ArmorlessSpeed", optional: true },
+                ARMORLESS_CATEGORIES: { name: "ArmourlessCategories", optional: true }
             }
         },
         CAPACITIES_DESCRIPTIONS:
@@ -285,14 +286,6 @@ export const DATA_MODEL = {
                 NAME: { name: "Name" },
                 OV: { name: "OV" },
                 SPEED: { name: "Speed" },
-                PRICE: { name: "Price" }
-            }
-        },
-    WARES:
-        {
-            name: 'Wares',
-            columns: {
-                NAME: { name: "Name" },
                 PRICE: { name: "Price" }
             }
         },

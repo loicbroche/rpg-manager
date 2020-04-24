@@ -85,7 +85,8 @@ export const CapacityPropType = PropTypes.shape({
     SpellsNbBonus: PropTypes.string,
     Locations: PropTypes.arrayOf(PropTypes.number),
     Invocations: PropTypes.number,
-    ArmorlessSpeed: PropTypes.number
+    ArmorlessSpeed: PropTypes.number,
+    ArmourlessCategories: PropTypes.arrayOf(PropTypes.string)
 })
 
 export const CapacityDescriptionPropType = PropTypes.shape({
@@ -167,6 +168,12 @@ export const ObjectPropType = PropTypes.shape({
     Price: PropTypes.string.isRequired
 })
 
+export const PersonnalObjectPropType = PropTypes.shape({
+    Id: PropTypes.string.isRequired,
+    Label: PropTypes.string,
+    Quantity: PropTypes.number.isRequired
+})
+
 export const EquipmentCategoryPropType = PropTypes.shape({
     Code: PropTypes.string.isRequired,
     Name: PropTypes.string.isRequired
@@ -216,14 +223,9 @@ export const ShipPropType = PropTypes.shape({
     Price: PropTypes.string.isRequired
 })
 
-export const WarePropType = PropTypes.shape({
-    Name: PropTypes.string.isRequired,
-    Price: PropTypes.string.isRequired
-})
-
 export const TrinketPropType = PropTypes.shape({
     d100: PropTypes.number.isRequired,
-    Trinket: PropTypes.string.isRequired
+    Name: PropTypes.string.isRequired
 })
 
 export const LevelPropType = PropTypes.shape({
@@ -348,7 +350,7 @@ export const CharacterPropType = PropTypes.shape({
     Armor: PropTypes.string,
     Shield: PropTypes.string,
     Money: PropTypes.number.isRequired,
-    Objects: PropTypes.arrayOf(PropTypes.string),
+    Objects: PropTypes.arrayOf(PersonnalObjectPropType),
     Specials: PropTypes.number,
     SpellsLocations: PropTypes.arrayOf(PropTypes.number),
     MinorSpells: PropTypes.arrayOf(PropTypes.string),

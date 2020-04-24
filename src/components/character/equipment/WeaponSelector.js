@@ -106,7 +106,7 @@ const fightStyleBonus = (characterClass
               <div className="equipment-description-line"><span className="description-line-title">{weapon?"Poids:":'\u00A0'}</span>
                                                           <Weight weight={weapon.Weight} /></div>
               <div className="equipment-description-line"><span className="description-line-title">{weapon?"Prix:":'\u00A0'}</span>
-                                                          <Money id={weaponTitleLabel} amount={weapon.Price} /></div>
+                                                          <Money amount={weapon.Price} /></div>
           </div>}
       </div>
     )

@@ -9940,60 +9940,6 @@ export const referentialMock = {
 	  "Trinket" : "Une urne en métal contenant les cendres d'un héros",
 	  "d100" : 100
 	} ],
-	"Wares" : {
-	  "1 m² de soie ou 1 vache" : {
-		"Name" : "1 m² de soie ou 1 vache",
-		"Price" : 1000
-	  },
-	  "500 g d'argent ou 1 m² de lin" : {
-		"Name" : "500 g d'argent ou 1 m² de lin",
-		"Price" : 500
-	  },
-	  "500 g d'or" : {
-		"Name" : "500 g d'or",
-		"Price" : 5000
-	  },
-	  "500 g de blé" : {
-		"Name" : "500 g de blé",
-		"Price" : 1
-	  },
-	  "500 g de cannelle ou de poivre, ou 1 mouton" : {
-		"Name" : "500 g de cannelle ou de poivre, ou 1 mouton",
-		"Price" : 200
-	  },
-	  "500 g de clous de girofle ou 1 cochon" : {
-		"Name" : "500 g de clous de girofle ou 1 cochon",
-		"Price" : 300
-	  },
-	  "500 g de cuivre ou 1 m² de tissu en coton" : {
-		"Name" : "500 g de cuivre ou 1 m² de tissu en coton",
-		"Price" : 50
-	  },
-	  "500 g de farine ou 1 poulet" : {
-		"Name" : "500 g de farine ou 1 poulet",
-		"Price" : 2
-	  },
-	  "500 g de fer ou 1 m² de toile" : {
-		"Name" : "500 g de fer ou 1 m² de toile",
-		"Price" : 10
-	  },
-	  "500 g de gingembre ou 1 chèvre" : {
-		"Name" : "500 g de gingembre ou 1 chèvre",
-		"Price" : 100
-	  },
-	  "500 g de platine" : {
-		"Name" : "500 g de platine",
-		"Price" : 50000
-	  },
-	  "500 g de safran ou 1 boeuf" : {
-		"Name" : "500 g de safran ou 1 boeuf",
-		"Price" : 1500
-	  },
-	  "500 g de sel" : {
-		"Name" : "500 g de sel",
-		"Price" : 5
-	  }
-	},
 	"WeaponCategories" : {
 	  "C_DIS" : {
 		"Code" : "C_DIS",

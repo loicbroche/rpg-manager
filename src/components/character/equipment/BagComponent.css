@@ -39,6 +39,8 @@
 .bagItems {
   display: flex;
   flex-direction: column;
+  align-self: stretch;
+  align-items: stretch;
 }
 .categoryName {
   border-radius: 0;
@@ -48,27 +50,54 @@
   padding-left: 0.25rem;
 }
 .bagItem {
-  margin-left: 1rem;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 .item-name {
   flex-grow: 1;
+  background: none;
+  border: 0;
+  margin-right: 1rem;
+}
+.item-quantity {
+  margin-left: 0.5rem;
+}
+.item-quantity-input {
+  background: none;
+  border: 0;
+  width: 2.5rem;
 }
 
 .add-object {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-transparent-color-1);
+}
+
+.new-object {
+  display: flex;
+  flex-direction: row;
+  margin-left: 0.5rem;
+}
+.new-object-quantity-input {
+  width: 2.3rem;
+  margin-right: 0.2rem;
+}
+.new-object-select {
+  width: 100%;
 }
 
 .delete-object {
   display: inline-flex;
 }
 
-.add-object img,
-.delete-object img {
-  height: 1rem;
+.add-object-img,
+.delete-object-img {
+  height: 0.5rem;
 }
 
 .delete-object img {
@@ -85,4 +114,5 @@
 
 .new-object-infos {
   display: flex;
+  flex-direction: row;
 }

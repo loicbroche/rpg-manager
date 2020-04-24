@@ -29,8 +29,8 @@ class DetailsComponent extends PureComponent {
     let objectsWeight = 0;
     if (objectsMap && character?.Objects) {
       for (let i = 0; i < character.Objects.length; i++) {
-        const obj = objectsMap[character.Objects[i]];
-        objectsWeight += !obj?0:obj.Weight;
+        const obj = objectsMap[character.Objects[i].Id];
+        objectsWeight += !obj?0:(obj.Weight*character.Objects[i].Quantity);
       }
     }
     return (
