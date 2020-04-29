@@ -659,6 +659,37 @@
 				}
             }
         },
+        "SpellsComplements": {
+            "$id": {
+                ".validate": "newData.child('Level').exists()",
+                ".indexOn": ["Race", "SubRace", "Specialisation"],
+                "Race": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+                },
+                "SubRace": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+                },
+                "Specialisation": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+                "Level": {
+                    ".validate": "newData.isNumber() && 0 < newData.val() && newData.val() <= 20"
+                },
+                "Spells": {
+                    "$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+					}
+                },
+                "BonusLocation": {
+                    ".validate": "newData.isNumber() && 0 <=newData.val()"
+                },
+				"BonusLocationClasses": {
+					"$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+					}
+				}
+            }
+        },
         "SubRaces": {
             "$id": {
                 ".validate": "newData.child('Id').exists() && newData.child('Race').exists() && newData.child('Name').exists() && newData.child('OV').exists() && newData.child('Strength').exists() && newData.child('Constitution').exists() && newData.child('Dexterity').exists() && newData.child('Intelligence').exists() && newData.child('Wisdom').exists() && newData.child('Charisma').exists() && newData.child('Speed').exists()",

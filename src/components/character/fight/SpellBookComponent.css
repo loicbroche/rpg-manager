@@ -79,3 +79,10 @@
 .spell-school-image {
   height: 1.5rem;
 }
+.spell-origine {
+  display: flex;
+  width: 1rem;
+}
+.spell-origine-image {
+  width: 100%;
+}

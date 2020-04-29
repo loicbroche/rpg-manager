@@ -132,11 +132,40 @@ export const selectFightStylesByIds = (state, ids) => {
     return fightStyles && Object.values(fightStyles).filter((style) => ids?.includes(style.Code));
 }
 
+export const selectSpellsMap = state => state.referential.spells;
 export const selectSpells = state => state.referential.spells && Object.values(state.referential.spells);
 export const selectSpellById = (state, id) => state.referential.spells?.[id];
 export const selectSpellByClassSpecialisation = (state, classId, specialisationId) => {
     const spells = selectSpells(state);
     return spells?.filter( (spell) => spell.Classes.includes(classId) || spell.Classes.includes(specialisationId) );
+}
+
+export const selectSpellsComplements = state => state.referential.spellsComplements && Object.values(state.referential.spellsComplements);
+export const selectSpellsComplementsByRace = (state, subRaceId, xp) => {
+    const spellsComplements = selectSpellsComplements(state);
+    const raceId = selectRaceBySubRaceId(state, subRaceId)?.Id;
+    const levelNumber = selectLevelNumberByXP(state, xp);
+    return spellsComplements?.filter( (spellsComplement) => spellsComplement.Race === raceId && spellsComplement.Level <= levelNumber);
+}
+export const selectSpellsComplementsBySubRace = (state, subRaceId, xp) => {
+    const spellsComplements = selectSpellsComplements(state);
+    const levelNumber = selectLevelNumberByXP(state, xp);
+    return spellsComplements?.filter( (spellsComplement) => spellsComplement.SubRace === subRaceId && spellsComplement.Level <= levelNumber);
+}
+export const selectSpellsComplementsBySpecialisation = (state, specialisationId, xp) => {
+    const spellsComplements = selectSpellsComplements(state);
+    const levelNumber = selectLevelNumberByXP(state, xp);
+    return spellsComplements?.filter( (spellsComplement) => spellsComplement.Specialisation === specialisationId && spellsComplement.Level <= levelNumber);
+}
+export const selectSpellsComplementsSpellsByRace = (state, subRaceId, xp) => {
+    return selectSpellsComplementsByRace(state, subRaceId, xp)?.flatMap((spellsComplement) => spellsComplement.Spells);
+}
+export const selectSpellsComplementsSpellsBySubRace = (state, subRaceId, xp) => {
+    return selectSpellsComplementsBySubRace(state, subRaceId, xp)?.flatMap((spellsComplement) => spellsComplement.Spells);
+}
+export const selectSpellsComplementsSpellsBySpecialisation = (state, specialisationId, classId, xp) => {
+    const specialisation = selectValidSpecialisation(state, specialisationId, classId, xp);
+    return selectSpellsComplementsBySpecialisation(state, specialisation?.Code, xp)?.flatMap((spellsComplement) => spellsComplement.Spells);
 }
 
 export const selectWeaponCategoriesMap = state => state.referential.weaponCategories;

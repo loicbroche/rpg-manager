@@ -340,6 +340,20 @@ export const DATA_MODEL = {
             }
         },
 
+        SPELLS_COMPLEMENTS:
+        {
+            name: 'SpellsComplements',
+            columns: {
+                RACE: { name: "Race" },
+                SUB_RACE: { name: "SubRace" },
+                SPECIALISATION: { name: "Specialisation" },
+                LEVEL: { name: "Level" },
+                SPELLS: { name: "Spells" },
+                BONU_LOCATION: { name: "BonusLocation" },
+                BONUS_LOCATION_CLASSES: { name: "BonusLocationClasses" }
+            }
+        },
+
         ALTERATIONS:
         {
             name: 'Alterations',

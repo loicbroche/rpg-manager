@@ -32,6 +32,7 @@ const initialState = {
     caracteristics: null,
     skills: null,
     spells: null,
+    spellsComplements: null,
     alterations: null,
     alterationTypes: null,
     alignments: null,
@@ -215,6 +216,12 @@ function referentialReducer(state = initialState, action) {
                 spells: action.payload
             }
             return nextState;
+        case ActionTypes.REFERENTIAL.LOAD_SPELLS_COMPLEMENTS:
+            nextState = {
+                ...state,
+                spellsComplements: action.payload
+            }
+            return nextState;
         case ActionTypes.REFERENTIAL.LOAD_ALTERATIONS:
             nextState = {
                 ...state,
@@ -270,10 +277,11 @@ referentialReducer.PropTypes = {
         levels: PropTypes.arrayOf(LocalPropTypes.LevelPropType).isRequired,
         caracteristics: PropTypes.arrayOf(LocalPropTypes.CaracteristicPropType).isRequired,
         skills: PropTypes.arrayOf(LocalPropTypes.SkillPropType).isRequired,
-        spells: PropTypes.arrayOf(LocalPropTypes.AlterationPropType).isRequired,
+        spells: PropTypes.arrayOf(LocalPropTypes.SpellPropType).isRequired,
+        spellsComplements: PropTypes.arrayOf(LocalPropTypes.SpellsComplementPropType).isRequired,
         alterations: PropTypes.arrayOf(LocalPropTypes.AlterationPropType).isRequired,
-        alignments: PropTypes.arrayOf(LocalPropTypes.AlterationPropType).isRequired,
-        languages: PropTypes.arrayOf(LocalPropTypes.AlterationPropType).isRequired
+        alignments: PropTypes.arrayOf(LocalPropTypes.AlignmentPropType).isRequired,
+        languages: PropTypes.arrayOf(LocalPropTypes.LanguagePropType).isRequired
     }),
     action: PropTypes.shape({
         type: PropTypes.string.isRequired,

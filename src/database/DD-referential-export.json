@@ -9079,7 +9079,7 @@
     },
     "Apaisement des émotions" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "CLERK" ],
+      "Classes" : [ "BARD", "CLERK", "ARCHFAIRY" ],
       "Description" : "Les créatures dans un rayon de 6 m doivent réussir un JdS de Cha. ou ne plus être charmées/effrayées, ou être indifférentes.",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -9090,7 +9090,7 @@
     },
     "Apparence trompeuse" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER", "ARCHFAIRY" ],
       "Description" : "Change l'apparence physique et vestimentaire de cibles (JdS si non consentante).",
       "Incantation" : "1 action",
       "Level" : 5,
@@ -9442,7 +9442,7 @@
     },
     "Bouclier de feu" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER" ],
+      "Classes" : [ "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER", "FIENDISH" ],
       "Description" : "Le lanceur obtient la résistance aux dégâts de froid ou de feu, et fait subir 2d8 dégâts aux attaquants à 1,50 m qui touchent.",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -9464,7 +9464,7 @@
     },
     "Boule de feu" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER", "FIENDISH" ],
       "Description" : "Les créatures dans un rayon de 6 m doivent réussir un JdS de Dex. ou subir 8d6 dégâts de feu (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -9750,7 +9750,7 @@
     },
     "Clairvoyance" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "CLERK", "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER" ],
+      "Classes" : [ "BARD", "CLERK", "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER", "GREAT_OLD" ],
       "Description" : "Crée un détecteur invisible dans un lieu familier à 1,5 km ou moins, permettant de voir ou d'entendre (au choix, modifiable).",
       "Incantation" : "10 minutes",
       "Level" : 3,
@@ -9761,7 +9761,7 @@
     },
     "Clignotement" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER", "ARCHFAIRY" ],
       "Description" : "Le lanceur a 50% de chance de passer dans le plan éthéré, puis il revient dans l'espace qu'il occupait au tour suivant.",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -9805,7 +9805,7 @@
     },
     "Colonne de flamme" : {
       "BBE" : "",
-      "Classes" : [ "CLERK" ],
+      "Classes" : [ "CLERK", "FIENDISH" ],
       "Description" : "Les créatures dans un cylindre de 6 x 12 m doivent réussir un JdS de Dex. ou subir 4d6 de feu et 4d6 radiants (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 5,
@@ -9849,7 +9849,7 @@
     },
     "Communication à distance" : {
       "BBE" : "Envoi de message",
-      "Classes" : [ "BARD", "CLERK", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER" ],
+      "Classes" : [ "BARD", "CLERK", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER", "GREAT_OLD" ],
       "Description" : "Envoie un message de 25 mots à une créature familière, quelle que soit la distance ou le plan. Elle peut y répondre.",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -10146,7 +10146,7 @@
     },
     "Croissance végétale" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "DRUID", "PROWLER" ],
+      "Classes" : [ "BARD", "DRUID", "PROWLER", "ARCHFAIRY" ],
       "Description" : "Les plantes dans la zone croissent avec vigueur, ou sur une année les plantes produisent deux fois plus de nourriture.",
       "Incantation" : "1 action ou 8 heures",
       "Level" : 3,
@@ -10212,7 +10212,7 @@
     },
     "Cécité-Surdité" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "CLERK", "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER" ],
+      "Classes" : [ "BARD", "CLERK", "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER", "FIENDISH" ],
       "Description" : "La cible doit réussir un JdS de Con. ou devenir aveuglée ou assourdie (+1 créature/niv).",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -10355,7 +10355,7 @@
     },
     "Domination d'humanoïde" : {
       "BBE" : "Dominer un humanoïde",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER", "ARCHFAIRY", "GREAT_OLD" ],
       "Description" : "Un humanoïde doit réussir un JdS de Sag. ou être charmé et obéir au lanceur (durée/niv).",
       "Incantation" : "1 action",
       "Level" : 5,
@@ -10366,7 +10366,7 @@
     },
     "Domination de bête" : {
       "BBE" : "Dominer une bête",
-      "Classes" : [ "DRUID", "SORCERER" ],
+      "Classes" : [ "DRUID", "SORCERER", "ARCHFAIRY", "GREAT_OLD" ],
       "Description" : "Une bête à 18 m doit réussir un JdS de Sag. ou être charmé et obéir au lanceur (durée/niv).",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -10509,7 +10509,7 @@
     },
     "Détection des pensées" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER", "GREAT_OLD" ],
       "Description" : "Le lanceur détecte les pensées superficielles d'une créature à 9 m, et les plus approfondies si la cible rate un JdS de Sag.",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -10587,7 +10587,7 @@
     "Ennemis à foison" : {
       "BBE" : "",
       "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER", "WIZARD" ],
-      "Description" : "La cible doit réussir un JdS d'Int. ou ne plus pouvoir distinguer amis et ennemis",
+      "Description" : "La cible doit réussir un JdS d'Int. ou ne plus pouvoir distinguer amis et ennemis ",
       "Incantation" : "1 action",
       "Level" : 3,
       "Name" : "Ennemis à foison",
@@ -10883,7 +10883,7 @@
     },
     "Force fantasmagorique" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER", "ARCHFAIRY", "GREAT_OLD" ],
       "Description" : "La cible doit réussir un JdS d'Int. ou percevoir comme réel un objet ou une créature crée par le lanceur (avec son).",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -10938,7 +10938,7 @@
     },
     "Fou rire de Tasha" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER" ],
+      "Classes" : [ "BARD", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER", "GREAT_OLD" ],
       "Description" : "La cible doit réussir un JdS de Sag. ou être prise d'une intense crise de fou rire, tomber à terre et être incapable d'agir.",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -11323,7 +11323,7 @@
     },
     "Injonction" : {
       "BBE" : "",
-      "Classes" : [ "CLERK", "PALADIN" ],
+      "Classes" : [ "CLERK", "PALADIN", "FIENDISH" ],
       "Description" : "La cible doit réussir un JdS de Sag. ou suivre votre ordre comme Approche, Lâche, Fuis, Tombe, Halte, etc (+1 créature/niv).",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -11378,7 +11378,7 @@
     },
     "Invisibilité supérieure" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER", "ARCHFAIRY" ],
       "Description" : "La cible devient invisible durant 1 minute.",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -11697,7 +11697,7 @@
     },
     "Lueurs féeriques" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "DRUID" ],
+      "Classes" : [ "BARD", "DRUID", "ARCHFAIRY" ],
       "Description" : "Les créatures dans un cube de 6 m doivent réussir un JdS de Dex. ou octroyer l'avantage contre elles à l'attaque.",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -11796,7 +11796,7 @@
     },
     "Mains brûlantes" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER", "FIENDISH" ],
       "Description" : "Les créatures dans un cône de 4,50 m doivent réussir un JdS de Dex. ou subir 3d6 dégâts de feu (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -12115,7 +12115,7 @@
     },
     "Mur de feu" : {
       "BBE" : "",
-      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER" ],
+      "Classes" : [ "DRUID", "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER", "FIENDISH" ],
       "Description" : "Crée un mur de feu de 18 m x 6 m x 30 cm. Les créatures dans ou à 3 m du mur d'un côté subissent 5d8 dégâts de feu (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -12203,7 +12203,7 @@
     },
     "Murmures dissonants" : {
       "BBE" : "",
-      "Classes" : [ "BARD" ],
+      "Classes" : [ "BARD", "GREAT_OLD" ],
       "Description" : "La cible doit réussir un JdS de Sag. ou subir 3d6 dégâts psychiques et s'éloigner (dégâts/niv).",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -12302,7 +12302,7 @@
     },
     "Nuage puant" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER", "FIENDISH" ],
       "Description" : "Les créatures dans une sphère de 6 m de rayon doivent réussir un JdS de Con. ou être prises de nausée et perdre leur action.",
       "Incantation" : "1 action",
       "Level" : 3,
@@ -12863,7 +12863,7 @@
     },
     "Rayon ardent" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER", "FIENDISH" ],
       "Description" : "Si les attaques touchent, 3 rayons infligent chacun 2d6 dégâts de feu (+1 rayon/niv).",
       "Incantation" : "1 action",
       "Level" : 2,
@@ -13149,7 +13149,7 @@
     },
     "Sanctification" : {
       "BBE" : "",
-      "Classes" : [ "CLERK" ],
+      "Classes" : [ "CLERK", "FIENDISH" ],
       "Description" : "Empêche célestes, élémentaires, fiélons, fées et morts-vivants d'entrer dans un rayon de 18 m et protège/handicape les cibles.",
       "Incantation" : "24 heures",
       "Level" : 5,
@@ -13347,7 +13347,7 @@
     },
     "Sommeil" : {
       "BBE" : "",
-      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER" ],
+      "Classes" : [ "BARD", "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER", "ARCHFAIRY" ],
       "Description" : "5d8 pv de créatures s'endorment, par ordre croissant de leurs pv actuels (+2d8 pv/niv).",
       "Incantation" : "1 action",
       "Level" : 1,
@@ -13556,7 +13556,7 @@
     },
     "Tentacules noirs d'Evard" : {
       "BBE" : "",
-      "Classes" : [ "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER" ],
+      "Classes" : [ "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER", "GREAT_OLD" ],
       "Description" : "Les créatures dans un carré de 6 m doivent réussir un JdS de Dex. ou subir 3d6 dégâts contondants et être entravées.",
       "Incantation" : "1 action",
       "Level" : 4,
@@ -13732,7 +13732,7 @@
     },
     "Télékinésie" : {
       "BBE" : "",
-      "Classes" : [ "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER" ],
+      "Classes" : [ "SORCERER", "MAGICIAN", "OCCULT_KNIGHT", "ARCANE_SWINDLER", "GREAT_OLD" ],
       "Description" : "Déplace une créature (taille TG max) ou un objet (jusqu'à 500 kg) par la pensée en cas de jet d'opposition réussi.",
       "Incantation" : "1 action",
       "Level" : 5,
@@ -14015,6 +14015,96 @@
       "OV" : "Awaken",
       "School" : "Transmutation",
       "Type" : ""
+    }
+  },
+  "SpellsComplements" : {
+    "EARTH_GROUP-1" : {
+      "BonusLocation" : 2,
+      "BonusLocationClasses" : [ "DRUID" ],
+      "Level" : 1,
+      "Race" : "",
+      "Specialisation" : "EARTH_GROUP",
+      "SubRace" : ""
+    },
+    "FORESTS_GNOME-1" : {
+      "BonusLocation" : 0,
+      "Level" : 1,
+      "Race" : "",
+      "Specialisation" : "",
+      "Spells" : [ "Illusion mineure" ],
+      "SubRace" : "FORESTS_GNOME"
+    },
+    "HIGH_ELF-1" : {
+      "BonusLocation" : 1,
+      "BonusLocationClasses" : [ "MAGICIAN" ],
+      "Level" : 1,
+      "Race" : "",
+      "Specialisation" : "",
+      "SubRace" : "HIGH_ELF"
+    },
+    "ILLUSION-1" : {
+      "BonusLocation" : 0,
+      "Level" : 1,
+      "Race" : "",
+      "Specialisation" : "ILLUSION",
+      "Spells" : [ "Illusion mineure" ],
+      "SubRace" : ""
+    },
+    "KNOWLEDGE_SCHOOL-6" : {
+      "BonusLocation" : 2,
+      "BonusLocationClasses" : [ "BARD", "CLERK", "DRUID", "SORCERER", "WARRIOR", "MAGICIAN", "PALADIN", "PROWLER", "WILY", "WIZARD" ],
+      "Level" : 6,
+      "Race" : "",
+      "Specialisation" : "KNOWLEDGE_SCHOOL",
+      "SubRace" : ""
+    },
+    "LIGHT_FIELD-1" : {
+      "BonusLocation" : 0,
+      "Level" : 1,
+      "Race" : "",
+      "Specialisation" : "LIGHT_FIELD",
+      "Spells" : [ "Lumière" ],
+      "SubRace" : ""
+    },
+    "NATURE_FIELD-1" : {
+      "BonusLocation" : 1,
+      "BonusLocationClasses" : [ "DRUID" ],
+      "Level" : 1,
+      "Race" : "",
+      "Specialisation" : "NATURE_FIELD",
+      "SubRace" : ""
+    },
+    "SHADOW_WAY-1" : {
+      "BonusLocation" : 0,
+      "Level" : 1,
+      "Race" : "",
+      "Specialisation" : "SHADOW_WAY",
+      "Spells" : [ "Illusion mineure" ],
+      "SubRace" : ""
+    },
+    "TIEFFLING-1" : {
+      "BonusLocation" : 0,
+      "Level" : 1,
+      "Race" : "TIEFFLING",
+      "Specialisation" : "",
+      "Spells" : [ "Thaumaturgie" ],
+      "SubRace" : ""
+    },
+    "TIEFFLING-3" : {
+      "BonusLocation" : 0,
+      "Level" : 3,
+      "Race" : "TIEFFLING",
+      "Specialisation" : "",
+      "Spells" : [ "Représailles infernales" ],
+      "SubRace" : ""
+    },
+    "TIEFFLING-5" : {
+      "BonusLocation" : 0,
+      "Level" : 5,
+      "Race" : "TIEFFLING",
+      "Specialisation" : "",
+      "Spells" : [ "Ténèbres" ],
+      "SubRace" : ""
     }
   },
   "SubRaces" : {

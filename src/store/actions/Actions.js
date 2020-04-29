@@ -35,6 +35,7 @@ export const loadReferentialSkillsAction = (skills) => loadReferentialValuesActi
 export const loadReferentialLevelsAction = (levels) => loadReferentialValuesAction(ActionTypes.REFERENTIAL.LOAD_LEVELS, levels);
 export const loadReferentialCaracteristicsAction = (caracteristics) => loadReferentialValuesAction(ActionTypes.REFERENTIAL.LOAD_CARACTERISTICS, caracteristics);
 export const loadReferentialSpellsAction = (spells) => loadReferentialValuesAction(ActionTypes.REFERENTIAL.LOAD_SPELLS, spells);
+export const loadReferentialSpellsComplementsAction = (spellsComplements) => loadReferentialValuesAction(ActionTypes.REFERENTIAL.LOAD_SPELLS_COMPLEMENTS, spellsComplements);
 export const loadReferentialAlterationsAction = (alterations) => loadReferentialValuesAction(ActionTypes.REFERENTIAL.LOAD_ALTERATIONS, alterations);
 export const loadReferentialAlterationTypesAction = (alterationTypes) => loadReferentialValuesAction(ActionTypes.REFERENTIAL.LOAD_ALTERATION_TYPES, alterationTypes);
 export const loadReferentialAlignmentsAction = (alignments) => loadReferentialValuesAction(ActionTypes.REFERENTIAL.LOAD_ALIGNMENTS, alignments);

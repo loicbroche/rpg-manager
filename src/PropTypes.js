@@ -257,6 +257,16 @@ export const SpellPropType = PropTypes.shape({
     Classes: PropTypes.arrayOf(PropTypes.string).isRequired
 })
 
+export const SpellsComplementPropType = PropTypes.shape({
+    Race: PropTypes.string,
+    SubRace: PropTypes.string,
+    Specialisation: PropTypes.string,
+    Level: PropTypes.number.isRequired,
+    Spells: PropTypes.arrayOf(PropTypes.string),
+    BonusLocation: PropTypes.number,
+    BonusLocationClasses: PropTypes.arrayOf(PropTypes.string)
+})
+
 export const AlterationPropType = PropTypes.shape({
     Code: PropTypes.string.isRequired,
     Type: PropTypes.string.isRequired,
