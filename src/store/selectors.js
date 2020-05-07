@@ -7,6 +7,11 @@ const HTH_CATEGORY_CODES = ["C_MEL", "W_MEL"];
 const DISTANCE_CATEGORY_CODES = ["C_DIS", "W_DIS"];
 const SHIELD_CATEGORY_CODE = "0_SHIELD";
 const MASTERABLE_CATEGORIES = ["ARTISAN", "GAME", "KIT", "MUSIC", "VEHICLE"];
+export const ORIGINE_CLASS = 0;
+export const ORIGINE_RACE = 1;
+export const ORIGINE_SUBRACE = 2;
+export const ORIGINE_SPECIALISATION = 3;
+export const ORIGINE_ALL = 4;
 
 export const selectSubRacesMap = state => state.referential.subRaces;
 export const selectSubRaces = state => state.referential.subRaces && Object.values(state.referential.subRaces);
@@ -17,6 +22,7 @@ export const selectRaces = state => state.referential.races && Object.values(sta
 export const selectRaceById = (state, id) => state.referential.races?.[id];
 export const selectRaceBySubRaceId = (state, id) => state.referential.races?.[selectSubRaceById(state, id)?.Race];
 
+export const selectClassesMap = state => state.referential.classes;
 export const selectClasses = state => state.referential.classes && Object.values(state.referential.classes);
 export const selectClassById = (state, id) => state.referential.classes?.[id];
 
@@ -40,6 +46,7 @@ export const selectNextLevelByXP = (state, xp) => {
     return xp>=maxXP?maxLevel: selectLevelById(state, levelNumber+1);
 };
 
+export const selectSpecialisationsMap = state => state.referential.specialisations;
 export const selectSpecialisations = state => state.referential.specialisations && Object.values(state.referential.specialisations);
 export const selectSpecialisationById = (state, id) => state.referential.specialisations?.[id];
 export const selectValidSpecialisation = (state, specialisationId, classId, xp) => {
@@ -152,20 +159,194 @@ export const selectSpellsComplementsBySubRace = (state, subRaceId, xp) => {
     const levelNumber = selectLevelNumberByXP(state, xp);
     return spellsComplements?.filter( (spellsComplement) => spellsComplement.SubRace === subRaceId && spellsComplement.Level <= levelNumber);
 }
-export const selectSpellsComplementsBySpecialisation = (state, specialisationId, xp) => {
+export const selectSpellsComplementsBySpecialisation = (state, specialisationId, classId, xp) => {
     const spellsComplements = selectSpellsComplements(state);
+    const specialisation = selectValidSpecialisation(state, specialisationId, classId, xp);
     const levelNumber = selectLevelNumberByXP(state, xp);
-    return spellsComplements?.filter( (spellsComplement) => spellsComplement.Specialisation === specialisationId && spellsComplement.Level <= levelNumber);
+    return  spellsComplements?.filter( (spellsComplement) => spellsComplement.Specialisation === specialisation?.Code && spellsComplement.Level <= levelNumber);
 }
+
 export const selectSpellsComplementsSpellsByRace = (state, subRaceId, xp) => {
-    return selectSpellsComplementsByRace(state, subRaceId, xp)?.flatMap((spellsComplement) => spellsComplement.Spells);
+    return selectSpellsComplementsByRace(state, subRaceId, xp)?.flatMap((spellsComplement) => spellsComplement.Spells||[]);
 }
 export const selectSpellsComplementsSpellsBySubRace = (state, subRaceId, xp) => {
-    return selectSpellsComplementsBySubRace(state, subRaceId, xp)?.flatMap((spellsComplement) => spellsComplement.Spells);
+    return selectSpellsComplementsBySubRace(state, subRaceId, xp)?.flatMap((spellsComplement) => spellsComplement.Spells||[]);
 }
 export const selectSpellsComplementsSpellsBySpecialisation = (state, specialisationId, classId, xp) => {
-    const specialisation = selectValidSpecialisation(state, specialisationId, classId, xp);
-    return selectSpellsComplementsBySpecialisation(state, specialisation?.Code, xp)?.flatMap((spellsComplement) => spellsComplement.Spells);
+    return selectSpellsComplementsBySpecialisation(state, specialisationId, classId, xp)?.flatMap((spellsComplement) => spellsComplement.Spells||[]);
+}
+export const selectSpellsComplementsClassesByRace = (state, subRaceId, xp) => {
+    return selectSpellsComplementsByRace(state, subRaceId, xp)?.flatMap((spellsComplement) => spellsComplement.BonusLocationClasses||[]);
+}
+export const selectSpellsComplementsClassesBySubRace = (state, subRaceId, xp) => {
+    return selectSpellsComplementsBySubRace(state, subRaceId, xp)?.flatMap((spellsComplement) => spellsComplement.BonusLocationClasses||[]);
+}
+export const selectSpellsComplementsClassesBySpecialisation = (state, specialisationId, classId, xp) => {
+    return selectSpellsComplementsBySpecialisation(state, specialisationId, classId, xp)?.flatMap((spellsComplement) => spellsComplement.BonusLocationClasses||[]);
+}
+export const selectKnownClassesSpellsFilteredByOrigine = (state, character) => {
+    const subRaceId = character?.SubRace
+    const classId = character?.Class;
+    const specialisationId = character?.Specialisation;
+    const xp = character?.XP;
+    const spellsNames = character?.Spells;
+
+    const capacity = selectClassCapacityByClassIdXP(state, classId, xp);
+    const race = selectRaceBySubRaceId(state, subRaceId);
+    const subRace = selectSubRaceById(state, subRaceId);
+    const specialisation = selectValidSpecialisation(state, specialisationId, classId,xp);
+    const profilAvailableSpells = selectSpellByProfil(state,  subRaceId, classId, specialisationId, xp);
+    const spellsNbBonus = selectSpellsNbBonusByClassXP(state, character);
+    const availableSpellsNb = (capacity?.SpellsNb + spellsNbBonus) || 0;
+
+    const raceSpellsComplements = selectSpellsComplementsByRace(state, subRaceId, xp) || [];
+    const subRaceSpellsComplements = selectSpellsComplementsBySubRace(state, subRaceId, xp) || [];
+    const specialisationSpellsComplements = selectSpellsComplementsBySpecialisation(state, specialisationId, classId, xp) || [];
+    const complements =  [].concat(raceSpellsComplements||[]).concat(subRaceSpellsComplements||[]).concat(specialisationSpellsComplements||[]);
+    const complementsSpells = complements.flatMap((spellsComplement) => spellsComplement.Spells||[]);
+
+    const raceSpellsComplementsClasses = selectSpellsComplementsClassesByRace(state, subRaceId, xp) || [];
+    const subRaceSpellsComplementsClasses = selectSpellsComplementsClassesBySubRace(state, subRaceId, xp) || [];
+    const specialisationSpellsComplementsClasses = selectSpellsComplementsClassesBySpecialisation(state, specialisationId, classId, xp) || [];
+    const allSpellsClasses = [...new Set([classId]
+                                .concat(raceSpellsComplementsClasses)
+                                .concat(subRaceSpellsComplementsClasses)
+                                .concat(specialisationSpellsComplementsClasses))];
+
+    const classKnownSpells = profilAvailableSpells?.filter((spell) => spellsNames?.includes(spell.Name)
+                                                                        && spell.Classes?.includes(classId)
+                                                                        && (!complementsSpells?.includes(spell.Name))
+                                                            ) || [];
+    const raceKnownSpells = profilAvailableSpells?.filter((spell) => spellsNames?.includes(spell.Name)
+                                                                    && spell.Classes.filter((classId) => raceSpellsComplementsClasses?.includes(classId))?.length > 0
+                                                                    && (!complementsSpells?.includes(spell.Name))
+                                                            ) || [];
+    const subRaceKnownSpells = profilAvailableSpells?.filter((spell) => spellsNames?.includes(spell.Name)
+                                                                    && spell.Classes.filter((classId) => subRaceSpellsComplementsClasses?.includes(classId))?.length > 0
+                                                                    && (!complementsSpells?.includes(spell.Name))
+                                                                ) || [];
+    const specialisationKnownSpells = profilAvailableSpells?.filter((spell) => spellsNames?.includes(spell.Name)
+                                                                    && spell.Classes.filter((classId) => specialisationSpellsComplementsClasses?.includes(classId))?.length> 0
+                                                                    && (!complementsSpells?.includes(spell.Name))
+                                                                ) || [];
+    const allKnownSpells = (classKnownSpells).concat(raceKnownSpells).concat(subRaceKnownSpells).concat(specialisationKnownSpells);
+
+    const filteredSpells = [];
+    filteredSpells[ORIGINE_CLASS]   = {number: 0, maxNumber: availableSpellsNb, classes: [classId], complementLocations: "", spells: []};
+    filteredSpells[ORIGINE_RACE]    = {number: 0, maxNumber: 0, classes: raceSpellsComplementsClasses, complementLocations: "", spells: []};
+    filteredSpells[ORIGINE_SUBRACE] = {number: 0, maxNumber: 0, classes: subRaceSpellsComplementsClasses, complementLocations: "", spells: []};
+    filteredSpells[ORIGINE_SPECIALISATION] = {number: 0, maxNumber: 0, classes: specialisationSpellsComplementsClasses, complementLocations: "", spells: []};
+    filteredSpells[ORIGINE_ALL] = {number: 0, maxNumber: 0, classes: allSpellsClasses, complementLocations: "", spells: []};                                              
+
+    (complements||[]).forEach((complement) => {
+        let origineCode = complement.BonusLocationClasses?.length === 1 && complement.BonusLocationClasses.includes(character?.Class)
+                          ? ORIGINE_CLASS
+                          : ( complement.Race
+                              ? ORIGINE_RACE
+                              :(complement.SubRace ? ORIGINE_SUBRACE : ORIGINE_SPECIALISATION) );
+        filteredSpells[origineCode].maxNumber += complement?.BonusLocation || 0;
+        filteredSpells[ORIGINE_ALL].maxNumber += complement?.BonusLocation || 0;
+        if (origineCode === ORIGINE_CLASS) {
+          if (complement.Race) {
+            filteredSpells[origineCode].complementLocations += `+${complement?.BonusLocation || 0} Provenants de la race ${race?.Name}`;
+          }
+          if (complement.SubRace) {
+            filteredSpells[origineCode].complementLocations += `+${complement?.BonusLocation || 0} Provenants de la race ${subRace?.Name}`;
+          }
+          if (complement.Specialisation) {
+            filteredSpells[origineCode].complementLocations += `+${complement?.BonusLocation || 0} Provenants de la spécialisation ${specialisation?.Name}`;
+          }
+        } 
+    });
+
+    
+    let newClassKnownSpells = classKnownSpells.slice()?.map((spell) => spell.Name) || [];
+    let newRaceKnownSpells = raceKnownSpells.slice()?.map((spell) => spell.Name) || [];
+    let newSubRaceKnownSpells = subRaceKnownSpells.slice()?.map((spell) => spell.Name) || [];
+    let newSpecialisationKnownSpells = specialisationKnownSpells.slice()?.map((spell) => spell.Name) || [];
+
+    if (raceSpellsComplementsClasses?.length === 1 && raceSpellsComplementsClasses.includes(classId)) {
+        newClassKnownSpells = newClassKnownSpells.concat(newRaceKnownSpells);
+        newRaceKnownSpells = [];
+    }
+    if (subRaceSpellsComplementsClasses?.length === 1 && subRaceSpellsComplementsClasses.includes(classId)) {
+        newClassKnownSpells = newClassKnownSpells.concat(newSubRaceKnownSpells);
+        newSubRaceKnownSpells = [];
+    }
+    if (specialisationSpellsComplementsClasses?.length === 1 && specialisationSpellsComplementsClasses.includes(classId)) {
+        newClassKnownSpells = newClassKnownSpells.concat(newSpecialisationKnownSpells);
+        newSpecialisationKnownSpells = [];
+    }
+
+    const raceKnownSpellsInClass = newRaceKnownSpells.filter((spell) => newClassKnownSpells.includes(spell.Name));
+    newRaceKnownSpells = newRaceKnownSpells.filter((spell) => !newClassKnownSpells.includes(spell.Name));
+    if (newRaceKnownSpells.length < filteredSpells[ORIGINE_RACE].maxNumber && newClassKnownSpells.length > filteredSpells[ORIGINE_CLASS].maxNumber) {
+        const classTaken = raceKnownSpellsInClass.slice(0, filteredSpells[ORIGINE_RACE].maxNumber - newRaceKnownSpells.length);
+        newRaceKnownSpells = newRaceKnownSpells.concat(classTaken);
+        newClassKnownSpells = newClassKnownSpells.filter((spell) => !classTaken.includes(spell.Name));
+    }
+
+    const subRaceKnownSpellsInRace = newSubRaceKnownSpells.filter((spellName) => newRaceKnownSpells.includes(spellName));
+    const subRaceKnownSpellsInClass = newSubRaceKnownSpells.filter((spellName) => newClassKnownSpells.includes(spellName));
+    newSubRaceKnownSpells = newSubRaceKnownSpells.filter((spellName) => !newRaceKnownSpells.includes(spellName) && !newClassKnownSpells.includes(spellName));
+    if (newSubRaceKnownSpells.length < filteredSpells[ORIGINE_SUBRACE].maxNumber && newRaceKnownSpells.length > filteredSpells[ORIGINE_RACE].maxNumber) {
+        const raceTaken = subRaceKnownSpellsInRace.slice(0, filteredSpells[ORIGINE_SUBRACE].maxNumber - newSubRaceKnownSpells.length);
+        newSubRaceKnownSpells = newSubRaceKnownSpells.concat(raceTaken);
+        newRaceKnownSpells = newRaceKnownSpells.filter((spellName) => !raceTaken.includes(spellName));
+    }
+    if (newSubRaceKnownSpells.length < filteredSpells[ORIGINE_SUBRACE].maxNumber && newClassKnownSpells.length > filteredSpells[ORIGINE_CLASS].maxNumber) {
+        const classTaken = subRaceKnownSpellsInClass.slice(0, filteredSpells[ORIGINE_SUBRACE].maxNumber - newSubRaceKnownSpells.length);
+        newSubRaceKnownSpells = newSubRaceKnownSpells.concat(classTaken);
+        newClassKnownSpells = newClassKnownSpells.filter((spellName) => !classTaken.includes(spellName));
+    }
+
+    const specialisationKnownSpellsInSubRace = newSpecialisationKnownSpells.filter((spellName) => newSubRaceKnownSpells.includes(spellName));
+    const specialisationKnownSpellsInRace = newSpecialisationKnownSpells.filter((spellName) => newRaceKnownSpells.includes(spellName));
+    const specialisationKnownSpellsInClass = newSpecialisationKnownSpells.filter((spellName) => newClassKnownSpells.includes(spellName));
+    newSpecialisationKnownSpells = newSpecialisationKnownSpells.filter((spellName) => !newSubRaceKnownSpells.includes(spellName)
+                                                                                    && !newRaceKnownSpells.includes(spellName)
+                                                                                    && !newClassKnownSpells.includes(spellName));
+    if (newSpecialisationKnownSpells.length < filteredSpells[ORIGINE_SPECIALISATION].maxNumber && newSubRaceKnownSpells.length > filteredSpells[ORIGINE_SUBRACE].maxNumber) {
+        const subRaceTaken = specialisationKnownSpellsInSubRace.slice(0, filteredSpells[ORIGINE_SPECIALISATION].maxNumber - newSpecialisationKnownSpells.length);
+        newSpecialisationKnownSpells = newSpecialisationKnownSpells.concat(subRaceTaken);
+        newSubRaceKnownSpells = newSubRaceKnownSpells.filter((spellName) => !subRaceTaken.includes(spellName));
+    }
+    if (newSpecialisationKnownSpells.length < filteredSpells[ORIGINE_SPECIALISATION].maxNumber && newRaceKnownSpells.length > filteredSpells[ORIGINE_RACE].maxNumber) {
+        const raceTaken = specialisationKnownSpellsInRace.slice(0, filteredSpells[ORIGINE_SPECIALISATION].maxNumber - newSpecialisationKnownSpells.length);
+        newSpecialisationKnownSpells = newSpecialisationKnownSpells.concat(raceTaken);
+        newRaceKnownSpells = newRaceKnownSpells.filter((spellName) => !raceTaken.includes(spellName));
+    }
+    if (newSpecialisationKnownSpells.length < filteredSpells[ORIGINE_SPECIALISATION].maxNumber && newClassKnownSpells.length > filteredSpells[ORIGINE_CLASS].maxNumber) {
+        const classTaken = specialisationKnownSpellsInClass.slice(0, filteredSpells[ORIGINE_SPECIALISATION].maxNumber - newSpecialisationKnownSpells.length);
+        newSpecialisationKnownSpells = newSpecialisationKnownSpells.concat(classTaken);
+        newClassKnownSpells = newClassKnownSpells.filter((spellName) => !classTaken.includes(spellName));
+    }
+
+    //console.log(spellsNames, newClassKnownSpells, newRaceKnownSpells, newSubRaceKnownSpells, newSpecialisationKnownSpells);
+
+    filteredSpells[ORIGINE_CLASS].number = newClassKnownSpells?.length || 0;
+    filteredSpells[ORIGINE_CLASS].spells = newClassKnownSpells;
+    filteredSpells[ORIGINE_RACE].number = newRaceKnownSpells?.length || 0;
+    filteredSpells[ORIGINE_RACE].spells = newSubRaceKnownSpells;
+    filteredSpells[ORIGINE_SUBRACE].number = newSubRaceKnownSpells?.length || 0;
+    filteredSpells[ORIGINE_SUBRACE].spells = newSubRaceKnownSpells;
+    filteredSpells[ORIGINE_SPECIALISATION].number = newSpecialisationKnownSpells?.length || 0;
+    filteredSpells[ORIGINE_SPECIALISATION].spells = newSpecialisationKnownSpells;
+    filteredSpells[ORIGINE_ALL].number = allKnownSpells?.length || 0;
+    filteredSpells[ORIGINE_ALL].spells = allKnownSpells?.map((spell) => spell.Name) || [];
+
+    return filteredSpells;
+}
+
+export const selectSpellByProfil = (state, subRaceId, classId, specialisationId, xp) => {
+    const spells = selectSpells(state);
+    const raceSpellsComplements = selectSpellsComplementsByRace(state, subRaceId, xp);
+    const subRaceSpellsComplements = selectSpellsComplementsBySubRace(state, subRaceId, xp);
+    const specialisationSpellsComplements = selectSpellsComplementsBySpecialisation(state, specialisationId, classId, xp);
+    const allowedClasses = [classId, specialisationId].concat(raceSpellsComplements?.flatMap((complement) => complement.BonusLocationClasses||[]))
+                            .concat(subRaceSpellsComplements?.flatMap((complement) => complement.BonusLocationClasses||[]))
+                            .concat(specialisationSpellsComplements?.flatMap((complement) => complement.BonusLocationClasses||[]));
+    return spells?.filter( (spell) => spell.Classes.filter((spellClassId) => allowedClasses?.includes(spellClassId))?.length > 0 );
 }
 
 export const selectWeaponCategoriesMap = state => state.referential.weaponCategories;

@@ -1,0 +1,15 @@
+Répartition/Sélection des sorts
+	-Sélection autorisée si au moins 1 des multi origines non plein
+	-Info-bull multi origines
+	-Icone multi-origines
+
+Wizard : Sort arcanum
+Choix de compétence
+	Paladin Sorts de Serment
+	Paladin Canalisation d'énergie divine
+	Prowler Hunter Capacité au choix
+	
+Charger liste des monstres (https://www.aidedd.org/dnd-filters/monstres.php)
+Component Combats
+
+Refaire tests auto
