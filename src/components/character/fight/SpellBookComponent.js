@@ -1,11 +1,11 @@
 
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-import { selectClassesMap, selectClassCapacityByClassIdXP, selectSpellsNbBonusByClassXP, selectSpells, selectSpellsComplementsClassesByRace,
-        selectSpellByProfil, selectSpellsComplementsByRace, selectSpellsComplementsBySubRace, selectSpellsComplementsBySpecialisation,
-        selectSpellsComplementsSpellsByRace, selectSpellsComplementsSpellsBySubRace, selectSpellsComplementsSpellsBySpecialisation,
-        selectRaceBySubRaceId, selectSubRaceById, selectValidSpecialisation, selectKnownClassesSpellsFilteredByOrigine,
-        ORIGINE_CLASS, ORIGINE_RACE, ORIGINE_SUBRACE, ORIGINE_SPECIALISATION, ORIGINE_ALL } from 'store/selectors';
+import { selectClassesMap, selectClassCapacityByClassIdXP, selectSpellsNbBonusByClassXP, selectSpells, selectAvailableSpellsByClass,
+        selectSpellsComplementsClassesByRace, selectSpellByProfil, selectSpellsComplementsByRace, selectSpellsComplementsBySubRace,
+        selectSpellsComplementsBySpecialisation, selectSpellsComplementsSpellsByRace, selectSpellsComplementsSpellsBySubRace,
+        selectSpellsComplementsSpellsBySpecialisation, selectRaceBySubRaceId, selectSubRaceById, selectValidSpecialisation,
+        selectKnownClassesSpellsFilteredByOrigine, ORIGINE_CLASS, ORIGINE_RACE, ORIGINE_SUBRACE, ORIGINE_SPECIALISATION, ORIGINE_ALL } from 'store/selectors';
 import PropTypes from 'prop-types'
 
 import { SPELL_MAX_LEVEL } from 'rules/Spells.rules'
@@ -118,21 +118,28 @@ class SpellBookComponent extends PureComponent {
                               { levelAvailableSpells.map((spell) => {
                                const known = character.MinorSpells?.includes(spell.Name) || knownSpells?.includes(spell.Name);
                                const isComplement = complementsSpells?.includes(spell.Name);
-                               const { origineCode, origineTitle, origineImage } = this.getOrigine(spell);
+                               const { origineCodes, origineTitle, origineImage } = this.getOrigine(spell);
                                const description = `Ecole : ${spell.School}`+
                                                   `\nIncantation : ${spell.Incantation}`+
                                                   `${spell.Type?"\n"+spell.Type:""}`+
                                                   `\nDisponible pour : ${this.classListToString(spell.Classes)}${origineTitle?" ("+origineTitle+")":""}`+
                                                   `\n\n${spell.Description}`;
                                let schoolImage;
-                               //const selectAuthorization = (index === 0 && knownMinorSpellsNb < availableMinorSpellsNb) || (index > 0 && knownSpellsNb < availableSpellsNb);
-                               const selectAuthorization = (origineCode === ORIGINE_CLASS && index === 0 && knownMinorSpellsNb < availableMinorSpellsNb) || ((index > 0 || origineCode !== ORIGINE_CLASS) && knownSpellsFilteredByOrigine[origineCode]?.number < knownSpellsFilteredByOrigine[origineCode]?.maxNumber);
+                               let selectAuthorization = origineCodes.includes(ORIGINE_CLASS) && index === 0 && knownMinorSpellsNb < availableMinorSpellsNb;
+                               if (!selectAuthorization && (index > 0 || origineCodes.length !== 1 || !origineCodes.includes(ORIGINE_CLASS))) {
+                                 origineCodes.forEach((origineCode) => {
+                                  selectAuthorization = selectAuthorization || knownSpellsFilteredByOrigine[origineCode]?.number < knownSpellsFilteredByOrigine[origineCode]?.maxNumber;
+                                 });
+                               }
+                               const isMinorSpell = character.MinorSpells?.includes(spell.Name) ||
+                                                    (index===0 && origineCodes.includes(ORIGINE_CLASS) && (origineCodes.length === 1 || knownMinorSpellsNb < availableMinorSpellsNb)
+                                                    );
                                try {
                                 schoolImage = require(`images/spells/${spell.School}.png`);
                                } finally {}
 
                                return <li key={spell.Name} className={`spell transparent ${isComplement?"hoverable locked":"activable"} ${(isComplement || known||selectAuthorization)?"":"forbidden"}`}
-                                          role="button" onClick={() => { if (!isComplement && (selectAuthorization||known)) {if (index===0 && origineCode === ORIGINE_CLASS) { onMinorSpellClick(spell.Name)} else {onSpellClick(spell.Name)} } }}
+                                          role="button" onClick={() => { if (!isComplement && (selectAuthorization||known)) {if (isMinorSpell) { onMinorSpellClick(spell.Name)} else {onSpellClick(spell.Name)} } }}
                                     title={description}>
                                   <div className={"option "+((known)&&"filled")}></div>
                                   <span key={spell.Name} className="spell-name" >{spell.Name}</span>
@@ -156,69 +163,78 @@ class SpellBookComponent extends PureComponent {
   }
 
   getOrigine = (spell) => {
-    const { raceSpellsComplements, subRaceSpellsComplements, specialisationSpellsComplements,
+    const { raceSpellsComplements, subRaceSpellsComplements, specialisationSpellsComplements, classAvailableSpells,
             raceSpellsComplementsSpells, subRaceSpellsComplementsSpells, specialisationSpellsComplementsSpells,
             race, subRace, specialisation, character } = this.props;
     const characterClassId = character?.Class;
-    const complements =  [].concat(raceSpellsComplements||[]).concat(subRaceSpellsComplements||[]).concat(specialisationSpellsComplements||[]);
-    const complementsAvailableSpellsClasses = complements.filter((complement) => complement.BonusLocationClasses);
-    let origineTitle = null;
+
+    let origineTitle = "";
     let origineImage = null;
-    let origineCode = ORIGINE_CLASS;
+    let origineCodes = new Set();
+    if (classAvailableSpells?.filter((availableSpell) => availableSpell.Name === spell?.Name).length > 0) {
+      origineCodes.add(ORIGINE_CLASS);
+    }
     if (raceSpellsComplementsSpells?.includes(spell.Name)) {
-      origineCode = ORIGINE_RACE;
+      origineCodes.add(ORIGINE_RACE);
       origineTitle = `Connu de la race ${race?.Name}`;
       try {
         origineImage = require(`images/races/${subRace?.Id}.png`);
       } catch (ex) {
         origineImage = require("images/races/no_race.png");
       }
-    } else if (subRaceSpellsComplementsSpells?.includes(spell.Name)) {
-      origineCode = ORIGINE_SUBRACE;
-      origineTitle = `Connu de la race ${subRace?.Name}`;
+    }
+
+    if (subRaceSpellsComplementsSpells?.includes(spell.Name)) {
+      origineCodes.add(ORIGINE_SUBRACE);
+      origineTitle += `${origineTitle?", ":"Connu "}de la race ${subRace?.Name}`;
       try {
-        origineImage = require(`images/races/${subRace?.Id}.png`);
+        origineImage = origineImage || require(`images/races/${subRace?.Id}.png`);
       } catch (ex) {
         origineImage = require("images/races/no_race.png");
       }
-    } else if (specialisationSpellsComplementsSpells?.includes(spell.Name)) {
-      origineCode = ORIGINE_SPECIALISATION;
-      origineTitle = `Connu de la spécialisation ${specialisation?.Name}`;
+    }
+    if (specialisationSpellsComplementsSpells?.includes(spell.Name)) {
+      origineCodes.add(ORIGINE_SPECIALISATION);
+      origineTitle += `${origineTitle?", ":"Connu "}de la spécialisation ${specialisation?.Name}`;
       try {
-        origineImage = require(`images/classes/specialisations/${specialisation?.Code}.png`);
+        origineImage = origineImage || require(`images/classes/specialisations/${specialisation?.Code}.png`);
       } catch (ex) {
         origineImage = require("images/classes/specialisations/no_image.png");
       }
-    } else if (!spell.Classes.includes(characterClassId)) {
-      complementsAvailableSpellsClasses.forEach(() => {
-        if (this.isSpellFromComplements(raceSpellsComplements, spell)) {
-          origineCode = ORIGINE_RACE;
-          origineTitle = `Accessible de la race ${race?.Name}`;
-          try {
-            origineImage = require(`images/races/${subRace?.Id}.png`);
-          } catch (ex) {
-            origineImage = require("images/races/no_race.png");
-          }
-        } else if (this.isSpellFromComplements(subRaceSpellsComplements, spell)) {
-          origineCode = ORIGINE_SUBRACE;
-          origineTitle = `Accessible de la race ${subRace?.Name}`;
-          try {
-            origineImage = require(`images/races/${subRace?.Id}.png`);
-          } catch (ex) {
-            origineImage = require("images/races/no_race.png");
-          }
-        } else if (this.isSpellFromComplements(specialisationSpellsComplements, spell)) {
-          origineCode = ORIGINE_SPECIALISATION;
-          origineTitle = `Accessible de la spécialisation ${specialisation?.Name}`;
-          try {
-            origineImage = require(`images/classes/specialisations/${specialisation?.Code}.png`);
-          } catch (ex) {
-            origineImage = require("images/classes/specialisations/no_image.png");
-          }
+    }
+
+    if (!origineTitle) {
+      if (this.isSpellFromComplements(raceSpellsComplements, spell)) {
+        origineCodes.add(ORIGINE_RACE);
+        origineTitle = `Accessible de la race ${race?.Name}`;
+
+        try {
+          origineImage = spell.Classes.includes(characterClassId)?"":origineImage || require(`images/races/${subRace?.Id}.png`);
+        } catch (ex) {
+          origineImage = require("images/races/no_race.png");
         }
-      });
+      }
+      if (this.isSpellFromComplements(subRaceSpellsComplements, spell)) {
+        origineCodes.add(ORIGINE_SUBRACE);
+        origineTitle += `${origineTitle?", ":"Accessible "}de la race ${subRace?.Name}`;
+        try {
+          origineImage = spell.Classes.includes(characterClassId)?"":origineImage || require(`images/races/${subRace?.Id}.png`);
+        } catch (ex) {
+          origineImage = require("images/races/no_race.png");
+        }
+      }
+
+      if (this.isSpellFromComplements(specialisationSpellsComplements, spell)) {
+        origineCodes.add(ORIGINE_SPECIALISATION);
+        origineTitle += `${origineTitle?", ":"Accessible "}de la spécialisation ${specialisation?.Name}`;
+        try {
+          origineImage = spell.Classes.includes(characterClassId)?"":origineImage || require(`images/classes/specialisations/${specialisation?.Code}.png`);
+        } catch (ex) {
+          origineImage = require("images/classes/specialisations/no_image.png");
+        }
+      }
    }
-   return {origineCode: origineCode, origineTitle: origineTitle, origineImage: origineImage};
+   return {origineCodes: [...origineCodes], origineTitle: origineTitle, origineImage: origineImage};
   }
 
   classListToString(classes) {
@@ -241,6 +257,7 @@ SpellBookComponent.propTypes = {
 }
 
 const mapStateToProps = (state, props) => ({
+  classAvailableSpells : selectAvailableSpellsByClass(state, props.character?.Class),
   profilAvailableSpells: selectSpellByProfil(state, props.character?.SubRace, props.character?.Class, props.character?.Specialisation, props.character?.XP),
   spells: selectSpells(state),
   classesMap: selectClassesMap(state),

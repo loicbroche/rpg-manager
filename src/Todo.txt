@@ -1,8 +1,3 @@
-Répartition/Sélection des sorts
-	-Sélection autorisée si au moins 1 des multi origines non plein
-	-Info-bull multi origines
-	-Icone multi-origines
-
 Wizard : Sort arcanum
 Choix de compétence
 	Paladin Sorts de Serment

@@ -184,6 +184,20 @@ export const selectSpellsComplementsClassesBySubRace = (state, subRaceId, xp) =>
 export const selectSpellsComplementsClassesBySpecialisation = (state, specialisationId, classId, xp) => {
     return selectSpellsComplementsBySpecialisation(state, specialisationId, classId, xp)?.flatMap((spellsComplement) => spellsComplement.BonusLocationClasses||[]);
 }
+export const selectAvailableSpellsByClass = (state, classId) => {
+    const spells = selectSpells(state);
+    return spells?.filter( (spell) => spell.Classes.includes(classId) );
+}
+export const selectSpellByProfil = (state, subRaceId, classId, specialisationId, xp) => {
+    const spells = selectSpells(state);
+    const raceSpellsComplements = selectSpellsComplementsByRace(state, subRaceId, xp);
+    const subRaceSpellsComplements = selectSpellsComplementsBySubRace(state, subRaceId, xp);
+    const specialisationSpellsComplements = selectSpellsComplementsBySpecialisation(state, specialisationId, classId, xp);
+    const allowedClasses = [classId, specialisationId].concat(raceSpellsComplements?.flatMap((complement) => complement.BonusLocationClasses||[]))
+                            .concat(subRaceSpellsComplements?.flatMap((complement) => complement.BonusLocationClasses||[]))
+                            .concat(specialisationSpellsComplements?.flatMap((complement) => complement.BonusLocationClasses||[]));
+    return spells?.filter( (spell) => spell.Classes.filter((spellClassId) => allowedClasses?.includes(spellClassId))?.length > 0 );
+}
 export const selectKnownClassesSpellsFilteredByOrigine = (state, character) => {
     const subRaceId = character?.SubRace
     const classId = character?.Class;
@@ -303,6 +317,7 @@ export const selectKnownClassesSpellsFilteredByOrigine = (state, character) => {
     const specialisationKnownSpellsInSubRace = newSpecialisationKnownSpells.filter((spellName) => newSubRaceKnownSpells.includes(spellName));
     const specialisationKnownSpellsInRace = newSpecialisationKnownSpells.filter((spellName) => newRaceKnownSpells.includes(spellName));
     const specialisationKnownSpellsInClass = newSpecialisationKnownSpells.filter((spellName) => newClassKnownSpells.includes(spellName));
+
     newSpecialisationKnownSpells = newSpecialisationKnownSpells.filter((spellName) => !newSubRaceKnownSpells.includes(spellName)
                                                                                     && !newRaceKnownSpells.includes(spellName)
                                                                                     && !newClassKnownSpells.includes(spellName));
@@ -322,8 +337,6 @@ export const selectKnownClassesSpellsFilteredByOrigine = (state, character) => {
         newClassKnownSpells = newClassKnownSpells.filter((spellName) => !classTaken.includes(spellName));
     }
 
-    //console.log(spellsNames, newClassKnownSpells, newRaceKnownSpells, newSubRaceKnownSpells, newSpecialisationKnownSpells);
-
     filteredSpells[ORIGINE_CLASS].number = newClassKnownSpells?.length || 0;
     filteredSpells[ORIGINE_CLASS].spells = newClassKnownSpells;
     filteredSpells[ORIGINE_RACE].number = newRaceKnownSpells?.length || 0;
@@ -336,17 +349,6 @@ export const selectKnownClassesSpellsFilteredByOrigine = (state, character) => {
     filteredSpells[ORIGINE_ALL].spells = allKnownSpells?.map((spell) => spell.Name) || [];
 
     return filteredSpells;
-}
-
-export const selectSpellByProfil = (state, subRaceId, classId, specialisationId, xp) => {
-    const spells = selectSpells(state);
-    const raceSpellsComplements = selectSpellsComplementsByRace(state, subRaceId, xp);
-    const subRaceSpellsComplements = selectSpellsComplementsBySubRace(state, subRaceId, xp);
-    const specialisationSpellsComplements = selectSpellsComplementsBySpecialisation(state, specialisationId, classId, xp);
-    const allowedClasses = [classId, specialisationId].concat(raceSpellsComplements?.flatMap((complement) => complement.BonusLocationClasses||[]))
-                            .concat(subRaceSpellsComplements?.flatMap((complement) => complement.BonusLocationClasses||[]))
-                            .concat(specialisationSpellsComplements?.flatMap((complement) => complement.BonusLocationClasses||[]));
-    return spells?.filter( (spell) => spell.Classes.filter((spellClassId) => allowedClasses?.includes(spellClassId))?.length > 0 );
 }
 
 export const selectWeaponCategoriesMap = state => state.referential.weaponCategories;
