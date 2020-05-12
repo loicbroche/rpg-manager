@@ -117,7 +117,7 @@
 					"$index": {
 					    ".validate": "newData.child('Id').exists() && newData.child('Quantity').exists()",
 						"Id": {
-							".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+							".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
 						},
 						"Label": {
 							".validate": "newData.isString() && newData.val().length <= 50"
@@ -190,6 +190,20 @@
                 "SaveAdvantages": {
 					"$index": {
 						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+					}
+				},
+                "SatchelObjects": {
+					"$index": {
+					    ".validate": "newData.child('Id').exists() && newData.child('Quantity').exists()",
+						"Id": {
+							".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+						},
+						"Label": {
+							".validate": "newData.isString() && newData.val().length <= 50"
+						},
+						"Quantity": {
+							".validate": "newData.isNumber() && 0 < newData.val()"
+						}
 					}
 				},
 				"Damages": {

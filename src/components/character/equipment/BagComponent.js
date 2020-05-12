@@ -33,7 +33,7 @@ class BagComponent extends PureComponent {
     const objs = []
     if (objectsMap && characterObjects) {
       for (let i = 0; i < characterObjects.length; i++) {
-        const obj = objectsMap[characterObjects[i]?.Id];
+        const obj = {...objectsMap[characterObjects[i]?.Id]};
         obj.Id = characterObjects[i].Id;
         obj.Name = characterObjects[i].Label || obj.Name;
         obj.Quantity = characterObjects[i].Quantity;
@@ -160,6 +160,7 @@ class BagComponent extends PureComponent {
       const index = characterObjects.findIndex((object) => object.Id === newObjectId);
       if (index === -1) {
         characterObjects[characterObjects.length] = {Id: newObjectId, Label: label, Quantity: newObjectQuantity};
+        console.log("addObject", newObjectId, newObjectQuantity, index, characterObjects);
       } else {
         characterObjects[index].Quantity += newObjectQuantity;
       }

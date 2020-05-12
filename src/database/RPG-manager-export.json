@@ -25,7 +25,6 @@
       "MaxHP" : 24,
       "Money" : 1000,
       "Name" : "Ash",
-      "Objects" : [],
       "PersonnalityTraits" : "Serein",
       "Skills" : [ "Eloquence", "Etiquette", "Narcotique", "Négociation", "Noblesse", "Représentation" ],
       "Skin" : "Bleu clair",
@@ -37,14 +36,14 @@
       "Wisdom" : 10,
       "XP" : 900
     },
-    "Saphir" : {
+    "Saphire" : {
       "Age" : 26,
-      "Alignment" : "2_NB",
+      "Alignment" : "5_NB",
       "Ammunition" : 10,
       "Armor" : "-",
-      "Charisma" : 15,
+      "Charisma" : 8,
       "Class" : "MONK",
-      "Constitution" : 17,
+      "Constitution" : 15,
       "Damages" : [ {
         "Code" : "torso",
         "Description" : "Blessure infligée par Sorween",
@@ -115,40 +114,54 @@
         "Top" : "35.743%"
       } ],
       "Defects" : "Instable et sanguinaire",
-      "Dexterity" : 20,
-      "DistanceWeapon" : "Fléchette",
+      "Dexterity" : 18,
+      "DistanceWeapon" : "Fronde",
       "Eyes" : "Saphir",
       "Gender" : "♂",
       "HP" : 24,
       "Hairs" : "Mi-longs blancs bleutés",
-      "Health" : 4,
+      "Health" : 2,
       "Height" : 176,
       "HiddenCapacities" : [ "1-Défense sans armure", "2-Déplacement sans armure", "3-Tradition monastique" ],
       "Historic" : "HERMIT",
       "History" : "Sa mère, séduite par un génie ayant pris forme humaine, l'a abandonné à la naissance aux portes d'un monastère aux centre d'un forêt par sa mère lorsqu'elle à découvert à quoi elle avait donné naissance.",
       "Id" : "Saphir",
       "Ideals" : "Logique",
-      "Intelligence" : 14,
+      "Intelligence" : 8,
       "Languages" : [ "SILVAN" ],
       "Links" : "L'ordre de son monastère",
+      "MasterObjects" : [ "Mon cartographe", "Mon cartographe 2" ],
       "MaxHP" : 24,
-      "MinorSpells" : [ "Amis", "Coup de tonnerre", "Gelure", "Explosion de lames" ],
+      "MinorSpells" : [ "Coup de tonnerre", "Illusion mineure", "Coup au but" ],
       "Money" : 1000,
-      "Name" : "Saphir",
+      "Name" : "Saphire",
       "Notes" : "L'aventure débute niveau 3 dans un petit village nommé \"?\"\nRencontre des personnages.",
-      "Objects" : [ {"Id": "Outils de cartographe", "Label": "Mon cartographe", "Quantity": 2} ],
+      "Objects" : [ {
+        "Id" : "500 g d'argent ou 1 m² de lin",
+        "Label" : "Couverture d'hiver",
+        "Quantity" : 1
+      }, {
+        "Id" : "Une feuille de parchemin sur laquelle est dessiné un engin mécanique complexe",
+        "Label" : "Parchemin d'études",
+        "Quantity" : 1
+      } ],
       "PersonnalityTraits" : "Serein",
-      "Skills" : [ "Acrobatie", "Discrétion" ],
+      "SatchelObjects" : [ {
+        "Id" : "Kit d'herboriste",
+        "Quantity" : 1
+      } ],
+      "Saves" : [ "FEAR", "STRESS", "DRUG" ],
+      "Skills" : [ "Acrobatie", "Discrétion", "Equilibre", "Premiers secours", "Réflexe" ],
       "Skin" : "Bleu clair",
-      "Specialisation" : "SHADOW_WAY",
+      "Specialisation" : "OPENED_HAND_WAY",
       "Specials" : 2,
-      "Spells" : [ "Armure de mage", "Charme-personne", "Attraction terrestre", "Agrandissement-Rapetissement" ],
+      "Spells" : [ "Amitié avec les animaux", "Charme-personne", "Communication avec les animaux", "Compréhension des langues", "Détection de la magie", "Déguisement", "Fou rire de Tasha", "Fléau", "Feuille morte", "Amis" ],
       "SpellsLocations" : [ null, 3, 2, 0, 0, 0, 0, 0, 0, 0 ],
-      "Strength" : 12,
+      "Strength" : 8,
       "SubRace" : "AIR_GENASI",
       "Weapon" : "Bâton",
       "Weight" : 68000,
-      "Wisdom" : 19,
+      "Wisdom" : 16,
       "XP" : 900
     },
     "Sorwen" : {
@@ -175,7 +188,6 @@
       "MaxHP" : 24,
       "Money" : 1000,
       "Name" : "Sorwen",
-      "Objects" : [],
       "PersonnalityTraits" : "Serien",
       "Shield" : "Bouclier",
       "Skills" : [ "Acrobatie", "Discrétion" ],
@@ -199,6 +211,13 @@
       "Locked" : "Ash"
     }, {
       "Content" : "Buongiorno"
+    } ],
+    "Saphir" : [ {
+      "Content" : "-2",
+      "Description" : "Blessure au torse",
+      "Left" : "1226px",
+      "Name" : "CON",
+      "Top" : "-18px"
     } ]
   }
 }

@@ -42,6 +42,7 @@ class DetailsComponent extends PureComponent {
             <div className="details-names">
               <span>Alignement</span>
               <span>Âge</span>
+              <span>Taille</span>
               <span>Poids</span>
               <span>Yeux</span>
               <span>Peau</span>
@@ -72,6 +73,19 @@ class DetailsComponent extends PureComponent {
                       onChange={(event) => onChange(DATA_MODEL.CHARACTERS.columns.AGE.name, parseInt(event.target.value) || 0)}
                       className="age"
                       disabled={!onChange} />
+              <span>
+                <input  name="height" 
+                      type="number"
+                      autoComplete="height"
+                      value={character[DATA_MODEL.CHARACTERS.columns.HEIGHT.name]}
+                      min={0}
+                      step={1}
+                      title={`Saisissez la taille de votre personnage`}
+                      onChange={(event) => onChange(DATA_MODEL.CHARACTERS.columns.HEIGHT.name, parseInt(event.target.value) || 0)}
+                      className="height"
+                      disabled={!onChange} />
+                <span>cm</span>
+              </span>
               <span title={`Saisissez le poids de votre personnage`}>
                   <Weight weight={character.Weight} onChange={(value) => onChange(DATA_MODEL.CHARACTERS.columns.WEIGHT.name, value)} />
                   <span className="equipment-weight" title="Poids de l'équipmenent porté"> (+<Weight weight={equipmentsWeight + objectsWeight} />)</span>

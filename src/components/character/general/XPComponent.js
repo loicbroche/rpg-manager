@@ -2,13 +2,13 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { selectLevelNumberByXP, selectNextLevelByXP, selectMaxLevel } from 'store/selectors';
+import { selectLevelNumberByXP, selectNextLevelByXP, selectMaxLevel, selectMasteryBonusByXP } from 'store/selectors';
 import './XPComponent.css'
 
 class XPComponent extends PureComponent {
 
   render() {
-    const { levelNumber, nextLevel, maxLevel, XP } = this.props;
+    const { levelNumber, nextLevel, maxLevel, XP, masteryBonus } = this.props;
 
     const nextLevelXp = nextLevel?.XP;
     const maxXP = maxLevel?.XP;
@@ -34,7 +34,7 @@ class XPComponent extends PureComponent {
               </div>
           </div>
         </div>
-        <div className="selector-icon level">
+        <div className="selector-icon level" title={`Niveau ${levelNumber}\nBonus maîtrise +${masteryBonus}`}>
           <span>Niv.</span>
           <span>{levelNumber}</span>
         </div>
@@ -51,6 +51,7 @@ XPComponent.propTypes = {
 const mapStateToProps = (state, props) => ({
   levelNumber: selectLevelNumberByXP(state, props.XP),
   nextLevel: selectNextLevelByXP(state, props.XP),
-  maxLevel: selectMaxLevel(state)
+  maxLevel: selectMaxLevel(state),
+  masteryBonus: selectMasteryBonusByXP(state, props.XP)
 })
 export default connect(mapStateToProps)(XPComponent)

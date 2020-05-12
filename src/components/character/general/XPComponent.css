@@ -51,6 +51,6 @@
   width: var(--height-icons);
   text-align: center;
   border-radius: 50%;
-  
+  cursor: default;
   background-image: radial-gradient(var(--color-XP), transparent, var(--color-XP));
 }
