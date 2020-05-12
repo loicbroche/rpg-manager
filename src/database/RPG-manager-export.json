@@ -125,7 +125,7 @@
       "HiddenCapacities" : [ "1-Défense sans armure", "2-Déplacement sans armure", "3-Tradition monastique" ],
       "Historic" : "HERMIT",
       "History" : "Sa mère, séduite par un génie ayant pris forme humaine, l'a abandonné à la naissance aux portes d'un monastère aux centre d'un forêt par sa mère lorsqu'elle à découvert à quoi elle avait donné naissance.",
-      "Id" : "Saphir",
+      "Id" : "Saphire",
       "Ideals" : "Logique",
       "Intelligence" : 8,
       "Languages" : [ "SILVAN" ],
@@ -150,7 +150,7 @@
         "Id" : "Kit d'herboriste",
         "Quantity" : 1
       } ],
-      "Saves" : [ "FEAR", "STRESS", "DRUG" ],
+      "Saves" : [ "FEAR", "STRESS" ],
       "Skills" : [ "Acrobatie", "Discrétion", "Equilibre", "Premiers secours", "Réflexe" ],
       "Skin" : "Bleu clair",
       "Specialisation" : "OPENED_HAND_WAY",
