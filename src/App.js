@@ -41,6 +41,10 @@ class App extends Component {
               render={props => ( <Page {...props} component={Home} title="JdR Manager" /> )}
             />
             <Route
+              exact path={ROUTE_BASE}
+              render={props => ( <Page {...props} component={Home} title="JdR Manager" /> )}
+            />
+            <Route
               exact path={ROUTE_GAME_MASTER}
               render={props => ( <Page {...props} component={GameMaster} title="Maître du jeu - JdR Manager" /> )}
             />
@@ -61,5 +65,6 @@ class App extends Component {
 export default connect(state => state, {loadReferential: Actions.loadReferentialValuesAction})(App)
 
 export const ROUTE_HOME = "/";
+export const ROUTE_BASE = "/rpg-manager";
 export const ROUTE_GAME_MASTER = "/gm";
 export const ROUTE_CHARACTER = "/character";
