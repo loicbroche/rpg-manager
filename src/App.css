@@ -88,6 +88,11 @@ h1 {
   color: var(--color-primary);
 }
 
+select:disabled {
+  background-color: #fff;
+  color: #333;
+}
+
 /*Static style General classes*/
 .error-message {
   background-color: var(--background-color-error);

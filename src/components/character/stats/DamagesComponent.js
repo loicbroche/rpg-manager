@@ -88,7 +88,7 @@ class DamagesComponent extends PureComponent {
               }
               const hurt = damage?.Hurt;
               const damageSymbol = hurt?damage?.Symbol:"";
-              const damageTitle = `${damage.Title||damageLocation.label}${hurt&&damage?.Description?"\n"+damage?.Description:""}`;
+              const damageTitle = `${damage?.Title||damageLocation.label}${hurt&&damage?.Description?"\n"+damage?.Description:""}`;
               return <div key={damageLocation.code}
                           id={`${damageLocation.code}-damage-marker`}
                           className={`damage-marker ${damageLocation.code}-damage-marker ${hurt?"hurt":""}`}
