@@ -34,7 +34,7 @@ class ClassSelector extends PureComponent {
     }
 
     return (
-      <div className="class-style-selector">
+      <div className="class-selector-style">
         {figthStylable && <div className="fight-styles">
           { classFightStyles?.map((style) => {
               let fightStyleImage;
