@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "291099bf67c3cb2c840a80e7af8c80a7",
+    "revision": "56528b5487de73f8a8cf24bf40de9860",
     "url": "/rpg-manager/index.html"
   },
   {
-    "revision": "6ab8f80860910e503bc8",
-    "url": "/rpg-manager/static/css/main.aa42409f.chunk.css"
+    "revision": "2ac32d91e89e5967fddf",
+    "url": "/rpg-manager/static/css/main.6497e4f4.chunk.css"
   },
   {
     "revision": "d5d068ccf7ebc854e23d",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/rpg-manager/static/js/2.c0802f4d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6ab8f80860910e503bc8",
+    "revision": "2ac32d91e89e5967fddf",
     "url": "/rpg-manager/static/js/main.5b039f3c.chunk.js"
   },
   {
