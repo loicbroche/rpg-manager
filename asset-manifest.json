@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/rpg-manager/static/css/main.de31b16a.chunk.css",
+    "main.css": "/rpg-manager/static/css/main.4eacce8f.chunk.css",
     "main.js": "/rpg-manager/static/js/main.5b039f3c.chunk.js",
     "main.js.map": "/rpg-manager/static/js/main.5b039f3c.chunk.js.map",
     "runtime-main.js": "/rpg-manager/static/js/runtime-main.7897d6b0.js",
@@ -8,9 +8,9 @@
     "static/js/2.c0802f4d.chunk.js": "/rpg-manager/static/js/2.c0802f4d.chunk.js",
     "static/js/2.c0802f4d.chunk.js.map": "/rpg-manager/static/js/2.c0802f4d.chunk.js.map",
     "index.html": "/rpg-manager/index.html",
-    "precache-manifest.967a86347774b314ab415797d11d4738.js": "/rpg-manager/precache-manifest.967a86347774b314ab415797d11d4738.js",
+    "precache-manifest.b0994ac235d688e9c2f304a9fd108d94.js": "/rpg-manager/precache-manifest.b0994ac235d688e9c2f304a9fd108d94.js",
     "service-worker.js": "/rpg-manager/service-worker.js",
-    "static/css/main.de31b16a.chunk.css.map": "/rpg-manager/static/css/main.de31b16a.chunk.css.map",
+    "static/css/main.4eacce8f.chunk.css.map": "/rpg-manager/static/css/main.4eacce8f.chunk.css.map",
     "static/js/2.c0802f4d.chunk.js.LICENSE.txt": "/rpg-manager/static/js/2.c0802f4d.chunk.js.LICENSE.txt",
     "static/media/AARAKOCRA.png": "/rpg-manager/static/media/AARAKOCRA.fa3c13db.png",
     "static/media/ABJURATION.png": "/rpg-manager/static/media/ABJURATION.9ae43990.png",
@@ -228,7 +228,7 @@
   "entrypoints": [
     "static/js/runtime-main.7897d6b0.js",
     "static/js/2.c0802f4d.chunk.js",
-    "static/css/main.de31b16a.chunk.css",
+    "static/css/main.4eacce8f.chunk.css",
     "static/js/main.5b039f3c.chunk.js"
   ]
 }
