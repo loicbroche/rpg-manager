@@ -434,4 +434,7 @@ export const selectServiceCategories = state => state.referential.serviceCategor
 export const selectServices = state => state.referential.services && Object.values(state.referential.services);
 export const selectTrinkets = state => state.referential.trinkets && Object.values(state.referential.trinkets);
 export const selectMounts = state => state.referential.mounts && Object.values(state.referential.mounts);
+export const selectMonsterFamilies = state => state.referential.monsterFamilies && Object.values(state.referential.monsterFamilies);
+export const selectMonsterSpecies = state => state.referential.monsterSpecies && Object.values(state.referential.monsterSpecies);
+export const selectMonsters = state => state.referential.monsters && Object.values(state.referential.monsters);
 export const selectShips = state => state.referential.ships && Object.values(state.referential.ships);

@@ -209,6 +209,30 @@ export const ServicePropType = PropTypes.shape({
     Price: PropTypes.string.isRequired
 })
 
+export const MonsterFamilyPropType = PropTypes.shape({
+    Code: PropTypes.string.isRequired,
+    Name: PropTypes.string.isRequired
+})
+
+export const MonsterSpeciesPropType = PropTypes.shape({
+    Code: PropTypes.string.isRequired,
+    Name: PropTypes.string.isRequired
+})
+
+export const MonstersPropType = PropTypes.shape({
+    Name: PropTypes.string.isRequired,
+    Vo: PropTypes.string.isRequired,
+    Family: PropTypes.string.isRequired,
+    Species: PropTypes.arrayOf(PropTypes.string.isRequired),
+    FP: PropTypes.string.isRequired,
+    Size: PropTypes.string.isRequired,
+    AC: PropTypes.number.isRequired,
+    HP: PropTypes.string.isRequired,
+    Speed: PropTypes.string,
+    Alignment: PropTypes.string,
+    Legendary: PropTypes.string
+})
+
 export const MountPropType = PropTypes.shape({
     Name: PropTypes.string.isRequired,
     Speed: PropTypes.number.isRequired,

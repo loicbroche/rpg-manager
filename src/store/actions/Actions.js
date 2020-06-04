@@ -28,6 +28,9 @@ export const loadReferentialHostelCategoriesAction = (hostelCategories) => loadR
 export const loadReferentialHostelServicesAction = (hostelServices) => loadReferentialValuesAction(ActionTypes.REFERENTIAL.LOAD_HOSTEL_SERVICES, hostelServices);
 export const loadReferentialServiceCategoriesAction = (serviceCategories) => loadReferentialValuesAction(ActionTypes.REFERENTIAL.LOAD_SERVICE_CATEGORIES, serviceCategories);
 export const loadReferentialServicesAction = (services) => loadReferentialValuesAction(ActionTypes.REFERENTIAL.LOAD_SERVICES, services);
+export const loadReferentialMonsterFamiliesAction = (monsterFamilies) => loadReferentialValuesAction(ActionTypes.REFERENTIAL.LOAD_MONSTER_FAMILIES, monsterFamilies);
+export const loadReferentialMonsterSpeciesAction = (monsterSpecies) => loadReferentialValuesAction(ActionTypes.REFERENTIAL.LOAD_MONSTER_SPECIES, monsterSpecies);
+export const loadReferentialMonstersAction = (monsters) => loadReferentialValuesAction(ActionTypes.REFERENTIAL.LOAD_MONSTERS, monsters);
 export const loadReferentialMountsAction = (mounts) => loadReferentialValuesAction(ActionTypes.REFERENTIAL.LOAD_MOUNTS, mounts);
 export const loadReferentialShipsAction = (ships) => loadReferentialValuesAction(ActionTypes.REFERENTIAL.LOAD_SHIPS, ships);
 export const loadReferentialTrinketsAction = (trinkets) => loadReferentialValuesAction(ActionTypes.REFERENTIAL.LOAD_TRINKETS, trinkets);

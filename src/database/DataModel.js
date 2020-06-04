@@ -269,6 +269,38 @@ export const DATA_MODEL = {
                 PRICE: { name: "Price" }
             }
         },
+
+    MONSTER_FAMILIES:
+        {
+            name: 'MonsterFamilies',
+            columns: {
+                CODE: { name: "Code" },
+                NAME: { name: "Name" }            }
+        },
+    MONSTER_SPECIES:
+        {
+            name: 'MonsterSpecies',
+            columns: {
+                CODE: { name: "Code" },
+                NAME: { name: "Name" }            }
+        },
+    MONSTERS:
+    {
+        name: 'Monsters',
+        columns: {
+            NAME: { name: "Name" },
+            VO: { name: "VO" },
+            FAMILY: { name: "Family" },
+            SPECIES: { name: "Species" },
+            FP: { name: "FP" },
+            SIZE: { name: "Size" },
+            AC: { name: "AC" },
+            HP: { name: "HP" },
+            SPEED: { name: "Speed", optional: true  },
+            ALIGNMENT: { name: "Alignment", optional: true  },
+            LEGENDARY: { name: "Legendary", optional: true  }
+        }
+    },
     MOUNTS:
         {
             name: 'Mounts',

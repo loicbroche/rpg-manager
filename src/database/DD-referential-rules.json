@@ -395,6 +395,65 @@
                 }
             }
         },
+        "MonsterFamilies": {
+            "$id": {
+                ".validate": "newData.child('Code').exists() && newData.child('Name').exists()",
+                "Code": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50 && newData.val() == $id"
+                },
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                }
+            }
+        },
+        "MonsterSpecies": {
+            "$id": {
+                ".validate": "newData.child('Code').exists() && newData.child('Name').exists()",
+                "Code": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50 && newData.val() == $id"
+                },
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                }
+            }
+        },
+        "Monsters": {
+            "$id": {
+                ".validate": "newData.child('Name').exists() && newData.child('VO').exists() && newData.child('Family').exists() && newData.child('FP').exists() && newData.child('Size').exists() && newData.child('AC').exists() && newData.child('HP').exists()",
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50 && newData.val() == $id"
+                },
+                "VO": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+				"Family": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+				"Species": {
+                    "$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+					}
+                },
+				"FP": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 5"
+                },
+				"Size": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 1"
+                },
+				"AC": {
+                    ".validate": "newData.isNumber() && 0 < newData.val() && newData.val() <= 100"
+                },
+				"HP": {
+                    ".validate": "newData.isNumber() && 0 < newData.val()"
+                },
+				"Alignment": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 1"
+                },
+				"Legendary": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 1"
+                }
+            }
+        },
         "Mounts": {
             "$id": {
                 ".validate": "newData.child('Name').exists() && newData.child('Speed').exists() && newData.child('ChargeCapacity').exists() && newData.child('Price').exists()",
