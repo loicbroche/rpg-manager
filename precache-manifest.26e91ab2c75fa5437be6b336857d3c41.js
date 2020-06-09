@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3e914d51c18e86dd57e56f39378630d6",
+    "revision": "690e2b6a6998768664235ee0cf108a16",
     "url": "/rpg-manager/index.html"
   },
   {
-    "revision": "dfec1a667c15a69770c5",
-    "url": "/rpg-manager/static/css/main.728d401d.chunk.css"
+    "revision": "89bd5c48402ae4db92b5",
+    "url": "/rpg-manager/static/css/main.a346006e.chunk.css"
   },
   {
     "revision": "508b5dcd56e3ec495091",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/rpg-manager/static/js/2.ac731118.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "dfec1a667c15a69770c5",
-    "url": "/rpg-manager/static/js/main.bfc76725.chunk.js"
+    "revision": "89bd5c48402ae4db92b5",
+    "url": "/rpg-manager/static/js/main.0dfaa7bf.chunk.js"
   },
   {
     "revision": "5b89b0b37049f87794b7",
@@ -44,6 +44,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/rpg-manager/static/media/ALCOHOL.db2e9106.png"
   },
   {
+    "revision": "5adfd860b8ea6d33ec7f451c7c56945a",
+    "url": "/rpg-manager/static/media/AQUATIC_ELF.5adfd860.png"
+  },
+  {
     "revision": "6123f409e8b391172096ba28a63c0b52",
     "url": "/rpg-manager/static/media/ARCANE_SWINDLER.6123f409.png"
   },
@@ -58,6 +62,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "0de07a47f649c383b59ebbe951515f0d",
     "url": "/rpg-manager/static/media/ASSASSIN.0de07a47.png"
+  },
+  {
+    "revision": "5adfd860b8ea6d33ec7f451c7c56945a",
+    "url": "/rpg-manager/static/media/AVARIEL.5adfd860.png"
   },
   {
     "revision": "cfd562f59d3c859399ed9c1ecd4addcb",
@@ -302,6 +310,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "116fd4a7555ef47186a75175c7a41eed",
     "url": "/rpg-manager/static/media/GREEN_DRAGON.116fd4a7.png"
+  },
+  {
+    "revision": "5adfd860b8ea6d33ec7f451c7c56945a",
+    "url": "/rpg-manager/static/media/GRUGACH.5adfd860.png"
   },
   {
     "revision": "67143ff51243c722795c0bc4e29c8991",
@@ -614,6 +626,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "35dd7958bfd6367f9a7b99cf06d2c851",
     "url": "/rpg-manager/static/media/SAUVAGEON.35dd7958.png"
+  },
+  {
+    "revision": "5adfd860b8ea6d33ec7f451c7c56945a",
+    "url": "/rpg-manager/static/media/SHADAR_KAI.5adfd860.png"
   },
   {
     "revision": "1e9454f49208aa4f7d0bcd35cce1a6e4",
