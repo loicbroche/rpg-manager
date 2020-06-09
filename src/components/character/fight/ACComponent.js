@@ -2,7 +2,7 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import {  selectClassById, selectLevelNumberByXP, selectArmorACBonus, selectClassACBonus,
-          selectValidSpecialisation, selectFightStylesByIds, selectArmorById, selectACBonusCaracteristicByClassId } from 'store/selectors';
+          selectValidSpecialisation, selectFightStylesByIds, selectArmorById, selectACBonusCaracteristicByClassId, selectRaceBySubRaceId } from 'store/selectors';
 import { CharacterPropType } from 'PropTypes'
 import './ACComponent.css'
 import { CA_BASE, CA_CARACTERISTIC_NAME  } from 'rules/AC.rules'
@@ -12,7 +12,7 @@ const ACImage = require("images/AC.png");
 class ACComponent extends PureComponent {
 
   render() {
-    const { armorACBonusDexterity, classACBonus, armor, shield, class: characterClass, specialisation, selectedFightStyles,
+    const { armorACBonusDexterity, classACBonus, armor, shield, class: characterClass, race, specialisation, selectedFightStyles,
             levelNumber, ACBonusCaracteristic, character} = this.props;
 
     const armorBonus = armor?.AC || 0;
@@ -21,7 +21,8 @@ class ACComponent extends PureComponent {
     const isValidArmorCondition = characterClass && ((!characterClass.ACBonusArmor && characterClass.ACBonusArmor !== false) || (characterClass.ACBonusArmor && armor) || (characterClass.ACBonusArmor === false && !armor)) 
     const isValidShieldCondition = characterClass && ((!characterClass.ACBonusShield && characterClass.ACBonusShield !== false) || (characterClass.ACBonusShield && shield) || (characterClass.ACBonusShield === false && !shield)) 
     const classBonusValue = (ACBonusCaracteristic && isValidArmorCondition && isValidShieldCondition && classACBonus) || 0;
-
+    const isValidRaceArmorCondition = race && ((!race.ACBonusArmor && race.ACBonusArmor !== false) || (race.ACBonusArmor && armor) || (race.ACBonusArmor === false && !armor)) 
+    const raceBonusValue = (isValidRaceArmorCondition && race?.ACBonus) || 0;
     const isValidArmorSpecialCondition = specialisation && ((!specialisation.ACBonusArmor && specialisation.ACBonusArmor !== false) || (specialisation.ACBonusArmor && armor) || (specialisation.ACBonusArmor === false && !armor)) 
     const specialisationBonus = (specialisation && isValidArmorSpecialCondition &&  specialisation.ACBonus) ||0;
 
@@ -40,9 +41,11 @@ class ACComponent extends PureComponent {
                                   }, 0)
                             ) || 0;
 
-    const specialBonusValue = classBonusValue + specialisationBonus + fightStyleBonus;
+    const specialBonusValue = raceBonusValue + classBonusValue + specialisationBonus + fightStyleBonus;
     const ac = CA_BASE + armorBonus + shieldBonus + specialBonusValue;
-    const specialBonusTitle = (!classBonusValue?"":`Bonus de classe ${characterClass?.Name} : Modificateur de ${ACBonusCaracteristic?.Name}`
+    const specialBonusTitle = ( !raceBonusValue?"":`Bonus de race ${race?.Name} : +${raceBonusValue}`
+                              +`${(race.ACBonusArmor)?"\nSi porte une armure":((race.ACBonusArmor === false)?"\nSi ne porte pas d'armure":"")}`
+                              +!classBonusValue?"":`${raceBonusValue?"\n":""}Bonus de classe ${characterClass?.Name} : Modificateur de ${ACBonusCaracteristic?.Name}`
                                   +`${(characterClass.ACBonusArmor)?"\nSi porte une armure":((characterClass.ACBonusArmor === false)?"\nSi ne porte pas d'armure":"")}`
                                   +`${(characterClass.ACBonusShield)?"\nSi porte un bouclier":((characterClass.ACBonusShield === false)?"\nSi ne porte pas de bouclier":"")}`)
                               + ((!specialisation || !specialisationBonus)?"":`${classBonusValue?"\n":""}Bonus de spécialisation ${specialisation.Name} +${specialisation.ACBonus}`
@@ -77,6 +80,7 @@ ACComponent.propTypes = {
 
 const mapStateToProps = (state, props) => ({
   class: selectClassById(state, props.character?.Class),
+  race: selectRaceBySubRaceId(state, props.character?.SubRace),
   specialisation: selectValidSpecialisation(state,
                                             props.character?.Specialisation,
                                             props.character?.Class,

@@ -15,7 +15,9 @@ export const DATA_MODEL = {
                 WEAPONS: { name: "Weapons", optional: true },
                 LANGUAGES: { name: "Languages" },
                 RESISTANCES: { name: "ArmorCategories", optional: true },
-                SAVE_ADVANTAGES: { name: "SaveAdvantages", optional: true }
+                SAVE_ADVANTAGES: { name: "SaveAdvantages", optional: true },
+                SKILLS: { name: "Skills", optional: true },
+                AC_BONUS: { name: "ACBonus" }
             }
         },
     SUB_RACES:
@@ -36,7 +38,8 @@ export const DATA_MODEL = {
                 WEAPONS: { name: "Weapons", optional: true },
                 LANGUAGES: { name: "Languages", optional: true },
                 RESISTANCES: { name: "ArmorCategories", optional: true },
-                SAVE_ADVANTAGES: { name: "SaveAdvantages", optional: true }
+                SAVE_ADVANTAGES: { name: "SaveAdvantages", optional: true },
+                SKILLS: { name: "Skills", optional: true }
             }
         },
     CLASSES:

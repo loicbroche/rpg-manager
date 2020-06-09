@@ -1,3 +1,15 @@
+Race :
+	Vérifier Ajout de compétences
+	Vérifier Ajout de Bonus CA
+	Vérifier la condition armor au bonus CA
+Sous-Race
+	Vérifier la sélection de sorts mineur druide pour avariel
+	Vérifier les compétences de sous-race
+CA
+	Ajouter la saisie d'un CA bonus
+
+?Cultes de fiélons ?
+
 Wizard : Sort arcanum
 Choix de compétence
 	Paladin Sorts de Serment

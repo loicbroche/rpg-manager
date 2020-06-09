@@ -13,7 +13,9 @@ export const RacePropType = PropTypes.shape({
     Weapons: PropTypes.arrayOf(PropTypes.string),
     Languages: PropTypes.arrayOf(PropTypes.string).isRequired,
     Resistances: PropTypes.arrayOf(PropTypes.string),
-    SaveAdvantages: PropTypes.arrayOf(PropTypes.string)
+    SaveAdvantages: PropTypes.arrayOf(PropTypes.string),
+    Skills: PropTypes.arrayOf(PropTypes.string),
+    ACBonus: PropTypes.number.isRequired
 })
 
 export const SubRacePropType = PropTypes.shape({
@@ -31,7 +33,8 @@ export const SubRacePropType = PropTypes.shape({
     Weapons: PropTypes.arrayOf(PropTypes.string),
     Languages: PropTypes.arrayOf(PropTypes.string),
     Resistances: PropTypes.arrayOf(PropTypes.string),
-    SaveAdvantages: PropTypes.arrayOf(PropTypes.string)
+    SaveAdvantages: PropTypes.arrayOf(PropTypes.string),
+    Skills: PropTypes.arrayOf(PropTypes.string)
 })
 
 export const ClassPropType = PropTypes.shape({
