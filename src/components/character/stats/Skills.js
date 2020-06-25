@@ -40,7 +40,7 @@ class Skills extends PureComponent {
                 const caracteristicBonus = caracteristicsBonus?.[caracteristicCode];
 
                 return (
-                <li key={index} className={"skill "+(isHistoricMaster||isRaceMaster?"locked":"activable")} role="button" onClick={() => !isHistoricMaster && !isRaceMaster && onClick(Name)}
+                <li key={index} className={"skill "+(isHistoricMaster||isSubRaceMaster||isRaceMaster?"locked":"activable")} role="button" onClick={() => !isHistoricMaster && !isRaceMaster && onClick(Name)}
                     title={isHistoricMaster
                             ?"Maîtrise héritée de l'historique "+historic.Name
                             :isRaceMaster

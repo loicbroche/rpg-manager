@@ -177,6 +177,11 @@ export const PersonnalObjectPropType = PropTypes.shape({
     Quantity: PropTypes.number.isRequired
 })
 
+export const UsedCapacityPropType = PropTypes.shape({
+    Id: PropTypes.string.isRequired,
+    UsedNumber: PropTypes.number.isRequired
+})
+
 export const EquipmentCategoryPropType = PropTypes.shape({
     Code: PropTypes.string.isRequired,
     Name: PropTypes.string.isRequired
@@ -388,11 +393,14 @@ export const CharacterPropType = PropTypes.shape({
     Shield: PropTypes.string,
     Money: PropTypes.number.isRequired,
     Objects: PropTypes.arrayOf(PersonnalObjectPropType),
+    SatchelObjects: PropTypes.arrayOf(PersonnalObjectPropType),
     Specials: PropTypes.number,
     SpellsLocations: PropTypes.arrayOf(PropTypes.number),
     MinorSpells: PropTypes.arrayOf(PropTypes.string),
     Spells: PropTypes.arrayOf(PropTypes.string),
     Notes: PropTypes.string,
     hiddenCapacities: PropTypes.arrayOf(PropTypes.string),
-    Damages: PropTypes.arrayOf(DamagePropType)
+    Damages: PropTypes.arrayOf(DamagePropType),
+    ACBonus: PropTypes.number,
+    UsedCapacities: PropTypes.arrayOf(UsedCapacityPropType),
 })

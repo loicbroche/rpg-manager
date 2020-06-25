@@ -68,7 +68,8 @@ class SpellBookComponent extends PureComponent {
     return (
       <div className="spellBookComponent">
         { ( (learnableSpellsNb > 0 && (availableMinorSpellsNb > 0 || availableSpellsNb > 0))
-            || raceSpellsComplementsSpells?.length > 0 || subRaceSpellsComplementsSpells?.length > 0 || specialisationSpellsComplementsSpells?.length > 0 ) &&
+            || raceSpellsComplementsSpells?.length > 0 || subRaceSpellsComplementsSpells?.length > 0 || specialisationSpellsComplementsSpells?.length > 0
+            || knownSpellsFilteredByOrigine?.[ORIGINE_RACE]?.maxNumber > 0 || knownSpellsFilteredByOrigine?.[ORIGINE_SUBRACE]?.maxNumber > 0 || knownSpellsFilteredByOrigine?.[ORIGINE_SPECIALISATION]?.maxNumber > 0) &&
           <ExpendableComponent extensorTitle="le livre des sorts"
                                 header={titleElement}
                                 extensor={<img src={spellBookImage} alt="Livre des sorts" />}

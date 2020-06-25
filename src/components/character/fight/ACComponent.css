@@ -74,3 +74,14 @@
   color: var(--background-color-1);
 }
 
+.increase-ACbonus::before {
+  content: "🢒";
+}
+.decrease-ACbonus::before {
+  content: "🢐";
+}
+.increase-ACbonus,
+.decrease-ACbonus {
+  width: 0.5 rem;
+  height: 0.5rem;
+}

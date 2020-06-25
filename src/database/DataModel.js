@@ -501,7 +501,9 @@ export const DATA_MODEL = {
             SPELLS: { name: "Spells", optional: true },
             NOTES: { name: "Notes", optional: true },
             HIDDEN_CAPACITIES: { name: "HiddenCapacities", optional: true },
-            DAMAGES: { name: "Damages", optional: true }
+            DAMAGES: { name: "Damages", optional: true },
+            AC_BONUS: { name: "ACBonus", optional: true },
+            USED_CAPACITIES: { name: "UsedCapacities", optional: true }
         }
     }
 }

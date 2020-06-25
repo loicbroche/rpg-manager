@@ -157,7 +157,7 @@
                     ".validate": "newData.isString() && newData.val().length <= 255"
                 },
                 "UseNumber": {
-                    ".validate": "newData.isNumber() && -1 <= newData.val() && newData.val() <= 100"
+                    ".validate": "(newData.isNumber() && -1 <= newData.val() && newData.val() <= 100) || (newData.isString() && newData.val().length == 3)"
                 }
             }
         },
@@ -541,7 +541,7 @@
                     ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 20"
                 },
                 "UseNumber": {
-                    ".validate": "newData.isNumber() && -1 <= newData.val() && newData.val() <= 100"
+                    ".validate": "(newData.isNumber() && -1 <= newData.val() && newData.val() <= 100) || (newData.isString() && newData.val().length == 3)"
                 }
             }
         },
