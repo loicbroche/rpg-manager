@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/rpg-manager/static/css/main.a346006e.chunk.css",
-    "main.js": "/rpg-manager/static/js/main.0dfaa7bf.chunk.js",
-    "main.js.map": "/rpg-manager/static/js/main.0dfaa7bf.chunk.js.map",
+    "main.css": "/rpg-manager/static/css/main.e620964e.chunk.css",
+    "main.js": "/rpg-manager/static/js/main.ac522553.chunk.js",
+    "main.js.map": "/rpg-manager/static/js/main.ac522553.chunk.js.map",
     "runtime-main.js": "/rpg-manager/static/js/runtime-main.7897d6b0.js",
     "runtime-main.js.map": "/rpg-manager/static/js/runtime-main.7897d6b0.js.map",
-    "static/js/2.ac731118.chunk.js": "/rpg-manager/static/js/2.ac731118.chunk.js",
-    "static/js/2.ac731118.chunk.js.map": "/rpg-manager/static/js/2.ac731118.chunk.js.map",
+    "static/js/2.a31fa868.chunk.js": "/rpg-manager/static/js/2.a31fa868.chunk.js",
+    "static/js/2.a31fa868.chunk.js.map": "/rpg-manager/static/js/2.a31fa868.chunk.js.map",
     "index.html": "/rpg-manager/index.html",
-    "precache-manifest.26e91ab2c75fa5437be6b336857d3c41.js": "/rpg-manager/precache-manifest.26e91ab2c75fa5437be6b336857d3c41.js",
+    "precache-manifest.3c5523805e719c1c41d7ab9877a5582e.js": "/rpg-manager/precache-manifest.3c5523805e719c1c41d7ab9877a5582e.js",
     "service-worker.js": "/rpg-manager/service-worker.js",
-    "static/css/main.a346006e.chunk.css.map": "/rpg-manager/static/css/main.a346006e.chunk.css.map",
-    "static/js/2.ac731118.chunk.js.LICENSE.txt": "/rpg-manager/static/js/2.ac731118.chunk.js.LICENSE.txt",
+    "static/css/main.e620964e.chunk.css.map": "/rpg-manager/static/css/main.e620964e.chunk.css.map",
+    "static/js/2.a31fa868.chunk.js.LICENSE.txt": "/rpg-manager/static/js/2.a31fa868.chunk.js.LICENSE.txt",
     "static/media/AARAKOCRA.png": "/rpg-manager/static/media/AARAKOCRA.fa3c13db.png",
     "static/media/ABJURATION.png": "/rpg-manager/static/media/ABJURATION.9ae43990.png",
     "static/media/AC.png": "/rpg-manager/static/media/AC.e3a88f6a.png",
@@ -150,6 +150,7 @@
     "static/media/Pike.png": "/rpg-manager/static/media/Pike.9e24a927.png",
     "static/media/Plate.png": "/rpg-manager/static/media/Plate.f366e118.png",
     "static/media/Plate2.png": "/rpg-manager/static/media/Plate2.14cf82b1.png",
+    "static/media/Psi.png": "/rpg-manager/static/media/Psi.928dd7a3.png",
     "static/media/Quarterstaff.png": "/rpg-manager/static/media/Quarterstaff.96677a6f.png",
     "static/media/RECANTATION.png": "/rpg-manager/static/media/RECANTATION.6970f34e.png",
     "static/media/RED_DRAGON.png": "/rpg-manager/static/media/RED_DRAGON.1f363c2a.png",
@@ -166,6 +167,7 @@
     "static/media/SHADAR_KAI.png": "/rpg-manager/static/media/SHADAR_KAI.5adfd860.png",
     "static/media/SHADOW_WAY.png": "/rpg-manager/static/media/SHADOW_WAY.1e9454f4.png",
     "static/media/SILVER_DRAGON.png": "/rpg-manager/static/media/SILVER_DRAGON.151cbb36.png",
+    "static/media/SIMIC.png": "/rpg-manager/static/media/SIMIC.6adb6180.png",
     "static/media/SOLDIER.png": "/rpg-manager/static/media/SOLDIER.4db0f7e4.png",
     "static/media/SORCERER.png": "/rpg-manager/static/media/SORCERER.e6fe38ae.png",
     "static/media/STORM_FIELD.png": "/rpg-manager/static/media/STORM_FIELD.4775ba35.png",
@@ -190,6 +192,7 @@
     "static/media/Trident.png": "/rpg-manager/static/media/Trident.730efec6.png",
     "static/media/UNCONSCIOUS.png": "/rpg-manager/static/media/UNCONSCIOUS.af3a90f0.png",
     "static/media/VILLAGE_IDIOT.png": "/rpg-manager/static/media/VILLAGE_IDIOT.44a185a6.png",
+    "static/media/WARFORGED.png": "/rpg-manager/static/media/WARFORGED.4e63841d.png",
     "static/media/WARRIOR.png": "/rpg-manager/static/media/WARRIOR.a40a4e33.png",
     "static/media/WARRIOR_ARCHERY.png": "/rpg-manager/static/media/WARRIOR_ARCHERY.b35bee0e.png",
     "static/media/WARRIOR_DEFENSE.png": "/rpg-manager/static/media/WARRIOR_DEFENSE.2aa026bd.png",
@@ -231,8 +234,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.7897d6b0.js",
-    "static/js/2.ac731118.chunk.js",
-    "static/css/main.a346006e.chunk.css",
-    "static/js/main.0dfaa7bf.chunk.js"
+    "static/js/2.a31fa868.chunk.js",
+    "static/css/main.e620964e.chunk.css",
+    "static/js/main.ac522553.chunk.js"
   ]
 }

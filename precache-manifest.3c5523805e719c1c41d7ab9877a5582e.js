@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "690e2b6a6998768664235ee0cf108a16",
+    "revision": "af71d9c5f9fb7f5055f7516bd501713f",
     "url": "/rpg-manager/index.html"
   },
   {
-    "revision": "89bd5c48402ae4db92b5",
-    "url": "/rpg-manager/static/css/main.a346006e.chunk.css"
+    "revision": "0eb13c9024ebadc0a65e",
+    "url": "/rpg-manager/static/css/main.e620964e.chunk.css"
   },
   {
-    "revision": "508b5dcd56e3ec495091",
-    "url": "/rpg-manager/static/js/2.ac731118.chunk.js"
+    "revision": "bfd4b18be035222616c2",
+    "url": "/rpg-manager/static/js/2.a31fa868.chunk.js"
   },
   {
     "revision": "170392c3acad6bbffec743442b1d0ac3",
-    "url": "/rpg-manager/static/js/2.ac731118.chunk.js.LICENSE.txt"
+    "url": "/rpg-manager/static/js/2.a31fa868.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "89bd5c48402ae4db92b5",
-    "url": "/rpg-manager/static/js/main.0dfaa7bf.chunk.js"
+    "revision": "0eb13c9024ebadc0a65e",
+    "url": "/rpg-manager/static/js/main.ac522553.chunk.js"
   },
   {
     "revision": "5b89b0b37049f87794b7",
@@ -576,6 +576,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/rpg-manager/static/media/Plate2.14cf82b1.png"
   },
   {
+    "revision": "928dd7a3b03b9e940c0861cc49c57735",
+    "url": "/rpg-manager/static/media/Psi.928dd7a3.png"
+  },
+  {
     "revision": "96677a6f04aa82be7ae549881d4b1248",
     "url": "/rpg-manager/static/media/Quarterstaff.96677a6f.png"
   },
@@ -638,6 +642,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "151cbb361a7f095a26d58a63293c447e",
     "url": "/rpg-manager/static/media/SILVER_DRAGON.151cbb36.png"
+  },
+  {
+    "revision": "6adb61806c0416785e145da919485e70",
+    "url": "/rpg-manager/static/media/SIMIC.6adb6180.png"
   },
   {
     "revision": "4db0f7e4052dc6c83bd85961dea4f791",
@@ -734,6 +742,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "44a185a61b69ebd071d6592f8b50d9a9",
     "url": "/rpg-manager/static/media/VILLAGE_IDIOT.44a185a6.png"
+  },
+  {
+    "revision": "4e63841d705103c618ae3244b6d8b173",
+    "url": "/rpg-manager/static/media/WARFORGED.4e63841d.png"
   },
   {
     "revision": "a40a4e3319308f35a27da247a480e00a",
