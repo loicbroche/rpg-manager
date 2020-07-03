@@ -1,13 +1,6 @@
-Compétences Mystique
-Compétences de Spécialisations mystique
-Talents et disciplines psi?
-
-+Capacities
-+SpecialisationCapacities
-
 Nouvelles spécialités
+Mystique - Talents et disciplines psi?
 Artificier - Objet impregnés ?
-?Cultes de fiélons ?
 
 Wizard : Sort arcanum
 Choix de compétence
