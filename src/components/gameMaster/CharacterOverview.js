@@ -11,6 +11,7 @@ import { updateCharacterCaracteristic, insertCharacterElement, deleteCharacterEl
 import './CharacterOverview.css'
 import CaracteristicBonus from 'components/shared/CaracteristicBonus'
 import SkillSelector from 'components/shared//SkillSelector';
+import Money from 'components/shared/Money'
 import XPComponent from 'components/character/general/XPComponent';
 import HPComponent from 'components/character/fight/HPComponent';
 import SpecialsComponent from 'components/character/fight/SpecialsComponent';
@@ -34,7 +35,7 @@ class CharacterOverview extends PureComponent {
                     <ACComponent character={character} />
                     <span className="overview-name">{character.Name}</span>
                     <XPComponent XP={character.XP} onChange={(value) =>{ updateCharacterCaracteristic(character.Id, DATA_MODEL.CHARACTERS.columns.XP.name, value);}}/>
-                    <SpeedComponent subRaceId={character.SubRace} classId={character.Class} armorId={character.Armor} strength={character.Strength} level={levelNumber} />
+                    <SpeedComponent subRaceId={character.SubRace} classId={character.Class} armorId={character.Armor} strength={character.Strength} XP={character.XP} />
                 </h1>
                 <HPComponent val={character.HP} maxVal={character.MaxHP} classId={character.Class} />
                 <AlterationsComponent characterAlterations={character.Alterations} resistances={character.Resistances}
@@ -84,6 +85,9 @@ class CharacterOverview extends PureComponent {
                                         subRaceId={character.SubRace}
                                         details={false} />
                         }
+                    </div>
+                    <div className="stuffs">
+                        <Money amount={character.Money} fullDisplay={true} onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.MONEY.name, value); }} />
                     </div>
             </div>
         )

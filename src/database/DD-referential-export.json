@@ -6336,7 +6336,7 @@
 			"Code": "Talents psioniques",
 			"Class": "MYSTICAL",
 			"Specialisation": "",
-			"UseNumber": -1,
+			"Stats": true,
 			"Description": "Un talent psionique est un effet psionique mineur que vous avez dominé. Au niveau 1, vous ne connaissez qu'un seul talent psionique de votre choix. Vous en apprendrez davantage en gagnant des niveaux de personnage, comme indiqué dans la colonne Talents connus dans la table ci-dessus."
 		},
 		"MYSTICAL-Disciplines psioniques": {
