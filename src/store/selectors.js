@@ -14,16 +14,16 @@ export const ORIGINE_SPECIALISATION = 3;
 export const ORIGINE_ALL = 4;
 
 export const selectSubRacesMap = state => state.referential.subRaces;
-export const selectSubRaces = state => state.referential.subRaces && Object.values(state.referential.subRaces);
+export const selectSubRaces = state => state.referential.subRaces && Object.values(state.referential.subRaces).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
 export const selectSubRaceById = (state, id) => state.referential.subRaces?.[id];
 
 export const selectRacesMap = state => state.referential.races;
-export const selectRaces = state => state.referential.races && Object.values(state.referential.races);
+export const selectRaces = state => state.referential.races && Object.values(state.referential.races).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
 export const selectRaceById = (state, id) => state.referential.races?.[id];
 export const selectRaceBySubRaceId = (state, id) => state.referential.races?.[selectSubRaceById(state, id)?.Race];
 
 export const selectClassesMap = state => state.referential.classes;
-export const selectClasses = state => state.referential.classes && Object.values(state.referential.classes);
+export const selectClasses = state => state.referential.classes && Object.values(state.referential.classes).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
 export const selectClassById = (state, id) => state.referential.classes?.[id];
 
 export const selectLevels = state => state.referential.levels && Object.values(state.referential.levels);
@@ -47,7 +47,7 @@ export const selectNextLevelByXP = (state, xp) => {
 };
 
 export const selectSpecialisationsMap = state => state.referential.specialisations;
-export const selectSpecialisations = state => state.referential.specialisations && Object.values(state.referential.specialisations);
+export const selectSpecialisations = state => state.referential.specialisations && Object.values(state.referential.specialisations).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
 export const selectSpecialisationById = (state, id) => state.referential.specialisations?.[id];
 export const selectValidSpecialisation = (state, specialisationId, classId, xp) => {
     const specialisation = selectSpecialisationById(state, specialisationId);
@@ -58,20 +58,20 @@ export const selectValidSpecialisation = (state, specialisationId, classId, xp) 
 export const selectMasteryBonusByXP = (state, xp) =>  selectLevelByXP(state, xp)?.MasteryBonus;
 
 export const selectSkillsMap = state => state.referential.skills;
-export const selectSkills = state => state.referential.skills && Object.values(state.referential.skills);
+export const selectSkills = state => state.referential.skills && Object.values(state.referential.skills).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
 export const selectSkillById = (state, id) => state.referential.skills?.[id];
 
-export const selectClassCapacities = state => state.referential.capacities && Object.values(state.referential.capacities);
+export const selectClassCapacities = state => state.referential.capacities && Object.values(state.referential.capacities).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
 export const selectClassCapacitiesById = (state, id) => state.referential.capacities?.[id];
 export const selectClassCapacityByClassIdLevel = (state, classId, levelNumber) => selectClassCapacitiesById(state, classId+"-"+levelNumber);
 export const selectClassCapacityByClassIdXP = (state, classId, xp) => selectClassCapacityByClassIdLevel(state, classId, selectLevelNumberByXP(state, xp));
 
-export const selectSpecialisationCapacities = state => state.referential.specialisationCapacities && Object.values(state.referential.specialisationCapacities);
+export const selectSpecialisationCapacities = state => state.referential.specialisationCapacities && Object.values(state.referential.specialisationCapacities).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
 export const selectSpecialisationCapacityById = (state, id) => state.referential.specialisationCapacities?.[id];
 export const selectSpecialisationCapacityBySpeIdLevel = (state, specialisationId, levelNumber) => selectSpecialisationCapacityById(state, specialisationId+"-"+levelNumber);
 export const selectSpecialisationBySpeIdXP = (state, specialisationId, xp) => selectSpecialisationCapacityBySpeIdLevel(state, specialisationId, selectLevelNumberByXP(state, xp));
 
-export const selectClassCapacitiesDescriptions = state => state.referential.capacitiesDescriptions && Object.values(state.referential.capacitiesDescriptions);
+export const selectClassCapacitiesDescriptions = state => state.referential.capacitiesDescriptions && Object.values(state.referential.capacitiesDescriptions).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
 export const selectClassCapacityDescriptionById = (state, id) => state.referential.capacitiesDescriptions?.[id];
 export const selectClassCapacityDescriptionByClassId = (state, classId, capacityName) => selectClassCapacityDescriptionById(state, classId+"-"+capacityName);
 export const selectClassCapacitiesDescriptionsByXP = (state, classId, specialisationId, xp) => {
@@ -81,7 +81,6 @@ export const selectClassCapacitiesDescriptionsByXP = (state, classId, specialisa
     for (let i = 1; i <= levelNumber; i++) {
       const capacity = selectClassCapacityByClassIdLevel(state, classId, i);
       const specialisationCapacity = specialisation && selectSpecialisationCapacityBySpeIdLevel(state, specialisationId, i);
-
       knownCapacities = knownCapacities.concat(capacity?.Capacities?.map((c) => ({level: i, name: c, specialisation: false, description: selectClassCapacityDescriptionByClassId(state, classId, c)})) || []);
       knownCapacities = knownCapacities.concat(specialisationCapacity?.Capacities?.map((c) => ({level: i, name: c, specialisation: true, description: selectClassCapacityDescriptionByClassId(state, classId, c)})) || []);
     }
@@ -102,13 +101,13 @@ export const selectRaceCapacitiesDescriptionsBySubRaceIdXP = (state, subRaceId, 
                 && (!capacity.RequiredLevel || capacity.RequiredLevel <= levelNumber));
 }
 
-export const selectAlterationTypes = state => state.referential.alterationTypes && Object.values(state.referential.alterationTypes);
+export const selectAlterationTypes = state => state.referential.alterationTypes && Object.values(state.referential.alterationTypes).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
 export const selectAlterationTypeById = (state, id) => state.referential.alterationTypes?.[id];
 
-export const selectAlterations = state => state.referential.alterations && Object.values(state.referential.alterations);
+export const selectAlterations = state => state.referential.alterations && Object.values(state.referential.alterations).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
 export const selectAlterationById = (state, id) => state.referential.alterations?.[id];
 
-export const selectAlignments = state => state.referential.alignments && Object.values(state.referential.alignments);
+export const selectAlignments = state => state.referential.alignments && Object.values(state.referential.alignments).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
 export const selectAlignmentById = (state, id) => state.referential.alignments?.[id];
 
 export const selectLanguages = state => state.referential.languages && Object.values(state.referential.languages);
@@ -116,11 +115,11 @@ export const selectLanguageById = (state, id) => state.referential.languages?.[i
 export const selectLanguagesBySubRace = (state, subRaceId) => selectSubRaceById(state, subRaceId)?.Languages || [];
 export const selectLanguagesByRace = (state, subRaceId) => selectRaceBySubRaceId(state, subRaceId)?.Languages || [];
 
-export const selectObjectCategories = state => state.referential.objectCategories && Object.values(state.referential.objectCategories);
+export const selectObjectCategories = state => state.referential.objectCategories && Object.values(state.referential.objectCategories).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
 export const selectMasterableObjectCategories = createSelector(selectObjectCategories, (objectCategories) => objectCategories?.filter((category) => MASTERABLE_CATEGORIES.includes(category.Code)));
 
 export const selectObjectsMap = state => state.referential.objects;
-export const selectObjects = state => state.referential.objects && Object.values(state.referential.objects);
+export const selectObjects = state => state.referential.objects && Object.values(state.referential.objects).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
 export const selectObjectById = (state, id) => state.referential.objects?.[id];
 export const selectChargeCapacity = (state, strength, subRaceId) => {
     const raceBonus = selectRaceBySubRaceId(state, subRaceId)?.Strength;
@@ -128,19 +127,19 @@ export const selectChargeCapacity = (state, strength, subRaceId) => {
     return getChargeCapacity(strength + raceBonus + subRaceBonus);
 } 
 
-export const selectFightStyles = state => state.referential.fightStyles && Object.values(state.referential.fightStyles);
+export const selectFightStyles = state => state.referential.fightStyles && Object.values(state.referential.fightStyles).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
 export const selectFightStylesByClassId = (state, classId) => selectFightStyles(state)?.filter((style) => style.Class === classId);
 
-export const selectHistorics = state => state.referential.historics && Object.values(state.referential.historics);
+export const selectHistorics = state => state.referential.historics && Object.values(state.referential.historics).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
 export const selectHistoricById = (state, id) => state.referential.historics?.[id];
 
 export const selectFightStylesByIds = (state, ids) => {
     const fightStyles = selectFightStyles(state);
-    return fightStyles && Object.values(fightStyles).filter((style) => ids?.includes(style.Code));
+    return fightStyles && Object.values(fightStyles).filter((style) => ids?.includes(style.Code)).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
 }
 
 export const selectSpellsMap = state => state.referential.spells;
-export const selectSpells = state => state.referential.spells && Object.values(state.referential.spells);
+export const selectSpells = state => state.referential.spells && Object.values(state.referential.spells).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
 export const selectSpellById = (state, id) => state.referential.spells?.[id];
 export const selectSpellByClassSpecialisation = (state, classId, specialisationId) => {
     const spells = selectSpells(state);
@@ -375,19 +374,19 @@ export const selectArmorCategoriesByClassId = (state, classId) => selectClassByI
 export const selectArmorCategoriesBySubRaceId = (state, subRaceId) => selectSubRaceById(state, subRaceId)?.ArmorCategories || [];
 
 export const selectArmorsMap = state => state.referential.armors;
-export const selectArmors = state => state.referential.armors && Object.values(state.referential.armors);
+export const selectArmors = state => state.referential.armors && Object.values(state.referential.armors).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
 export const selectArmorById = (state, id) => state.referential.armors?.[id];
 export const selectArmorsByClassId = (state, classId) => selectClassById(state, classId)?.Armors || [];
 
 export const selectWeaponsMap = state => state.referential.weapons;
-export const selectWeapons = state => state.referential.weapons && Object.values(state.referential.weapons);
+export const selectWeapons = state => state.referential.weapons && Object.values(state.referential.weapons).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
 export const selectWeaponById = (state, id) => state.referential.weapons?.[id];
 export const selectWeaponsByClassId = (state, classId) => selectClassById(state, classId)?.Weapons || [];
 export const selectWeaponsBySubRace = (state, subRaceId) => selectSubRaceById(state, subRaceId)?.Weapons || [];
 export const selectWeaponsByRace = (state, subRaceId) => selectRaceBySubRaceId(state, subRaceId)?.Weapons || [];
 
 export const selectCaracteristicsMap = state => state.referential.caracteristics;
-export const selectCaracteristics = state => state.referential.caracteristics && Object.values(state.referential.caracteristics);
+export const selectCaracteristics = state => state.referential.caracteristics && Object.values(state.referential.caracteristics).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
 export const selectCaracteristicById = (state, id) => state.referential.caracteristics?.[id];
 export const selectACBonusCaracteristicByArmorId = (state, armorId) => selectCaracteristicById(state, selectArmorById(state, armorId)?.ACBonus);
 export const selectACBonusCaracteristicByClassId = (state, classId) => selectCaracteristicById(state, selectClassById(state, classId)?.ACBonus);
@@ -397,6 +396,16 @@ export const selectCaracteristicBonus = (state, caracteristicName, caracteristic
     const totalValue = caracteristicValue + raceBonus + subRaceBonus;
     const bonus = Math.floor((totalValue-(maxVal/2))/bonusStep);
     return ((bonusMax || bonusMax === 0)?Math.min(bonus, bonusMax):bonus) || 0;
+}
+export const selectCaracteristicsBonus = (state, character, maxVal = MAX_CARACTERISTIC, bonusStep = BONUS_STEP, bonusMax = null) => {
+    const subRaceId = character?.SubRace;
+    const caracteristics = selectCaracteristics(state);
+    return caracteristics?.map((caracteristic) => {
+        const caracteristicName = caracteristic.OV;
+        const caracteristicValue = character?.[caracteristicName];
+        const caracteristicBonus = selectCaracteristicBonus(state, caracteristicName, caracteristicValue, subRaceId, maxVal, bonusStep, bonusMax);
+        return {...caracteristic, Bonus: caracteristicBonus};
+    });
 }
 export const selectSpellsNbBonusByClassXP = (state, character) => {
     const capacity = selectClassCapacityByClassIdXP(state, character?.Class, character?.XP);
@@ -426,12 +435,15 @@ selectArmorACBonus.defaultProps = {
     dexterityPoints: MAX_CARACTERISTIC/2
 }
 
-export const selectEquipmentCategories = state => state.referential.equipmentCategories && Object.values(state.referential.equipmentCategories);
-export const selectEquipments = state => state.referential.equipments && Object.values(state.referential.equipments);
-export const selectHostelCategories = state => state.referential.hostelCategories && Object.values(state.referential.hostelCategories);
-export const selectHostelServices = state => state.referential.hostelServices && Object.values(state.referential.hostelServices);
-export const selectServiceCategories = state => state.referential.serviceCategories && Object.values(state.referential.serviceCategories);
-export const selectServices = state => state.referential.services && Object.values(state.referential.services);
-export const selectTrinkets = state => state.referential.trinkets && Object.values(state.referential.trinkets);
-export const selectMounts = state => state.referential.mounts && Object.values(state.referential.mounts);
-export const selectShips = state => state.referential.ships && Object.values(state.referential.ships);
+export const selectEquipmentCategories = state => state.referential.equipmentCategories && Object.values(state.referential.equipmentCategories).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
+export const selectEquipments = state => state.referential.equipments && Object.values(state.referential.equipments).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
+export const selectHostelCategories = state => state.referential.hostelCategories && Object.values(state.referential.hostelCategories).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
+export const selectHostelServices = state => state.referential.hostelServices && Object.values(state.referential.hostelServices).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
+export const selectServiceCategories = state => state.referential.serviceCategories && Object.values(state.referential.serviceCategories).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
+export const selectServices = state => state.referential.services && Object.values(state.referential.services).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
+export const selectTrinkets = state => state.referential.trinkets && Object.values(state.referential.trinkets).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
+export const selectMounts = state => state.referential.mounts && Object.values(state.referential.mounts).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
+export const selectMonsterFamilies = state => state.referential.monsterFamilies && Object.values(state.referential.monsterFamilies).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
+export const selectMonsterSpecies = state => state.referential.monsterSpecies && Object.values(state.referential.monsterSpecies).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
+export const selectMonsters = state => state.referential.monsters && Object.values(state.referential.monsters).sort((val1, val2) => val1.Name.localeCompare(val2.Name));
+export const selectShips = state => state.referential.ships && Object.values(state.referential.ships).sort((val1, val2) => val1.Name.localeCompare(val2.Name));

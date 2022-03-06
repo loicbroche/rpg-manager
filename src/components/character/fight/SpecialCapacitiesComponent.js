@@ -2,11 +2,12 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { selectSubRaceById, selectClassById, selectValidSpecialisation,
-         selectClassCapacitiesDescriptionsByXP, selectRaceCapacitiesDescriptionsBySubRaceIdXP } from 'store/selectors';
+         selectClassCapacitiesDescriptionsByXP, selectRaceCapacitiesDescriptionsBySubRaceIdXP, selectCaracteristicsBonus } from 'store/selectors';
 import PropTypes from 'prop-types'
 
 import ExpendableComponent from 'components/shared/ExpendableComponent';
 import './SpecialCapacitiesComponent.css'
+import { UsedCapacityPropType, CharacterPropType } from '../../../PropTypes';
 
 const capacitiesImage = require('images/details.png');
 const showImage = require('images/show.png');
@@ -20,7 +21,7 @@ class SpecialCapacities extends PureComponent {
 
   render() {
     const { raceCapacitiesDescriptions, class: characterClass, subRace,
-            specialisation, knownCapacities, hiddenCapacities, onVisibilityClick } = this.props;
+            specialisation, knownCapacities, caracteristicsBonus, hiddenCapacities, usedCapacities, onVisibilityClick } = this.props;
     const {showHidden} = this.state;
 
     const specialImage = characterClass?.SpecialsName && require(`images/specials/${characterClass.SpecialsName}.png`);
@@ -54,12 +55,17 @@ class SpecialCapacities extends PureComponent {
                             defaultExtended={true} >
           <ul>
           {raceCapacitiesDescriptions?.map((capacityDescription) => {
-            const capacityKey = capacityDescription.RequiredLevel+"-"+capacityDescription.Code
+
+            const capacityKey = (capacityDescription.RequiredLevel||1)+"-"+capacityDescription.Code
             const hidden = hiddenCapacities?.includes(capacityKey);
             const description = capacityDescription?.Description || "";
             const autoManaged = capacityDescription?.Auto;
             const statsCapacity = capacityDescription?.Stats;
-            const capacityUseNumber = capacityDescription?.UseNumber;
+
+            const capacityMaxUseNumber = !isNaN(capacityDescription?.UseNumber)?capacityDescription?.UseNumber:
+                                          (caracteristicsBonus?.find((caracteristic) => caracteristic.Code === capacityDescription?.UseNumber)?.Bonus || 1);
+            const capacityUsedNumber = usedCapacities?.find((capacity) => capacity.Id === capacityKey)?.UsedNumber || 0;
+
             return (!hidden || showHidden) && <li key={capacityKey} className={`capacity hoverable transparent ${autoManaged?"auto-managed":""}`}
                                               title={(capacityDescription.RequiredLevel?`Compétence de niveau ${capacityDescription.RequiredLevel}\n`:"")+`${description}`}>
                                                 <div className="capacity-title">
@@ -69,8 +75,19 @@ class SpecialCapacities extends PureComponent {
                                                           ?<img src={autoImage} title="Compétence de caractéristiques gérée automatiquement" alt="" />
                                                           :<img src={statsImage} title="Compétence de caractéristiques à configurer" alt="" />}
                                                       </div>
-                                                    :<span className="use-number" title= {capacityUseNumber===-1?"Utilisation illimitée":"Nombre d'utilisations sans repos long"}>
-                                                        {capacityUseNumber===-1?"∞":capacityUseNumber}
+                                                    :<span className="use-number" title= {capacityMaxUseNumber===-1?"Utilisation illimitée":`${capacityMaxUseNumber-capacityUsedNumber}/${capacityMaxUseNumber} restant jusqu'au prochain repos long`}>
+                                                          {capacityMaxUseNumber===-1
+                                                            ?<span className="infinite-capacity">∞</span>
+                                                            :<span className="used-capacity-number"><input className="used-capacity-number-input"
+                                                                                type="number"
+                                                                                dir="rtl"
+                                                                                step={1}
+                                                                                min={0}
+                                                                                max={capacityMaxUseNumber}
+                                                                                value={capacityMaxUseNumber-capacityUsedNumber}
+                                                                                onChange={(event) => { this.updateUsedCapacities(capacityKey, capacityMaxUseNumber-(parseInt(event.target.value) || 0))} }
+                                                                                />
+                                                            </span>}
                                                       </span>
                                                   }
                                                   <span>{capacityDescription.Code}</span>
@@ -96,7 +113,11 @@ class SpecialCapacities extends PureComponent {
             const autoManaged = capacityDescription?.Auto;
             const specialCapacity = capacityDescription?.Special;
             const statsCapacity = capacityDescription?.Stats;
-            const capacityUseNumber = capacityDescription?.UseNumber;
+
+            const capacityMaxUseNumber = !isNaN(capacityDescription?.UseNumber)?capacityDescription?.UseNumber:
+                                          (caracteristicsBonus?.find((caracteristic) => caracteristic.Code === capacityDescription?.UseNumber)?.Bonus || 1);
+            const capacityUsedNumber = usedCapacities?.find((capacity) => capacity.Id === capacityKey)?.UsedNumber || 0;
+
             return (!hidden || showHidden) && <li key={capacityKey} className={`capacity hoverable transparent ${autoManaged?"auto-managed":""}`}
                                               title={`Compétence de niveau ${capacity.level}\n${description}`}>
                                                 <div className="capacity-title">
@@ -110,9 +131,20 @@ class SpecialCapacities extends PureComponent {
                                                               ?<img src={autoImage} title="Compétence de caractéristiques gérée automatiquement" alt="" />
                                                               :<img src={statsImage} title="Compétence de caractéristiques à configurer" alt="" />}
                                                           </div>
-                                                        :<span className="use-number" title= {capacityUseNumber===-1?"Utilisation illimitée":"Nombre d'utilisations sans repos long"}>
-                                                          {capacityUseNumber===-1?"∞":capacityUseNumber}
-                                                        </span>)
+                                                        :<span className="use-number" title= {capacityMaxUseNumber===-1?"Utilisation illimitée":`${capacityMaxUseNumber-capacityUsedNumber}/${capacityMaxUseNumber} restant jusqu'au prochain repos long`}>
+                                                          {capacityMaxUseNumber===-1
+                                                            ?<span className="infinite-capacity">∞</span>
+                                                            :<span className="used-capacity-number"><input className="used-capacity-number-input"
+                                                                                type="number"
+                                                                                dir="rtl"
+                                                                                step={1}
+                                                                                min={0}
+                                                                                max={capacityMaxUseNumber}
+                                                                                value={capacityMaxUseNumber-capacityUsedNumber}
+                                                                                onChange={(event) => { this.updateUsedCapacities(capacityKey, capacityMaxUseNumber-(parseInt(event.target.value) || 0))} }
+                                                                                />
+                                                              </span>}
+                                                            </span>)
                                                   }
                                                   <span>{capacity.name}</span>
                                                 </div>
@@ -136,25 +168,40 @@ class SpecialCapacities extends PureComponent {
       </div>
     )
   }
+
+  // Arrow fx for binding
+  updateUsedCapacities = (capacityId, usedNumber) => {
+    const { onUsedCapacitiesChange } = this.props;
+    let {usedCapacities} = this.props;
+    usedCapacities = usedCapacities?.slice() || [];
+    const index = usedCapacities.findIndex((capacity) => capacity.Id === capacityId);
+    if (index > -1) {
+      usedCapacities[index].UsedNumber = usedNumber;
+    } else {
+      usedCapacities.push({Id: capacityId, UsedNumber: usedNumber});
+    }
+
+    onUsedCapacitiesChange(usedCapacities);
+  }
 }
 
 SpecialCapacities.propTypes = {
-  classId: PropTypes.string.isRequired,
-  subRaceId: PropTypes.string,
-  specialisationId: PropTypes.string,
-  XP: PropTypes.number,
+  character: CharacterPropType.isRequired,
+  usedCapacities: PropTypes.arrayOf(UsedCapacityPropType),
   hiddenCapacities: PropTypes.arrayOf(PropTypes.string),
-  onVisibilityClick: PropTypes.func.isRequired
+  onVisibilityClick: PropTypes.func.isRequired,
+  onUsedCapacitiesChange: PropTypes.func
 }
 SpecialCapacities.defaultProps = {
   XP: 0
 }
 
 const mapStateToProps = (state, props) => ({
-  class: selectClassById(state, props.classId),
-  subRace: selectSubRaceById(state, props.subRaceId),
-  specialisation: selectValidSpecialisation(state, props.specialisationId, props.classId, props.XP),
-  raceCapacitiesDescriptions: selectRaceCapacitiesDescriptionsBySubRaceIdXP(state, props.subRaceId, props.XP),
-  knownCapacities: selectClassCapacitiesDescriptionsByXP(state, props.classId, props.specialisationId, props.XP)
+  class: selectClassById(state, props.character?.Class),
+  subRace: selectSubRaceById(state, props.character?.SubRace),
+  specialisation: selectValidSpecialisation(state, props.character?.Specialisation, props.character?.Class, props.character?.XP),
+  raceCapacitiesDescriptions: selectRaceCapacitiesDescriptionsBySubRaceIdXP(state, props.character?.SubRace, props.character?.XP),
+  knownCapacities: selectClassCapacitiesDescriptionsByXP(state, props.character?.Class, props.character?.Specialisation, props.character?.XP),
+  caracteristicsBonus: selectCaracteristicsBonus(state, props.character)
 })
 export default connect(mapStateToProps)(SpecialCapacities)

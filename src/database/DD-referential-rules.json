@@ -157,7 +157,7 @@
                     ".validate": "newData.isString() && newData.val().length <= 255"
                 },
                 "UseNumber": {
-                    ".validate": "newData.isNumber() && -1 <= newData.val() && newData.val() <= 100"
+                    ".validate": "(newData.isNumber() && -1 <= newData.val() && newData.val() <= 100) || (newData.isString() && newData.val().length == 3)"
                 }
             }
         },
@@ -395,6 +395,67 @@
                 }
             }
         },
+        "MonsterFamilies": {
+            "$id": {
+                ".validate": "newData.child('Code').exists() && newData.child('Name').exists()",
+                "Code": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50 && newData.val() == $id"
+                },
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                }
+            }
+        },
+        "MonsterSpecies": {
+            "$id": {
+                ".validate": "newData.child('Code').exists() && newData.child('Name').exists()",
+                "Code": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50 && newData.val() == $id"
+                },
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                }
+            }
+        },
+        "Monsters": {
+            "$id": {
+                ".validate": "newData.child('Name').exists() && newData.child('VO').exists() && newData.child('Family').exists() && newData.child('FP').exists() && newData.child('Size').exists() && newData.child('AC').exists() && newData.child('HP').exists()",
+                "Name": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50 && newData.val() == $id"
+                },
+                "VO": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+				"Family": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                },
+				"Species": {
+                    "$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+					}
+                },
+				"FP": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 5"
+                },
+				"Size": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 1"
+                },
+				"AC": {
+                    ".validate": "newData.isNumber() && 0 < newData.val() && newData.val() <= 100"
+                },
+				"HP": {
+                    ".validate": "newData.isNumber() && 0 < newData.val()"
+                },
+				"Alignments": {
+                                      "$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+					}
+                },
+				"Legendary": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+                }
+            }
+        },
         "Mounts": {
             "$id": {
                 ".validate": "newData.child('Name').exists() && newData.child('Speed').exists() && newData.child('ChargeCapacity').exists() && newData.child('Price').exists()",
@@ -480,7 +541,7 @@
                     ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 20"
                 },
                 "UseNumber": {
-                    ".validate": "newData.isNumber() && -1 <= newData.val() && newData.val() <= 100"
+                    ".validate": "(newData.isNumber() && -1 <= newData.val() && newData.val() <= 100) || (newData.isString() && newData.val().length == 3)"
                 }
             }
         },
@@ -537,7 +598,18 @@
 					"$index": {
 						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
 					}
-				}
+				},
+                "Skills": {
+					"$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+					}
+				},
+                "ACBonus": {
+                    ".validate": "newData.isNumber() && 0 <= newData.val() && newData.val() <= 100"
+                },
+                "ACBonusArmor": {
+                    ".validate": "newData.isBoolean()"
+                }
             }
         },
         "ServiceCategories": {
@@ -726,7 +798,12 @@
                 },
                 "Speed": {
                     ".validate": "newData.isNumber() && 0 <= newData.val()"
-                }
+                },
+                "Skills": {
+					"$index": {
+						".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+					}
+				}
             }
         },
         "Trinkets": {

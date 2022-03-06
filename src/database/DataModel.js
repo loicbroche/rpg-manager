@@ -15,7 +15,9 @@ export const DATA_MODEL = {
                 WEAPONS: { name: "Weapons", optional: true },
                 LANGUAGES: { name: "Languages" },
                 RESISTANCES: { name: "ArmorCategories", optional: true },
-                SAVE_ADVANTAGES: { name: "SaveAdvantages", optional: true }
+                SAVE_ADVANTAGES: { name: "SaveAdvantages", optional: true },
+                SKILLS: { name: "Skills", optional: true },
+                AC_BONUS: { name: "ACBonus" }
             }
         },
     SUB_RACES:
@@ -36,7 +38,8 @@ export const DATA_MODEL = {
                 WEAPONS: { name: "Weapons", optional: true },
                 LANGUAGES: { name: "Languages", optional: true },
                 RESISTANCES: { name: "ArmorCategories", optional: true },
-                SAVE_ADVANTAGES: { name: "SaveAdvantages", optional: true }
+                SAVE_ADVANTAGES: { name: "SaveAdvantages", optional: true },
+                SKILLS: { name: "Skills", optional: true }
             }
         },
     CLASSES:
@@ -269,6 +272,38 @@ export const DATA_MODEL = {
                 PRICE: { name: "Price" }
             }
         },
+
+    MONSTER_FAMILIES:
+        {
+            name: 'MonsterFamilies',
+            columns: {
+                CODE: { name: "Code" },
+                NAME: { name: "Name" }            }
+        },
+    MONSTER_SPECIES:
+        {
+            name: 'MonsterSpecies',
+            columns: {
+                CODE: { name: "Code" },
+                NAME: { name: "Name" }            }
+        },
+    MONSTERS:
+    {
+        name: 'Monsters',
+        columns: {
+            NAME: { name: "Name" },
+            VO: { name: "VO" },
+            FAMILY: { name: "Family" },
+            SPECIES: { name: "Species" },
+            FP: { name: "FP" },
+            SIZE: { name: "Size" },
+            AC: { name: "AC" },
+            HP: { name: "HP" },
+            SPEED: { name: "Speed", optional: true  },
+            ALIGNMENT: { name: "Alignment", optional: true  },
+            LEGENDARY: { name: "Legendary", optional: true  }
+        }
+    },
     MOUNTS:
         {
             name: 'Mounts',
@@ -466,7 +501,9 @@ export const DATA_MODEL = {
             SPELLS: { name: "Spells", optional: true },
             NOTES: { name: "Notes", optional: true },
             HIDDEN_CAPACITIES: { name: "HiddenCapacities", optional: true },
-            DAMAGES: { name: "Damages", optional: true }
+            DAMAGES: { name: "Damages", optional: true },
+            AC_BONUS: { name: "ACBonus", optional: true },
+            USED_CAPACITIES: { name: "UsedCapacities", optional: true }
         }
     }
 }

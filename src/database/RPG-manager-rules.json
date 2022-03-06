@@ -12,7 +12,7 @@
                     ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
                 },
                 "SubRace": {
-                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 20"
                 },
                 "Class": {
                     ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 15"
@@ -239,7 +239,21 @@
 				},
                 "Notes": {
                     ".validate": "newData.isString() && newData.val().length <= 2000"
-                }
+                },
+				"ACBonus": {
+                    ".validate": "newData.isNumber() && -100 <= newData.val() && newData.val() <= 100"
+                },
+				"UsedCapacities": {
+					"$index": {
+					    ".validate": "newData.child('Id').exists() && newData.child('UsedNumber').exists()",
+						"Id": {
+							".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 255"
+						},
+						"UsedNumber": {
+							".validate": "newData.isNumber() && 0 <= newData.val()"
+						}
+					}
+				}
             }
         },
         "Notes": {

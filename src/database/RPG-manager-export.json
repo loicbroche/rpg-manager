@@ -1,42 +1,76 @@
 {
   "Characters" : {
     "Ash" : {
+      "ACBonus" : -7,
       "Age" : 26,
       "Alignment" : "2_NB",
       "Armor" : "Cuir",
-      "Charisma" : 10,
+      "Charisma" : 14,
       "Class" : "BARD",
-      "Constitution" : 10,
+      "Constitution" : 12,
+      "Damages" : [ {
+        "Code" : "head",
+        "Hurt" : false
+      }, {
+        "Code" : "torso",
+        "Hurt" : false
+      }, {
+        "Code" : "left-arm",
+        "Hurt" : false
+      }, {
+        "Code" : "left-forearm",
+        "Hurt" : false
+      }, {
+        "Code" : "right-shin",
+        "Hurt" : false
+      }, {
+        "Code" : "right-thigh",
+        "Hurt" : false
+      } ],
       "Defects" : "Instable et sanguinaire",
-      "Dexterity" : 10,
-      "DistanceWeapon" : "Arbalète légère",
+      "Dexterity" : 16,
+      "DistanceWeapon" : "-",
       "Eyes" : "Saphir",
-      "Gender" : "♂",
-      "HP" : 24,
+      "Gender" : "⚲",
+      "HP" : 22,
       "Hairs" : "Mi-longs blancs bleutés",
       "Health" : 4,
       "Height" : 176,
-      "Historic" : "HERMIT",
+      "Historic" : "ARTIST",
       "History" : "Sa mère, séduite par un génie ayant pris forme humaine, l'a abandonné à la naissance aux portes d'un monastère aux centre d'une lorsqu'elle à découvert à quoi elle avait donné naissance.",
       "Id" : "Ash",
       "Ideals" : "Logique",
-      "Intelligence" : 10,
+      "Intelligence" : 12,
       "Links" : "L'ordre de son monastère",
-      "MaxHP" : 24,
-      "Money" : 1000,
+      "MasterObjects" : [ "Viole", "Flûte", "Luth" ],
+      "MaxHP" : 22,
+      "MinorSpells" : [ "Lumières dansantes", "Illusion mineure" ],
+      "Money" : 1700,
       "Name" : "Ash",
       "PersonnalityTraits" : "Serein",
-      "Skills" : [ "Eloquence", "Etiquette", "Narcotique", "Négociation", "Noblesse", "Représentation" ],
+      "SatchelObjects" : [ {
+        "Id" : "Flûte",
+        "Quantity" : 1
+      }, {
+        "Id" : "Viole",
+        "Quantity" : 1
+      } ],
+      "Saves" : [ "STRESS", "CHARM" ],
+      "Skills" : [ "Acrobatie", "Histoire", "Perspicacité", "Représentation", "Tromperie", "Escamotage", "Perception", "Etiquette" ],
       "Skin" : "Bleu clair",
+      "Specialisation" : "KNOWLEDGE_SCHOOL",
       "Specials" : 0,
-      "Strength" : 10,
-      "SubRace" : "WOODEN_ELF",
+      "Spells" : [ "Charme-personne", "Lueurs féeriques", "Murmures dissonants", "Soins", "Fracassement", "Couronne du dément" ],
+      "SpellsLocations" : [ null, 1, 0 ],
+      "Strength" : 5,
+      "SubRace" : "CHANGELING",
       "Weapon" : "Rapière",
       "Weight" : 68000,
-      "Wisdom" : 10,
+      "Wisdom" : 12,
       "XP" : 900
     },
     "Saphire" : {
+      "ACBonus" : 0,
       "Age" : 26,
       "Alignment" : "5_NB",
       "Ammunition" : 10,
@@ -115,12 +149,13 @@
       } ],
       "Defects" : "Instable et sanguinaire",
       "Dexterity" : 18,
-      "DistanceWeapon" : "Fronde",
+      "DistanceWeapon" : "Fléchette",
       "Eyes" : "Saphir",
+      "FightStyles" : [ "WARRIOR_DEFENSE" ],
       "Gender" : "♂",
-      "HP" : 24,
+      "HP" : 12,
       "Hairs" : "Mi-longs blancs bleutés",
-      "Health" : 2,
+      "Health" : 4,
       "Height" : 176,
       "HiddenCapacities" : [ "1-Défense sans armure", "2-Déplacement sans armure", "3-Tradition monastique" ],
       "Historic" : "HERMIT",
@@ -131,7 +166,7 @@
       "Languages" : [ "SILVAN" ],
       "Links" : "L'ordre de son monastère",
       "MasterObjects" : [ "Mon cartographe", "Mon cartographe 2" ],
-      "MaxHP" : 24,
+      "MaxHP" : 32,
       "MinorSpells" : [ "Coup de tonnerre", "Illusion mineure", "Coup au but" ],
       "Money" : 1000,
       "Name" : "Saphire",
@@ -151,73 +186,121 @@
         "Quantity" : 1
       } ],
       "Saves" : [ "FEAR", "STRESS" ],
-      "Skills" : [ "Acrobatie", "Discrétion", "Equilibre", "Premiers secours", "Réflexe" ],
+      "Skills" : [ "Discrétion", "Equilibre", "Premiers secours", "Réflexe" ],
       "Skin" : "Bleu clair",
       "Specialisation" : "OPENED_HAND_WAY",
-      "Specials" : 2,
+      "Specials" : 1,
       "Spells" : [ "Amitié avec les animaux", "Charme-personne", "Communication avec les animaux", "Compréhension des langues", "Détection de la magie", "Déguisement", "Fou rire de Tasha", "Fléau", "Feuille morte", "Amis" ],
       "SpellsLocations" : [ null, 3, 2, 0, 0, 0, 0, 0, 0, 0 ],
       "Strength" : 8,
       "SubRace" : "AIR_GENASI",
+      "UsedCapacities" : [ {
+        "Id" : "undefined-Rage de lion",
+        "UsedNumber" : 1
+      }, {
+        "Id" : "1-Rage de lion",
+        "UsedNumber" : 0
+      } ],
       "Weapon" : "Bâton",
       "Weight" : 68000,
       "Wisdom" : 16,
       "XP" : 900
     },
     "Sorwen" : {
-      "Age" : 26,
+      "ACBonus" : -8,
+      "Age" : 42,
       "Alignment" : "2_NB",
       "Armor" : "Demi-plate",
-      "Charisma" : 10,
+      "Charisma" : 14,
       "Class" : "WARRIOR",
-      "Constitution" : 10,
-      "Defects" : "Instable et sanguinaire",
-      "Dexterity" : 10,
+      "Constitution" : 12,
+      "Damages" : [ {
+        "Code" : "head",
+        "Hurt" : false,
+        "Left" : "53.4591%",
+        "Top" : "1.79487%"
+      }, {
+        "Code" : "right-arm",
+        "Left" : "32.3944%",
+        "Top" : "23.5741%"
+      }, {
+        "Code" : "right-forearm",
+        "Left" : "27.23%",
+        "Top" : "42.5856%"
+      }, {
+        "Code" : "left-arm",
+        "Left" : "67.1362%",
+        "Top" : "19.3916%"
+      }, {
+        "Code" : "left-forearm",
+        "Left" : "62.4413%",
+        "Top" : "37.6426%"
+      }, {
+        "Code" : "left-thigh",
+        "Left" : "60.0939%",
+        "Top" : "50.5703%"
+      }, {
+        "Code" : "right-thigh",
+        "Left" : "34.7418%",
+        "Top" : "52.4715%"
+      }, {
+        "Code" : "left-shin",
+        "Left" : "66.1765%",
+        "Top" : "71.2575%"
+      }, {
+        "Code" : "right-shin",
+        "Left" : "39.2157%",
+        "Top" : "77.0459%"
+      }, {
+        "Code" : "torso",
+        "Left" : "47.7941%",
+        "Top" : "26.3473%"
+      } ],
+      "Defects" : "Maladroit - vit dans son monde",
+      "Dexterity" : 12,
+      "DistanceWeapon" : "Arbalète légère",
       "Eyes" : "Saphir",
       "Gender" : "♂",
-      "HP" : 24,
-      "Hairs" : "Mi-longs blancs bleutés",
+      "HP" : 12,
+      "Hairs" : "",
       "Health" : 4,
-      "Height" : 176,
-      "Historic" : "HERMIT",
-      "History" : "Sa mère, séduite par un génie ayant pris forme humaine, l'a abandonné à la naissance aux portes d'un monastère aux centre d'un forêt par sa mère lorsqu'elle à découvert à quoi elle avait donné naissance.",
+      "Height" : 231,
+      "HiddenCapacities" : [ "1-Rage de lion", "1-Sens aiguisés" ],
+      "Historic" : "TRAVELER",
+      "History" : "",
       "Id" : "Sorwen",
-      "Ideals" : "Logique",
-      "Intelligence" : 10,
-      "Links" : "L'ordre de son monastère",
-      "MaxHP" : 24,
+      "Ideals" : "",
+      "Intelligence" : 13,
+      "Languages" : [ "SILVAN", "DWARF" ],
+      "Links" : "",
+      "MaxHP" : 32,
       "Money" : 1000,
       "Name" : "Sorwen",
-      "PersonnalityTraits" : "Serien",
+      "PersonnalityTraits" : "Calme atypique",
+      "Resistances" : [ "POISON", "DRUG" ],
       "Shield" : "Bouclier",
-      "Skills" : [ "Acrobatie", "Discrétion" ],
-      "Skin" : "Bleu clair",
+      "Skills" : [ "Brise liens", "Fuite", "Nature", "Saut" ],
+      "Skin" : "Fourrure blanche",
+      "Specialisation" : "CHAMPION",
       "Specials" : 0,
-      "Strength" : 10,
-      "SubRace" : "AARAKOCRA",
-      "Weapon" : "Épée à deux mains",
-      "Weight" : 68000,
-      "Wisdom" : 10,
+      "Strength" : 16,
+      "SubRace" : "LEONID_FANGED_FANGS",
+      "Weapon" : "Fléau d'armes",
+      "Weight" : 135000,
+      "Wisdom" : 8,
       "XP" : 900
     }
   },
   "Notes" : {
     "*" : [ {
-      "Content" : "Bonjour"
-    }, {
-      "Content" : "Hello"
-    }, {
-      "Content" : "Holà",
-      "Locked" : "Ash"
-    }, {
-      "Content" : "Buongiorno"
+      "Content" : "- 14 pièces or\n- 51 pièces argent\n- petite clé"
     } ],
-    "Saphir" : [ {
+    "Saphire" : [ {
       "Content" : "-2",
       "Description" : "Blessure au torse",
-      "Left" : "1226px",
+      "Left" : "1248px",
       "Name" : "CON",
-      "Top" : "-18px"
+      "Top" : "-12px"
     } ]
   }
 }

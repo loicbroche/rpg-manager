@@ -27,6 +27,7 @@
   --color-Health: #963634;
   --color-Energy: #693661;
   --color-Ki: #C4006B;
+  --color-Psy: #F72E9D;
   --color-Witchcraft: #3A9E31;
   --color-Rage: #C12323;
   --color-Spell: #58C9D8;
@@ -86,6 +87,11 @@ h1 {
   font-size: 1rem;
   background-color: var(--color-header);
   color: var(--color-primary);
+}
+
+select:disabled {
+  background-color: #fff;
+  color: #333;
 }
 
 /*Static style General classes*/

@@ -13,7 +13,9 @@ export const RacePropType = PropTypes.shape({
     Weapons: PropTypes.arrayOf(PropTypes.string),
     Languages: PropTypes.arrayOf(PropTypes.string).isRequired,
     Resistances: PropTypes.arrayOf(PropTypes.string),
-    SaveAdvantages: PropTypes.arrayOf(PropTypes.string)
+    SaveAdvantages: PropTypes.arrayOf(PropTypes.string),
+    Skills: PropTypes.arrayOf(PropTypes.string),
+    ACBonus: PropTypes.number.isRequired
 })
 
 export const SubRacePropType = PropTypes.shape({
@@ -31,7 +33,8 @@ export const SubRacePropType = PropTypes.shape({
     Weapons: PropTypes.arrayOf(PropTypes.string),
     Languages: PropTypes.arrayOf(PropTypes.string),
     Resistances: PropTypes.arrayOf(PropTypes.string),
-    SaveAdvantages: PropTypes.arrayOf(PropTypes.string)
+    SaveAdvantages: PropTypes.arrayOf(PropTypes.string),
+    Skills: PropTypes.arrayOf(PropTypes.string)
 })
 
 export const ClassPropType = PropTypes.shape({
@@ -174,6 +177,11 @@ export const PersonnalObjectPropType = PropTypes.shape({
     Quantity: PropTypes.number.isRequired
 })
 
+export const UsedCapacityPropType = PropTypes.shape({
+    Id: PropTypes.string.isRequired,
+    UsedNumber: PropTypes.number.isRequired
+})
+
 export const EquipmentCategoryPropType = PropTypes.shape({
     Code: PropTypes.string.isRequired,
     Name: PropTypes.string.isRequired
@@ -207,6 +215,30 @@ export const ServicePropType = PropTypes.shape({
     Name: PropTypes.string.isRequired,
     Category: PropTypes.string.isRequired,
     Price: PropTypes.string.isRequired
+})
+
+export const MonsterFamilyPropType = PropTypes.shape({
+    Code: PropTypes.string.isRequired,
+    Name: PropTypes.string.isRequired
+})
+
+export const MonsterSpeciesPropType = PropTypes.shape({
+    Code: PropTypes.string.isRequired,
+    Name: PropTypes.string.isRequired
+})
+
+export const MonstersPropType = PropTypes.shape({
+    Name: PropTypes.string.isRequired,
+    Vo: PropTypes.string.isRequired,
+    Family: PropTypes.string.isRequired,
+    Species: PropTypes.arrayOf(PropTypes.string.isRequired),
+    FP: PropTypes.string.isRequired,
+    Size: PropTypes.string.isRequired,
+    AC: PropTypes.number.isRequired,
+    HP: PropTypes.string.isRequired,
+    Speed: PropTypes.string,
+    Alignment: PropTypes.string,
+    Legendary: PropTypes.string
 })
 
 export const MountPropType = PropTypes.shape({
@@ -361,11 +393,14 @@ export const CharacterPropType = PropTypes.shape({
     Shield: PropTypes.string,
     Money: PropTypes.number.isRequired,
     Objects: PropTypes.arrayOf(PersonnalObjectPropType),
+    SatchelObjects: PropTypes.arrayOf(PersonnalObjectPropType),
     Specials: PropTypes.number,
     SpellsLocations: PropTypes.arrayOf(PropTypes.number),
     MinorSpells: PropTypes.arrayOf(PropTypes.string),
     Spells: PropTypes.arrayOf(PropTypes.string),
     Notes: PropTypes.string,
     hiddenCapacities: PropTypes.arrayOf(PropTypes.string),
-    Damages: PropTypes.arrayOf(DamagePropType)
+    Damages: PropTypes.arrayOf(DamagePropType),
+    ACBonus: PropTypes.number,
+    UsedCapacities: PropTypes.arrayOf(UsedCapacityPropType),
 })

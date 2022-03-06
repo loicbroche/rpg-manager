@@ -1,14 +1,15 @@
 
-.class-style-selector {
-    display: flex;
-    flex-direction: column;
-}
+
 .class-selector {
     display: flex;
     flex-direction: row;
 }
 .class-selector .selector-value {
     position: relative;
+}
+.class-selector-fightstyle {
+    display: flex;
+    flex-direction: column;
 }
 
 .specialisation {
@@ -20,7 +21,7 @@
     position: absolute;
     height: calc(var(--height-icons) - 0.75rem);
     width: calc(var(--height-icons) - 0.75rem);
-    left: calc(var(--height-icons)/-2);
+    left: calc(-1*var(--height-icons)/2);
     z-index: 2;
 }
 

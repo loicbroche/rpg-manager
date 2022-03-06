@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react'
 import { connect } from 'react-redux'
-import { selectMasteryBonusByXP, selectHistoricById, selectSkills, selectSkillsMap, selectSkillById, selectCaracteristicsMap } from 'store/selectors';
+import { selectMasteryBonusByXP, selectHistoricById, selectSkills, selectSkillsMap, selectSkillById,
+        selectCaracteristicsMap, selectRaceBySubRaceId, selectSubRaceById } from 'store/selectors';
 import PropTypes from 'prop-types'
 
 import './SkillSelector.css'
@@ -14,7 +15,7 @@ class SkillSelector extends PureComponent {
   }
 
   render() {
-    const { skills, skillsMap, caracteristicsMap,  historic, masteryBonus,
+    const { skills, skillsMap, caracteristicsMap,  historic, race, subRace, masteryBonus,
             caracteristicsBonus, subRaceId, master} = this.props;
     const {selectedSkillName} = this.state;
     const selectedSkill = skillsMap?.[selectedSkillName];
@@ -23,8 +24,10 @@ class SkillSelector extends PureComponent {
     const caracteristicBonus = caracteristicsBonus?.[selectedSkillCaracteristic?.Code];
 
     const historicSkills = historic?.Skills || [];
+    const raceSkills = race?.Skills || [];
+    const subRaceSkills = subRace?.Skills || [];
     const isMaster = master?.includes(selectedSkillName);
-    const isHistoricMaster = historicSkills.includes(selectedSkillName);
+    const isDefaultMaster = historicSkills.includes(selectedSkillName) || raceSkills.includes(selectedSkillName) || subRaceSkills.includes(selectedSkillName);
 
     return (
     <div className='skill-selector'>
@@ -42,7 +45,7 @@ class SkillSelector extends PureComponent {
                                                 subRaceId={subRaceId} />
         </span>
       }
-      <span className="skill-bonus" title={(isHistoricMaster||isMaster)?"Bonus maîtrise":""}>{ (isHistoricMaster||isMaster) && `+${masteryBonus}`}</span>
+      <span className="skill-bonus" title={(isDefaultMaster||isMaster)?"Bonus maîtrise":""}>{ (isDefaultMaster||isMaster) && `+${masteryBonus}`}</span>
     </div>
   )
   }
@@ -73,6 +76,8 @@ const mapStateToProps = (state, props) => ({
   selectedSkill: selectSkillById(state, state.selectedSkillName),
   caracteristicsMap: selectCaracteristicsMap(state),
   masteryBonus: selectMasteryBonusByXP(state, props.XP),
-  historic: selectHistoricById(state, props.historicId)
+  historic: selectHistoricById(state, props.historicId),
+  race: selectRaceBySubRaceId(state, props.subRaceId),
+  subRace: selectSubRaceById(state, props.subRaceId)
 })
 export default connect(mapStateToProps)(SkillSelector)

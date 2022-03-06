@@ -21,6 +21,9 @@ const initialState = {
     objects: null,
     equipmentCategories: null,
     equipments: null,
+    monsterFamilies: null,
+    monsterSpecies: null,
+    monsters: null,
     mounts: null,
     ships: null,
     hostelCategories: null,
@@ -172,6 +175,24 @@ function referentialReducer(state = initialState, action) {
             nextState = {
                 ...state,
                 services: action.payload
+            }
+            return nextState;
+        case ActionTypes.REFERENTIAL.LOAD_MONSTER_FAMILIES:
+            nextState = {
+                ...state,
+                monsterFamilies: action.payload
+            }
+            return nextState;
+        case ActionTypes.REFERENTIAL.LOAD_MONSTER_SPECIES:
+            nextState = {
+                ...state,
+                monsterSpecies: action.payload
+            }
+            return nextState;
+        case ActionTypes.REFERENTIAL.LOAD_MONSTERS:
+            nextState = {
+                ...state,
+                monsters: action.payload
             }
             return nextState;
         case ActionTypes.REFERENTIAL.LOAD_MOUNTS:

@@ -138,7 +138,7 @@ class Character extends PureComponent {
         const { caracteristics, weaponsMap, armorsMap, racesMap, subRacesMap} = this.props;
         const { Name, SubRace: subRaceId, Gender, Class: classId, Specialisation, FightStyles, Historic: historicId, History, Skills: masterSkills,
                 XP, HP, MaxHP, Specials, SpellsLocations, Armor, Shield, Weapon, DistanceWeapon, MasterWeapons, MasterArmors, MasterObjects, Alterations,
-                Resistances, Saves, SaveAdvantages, Health, Strength, Notes, Money, Objects: characterObjects, SatchelObjects, HiddenCapacities, Damages} = this.state.characterInfos;
+                Resistances, Saves, SaveAdvantages, Health, Strength, Notes, Money, Objects: characterObjects, SatchelObjects, HiddenCapacities, Damages, UsedCapacities} = this.state.characterInfos;
         const { generalNotes, personnalNotes } = this.state;
 
         const caracteristicsBonus = caracteristics?.reduce((accum, caracteristic) => {
@@ -231,7 +231,7 @@ class Character extends PureComponent {
                                                         onClick={(alterationId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.ALTERATIONS.name, alterationId) }}
                                                         onResistanceClick={this.toggleResistance}/>
                                 <div className="complements">
-                                    <ACComponent character={this.state.characterInfos} />    
+                                    <ACComponent character={this.state.characterInfos} onACBonusChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.AC_BONUS.name, value); }} />    
                                     <SpeedComponent subRaceId={subRaceId} classId={classId} armorId={Armor} strength={Strength} XP={XP} />    
                                 </div>
                             </div>
@@ -239,8 +239,10 @@ class Character extends PureComponent {
                             <div className="special">
                                 <SpecialsComponent val={Specials} classId={classId} XP={XP}
                                                     onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPECIALS.name, value); }} />
-                                <SpecialCapacitiesComponent subRaceId={subRaceId} classId={classId} specialisationId={Specialisation} XP={XP}
+                                <SpecialCapacitiesComponent character={this.state.characterInfos}
                                                             hiddenCapacities={HiddenCapacities}
+                                                            usedCapacities={UsedCapacities}
+                                                            onUsedCapacitiesChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.USED_CAPACITIES.name, value); }}
                                                             onVisibilityClick={(capacityId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.HIDDEN_CAPACITIES.name, capacityId) }} />
                             </div>
                             <div className="status">

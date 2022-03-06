@@ -37,6 +37,10 @@ class App extends Component {
         <div className="body">
           <Switch>
             <Route
+              exact path={ROUTE_ROOT}
+              render={props => ( <Page {...props} component={Home} title="JdR Manager" /> )}
+            />
+            <Route
               exact path={ROUTE_HOME}
               render={props => ( <Page {...props} component={Home} title="JdR Manager" /> )}
             />
@@ -60,6 +64,7 @@ class App extends Component {
 
 export default connect(state => state, {loadReferential: Actions.loadReferentialValuesAction})(App)
 
-export const ROUTE_HOME = "/";
-export const ROUTE_GAME_MASTER = "/gm";
-export const ROUTE_CHARACTER = "/character";
+export const ROUTE_ROOT = "/";
+export const ROUTE_HOME = "/rpg-manager";
+export const ROUTE_GAME_MASTER = "/rpg-manager/gm";
+export const ROUTE_CHARACTER = "/rpg-manager/character";
