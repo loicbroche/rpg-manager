@@ -1,6 +1,6 @@
 {
   "homepage": "http://loicbroche.github.io/rpg-manager",
-  "name": "react-memory",
+  "name": "rpg-manager",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -54,7 +54,7 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "enzyme-to-json": "^3.4.3",
-    "gh-pages": "^3.0.0",
+    "gh-pages": "^3.2.3",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
     "react-test-renderer": "^16.12.0",
