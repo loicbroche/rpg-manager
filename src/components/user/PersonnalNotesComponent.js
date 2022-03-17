@@ -30,7 +30,7 @@ class PersonnalNotesComponent extends PureComponent {
     const title = showNotes?"Masquer les notes personnelles":"Lire/Modifier les notes personnelles";
     return ( 
         <div className="personnalNotesComponent">
-          <div className={`personnal-notes-container ${showNotes&&"show-notes"}`}>
+          <div className={`personnal-notes-container ${showNotes&&"show-personnal-notes"}`}>
             <div className="personnal-notes-header">
               <span className="personnal-notes-name">Notes personnelles</span>
               <span className={`activable transparent extensor ${showNotes?"opened":"closed"}`}

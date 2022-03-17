@@ -23,7 +23,7 @@ import ArmorSelector from 'components/character/equipment/ArmorSelector';
 
 class CharacterOverview extends PureComponent {
     render() {
-        const { caracteristics, levelNumber, character } = this.props;
+        const { caracteristics, character } = this.props;
         const caracteristicsBonus = caracteristics?.reduce((accum, caracteristic) => {
             accum[caracteristic.Code] = character[caracteristic.OV];
             return accum;
