@@ -108,8 +108,11 @@
         "Top" : "30.1205%"
       }, {
         "Code" : "left-forearm",
-        "Hurt" : false,
+        "Description" : "",
+        "Hurt" : true,
         "Left" : "79.5122%",
+        "Symbol" : "",
+        "Title" : "Avant-ras gauche",
         "Top" : "37.1486%"
       }, {
         "Code" : "right-shin",
@@ -206,6 +209,115 @@
       "Wisdom" : 16,
       "XP" : 900
     },
+    "Simae" : {
+      "Age" : 27,
+      "Alignment" : "4_LN",
+      "Ammunition" : 20,
+      "Armor" : "Cuir",
+      "Charisma" : 15,
+      "Class" : "WILY",
+      "Constitution" : 14,
+      "Damages" : [ {
+        "Code" : "right-shin",
+        "Left" : "27.8481%",
+        "Top" : "76.2931%"
+      }, {
+        "Code" : "left-shin",
+        "Left" : "47.4684%",
+        "Top" : "76.2931%"
+      }, {
+        "Code" : "right-thigh",
+        "Left" : "22.1519%",
+        "Top" : "56.25%"
+      }, {
+        "Code" : "left-thigh",
+        "Left" : "42.4051%",
+        "Top" : "56.0345%"
+      }, {
+        "Code" : "right-forearm",
+        "Left" : "22.4684%",
+        "Top" : "34.2672%"
+      }, {
+        "Code" : "torso",
+        "Left" : "30.6962%",
+        "Top" : "26.9397%"
+      }, {
+        "Code" : "left-arm",
+        "Left" : "43.9873%",
+        "Top" : "25.431%"
+      }, {
+        "Code" : "left-forearm",
+        "Left" : "43.9873%",
+        "Top" : "34.2672%"
+      }, {
+        "Code" : "head",
+        "Left" : "33.5443%",
+        "Top" : "4.74138%"
+      } ],
+      "Defects" : "Voyager est tout ce qui compte pour moi, jamais je ne m'installerai quelque part.",
+      "Dexterity" : 14,
+      "DistanceWeapon" : "Arc court",
+      "Eyes" : "Noires",
+      "Gender" : "♀",
+      "HP" : 10,
+      "Hairs" : "Longs noires ondulés",
+      "Health" : 4,
+      "Height" : 156,
+      "HiddenCapacities" : [ "1-Foulée rapide", "1-Gracieux", "1-Sens aiguisés", "1-Changement", "1-Vaillant", "1-Expertise" ],
+      "Historic" : "TRAVELER",
+      "History" : "Simae, esprit-singe née dans une région entre forêts et montagne, ressemble à première vue à une petite femme frêle.\nCependant, sa peau possède une teinte légèrement hâlée mais grisatre qui par temps froid devient trop terne pour paraitre humaine.\nEncadré d'épais cheveux noirs ondulés, son visage aux yeux sombres et profonds est éclairé d'un sourire aux quatres canines très prononcées.\nElle dispose d'une queue agile couverte d'un léger duvet. Longue comme ses bras et épaisse comme un poignet elle lui permet de saisir et manipuler des objets mais n'est pas assez forte pour lui l'autoriser à s'y suspendre.\nSi elle n'est pas couverte par un vêtement long, Simae se plait à l'enrouler autour de sa taille lorsqu'elle ne souhaite pas attirer l'attention ou n'est pas certaine de l'accueil qui sera fait à un individu de son espèce.\nSes pieds, habituellement couverts par bes bottes de voyage, sont munis de pouces opposables bien que les autres doigts soient plus courts que ceux d'une main et plus proches d'orteils humains.\n\n\nSa région natale située à la frontière de l'ordre et du chaos est depuis sa plus jeune enfance le théâtre de batailles régulières opposant les seigneurs locaux et les arcanistes frontaliers, ce qui l'a poussé à prendre la route pour fuire les combats.\nIndépendante elle se mêle volontier temporairement à des compagnons de voyage ou population rencontrés lors de ses arrêts. Curieuse de nouvelles rencontres sans jamais se fixer dans un groupe.\n\nAu contact des gens du voyage elle a découvert la vie d'artiste itinérant qu'elle a embrassé en se découvrant un talent pour la prestidigitation, en particulier les routines de pièces de monnaie et de cartes.\nSa capacité à faire apparaitre ou disparaitre de petits objets et de transformer des cartes sous les yeux ébahis de spectateurs lui permet de vivre du chapeau.\nSon agilité de prestidigitatrice fait également d'elle une voleuse à la tire très efficace, lui permettant de gonfler des dons qu'elle estime insuffisant ",
+      "Id" : "Simae",
+      "Ideals" : "Pourquoi rester toute sa vie dans un endroit quand on peut prendre la route",
+      "Intelligence" : 10,
+      "Languages" : [ "DWARF", "ELVISH" ],
+      "Links" : "J'ai fui l'endroit où j'ai grandi et je n'ose plus y retourner.",
+      "MaxHP" : 10,
+      "Money" : 950,
+      "Name" : "Simae",
+      "Notes" : "Prestidigitation : Limitée à des spectateurs ayant le même angle de vue\n",
+      "Objects" : [ {
+        "Id" : "Un flacon de verre vide qui sent le parfum lorsqu'il est ouvert",
+        "Quantity" : 1
+      }, {
+        "Id" : "Un journal écrit dans une langue que vous ne connaissez pas",
+        "Label" : "Un livre rempli de notes sur vos périples",
+        "Quantity" : 1
+      }, {
+        "Id" : "Une plume vert clair",
+        "Label" : "Une bouteille d'encre et une plume vert clair",
+        "Quantity" : 1
+      }, {
+        "Id" : "Une veste avec une centaine de minuscules poches",
+        "Label" : "Des vêtements de voyage",
+        "Quantity" : 1
+      }, {
+        "Id" : "La coquille d'un oeuf peint avec des scènes de misère humaine d'un détail troublant",
+        "Label" : "Un bâton de marche",
+        "Quantity" : 1
+      }, {
+        "Id" : "Outils de voleur",
+        "Quantity" : 1
+      } ],
+      "PersonnalityTraits" : "Joviale - Je suis fasciné par tout ce qui me semble exotique, objets, créatures ou personnes.",
+      "SatchelObjects" : [ {
+        "Id" : "Jeu de cartes",
+        "Quantity" : 1
+      }, {
+        "Id" : "Un couteau qui appartenait à un parent",
+        "Label" : "Dagues",
+        "Quantity" : 2
+      } ],
+      "Shield" : "-",
+      "Skills" : [ "Représentation", "Discrétion", "Escamotage", "Tromperie" ],
+      "Skin" : "Hâlée/Grisâtre",
+      "Specials" : 0,
+      "Strength" : 8,
+      "SubRace" : "LIGHT_FOOT_HALFELIN",
+      "Weapon" : "Épée courte",
+      "Weight" : 47,
+      "Wisdom" : 9,
+      "XP" : 0
+    },
     "Sorwen" : {
       "ACBonus" : -8,
       "Age" : 42,
@@ -217,44 +329,44 @@
       "Damages" : [ {
         "Code" : "head",
         "Hurt" : false,
-        "Left" : "53.4591%",
-        "Top" : "1.79487%"
+        "Left" : "51.5942%",
+        "Top" : "6.34006%"
       }, {
         "Code" : "right-arm",
-        "Left" : "32.3944%",
-        "Top" : "23.5741%"
+        "Left" : "36.087%",
+        "Top" : "20.6052%"
       }, {
         "Code" : "right-forearm",
-        "Left" : "27.23%",
-        "Top" : "42.5856%"
+        "Left" : "31.0145%",
+        "Top" : "42.7954%"
       }, {
         "Code" : "left-arm",
-        "Left" : "67.1362%",
-        "Top" : "19.3916%"
+        "Left" : "61.4493%",
+        "Top" : "21.3256%"
       }, {
         "Code" : "left-forearm",
-        "Left" : "62.4413%",
-        "Top" : "37.6426%"
+        "Left" : "67.6812%",
+        "Top" : "45.245%"
       }, {
         "Code" : "left-thigh",
-        "Left" : "60.0939%",
-        "Top" : "50.5703%"
+        "Left" : "55.3623%",
+        "Top" : "50%"
       }, {
         "Code" : "right-thigh",
-        "Left" : "34.7418%",
-        "Top" : "52.4715%"
+        "Left" : "41.1594%",
+        "Top" : "49.7118%"
       }, {
         "Code" : "left-shin",
-        "Left" : "66.1765%",
-        "Top" : "71.2575%"
+        "Left" : "59.8551%",
+        "Top" : "70.0288%"
       }, {
         "Code" : "right-shin",
-        "Left" : "39.2157%",
-        "Top" : "77.0459%"
+        "Left" : "38.653%",
+        "Top" : "72.0524%"
       }, {
         "Code" : "torso",
-        "Left" : "47.7941%",
-        "Top" : "26.3473%"
+        "Left" : "47.2464%",
+        "Top" : "25.072%"
       } ],
       "Defects" : "Maladroit - vit dans son monde",
       "Dexterity" : 12,
@@ -292,15 +404,24 @@
     }
   },
   "Notes" : {
-    "*" : [ {
-      "Content" : "- 14 pièces or\n- 51 pièces argent\n- petite clé"
-    } ],
     "Saphire" : [ {
       "Content" : "-2",
       "Description" : "Blessure au torse",
       "Left" : "1248px",
       "Name" : "CON",
       "Top" : "-12px"
+    } ],
+    "Simae" : [ {
+      "Content" : "x2",
+      "Description" : "",
+      "Left" : "446px",
+      "Name" : "Exp att.so",
+      "Top" : "277px"
+    }, {
+      "Content" : "x2",
+      "Left" : "815px",
+      "Name" : "Exp Out.vo",
+      "Top" : "336px"
     } ]
   }
 }
