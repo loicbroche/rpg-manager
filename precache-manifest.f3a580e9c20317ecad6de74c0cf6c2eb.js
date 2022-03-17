@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "403c0ef52927df39e54e49287226a1c0",
+    "revision": "894c45cde577dac935caa8b85f97485d",
     "url": "/rpg-manager/index.html"
   },
   {
-    "revision": "8ba6c1a9ec2de8f92939",
-    "url": "/rpg-manager/static/css/main.46b6cc9f.chunk.css"
+    "revision": "19b6fbc11665936a3467",
+    "url": "/rpg-manager/static/css/main.7e7821bb.chunk.css"
   },
   {
-    "revision": "bfd4b18be035222616c2",
-    "url": "/rpg-manager/static/js/2.a31fa868.chunk.js"
+    "revision": "3e8478ed5e51fc254bda",
+    "url": "/rpg-manager/static/js/2.a2a11039.chunk.js"
   },
   {
     "revision": "170392c3acad6bbffec743442b1d0ac3",
-    "url": "/rpg-manager/static/js/2.a31fa868.chunk.js.LICENSE.txt"
+    "url": "/rpg-manager/static/js/2.a2a11039.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8ba6c1a9ec2de8f92939",
-    "url": "/rpg-manager/static/js/main.87227e12.chunk.js"
+    "revision": "19b6fbc11665936a3467",
+    "url": "/rpg-manager/static/js/main.897ca578.chunk.js"
   },
   {
     "revision": "5b89b0b37049f87794b7",
@@ -272,6 +272,22 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/rpg-manager/static/media/Enchantement.bc4e8bc6.png"
   },
   {
+    "revision": "89d2d9c70f8a35b394067b2dc66bd00e",
+    "url": "/rpg-manager/static/media/FERAL.89d2d9c7.png"
+  },
+  {
+    "revision": "a9b2261d9e3a5b8509e326734c3fe804",
+    "url": "/rpg-manager/static/media/FERAL_LONG_STRIDE.a9b2261d.png"
+  },
+  {
+    "revision": "4e900e05921a54533559f3db032c3d1e",
+    "url": "/rpg-manager/static/media/FERAL_LONG_TEETH.4e900e05.png"
+  },
+  {
+    "revision": "89d2d9c70f8a35b394067b2dc66bd00e",
+    "url": "/rpg-manager/static/media/FERAL_WILD_HUNT.89d2d9c7.png"
+  },
+  {
     "revision": "8c08d86d38b5f1463ca856524b698276",
     "url": "/rpg-manager/static/media/FIENDISH.8c08d86d.png"
   },
@@ -406,6 +422,22 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "895b1d9fab871491548587cfc8a087a4",
     "url": "/rpg-manager/static/media/KNOWLEDGE_SCHOOL.895b1d9f.png"
+  },
+  {
+    "revision": "e25ecabe9e0add60ca32611b6bab6843",
+    "url": "/rpg-manager/static/media/LEONID_FANGED_FANGS.e25ecabe.png"
+  },
+  {
+    "revision": "1c400100765001a19d9ba8826a5a789a",
+    "url": "/rpg-manager/static/media/LEONID_FELINE_STRIDE.1c400100.png"
+  },
+  {
+    "revision": "991b86109d19827b5a91321ced74f498",
+    "url": "/rpg-manager/static/media/LEONID_HARD_SKIN.991b8610.png"
+  },
+  {
+    "revision": "097da4d0932d2ebf47f0b617afa10ddb",
+    "url": "/rpg-manager/static/media/LEONID_HUNTER_PREDATOR.097da4d0.png"
   },
   {
     "revision": "cbf50d791f0f2ae451174c8a46046058",
