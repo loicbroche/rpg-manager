@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/rpg-manager/static/css/main.7e7821bb.chunk.css",
-    "main.js": "/rpg-manager/static/js/main.897ca578.chunk.js",
-    "main.js.map": "/rpg-manager/static/js/main.897ca578.chunk.js.map",
-    "runtime-main.js": "/rpg-manager/static/js/runtime-main.7897d6b0.js",
-    "runtime-main.js.map": "/rpg-manager/static/js/runtime-main.7897d6b0.js.map",
-    "static/js/2.a2a11039.chunk.js": "/rpg-manager/static/js/2.a2a11039.chunk.js",
-    "static/js/2.a2a11039.chunk.js.map": "/rpg-manager/static/js/2.a2a11039.chunk.js.map",
+    "main.js": "/rpg-manager/static/js/main.de003a12.chunk.js",
+    "main.js.map": "/rpg-manager/static/js/main.de003a12.chunk.js.map",
+    "runtime-main.js": "/rpg-manager/static/js/runtime-main.6e516dae.js",
+    "runtime-main.js.map": "/rpg-manager/static/js/runtime-main.6e516dae.js.map",
+    "static/js/2.ded320ed.chunk.js": "/rpg-manager/static/js/2.ded320ed.chunk.js",
+    "static/js/2.ded320ed.chunk.js.map": "/rpg-manager/static/js/2.ded320ed.chunk.js.map",
     "index.html": "/rpg-manager/index.html",
-    "precache-manifest.f3a580e9c20317ecad6de74c0cf6c2eb.js": "/rpg-manager/precache-manifest.f3a580e9c20317ecad6de74c0cf6c2eb.js",
+    "precache-manifest.9ee9b4b228c3ed423f50897939809e33.js": "/rpg-manager/precache-manifest.9ee9b4b228c3ed423f50897939809e33.js",
     "service-worker.js": "/rpg-manager/service-worker.js",
     "static/css/main.7e7821bb.chunk.css.map": "/rpg-manager/static/css/main.7e7821bb.chunk.css.map",
-    "static/js/2.a2a11039.chunk.js.LICENSE.txt": "/rpg-manager/static/js/2.a2a11039.chunk.js.LICENSE.txt",
+    "static/js/2.ded320ed.chunk.js.LICENSE.txt": "/rpg-manager/static/js/2.ded320ed.chunk.js.LICENSE.txt",
     "static/media/AARAKOCRA.png": "/rpg-manager/static/media/AARAKOCRA.fa3c13db.png",
     "static/media/ABJURATION.png": "/rpg-manager/static/media/ABJURATION.9ae43990.png",
     "static/media/AC.png": "/rpg-manager/static/media/AC.e3a88f6a.png",
@@ -241,9 +241,9 @@
     "static/media/Évocation.png": "/rpg-manager/static/media/Évocation.14ac882d.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.7897d6b0.js",
-    "static/js/2.a2a11039.chunk.js",
+    "static/js/runtime-main.6e516dae.js",
+    "static/js/2.ded320ed.chunk.js",
     "static/css/main.7e7821bb.chunk.css",
-    "static/js/main.897ca578.chunk.js"
+    "static/js/main.de003a12.chunk.js"
   ]
 }

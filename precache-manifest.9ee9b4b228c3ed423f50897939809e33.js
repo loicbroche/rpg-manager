@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "894c45cde577dac935caa8b85f97485d",
+    "revision": "e9acc768ce69013de1046b5d8679da0e",
     "url": "/rpg-manager/index.html"
   },
   {
-    "revision": "19b6fbc11665936a3467",
+    "revision": "42f4c3c031598a9a9bb7",
     "url": "/rpg-manager/static/css/main.7e7821bb.chunk.css"
   },
   {
-    "revision": "3e8478ed5e51fc254bda",
-    "url": "/rpg-manager/static/js/2.a2a11039.chunk.js"
+    "revision": "b5fbcb6d6aa38f7e63b3",
+    "url": "/rpg-manager/static/js/2.ded320ed.chunk.js"
   },
   {
     "revision": "170392c3acad6bbffec743442b1d0ac3",
-    "url": "/rpg-manager/static/js/2.a2a11039.chunk.js.LICENSE.txt"
+    "url": "/rpg-manager/static/js/2.ded320ed.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "19b6fbc11665936a3467",
-    "url": "/rpg-manager/static/js/main.897ca578.chunk.js"
+    "revision": "42f4c3c031598a9a9bb7",
+    "url": "/rpg-manager/static/js/main.de003a12.chunk.js"
   },
   {
-    "revision": "5b89b0b37049f87794b7",
-    "url": "/rpg-manager/static/js/runtime-main.7897d6b0.js"
+    "revision": "76c35fa279c92996b709",
+    "url": "/rpg-manager/static/js/runtime-main.6e516dae.js"
   },
   {
     "revision": "fa3c13db1492c9cff2e39d702dca4bab",
