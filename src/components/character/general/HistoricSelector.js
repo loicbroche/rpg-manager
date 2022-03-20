@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import './HistoricSelector.css'
 
 const S_KEY_CODE = 83;
-const HISTORY_MAX_LENGTH = 2000;
+const HISTORY_MAX_LENGTH = 5000;
 
 class HistoricSelector extends PureComponent {
 
