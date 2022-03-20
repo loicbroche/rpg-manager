@@ -20257,7 +20257,7 @@
       "Name" : "Estimation"
     },
     "Etiquette" : {
-      "Caracteristic" : "CON",
+      "Caracteristic" : "INT",
       "Name" : "Etiquette"
     },
     "Exploration" : {
