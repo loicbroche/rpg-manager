@@ -213,7 +213,7 @@
       "Age" : 27,
       "Alignment" : "4_LN",
       "Ammunition" : 20,
-      "Armor" : "Cuir",
+      "Armor" : "-",
       "Charisma" : 15,
       "Class" : "WILY",
       "Constitution" : 14,
@@ -257,7 +257,7 @@
       } ],
       "Defects" : "Voyager est tout ce qui compte pour moi, jamais je ne m'installerai quelque part.",
       "Dexterity" : 14,
-      "DistanceWeapon" : "Arc court",
+      "DistanceWeapon" : "-",
       "Eyes" : "Noires",
       "Gender" : "♀",
       "HP" : 10,
@@ -266,16 +266,16 @@
       "Height" : 156,
       "HiddenCapacities" : [ "1-Foulée rapide", "1-Gracieux", "1-Sens aiguisés", "1-Changement", "1-Vaillant", "1-Expertise" ],
       "Historic" : "TRAVELER",
-      "History" : "Simae, esprit-singe née dans une région entre forêts et montagne, ressemble à première vue à une petite femme frêle.\nCependant, sa peau possède une teinte légèrement hâlée mais grisâtre qui par temps froid devient trop terne pour paraitre humaine.\nEncadré d'épais cheveux noirs ondulés, son visage aux yeux sombres et profonds est éclairé d'un sourire aux quatre canines très prononcées.\nElle dispose d'une queue agile couverte d'un léger duvet. Longue comme ses bras et épaisse comme un poignet elle lui permet de saisir et manipuler des objets mais n'est pas assez forte pour lui l'autoriser à s'y suspendre.\nSi elle n'est pas couverte par un vêtement long, Simae se plait à l'enrouler autour de sa taille lorsqu'elle ne souhaite pas attirer l'attention ou n'est pas certaine de l'accueil qui sera fait à un individu de son espèce.\nSes pieds, habituellement couverts par des bottes de voyage, sont munis de pouces opposables bien que les autres doigts soient plus courts que ceux d'une main et plus proches d'orteils humains.\n\n\nSa région natale située à la frontière de l'ordre et du chaos est depuis sa plus jeune enfance le théâtre de batailles régulières opposant les seigneurs locaux et les arcanistes frontaliers, ce qui l'a poussé à prendre la route pour fuir les combats.\nIndépendante elle se mêle volontiers temporairement à des compagnons de voyage ou population rencontrés lors de ses arrêts. Curieuse de nouvelles rencontres sans jamais se fixer dans un groupe.\n\nAu contact des gens du voyage elle a découvert la vie d'artiste itinérant qu'elle a embrassé en se découvrant un talent pour la prestidigitation, en particulier les routines de pièces de monnaie et de cartes.\nSa capacité à faire apparaitre ou disparaitre de petits objets et de transformer des cartes sous les yeux ébahis de spectateurs lui permet de vivre du chapeau.\nSon agilité de prestidigitatrice fait également d'elle une voleuse à la tire très efficace, lui permettant de gonfler des dons qu'elle estime insuffisant  en contre-partie de ses prestations ou de se servir dans les poches des malheureux qui ont l'imprudence de renier trop ouvertement les anges et ne mérite donc pas de posséder quelconque richesse.",
+      "History" : "Simae, esprit-singe née dans une région entre forêts et montagne, ressemble à première vue à une petite femme frêle.\nCependant, sa peau possède une teinte légèrement hâlée mais grisâtre qui par temps froid devient trop terne pour paraitre humaine.\nEncadré d'épais cheveux noirs ondulés, son visage aux yeux sombres et profonds est éclairé d'un sourire aux quatre canines très prononcées.\nElle dispose d'une queue agile couverte d'un léger duvet. Longue comme ses bras et épaisse comme un poignet elle lui permet de saisir et manipuler des objets mais n'est pas assez forte pour lui l'autoriser à s'y suspendre.\nSi elle n'est pas couverte par un vêtement long, Simae se plait à l'enrouler autour de sa taille lorsqu'elle ne souhaite pas attirer l'attention ou n'est pas certaine de l'accueil qui sera fait à un individu de son espèce.\nSes pieds, habituellement couverts par des bottes de voyage, sont munis de pouces opposables bien que les autres doigts soient plus courts que ceux d'une main et plus proches d'orteils humains.\n\n\nSa région natale située à la frontière de l'ordre et du chaos est depuis sa plus jeune enfance le théâtre de batailles régulières opposant les seigneurs locaux et les arcanistes frontaliers, ce qui l'a poussé à prendre la route pour fuir les combats.\nIndépendante elle se mêle volontiers temporairement à des compagnons de voyage ou population rencontrés lors de ses arrêts. Curieuse de nouvelles rencontres sans jamais se fixer dans un groupe.\n\nAu contact des gens du voyage elle a découvert la vie d'artiste itinérant qu'elle a embrassé en se découvrant un talent pour la prestidigitation, en particulier les routines de pièces de monnaie et de cartes.\nSa capacité à faire apparaitre ou disparaitre de petits objets et de transformer des cartes sous les yeux ébahis de spectateurs lui permet de vivre du chapeau.\nSon agilité de prestidigitatrice fait également d'elle une voleuse à la tire très efficace, lui permettant de gonfler des dons qu'elle estime insuffisant  en contrepartie de ses prestations ou de se servir dans les poches des malheureux qui ont l'imprudence de renier trop ouvertement les anges et ne mérite donc pas de posséder quelconque richesse.",
       "Id" : "Simae",
       "Ideals" : "Pourquoi rester toute sa vie dans un endroit quand on peut prendre la route",
       "Intelligence" : 10,
       "Languages" : [ "DWARF", "ELVISH" ],
       "Links" : "J'ai fui l'endroit où j'ai grandi et je n'ose plus y retourner.",
       "MaxHP" : 10,
-      "Money" : 950,
+      "Money" : 4000,
       "Name" : "Simae",
-      "Notes" : "Prestidigitation : Limitée à des spectateurs ayant le même angle de vue\nMitch Beau-regard\nKoren\nMerhuem\n",
+      "Notes" : "Prestidigitation : Limitée à des spectateurs ayant le même angle de vue.\nL'épée courte, l'arc court, l'armure de cuir et le sac de voyage sont resté dans la chambre de l'auberge.\nLes gardes ont pris ma besace.\n",
       "Objects" : [ {
         "Id" : "Un flacon de verre vide qui sent le parfum lorsqu'il est ouvert",
         "Quantity" : 1
@@ -307,14 +307,17 @@
         "Id" : "Un couteau qui appartenait à un parent",
         "Label" : "Dagues",
         "Quantity" : 2
+      }, {
+        "Id" : "Outils de voleur",
+        "Quantity" : 1
       } ],
       "Shield" : "-",
-      "Skills" : [ "Représentation", "Discrétion", "Escamotage", "Tromperie" ],
+      "Skills" : [ "Représentation", "Dissimulation" ],
       "Skin" : "Hâlée/Grisâtre",
       "Specials" : 0,
       "Strength" : 8,
       "SubRace" : "LIGHT_FOOT_HALFELIN",
-      "Weapon" : "Épée courte",
+      "Weapon" : "-",
       "Weight" : 47,
       "Wisdom" : 9,
       "XP" : 0
@@ -405,6 +408,17 @@
     }
   },
   "Notes" : {
+    "*" : [ {
+      "Content" : "Mitch Beauregard, Humain barde"
+    }, {
+      "Content" : "Koen, Léonid Guerrier"
+    }, {
+      "Content" : "Merhuem, Humain Alchimiste"
+    }, {
+      "Content" : "Arrivé dans la ville de Renane où se prépare une semaine de festivité pour le mariage de Herve le jeune et dame xxx\n-1 nuit dans une  auberge modeste (chambre de 2 pour 3)"
+    }, {
+      "Content" : "En prison pour le temps des festivités."
+    } ],
     "Saphire" : [ {
       "Content" : "-2",
       "Description" : "Blessure au torse",
@@ -417,12 +431,12 @@
       "Description" : "",
       "Left" : "354px",
       "Name" : "Exp att.so",
-      "Top" : "325px"
+      "Top" : "328px"
     }, {
       "Content" : "x2",
-      "Left" : "817px",
+      "Left" : "884px",
       "Name" : "Exp Out.vo",
-      "Top" : "350px"
+      "Top" : "325px"
     } ]
   }
 }

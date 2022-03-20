@@ -38,6 +38,7 @@ class DetailsComponent extends PureComponent {
         objectsWeight += !obj?0:(obj.Weight*character.SatchelObjects[i].Quantity);
       }
     }
+
     return (
       <div className="detailsComponent">
         <ExpendableComponent extensorTitle="les détails"
@@ -179,8 +180,8 @@ const mapStateToProps = (state, props) => ({
   alignments: selectAlignments(state),
   armor: selectArmorById(state, props.character?.Armor),
   shield: selectArmorById(state, props.character?.Shield),
-  weapon: selectWeaponById(state, props.character?.weapon),
-  distanceWeapon: selectWeaponById(state, props.character?.distanceWeapon),
+  weapon: selectWeaponById(state, props.character?.Weapon),
+  distanceWeapon: selectWeaponById(state, props.character?.DistanceWeapon),
   objectsMap: selectObjectsMap(state)
 })
 export default connect(mapStateToProps)(DetailsComponent)
