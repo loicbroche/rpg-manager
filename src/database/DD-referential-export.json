@@ -310,7 +310,7 @@
       "Weight" : 27500
     },
     "Cuir" : {
-      "AC" : 11,
+      "AC" : 8,
       "ACBonus" : "DEX",
       "Category" : "1_LIGHT",
       "Discretion" : "-",
@@ -318,7 +318,7 @@
       "OV" : "Leather",
       "Price" : 1000,
       "Strength" : 0,
-      "Weight" : 5000
+      "Weight" : 6000
     },
     "Cuir clouté" : {
       "AC" : 12,
@@ -18025,8 +18025,8 @@
       "Category" : "ARTISAN",
       "Name" : "Outils de voleur",
       "OV" : "Thieves' tools ",
-      "Price" : 2500,
-      "Weight" : 500
+      "Price" : 250000,
+      "Weight" : 1000
     },
     "Selle d'équitation" : {
       "Category" : "SADDLE",
@@ -18719,7 +18719,7 @@
       "Name" : "Une veste avec une centaine de minuscules poches",
       "OV" : "",
       "Price" : 0,
-      "Weight" : 0
+      "Weight" : 1000
     },
     "Une vieille carte de divination portant votre portrait" : {
       "Category" : "TRINKETS",
@@ -27928,8 +27928,8 @@
       "Name" : "Arc court",
       "OV" : "Shortbow",
       "Price" : 2500,
-      "Properties" : "Munitions (portée 24 m/96 m), à deux mains",
-      "Weight" : 1000
+      "Properties" : "Munitions (portée 150m), à deux mains",
+      "Weight" : 0
     },
     "Arc long" : {
       "Category" : "W_DIS",

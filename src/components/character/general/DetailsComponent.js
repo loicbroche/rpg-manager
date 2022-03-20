@@ -26,11 +26,16 @@ class DetailsComponent extends PureComponent {
                               + (shield?shield.Weight:0)
                               + (weapon?weapon.Weight:0)
                               + (distanceWeapon?distanceWeapon.Weight:0);
-    let objectsWeight = 0;
+	
+	let objectsWeight = 0;
     if (objectsMap && character?.Objects) {
       for (let i = 0; i < character.Objects.length; i++) {
         const obj = objectsMap[character.Objects[i].Id];
         objectsWeight += !obj?0:(obj.Weight*character.Objects[i].Quantity);
+      }
+	  for (let i = 0; i < character.SatchelObjects.length; i++) {
+        const obj = objectsMap[character.SatchelObjects[i].Id];
+        objectsWeight += !obj?0:(obj.Weight*character.SatchelObjects[i].Quantity);
       }
     }
     return (
