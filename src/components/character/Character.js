@@ -7,6 +7,7 @@ import { DATA_MODEL } from 'database/DataModel'
 import { updateCharacterCaracteristic, insertCharacterElement, deleteCharacterElement } from 'database/PersistCharacter';
 import { updateNotes, ALL_CHARACTERS_ID } from 'database/PersistNotes';
 import { getChargeCapacity, SATCHEL_CHARGE_CAPACITY } from 'rules/Character.rules'
+import { DESKTOP_MIN_WIDTH } from 'rules/Responsive.rules'
 
 import './Character.css'
 import Skills from './stats/Skills'
@@ -42,6 +43,7 @@ class Character extends PureComponent {
       super(props);
       const characterId = this.props.match.params.characterId;
       this.state = {
+		  width: window.innerWidth,
           characterInfos: {
             Id: characterId,
             Name: null,
@@ -122,6 +124,10 @@ class Character extends PureComponent {
         }
     }
 
+    componentWillMount() {
+		window.addEventListener('resize', this.handleWindowSizeChange);
+    }
+
     componentDidMount() {
         this.characterRef.on('value', this.updateCharacter);
         this.generalNotesRef.on('value', this.updateGeneralNotes);
@@ -132,9 +138,16 @@ class Character extends PureComponent {
         this.characterRef.off('value', this.updateCharacter);
         this.generalNotesRef.off('value', this.updateGeneralNotes);
         this.personnalNotesRef.off('value', this.updatePersonnalNotes);
+		window.removeEventListener('resize', this.handleWindowSizeChange);
     }
 
+	handleWindowSizeChange = () => {
+	  this.setState({ width: window.innerWidth });
+	};
+
+  
     render() {
+		const { width } = this.state;
         const { caracteristics, weaponsMap, armorsMap, racesMap, subRacesMap} = this.props;
         const { Name, SubRace: subRaceId, Gender, Class: classId, Specialisation, FightStyles, Historic: historicId, History, Skills: masterSkills,
                 XP, HP, MaxHP, Specials, SpellsLocations, Armor, Shield, Weapon, DistanceWeapon, MasterWeapons, MasterArmors, MasterObjects, Alterations,
@@ -145,6 +158,8 @@ class Character extends PureComponent {
             accum[caracteristic.Code] = this.state.characterInfos[caracteristic.OV];
             return accum;
         }, {});
+
+		const isMobile = width <= DESKTOP_MIN_WIDTH;
 
         const armor = armorsMap?.[Armor];
         const shield = armorsMap?.[Shield];
@@ -160,10 +175,7 @@ class Character extends PureComponent {
         const subRaceBonus = subRace?.[DATA_MODEL.CHARACTERS.columns.STRENGTH.name];
         const capacityCharge = getChargeCapacity(Strength + raceBonus + subRaceBonus) - equipmentsWeight;
 
-        return (
-        <div className="character">
-            { Name !== null
-                ?(
+		const desktopLayout = (
                 <div>
                     <div className="character-header">
                         <div>
@@ -309,8 +321,15 @@ class Character extends PureComponent {
                         </div>
                     </div>
                 </div>
-            )
-            :(<span className="narrative">Ce personnage n'existe pas</span>)}
+            );
+
+		const mobileLayout = <span className="narrative">Bienvenue sur RPG Manager mobile</span>;
+
+        return (
+        <div className="character">
+            { Name !== null
+            ? (isMobile ? mobileLayout : desktopLayout)
+			:(<span className="narrative">Ce personnage n'existe pas</span>)}
         </div>
         )
     }
