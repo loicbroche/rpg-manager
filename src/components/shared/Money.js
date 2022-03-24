@@ -69,10 +69,10 @@ const Money = ({ id, amount, fullDisplay, alternativeDisplay, onChange }) => {
     )
 }
 
-const DIGIT_WIDTH = 0.75;
+const DIGIT_WIDTH = 0.7;
 
 function getWidth (value) {
-  return ((""+value).length+1* DIGIT_WIDTH) + 'rem';
+  return ((""+value).length* DIGIT_WIDTH) + 'rem';
 }
 
 Money.propTypes = {

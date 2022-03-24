@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { selectSubRacesMap, selectRacesMap, selectArmorsMap, selectWeaponsMap, selectCaracteristics } from 'store/selectors';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 import { gameDatabase } from 'database/InitializeDatabase'
 import { DATA_MODEL } from 'database/DataModel'
@@ -37,6 +39,9 @@ import BagComponent from './equipment/BagComponent';
 import PersonnalNotesComponent from 'components/user/PersonnalNotesComponent';
 import GeneralNotesComponent from 'components/user/GeneralNotesComponent';
 import FlyingNotesComponent from '../user/FlyingNotesComponent';
+import ExpendableComponent from 'components/shared/ExpendableComponent';
+
+const detailsImage = require('images/details.png');
 
 class Character extends PureComponent {
     constructor (props) {
@@ -175,102 +180,77 @@ class Character extends PureComponent {
         const subRaceBonus = subRace?.[DATA_MODEL.CHARACTERS.columns.STRENGTH.name];
         const capacityCharge = getChargeCapacity(Strength + raceBonus + subRaceBonus) - equipmentsWeight;
 
-		const desktopLayout = (
-                <div>
-                    <div className="character-header">
-                        <div>
-                            <DetailsComponent character={this.state.characterInfos}
+		const detailsComponent = <DetailsComponent character={this.state.characterInfos}
                                         onChange={(caracteristicName, value) => { this.updateCaracteristic(caracteristicName, value); }}
-                                        onClickElement={(elementName, value) => { this.toggleElement(elementName, value); }} />
-                            <FlyingNotesComponent notes={personnalNotes} onNotesChange={(value) =>  updateNotes(value, Name) } />
-                        </div>
-                        <RaceSelector   subRaceId={subRaceId}
+                                        onClickElement={(elementName, value) => { this.toggleElement(elementName, value); }}
+										expendable={!isMobile}
+										defaultExtended={isMobile}/>;
+		const flyingNotesComponent = <FlyingNotesComponent notes={personnalNotes} onNotesChange={(value) =>  updateNotes(value, Name) } />;
+		const raceSelector = <RaceSelector   subRaceId={subRaceId}
                                         gender={Gender}
                                         onRaceChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SUB_RACE.name, value);}}
-                                        onGenderChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.GENDER.name, value);}} />
-                        <ClassSelector  classId={classId} specialisationId={Specialisation} fightStyleIds={FightStyles} XP={XP}
+                                        onGenderChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.GENDER.name, value);}} />;
+		const classSelector = <ClassSelector  classId={classId} specialisationId={Specialisation} fightStyleIds={FightStyles} XP={XP}
                                         onChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.CLASS.name, value);}}
                                         onSpecialisationChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPECIALISATION.name, value);}}
-                                        onFightStyleChange ={(value) =>{ this.toggleElement(DATA_MODEL.CHARACTERS.columns.FIGHT_STYLES.name, value);}}/>
-                        <HistoricSelector   historicId={historicId}
+                                        onFightStyleChange ={(value) =>{ this.toggleElement(DATA_MODEL.CHARACTERS.columns.FIGHT_STYLES.name, value);}}/>;
+		const historicSelector = <HistoricSelector   historicId={historicId}
                                             history={History}
                                             onHistoricChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HISTORIC.name, value);}}
-                                            onHistoryChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HISTORY.name, value);}} />
-                        <XPComponent XP={parseInt(XP)} onChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.XP.name, value);}}/>
-                    </div>
-
-                    <div className="character-capacities">
-                        <div className="health-overview">
-                            <HealthComponent value={Health} onChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HEALTH.name, value); }} />
-                            <DamagesComponent characterId={Name} damages={Damages}
-                                                onDamageChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.DAMAGES.name, value); }} />
-                            <WeaponSelector weaponId={Weapon}
+                                            onHistoryChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HISTORY.name, value);}} />;
+		const xpComponent = <XPComponent XP={parseInt(XP)} onChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.XP.name, value);}}/>;
+		const healthComponent = <HealthComponent value={Health} onChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HEALTH.name, value); }} />;
+		const damageComponent = <DamagesComponent characterId={Name} damages={Damages}
+                                                onDamageChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.DAMAGES.name, value); }} />;
+		const weaponCacSelector = <WeaponSelector weaponId={Weapon}
                                             wearingCharacter={ this.state.characterInfos }
-                                            onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.WEAPON.name, value); }} />
-                            <WeaponSelector weaponId={DistanceWeapon}
+                                            onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.WEAPON.name, value); }} />;
+		const weaponDistanceSelector = <WeaponSelector weaponId={DistanceWeapon}
                                             wearingCharacter={ this.state.characterInfos }
                                             distance={true}
                                             onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.DISTANCE_WEAPON.name, value); }}
-                                            onAmmunitionChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.AMMUNITION.name, value);  }} />
-                            <Weapons master={MasterWeapons}
+                                            onAmmunitionChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.AMMUNITION.name, value);  }} />;
+		const weaponsComponent = <Weapons master={MasterWeapons}
                                     classId={classId}
                                     subRaceId={subRaceId}
                                     XP={XP}
-                                    onClick={(weaponId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.MASTER_WEAPONS.name, weaponId) }} />
-                            <ArmorSelector armorId={Armor}
+                                    onClick={(weaponId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.MASTER_WEAPONS.name, weaponId) }} />;
+		const armorSelector = <ArmorSelector armorId={Armor}
                                             wearingCharacter={ this.state.characterInfos }
                                             classId={classId}
                                             subRaceId={subRaceId}
-                                            onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.ARMOR.name, value); }} />
-                            <ArmorSelector armorId={Shield}
+                                            onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.ARMOR.name, value); }} />;
+		const shieldSelector = <ArmorSelector armorId={Shield}
                                             wearingCharacter={ this.state.characterInfos }
                                             shield={true}
                                             classId={classId}
                                             subRaceId={subRaceId}
-                                            onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SHIELD.name, value); }} />
-                            <Armors master={MasterArmors}
+                                            onChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SHIELD.name, value); }} />;
+		const armorsComponent = <Armors master={MasterArmors}
                                     classId={classId}
                                     subRaceId={subRaceId}
-                                    onClick={(armorId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.MASTER_ARMORS.name, armorId) }} />
-                        </div>
-
-                        <div className="fight">
-                            <HPComponent val={HP} maxVal={MaxHP} classId={classId}
+                                    onClick={(armorId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.MASTER_ARMORS.name, armorId) }} />;
+		const hpComponent = <HPComponent val={HP} maxVal={MaxHP} classId={classId}
                                             onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.HP.name, value); }}
-                                            onMaxValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.MAX_HP.name, value); }} />
-                            <div className="health">
-                                <AlterationsComponent characterAlterations={Alterations} resistances={Resistances} subRaceId={subRaceId} classId={classId}
+                                            onMaxValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.MAX_HP.name, value); }} />;
+		const alterationsComponent = <AlterationsComponent characterAlterations={Alterations} resistances={Resistances} subRaceId={subRaceId} classId={classId}
                                                         onClick={(alterationId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.ALTERATIONS.name, alterationId) }}
-                                                        onResistanceClick={this.toggleResistance}/>
-                                <div className="complements">
-                                    <ACComponent character={this.state.characterInfos} onACBonusChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.AC_BONUS.name, value); }} />    
-                                    <SpeedComponent subRaceId={subRaceId} classId={classId} armorId={Armor} strength={Strength} XP={XP} />    
-                                </div>
-                            </div>
-
-                            <div className="special">
-                                <SpecialsComponent val={Specials} classId={classId} XP={XP}
-                                                    onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPECIALS.name, value); }} />
-                                <SpecialCapacitiesComponent character={this.state.characterInfos}
+                                                        onResistanceClick={this.toggleResistance}/>;
+		const acComponent = <ACComponent character={this.state.characterInfos} onACBonusChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.AC_BONUS.name, value); }} />;
+		const speedComponent = <SpeedComponent subRaceId={subRaceId} classId={classId} armorId={Armor} strength={Strength} XP={XP} />;
+		const specialsComponent = <SpecialsComponent val={Specials} classId={classId} XP={XP}
+                                                    onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPECIALS.name, value); }} />;
+		const specialCapacitiesComponent = <SpecialCapacitiesComponent character={this.state.characterInfos}
                                                             hiddenCapacities={HiddenCapacities}
                                                             usedCapacities={UsedCapacities}
                                                             onUsedCapacitiesChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.USED_CAPACITIES.name, value); }}
-                                                            onVisibilityClick={(capacityId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.HIDDEN_CAPACITIES.name, capacityId) }} />
-                            </div>
-                            <div className="status">
-                                <div className="points">
-                                    <SpellsComponent spellsLocations={SpellsLocations} classId={classId} specialisationId={Specialisation} XP={XP}
-                                                     onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPELLS_LOCATIONS.name, value); }} />
-                                </div>
-                                <SpellBookComponent character={ this.state.characterInfos }
+                                                            onVisibilityClick={(capacityId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.HIDDEN_CAPACITIES.name, capacityId) }} />;
+		const spellsComponent = <SpellsComponent spellsLocations={SpellsLocations} classId={classId} specialisationId={Specialisation} XP={XP}
+                                                     onValChange={ (value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SPELLS_LOCATIONS.name, value); }} />;
+		const spellBookComponent = <SpellBookComponent character={ this.state.characterInfos }
                                                     onMinorSpellClick={(spellId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.MINOR_SPELLS.name, spellId) }}
-                                                    onSpellClick={(spellId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.SPELLS.name, spellId) }}/>
-                            </div>
-                        </div>
-
-                        <div className="stats">
-                            <div className="caracteristics-relative">
-                                <div className="caracteristics">
+                                                    onSpellClick={(spellId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.SPELLS.name, spellId) }}/>;
+		const caracteristicsComponents = <div className="caracteristics">
                                 {   caracteristics?.map((caracteristic) => (
                                         <div key={caracteristic.Name}>
                                             <span className={`caracteristic-name ${caracteristic.OV}`}>{caracteristic.Name}</span>
@@ -284,46 +264,185 @@ class Character extends PureComponent {
                                         )
                                     )
                                 }
-                                </div>
-                                <Skills master={masterSkills}
+                                </div>;
+		const skillsComponent = <Skills master={masterSkills}
                                         historicId={historicId}
                                         XP={XP}
                                         caracteristicsBonus={caracteristicsBonus}
                                         subRaceId={subRaceId}
-                                        onClick={(skillId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.SKILLS.name, skillId) }} />
-                            </div>
-                            <SavesComponent saves={Saves} advantages={SaveAdvantages} subRaceId={subRaceId} classId={classId} XP={XP}
+                                        onClick={(skillId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.SKILLS.name, skillId) }} />;
+		const savesComponent = <SavesComponent saves={Saves} advantages={SaveAdvantages} subRaceId={subRaceId} classId={classId} XP={XP}
                                             onClick={(alterationId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.SAVES.name, alterationId) }}
-                                            onAdvantageClick={(alterationId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.SAVE_ADVANTAGES.name, alterationId) }}/>
-                            <div className="equipment-bag">
-                                <div className="bags">
-                                    <BagComponent name="Besace"
+                                            onAdvantageClick={(alterationId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.SAVE_ADVANTAGES.name, alterationId) }}/>;
+		const satchelComponent = <BagComponent name="Besace"
                                                 capacityCharge={SATCHEL_CHARGE_CAPACITY}
                                                 money={Money}
                                                 onMoneyChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.MONEY.name, value); }}
                                                 characterObjects={SatchelObjects}
-                                                onObjectsChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SATCHEL_OBJECTS.name, value); }} />
-                                    <BagComponent name="Sac de voyage"
+                                                onObjectsChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SATCHEL_OBJECTS.name, value); }}
+												reverse={!isMobile} />;
+		const bagComponent = <BagComponent name="Sac de voyage"
                                                 capacityCharge={capacityCharge-SATCHEL_CHARGE_CAPACITY}
                                                 displayMoney={false}
                                                 characterObjects={characterObjects}
-                                                onObjectsChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.OBJECTS.name, value); }} />
-                                </div>                                                  
-                                <Objects master={MasterObjects}
+                                                onObjectsChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.OBJECTS.name, value); }}
+												reverse={!isMobile} />;
+		const objectsComponent = <Objects master={MasterObjects}
                                     classId={classId}
                                     historicId={historicId}
-                                    onClick={(objectId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.MASTER_OBJECTS.name, objectId) }} />
+                                    onClick={(objectId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.MASTER_OBJECTS.name, objectId) }} />;
+		const generalNotesComponent = <GeneralNotesComponent notes={generalNotes} editorCharacter={Name} onChange={(value) => updateNotes(value, ALL_CHARACTERS_ID) } />;
+		const personalNotesComponent = <PersonnalNotesComponent globalNotes={Notes} onGlobalNotesChange={(value) =>  this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.NOTES.name, value) }  />;
+
+		const desktopLayout = (
+                <div>
+                    <div className="character-header">
+                        <div>
+							{detailsComponent}
+                            {flyingNotesComponent}
+                        </div>
+						{raceSelector}
+                        {classSelector}
+                        {historicSelector}
+                        {xpComponent}
+                    </div>
+
+                    <div className="character-capacities">
+                        <div className="health-overview">
+							{healthComponent}
+							{damageComponent}
+							{weaponCacSelector}
+							{weaponDistanceSelector}
+							{weaponsComponent}
+							{armorSelector}
+							{shieldSelector}
+							{armorsComponent}
+                        </div>
+
+                        <div className="fight">
+							{hpComponent}
+                            <div className="health">
+								{alterationsComponent}
+                                <div className="complements">
+									{acComponent}
+									{speedComponent}    
+                                </div>
+                            </div>
+
+                            <div className="special">
+								{specialsComponent}
+								{specialCapacitiesComponent}
+                            </div>
+                            <div className="status">
+                                <div className="points">
+									{spellsComponent}
+                                </div>
+                                {spellBookComponent}
+                            </div>
+                        </div>
+
+                        <div className="stats">
+                            <div className="caracteristics-relative">
+								{caracteristicsComponents}
+								{skillsComponent}
+                            </div>
+                            {savesComponent}
+                            <div className="equipment-bag">
+                                <div className="bags">
+									{satchelComponent}
+									{bagComponent}
+                                </div>                                                  
+                                {objectsComponent}
                             </div>
                             <div className="user-notes">
-                                <GeneralNotesComponent notes={generalNotes} editorCharacter={Name} onChange={(value) => updateNotes(value, ALL_CHARACTERS_ID) } />
-                                <PersonnalNotesComponent globalNotes={Notes} onGlobalNotesChange={(value) =>  this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.NOTES.name, value) }  />
+								{generalNotesComponent}
+								{personalNotesComponent}
                             </div>
                         </div>
                     </div>
                 </div>
             );
 
-		const mobileLayout = <span className="narrative">Bienvenue sur RPG Manager mobile</span>;
+		const mobileLayout = <div>
+			<Tabs>
+				<TabList>
+				  <Tab>Général</Tab>
+				  <Tab>Equipements</Tab>
+				  <Tab>RP / Combats</Tab>
+				</TabList>
+
+				<TabPanel className="mobile-tab general-tab">
+					{raceSelector}
+					{classSelector}
+					{historicSelector}
+					{detailsComponent}
+				</TabPanel>
+
+				<TabPanel className="mobile-tab equipments-tab">
+					{satchelComponent}
+					{bagComponent}
+					{weaponCacSelector}
+					{weaponDistanceSelector}
+					{armorSelector}
+					{shieldSelector}
+					<div className="equipments-skills">
+						{weaponsComponent}
+						{armorsComponent}
+					</div>
+				</TabPanel>
+
+				<TabPanel className="mobile-tab rp-fight-tab">
+
+					{flyingNotesComponent}
+					{caracteristicsComponents}
+					{skillsComponent}
+					<div className="complements">
+						{acComponent}
+						{speedComponent}
+					</div>
+
+				    <ExpendableComponent extensorTitle="Combat"
+                                header={<span className="fight-header">Combat</span>}
+                                extensor={<img src={detailsImage} alt="Combat" />}
+                                reverse={false}
+								defaultExtended={true}>                 
+
+						{hpComponent}
+						{healthComponent}
+						{damageComponent}
+						<div className="special">
+							{specialsComponent}
+							{specialCapacitiesComponent}
+						</div>
+						<div className="status">
+							<div className="points">
+								{spellsComponent}
+							</div>
+							{spellBookComponent}
+						</div>
+
+					</ExpendableComponent>
+
+				    <ExpendableComponent extensorTitle="Role play"
+                                header={<span className="rp-header">Role play</span>}
+                                extensor={<img src={detailsImage} alt="Role play" />}
+                                reverse={false}
+								defaultExtended={true}>                 
+
+						{xpComponent}
+						
+						{alterationsComponent}
+						{savesComponent}
+						<div className="user-notes">
+							{generalNotesComponent}
+							{personalNotesComponent}
+						</div>
+
+					</ExpendableComponent>
+
+				</TabPanel>
+			</Tabs>
+		</div>;
 
         return (
         <div className="character">

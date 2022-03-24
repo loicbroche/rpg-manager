@@ -1,4 +1,3 @@
-
 .expendableComponent {
   display: flex;
   flex-direction: column;
@@ -46,4 +45,18 @@
 
 .show-content {
   visibility: visible;
+}
+
+@media screen and (max-width: 500px) {
+	.expendable-container {
+	}
+	.expendable-content {
+	  position: relative;
+	  display: none;
+	  width: 100%;
+	}
+
+	.show-content {
+	  display: flex;
+	}
 }

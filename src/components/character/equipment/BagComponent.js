@@ -27,7 +27,7 @@ class BagComponent extends PureComponent {
   }
 
   render() {
-    const { objectsMap, objects, objectCategories, capacityCharge, money, onMoneyChange, displayMoney, characterObjects, name} = this.props;
+    const { objectsMap, objects, objectCategories, capacityCharge, money, onMoneyChange, displayMoney, characterObjects, name, reverse} = this.props;
     const {editingObjectId, editingObjectLabel} = this.state;
     let objectsWeight = 0;
     const objs = []
@@ -59,7 +59,7 @@ class BagComponent extends PureComponent {
                                           <span><Weight weight={objectsWeight} /> / <Weight weight={capacityCharge} /></span>
                                         </span>}
                                 extensor={<img src={bagImage} alt={name} />}
-                                reverse={true}>                   
+                                reverse={reverse}>                   
             { Object.entries(objs).map(([categoryId, categoryObjects]) => {
                 const category = objectCategories?.[categoryId];
                 return <div className="bagItems" key={categoryId}>
@@ -211,7 +211,8 @@ BagComponent.defaultProps = {
   name: "Sac",
   capacityCharge: 0,
   money: 0,
-  displayMoney: true
+  displayMoney: true,
+  reverse: true
 }
 
 const mapStateToProps = (state) => ({

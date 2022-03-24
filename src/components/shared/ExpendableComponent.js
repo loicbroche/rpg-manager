@@ -50,7 +50,7 @@ ExpendableComponent.propTypes = {
   reverse: PropTypes.bool
 }
 
-ExpendableComponent.dzfaultProps = {
+ExpendableComponent.defaultProps = {
   defaultExtended: false,
   horizontal: false,
   reverse: false

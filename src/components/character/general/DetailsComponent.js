@@ -20,7 +20,7 @@ class DetailsComponent extends PureComponent {
 
   render() {
 
-    const { alignments, armor, shield, weapon, distanceWeapon, objectsMap, character, onChange, onClickElement } = this.props;
+    const { alignments, armor, shield, weapon, distanceWeapon, objectsMap, character, onChange, onClickElement, expendable, defaultExtended} = this.props;
 
     const equipmentsWeight =  (armor?armor.Weight:0)
                               + (shield?shield.Weight:0)
@@ -39,12 +39,7 @@ class DetailsComponent extends PureComponent {
       }
     }
 
-    return (
-      <div className="detailsComponent">
-        <ExpendableComponent extensorTitle="les détails"
-                              header={<span className="character-name">{character.Name}</span>}
-                              extensor={<img src={detailsImage} alt="Détails" />}>
-          <div className="details">
+	const detailContent = <div className="details">
             <div className="details-names">
               <span>Alignement</span>
               <span>Âge</span>
@@ -163,8 +158,19 @@ class DetailsComponent extends PureComponent {
                                   subRaceId={character[DATA_MODEL.CHARACTERS.columns.SUB_RACE.name]}
                                   role="button" onClick={(value) => onClickElement(DATA_MODEL.CHARACTERS.columns.LANGUAGES.name, value)} />
             </div>
-          </div>
-        </ExpendableComponent>
+          </div>;
+
+    return (
+      <div className="detailsComponent">
+		{ expendable
+		? (<ExpendableComponent extensorTitle="les détails"
+                              header={<span className="character-name">{character.Name}</span>}
+                              extensor={<img src={detailsImage} alt="Détails" />}
+							  defaultExtended={defaultExtended}>
+				{detailContent}
+			</ExpendableComponent>)
+		: detailContent
+		}
       </div>
     )
   }
@@ -174,6 +180,11 @@ DetailsComponent.propTypes = {
   character: CharacterPropType.isRequired,
   onChange: PropTypes.func.isRequired,
   onClickElement: PropTypes.func.isRequired
+}
+
+DetailsComponent.defaultProps = {
+  expendable: false,
+  defaultExtended: false,
 }
 
 const mapStateToProps = (state, props) => ({
