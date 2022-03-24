@@ -8,7 +8,7 @@ import { gameDatabase } from 'database/InitializeDatabase'
 import { DATA_MODEL } from 'database/DataModel'
 import { updateCharacterCaracteristic, insertCharacterElement, deleteCharacterElement } from 'database/PersistCharacter';
 import { updateNotes, ALL_CHARACTERS_ID } from 'database/PersistNotes';
-import { getChargeCapacity, SATCHEL_CHARGE_CAPACITY } from 'rules/Character.rules'
+import { getChargeCapacity, getSatchelCapacity, SATCHEL_CHARGE_CAPACITY } from 'rules/Character.rules'
 import { DESKTOP_MIN_WIDTH } from 'rules/Responsive.rules'
 
 import './Character.css'
@@ -178,7 +178,9 @@ class Character extends PureComponent {
         const subRace = subRacesMap?.[subRaceId];
         const raceBonus = racesMap?.[subRace?.Race]?.[DATA_MODEL.CHARACTERS.columns.STRENGTH.name];
         const subRaceBonus = subRace?.[DATA_MODEL.CHARACTERS.columns.STRENGTH.name];
-        const capacityCharge = getChargeCapacity(Strength + raceBonus + subRaceBonus) - equipmentsWeight;
+		const chargeCapacity = getChargeCapacity(Strength + raceBonus + subRaceBonus);
+		const satchelCapacity = getSatchelCapacity(Strength + raceBonus + subRaceBonus)
+        const remainingChargeCapacity = chargeCapacity - equipmentsWeight - satchelCapacity;
 
 		const detailsComponent = <DetailsComponent character={this.state.characterInfos}
                                         onChange={(caracteristicName, value) => { this.updateCaracteristic(caracteristicName, value); }}
@@ -275,14 +277,14 @@ class Character extends PureComponent {
                                             onClick={(alterationId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.SAVES.name, alterationId) }}
                                             onAdvantageClick={(alterationId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.SAVE_ADVANTAGES.name, alterationId) }}/>;
 		const satchelComponent = <BagComponent name="Besace"
-                                                capacityCharge={SATCHEL_CHARGE_CAPACITY}
+                                                capacityCharge={satchelCapacity}
                                                 money={Money}
                                                 onMoneyChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.MONEY.name, value); }}
                                                 characterObjects={SatchelObjects}
                                                 onObjectsChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SATCHEL_OBJECTS.name, value); }}
 												reverse={!isMobile} />;
 		const bagComponent = <BagComponent name="Sac de voyage"
-                                                capacityCharge={capacityCharge-SATCHEL_CHARGE_CAPACITY}
+                                                capacityCharge={remainingChargeCapacity}
                                                 displayMoney={false}
                                                 characterObjects={characterObjects}
                                                 onObjectsChange={(value) => { this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.OBJECTS.name, value); }}
@@ -311,9 +313,11 @@ class Character extends PureComponent {
                         <div className="health-overview">
 							{healthComponent}
 							{damageComponent}
+
 							{weaponCacSelector}
 							{weaponDistanceSelector}
 							{weaponsComponent}
+
 							{armorSelector}
 							{shieldSelector}
 							{armorsComponent}

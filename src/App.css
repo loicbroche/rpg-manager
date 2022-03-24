@@ -110,7 +110,7 @@ select:disabled {
 .narrative input,
 .narrative textarea {
   font-family: var(--font-family-tertiary);
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 /*Dynamic style Generalclasses*/
@@ -186,11 +186,13 @@ li.locked {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  flex-grow: 1;
 }
 .selector-select {
   position: relative;
   left: calc(-1* var(--height-icons)/2);
   padding-left: calc(var(--height-icons)/2);
+  width: calc(100% + var(--height-icons)/2)
 }
 
 .currentModifier,
@@ -218,7 +220,7 @@ li.locked {
 }
 
 .decrease-max::before {
-  content: "🢐";
+  content: "\1F890";
 }
 .decrease-value::before {
   content: "⮜";

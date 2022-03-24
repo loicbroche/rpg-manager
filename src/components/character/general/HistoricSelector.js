@@ -29,35 +29,38 @@ class HistoricSelector extends PureComponent {
     }
     const title = showHistory?"Enregistrer et masquer l'historique":"Lire/Modifier l'historique";
     return (
-        <div className="selector historic-selector">
-          <div className={`history-container ${showHistory&&"show-history"}`}>
-            <span className={`activable transparent extensor ${showHistory?"opened":"closed"}`} role="button" onClick={this.onShowHistory} title={title} >
-              <img src={inkWellImage} alt={title} />
-            </span>  
-              <textarea className={`narrative history ${showHistory&&"show-history"}`}
-                        value={history}
-                        onChange={this.onHistoryChange}
-                        onKeyUp={(event) => (event.ctrlKey && event.keyCode === S_KEY_CODE) && this.onHistorySave() }
-                        onBlur={this.onHistorySave}
-                        maxLength={HISTORY_MAX_LENGTH}
-                        title={`Saisissez l'histoire de votre personnage (${history?.length||0} / ${HISTORY_MAX_LENGTH} caractères)`} >
-              </textarea>
-          </div>
-          <div className="selector-icon historic-icon">
-            <img src={historicImage} className="selector-image" alt="" />
-            <img src={historicBorderImage} className="selector-image" alt="" />
-          </div>
-          <div className="selector-value">
-          <span>Historique:&nbsp;</span>
-            { historics && (
-              <select className="selector-select" value={historicId || "-"} onChange={this.handleValueUpdate}>
-                <option value="-" disabled>Choisissez un historique</option>
-                { historics?.map((historic) => (
-                  <option key={historic.Id} value={historic.Id}>{historic.Name}</option>
-                ))}
-              </select>
-            )}
-          </div>
+        <div className="historic-selector">
+			<div className={`history-container ${showHistory&&"show-history"}`}>
+				<span className={`activable transparent extensor ${showHistory?"opened":"closed"}`} role="button" onClick={this.onShowHistory} title={title} >
+				  <img src={inkWellImage} alt={title} />
+				</span>  
+				  <textarea className={`narrative history ${showHistory&&"show-history"}`}
+							value={history}
+							onChange={this.onHistoryChange}
+							onKeyUp={(event) => (event.ctrlKey && event.keyCode === S_KEY_CODE) && this.onHistorySave() }
+							onBlur={this.onHistorySave}
+							maxLength={HISTORY_MAX_LENGTH}
+							title={`Saisissez l'histoire de votre personnage (${history?.length||0} / ${HISTORY_MAX_LENGTH} caractères)`} >
+				  </textarea>
+			 </div>
+			<div className="selector">
+			  <div className="selector-icon historic-icon">
+				<img src={historicImage} className="selector-image" alt="" />
+				<img src={historicBorderImage} className="selector-image" alt="" />
+			  </div>
+			  <div className="selector-value">
+			  <span>Historique:&nbsp;</span>
+				{ historics && (
+				  <select className="selector-select" value={historicId || "-"} onChange={this.handleValueUpdate}>
+					<option value="-" disabled>Choisissez un historique</option>
+					{ historics?.map((historic) => (
+					  <option key={historic.Id} value={historic.Id}>{historic.Name}</option>
+					))}
+				  </select>
+				)}
+			  </div>
+			</div>
+			<div className={`position-relative-faker ${showHistory&&"show-history"}`}></div>
         </div>
     )
   }

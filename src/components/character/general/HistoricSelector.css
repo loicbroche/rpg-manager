@@ -1,5 +1,11 @@
+.historic-selector {
+	position: relative;
+	flex-direction: column;
+}
+
 .history-container {
     position: absolute;
+	width: 100%;
     height: 1.5rem;
     margin-top: calc(var(--height-icons)/2);
     display: flex;
@@ -8,15 +14,32 @@
     color: var(--background-color-1);
 }
 
+.historic-selector .selector-value {
+	margin-right: 1.5rem;
+}
+
 .history {
     height: 100%;
     padding: 1rem;
     background-color: transparent;
     border: 0;
     visibility: collapse;
+	color: 
 }
 
 .show-history {
     visibility: visible;
     height: 80vh;
+}
+
+.position-relative-faker, .position-relative-faker.show-history {
+  visibility: hidden;
+  height: 0;
+}
+
+@media screen and (max-width: 500px) {
+	.position-relative-faker.show-history {
+		visibility: visible;
+		height: 80vh;
+	}
 }

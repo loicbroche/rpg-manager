@@ -25,3 +25,7 @@
   flex-grow: 1;
   color: var(--color-primary);
 }
+
+.gm {
+	border-color: var(--color-secondary);
+}
