@@ -21,9 +21,6 @@
 .spellBookComponent {
     flex-grow: 1;
 }
-.equipment-selector {
-    max-width: 20rem;
-}
 
 .character-name {
     font-weight: bold;
