@@ -14,6 +14,8 @@ import Home from 'components/home/Home'
 import GameMaster from 'components/gameMaster/GameMaster'
 import Character from 'components/character/Character'
 
+const logoImage = require('images/logo192.png');
+
 class App extends Component {
   componentDidMount() {
     Object.values(ActionTypes.REFERENTIAL).forEach((tableName) => {
@@ -27,12 +29,25 @@ class App extends Component {
   render () {
     return (
       <BrowserRouter>
-        <header role="banner">
+        <header role="banner" className="banner">
           <Link to={ROUTE_HOME} title="Retour à l'accueil">
             <div className="header activable">
-              <span>JdR Manager</span>
+              <img className="banner-image"src={logoImage} />
+			  <span className="banner-text">JdR Manager</span>
             </div>
           </Link>
+			<h1 className="page-title">
+			    <Switch>
+					<Route
+					  exact path={ROUTE_GAME_MASTER}
+					  render={props => ( <span>Vision maître du jeu</span> )}
+					/>
+					<Route
+					  path={`${ROUTE_CHARACTER}/:characterId`}
+					  render={props => ( <span>Fiche personnage de {props.match.params.characterId}</span> )}
+					/>
+				</Switch>
+			</h1>
         </header>
         <div className="body">
           <Switch>
@@ -50,7 +65,7 @@ class App extends Component {
             />
             <Route
               path={`${ROUTE_CHARACTER}/:characterId`}
-              render={props => ( <Page {...props} component={Character} title={`Fiche personnage de ${props.match.params.characterId} - JdR Manager`} /> )}
+              render={props => ( <Page {...props} component={Character} title={`Fiche personnage de {props.match.params.characterId} - JdR Manager`} /> )}
             />
             <Route
               render={props => ( <Page {...props} component={NotFound} title="Page introuvable - JdR Manager" /> )}

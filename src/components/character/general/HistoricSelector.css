@@ -33,13 +33,11 @@
 }
 
 .position-relative-faker, .position-relative-faker.show-history {
-  visibility: hidden;
-  height: 0;
+	display: none;
 }
 
 @media screen and (max-width: 500px) {
 	.position-relative-faker.show-history {
-		visibility: visible;
-		height: 80vh;
+		display: flex;
 	}
 }

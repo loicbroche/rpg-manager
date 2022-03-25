@@ -59,6 +59,10 @@ body {
   font-family: var(--font-family-primary);
 }
 
+header {
+	margin: 0 1rem;
+}
+
 a {
   text-decoration: none;
 }
@@ -279,7 +283,20 @@ li.locked {
 }
 
 /*App specific*/
+.banner {
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+}
+
+.page-title {
+	display: inline-flex;
+    align-items: center;
+	padding: 0.15rem 0.5rem;
+}
+
 .header {
+  display: flex;
   height: 2rem;
   width: fit-content;
   margin: auto;
@@ -289,6 +306,9 @@ li.locked {
   color: var(--color-secondary);
   font-family: var(--font-family-secondary);
   font-size: 1.75rem;
+}
+.header img {
+	height: 2rem;
 }
 
 .body {
@@ -341,4 +361,14 @@ li.locked {
 }
 .prompt-message {
   margin-right: 0.5rem;
+}
+
+@media screen and (max-width: 500px) {
+	.banner {
+		flex-direction: row;
+		align-items: stretch;
+	}
+	.banner-text {
+		display: none;
+	}
 }
