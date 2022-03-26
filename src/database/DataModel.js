@@ -375,74 +375,83 @@ export const DATA_MODEL = {
             }
         },
 
-        SPELLS_COMPLEMENTS:
-        {
-            name: 'SpellsComplements',
-            columns: {
-                RACE: { name: "Race" },
-                SUB_RACE: { name: "SubRace" },
-                SPECIALISATION: { name: "Specialisation" },
-                LEVEL: { name: "Level" },
-                SPELLS: { name: "Spells" },
-                BONU_LOCATION: { name: "BonusLocation" },
-                BONUS_LOCATION_CLASSES: { name: "BonusLocationClasses" }
-            }
-        },
+	SPELLS_COMPLEMENTS:
+	{
+		name: 'SpellsComplements',
+		columns: {
+			RACE: { name: "Race" },
+			SUB_RACE: { name: "SubRace" },
+			SPECIALISATION: { name: "Specialisation" },
+			LEVEL: { name: "Level" },
+			SPELLS: { name: "Spells" },
+			BONU_LOCATION: { name: "BonusLocation" },
+			BONUS_LOCATION_CLASSES: { name: "BonusLocationClasses" }
+		}
+	},
 
-        ALTERATIONS:
-        {
-            name: 'Alterations',
-            columns: {
-                CODE: { name: "Code" },
-                TYPE: { name: "Type" },
-                NAME: { name: "Name" },
-                EFFECT: { name: "Effect" },
-                EFFECT_DESCRIPTION: { name: "EffectDescription" }
-            }
-        },
-        ALTERATION_TYPES:
-        {
-            name: 'AlterationTypes',
-            columns: {
-                CODE: { name: "Code" },
-                NAME: { name: "Name" },
-                SAVABLE: { name: "Savable" }
-            }
-        },
+	ALTERATIONS:
+	{
+		name: 'Alterations',
+		columns: {
+			CODE: { name: "Code" },
+			TYPE: { name: "Type" },
+			NAME: { name: "Name" },
+			EFFECT: { name: "Effect" },
+			EFFECT_DESCRIPTION: { name: "EffectDescription" }
+		}
+	},
+	ALTERATION_TYPES:
+	{
+		name: 'AlterationTypes',
+		columns: {
+			CODE: { name: "Code" },
+			NAME: { name: "Name" },
+			SAVABLE: { name: "Savable" }
+		}
+	},
 
-        ALIGNMENTS:
-        {
-            name: 'Alignments',
-            columns: {
-                CODE: { name: "Code" },
-                NAME: { name: "Name" },
-                DESCRIPTION: { name: "Description" }
-            }
-        },
+	ALIGNMENTS:
+	{
+		name: 'Alignments',
+		columns: {
+			CODE: { name: "Code" },
+			NAME: { name: "Name" },
+			DESCRIPTION: { name: "Description" }
+		}
+	},
 
-        LANGUAGES:
-        {
-            name: 'Languages',
-            columns: {
-                CODE: { name: "Code" },
-                TYPE: { name: "Type" },
-                WRITING: { name: "Writing" },
-                TYPICAL_RACES: { name: "TypicalRaces" }
-            }
-        },
+	LANGUAGES:
+	{
+		name: 'Languages',
+		columns: {
+			CODE: { name: "Code" },
+			TYPE: { name: "Type" },
+			WRITING: { name: "Writing" },
+			TYPICAL_RACES: { name: "TypicalRaces" }
+		}
+	},
 
-        NOTES:
-        {
-            name: 'Notes',
-            columns: {
-                NAME: { name: "Name" },
-                CONTENT: { name: "Content" },
-                DESCRIPTION: { name: "Description" },
-                TOP: { name: "Top" },
-                LEFT: { name: "Left" },
-                LOCKED: { name: "Locked" }
-            }
-        },
+	NOTES:
+	{
+		name: 'Notes',
+		columns: {
+			NAME: { name: "Name" },
+			CONTENT: { name: "Content" },
+			DESCRIPTION: { name: "Description" },
+			TOP: { name: "Top" },
+			LEFT: { name: "Left" },
+			LOCKED: { name: "Locked" }
+		}
+	},
+
+	SCENARIOS:
+	{
+		name: 'Scenarios',
+		columns: {
+			ID: { name: "Id" },
+			CHARACTERS: { name: "Characters" }
+		}
+	},
 
     CHARACTERS:
     {

@@ -19,6 +19,7 @@ describe('database', () => {
   }
   const newSkill = "new SkillForTest";
   const newStrength = 15;
+  const scenarioId = "David";
 
   it('insert character', done => {
     const testCharacterInserted = (snapshot) => {
@@ -26,7 +27,7 @@ describe('database', () => {
       expect(snapshot.child(newCharacter.Id).val()).toMatchObject(newCharacter);
       done();
     }
-    insertCharacter(newCharacter);
+    insertCharacter(newCharacter, scenarioId);
     gameDatabase.ref(DATA_MODEL.CHARACTERS.name).once("value", testCharacterInserted);
   });
 
@@ -57,7 +58,7 @@ describe('database', () => {
       expect(snapshot.child(newCharacter.Id).exists()).toBe(false);
       done();
     }
-    deleteCharacter(newCharacter.Id);
+    deleteCharacter(newCharacter.Id, scenarioId);
     gameDatabase.ref(DATA_MODEL.CHARACTERS.name).once("value", testCharacterDeleted);
   });
 

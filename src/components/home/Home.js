@@ -16,46 +16,55 @@ class Home extends PureComponent {
   constructor (props) {
     super(props);
     this.state = {
-      characters: null
+		scenarios: null,
+		characters: null
     }
-    this.charactersRef = gameDatabase.ref(DATA_MODEL.CHARACTERS.name);
-    this.updateCharacters = (snapshot)  => { this.setState({ characters: objectToArray(snapshot.val()) }); }
+    this.scenariosRef = gameDatabase.ref(DATA_MODEL.SCENARIOS.name);
+	this.charactersRef = gameDatabase.ref(DATA_MODEL.CHARACTERS.name);
+	this.updateScenarios = (snapshot)  => { console.log(snapshot.val()); this.setState({ scenarios: objectToArray(snapshot.val()) }); }
+    this.updateCharacters = (snapshot)  => { console.log(snapshot.val());this.setState({ characters: objectToArray(snapshot.val()) }); }
   }
 
   componentDidMount() {
     document.title = "JdR Manager";
-    this.charactersRef.on('value', this.updateCharacters);
+    this.scenariosRef.on('value', this.updateScenarios);
+	this.charactersRef.on('value', this.updateCharacters);
   }
   componentWillUnmount() {
-      this.charactersRef.off('value', this.updateCharacters);
+      this.scenariosRef.off('value', this.updateScenarios);
+	  this.charactersRef.off('value', this.updateCharacters);
   }
 
   render()  {
-    const { characters} = this.state
+    const { scenarios, characters} = this.state
     return (
       <div className="menu">
+		{scenarios && Object.values(scenarios).map(({ Id, Characters}) => (
+			<div key={Id} className="scenario" title={Id}>
+			</div>
+		))}
         <Link to={ROUTE_GAME_MASTER} className="menu-item activable gm" title="Accéder à l'écran du maître du jeu">
             Maître du jeu
         </Link>
         {characters && Object.values(characters).map(({ Id, Name}) => (
             <div key={Name} className="menu-item activable character">
-              <CharacterMenuItem id={Id} name={Name} onRemove={deleteCharacter} />
+              <CharacterMenuItem id={Id} name={Name} scenario="Yann" onRemove={deleteCharacter} />
             </div>
           ))}
-        <div className="menu-item"><CharacterInput onSubmit={this.addCharacterEntry} /></div>
+        <div className="menu-item"><CharacterInput scenario="Yann" onSubmit={this.addCharacterEntry} /></div>
       </div>
     )
   }
 
   // Arrow fx for binding
-  addCharacterEntry = (character) => {
+  addCharacterEntry = (character, scenarioId) => {
     const { characters } = this.state;
     character.Id = character.Name;
-    return characters[character.Id] ? "Un personnage de ce nom existe déjà" : this.insertCharacter(character);
+    return characters[character.Id] ? "Un personnage de ce nom existe déjà" : this.insertCharacter(character, scenarioId);
   }
 
   // Arrow fx for binding
-  insertCharacter = (character) => {
+  insertCharacter = (character, scenarioId) => {
     if (character.Name) {
       character.Age = 0;
       character.Alignment = DEFAULT_EMPTY_VALUE;
@@ -106,7 +115,7 @@ class Home extends PureComponent {
       character.Wisdom = DEFAULT_CARACTERISTIC_VALUE;
       character.XP = 0;      
 
-      insertCharacter(character);
+      insertCharacter(character, scenarioId);
     }
   }
 }

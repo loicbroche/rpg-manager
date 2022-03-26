@@ -24,9 +24,9 @@ class CharacterMenuItem extends PureComponent {
   }
 
   onDelete = () => {
-    const { id, name, onRemove } = this.props;
+    const { id, name, scenario, onRemove } = this.props;
     confirm(`Êtes-vous certain de vouloir supprimer la fiche personnage de ${name} ?`,
-            (callbackState) => {if (callbackState) { onRemove(id) } },
+            (callbackState) => {if (callbackState) { onRemove(id, scenario) } },
             `Suppression de ${name}`,
             "Supprimer"
     );
@@ -36,6 +36,7 @@ class CharacterMenuItem extends PureComponent {
 CharacterMenuItem.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  scenario: PropTypes.string.isRequired,
   onRemove: PropTypes.func.isRequired
 }
 

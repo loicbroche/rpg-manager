@@ -38,6 +38,14 @@ class App extends Component {
           </Link>
 			<h1 className="page-title">
 			    <Switch>
+				    <Route
+					  exact path={ROUTE_ROOT}
+					  render={props => ( <span>Menu</span> )}
+					/>
+					<Route
+					  exact path={ROUTE_HOME}
+					  render={props => ( <span>Menu</span> )}
+					/>
 					<Route
 					  exact path={ROUTE_GAME_MASTER}
 					  render={props => ( <span>Vision maître du jeu</span> )}

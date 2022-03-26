@@ -38,6 +38,10 @@ export const ActionTypes = {
         LOAD_ALIGNMENTS: "ALIGNMENTS",
         LOAD_LANGUAGES: "LANGUAGES",
     },
+	SCENARIOS: {
+        LOAD: 'LOAD_SCENARIOS',
+        LOAD_ONE: 'LOAD_ONE_SCENARIO',
+    },
     CHARACTERS: {
         LOAD: 'LOAD_CHARACTERS',
         LOAD_ONE: 'LOAD_ONE_CHARACTER',

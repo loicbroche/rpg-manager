@@ -224,16 +224,16 @@ li.locked {
 }
 
 .decrease-max::before {
-  content: "\1F890";
+  content: "\25C2";
 }
 .decrease-value::before {
-  content: "⮜";
+  content: "\25C0";
 }
 .increase-value::before {
-  content: "⮞";
+  content: "\25B6";
 }
 .increase-max::before {
-  content: "🢒";
+  content: "\25B8";
 }
 
 .currentModifier.disabled,
@@ -258,28 +258,28 @@ li.locked {
 
 .opened,
 .closed {
-  font-size: 0.33rem;
+  font-size: 0.75rem;
 }
 .closed:not(.horizontal)::before {
-  content: "⮞";
+  content: "\25B8";
 }
 .opened:not(.horizontal):not(.reverse)::before {
-  content: "⮟";
+  content: "\25BE";
 }
 .opened:not(.horizontal).reverse::before {
-  content: "⮝";
+  content: "\25B4";
 }
 .closed.horizontal:not(.reverse)::after {
-  content: "⮝";
+  content: "\25B4";
 }
 .closed.horizontal.reverse::before {
-  content: "⮝";
+  content: "\25B4";
 }
 .opened.horizontal:not(.reverse)::after {
-  content: "⮞";
+  content: "\25B8";
 }
 .opened.horizontal.reverse::before {
-  content: "⮜";
+  content: "\25C2";
 }
 
 /*App specific*/

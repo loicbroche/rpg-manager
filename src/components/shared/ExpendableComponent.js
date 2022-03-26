@@ -17,7 +17,7 @@ class ExpendableComponent extends PureComponent {
     const { showContent } = this.state;
 
     const title=showContent?"Masquer "+extensorTitle:"Ouvrir "+extensorTitle;
-    const extensorElement = extensor || <img src={defaultExpendImage} alt={title} />
+    const extensorElement = extensor || <span></span>
 
     return (
     <div className={`expendableComponent ${horizontal?"horizontal":""} ${reverse?"reverse":""}`}>

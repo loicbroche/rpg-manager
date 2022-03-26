@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types'
-import { CharacterPropType } from 'PropTypes';
+import { ScenarioPropType, CharacterPropType } from 'PropTypes';
 
 import { ActionTypes } from '../actions/ActionTypes';
 
 const initialState = {
+	scenarios: null,
     characters: null,
     notes: null
 }
@@ -11,6 +12,21 @@ const initialState = {
 function gameReducer(state = initialState, action) {
     let nextState;
     switch (action.type) {
+        case ActionTypes.SCENARIOS.LOAD:
+            nextState = {
+                ...state,
+                scenarios: action.payload
+            }
+            return nextState;
+        case ActionTypes.SCENARIOS.LOAD_ONE:
+                const scenario = action.payload;
+                let scenarios = { ...state.scenarios };
+                scenarios[scenario.Id] = scenario;
+                nextState = {
+                    ...state,
+                    scenarios: scenarios
+                }
+                return nextState;
         case ActionTypes.CHARACTERS.LOAD:
             nextState = {
                 ...state,
@@ -39,6 +55,7 @@ function gameReducer(state = initialState, action) {
 
 gameReducer.PropTypes = {
     state: PropTypes.shape({
+		scenarios: PropTypes.arrayOf(ScenarioPropType).isRequired,
         characters: PropTypes.arrayOf(CharacterPropType).isRequired,
     }),
     action: PropTypes.shape({

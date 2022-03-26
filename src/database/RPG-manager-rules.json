@@ -2,6 +2,18 @@
     "rules": {
         ".read": true,
         ".write": true,
+		"Scenarios": {
+            "$id": {
+			    "Id": {
+                    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50 && newData.val() == $id"
+                },
+                "Characters": {
+					"$index": {
+					    ".validate": "newData.isString() && 0 < newData.val().length && newData.val().length <= 50"
+					}
+				},
+            }
+        },
         "Characters": {
             "$characterId": {
                 ".validate": "newData.child('Id').exists() && newData.child('Name').exists() && newData.child('Health').exists() && newData.child('HP').exists() && newData.child('MaxHP').exists()",

@@ -407,7 +407,6 @@ class Character extends PureComponent {
 
 				    <ExpendableComponent extensorTitle="Combat"
                                 header={<span className="fight-header">Combat</span>}
-                                extensor={<img src={detailsImage} alt="Combat" />}
                                 reverse={false}
 								defaultExtended={true}>                 
 
@@ -429,7 +428,6 @@ class Character extends PureComponent {
 
 				    <ExpendableComponent extensorTitle="Role play"
                                 header={<span className="rp-header">Role play</span>}
-                                extensor={<img src={detailsImage} alt="Role play" />}
                                 reverse={false}
 								defaultExtended={true}>                 
 

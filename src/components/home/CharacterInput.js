@@ -34,12 +34,14 @@ class CharacterInput extends PureComponent {
   submitCharacterName = (event) => {
     event.preventDefault()
     const newCharacter= { Name: this.state.name }
-    this.setState({ error: this.props.onSubmit(newCharacter) });
+	const { scenario, onSubmit } = this.props;
+    this.setState({ error: onSubmit(newCharacter, scenario) });
   }
 }
 
 CharacterInput.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
+	scenario: PropTypes.string.isRequired,
+	onSubmit: PropTypes.func.isRequired,
 }
 
 export default CharacterInput

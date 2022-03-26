@@ -1,5 +1,14 @@
 {
-  "Characters" : {
+	"Scenarios" : {
+		"David" :  {
+			"Id" : "David",
+			"Characters" : [ "Saphire", "Ash", "Sorwen" ]
+		},
+		"Yann" :  {
+			"Id" : "Yann",
+			"Characters" : [ "Simae" ]
+		}
+  },"Characters" : {
     "Ash" : {
       "ACBonus" : -7,
       "Age" : 26,
@@ -210,6 +219,7 @@
       "XP" : 900
     },
     "Simae" : {
+      "ACBonus" : 0,
       "Age" : 27,
       "Alignment" : "4_LN",
       "Ammunition" : 20,
@@ -223,6 +233,7 @@
         "Top" : "76.2931%"
       }, {
         "Code" : "left-shin",
+        "Hurt" : false,
         "Left" : "47.4684%",
         "Top" : "76.2931%"
       }, {
@@ -295,13 +306,11 @@
         "Id" : "La coquille d'un oeuf peint avec des scènes de misère humaine d'un détail troublant",
         "Label" : "Un bâton de marche",
         "Quantity" : 1
-      }, {
-        "Id" : "Outils de voleur",
-        "Quantity" : 1
       } ],
       "PersonnalityTraits" : "Joviale - Je suis fasciné par tout ce qui me semble exotique, objets, créatures ou personnes.",
       "SatchelObjects" : [ {
         "Id" : "Jeu de cartes",
+        "Label" : "Jeu de cartes",
         "Quantity" : 1
       }, {
         "Id" : "Un couteau qui appartenait à un parent",
@@ -415,7 +424,7 @@
     }, {
       "Content" : "Merhuem, Humain Alchimiste"
     }, {
-      "Content" : "Arrivé dans la ville de Renane où se prépare une semaine de festivité pour le mariage de Herve le jeune et dame xxx\n-1 nuit dans une  auberge modeste (chambre de 2 pour 3)"
+      "Content" : "Arrivé dans la ville de Renane où se prépare une semaine de festivités pour le mariage de Herve le jeune et dame xxx\n-1 nuit dans une  auberge modeste (chambre de 2 pour 3)"
     }, {
       "Content" : "En prison pour le temps des festivités."
     } ],

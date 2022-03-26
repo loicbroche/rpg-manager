@@ -347,6 +347,11 @@ export const DamagePropType = PropTypes.shape({
     Title: PropTypes.string
 })
 
+export const ScenarioPropType = PropTypes.shape({
+    Id: PropTypes.string.isRequired,
+    Characters: PropTypes.arrayOf(PropTypes.string)
+})
+
 export const CharacterPropType = PropTypes.shape({
     Id: PropTypes.string.isRequired,
     Name: PropTypes.string.isRequired,
