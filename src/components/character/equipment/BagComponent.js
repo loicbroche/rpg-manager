@@ -160,7 +160,6 @@ class BagComponent extends PureComponent {
       const index = characterObjects.findIndex((object) => object.Id === newObjectId);
       if (index === -1) {
         characterObjects[characterObjects.length] = {Id: newObjectId, Label: label, Quantity: newObjectQuantity};
-        console.log("addObject", newObjectId, newObjectQuantity, index, characterObjects);
       } else {
         characterObjects[index].Quantity += newObjectQuantity;
       }

@@ -47,7 +47,7 @@ class App extends Component {
 					  render={props => ( <span>Menu</span> )}
 					/>
 					<Route
-					  exact path={ROUTE_GAME_MASTER}
+					  exact path={`${ROUTE_GAME_MASTER}/:scenarioId`}
 					  render={props => ( <span>Vision maître du jeu</span> )}
 					/>
 					<Route
@@ -68,7 +68,7 @@ class App extends Component {
               render={props => ( <Page {...props} component={Home} title="JdR Manager" /> )}
             />
             <Route
-              exact path={ROUTE_GAME_MASTER}
+              exact path={`${ROUTE_GAME_MASTER}/:scenarioId`}
               render={props => ( <Page {...props} component={GameMaster} title="Maître du jeu - JdR Manager" /> )}
             />
             <Route

@@ -21,8 +21,8 @@ class Home extends PureComponent {
     }
     this.scenariosRef = gameDatabase.ref(DATA_MODEL.SCENARIOS.name);
 	this.charactersRef = gameDatabase.ref(DATA_MODEL.CHARACTERS.name);
-	this.updateScenarios = (snapshot)  => { console.log(snapshot.val()); this.setState({ scenarios: objectToArray(snapshot.val()) }); }
-    this.updateCharacters = (snapshot)  => { console.log(snapshot.val());this.setState({ characters: objectToArray(snapshot.val()) }); }
+	this.updateScenarios = (snapshot)  => { this.setState({ scenarios: objectToArray(snapshot.val()) }); }
+    this.updateCharacters = (snapshot)  => { this.setState({ characters: objectToArray(snapshot.val()) }); }
   }
 
   componentDidMount() {
@@ -36,22 +36,24 @@ class Home extends PureComponent {
   }
 
   render()  {
-    const { scenarios, characters} = this.state
+    const { scenarios, characters } = this.state
     return (
       <div className="menu">
 		{scenarios && Object.values(scenarios).map(({ Id, Characters}) => (
 			<div key={Id} className="scenario" title={Id}>
+				<h1>Scénario "{Id}"</h1>
+				<Link to={`${ROUTE_GAME_MASTER}/${Id}`} className="menu-item activable gm" title={`Accéder à l'écran du maître du jeu du scénario "${Id}"`}>
+					Maître du jeu
+				</Link>
+				{Characters && Object.values(Characters).map((characterId) => (
+					<div key={characterId} className="menu-item activable character">
+					  <CharacterMenuItem id={characterId} name={characterId} scenario={Id} onRemove={deleteCharacter} />
+					</div>
+					))
+				}
+				<div className="menu-item"><CharacterInput scenario={Id} onSubmit={this.addCharacterEntry} /></div>
 			</div>
 		))}
-        <Link to={ROUTE_GAME_MASTER} className="menu-item activable gm" title="Accéder à l'écran du maître du jeu">
-            Maître du jeu
-        </Link>
-        {characters && Object.values(characters).map(({ Id, Name}) => (
-            <div key={Name} className="menu-item activable character">
-              <CharacterMenuItem id={Id} name={Name} scenario="Yann" onRemove={deleteCharacter} />
-            </div>
-          ))}
-        <div className="menu-item"><CharacterInput scenario="Yann" onSubmit={this.addCharacterEntry} /></div>
       </div>
     )
   }

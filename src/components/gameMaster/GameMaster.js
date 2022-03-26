@@ -12,11 +12,16 @@ const GM_NAME = "GM";
 class GameMaster extends PureComponent {
     constructor (props) {
         super(props);
+		const scenarioId = this.props.match.params.scenarioId;
         this.state = {
+		  scenarioId: scenarioId,
+		  scenarios: null,
           characters: null,
           generalNotes: []
         }
+		this.scenariosRef = gameDatabase.ref(DATA_MODEL.SCENARIOS.name);
         this.charactersRef = gameDatabase.ref(DATA_MODEL.CHARACTERS.name);
+		this.updateScenarios = (snapshot)  => { this.setState({ scenarios: objectToArray(snapshot.val()) }); }
         this.updateCharacters = (snapshot)  => { this.setState({ characters: snapshot.val() && Object.values(objectToArray(snapshot.val())) }); }
         this.generalNotesRef = gameDatabase.ref(DATA_MODEL.NOTES.name+"/"+ALL_CHARACTERS_ID);
         this.updateGeneralNotes = (snapshot) => {
@@ -26,22 +31,26 @@ class GameMaster extends PureComponent {
     }
 
     componentDidMount() {
+		this.scenariosRef.on('value', this.updateScenarios);
         this.charactersRef.on('value', this.updateCharacters);
         this.generalNotesRef.on('value', this.updateGeneralNotes);
     }
     componentWillUnmount() {
+		this.scenariosRef.off('value', this.updateScenarios);
         this.charactersRef.off('value', this.updateCharacters);
         this.generalNotesRef.off('value', this.updateGeneralNotes);
     }
 
     render() {
-        const { characters, generalNotes } = this.state;
+		const { scenarioId, scenarios, characters, generalNotes } = this.state;
+		const scenario = scenarios && scenarios[scenarioId];
+		const scenariosCharacters = scenario && characters && characters.filter(character => scenario.Characters.includes(character.Id));
         return (
-            <div className="game-master">
-                <span className="intro narrative">Bienvenu grand maître du jeu ! Ici tu gardera un oeil sur tous les personnages jouables</span>
+            <div className="game-master" >
+                <span className="intro narrative">Bienvenu grand maître du jeu du scénario "{scenarioId}"! Ici tu gardera un oeil sur tous les personnages jouables</span>
                 <GeneralNotesComponent notes={generalNotes} editorCharacter={GM_NAME} onChange={(value) => updateNotes(value, ALL_CHARACTERS_ID) } />
                 <div className="characters-overview">
-                    {characters?.map((character) => (
+                    {scenariosCharacters?.map((character) => (
                         <CharacterOverview key={character.Id} character={character} />
                     ))}
                 </div>
