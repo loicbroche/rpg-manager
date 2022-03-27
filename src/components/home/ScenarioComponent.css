@@ -1,0 +1,51 @@
+.scenario {
+	margin-bottom: var(--components-separator-margin);
+}
+
+.scenario .expendable-content, .scenario .expendableComponent {
+	border : 0;
+}
+
+.scenario-header {
+	display: flex;
+	width: 100%;
+}
+
+.scenario-name {
+	flex-grow: 1;
+}
+
+
+.delete-scenario-img {
+  height: 1rem;
+  margin-right: 0.5rem;
+}
+
+.scenario-content {
+	display: flex;
+	flex-direction: column;
+	margin: var(--components-separator-margin);
+}
+
+.scenario-item {
+  margin: 0.5rem 0;
+  text-align: center;
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+.scenario-item:hover,
+.scenario-item:focus {
+  width: 95%;
+}
+
+.scenario-item a {
+  flex-grow: 1;
+  color: var(--color-primary);
+}
+
+.gm {
+	border-color: var(--color-secondary);
+}
+

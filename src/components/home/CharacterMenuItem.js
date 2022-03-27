@@ -7,6 +7,7 @@ import './CharacterMenuItem.css'
 import { ROUTE_CHARACTER } from 'App'
 
 const deleteImage = require('images/delete-character-icone.png');
+
 class CharacterMenuItem extends PureComponent { 
   render() {
     const { name } = this.props;
@@ -24,9 +25,9 @@ class CharacterMenuItem extends PureComponent {
   }
 
   onDelete = () => {
-    const { id, name, scenario, onRemove } = this.props;
+    const { id, name, scenarioId, onRemove } = this.props;
     confirm(`Êtes-vous certain de vouloir supprimer la fiche personnage de ${name} ?`,
-            (callbackState) => {if (callbackState) { onRemove(id, scenario) } },
+            (callbackState) => {if (callbackState) { onRemove(id, scenarioId) } },
             `Suppression de ${name}`,
             "Supprimer"
     );
@@ -36,7 +37,7 @@ class CharacterMenuItem extends PureComponent {
 CharacterMenuItem.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  scenario: PropTypes.string.isRequired,
+  scenarioId: PropTypes.string.isRequired,
   onRemove: PropTypes.func.isRequired
 }
 
