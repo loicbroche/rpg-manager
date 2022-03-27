@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 
 import './ExpendableComponent.css'
 
-const defaultExpendImage = require('images/details.png');
-
 class ExpendableComponent extends PureComponent {
 
   constructor(props) {

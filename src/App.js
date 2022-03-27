@@ -32,7 +32,7 @@ class App extends Component {
         <header role="banner" className="banner">
           <Link to={ROUTE_HOME} title="Retour à l'accueil">
             <div className="header activable">
-              <img className="banner-image"src={logoImage} />
+              <img className="banner-image" src={logoImage} alt="" />
 			  <span className="banner-text">JdR Manager</span>
             </div>
           </Link>

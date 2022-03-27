@@ -36,7 +36,7 @@ class Home extends PureComponent {
   }
 
   render()  {
-    const { scenarios, characters } = this.state
+    const { scenarios } = this.state
     return (
       <div className="menu">
 		{scenarios && Object.values(scenarios).map(({ Id, Characters}) => (

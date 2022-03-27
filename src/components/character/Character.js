@@ -8,7 +8,7 @@ import { gameDatabase } from 'database/InitializeDatabase'
 import { DATA_MODEL } from 'database/DataModel'
 import { updateCharacterCaracteristic, insertCharacterElement, deleteCharacterElement } from 'database/PersistCharacter';
 import { updateNotes, ALL_CHARACTERS_ID } from 'database/PersistNotes';
-import { getChargeCapacity, getSatchelCapacity, SATCHEL_CHARGE_CAPACITY } from 'rules/Character.rules'
+import { getChargeCapacity, getSatchelCapacity } from 'rules/Character.rules'
 import { DESKTOP_MIN_WIDTH } from 'rules/Responsive.rules'
 
 import './Character.css'
@@ -40,8 +40,6 @@ import PersonnalNotesComponent from 'components/user/PersonnalNotesComponent';
 import GeneralNotesComponent from 'components/user/GeneralNotesComponent';
 import FlyingNotesComponent from '../user/FlyingNotesComponent';
 import ExpendableComponent from 'components/shared/ExpendableComponent';
-
-const detailsImage = require('images/details.png');
 
 class Character extends PureComponent {
     constructor (props) {
