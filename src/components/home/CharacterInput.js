@@ -17,8 +17,9 @@ class CharacterInput extends PureComponent {
                 maxLength={CHARACTER_NAME_MAX_LENGTH}
                 value={this.state.name}
                 onChange={this.handleNameUpdate}
-                title={`Saisissez le nom du personnage (${this.state.name?.length||0} / ${CHARACTER_NAME_MAX_LENGTH} caractères)`}/>
-        <button type="submit">Nouveau personnage</button>
+                title={`Saisissez le nom du personnage (${this.state.name?.length||0} / ${CHARACTER_NAME_MAX_LENGTH} caractères)`}
+				placeholder="Nom du nouveau personnage" />
+        <button type="submit">Ajouter</button>
         {error && <span className="error-message">{ error}</span>}
       </form>
     )

@@ -7,7 +7,21 @@
   font-size: 2rem;
 }
 
-.menu-item {
+.scenario {
+	margin-bottom: var(--components-separator-margin);
+}
+
+.scenario .expendable-content, .scenario .expendableComponent {
+	border : 0;
+}
+
+.scenario-content {
+	display: flex;
+	flex-direction: column;
+	margin: var(--components-separator-margin);
+}
+
+.scenario-item {
   margin: 0.5rem 0;
   text-align: center;
   border-width: 2px;
@@ -15,12 +29,12 @@
   border-color: var(--color-primary);
   color: var(--color-primary);
 }
-.menu-item:hover,
-.menu-item:focus {
+.scenario-item:hover,
+.scenario-item:focus {
   width: 95%;
 }
 
-.menu-item a {
+.scenario-item a {
   flex-grow: 1;
   color: var(--color-primary);
 }
@@ -29,8 +43,3 @@
 	border-color: var(--color-secondary);
 }
 
-.scenario {
-	display: flex;
-	flex-direction: column;
-	margin: var(--components-separator-margin) 0;
-}

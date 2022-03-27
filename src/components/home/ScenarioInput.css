@@ -1,0 +1,16 @@
+.scenarioInput {
+  width: 100%;
+}
+
+.scenarioInput input {
+	flex-grow: 1;
+	background-color: transparent;
+	border: 0;
+	font-family: var(--font-family-secondary);
+	color: var(--color-primary);
+}
+
+.scenarioInput form {
+	display: flex;
+	flex-direction: row;
+}

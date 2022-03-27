@@ -1,14 +1,5 @@
 {
-	"Scenarios" : {
-		"David" :  {
-			"Id" : "David",
-			"Characters" : [ "Saphire", "Ash", "Sorwen" ]
-		},
-		"Yann" :  {
-			"Id" : "Yann",
-			"Characters" : [ "Simae" ]
-		}
-  },"Characters" : {
+  "Characters" : {
     "Ash" : {
       "ACBonus" : -7,
       "Age" : 26,
@@ -223,7 +214,7 @@
       "Age" : 27,
       "Alignment" : "4_LN",
       "Ammunition" : 20,
-      "Armor" : "-",
+      "Armor" : "Cuir",
       "Charisma" : 15,
       "Class" : "WILY",
       "Constitution" : 14,
@@ -268,7 +259,7 @@
       } ],
       "Defects" : "Voyager est tout ce qui compte pour moi, jamais je ne m'installerai quelque part.",
       "Dexterity" : 14,
-      "DistanceWeapon" : "-",
+      "DistanceWeapon" : "Arc court",
       "Eyes" : "Noires",
       "Gender" : "♀",
       "HP" : 10,
@@ -284,7 +275,7 @@
       "Languages" : [ "DWARF", "ELVISH" ],
       "Links" : "J'ai fui l'endroit où j'ai grandi et je n'ose plus y retourner.",
       "MaxHP" : 10,
-      "Money" : 4000,
+      "Money" : 2800,
       "Name" : "Simae",
       "Notes" : "Prestidigitation : Limitée à des spectateurs ayant le même angle de vue.\nL'épée courte, l'arc court, l'armure de cuir et le sac de voyage sont resté dans la chambre de l'auberge.\nLes gardes ont pris ma besace.\n",
       "Objects" : [ {
@@ -326,7 +317,7 @@
       "Specials" : 0,
       "Strength" : 8,
       "SubRace" : "LIGHT_FOOT_HALFELIN",
-      "Weapon" : "-",
+      "Weapon" : "Épée courte",
       "Weight" : 47,
       "Wisdom" : 9,
       "XP" : 0
@@ -418,7 +409,7 @@
   },
   "Notes" : {
     "*" : [ {
-      "Content" : "Mitch Beauregard, Humain barde"
+      "Content" : "Mitch de Beauregard, Humain barde"
     }, {
       "Content" : "Koen, Léonid Guerrier"
     }, {
@@ -426,7 +417,9 @@
     }, {
       "Content" : "Arrivé dans la ville de Renane où se prépare une semaine de festivités pour le mariage de Herve le jeune et dame xxx\n-1 nuit dans une  auberge modeste (chambre de 2 pour 3)"
     }, {
-      "Content" : "En prison pour le temps des festivités."
+      "Content" : "Emprisonné pour le temps des festivités à cause de Kinu parmesan, sortie après 7 jours et retour à l'auberge où nous avons reçu le gîte et le couvert en l'échange d'une représentation musicale et magique."
+    }, {
+      "Content" : "Abordé par un groupe du nord qui nous ont proposé de les rejoindre pour une quête visant à subtiliser la hache d'un roi en mission secondaire d'une expédition officiellement menée pour combattre le chaos."
     } ],
     "Saphire" : [ {
       "Content" : "-2",
@@ -438,14 +431,24 @@
     "Simae" : [ {
       "Content" : "x2",
       "Description" : "",
-      "Left" : "354px",
+      "Left" : "363px",
       "Name" : "Exp att.so",
-      "Top" : "328px"
+      "Top" : "327px"
     }, {
       "Content" : "x2",
-      "Left" : "884px",
+      "Left" : "883px",
       "Name" : "Exp Out.vo",
-      "Top" : "325px"
+      "Top" : "328px"
     } ]
-  }
+  },
+"Scenarios" : {
+	"David" :  {
+		"Id" : "David",
+		"Characters" : [ "Saphire", "Ash", "Sorwen" ]
+	},
+	"Yann" :  {
+		"Id" : "Yann",
+		"Characters" : [ "Simae" ]
+	}
+	}
 }

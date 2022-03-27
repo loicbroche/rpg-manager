@@ -47,6 +47,16 @@
   visibility: visible;
 }
 
+.expendable-content.relative-expension {
+  position: relative;
+  display: none;
+  width: 100%;
+}
+
+.show-content.relative-expension {
+  display: flex;
+}
+
 @media screen and (max-width: 500px) {
 	.expendable-content {
 	  position: relative;

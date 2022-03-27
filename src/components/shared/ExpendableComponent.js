@@ -11,7 +11,7 @@ class ExpendableComponent extends PureComponent {
   }
 
   render() {
-    const { extensorTitle, header, extensor, horizontal, reverse} = this.props;
+    const { extensorTitle, header, extensor, horizontal, reverse, relativeExpension} = this.props;
     const { showContent } = this.state;
 
     const title=showContent?"Masquer "+extensorTitle:"Ouvrir "+extensorTitle;
@@ -27,7 +27,7 @@ class ExpendableComponent extends PureComponent {
         </span>
       </h1>
       <div className={`expendable-container`}>
-        <div className={`expendable-content ${showContent&&"show-content"}`}>
+        <div className={`expendable-content ${showContent&&"show-content"} ${relativeExpension&&"relative-expension"}`}>
             {this.props.children}
         </div>
       </div>
@@ -51,7 +51,8 @@ ExpendableComponent.propTypes = {
 ExpendableComponent.defaultProps = {
   defaultExtended: false,
   horizontal: false,
-  reverse: false
+  reverse: false,
+  relativeExpension: false
 }
 
 export default ExpendableComponent

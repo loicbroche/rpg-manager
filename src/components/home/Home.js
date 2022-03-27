@@ -6,11 +6,14 @@ import {DEFAULT_EMPTY_VALUE, DEFAULT_CARACTERISTIC_VALUE, DEFAULT_HEALTH_VALUE,
         DEFAULT_HP_VALUE, DEFAULT_MONEY_VALUE} from 'rules/Character.rules'
 import { objectToArray } from 'database/Tools'
 import { insertCharacter, deleteCharacter } from 'database/PersistCharacter';
+import { insertScenario } from 'database/PersistScenario';
 
 import './Home.css'
 import { ROUTE_GAME_MASTER } from 'App'
 import CharacterInput from './CharacterInput'
+import ScenarioInput from './ScenarioInput'
 import CharacterMenuItem from './CharacterMenuItem'
+import ExpendableComponent from 'components/shared/ExpendableComponent';
 
 class Home extends PureComponent {
   constructor (props) {
@@ -40,20 +43,31 @@ class Home extends PureComponent {
     return (
       <div className="menu">
 		{scenarios && Object.values(scenarios).map(({ Id, Characters}) => (
-			<div key={Id} className="scenario" title={Id}>
-				<h1>Scénario "{Id}"</h1>
-				<Link to={`${ROUTE_GAME_MASTER}/${Id}`} className="menu-item activable gm" title={`Accéder à l'écran du maître du jeu du scénario "${Id}"`}>
-					Maître du jeu
-				</Link>
-				{Characters && Object.values(Characters).map((characterId) => (
-					<div key={characterId} className="menu-item activable character">
-					  <CharacterMenuItem id={characterId} name={characterId} scenario={Id} onRemove={deleteCharacter} />
-					</div>
-					))
-				}
-				<div className="menu-item"><CharacterInput scenario={Id} onSubmit={this.addCharacterEntry} /></div>
+			<div className="scenario">
+			<ExpendableComponent key={Id}
+					extensorTitle={Id}
+					header={<span>Scénario "{Id}"</span>}
+					reverse={false}
+					relativeExpension={true} >                 
+
+				<div className="scenario-content">
+					<Link to={`${ROUTE_GAME_MASTER}/${Id}`} className="scenario-item activable gm" title={`Accéder à l'écran du maître du jeu du scénario "${Id}"`}>
+						Maître du jeu
+					</Link>
+					{Characters && Object.values(Characters).map((characterId) => (
+						<div key={characterId} className="scenario-item activable character">
+						  <CharacterMenuItem id={characterId} name={characterId} scenario={Id} onRemove={deleteCharacter} />
+						</div>
+						))
+					}
+					<div className="scenario-item"><CharacterInput scenario={Id} onSubmit={this.addCharacterEntry} /></div>
+				</div>
+			</ExpendableComponent>
 			</div>
 		))}
+		<div className="scenario">
+			<ScenarioInput onSubmit={this.insertScenario} />
+		</div>
       </div>
     )
   }
@@ -119,6 +133,13 @@ class Home extends PureComponent {
 
       insertCharacter(character, scenarioId);
     }
+  }
+
+  // Arrow fx for binding
+  insertScenario = (scenario) => {
+	  if (scenario.Id) {
+		  insertScenario(scenario);
+	  }
   }
 }
 export default Home
