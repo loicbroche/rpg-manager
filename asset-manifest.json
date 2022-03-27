@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/rpg-manager/static/css/main.bfacb269.chunk.css",
-    "main.js": "/rpg-manager/static/js/main.621240a4.chunk.js",
-    "main.js.map": "/rpg-manager/static/js/main.621240a4.chunk.js.map",
+    "main.css": "/rpg-manager/static/css/main.9bbb1e4c.chunk.css",
+    "main.js": "/rpg-manager/static/js/main.22175bf9.chunk.js",
+    "main.js.map": "/rpg-manager/static/js/main.22175bf9.chunk.js.map",
     "runtime-main.js": "/rpg-manager/static/js/runtime-main.6e516dae.js",
     "runtime-main.js.map": "/rpg-manager/static/js/runtime-main.6e516dae.js.map",
     "static/css/2.7d86e4e7.chunk.css": "/rpg-manager/static/css/2.7d86e4e7.chunk.css",
-    "static/js/2.2abdc3af.chunk.js": "/rpg-manager/static/js/2.2abdc3af.chunk.js",
-    "static/js/2.2abdc3af.chunk.js.map": "/rpg-manager/static/js/2.2abdc3af.chunk.js.map",
+    "static/js/2.7c38f72e.chunk.js": "/rpg-manager/static/js/2.7c38f72e.chunk.js",
+    "static/js/2.7c38f72e.chunk.js.map": "/rpg-manager/static/js/2.7c38f72e.chunk.js.map",
     "index.html": "/rpg-manager/index.html",
-    "precache-manifest.1101e09c3223c2dcf4038c525e4b7bf3.js": "/rpg-manager/precache-manifest.1101e09c3223c2dcf4038c525e4b7bf3.js",
+    "precache-manifest.33184f930b349b46563edcaf52c3ae44.js": "/rpg-manager/precache-manifest.33184f930b349b46563edcaf52c3ae44.js",
     "service-worker.js": "/rpg-manager/service-worker.js",
     "static/css/2.7d86e4e7.chunk.css.map": "/rpg-manager/static/css/2.7d86e4e7.chunk.css.map",
-    "static/css/main.bfacb269.chunk.css.map": "/rpg-manager/static/css/main.bfacb269.chunk.css.map",
-    "static/js/2.2abdc3af.chunk.js.LICENSE.txt": "/rpg-manager/static/js/2.2abdc3af.chunk.js.LICENSE.txt",
+    "static/css/main.9bbb1e4c.chunk.css.map": "/rpg-manager/static/css/main.9bbb1e4c.chunk.css.map",
+    "static/js/2.7c38f72e.chunk.js.LICENSE.txt": "/rpg-manager/static/js/2.7c38f72e.chunk.js.LICENSE.txt",
     "static/media/AARAKOCRA.png": "/rpg-manager/static/media/AARAKOCRA.fa3c13db.png",
     "static/media/ABJURATION.png": "/rpg-manager/static/media/ABJURATION.9ae43990.png",
     "static/media/AC.png": "/rpg-manager/static/media/AC.e3a88f6a.png",
@@ -246,8 +246,8 @@
   "entrypoints": [
     "static/js/runtime-main.6e516dae.js",
     "static/css/2.7d86e4e7.chunk.css",
-    "static/js/2.2abdc3af.chunk.js",
-    "static/css/main.bfacb269.chunk.css",
-    "static/js/main.621240a4.chunk.js"
+    "static/js/2.7c38f72e.chunk.js",
+    "static/css/main.9bbb1e4c.chunk.css",
+    "static/js/main.22175bf9.chunk.js"
   ]
 }
