@@ -106,10 +106,6 @@ select:disabled {
   font-size: 1rem;
 }
 
-.menu {
-  font-family: var(--font-family-secondary);
-}
-
 .narrative,
 .narrative input,
 .narrative textarea {
