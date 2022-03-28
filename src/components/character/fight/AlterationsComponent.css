@@ -4,6 +4,10 @@
   align-items: flex-end;
 }
 
+.alterationsComponent h1 {
+  border: 1px solid var(--color-primary);
+}
+
 .alterations {
   display: flex;
   flex-direction: column;

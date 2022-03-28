@@ -13,6 +13,7 @@ class AlterationsComponent extends PureComponent {
 
     return (
       <div className="alterationsComponent">
+	  <h1>Altérations</h1>
         <div className="alterations">
         <div className="savable">
             {alterationTypes?.map((type) => type.Savable && <span key={type.Code} className="alteration-category">{this.getAlterations(type)}</span>)
