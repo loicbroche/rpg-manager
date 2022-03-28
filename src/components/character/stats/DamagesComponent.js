@@ -2,7 +2,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import {DamagePropType} from 'PropTypes'
-import {promptAll, dragElement} from 'Tools'
+import {promptAll, dragElement, manageLongPress} from 'Tools'
 import {uploadProfilImage, getProfilImage, deleteProfilImage} from 'database/StoredImages'
 
 import './DamagesComponent.css'
@@ -30,25 +30,29 @@ class DamagesComponent extends PureComponent {
 
   componentDidUpdate() {
     const { damages, onDamageChange } = this.props;
-      DAMAGES_LOCATIONS.forEach((damage, i) => {
-      const damageCode = damage.code;
-      dragElement(document.getElementById(`${damageCode}-damage-marker`),
-                  document.getElementById("image-container"),
-                  (newTop, newLeft, changed) => {
-                  if (changed && onDamageChange) {
-                    this.setState({dragged: true});
-                    const newDamages = damages?.slice();
-                    const index = damages?.findIndex(({Code}) => Code === damageCode);
-                    if (index > -1) {
-                      const damage = newDamages[index];
-                      newDamages[index] = {...damage, Top: newTop, Left: newLeft};
-                    } else {
-                      newDamages[newDamages.length] = {Code: damageCode, Top: newTop, Left: newLeft};
-                    }
-                    onDamageChange(newDamages);
-                  }
-                  });
-      });
+	DAMAGES_LOCATIONS.forEach((damage, i) => {
+		const damageCode = damage.code;
+		dragElement(document.getElementById(`${damageCode}-damage-marker`),
+			document.getElementById("image-container"),
+			(newTop, newLeft, changed) => {
+				if (changed && onDamageChange) {
+					this.setState({dragged: true});
+					const newDamages = damages?.slice();
+					const index = damages?.findIndex(({Code}) => Code === damageCode);
+					if (index > -1) {
+					  const damage = newDamages[index];
+					  newDamages[index] = {...damage, Top: newTop, Left: newLeft};
+					} else {
+					  newDamages[newDamages.length] = {Code: damageCode, Top: newTop, Left: newLeft};
+					}
+					onDamageChange(newDamages);
+				}
+			});
+		manageLongPress(document.getElementById(`${damageCode}-damage-marker`),
+			(longPress) => {
+			console.log("manageLongPress", longPress);
+		});
+	});
   }
 
   render() {
