@@ -1,5 +1,7 @@
 import React from 'react'
 import ReactDOM from "react-dom";
+import ReactTooltip from 'react-tooltip';
+import { LONG_CLICK_DELAY } from 'rules/Navigation.rules'
 
 export const confirm = (message, callback, title="Confirmation", confirmLabel="Ok", cancelLabel="Annuler") => {
     const container = document.createElement("div");
@@ -131,3 +133,77 @@ export const dragElement = (elmnt, parentElement, callBackFunction) => {
         }
     }
 }
+
+export const onLongPress = (elmnt, callBackFunction, delay=LONG_CLICK_DELAY) => {
+    if (elmnt) {
+        var longpress = false;
+		var presstimer = null;
+
+		var cancel = function(e) {
+			if (presstimer !== null) {
+				clearTimeout(presstimer);
+				presstimer = null;
+			}
+		};
+
+		var click = function(e) {
+			if (presstimer !== null) {
+				clearTimeout(presstimer);
+				presstimer = null;
+			}
+		};
+
+		var start = function(e) {
+			console.log(e);
+
+			if (e.type === "click" && e.button !== 0) {
+				return;
+			}
+
+			longpress = false;
+			if (presstimer === null) {
+				presstimer = setTimeout(function() {
+					longpress = true;
+					callBackFunction(e);
+				}, delay);
+			}
+
+			return false;
+		};
+
+		elmnt.addEventListener("mousedown", start);
+		elmnt.addEventListener("touchstart", start);
+		elmnt.addEventListener("click", click);
+		elmnt.addEventListener("mouseout", cancel);
+		elmnt.addEventListener("touchend", cancel);
+		elmnt.addEventListener("touchleave", cancel);
+		elmnt.addEventListener("touchcancel", cancel);
+    }
+}
+
+export const createReactTooltips () => {
+	const directive = "data-tip";
+	const tooltippedElements = document.querySelectorAll('['+directive+']');
+	tooltippedElements.forEach((element) => {
+		var tooltipValue = element.getAttribute(directive);
+
+		var tooltipId = element.id + "-tooltip";
+		element.setAttribute("data-for", tooltipId);
+		
+		var reactTooltipElement = document.createElement("SPAN");
+		reactTooltipElement.Id = reactTooltipElement;
+		reactTooltipElement.innerHTML = tooltipValue;
+		/*
+		<a data-tip data-for='happyFace'> d(`･∀･)b </a>
+		<ReactTooltip id='happyFace' type='error'>
+		  <span>Show happy face</span>
+		</ReactTooltip>
+		*/
+
+		var parentElement = element.parentNode;
+		parentElement.appendChild(reactTooltipElement);
+	});
+	
+	
+
+};
