@@ -10,6 +10,7 @@ import { updateCharacterCaracteristic, insertCharacterElement, deleteCharacterEl
 import { updateNotes, ALL_CHARACTERS_ID } from 'database/PersistNotes';
 import { getChargeCapacity, getSatchelCapacity } from 'rules/Character.rules'
 import { DESKTOP_MIN_WIDTH } from 'rules/Navigation.rules'
+import { createReactTooltips } from 'Tools'
 
 import './Character.css'
 import Skills from './stats/Skills'
@@ -114,6 +115,8 @@ class Character extends PureComponent {
           newState.Damages = newState.Damages || [];
 
           this.setState({characterInfos: newState});
+		  const characterElement = document.getElementById("character");
+		  createReactTooltips(characterElement);
         }
         this.generalNotesRef = gameDatabase.ref(DATA_MODEL.NOTES.name+"/"+ALL_CHARACTERS_ID);
         this.personnalNotesRef = gameDatabase.ref(DATA_MODEL.NOTES.name+"/"+characterId);
@@ -127,14 +130,13 @@ class Character extends PureComponent {
         }
     }
 
-    componentWillMount() {
-		window.addEventListener('resize', this.handleWindowSizeChange);
-    }
-
     componentDidMount() {
         this.characterRef.on('value', this.updateCharacter);
         this.generalNotesRef.on('value', this.updateGeneralNotes);
         this.personnalNotesRef.on('value', this.updatePersonnalNotes);
+		window.addEventListener('resize', this.handleWindowSizeChange);
+		const characterElement = document.getElementById("character");
+		createReactTooltips(characterElement);
     }
 
     componentWillUnmount() {
@@ -292,7 +294,7 @@ class Character extends PureComponent {
                                     historicId={historicId}
                                     onClick={(objectId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.MASTER_OBJECTS.name, objectId) }} />;
 		const generalNotesComponent = <GeneralNotesComponent notes={generalNotes} editorCharacter={Name} onChange={(value) => updateNotes(value, ALL_CHARACTERS_ID) } />;
-		const personalNotesComponent = <PersonnalNotesComponent globalNotes={Notes} onGlobalNotesChange={(value) =>  this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.NOTES.name, value) }  />;
+		const personalNotesComponent = <PersonnalNotesComponent personalNotes={Notes} onPersonalNotesChange={(value) =>  this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.NOTES.name, value) }  />;
 
 		const desktopLayout = (
                 <div>
@@ -444,7 +446,7 @@ class Character extends PureComponent {
 		</div>;
 
         return (
-        <div className="character">
+        <div className="character" id="character">
             { Name !== null
             ? (isMobile ? mobileLayout : desktopLayout)
 			:(<span className="narrative">Ce personnage n'existe pas</span>)}

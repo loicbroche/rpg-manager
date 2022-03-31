@@ -89,7 +89,7 @@ class DetailsComponent extends PureComponent {
               </span>
               <span title={`Saisissez le poids de votre personnage`}>
                   <Weight weight={character.Weight} onChange={(value) => onChange(DATA_MODEL.CHARACTERS.columns.WEIGHT.name, value)} />
-                  <span className="equipment-weight" title="Poids de l'équipmenent porté"> (+<Weight weight={equipmentsWeight + objectsWeight} />)</span>
+                  <span className="equipment-weight" data-tip="Poids de l'équipement porté"> (+<Weight weight={equipmentsWeight + objectsWeight} />)</span>
               </span>
               <input  name="eyes" 
                       type="text"

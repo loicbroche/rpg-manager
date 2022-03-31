@@ -157,7 +157,11 @@ export const onLongPress = (elmnt, callBackFunction, delay=LONG_CLICK_DELAY) => 
 
 			if (presstimer === null) {
 				presstimer = setTimeout(function() {
-					callBackFunction(e);
+					const event = new Event('longpress');
+					elmnt.dispatchEvent(event);
+					if (callBackFunction) {
+						callBackFunction(e);
+					}
 				}, delay);
 			}
 
@@ -174,22 +178,28 @@ export const onLongPress = (elmnt, callBackFunction, delay=LONG_CLICK_DELAY) => 
     }
 }
 
-export const createReactTooltips = () => {
-	const directive = "data-tip";
-	const tooltippedElements = document.querySelectorAll('['+directive+']');
+export const createReactTooltips = (rootElement=document) => {
+	var tooltipCreatedNb = 0;
+	if (rootElement) {
+		const directive = "data-tip";
+		const tooltippedElements = rootElement.querySelectorAll('['+directive+']')||[];
 
-	tooltippedElements.forEach((element) => {
-		var tooltipId = element.id + "-tooltip";
-		var parentElement = element.parentNode;
-		element.setAttribute("data-for", tooltipId);
-		var reactTooltipcontainer = document.createElement("span");
-			reactTooltipcontainer.Id = tooltipId+"-container";
+		tooltippedElements.forEach((element) => {
+			var tooltipId = element.id + "-tooltip";
+			var tooltipContainerId = tooltipId+"-container";
+			var reactTooltipContainer = rootElement.querySelector('#'+tooltipContainerId);
 
-			var reactTooltipElement = <ReactTooltip id={tooltipId} className="react-tooltip" backgroundColor='white' effect='solid' />
-			ReactDOM.render(reactTooltipElement, reactTooltipcontainer)
-		parentElement.appendChild(reactTooltipcontainer);
-	});
-	
-	
+			if (!reactTooltipContainer) {
+				element.setAttribute("data-for", tooltipId);
+					reactTooltipContainer = document.createElement("span");
+					reactTooltipContainer.Id = tooltipContainerId;
 
+					var reactTooltipElement = <ReactTooltip id={tooltipId} className="react-tooltip" data-event='longpress' data-event-off='click' type='light' effect='solid' />
+					ReactDOM.render(reactTooltipElement, reactTooltipContainer)
+				element.parentNode.appendChild(reactTooltipContainer);
+			}
+			tooltipCreatedNb++;
+		});
+	}
+	return tooltipCreatedNb;
 };

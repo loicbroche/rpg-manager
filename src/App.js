@@ -6,7 +6,6 @@ import { referentialDatabase } from 'database/InitializeDatabase'
 import { DATA_MODEL } from 'database/DataModel'
 import { ActionTypes } from 'store/actions/ActionTypes';
 import * as Actions from 'store/actions/Actions';
-import { createReactTooltips } from 'Tools'
 import 'App.css'
 import NotFound from 'components/error/NotFound'
 import Page from 'components/Page'
@@ -24,7 +23,6 @@ class App extends Component {
         ref.once('value', snapshot => { this.props.loadReferential(tableName, snapshot.val()); });
       }
     });
-	createReactTooltips();
   }
 
   render () {
@@ -37,7 +35,7 @@ class App extends Component {
 			  <span className="banner-text">JdR Manager</span>
             </div>
           </Link>
-			<h1 className="page-title" id="page-title" data-tip="Mon menu">
+			<h1 className="page-title">
 			    <Switch>
 				    <Route
 					  exact path={ROUTE_ROOT}
@@ -75,7 +73,7 @@ class App extends Component {
             />
             <Route
               path={`${ROUTE_CHARACTER}/:characterId`}
-              render={props => ( <Page {...props} component={Character} title={`Fiche personnage de {props.match.params.characterId} - JdR Manager`} /> )}
+              render={props => ( <Page {...props} component={Character} title={`Fiche personnage de ${props.match.params.characterId} - JdR Manager`} /> )}
             />
             <Route
               render={props => ( <Page {...props} component={NotFound} title="Page introuvable - JdR Manager" /> )}

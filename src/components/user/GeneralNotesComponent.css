@@ -57,3 +57,10 @@
     background-color: transparent;
     border: 0;
 }
+
+.down-arrow::before {
+  content: "\25BE";
+}
+.up-arrow::before {
+  content: "\25B4";
+}

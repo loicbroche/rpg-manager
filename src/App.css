@@ -359,6 +359,8 @@ li.locked {
   margin-right: 0.5rem;
 }
 
+.__react_component_tooltip {
+}
 .react-tooltip {
 	background-color: white !important;
 	color: black !important;

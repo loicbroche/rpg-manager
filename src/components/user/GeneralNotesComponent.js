@@ -20,6 +20,31 @@ class GeneralNotesComponent extends PureComponent {
     };
   }
 
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const {notes, editorCharacter} = nextProps;    
+    const notesNb = notes?.length;
+    for(let i= 0; i < notesNb; i++) {
+      const textAreaId = `note-${editorCharacter}-${i}`;
+      GeneralNotesComponent.autosizeAndSave(null, textAreaId);
+    }
+    return null
+  }
+
+  static autosizeAndSave(event, textAreaId) {
+    var textArea = event?.target || document.getElementById(textAreaId);
+    if (textArea) {
+      if (event?.ctrlKey && event?.keyCode === S_KEY_CODE) {
+        //Blur will call save
+        textArea.blur();
+      } else {
+        setTimeout(function(){
+          textArea.style.cssText = 'height:2.5rem;';
+          textArea.style.cssText = 'height:' + textArea.scrollHeight + 'px';
+        },0);
+      }
+    }
+  }
+/*  
   componentWillReceiveProps() {
     const {notes, editorCharacter} = this.props;    
     const notesNb = notes?.length;
@@ -27,7 +52,7 @@ class GeneralNotesComponent extends PureComponent {
       const textAreaId = `note-${editorCharacter}-${i}`;
       this.autosizeAndSave(null, textAreaId);
     }
-  }
+  }*/
 
   render() {
     const { showNotes, changed, changedIndex, note } = this.state;
@@ -58,11 +83,11 @@ class GeneralNotesComponent extends PureComponent {
                       <span className={index===0?"disabled":"activable transparent"}
                             title="Monter le paragraphe"
                             role="button" onClick={() => this.moveNote(index, index-1)}>
-                      ⮝</span>
+                      <span className="up-arrow"></span></span>
                       <span className={index===notesNb-1?"disabled":"activable transparent"}
                             title="Descendre le paragraphe"
                             role="button" onClick={() => this.moveNote(index, index+1)}>
-                      ⮟</span>
+                      <span className="down-arrow"></span></span>
                     </div>
                     <textarea   id={textAreaId}
                                 className={`note activable transparent ${locked?"forbidden":""}`}
@@ -73,7 +98,7 @@ class GeneralNotesComponent extends PureComponent {
                                 onFocus={() => { this.onNoteEdit(index)}}
                                 onBlur={() => { this.onNoteSave(index)}}
                                 onChange={(event) => { this.onNoteChange(event, index)}}
-                                onKeyUp={(event) => this.autosizeAndSave(event, textAreaId)}
+                                onKeyUp={(event) => GeneralNotesComponent.autosizeAndSave(event, textAreaId)}
                                 autoFocus={!note.Content}
                                 maxLength={NOTES_MAX_LENGTH}
                       ></textarea>
@@ -90,21 +115,6 @@ class GeneralNotesComponent extends PureComponent {
           </div>
         </div>
     )
-  }
-
-  autosizeAndSave(event, textAreaId) {
-    var textArea = event?.target || document.getElementById(textAreaId);
-    if (textArea) {
-      if (event?.ctrlKey && event?.keyCode === S_KEY_CODE) {
-        //Blur will call save
-        textArea.blur();
-      } else {
-        setTimeout(function(){
-          textArea.style.cssText = 'height:2.5rem;';
-          textArea.style.cssText = 'height:' + textArea.scrollHeight + 'px';
-        },0);
-      }
-    }
   }
 
   // Arrow fx for binding

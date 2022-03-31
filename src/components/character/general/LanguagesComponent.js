@@ -21,9 +21,10 @@ class LanguagesComponent extends PureComponent {
             isRaceKnown = true;
             raceKnownTitle = `Langue ${language.Name} connue de la race ${subRace?.Name}`;
           }     
+
           return (
-          <li key={language.Code} className={"language "+(isRaceKnown?"race-known":"activable")} role="button" onClick={() => !isRaceKnown && onClick(language.Code)}
-              title={ ( isRaceKnown
+          <li key={language.Code} id={language.Code} className={"language "+(isRaceKnown?"race-known":"activable")} role="button" onClick={() => !isRaceKnown && onClick(language.Code)}
+              data-tip={ ( isRaceKnown
                         ?raceKnownTitle
                         :(isKnown?`Oublier`:`Apprendre`)+` la langue ${language.Name}`
                       ) +`\nEcriture ${language.Writing}`
