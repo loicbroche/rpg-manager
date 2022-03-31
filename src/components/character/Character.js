@@ -252,7 +252,7 @@ class Character extends PureComponent {
                                                     onSpellClick={(spellId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.SPELLS.name, spellId) }}/>;
 		const caracteristicsComponents = <div className="caracteristics">
                                 {   caracteristics?.map((caracteristic) => (
-                                        <div key={caracteristic.Name}>
+                                        <div key={caracteristic.Name} className="caracteristic-item">
                                             <span className={`caracteristic-name ${caracteristic.OV}`}>{caracteristic.Name}</span>
                                             <Caracteristic
                                                 caracteristicName={caracteristic.OV}
@@ -395,13 +395,13 @@ class Character extends PureComponent {
 
 				<TabPanel className="mobile-tab rp-fight-tab">
 
-					{flyingNotesComponent}
-					{caracteristicsComponents}
-					{skillsComponent}
 					<div className="complements">
 						{acComponent}
 						{speedComponent}
+						{xpComponent}
 					</div>
+					{skillsComponent}
+					{caracteristicsComponents}
 
 				    <ExpendableComponent extensorTitle="Combat"
                                 header={<span className="fight-header">Combat</span>}
@@ -428,14 +428,13 @@ class Character extends PureComponent {
                                 header={<span className="rp-header">Role play</span>}
                                 reverse={false}
 								defaultExtended={true}>                 
-
-						{xpComponent}
 						
 						{alterationsComponent}
 						{savesComponent}
 						<div className="user-notes">
 							{generalNotesComponent}
 							{personalNotesComponent}
+							{flyingNotesComponent}
 						</div>
 
 					</ExpendableComponent>
