@@ -115,8 +115,10 @@ class Character extends PureComponent {
           newState.Damages = newState.Damages || [];
 
           this.setState({characterInfos: newState});
-		  const characterElement = document.getElementById("character");
-		  createReactTooltips(characterElement);
+		  setTimeout(() => {
+			const characterElement = document.getElementById("character");
+			createReactTooltips(characterElement);
+		  }, 5000);
         }
         this.generalNotesRef = gameDatabase.ref(DATA_MODEL.NOTES.name+"/"+ALL_CHARACTERS_ID);
         this.personnalNotesRef = gameDatabase.ref(DATA_MODEL.NOTES.name+"/"+characterId);
@@ -135,8 +137,6 @@ class Character extends PureComponent {
         this.generalNotesRef.on('value', this.updateGeneralNotes);
         this.personnalNotesRef.on('value', this.updatePersonnalNotes);
 		window.addEventListener('resize', this.handleWindowSizeChange);
-		const characterElement = document.getElementById("character");
-		createReactTooltips(characterElement);
     }
 
     componentWillUnmount() {

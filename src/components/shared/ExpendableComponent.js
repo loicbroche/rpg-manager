@@ -1,7 +1,6 @@
 import React, {PureComponent} from 'react'
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types'
-import { createReactTooltips } from 'Tools'
 
 import './ExpendableComponent.css'
 
@@ -10,13 +9,6 @@ class ExpendableComponent extends PureComponent {
   constructor(props) {
     super(props);
     this.state = { showContent: props.defaultExtended};
-  }
-
-  componentDidUpdate() {
-	const { showContent } = this.state;
-	if (showContent) {
-		createReactTooltips(ReactDOM.findDOMNode(this));
-	}
   }
 
   render() {
