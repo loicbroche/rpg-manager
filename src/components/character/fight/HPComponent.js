@@ -23,7 +23,7 @@ class HPComponent extends PureComponent {
           </div>
         </div>
         {onValChange && <span className={`currentModifier increase-value ${val===maxVal &&"disabled"}`} role="button" onClick={() => {this.handleValueChange(1)}} title="Récupérer un point de vie"></span>}
-        {onMaxValChange && <span className="maxModifier increase-max" role="button" onClick={() => {this.handleMaxValueChange(1)}} title="Augmenter les points de vie maximum"></span>}
+        {onMaxValChange && <span data-tip className="maxModifier increase-max" role="button" onClick={() => {this.handleMaxValueChange(1)}} title="Augmenter les points de vie maximum"></span>}
       </div>
     )
   }

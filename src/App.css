@@ -359,6 +359,11 @@ li.locked {
   margin-right: 0.5rem;
 }
 
+.react-tooltip {
+	background-color: white !important;
+	color: black !important;
+}
+
 @media screen and (max-width: 500px) {
 	.banner {
 		flex-direction: row;

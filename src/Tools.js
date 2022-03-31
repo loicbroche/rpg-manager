@@ -136,7 +136,6 @@ export const dragElement = (elmnt, parentElement, callBackFunction) => {
 
 export const onLongPress = (elmnt, callBackFunction, delay=LONG_CLICK_DELAY) => {
     if (elmnt) {
-        var longpress = false;
 		var presstimer = null;
 
 		var cancel = function(e) {
@@ -145,25 +144,19 @@ export const onLongPress = (elmnt, callBackFunction, delay=LONG_CLICK_DELAY) => 
 				presstimer = null;
 			}
 		};
-
 		var click = function(e) {
 			if (presstimer !== null) {
 				clearTimeout(presstimer);
 				presstimer = null;
 			}
 		};
-
 		var start = function(e) {
-			console.log(e);
-
 			if (e.type === "click" && e.button !== 0) {
 				return;
 			}
 
-			longpress = false;
 			if (presstimer === null) {
 				presstimer = setTimeout(function() {
-					longpress = true;
 					callBackFunction(e);
 				}, delay);
 			}
@@ -181,27 +174,20 @@ export const onLongPress = (elmnt, callBackFunction, delay=LONG_CLICK_DELAY) => 
     }
 }
 
-export const createReactTooltips () => {
+export const createReactTooltips = () => {
 	const directive = "data-tip";
 	const tooltippedElements = document.querySelectorAll('['+directive+']');
+
 	tooltippedElements.forEach((element) => {
-		var tooltipValue = element.getAttribute(directive);
-
 		var tooltipId = element.id + "-tooltip";
-		element.setAttribute("data-for", tooltipId);
-		
-		var reactTooltipElement = document.createElement("SPAN");
-		reactTooltipElement.Id = reactTooltipElement;
-		reactTooltipElement.innerHTML = tooltipValue;
-		/*
-		<a data-tip data-for='happyFace'> d(`･∀･)b </a>
-		<ReactTooltip id='happyFace' type='error'>
-		  <span>Show happy face</span>
-		</ReactTooltip>
-		*/
-
 		var parentElement = element.parentNode;
-		parentElement.appendChild(reactTooltipElement);
+		element.setAttribute("data-for", tooltipId);
+		var reactTooltipcontainer = document.createElement("span");
+			reactTooltipcontainer.Id = tooltipId+"-container";
+
+			var reactTooltipElement = <ReactTooltip id={tooltipId} className="react-tooltip" backgroundColor='white' effect='solid' />
+			ReactDOM.render(reactTooltipElement, reactTooltipcontainer)
+		parentElement.appendChild(reactTooltipcontainer);
 	});
 	
 	
