@@ -2,7 +2,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import {DamagePropType} from 'PropTypes'
-import {promptAll, dragElement} from 'Tools'
+import {promptAll, dragElement, onLongPress} from 'Tools'
 import {uploadProfilImage, getProfilImage, deleteProfilImage} from 'database/StoredImages'
 
 import './DamagesComponent.css'
@@ -30,25 +30,29 @@ class DamagesComponent extends PureComponent {
 
   componentDidUpdate() {
     const { damages, onDamageChange } = this.props;
-      DAMAGES_LOCATIONS.forEach((damage, i) => {
-      const damageCode = damage.code;
-      dragElement(document.getElementById(`${damageCode}-damage-marker`),
-                  document.getElementById("image-container"),
-                  (newTop, newLeft, changed) => {
-                  if (changed && onDamageChange) {
-                    this.setState({dragged: true});
-                    const newDamages = damages?.slice();
-                    const index = damages?.findIndex(({Code}) => Code === damageCode);
-                    if (index > -1) {
-                      const damage = newDamages[index];
-                      newDamages[index] = {...damage, Top: newTop, Left: newLeft};
-                    } else {
-                      newDamages[newDamages.length] = {Code: damageCode, Top: newTop, Left: newLeft};
-                    }
-                    onDamageChange(newDamages);
-                  }
-                  });
-      });
+	DAMAGES_LOCATIONS.forEach((damage, i) => {
+		const damageCode = damage.code;
+		dragElement(document.getElementById(`${damageCode}-damage-marker`),
+			document.getElementById("image-container"),
+			(newTop, newLeft, changed) => {
+				if (changed && onDamageChange) {
+					this.setState({dragged: true});
+					const newDamages = damages?.slice();
+					const index = damages?.findIndex(({Code}) => Code === damageCode);
+					if (index > -1) {
+					  const damage = newDamages[index];
+					  newDamages[index] = {...damage, Top: newTop, Left: newLeft};
+					} else {
+					  newDamages[newDamages.length] = {Code: damageCode, Top: newTop, Left: newLeft};
+					}
+					onDamageChange(newDamages);
+				}
+			});
+		onLongPress(document.getElementById(`${damageCode}-damage-marker`),
+			(e) => {
+			console.log("onLongPress", e);
+		});
+	});
   }
 
   render() {
@@ -94,7 +98,7 @@ class DamagesComponent extends PureComponent {
                           className={`damage-marker ${damageLocation.code}-damage-marker ${hurt?"hurt":""}`}
                           style={style}
                           title={damageTitle}
-                          role="button" onClick={(event, ) => this.onDamageClick(event, damageLocation.code)}>
+                          role="button" onClick={(event) => this.onDamageClick(event, damageLocation.code)}>
                             <div id={`${damageLocation.code}-damage-marker-header`} className="damage-marker-header"></div>
                             <span className="damage-symbol">{damageSymbol}</span>
                       </div>
@@ -132,30 +136,36 @@ class DamagesComponent extends PureComponent {
     }
   }
 
+  setDamage = (damageCode, detail=false) => {
+	(event, damageCode) => {
+		const {damages, onDamageChange} = this.props;
+		const { dragged } = this.state;
+		if (onDamageChange && !dragged) {
+		  const newDamages = damages.slice();
+		  const index = damages.findIndex(({Code}) => Code === damageCode);
+		  const damage = newDamages[index]
+		  const damageLocation = DAMAGES_LOCATIONS?.find((damage) => damageCode === damage?.code);
+		  if (detail) {
+			promptAll([{message:`Saisissez un titre`, defaultValue: damage?.Title||damageLocation?.label},
+					  {message:`Saisissez un symbole`, defaultValue: damage?.Symbol},
+					  {message:`Saisissez une description`, defaultValue: damage?.Description}],
+					  (callbackState) => {this.updateDamageLabels(damageCode, callbackState?.[0], callbackState?.[1], callbackState?.[2])},
+				  "Détails de la blessure", "Valider");
+		  } else {  
+			if (index > -1) {
+			  newDamages[index] = { ...damage, Hurt: !damage.Hurt};
+			} else {
+			  newDamages[newDamages.length] = { Code: damageCode, Hurt: true};
+			}
+			onDamageChange(newDamages);
+			this.setState({dragged: false});
+		  }
+		}
+	}
+  }
+
   onDamageClick = (event, damageCode) => {
-    const {damages, onDamageChange} = this.props;
-    const { dragged } = this.state;
-    if (onDamageChange && !dragged) {
-      const newDamages = damages.slice();
-      const index = damages.findIndex(({Code}) => Code === damageCode);
-      const damage = newDamages[index]
-      const damageLocation = DAMAGES_LOCATIONS?.find((damage) => damageCode === damage?.code);
-      if (event.ctrlKey) {
-        promptAll([{message:`Saisissez un titre`, defaultValue: damage?.Title||damageLocation?.label},
-                  {message:`Saisissez un symbole`, defaultValue: damage?.Symbol},
-                  {message:`Saisissez une description`, defaultValue: damage?.Description}],
-                  (callbackState) => {this.updateDamageLabels(damageCode, callbackState?.[0], callbackState?.[1], callbackState?.[2])},
-              "Détails de la blessure", "Valider");
-      } else {  
-        if (index > -1) {
-          newDamages[index] = { ...damage, Hurt: !damage.Hurt};
-        } else {
-          newDamages[newDamages.length] = { Code: damageCode, Hurt: true};
-        }
-        onDamageChange(newDamages);
-        this.setState({dragged: false});
-      }
-    }
+	setDamage(damageCode, event.ctrlKey);
   }
 }
 

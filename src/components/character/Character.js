@@ -9,7 +9,7 @@ import { DATA_MODEL } from 'database/DataModel'
 import { updateCharacterCaracteristic, insertCharacterElement, deleteCharacterElement } from 'database/PersistCharacter';
 import { updateNotes, ALL_CHARACTERS_ID } from 'database/PersistNotes';
 import { getChargeCapacity, getSatchelCapacity } from 'rules/Character.rules'
-import { DESKTOP_MIN_WIDTH } from 'rules/Responsive.rules'
+import { DESKTOP_MIN_WIDTH } from 'rules/Navigation.rules'
 
 import './Character.css'
 import Skills from './stats/Skills'
