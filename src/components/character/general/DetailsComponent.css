@@ -17,7 +17,16 @@
 }
 
 .details-values {
+  flex-grow: 1;
   margin-left: var(--components-separator-margin);
+}
+
+.details-values span {
+  display: flex;
+}
+
+.details-values input {
+  flex-grow: 1;
 }
 
 .details-names > *:not(:nth-child(1)),

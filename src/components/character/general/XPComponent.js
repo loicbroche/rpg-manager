@@ -27,6 +27,7 @@ class XPComponent extends PureComponent {
                     max={maxXP}
                     step={10}
                     className="activable transparent xp-value"
+					dir="rtl"
                     onChange={(event) => this.props.onChange((event.target.value && parseInt(event.target.value)) || 0)} />
                   <span>{" XP"}</span>
                 </div>
