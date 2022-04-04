@@ -77,6 +77,10 @@
     background-color: var(--background-color-1);
 }
 
+.equipment-select {
+	flex-grow: 1;
+}
+
 .equipment-select optgroup {
     background-color: var(--color-header);
     color: var(--color-primary);
