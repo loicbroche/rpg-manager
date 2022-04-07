@@ -113,3 +113,19 @@
 .CHA {
   background-color: var(--color-Charisma);
 }
+
+@media screen and (max-width: 500px) {
+	.savesComponent {
+	  align-items: flex-start;
+	}
+	.alteration-save {
+	  flex-wrap: wrap;
+	}
+	.alteration-saves {
+	  flex-direction: row;
+	}
+	.alteration-saves,
+	.caracteristics-saves {
+		justify-content: center;
+	}
+}

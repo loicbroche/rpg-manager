@@ -20,6 +20,10 @@
   width: 100%;
 }
 
+.ac-user-value {
+	display: flex;
+}
+
 .ac-calculation {
   display: flex;
   flex-direction: column;
@@ -75,10 +79,10 @@
 }
 
 .increase-ACbonus::before {
-  content: "🢒";
+  content: var(--small-arrow-right);
 }
 .decrease-ACbonus::before {
-  content: "🢐";
+  content: var(--small-arrow-left);
 }
 .increase-ACbonus,
 .decrease-ACbonus {

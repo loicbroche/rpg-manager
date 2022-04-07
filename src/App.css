@@ -47,6 +47,12 @@
   --size-bars-font: 0.8rem;
   --opacity-inactive: 0.2;
   --components-separator-margin: 0.75rem;
+  --small-arrow-right: "\25B8";
+  --small-arrow-left: "\25C2";
+  --small-arrow-up: "\25B4";
+  --small-arrow-down: "\25BE";
+  --arrow-right: "\25B6";
+  --arrow-left: "\25C0"
 }
 
 /*Global HTML elements*/
@@ -220,7 +226,7 @@ li.locked {
 }
 
 .decrease-max::before {
-  content: "\25C2";
+  content: var(--small-arrow-left);
 }
 .decrease-value::before {
   content: "\25C0";
@@ -229,7 +235,7 @@ li.locked {
   content: "\25B6";
 }
 .increase-max::before {
-  content: "\25B8";
+  content: var(--small-arrow-right);
 }
 
 .currentModifier.disabled,
@@ -257,25 +263,25 @@ li.locked {
   font-size: 0.75rem;
 }
 .closed:not(.horizontal)::before {
-  content: "\25B8";
+  content: var(--small-arrow-right);
 }
 .opened:not(.horizontal):not(.reverse)::before {
-  content: "\25BE";
+  content: var(--small-arrow-down);
 }
 .opened:not(.horizontal).reverse::before {
-  content: "\25B4";
+  content: var(--small-arrow-up);
 }
 .closed.horizontal:not(.reverse)::after {
-  content: "\25B4";
+  content: var(--small-arrow-up);
 }
 .closed.horizontal.reverse::before {
-  content: "\25B4";
+  content: var(--small-arrow-up);
 }
 .opened.horizontal:not(.reverse)::after {
-  content: "\25B8";
+  content: var(--small-arrow-right);
 }
 .opened.horizontal.reverse::before {
-  content: "\25C2";
+  content: var(--small-arrow-left);
 }
 
 /*App specific*/

@@ -195,12 +195,7 @@
 		align-items: stretch;
 		gap: var(--components-separator-margin);
 	}
-	.general-tab {
-	}
-	.equipments-tab {
-	}
-	.rp-fight-tab {
-	}
+
 	.equipments-skills {
 		margin-top: var(--components-separator-margin);
 		padding-top: var(--components-separator-margin);
@@ -223,5 +218,17 @@
 	.healthComponent {
 		margin: 0 1.5rem;
 	}
-	
+
+	.status,
+	.special {
+		margin-left: 0;
+	}
+	.status {
+		margin-top: var(--components-separator-margin);
+		flex-direction: column;
+	}
+	.alterationsComponent,
+	.savesComponent {
+		margin-top: var(--components-separator-margin);
+	}
 }

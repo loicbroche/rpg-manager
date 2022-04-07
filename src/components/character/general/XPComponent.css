@@ -18,16 +18,18 @@
 .xp-label {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
   height: 100%;
   position: relative;
   top: calc(-1 * var(--height-bars));
   padding: 0 calc(0.5rem + var(--height-icons)/2) 0 0.5rem;
-  font-size: var(--size-bars-font);
+  font-size: var(--size-bars-font);;
 }
 
-.xp-label .max-hp {
-  text-align: right;
+.max-xp {
+	text-align: left;
+}
+.current-xp input {
+	margin-right: 0.25rem;
 }
 .xp-label .current-xp {
   display: flex;
@@ -36,7 +38,6 @@
 
 .xp-value {
   position: relative;
-  right: -0.75rem;
   background: none;
   font-size: var(--size-bars-font);
   color: var(--color-primary);

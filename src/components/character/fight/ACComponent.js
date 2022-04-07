@@ -68,7 +68,7 @@ class ACComponent extends PureComponent {
               </div>
           </div>
           <span className="ac-total-value">{ac}</span>
-          <div>
+          <div className="ac-user-value">
             {onACBonusChange && <span className="activable decrease-ACbonus" title="Réduire le bonus CA / Ajouter un malus CA" onClick={() => this.addACBonus(-1)}></span>}
             <span className={`ac-bonus-value ${!specialBonusValue?"ac-no-value":""}`} title={specialBonusTitle}>
               {specialBonusValue}

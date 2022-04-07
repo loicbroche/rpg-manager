@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import ReactTooltip from 'react-tooltip';
 import { LONG_CLICK_DELAY } from 'rules/Navigation.rules'
 
+const tooltipDirective = "data-tip";
+
 export const confirm = (message, callback, title="Confirmation", confirmLabel="Ok", cancelLabel="Annuler") => {
     const container = document.createElement("div");
     document.body.insertBefore(container, document.body.firstChild);
@@ -178,28 +180,70 @@ export const onLongPress = (elmnt, callBackFunction, delay=LONG_CLICK_DELAY) => 
     }
 }
 
-export const createReactTooltips = (rootElement=document) => {
+var observeDOM = (function(){
+  var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+
+  return function( obj, callback ){
+    if( !obj || obj.nodeType !== 1 ) return; 
+    if( MutationObserver ){
+      // define a new observer
+      var mutationObserver = new MutationObserver(callback)
+
+      // have the observer observe foo for changes in children
+      mutationObserver.observe( obj, { childList:true, subtree:true })
+      return mutationObserver
+    }
+    // browser support fallback
+    else if( window.addEventListener ){
+      obj.addEventListener('DOMNodeInserted', callback, false)
+      obj.addEventListener('DOMNodeRemoved', callback, false)
+    }
+  }
+})()
+
+var addReactTooltip = (rootElement, element, tooltipValue) => {
+	var tooltipId = element.id + "-tooltip";
+	var tooltipContainerId = tooltipId+"-container";
+	var reactTooltipContainer = element.parentNode.querySelector('#'+tooltipContainerId);
+
+	if (!reactTooltipContainer) {
+		element.setAttribute("data-for", tooltipId);
+			reactTooltipContainer = document.createElement("span");
+			reactTooltipContainer.Id = tooltipContainerId;
+
+			var reactTooltipElement = <ReactTooltip id={tooltipId}
+													data-event='longpress'
+													
+													className="react-tooltip"
+													aria-haspopup='true'
+													type='light'
+													effect='solid'>
+										</ReactTooltip>
+			ReactDOM.render(reactTooltipElement, reactTooltipContainer)
+		element.parentNode.appendChild(reactTooltipContainer);
+	}
+}
+
+export const createReactTooltips = (rootElement=document, observeChanges=true) => {
+	
 	var tooltipCreatedNb = 0;
-	if (rootElement) {
-		const directive = "data-tip";
-		const tooltippedElements = rootElement.querySelectorAll('['+directive+']')||[];
+	if (rootElement && rootElement.querySelectorAll) {
+		if (observeChanges) {
+			// Observe a specific DOM element:
+			observeDOM( rootElement, function(m){ 
+				 m.forEach(record => record.addedNodes.length & record.addedNodes.forEach(node => createReactTooltips(node, false)));
+			});
+		}
 
+		const tooltippedElements = rootElement.querySelectorAll('['+tooltipDirective+']')||[];
 		tooltippedElements.forEach((element) => {
-			var tooltipId = element.id + "-tooltip";
-			var tooltipContainerId = tooltipId+"-container";
-			var reactTooltipContainer = rootElement.querySelector('#'+tooltipContainerId);
-
-			if (!reactTooltipContainer) {
-				element.setAttribute("data-for", tooltipId);
-					reactTooltipContainer = document.createElement("span");
-					reactTooltipContainer.Id = tooltipContainerId;
-
-					var reactTooltipElement = <ReactTooltip id={tooltipId} className="react-tooltip" data-event='longpress' data-event-off='click' type='light' effect='solid' />
-					ReactDOM.render(reactTooltipElement, reactTooltipContainer)
-				element.parentNode.appendChild(reactTooltipContainer);
-			}
+			addReactTooltip(rootElement, element, element.getAttribute(tooltipDirective));
 			tooltipCreatedNb++;
 		});
+		if (rootElement.hasAttribute(tooltipDirective)) {
+			addReactTooltip(rootElement, rootElement);
+			tooltipCreatedNb++;
+		}
 	}
 	return tooltipCreatedNb;
 };

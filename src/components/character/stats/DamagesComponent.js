@@ -66,19 +66,6 @@ class DamagesComponent extends PureComponent {
 
     return (
       <div className="damagesComponent">
-        <span className="profil-image-update">
-            <input type="file"
-                className="activable transparent custom-file-input"
-                id="avatar" name="avatar"
-                accept="image/png"
-                onChange={this.fileChangedHandler}
-                title={"Sélectionnez l'illustration de votre personnage"}
-                style={this.state.uploadingProgression!==null?{background: `linear-gradient(to right, var(--color-Progress) ${this.state.uploadingProgression}%, var(--highlight-background-transparent-color-1)`}:null}/>
-              {storedCharacterImage &&
-                <span className="delete-image activable transparent" title="Supprimer" role="button" onClick={() => {deleteProfilImage(characterId, (url) => {this.setState({storedCharacterImage: null})})}}>
-                  <img src={deleteImage} alt="Supprimer" />
-              </span>}
-        </span>
         <div id="image-container" className="image-container">
           <img src={characterImage} alt="" />
           { DAMAGES_LOCATIONS.map((damageLocation) => {
@@ -102,6 +89,19 @@ class DamagesComponent extends PureComponent {
                       </div>
             })}
         </div>
+		<span className="profil-image-update">
+            <input type="file"
+                className="activable transparent custom-file-input"
+                id="avatar" name="avatar"
+                accept="image/png"
+                onChange={this.fileChangedHandler}
+                title={"Sélectionnez l'illustration de votre personnage"}
+                style={this.state.uploadingProgression!==null?{background: `linear-gradient(to right, var(--color-Progress) ${this.state.uploadingProgression}%, var(--highlight-background-transparent-color-1)`}:null}/>
+              {storedCharacterImage &&
+                <span className="delete-image activable transparent" title="Supprimer" role="button" onClick={() => {deleteProfilImage(characterId, (url) => {this.setState({storedCharacterImage: null})})}}>
+                  <img src={deleteImage} alt="Supprimer" />
+              </span>}
+        </span>
       </div>
     )
   }

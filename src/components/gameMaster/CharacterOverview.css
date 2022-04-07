@@ -40,3 +40,16 @@ r
 .armors-overview > *:not(:nth-child(1)):not(:empty) {
     margin-left: 1rem;
 }
+
+@media screen and (max-width: 500px) {
+	.weapons-overview,
+	.armors-overview {
+		flex-direction: column;
+	}
+
+	.weapons-overview > *:not(:nth-child(1)):not(:empty),
+	.armors-overview > *:not(:nth-child(1)):not(:empty) {
+		margin-left: 0;
+		margin-top: 1rem;
+	}
+}

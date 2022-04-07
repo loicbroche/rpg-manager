@@ -17,7 +17,7 @@ class XPComponent extends PureComponent {
       <div className="XPComponent">
         <div className="selector-value">
           <div className="XPBar">
-            <div className="XPProgressBar" style={{width:`${Math.ceil(XP/nextLevelXp*100)}%`}}>&nbsp;</div>
+            <div className="XPProgressBar" style={{width:`calc(${Math.ceil(XP/nextLevelXp*100)}%`}}>&nbsp;</div>
               <div className="xp-label">
                 <div className="current-xp">
                   <input type="number"pattern="[0-9]*"
@@ -31,7 +31,7 @@ class XPComponent extends PureComponent {
                     onChange={(event) => this.props.onChange((event.target.value && parseInt(event.target.value)) || 0)} />
                   <span>{" XP"}</span>
                 </div>
-                <span className="max-hp">{` / ${nextLevelXp} XP`}</span>
+                <span className="max-xp">{`/ ${nextLevelXp} XP`}</span>
               </div>
           </div>
         </div>

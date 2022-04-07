@@ -1,7 +1,7 @@
 .alterationsComponent {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 .alterationsComponent h1 {
@@ -14,11 +14,15 @@
   padding-top: 0.25rem;
 }
 
-.savable,
 .unsavable,
 .alteration-category {
   display: flex;
   flex-direction: row;
+}
+
+.savable, .savable .alteration-category {
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 .alteration {
@@ -83,4 +87,15 @@
 
 .is-resistant {
   background-color: var(--color-primary);
+}
+
+@media screen and (max-width: 500px) {
+	.savable,
+	.unsavable {
+	  flex-wrap: wrap;
+	  justify-content: center;
+	}
+	.savable, .savable .alteration-category {
+	  flex-direction: row;
+	}
 }
