@@ -1,6 +1,7 @@
 .XPComponent {
   display: flex;
   flex-direction: row;
+  align-items: flex-end;
 }
 
 .XPBar {
@@ -18,22 +19,28 @@
 .xp-label {
   display: flex;
   flex-direction: row;
+  align-items: center;
   height: 100%;
   position: relative;
   top: calc(-1 * var(--height-bars));
   padding: 0 calc(0.5rem + var(--height-icons)/2) 0 0.5rem;
-  font-size: var(--size-bars-font);;
+  font-size: var(--size-bars-font);
 }
 
 .max-xp {
 	text-align: left;
 }
+.current-xp {
+	height: 100%;
+}
 .current-xp input {
+	height: 100%;
 	margin-right: 0.25rem;
 }
 .xp-label .current-xp {
   display: flex;
   flex-direction: row;
+  align-items: baseline;
 }
 
 .xp-value {
