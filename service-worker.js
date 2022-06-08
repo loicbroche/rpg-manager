@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/rpg-manager/precache-manifest.6d9cf36f6ec1a7468bbbbb8ec07cdcfe.js"
+  "/rpg-manager/precache-manifest.d203c1a7e15cdeac01cb997a836bf192.js"
 );
 
 self.addEventListener('message', (event) => {
