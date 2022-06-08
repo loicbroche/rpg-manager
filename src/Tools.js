@@ -203,7 +203,7 @@ var observeDOM = (function(){
 })()
 
 var addReactTooltip = (rootElement, element, tooltipValue) => {
-	const activateReactTooltip = window.innerWidth < DESKTOP_MIN_WIDTH;
+	const activateReactTooltip = false;//window.innerWidth < DESKTOP_MIN_WIDTH;
 	if (!activateReactTooltip) {
 		if (!element.title) {
 			element.title = tooltipValue;
