@@ -27,7 +27,7 @@ class SpecialsComponent extends PureComponent {
         <div className="special-points">
           {  Object.entries(specialPoints).map(([index, available]) => 
               <div key={index} className={`special-point ${available&&"special-available"} ${characterClass?.SpecialsName}`}
-                   title={characterClass && `Point de ${characterClass?.SpecialsName} ${available?"disponible":"utilisé"}` }>
+                   data-tip={characterClass && `Point de ${characterClass?.SpecialsName} ${available?"disponible":"utilisé"}` }>
                      {available && <img src={specialImage} className="special-image" alt={characterClass?.SpecialsName} />}
                    </div>)
           }

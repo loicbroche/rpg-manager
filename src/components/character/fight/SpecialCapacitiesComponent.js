@@ -48,7 +48,7 @@ class SpecialCapacities extends PureComponent {
                             header={<span>Compétences de classe
                             <img className="show-hidden-capacities activable transparent"
                                   src={showHidden?showImage:hideImage}
-                                  alt={title} title={title}
+                                  alt={title} data-tip={title}
                                   role="button" onClick={() => {this.setState({showHidden: !showHidden})}}/>
                             </span>}
                             extensor={<img src={capacitiesImage} alt="Compétences de clases" />}
@@ -67,15 +67,15 @@ class SpecialCapacities extends PureComponent {
             const capacityUsedNumber = usedCapacities?.find((capacity) => capacity.Id === capacityKey)?.UsedNumber || 0;
 
             return (!hidden || showHidden) && <li key={capacityKey} className={`capacity hoverable transparent ${autoManaged?"auto-managed":""}`}
-                                              title={(capacityDescription.RequiredLevel?`Compétence de niveau ${capacityDescription.RequiredLevel}\n`:"")+`${description}`}>
+                                              data-tip={(capacityDescription.RequiredLevel?`Compétence de niveau ${capacityDescription.RequiredLevel}\n`:"")+`${description}`}>
                                                 <div className="capacity-title">
                                                   { statsCapacity
                                                     ?<div className="use-condition">
                                                         {autoManaged
-                                                          ?<img src={autoImage} title="Compétence de caractéristiques gérée automatiquement" alt="" />
-                                                          :<img src={statsImage} title="Compétence de caractéristiques à configurer" alt="" />}
+                                                          ?<img src={autoImage} data-tip="Compétence de caractéristiques gérée automatiquement" alt="" />
+                                                          :<img src={statsImage} data-tip="Compétence de caractéristiques à configurer" alt="" />}
                                                       </div>
-                                                    :<span className="use-number" title= {capacityMaxUseNumber===-1?"Utilisation illimitée":`${capacityMaxUseNumber-capacityUsedNumber}/${capacityMaxUseNumber} restant jusqu'au prochain repos long`}>
+                                                    :<span className="use-number" data-tip= {capacityMaxUseNumber===-1?"Utilisation illimitée":`${capacityMaxUseNumber-capacityUsedNumber}/${capacityMaxUseNumber} restant jusqu'au prochain repos long`}>
                                                           {capacityMaxUseNumber===-1
                                                             ?<span className="infinite-capacity">∞</span>
                                                             :<span className="used-capacity-number"><input className="used-capacity-number-input"
@@ -100,7 +100,7 @@ class SpecialCapacities extends PureComponent {
                                                   <span className="capacity-source">
                                                     <img src={raceImage}
                                                           alt={`Compétence de la race ${subRace?.Name}`}
-                                                          title={`Compétence de la race ${subRace?.Name}`}/>
+                                                          data-tip={`Compétence de la race ${subRace?.Name}`}/>
                                                   </span>
                                                 </span>
                                               </li>
@@ -119,19 +119,19 @@ class SpecialCapacities extends PureComponent {
             const capacityUsedNumber = usedCapacities?.find((capacity) => capacity.Id === capacityKey)?.UsedNumber || 0;
 
             return (!hidden || showHidden) && <li key={capacityKey} className={`capacity hoverable transparent ${autoManaged?"auto-managed":""}`}
-                                              title={`Compétence de niveau ${capacity.level}\n${description}`}>
+                                              data-tip={`Compétence de niveau ${capacity.level}\n${description}`}>
                                                 <div className="capacity-title">
                                                   {specialCapacity
                                                     ? <div className={`use-condition ${characterClass?.SpecialsName}`}>
-                                                        <img src={specialImage} title={`Compétence utilisant des points de ${characterClass?.SpecialsName}`} alt="" />
+                                                        <img src={specialImage} data-tip={`Compétence utilisant des points de ${characterClass?.SpecialsName}`} alt="" />
                                                       </div>
                                                     :(  statsCapacity
                                                         ?<div className="use-condition">
                                                             {autoManaged
-                                                              ?<img src={autoImage} title="Compétence de caractéristiques gérée automatiquement" alt="" />
-                                                              :<img src={statsImage} title="Compétence de caractéristiques à configurer" alt="" />}
+                                                              ?<img src={autoImage} data-tip="Compétence de caractéristiques gérée automatiquement" alt="" />
+                                                              :<img src={statsImage} data-tip="Compétence de caractéristiques à configurer" alt="" />}
                                                           </div>
-                                                        :<span className="use-number" title= {capacityMaxUseNumber===-1?"Utilisation illimitée":`${capacityMaxUseNumber-capacityUsedNumber}/${capacityMaxUseNumber} restant jusqu'au prochain repos long`}>
+                                                        :<span className="use-number" data-tip= {capacityMaxUseNumber===-1?"Utilisation illimitée":`${capacityMaxUseNumber-capacityUsedNumber}/${capacityMaxUseNumber} restant jusqu'au prochain repos long`}>
                                                           {capacityMaxUseNumber===-1
                                                             ?<span className="infinite-capacity">∞</span>
                                                             :<span className="used-capacity-number"><input className="used-capacity-number-input"
@@ -149,7 +149,7 @@ class SpecialCapacities extends PureComponent {
                                                   <span>{capacity.name}</span>
                                                 </div>
                                                 <span>
-                                                  <span className={`hide-capacity activable transparent ${hidden?"hidden-capacity":""}`} title={hidden?"Afficher":"Masquer"}
+                                                  <span className={`hide-capacity activable transparent ${hidden?"hidden-capacity":""}`} data-tip={hidden?"Afficher":"Masquer"}
                                                         role="button" onClick={() => {onVisibilityClick(capacityKey)}}>
                                                     <img src={hidden?hideImage:showImage} alt={hidden?"Afficher":"Masquer"} />
                                                   </span>
@@ -157,7 +157,7 @@ class SpecialCapacities extends PureComponent {
                                                     {capacity.specialisation
                                                     && <img src={specialisationImage}
                                                             alt={`Compétence de la spécialisation ${specialisation?.Name}`}
-                                                            title={`Compétence de la spécialisation ${specialisation?.Name}`}/>
+                                                            data-tip={`Compétence de la spécialisation ${specialisation?.Name}`}/>
                                                     }
                                                   </span>
                                                 </span>

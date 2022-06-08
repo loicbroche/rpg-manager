@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from "react-dom";
 import ReactTooltip from 'react-tooltip';
 import { LONG_CLICK_DELAY } from 'rules/Navigation.rules'
+import { DESKTOP_MIN_WIDTH } from 'rules/Navigation.rules'
 
 const tooltipDirective = "data-tip";
 
@@ -202,25 +203,31 @@ var observeDOM = (function(){
 })()
 
 var addReactTooltip = (rootElement, element, tooltipValue) => {
-	var tooltipId = element.id + "-tooltip";
-	var tooltipContainerId = tooltipId+"-container";
-	var reactTooltipContainer = element.parentNode.querySelector('#'+tooltipContainerId);
+	const activateReactTooltip = window.innerWidth < DESKTOP_MIN_WIDTH;
+	if (!activateReactTooltip) {
+		if (!element.title) {
+			element.title = tooltipValue;
+		}
+	} else {
+		var tooltipId = element.id + "-tooltip";
+		var tooltipContainerId = tooltipId+"-container";
+		var reactTooltipContainer = element.parentNode.querySelector('#'+tooltipContainerId);
 
-	if (!reactTooltipContainer) {
-		element.setAttribute("data-for", tooltipId);
-			reactTooltipContainer = document.createElement("span");
-			reactTooltipContainer.Id = tooltipContainerId;
+		if (!reactTooltipContainer) {
+			element.setAttribute("data-for", tooltipId);
+				reactTooltipContainer = document.createElement("span");
+				reactTooltipContainer.Id = tooltipContainerId;
 
-			var reactTooltipElement = <ReactTooltip id={tooltipId}
-													data-event='longpress'
-													
-													className="react-tooltip"
-													aria-haspopup='true'
-													type='light'
-													effect='solid'>
-										</ReactTooltip>
-			ReactDOM.render(reactTooltipElement, reactTooltipContainer)
-		element.parentNode.appendChild(reactTooltipContainer);
+				var reactTooltipElement = <ReactTooltip id={tooltipId}
+														data-event='longpress'
+														className="react-tooltip"
+														aria-haspopup='true'
+														type='light'
+														effect='solid'>
+											</ReactTooltip>
+				ReactDOM.render(reactTooltipElement, reactTooltipContainer)
+			element.parentNode.appendChild(reactTooltipContainer);
+		}
 	}
 }
 

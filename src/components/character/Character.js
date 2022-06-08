@@ -390,6 +390,7 @@ class Character extends PureComponent {
 					<div className="equipments-skills">
 						{weaponsComponent}
 						{armorsComponent}
+						{objectsComponent}
 					</div>
 				</TabPanel>
 

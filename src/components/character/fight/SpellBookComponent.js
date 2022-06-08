@@ -50,19 +50,19 @@ class SpellBookComponent extends PureComponent {
 
     const titleElement = <span>{`Livre de sorts ${availableMinorSpellsNb?` - Mineurs ${knownMinorSpellsNb}/${availableMinorSpellsNb}`:""}`}
     {knownSpellsFilteredByOrigine[ORIGINE_CLASS].maxNumber
-        ?<span title={`Sorts de classe\n${knownSpellsFilteredByOrigine[ORIGINE_CLASS].complementLocations}`}>{` - Majeurs ${knownSpellsFilteredByOrigine[ORIGINE_CLASS].number}/${knownSpellsFilteredByOrigine[ORIGINE_CLASS].maxNumber}`}</span>
+        ?<span data-tip={`Sorts de classe\n${knownSpellsFilteredByOrigine[ORIGINE_CLASS].complementLocations}`}>{` - Majeurs ${knownSpellsFilteredByOrigine[ORIGINE_CLASS].number}/${knownSpellsFilteredByOrigine[ORIGINE_CLASS].maxNumber}`}</span>
         :<></>}
     {complementsBonusNb > 0?
       <span>- Supplémentaires</span>
       :<></>}
     {knownSpellsFilteredByOrigine[ORIGINE_RACE].maxNumber
-        ?<span title={`Provenants de la race ${race?.Name}\nEmplacements supplémentaires pour des sorts de ${this.classListToString(knownSpellsFilteredByOrigine[ORIGINE_RACE].classes)}\n`}>{` +${knownSpellsFilteredByOrigine[ORIGINE_RACE].number}/${knownSpellsFilteredByOrigine[ORIGINE_RACE].maxNumber}`}</span>
+        ?<span data-tip={`Provenants de la race ${race?.Name}\nEmplacements supplémentaires pour des sorts de ${this.classListToString(knownSpellsFilteredByOrigine[ORIGINE_RACE].classes)}\n`}>{` +${knownSpellsFilteredByOrigine[ORIGINE_RACE].number}/${knownSpellsFilteredByOrigine[ORIGINE_RACE].maxNumber}`}</span>
         :<></>}
     {knownSpellsFilteredByOrigine[ORIGINE_SUBRACE].maxNumber
-        ?<span title={`Provenants de la race ${subRace?.Name}\nEmplacements supplémentaires pour des sorts de ${this.classListToString(knownSpellsFilteredByOrigine[ORIGINE_SUBRACE].classes)}\n`}>{` +${knownSpellsFilteredByOrigine[ORIGINE_SUBRACE].number}/${knownSpellsFilteredByOrigine[ORIGINE_SUBRACE].maxNumber}`}</span>
+        ?<span data-tip={`Provenants de la race ${subRace?.Name}\nEmplacements supplémentaires pour des sorts de ${this.classListToString(knownSpellsFilteredByOrigine[ORIGINE_SUBRACE].classes)}\n`}>{` +${knownSpellsFilteredByOrigine[ORIGINE_SUBRACE].number}/${knownSpellsFilteredByOrigine[ORIGINE_SUBRACE].maxNumber}`}</span>
         :<></>}
     {knownSpellsFilteredByOrigine[ORIGINE_SPECIALISATION].maxNumber
-        ?<span title={`Provenants de la spécialisation ${specialisation?.Name}\nEmplacements supplémentaires pour des sorts de ${this.classListToString(knownSpellsFilteredByOrigine[ORIGINE_SPECIALISATION].classes)}\n`}>{` +${knownSpellsFilteredByOrigine[ORIGINE_SPECIALISATION].number}/${knownSpellsFilteredByOrigine[ORIGINE_SPECIALISATION].maxNumber}`}</span>
+        ?<span data-tip={`Provenants de la spécialisation ${specialisation?.Name}\nEmplacements supplémentaires pour des sorts de ${this.classListToString(knownSpellsFilteredByOrigine[ORIGINE_SPECIALISATION].classes)}\n`}>{` +${knownSpellsFilteredByOrigine[ORIGINE_SPECIALISATION].number}/${knownSpellsFilteredByOrigine[ORIGINE_SPECIALISATION].maxNumber}`}</span>
         :<></>}
   </span>;
     return (
@@ -94,7 +94,7 @@ class SpellBookComponent extends PureComponent {
                     } finally {}
                     return known &&
                       <li key={spell.Name} className={`spell hoverable transparent`}
-                          title={description}>
+                          data-tip={description}>
                         <img src={levelImage} className="spell-level-image" alt={index} />
                         <span key={spell.Name} className="spell-name" >{spell.Name}</span>
                         <img src={schoolImage} className="spell-school-image" alt={spell.School} />
@@ -141,7 +141,7 @@ class SpellBookComponent extends PureComponent {
 
                                return <li key={spell.Name} className={`spell transparent ${isComplement?"hoverable locked":"activable"} ${(isComplement || known||selectAuthorization)?"":"forbidden"}`}
                                           role="button" onClick={() => { if (!isComplement && (selectAuthorization||known)) {if (isMinorSpell) { onMinorSpellClick(spell.Name)} else {onSpellClick(spell.Name)} } }}
-                                    title={description}>
+                                    data-tip={description}>
                                   <div className={"option "+((known)&&"filled")}></div>
                                   <span key={spell.Name} className="spell-name" >{spell.Name}</span>
                                   <img src={schoolImage} className="spell-school-image" alt={spell.School} />

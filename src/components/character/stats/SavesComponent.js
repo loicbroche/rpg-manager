@@ -43,7 +43,7 @@ class SavesComponent extends PureComponent {
 
                 return <span key={caracteristic.Code} role="button" onClick={() => { onClick && !classSaved && onClick(caracteristic.Code)}}
                              className={`save ${onClick?"activable":""} ${classSaved?"class-saved":""}`}
-                             title={classSaved?`Jet de sauvegarde ${caracteristic.Name} +${masteryBonus}\nHérité de la classe ${className}`:
+                             data-tip={classSaved?`Jet de sauvegarde ${caracteristic.Name} +${masteryBonus}\nHérité de la classe ${className}`:
                                    (  onClick
                                       ?((saved?"Désactiver":"Activer")+` le jet de sauvegarde ${caracteristic.Name} +${masteryBonus}`)
                                       :(saved?`Jet de sauvegarde ${caracteristic.Name} +${masteryBonus}`:`Pas de jet de sauvegarde ${caracteristic.Name}`)
@@ -51,7 +51,7 @@ class SavesComponent extends PureComponent {
                   <img  src={saveImage} className={`save-image ${saved?"saved":""} ${caracteristic.Code}`} alt={caracteristic.Name}/>
                   <span className={`advantage ${raceAdvantage?"race-advantage":(onAdvantageClick?"activable":"")}`}
                         role="button" onClick={(event) => { if (!raceAdvantage && onAdvantageClick) { onAdvantageClick(caracteristic.Code) } event.stopPropagation()}}
-                        title={`${raceAdvantage?raceAdvantageTitle:
+                        data-tip={`${raceAdvantage?raceAdvantageTitle:
                                 ( onAdvantageClick
                                   ?((advantage?"Désactiver":"Activer")+` l'avantage aux jets de sauvegarde ${caracteristic.Name}`)
                                   :((advantage?"Avantage":"Pas d'avantage")+` aux jets de sauvegarde ${caracteristic.Name}`)
@@ -98,14 +98,14 @@ class SavesComponent extends PureComponent {
         const advantage = raceAdvantage || advantages?.find((save) => save === alteration.Code);
 
         return <span key={alteration.Code} role="button" onClick={() => { onClick && onClick(alteration.Code)}}
-                      title={(  onClick
+                      data-tip={(  onClick
                                 ?((saved?"Désactiver":"Activer")+` le jet de sauvegarde ${alteration.Name} +${masteryBonus}`)
                                 :(saved?`Jet de sauvegarde ${alteration.Name} +${masteryBonus}`:`Pas de jet de sauvegarde ${alteration.Name}`)
                       )}
                       className={`save ${onClick?"activable":""}`}>
           <img  src={saveImage} className={`save-image ${saved?"saved":""}`} alt={alteration.Name} />
           <span className={`advantage ${raceAdvantage?"race-advantage":(onAdvantageClick?"activable":"")}`}
-                title={`${raceAdvantage?raceAdvantageTitle:
+                data-tip={`${raceAdvantage?raceAdvantageTitle:
                     ( onAdvantageClick
                       ?((advantage?"Désactiver":"Activer")+` l'avantage aux jets de sauvegarde ${alteration.Name}`)
                       :((advantage?"Avantage":"Pas d'avantage")+` aux jets de sauvegarde ${alteration.Name}`)

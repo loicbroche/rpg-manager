@@ -62,21 +62,21 @@ class ACComponent extends PureComponent {
         <div className="ac-values">
           <div className="ac-calculation">
               <div className="ac-equipment-values">
-                <span className={`ac-armor-value ${!armorBonus?"ac-no-value":""}`} title="CA d'armure">{armorBonus}</span>
-                <span className="ac-base-value" title="CA de Base">{CA_BASE}</span>
-                <span className={`ac-shield-value ${!shieldBonus?"ac-no-value":""}`} title="CA de bouclier">{shieldBonus}</span>
+                <span className={`ac-armor-value ${!armorBonus?"ac-no-value":""}`} data-tip="CA d'armure">{armorBonus}</span>
+                <span className="ac-base-value" data-tip="CA de Base">{CA_BASE}</span>
+                <span className={`ac-shield-value ${!shieldBonus?"ac-no-value":""}`} data-tip="CA de bouclier">{shieldBonus}</span>
               </div>
           </div>
           <span className="ac-total-value">{ac}</span>
           <div className="ac-user-value">
             {onACBonusChange && <span className="activable decrease-ACbonus" title="Réduire le bonus CA / Ajouter un malus CA" onClick={() => this.addACBonus(-1)}></span>}
-            <span className={`ac-bonus-value ${!specialBonusValue?"ac-no-value":""}`} title={specialBonusTitle}>
+            <span className={`ac-bonus-value ${!specialBonusValue?"ac-no-value":""}`} data-tip={specialBonusTitle}>
               {specialBonusValue}
             </span>
             {onACBonusChange && <span className="activable increase-ACbonus" title="Ajouter un bonus CA" onClick={() => this.addACBonus(1)}></span>}
           </div>
         </div>
-        <span className={`ac-dexterity-value ${!armorACBonusDexterity?"ac-no-value":""}`} title="Bonus dextérité">{(armorACBonusDexterity>=0?"+":"")+armorACBonusDexterity}</span>
+        <span className={`ac-dexterity-value ${!armorACBonusDexterity?"ac-no-value":""}`} data-tip="Bonus dextérité">{(armorACBonusDexterity>=0?"+":"")+armorACBonusDexterity}</span>
       </div>
     )
   }
