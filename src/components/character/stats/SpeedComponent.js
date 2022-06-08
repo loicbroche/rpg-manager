@@ -35,7 +35,7 @@ class SpeedComponent extends PureComponent {
                                     ?(bonusSpeed?`avec bonus "Sans ${armourlessCategoriesLabels}" ${bonusSpeed} m`
                                   :`sans bonus "Sans ${armourlessCategoriesLabels}"`):""}`;
     return (
-      <div className="speedComponent" data-tip={ `Vitesse de déplacement `+armourlessSpeedTitle
+      <div className="speedComponent" title={ `Vitesse de déplacement `+armourlessSpeedTitle
                                               +malusSpeedTitle
                                             }>
           <img src={speedImage} className="speed-background-image" alt="" />

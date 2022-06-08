@@ -41,9 +41,9 @@ const fightStyleBonus = (characterClass
 
 /**/const bonusContent = weapon &&
                       <div>
-                        { fightStyleBonus && <span className="main-stat-bonus-label weapon-special-bonus" data-tip={fightStyleTitle}>+{fightStyleBonus}</span>}
+                        { fightStyleBonus && <span className="main-stat-bonus-label weapon-special-bonus" title={fightStyleTitle}>+{fightStyleBonus}</span>}
                         <div className={`main-stat-bonus-label ${ isMaster?"master-bonus":"not-master-equipment"}`}>
-                          { isMaster?<span data-tip="Bonus maîtrise">+{masteryBonus}</span>:<img src={notMasterImage} className="not-master-image" alt="" title="Non maîtrisé"/>}
+                          { isMaster?<span title="Bonus maîtrise">+{masteryBonus}</span>:<img src={notMasterImage} className="not-master-image" alt="" title="Non maîtrisé"/>}
                         </div>
                       </div>
 
@@ -88,7 +88,7 @@ const fightStyleBonus = (characterClass
                 { armorCategories.map((category) => this.getWeaponsOptionElement(category.Code))}
               </select>
             )}
-            <div className="main-stat-value" data-tip={weapon?.Damage+" "+weapon?.DamageType}>
+            <div className="main-stat-value" title={weapon?.Damage+" "+weapon?.DamageType}>
                 {weapon && <img src={mainStatImage} className="main-stat-image" alt={bonusCode} title={bonusTitle}/>}
                 <span className="main-stat-label">{mainValue}</span>
                 {bonusContent}
@@ -143,7 +143,7 @@ const fightStyleBonus = (characterClass
               const isClassMaster = isClassMasterCategory || classWeapons?.includes(weapon.Name);
               return (
               <option key={weapon.Name} value={weapon.Id} className={this.isMaster(weapon)?"master-equipment":""}
-              data-tip={(  isRaceMaster
+              title={(  isRaceMaster
                         ?"Maîtrise héritée de la race "+race?.Name
                         :(  isSubRaceMaster
                             ?"Maîtrise héritée de la race "+subRace?.Name

@@ -48,7 +48,7 @@ class Armors extends PureComponent {
                                   :(isSubRaceMasterCategory?"Maîtrise héritée de la race "+subRace?.Name:"");
               return (
               <li key={index} className={"armor "+(isClassMaster||isSubRaceMasterCategory?"locked":"activable")} role="button" onClick={() => !isClassMaster && onClick(Name)}
-                  data-tip={(isClassMaster||isSubRaceMasterCategory?lockedTitle:(isMaster?"Oublier":"Apprendre")+` la maîtrise de ${Name}`)
+                  title={(isClassMaster||isSubRaceMasterCategory?lockedTitle:(isMaster?"Oublier":"Apprendre")+` la maîtrise de ${Name}`)
                           +`\nCA : ${AC} ${ACBonus?`+${ACBonus+(MaxACBonus?`(${MaxACBonus})`:"")}`:""}`}>
                 <div className={"option "+((isClassMaster||isMaster)&&"filled")}></div>
                 <span className="armor-name">{Name}</span>

@@ -39,13 +39,13 @@ class SkillSelector extends PureComponent {
         )}
       </select>
       { caracteristicBonus &&
-        <span data-tip={`Bonus ${selectedSkillCaracteristic?.Name}`}>
+        <span title={`Bonus ${selectedSkillCaracteristic?.Name}`}>
         <CaracteristicBonus caracteristicName={ selectedSkillCaracteristic?.OV}
                                                 value={caracteristicBonus}
                                                 subRaceId={subRaceId} />
         </span>
       }
-      <span className="skill-bonus" data-tip={(isDefaultMaster||isMaster)?"Bonus maîtrise":""}>{ (isDefaultMaster||isMaster) && `+${masteryBonus}`}</span>
+      <span className="skill-bonus" title={(isDefaultMaster||isMaster)?"Bonus maîtrise":""}>{ (isDefaultMaster||isMaster) && `+${masteryBonus}`}</span>
     </div>
   )
   }

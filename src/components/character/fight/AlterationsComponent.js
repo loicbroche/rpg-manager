@@ -58,14 +58,14 @@ class AlterationsComponent extends PureComponent {
 
         return <span key={alteration.Code} role="button" onClick={() => { !resistant && onClick && onClick(alteration.Code)}}
                       className={`alteration ${( !resistant && onClick)?"activable":""}`}
-                      data-tip={resistant?`Résistance ${alteration.Name}`:
+                      title={resistant?`Résistance ${alteration.Name}`:
                             ( onClick
                               ?(alterated?"Désactiver l'altération "+alteration.Effect+"\n"+alteration.EffectDescription:"Activer l'altération "+alteration.Effect)
                               :(alterated?alteration.Effect+"\n"+alteration.EffectDescription:"Non "+alteration.Effect)
                             )} >
           <img  src={alterationImage} className={`alteration-image ${alterated?"alterated":""}`} alt={alteration.Name} />
           <span className={`resistance ${raceResistant?"race-resistant":(onResistanceClick?"activable":"")}`}
-                data-tip={`${raceResistant?raceResistantTitle:
+                title={`${raceResistant?raceResistantTitle:
                     ( onResistanceClick
                       ?((resistant?"Désactiver":"Activer")+` la résistance ${alteration.Name}`)
                       :((resistant?"Résistant":"Non résistant")+` à ${alteration.Name}`)

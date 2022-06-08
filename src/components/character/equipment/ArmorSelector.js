@@ -33,7 +33,7 @@ class ArmorSelector extends PureComponent {
                                                   value={wearingCharacter?.[caracteristicName]}
                                                   bonusMax={Number.isNaN(armor.MaxACBonus)?null:armor.MaxACBonus}
                                                   subRaceId={wearingCharacter?.SubRace} />)
-                              :<img src={notMasterImage} className="not-master-image" alt="" data-tip="Non maîtrisé"/>
+                              :<img src={notMasterImage} className="not-master-image" alt="" title="Non maîtrisé"/>
                             }
                           </div>
 
@@ -62,7 +62,7 @@ class ArmorSelector extends PureComponent {
               </select>
             )}
             <div className="main-stat-value">
-                {armor && <img src={mainStatImage} className="main-stat-image" alt={bonusCode} data-tip={bonusTitle}/>}
+                {armor && <img src={mainStatImage} className="main-stat-image" alt={bonusCode} title={bonusTitle}/>}
                 <span className="main-stat-label">{mainValue}</span>
                 {bonusContent}
             </div>
@@ -105,7 +105,7 @@ class ArmorSelector extends PureComponent {
               const isMasterArmor = isMasterCategory || (wearingCharacter?.MasterArmors?.includes(armor.Id));
               return (
               <option key={armor.Name} value={armor.Id} className={isMasterArmor?"master-equipment":""}
-                      data-tip={ (isRaceMasterCategory
+                      title={ (isRaceMasterCategory
                               ?"Maîtrise héritée de la race "+subRace?.Name
                               :(  isClassMasterCategory
                                   ?"Maîtrise héritée de la classe "+characterClass.Name

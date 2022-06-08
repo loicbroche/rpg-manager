@@ -18,7 +18,7 @@ class Caracteristic extends PureComponent {
 
     return (
       <div className={`caracteristic ${caracteristicName}`}>
-        <span className="bonus-caracteristic" data-tip="Modificateur de jets de la caractéristique">
+        <span className="bonus-caracteristic" title="Modificateur de jets de la caractéristique">
         <CaracteristicBonus caracteristicName={caracteristicName}
                             value={value}
                             maxVal={maxVal}
@@ -34,10 +34,10 @@ class Caracteristic extends PureComponent {
                 step={1}
                 onChange={this.handleValueUpdate}
                 className="caracteristic-value"
-                data-tip="Valeur de caractéristique"/>
+                title="Valeur de caractéristique"/>
         <div className="character-bonus">
-          { (!isNaN(raceBonus) && raceBonus !== 0) && <span className="race-bonus" data-tip={`Valeur bonus de race ${race?.Name}`}>+{ raceBonus }</span>}
-          { (!isNaN(subRaceBonus) && subRaceBonus !== 0) && <span className="subRace-bonus" data-tip={`Valeur bonus de race ${subRace?.Name}`}>+{ subRaceBonus }</span>}
+          { (!isNaN(raceBonus) && raceBonus !== 0) && <span className="race-bonus" title={`Valeur bonus de race ${race?.Name}`}>+{ raceBonus }</span>}
+          { (!isNaN(subRaceBonus) && subRaceBonus !== 0) && <span className="subRace-bonus" title={`Valeur bonus de race ${subRace?.Name}`}>+{ subRaceBonus }</span>}
         </div>
       </div>
     )

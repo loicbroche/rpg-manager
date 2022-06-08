@@ -41,7 +41,7 @@ class Skills extends PureComponent {
 
                 return (
                 <li key={index} className={"skill "+(isHistoricMaster||isSubRaceMaster||isRaceMaster?"locked":"activable")} role="button" onClick={() => !isHistoricMaster && !isRaceMaster && onClick(Name)}
-                    data-tip={isHistoricMaster
+                    title={isHistoricMaster
                             ?"Maîtrise héritée de l'historique "+historic.Name
                             :isRaceMaster
                               ?"Maîtrise héritée de la race "+race.Name

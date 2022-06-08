@@ -14,7 +14,7 @@ class HealthComponent extends PureComponent {
     const { value, onChange } = this.props;
     
     return (
-      <div className="healthComponent" data-tip="Niveau d'énergie">
+      <div className="healthComponent" title="Niveau d'énergie">
         {onChange && <span className={`currentModifier decrease-value ${value===0 &&"disabled"}`} role="button" onClick={() => {this.handleValueChange(-1)}} title="Diminuer le niveau dénergie"></span>}
         <div className="healthBar">
           <div className="healthProgressBar" style={{width:`${Math.ceil(value/MAX_VAL*100)}%`}}>&nbsp;</div>

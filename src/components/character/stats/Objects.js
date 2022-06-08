@@ -45,7 +45,7 @@ class Objects extends PureComponent {
               return (
               <li key={index} className={"object "+(isClassMaster || isHistoricMaster?"locked":"activable")}
                   role="button" onClick={() => !(isClassMaster || isHistoricMaster) && onClick(Name)}
-                  data-tip={ isClassMaster
+                  title={ isClassMaster
                           ?"Maîtrise héritée de la classe "+characterClass.Name
                           :(  isHistoricMaster
                               ?"Maîtrise acquise par l'historique "+historic.Name

@@ -54,7 +54,7 @@ class Weapons extends PureComponent {
                                             :isClassMaster?"Maîtrise héritée de la classe "+characterClass.Name:"");
               return (
               <li key={index} className={"weapon "+(isLockedMaster?"locked":"activable")} role="button" onClick={() => !isLockedMaster && onClick(Name)}
-                  data-tip={(isLockedMaster?lockedMasterTitle:(isMaster?"Oublier":"Apprendre")+` la maîtrise de ${Name}`)+`\nDégâts : ${Damage} ${DamageType}`}>
+                  title={(isLockedMaster?lockedMasterTitle:(isMaster?"Oublier":"Apprendre")+` la maîtrise de ${Name}`)+`\nDégâts : ${Damage} ${DamageType}`}>
                 <div className={"option "+((isLockedMaster||isMaster)&&"filled")}></div>
                 <span className="weapon-name">{Name}</span>
                 <span className="weapon-bonus">{ (isLockedMaster||isMaster) && `+${masteryBonus}`}</span> 

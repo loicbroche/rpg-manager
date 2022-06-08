@@ -4,7 +4,7 @@ import ReactTooltip from 'react-tooltip';
 import { LONG_CLICK_DELAY } from 'rules/Navigation.rules'
 import { DESKTOP_MIN_WIDTH } from 'rules/Navigation.rules'
 
-const tooltipDirective = "data-tip";
+const tooltipDirective = "title";
 
 export const confirm = (message, callback, title="Confirmation", confirmLabel="Ok", cancelLabel="Annuler") => {
     const container = document.createElement("div");
@@ -203,7 +203,7 @@ var observeDOM = (function(){
 })()
 
 var addReactTooltip = (rootElement, element, tooltipValue) => {
-	const activateReactTooltip = false;//window.innerWidth < DESKTOP_MIN_WIDTH;
+	const activateReactTooltip = window.innerWidth < DESKTOP_MIN_WIDTH;
 	if (!activateReactTooltip) {
 		if (!element.title) {
 			element.title = tooltipValue;
@@ -232,7 +232,7 @@ var addReactTooltip = (rootElement, element, tooltipValue) => {
 }
 
 export const createReactTooltips = (rootElement=document, observeChanges=true) => {
-	
+	/*
 	var tooltipCreatedNb = 0;
 	if (rootElement && rootElement.querySelectorAll) {
 		if (observeChanges) {
@@ -253,4 +253,5 @@ export const createReactTooltips = (rootElement=document, observeChanges=true) =
 		}
 	}
 	return tooltipCreatedNb;
+	*/
 };
