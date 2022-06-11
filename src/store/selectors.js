@@ -82,8 +82,8 @@ export const selectClassCapacitiesDescriptionsByXP = (state, classId, specialisa
       const capacity = selectClassCapacityByClassIdLevel(state, classId, i);
       const specialisationCapacity = specialisation && selectSpecialisationCapacityBySpeIdLevel(state, specialisationId, i);
       knownCapacities = knownCapacities.concat(capacity?.Capacities?.map((c) => ({level: i, name: c, specialisation: false, description: selectClassCapacityDescriptionByClassId(state, classId, c)})) || []);
-      knownCapacities = knownCapacities.concat(specialisationCapacity?.Capacities?.map((c) => ({level: i, name: c, specialisation: true, description: selectClassCapacityDescriptionByClassId(state, classId, c)})) || []);
-    }
+      knownCapacities = knownCapacities.concat(specialisationCapacity?.Capacities?.map((c) => ({level: i, name: c, specialisation: true, description: selectClassCapacityDescriptionByClassId(state, specialisationId, c)})) || []);
+	}
 
     return knownCapacities;
 }
