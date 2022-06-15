@@ -1,454 +1,803 @@
 {
-  "Characters" : {
-    "Ash" : {
-      "ACBonus" : -7,
-      "Age" : 26,
-      "Alignment" : "2_NB",
-      "Armor" : "Cuir",
-      "Charisma" : 14,
-      "Class" : "BARD",
-      "Constitution" : 12,
-      "Damages" : [ {
-        "Code" : "head",
-        "Hurt" : false
-      }, {
-        "Code" : "torso",
-        "Hurt" : false
-      }, {
-        "Code" : "left-arm",
-        "Hurt" : false
-      }, {
-        "Code" : "left-forearm",
-        "Hurt" : false
-      }, {
-        "Code" : "right-shin",
-        "Hurt" : false
-      }, {
-        "Code" : "right-thigh",
-        "Hurt" : false
-      } ],
-      "Defects" : "Instable et sanguinaire",
-      "Dexterity" : 16,
-      "DistanceWeapon" : "-",
-      "Eyes" : "Saphir",
-      "Gender" : "⚲",
-      "HP" : 22,
-      "Hairs" : "Mi-longs blancs bleutés",
-      "Health" : 4,
-      "Height" : 176,
-      "Historic" : "ARTIST",
-      "History" : "Sa mère, séduite par un génie ayant pris forme humaine, l'a abandonné à la naissance aux portes d'un monastère aux centre d'une lorsqu'elle à découvert à quoi elle avait donné naissance.",
-      "Id" : "Ash",
-      "Ideals" : "Logique",
-      "Intelligence" : 12,
-      "Links" : "L'ordre de son monastère",
-      "MasterObjects" : [ "Viole", "Flûte", "Luth" ],
-      "MaxHP" : 22,
-      "MinorSpells" : [ "Lumières dansantes", "Illusion mineure" ],
-      "Money" : 1700,
-      "Name" : "Ash",
-      "PersonnalityTraits" : "Serein",
-      "SatchelObjects" : [ {
-        "Id" : "Flûte",
-        "Quantity" : 1
-      }, {
-        "Id" : "Viole",
-        "Quantity" : 1
-      } ],
-      "Saves" : [ "STRESS", "CHARM" ],
-      "Skills" : [ "Acrobatie", "Histoire", "Perspicacité", "Représentation", "Tromperie", "Escamotage", "Perception", "Etiquette" ],
-      "Skin" : "Bleu clair",
-      "Specialisation" : "KNOWLEDGE_SCHOOL",
-      "Specials" : 0,
-      "Spells" : [ "Charme-personne", "Lueurs féeriques", "Murmures dissonants", "Soins", "Fracassement", "Couronne du dément" ],
-      "SpellsLocations" : [ null, 1, 0 ],
-      "Strength" : 5,
-      "SubRace" : "CHANGELING",
-      "Weapon" : "Rapière",
-      "Weight" : 68000,
-      "Wisdom" : 12,
-      "XP" : 900
+  "Characters": {
+    "Ash": {
+      "ACBonus": -7,
+      "Age": 26,
+      "Alignment": "2_NB",
+      "Armor": "Cuir",
+      "Charisma": 14,
+      "Class": "BARD",
+      "Constitution": 12,
+      "Damages": [
+        {
+          "Code": "head",
+          "Hurt": false
+        },
+        {
+          "Code": "torso",
+          "Hurt": false
+        },
+        {
+          "Code": "left-arm",
+          "Hurt": false
+        },
+        {
+          "Code": "left-forearm",
+          "Hurt": false
+        },
+        {
+          "Code": "right-shin",
+          "Hurt": false
+        },
+        {
+          "Code": "right-thigh",
+          "Hurt": false
+        }
+      ],
+      "Defects": "Instable et sanguinaire",
+      "Dexterity": 16,
+      "DistanceWeapon": "-",
+      "Eyes": "Saphir",
+      "Gender": "⚲",
+      "HP": 22,
+      "Hairs": "Mi-longs blancs bleutés",
+      "Health": 4,
+      "Height": 176,
+      "Historic": "ARTIST",
+      "History": "Sa mère, séduite par un génie ayant pris forme humaine, l'a abandonné à la naissance aux portes d'un monastère aux centre d'une lorsqu'elle à découvert à quoi elle avait donné naissance.",
+      "Id": "Ash",
+      "Ideals": "Logique",
+      "Intelligence": 12,
+      "Links": "L'ordre de son monastère",
+      "MasterObjects": [
+        "Viole",
+        "Flûte",
+        "Luth"
+      ],
+      "MaxHP": 22,
+      "MinorSpells": [
+        "Lumières dansantes",
+        "Illusion mineure"
+      ],
+      "Money": 1700,
+      "Name": "Ash",
+      "PersonnalityTraits": "Serein",
+      "SatchelObjects": [
+        {
+          "Id": "Flûte",
+          "Quantity": 1
+        },
+        {
+          "Id": "Viole",
+          "Quantity": 1
+        }
+      ],
+      "Saves": [
+        "STRESS",
+        "CHARM"
+      ],
+      "Skills": [
+        "Acrobatie",
+        "Histoire",
+        "Perspicacité",
+        "Représentation",
+        "Tromperie",
+        "Escamotage",
+        "Perception",
+        "Etiquette"
+      ],
+      "Skin": "Bleu clair",
+      "Specialisation": "KNOWLEDGE_SCHOOL",
+      "Specials": 0,
+      "Spells": [
+        "Charme-personne",
+        "Lueurs féeriques",
+        "Murmures dissonants",
+        "Soins",
+        "Fracassement",
+        "Couronne du dément"
+      ],
+      "SpellsLocations": [
+        null,
+        1,
+        0
+      ],
+      "Strength": 5,
+      "SubRace": "CHANGELING",
+      "Weapon": "Rapière",
+      "Weight": 68000,
+      "Wisdom": 12,
+      "XP": 900
     },
-    "Saphire" : {
-      "ACBonus" : 0,
-      "Age" : 26,
-      "Alignment" : "5_NB",
-      "Ammunition" : 10,
-      "Armor" : "-",
-      "Charisma" : 8,
-      "Class" : "MONK",
-      "Constitution" : 15,
-      "Damages" : [ {
-        "Code" : "torso",
-        "Description" : "Blessure infligée par Sorween",
-        "Hurt" : true,
-        "Left" : "38.5366%",
-        "Symbol" : "\\\\\\",
-        "Top" : "24.2972%"
-      }, {
-        "Code" : "head",
-        "Description" : "",
-        "Hurt" : false,
-        "Left" : "38.5366%",
-        "Symbol" : "",
-        "Top" : "7.22892%"
-      }, {
-        "Code" : "left-arm",
-        "Description" : "",
-        "Hurt" : false,
-        "Left" : "72.1951%",
-        "Symbol" : "",
-        "Top" : "27.7108%"
-      }, {
-        "Code" : "right-arm",
-        "Description" : "",
-        "Hurt" : false,
-        "Left" : "15.122%",
-        "Symbol" : "",
-        "Top" : "30.1205%"
-      }, {
-        "Code" : "left-forearm",
-        "Description" : "",
-        "Hurt" : true,
-        "Left" : "79.5122%",
-        "Symbol" : "",
-        "Title" : "Avant-ras gauche",
-        "Top" : "37.1486%"
-      }, {
-        "Code" : "right-shin",
-        "Description" : "",
-        "Hurt" : false,
-        "Left" : "40%",
-        "Symbol" : "",
-        "Top" : "77.1084%"
-      }, {
-        "Code" : "left-shin",
-        "Description" : "",
-        "Hurt" : false,
-        "Left" : "52.1951%",
-        "Symbol" : "",
-        "Top" : "76.9076%"
-      }, {
-        "Code" : "left-thigh",
-        "Description" : "",
-        "Hurt" : false,
-        "Left" : "51.2195%",
-        "Symbol" : "",
-        "Top" : "58.8353%"
-      }, {
-        "Code" : "right-thigh",
-        "Description" : "",
-        "Hurt" : false,
-        "Left" : "31.7073%",
-        "Symbol" : "",
-        "Top" : "59.0361%"
-      }, {
-        "Code" : "right-forearm",
-        "Description" : "",
-        "Hurt" : false,
-        "Left" : "11.2195%",
-        "Symbol" : "",
-        "Top" : "35.743%"
-      } ],
-      "Defects" : "Instable et sanguinaire",
-      "Dexterity" : 18,
-      "DistanceWeapon" : "Fléchette",
-      "Eyes" : "Saphir",
-      "FightStyles" : [ "WARRIOR_DEFENSE" ],
-      "Gender" : "♂",
-      "HP" : 12,
-      "Hairs" : "Mi-longs blancs bleutés",
-      "Health" : 4,
-      "Height" : 176,
-      "HiddenCapacities" : [ "1-Défense sans armure", "2-Déplacement sans armure", "3-Tradition monastique" ],
-      "Historic" : "HERMIT",
-      "History" : "Sa mère, séduite par un génie ayant pris forme humaine, l'a abandonné à la naissance aux portes d'un monastère aux centre d'un forêt par sa mère lorsqu'elle à découvert à quoi elle avait donné naissance.",
-      "Id" : "Saphire",
-      "Ideals" : "Logique",
-      "Intelligence" : 8,
-      "Languages" : [ "SILVAN" ],
-      "Links" : "L'ordre de son monastère",
-      "MasterObjects" : [ "Mon cartographe", "Mon cartographe 2" ],
-      "MaxHP" : 32,
-      "MinorSpells" : [ "Coup de tonnerre", "Illusion mineure", "Coup au but" ],
-      "Money" : 1000,
-      "Name" : "Saphire",
-      "Notes" : "L'aventure débute niveau 3 dans un petit village nommé \"?\"\nRencontre des personnages.",
-      "Objects" : [ {
-        "Id" : "500 g d'argent ou 1 m² de lin",
-        "Label" : "Couverture d'hiver",
-        "Quantity" : 1
-      }, {
-        "Id" : "Une feuille de parchemin sur laquelle est dessiné un engin mécanique complexe",
-        "Label" : "Parchemin d'études",
-        "Quantity" : 1
-      } ],
-      "PersonnalityTraits" : "Serein",
-      "SatchelObjects" : [ {
-        "Id" : "Kit d'herboriste",
-        "Quantity" : 1
-      } ],
-      "Saves" : [ "FEAR", "STRESS" ],
-      "Skills" : [ "Discrétion", "Equilibre", "Premiers secours", "Réflexe" ],
-      "Skin" : "Bleu clair",
-      "Specialisation" : "OPENED_HAND_WAY",
-      "Specials" : 1,
-      "Spells" : [ "Amitié avec les animaux", "Charme-personne", "Communication avec les animaux", "Compréhension des langues", "Détection de la magie", "Déguisement", "Fou rire de Tasha", "Fléau", "Feuille morte", "Amis" ],
-      "SpellsLocations" : [ null, 3, 2, 0, 0, 0, 0, 0, 0, 0 ],
-      "Strength" : 8,
-      "SubRace" : "AIR_GENASI",
-      "UsedCapacities" : [ {
-        "Id" : "undefined-Rage de lion",
-        "UsedNumber" : 1
-      }, {
-        "Id" : "1-Rage de lion",
-        "UsedNumber" : 0
-      } ],
-      "Weapon" : "Bâton",
-      "Weight" : 68000,
-      "Wisdom" : 16,
-      "XP" : 900
+    "Saphire": {
+      "ACBonus": 0,
+      "Age": 26,
+      "Alignment": "5_NB",
+      "Ammunition": 10,
+      "Armor": "Cuir",
+      "Charisma": 8,
+      "Class": "MONK",
+      "Constitution": 15,
+      "Damages": [
+        {
+          "Code": "torso",
+          "Description": "Blessure infligée par Sorween",
+          "Hurt": true,
+          "Left": "38.5366%",
+          "Symbol": "\\\\\\",
+          "Top": "24.2972%"
+        },
+        {
+          "Code": "head",
+          "Description": "",
+          "Hurt": false,
+          "Left": "38.5366%",
+          "Symbol": "",
+          "Top": "7.22892%"
+        },
+        {
+          "Code": "left-arm",
+          "Description": "",
+          "Hurt": false,
+          "Left": "72.1951%",
+          "Symbol": "",
+          "Top": "27.7108%"
+        },
+        {
+          "Code": "right-arm",
+          "Description": "",
+          "Hurt": false,
+          "Left": "15.122%",
+          "Symbol": "",
+          "Top": "30.1205%"
+        },
+        {
+          "Code": "left-forearm",
+          "Description": "",
+          "Hurt": true,
+          "Left": "79.5122%",
+          "Symbol": "",
+          "Title": "Avant-ras gauche",
+          "Top": "37.1486%"
+        },
+        {
+          "Code": "right-shin",
+          "Description": "",
+          "Hurt": false,
+          "Left": "40%",
+          "Symbol": "",
+          "Top": "77.1084%"
+        },
+        {
+          "Code": "left-shin",
+          "Description": "",
+          "Hurt": false,
+          "Left": "52.1951%",
+          "Symbol": "",
+          "Top": "76.9076%"
+        },
+        {
+          "Code": "left-thigh",
+          "Description": "",
+          "Hurt": false,
+          "Left": "51.2195%",
+          "Symbol": "",
+          "Top": "58.8353%"
+        },
+        {
+          "Code": "right-thigh",
+          "Description": "",
+          "Hurt": false,
+          "Left": "31.7073%",
+          "Symbol": "",
+          "Top": "59.0361%"
+        },
+        {
+          "Code": "right-forearm",
+          "Description": "",
+          "Hurt": false,
+          "Left": "11.2195%",
+          "Symbol": "",
+          "Top": "35.743%"
+        }
+      ],
+      "Defects": "Instable et sanguinaire",
+      "Dexterity": 18,
+      "DistanceWeapon": "Fléchette",
+      "Eyes": "Saphir",
+      "FightStyles": [
+        "WARRIOR_DEFENSE"
+      ],
+      "Gender": "♂",
+      "HP": 12,
+      "Hairs": "Mi-longs blancs bleutés",
+      "Health": 4,
+      "Height": 176,
+      "HiddenCapacities": [
+        "1-Défense sans armure",
+        "2-Déplacement sans armure",
+        "3-Tradition monastique"
+      ],
+      "Historic": "HERMIT",
+      "History": "Sa mère, séduite par un génie ayant pris forme humaine, l'a abandonné à la naissance aux portes d'un monastère aux centre d'un forêt par sa mère lorsqu'elle à découvert à quoi elle avait donné naissance.",
+      "Id": "Saphire",
+      "Ideals": "Logique",
+      "Intelligence": 8,
+      "Languages": [
+        "SILVAN"
+      ],
+      "Links": "L'ordre de son monastère",
+      "MasterObjects": [
+        "Mon cartographe",
+        "Mon cartographe 2"
+      ],
+      "MaxHP": 32,
+      "MinorSpells": [
+        "Coup de tonnerre",
+        "Illusion mineure",
+        "Coup au but"
+      ],
+      "Money": 1000,
+      "Name": "Saphire",
+      "Notes": "L'aventure débute niveau 3 dans un petit village nommé \"?\"\nRencontre des personnages.",
+      "Objects": [
+        {
+          "Id": "500 g d'argent ou 1 m² de lin",
+          "Label": "Couverture d'hiver",
+          "Quantity": 1
+        },
+        {
+          "Id": "Une feuille de parchemin sur laquelle est dessiné un engin mécanique complexe",
+          "Label": "Parchemin d'études",
+          "Quantity": 1
+        }
+      ],
+      "PersonnalityTraits": "Serein",
+      "SatchelObjects": [
+        {
+          "Id": "Kit d'herboriste",
+          "Quantity": 1
+        }
+      ],
+      "Saves": [
+        "STRESS",
+        "FEAR"
+      ],
+      "Shield": "-",
+      "Skills": [
+        "Discrétion",
+        "Equilibre",
+        "Premiers secours",
+        "Réflexe"
+      ],
+      "Skin": "Bleu clair",
+      "Specialisation": "OPENED_HAND_WAY",
+      "Specials": 1,
+      "Spells": [
+        "Amitié avec les animaux",
+        "Charme-personne",
+        "Communication avec les animaux",
+        "Compréhension des langues",
+        "Détection de la magie",
+        "Déguisement",
+        "Fou rire de Tasha",
+        "Fléau",
+        "Feuille morte",
+        "Amis"
+      ],
+      "SpellsLocations": [
+        null,
+        3,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Strength": 8,
+      "SubRace": "AIR_GENASI",
+      "UsedCapacities": [
+        {
+          "Id": "undefined-Rage de lion",
+          "UsedNumber": 1
+        },
+        {
+          "Id": "1-Rage de lion",
+          "UsedNumber": 0
+        }
+      ],
+      "Weapon": "Bâton",
+      "Weight": 68000,
+      "Wisdom": 16,
+      "XP": 900
     },
-    "Simae" : {
-      "ACBonus" : 0,
-      "Age" : 27,
-      "Alignment" : "4_LN",
-      "Ammunition" : 20,
-      "Armor" : "Cuir",
-      "Charisma" : 15,
-      "Class" : "WILY",
-      "Constitution" : 14,
-      "Damages" : [ {
-        "Code" : "right-shin",
-        "Left" : "27.8481%",
-        "Top" : "76.2931%"
-      }, {
-        "Code" : "left-shin",
-        "Hurt" : false,
-        "Left" : "47.4684%",
-        "Top" : "76.2931%"
-      }, {
-        "Code" : "right-thigh",
-        "Left" : "22.1519%",
-        "Top" : "56.25%"
-      }, {
-        "Code" : "left-thigh",
-        "Left" : "36.7089%",
-        "Top" : "56.4655%"
-      }, {
-        "Code" : "right-forearm",
-        "Left" : "22.4684%",
-        "Top" : "34.2672%"
-      }, {
-        "Code" : "torso",
-        "Left" : "30.6962%",
-        "Top" : "26.9397%"
-      }, {
-        "Code" : "left-arm",
-        "Left" : "43.9873%",
-        "Top" : "25.431%"
-      }, {
-        "Code" : "left-forearm",
-        "Left" : "43.9873%",
-        "Top" : "34.2672%"
-      }, {
-        "Code" : "head",
-        "Hurt" : false,
-        "Left" : "33.2278%",
-        "Top" : "4.74138%"
-      } ],
-      "Defects" : "Voyager est tout ce qui compte pour moi, jamais je ne m'installerai quelque part.",
-      "Dexterity" : 14,
-      "DistanceWeapon" : "Arc court",
-      "Eyes" : "Noires",
-      "Gender" : "♀",
-      "HP" : 10,
-      "Hairs" : "Longs noires ondulés",
-      "Health" : 4,
-      "Height" : 156,
-      "HiddenCapacities" : [ "1-Foulée rapide", "1-Gracieux", "1-Sens aiguisés", "1-Changement", "1-Vaillant", "1-Expertise" ],
-      "Historic" : "TRAVELER",
-      "History" : "Simae, esprit-singe née dans une région entre forêts et montagne, ressemble à première vue à une petite femme frêle.\nCependant, sa peau possède une teinte légèrement hâlée mais grisâtre qui par temps froid devient trop terne pour paraitre humaine.\nEncadré d'épais cheveux noirs ondulés, son visage aux yeux sombres et profonds est éclairé d'un sourire aux quatre canines très prononcées.\nElle dispose d'une queue agile couverte d'un léger duvet. Longue comme ses bras et épaisse comme un poignet elle lui permet de saisir et manipuler des objets mais n'est pas assez forte pour lui l'autoriser à s'y suspendre.\nSi elle n'est pas couverte par un vêtement long, Simae se plait à l'enrouler autour de sa taille lorsqu'elle ne souhaite pas attirer l'attention ou n'est pas certaine de l'accueil qui sera fait à un individu de son espèce.\nSes pieds, habituellement couverts par des bottes de voyage, sont munis de pouces opposables bien que les autres doigts soient plus courts que ceux d'une main et plus proches d'orteils humains.\n\n\nSa région natale située à la frontière de l'ordre et du chaos est depuis sa plus jeune enfance le théâtre de batailles régulières opposant les seigneurs locaux et les arcanistes frontaliers, ce qui l'a poussé à prendre la route pour fuir les combats.\nIndépendante elle se mêle volontiers temporairement à des compagnons de voyage ou population rencontrés lors de ses arrêts. Curieuse de nouvelles rencontres sans jamais se fixer dans un groupe.\n\nAu contact des gens du voyage elle a découvert la vie d'artiste itinérant qu'elle a embrassé en se découvrant un talent pour la prestidigitation, en particulier les routines de pièces de monnaie et de cartes.\nSa capacité à faire apparaitre ou disparaitre de petits objets et de transformer des cartes sous les yeux ébahis de spectateurs lui permet de vivre du chapeau.\nSon agilité de prestidigitatrice fait également d'elle une voleuse à la tire très efficace, lui permettant de gonfler des dons qu'elle estime insuffisant  en contrepartie de ses prestations ou de se servir dans les poches des malheureux qui ont l'imprudence de renier trop ouvertement les anges et ne mérite donc pas de posséder quelconque richesse.",
-      "Id" : "Simae",
-      "Ideals" : "Pourquoi rester toute sa vie dans un endroit quand on peut prendre la route",
-      "Intelligence" : 10,
-      "Languages" : [ "DWARF", "ELVISH" ],
-      "Links" : "J'ai fui l'endroit où j'ai grandi et je n'ose plus y retourner.",
-      "MaxHP" : 10,
-      "Money" : 2800,
-      "Name" : "Simae",
-      "Notes" : "Prestidigitation : Limitée à des spectateurs ayant le même angle de vue.\nL'épée courte, l'arc court, l'armure de cuir et le sac de voyage sont resté dans la chambre de l'auberge.\nLes gardes ont pris ma besace.\n",
-      "Objects" : [ {
-        "Id" : "Un flacon de verre vide qui sent le parfum lorsqu'il est ouvert",
-        "Quantity" : 1
-      }, {
-        "Id" : "Un journal écrit dans une langue que vous ne connaissez pas",
-        "Label" : "Un livre rempli de notes sur vos périples",
-        "Quantity" : 1
-      }, {
-        "Id" : "Une plume vert clair",
-        "Label" : "Une bouteille d'encre et une plume vert clair",
-        "Quantity" : 1
-      }, {
-        "Id" : "Une veste avec une centaine de minuscules poches",
-        "Label" : "Des vêtements de voyage",
-        "Quantity" : 1
-      }, {
-        "Id" : "La coquille d'un oeuf peint avec des scènes de misère humaine d'un détail troublant",
-        "Label" : "Un bâton de marche",
-        "Quantity" : 1
-      } ],
-      "PersonnalityTraits" : "Joviale - Je suis fasciné par tout ce qui me semble exotique, objets, créatures ou personnes.",
-      "SatchelObjects" : [ {
-        "Id" : "Jeu de cartes",
-        "Label" : "Jeu de cartes",
-        "Quantity" : 1
-      }, {
-        "Id" : "Un couteau qui appartenait à un parent",
-        "Label" : "Dagues",
-        "Quantity" : 2
-      }, {
-        "Id" : "Outils de voleur",
-        "Quantity" : 1
-      } ],
-      "Shield" : "-",
-      "Skills" : [ "Représentation", "Dissimulation" ],
-      "Skin" : "Hâlée/Grisâtre",
-      "Specials" : 0,
-      "Strength" : 8,
-      "SubRace" : "LIGHT_FOOT_HALFELIN",
-      "Weapon" : "Épée courte",
-      "Weight" : 47,
-      "Wisdom" : 9,
-      "XP" : 0
+    "Simae": {
+      "ACBonus": 0,
+      "Age": 27,
+      "Alignment": "4_LN",
+      "Ammunition": 20,
+      "Armor": "Cuir",
+      "Charisma": 15,
+      "Class": "WILY",
+      "Constitution": 14,
+      "Damages": [
+        {
+          "Code": "right-shin",
+          "Left": "27.8481%",
+          "Top": "76.2931%"
+        },
+        {
+          "Code": "left-shin",
+          "Hurt": false,
+          "Left": "47.4684%",
+          "Top": "76.2931%"
+        },
+        {
+          "Code": "right-thigh",
+          "Left": "22.1519%",
+          "Top": "56.25%"
+        },
+        {
+          "Code": "left-thigh",
+          "Left": "36.7089%",
+          "Top": "56.4655%"
+        },
+        {
+          "Code": "right-forearm",
+          "Left": "22.4684%",
+          "Top": "34.2672%"
+        },
+        {
+          "Code": "torso",
+          "Left": "30.6962%",
+          "Top": "26.9397%"
+        },
+        {
+          "Code": "left-arm",
+          "Description": "",
+          "Hurt": false,
+          "Left": "43.1925%",
+          "Symbol": "",
+          "Title": "Bras gauche",
+          "Top": "26.1981%"
+        },
+        {
+          "Code": "left-forearm",
+          "Description": "",
+          "Hurt": false,
+          "Left": "43.9873%",
+          "Symbol": "",
+          "Title": "Avant-bras gauche",
+          "Top": "34.2672%"
+        },
+        {
+          "Code": "head",
+          "Description": "",
+          "Hurt": false,
+          "Left": "33.2278%",
+          "Symbol": "",
+          "Title": "Tête",
+          "Top": "4.74138%"
+        }
+      ],
+      "Defects": "Voyager est tout ce qui compte pour moi, jamais je ne m'installerai quelque part.",
+      "Dexterity": 14,
+      "DistanceWeapon": "Arc court",
+      "Eyes": "Noires",
+      "Gender": "♀",
+      "HP": 10,
+      "Hairs": "Longs noires ondulés",
+      "Health": 4,
+      "Height": 156,
+      "HiddenCapacities": [
+        "1-Foulée rapide",
+        "1-Gracieux",
+        "1-Sens aiguisés",
+        "1-Changement",
+        "1-Vaillant",
+        "1-Expertise"
+      ],
+      "Historic": "TRAVELER",
+      "History": "Simae, esprit-singe née dans une région entre forêts et montagne, ressemble à première vue à une petite femme frêle.\nCependant, sa peau possède une teinte légèrement hâlée mais grisâtre qui par temps froid devient trop terne pour paraitre humaine.\nEncadré d'épais cheveux noirs ondulés, son visage aux yeux sombres et profonds est éclairé d'un sourire aux quatre canines très prononcées.\nElle dispose d'une queue agile couverte d'un léger duvet. Longue comme ses bras et épaisse comme un poignet elle lui permet de saisir et manipuler des objets mais n'est pas assez forte pour lui l'autoriser à s'y suspendre.\nSi elle n'est pas couverte par un vêtement long, Simae se plait à l'enrouler autour de sa taille lorsqu'elle ne souhaite pas attirer l'attention ou n'est pas certaine de l'accueil qui sera fait à un individu de son espèce.\nSes pieds, habituellement couverts par des bottes de voyage, sont munis de pouces opposables bien que les autres doigts soient plus courts que ceux d'une main et plus proches d'orteils humains.\n\n\nSa région natale située à la frontière de l'ordre et du chaos est depuis sa plus jeune enfance le théâtre de batailles régulières opposant les seigneurs locaux et les arcanistes frontaliers, ce qui l'a poussé à prendre la route pour fuir les combats.\nIndépendante elle se mêle volontiers temporairement à des compagnons de voyage ou population rencontrés lors de ses arrêts. Curieuse de nouvelles rencontres sans jamais se fixer dans un groupe.\n\nAu contact des gens du voyage elle a découvert la vie d'artiste itinérant qu'elle a embrassé en se découvrant un talent pour la prestidigitation, en particulier les routines de pièces de monnaie et de cartes.\nSa capacité à faire apparaitre ou disparaitre de petits objets et de transformer des cartes sous les yeux ébahis de spectateurs lui permet de vivre du chapeau.\nSon agilité de prestidigitatrice fait également d'elle une voleuse à la tire très efficace, lui permettant de gonfler des dons qu'elle estime insuffisant  en contrepartie de ses prestations ou de se servir dans les poches des malheureux qui ont l'imprudence de renier trop ouvertement les anges et ne mérite donc pas de posséder quelconque richesse.",
+      "Id": "Simae",
+      "Ideals": "Pourquoi rester toute sa vie dans un endroit quand on peut prendre la route",
+      "Intelligence": 10,
+      "Languages": [
+        "ELVISH",
+        "DWARF"
+      ],
+      "Links": "J'ai fui l'endroit où j'ai grandi et je n'ose plus y retourner.",
+      "MaxHP": 10,
+      "Money": 2800,
+      "Name": "Simae",
+      "Notes": "Prestidigitation : Limitée à des spectateurs ayant le même angle de vue.\nL'épée courte, l'arc court, l'armure de cuir et le sac de voyage sont resté dans la chambre de l'auberge.\nLes gardes ont pris ma besace.\n",
+      "Objects": [
+        {
+          "Id": "Un flacon de verre vide qui sent le parfum lorsqu'il est ouvert",
+          "Quantity": 1
+        },
+        {
+          "Id": "Un journal écrit dans une langue que vous ne connaissez pas",
+          "Label": "Un livre rempli de notes sur vos périples",
+          "Quantity": 1
+        },
+        {
+          "Id": "Une plume vert clair",
+          "Label": "Une bouteille d'encre et une plume vert clair",
+          "Quantity": 1
+        },
+        {
+          "Id": "Une veste avec une centaine de minuscules poches",
+          "Label": "Des vêtements de voyage",
+          "Quantity": 1
+        },
+        {
+          "Id": "La coquille d'un oeuf peint avec des scènes de misère humaine d'un détail troublant",
+          "Label": "Un bâton de marche",
+          "Quantity": 1
+        }
+      ],
+      "PersonnalityTraits": "Joviale - Je suis fasciné par tout ce qui me semble exotique, objets, créatures ou personnes.",
+      "SatchelObjects": [
+        {
+          "Id": "Jeu de cartes",
+          "Label": "Jeu de cartes",
+          "Quantity": 1
+        },
+        {
+          "Id": "Un couteau qui appartenait à un parent",
+          "Label": "Dagues",
+          "Quantity": 2
+        },
+        {
+          "Id": "Outils de voleur",
+          "Quantity": 1
+        }
+      ],
+      "Shield": "-",
+      "Skills": [
+        "Représentation",
+        "Dissimulation"
+      ],
+      "Skin": "Hâlée/Grisâtre",
+      "Specials": 0,
+      "Strength": 8,
+      "SubRace": "LIGHT_FOOT_HALFELIN",
+      "Weapon": "Épée courte",
+      "Weight": 47,
+      "Wisdom": 9,
+      "XP": 15
     },
-    "Sorwen" : {
-      "ACBonus" : -8,
-      "Age" : 42,
-      "Alignment" : "2_NB",
-      "Armor" : "Demi-plate",
-      "Charisma" : 14,
-      "Class" : "WARRIOR",
-      "Constitution" : 12,
-      "Damages" : [ {
-        "Code" : "head",
-        "Hurt" : false,
-        "Left" : "51.5942%",
-        "Top" : "6.34006%"
-      }, {
-        "Code" : "right-arm",
-        "Left" : "36.087%",
-        "Top" : "20.6052%"
-      }, {
-        "Code" : "right-forearm",
-        "Left" : "31.0145%",
-        "Top" : "42.7954%"
-      }, {
-        "Code" : "left-arm",
-        "Left" : "61.4493%",
-        "Top" : "21.3256%"
-      }, {
-        "Code" : "left-forearm",
-        "Left" : "67.6812%",
-        "Top" : "45.245%"
-      }, {
-        "Code" : "left-thigh",
-        "Left" : "55.3623%",
-        "Top" : "50%"
-      }, {
-        "Code" : "right-thigh",
-        "Left" : "41.1594%",
-        "Top" : "49.7118%"
-      }, {
-        "Code" : "left-shin",
-        "Left" : "59.8551%",
-        "Top" : "70.0288%"
-      }, {
-        "Code" : "right-shin",
-        "Left" : "38.653%",
-        "Top" : "72.0524%"
-      }, {
-        "Code" : "torso",
-        "Left" : "47.2464%",
-        "Top" : "25.072%"
-      } ],
-      "Defects" : "Maladroit - vit dans son monde",
-      "Dexterity" : 12,
-      "DistanceWeapon" : "Arbalète légère",
-      "Eyes" : "Saphir",
-      "Gender" : "♂",
-      "HP" : 12,
-      "Hairs" : "",
-      "Health" : 4,
-      "Height" : 231,
-      "HiddenCapacities" : [ "1-Rage de lion", "1-Sens aiguisés" ],
-      "Historic" : "TRAVELER",
-      "History" : "",
-      "Id" : "Sorwen",
-      "Ideals" : "",
-      "Intelligence" : 13,
-      "Languages" : [ "SILVAN", "DWARF" ],
-      "Links" : "",
-      "MaxHP" : 32,
-      "Money" : 1000,
-      "Name" : "Sorwen",
-      "PersonnalityTraits" : "Calme atypique",
-      "Resistances" : [ "POISON", "DRUG" ],
-      "Shield" : "Bouclier",
-      "Skills" : [ "Brise liens", "Fuite", "Nature", "Saut" ],
-      "Skin" : "Fourrure blanche",
-      "Specialisation" : "CHAMPION",
-      "Specials" : 0,
-      "Strength" : 16,
-      "SubRace" : "LEONID_FANGED_FANGS",
-      "Weapon" : "Fléau d'armes",
-      "Weight" : 135000,
-      "Wisdom" : 8,
-      "XP" : 900
+    "Sorwen": {
+      "ACBonus": -8,
+      "Age": 42,
+      "Alignment": "2_NB",
+      "Armor": "Demi-plate",
+      "Charisma": 14,
+      "Class": "WARRIOR",
+      "Constitution": 12,
+      "Damages": [
+        {
+          "Code": "head",
+          "Hurt": false,
+          "Left": "51.5942%",
+          "Top": "6.34006%"
+        },
+        {
+          "Code": "right-arm",
+          "Left": "36.087%",
+          "Top": "20.6052%"
+        },
+        {
+          "Code": "right-forearm",
+          "Left": "31.0145%",
+          "Top": "42.7954%"
+        },
+        {
+          "Code": "left-arm",
+          "Left": "61.4493%",
+          "Top": "21.3256%"
+        },
+        {
+          "Code": "left-forearm",
+          "Left": "67.6812%",
+          "Top": "45.245%"
+        },
+        {
+          "Code": "left-thigh",
+          "Left": "55.3623%",
+          "Top": "50%"
+        },
+        {
+          "Code": "right-thigh",
+          "Left": "41.1594%",
+          "Top": "49.7118%"
+        },
+        {
+          "Code": "left-shin",
+          "Left": "59.8551%",
+          "Top": "70.0288%"
+        },
+        {
+          "Code": "right-shin",
+          "Left": "38.653%",
+          "Top": "72.0524%"
+        },
+        {
+          "Code": "torso",
+          "Left": "47.2464%",
+          "Top": "25.072%"
+        }
+      ],
+      "Defects": "Maladroit - vit dans son monde",
+      "Dexterity": 12,
+      "DistanceWeapon": "Arbalète légère",
+      "Eyes": "Saphir",
+      "Gender": "♂",
+      "HP": 12,
+      "Hairs": "",
+      "Health": 4,
+      "Height": 231,
+      "HiddenCapacities": [
+        "1-Rage de lion",
+        "1-Sens aiguisés"
+      ],
+      "Historic": "TRAVELER",
+      "History": "",
+      "Id": "Sorwen",
+      "Ideals": "",
+      "Intelligence": 13,
+      "Languages": [
+        "SILVAN",
+        "DWARF"
+      ],
+      "Links": "",
+      "MaxHP": 32,
+      "Money": 1000,
+      "Name": "Sorwen",
+      "PersonnalityTraits": "Calme atypique",
+      "Resistances": [
+        "POISON",
+        "DRUG"
+      ],
+      "Shield": "Bouclier",
+      "Skills": [
+        "Brise liens",
+        "Fuite",
+        "Nature",
+        "Saut"
+      ],
+      "Skin": "Fourrure blanche",
+      "Specialisation": "CHAMPION",
+      "Specials": 0,
+      "Strength": 16,
+      "SubRace": "LEONID_FANGED_FANGS",
+      "Weapon": "Fléau d'armes",
+      "Weight": 135000,
+      "Wisdom": 8,
+      "XP": 900
+    },
+    "Sullivan byrne": {
+      "Age": 17,
+      "Alignment": "3_CB",
+      "Ammunition": 20,
+      "Armor": "-",
+      "Charisma": 15,
+      "Class": "SORCERER",
+      "Constitution": 15,
+      "Damages": [
+        {
+          "Code": "right-shin",
+          "Description": "",
+          "Hurt": false,
+          "Left": "20.5696%",
+          "Symbol": "",
+          "Title": "Tibiat droit",
+          "Top": "77.8357%"
+        },
+        {
+          "Code": "left-shin",
+          "Left": "75%",
+          "Top": "83.1812%"
+        },
+        {
+          "Code": "left-thigh",
+          "Left": "62.6582%",
+          "Top": "69.4915%"
+        },
+        {
+          "Code": "right-thigh",
+          "Left": "28.481%",
+          "Top": "68.4485%"
+        },
+        {
+          "Code": "left-forearm",
+          "Left": "63.2911%",
+          "Top": "28.1617%"
+        },
+        {
+          "Code": "right-forearm",
+          "Left": "31.6456%",
+          "Top": "27.9009%"
+        },
+        {
+          "Code": "right-arm",
+          "Left": "28.481%",
+          "Top": "37.94%"
+        },
+        {
+          "Code": "left-arm",
+          "Left": "62.0253%",
+          "Top": "38.3312%"
+        },
+        {
+          "Code": "torso",
+          "Left": "45.8861%",
+          "Top": "48.7614%"
+        },
+        {
+          "Code": "head",
+          "Left": "47.4684%",
+          "Top": "33.3768%"
+        }
+      ],
+      "Defects": "Secrètement, je crois que les choses iraient mieux si j'étais un tyran gouvernant ce territoire.",
+      "Dexterity": 7,
+      "DistanceWeapon": "Arbalète légère",
+      "Eyes": "Gris acier",
+      "HP": 9,
+      "Hairs": "Indomptables, châtains aux reflets roux",
+      "Health": 4,
+      "Height": 176,
+      "HiddenCapacities": [
+        "1-Origine magique",
+        "1-Incantations"
+      ],
+      "Historic": "PEOPLE_HERO",
+      "History": "Sullivan Byrne est un jeune humain né dans une famille paysanne d'un modeste village Illuskiennommé \"Glade\".\nAprès la mort de son père dans la tentative infructueuse de rébellion contre un groupe de bandit local ayant emporté une demi douzaine des plus courageux hommes du village, il a dû apprendre à s'occuper des moutons et cultiver la terre .\nSully a entretenu la ferme familiale jusqu'à l'année de ses 14 ans, où lors d'un des pillage réguliers que subissait le village, l'un des bandits plus agressif qu'à l'ordinaire a projeté Aylin contre le rebord de la cheminé qui a aussitôt enflammé la manche de sa robe de chambre.\nEntré dans un état de rage dont il ne garde que peu de souvenirs, Sullivan a projeté d'une soudaine magie sauvage les flammes qui entamait les vêtements de sa petite sœur en direction de son agresseur dans une déflagration qui a emporté 2 bandits et la moitié de la maison. Laissant au passage une marque indélébile de cet évènement sur le corps et visage du seul bandit présent ayant survécu.\nL'incident de l'enfant prodige qui a vaincu les brigands s'étant vite ébruité dans les régions environnantes, un ensorceleur se présentant sous le nom de Fitzgerald O'Brien a décidé de prendre en charge son éducation magique afin de lui apprendre à contrôler sa magie.\nAprès 3 ans de formations, il lui a demandé de partir 1 an explorer le monde afin d'éprouver sa magie avant de passer à l'étape supérieure de sa formation, car selon ses dires \"On ne peut pas tout apprendre dans les Livres\"",
+      "Id": "Sullivan byrne",
+      "Ideals": "Respect. Les gens méritent d'être traités avec dignité et respect (Bon).",
+      "Intelligence": 15,
+      "Languages": [
+        "ELVISH"
+      ],
+      "Links": "Je protège ceux qui sont sans défense.",
+      "MasterObjects": [
+        "Ustensiles de cuisinier"
+      ],
+      "MaxHP": 9,
+      "MinorSpells": [
+        "Contrôle des flammes",
+        "Façonnage de l'eau",
+        "Façonnage de la terre",
+        "Lumières dansantes"
+      ],
+      "Money": 950,
+      "Name": "Sullivan Byrne",
+      "Objects": [
+        {
+          "Id": "Ustensiles de cuisinier",
+          "Quantity": 1
+        }
+      ],
+      "PersonnalityTraits": "Si quelqu'un est en difficulté, je suis toujours prêt à lui apporter de l'aide.",
+      "SatchelObjects": [
+        {
+          "Id": "Un couteau qui appartenait à un parent",
+          "Label": "Dague",
+          "Quantity": 2
+        },
+        {
+          "Id": "Un symbole sacré en fer et consacré à un dieu inconnu",
+          "Label": "Focaliseur Arcanique",
+          "Quantity": 1
+        }
+      ],
+      "SaveAdvantages": [
+        "STRESS"
+      ],
+      "Saves": [
+        "STRESS"
+      ],
+      "Shield": "-",
+      "Skills": [
+        "Arcane",
+        "Intuition"
+      ],
+      "Skin": "Pâle",
+      "Specialisation": "WILD_MAGIC",
+      "Specials": 0,
+      "Spells": [
+        "Bouclier",
+        "Orbe chromatique"
+      ],
+      "SpellsLocations": [
+        null,
+        2
+      ],
+      "Strength": 5,
+      "SubRace": "HUMAN",
+      "Weapon": "-",
+      "Weight": 64000,
+      "Wisdom": 13,
+      "XP": 0
     }
   },
-  "Notes" : {
-    "*" : [ {
-      "Content" : "Mitch de Beauregard, Humain barde"
-    }, {
-      "Content" : "Koen, Léonid Guerrier"
-    }, {
-      "Content" : "Merhuem, Humain Alchimiste"
-    }, {
-      "Content" : "Arrivé dans la ville de Renane où se prépare une semaine de festivités pour le mariage de Herve le jeune et dame xxx\n-1 nuit dans une  auberge modeste (chambre de 2 pour 3)"
-    }, {
-      "Content" : "Emprisonné pour le temps des festivités à cause de Kinu parmesan, sortie après 7 jours et retour à l'auberge où nous avons reçu le gîte et le couvert en l'échange d'une représentation musicale et magique."
-    }, {
-      "Content" : "Abordé par un groupe du nord qui nous ont proposé de les rejoindre pour une quête visant à subtiliser la hache d'un roi en mission secondaire d'une expédition officiellement menée pour combattre le chaos."
-    } ],
-    "Saphire" : [ {
-      "Content" : "-2",
-      "Description" : "Blessure au torse",
-      "Left" : "1248px",
-      "Name" : "CON",
-      "Top" : "-12px"
-    } ],
-    "Simae" : [ {
-      "Content" : "x2",
-      "Description" : "",
-      "Left" : "363px",
-      "Name" : "Exp att.so",
-      "Top" : "327px"
-    }, {
-      "Content" : "x2",
-      "Left" : "883px",
-      "Name" : "Exp Out.vo",
-      "Top" : "328px"
-    } ]
+  "Notes": {
+    "David": {
+      "Saphire": [
+        {
+          "Content": "-2",
+          "Description": "Blessure au torse",
+          "Name": "CON"
+        }
+      ]
+    },
+    "Yann": {
+      "*": [
+        {
+          "Content": "Koen, Léonid Guerrier"
+        },
+        {
+          "Content": "Mitch de Beauregard, Humain barde"
+        },
+        {
+          "Content": "Merhuem, Humain Alchimiste"
+        },
+        {
+          "Content": "Après une semaine d'emprisonnement dans la ville de Renan à cause de Kinu parmesan, le groupe a obtenu le gîte et le couvert à l'auberge de la ville en l'échange d'une représentation musicale et magique."
+        },
+        {
+          "Content": "Abordé par un groupe du nord qui nous ont proposé de les rejoindre pour une quête visant à subtiliser la hache d'un roi en mission secondaire d'une expédition officiellement menée pour combattre le chaos."
+        }
+      ],
+      "Saphire": [
+        {
+          "Content": "-2",
+          "Description": "Blessure au torse",
+          "Name": "CON"
+        }
+      ],
+      "Simae": [
+        {
+          "Content": "x2",
+          "Description": "",
+          "Left": "363px",
+          "Name": "Exp att.so",
+          "Top": "327px"
+        },
+        {
+          "Content": "x2",
+          "Left": "883px",
+          "Name": "Exp Out.vo",
+          "Top": "328px"
+        }
+      ]
+    }
   },
-"Scenarios" : {
-	"David" :  {
-		"Id" : "David",
-		"Characters" : [ "Saphire", "Ash", "Sorwen" ]
-	},
-	"Yann" :  {
-		"Id" : "Yann",
-		"Characters" : [ "Simae" ]
-	}
-	}
+  "Scenarios": {
+    "David": {
+      "Characters": [
+        "Saphire",
+        "Ash",
+        "Sorwen"
+      ],
+      "Id": "David"
+    },
+    "Préfabriqué": {
+      "Characters": [
+        "Sullivan byrne"
+      ],
+      "Id": "Préfabriqué"
+    },
+    "Yann": {
+      "Characters": [
+        "Simae"
+      ],
+      "Id": "Yann"
+    }
+  }
 }

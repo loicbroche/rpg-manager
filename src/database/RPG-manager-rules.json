@@ -269,29 +269,31 @@
             }
         },
         "Notes": {
-            "$note-owner": {
-                "$index": {
-                    ".validate": "newData.child('Content').exists()",
-                    "Name": {
-                        ".validate": "newData.isString() && newData.val().length <= 10"
-                    },
-                    "Content": {
-                        ".validate": "newData.isString() && newData.val().length <= 2000"
-                    },
-                    "Description": {
-                        ".validate": "newData.isString() && newData.val().length <= 255"
-                    },
-                    "Top": {
-                        ".validate": "newData.isString() && newData.val().length <= 50"
-                    },
-                    "Left": {
-                        ".validate": "newData.isString() && newData.val().length <= 50"
-                    },
-                    "Locked": {
-                        ".validate": "newData.isString() && newData.val().length <= 50"
-                    }
-                }
-            }
+			"$scenario": {
+				"$note-owner": {
+					"$index": {
+						".validate": "newData.child('Content').exists()",
+						"Name": {
+							".validate": "newData.isString() && newData.val().length <= 10"
+						},
+						"Content": {
+							".validate": "newData.isString() && newData.val().length <= 2000"
+						},
+						"Description": {
+							".validate": "newData.isString() && newData.val().length <= 255"
+						},
+						"Top": {
+							".validate": "newData.isString() && newData.val().length <= 50"
+						},
+						"Left": {
+							".validate": "newData.isString() && newData.val().length <= 50"
+						},
+						"Locked": {
+							".validate": "newData.isString() && newData.val().length <= 50"
+						}
+					}
+				}
+			}
         }
     }
 }
