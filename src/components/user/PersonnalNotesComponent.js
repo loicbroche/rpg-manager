@@ -82,7 +82,7 @@ class PersonnalNotesComponent extends PureComponent {
   }
 
   // Arrow fx for binding
-  onpersonalNotesUpdate = (event) => {
+  onPersonalNotesUpdate = (event) => {
     const personalNotes = event.target.value;
     this.setState({personalNotes: personalNotes, changed: true})
   }
