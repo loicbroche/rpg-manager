@@ -118,6 +118,7 @@ class Character extends PureComponent {
 
           this.setState({characterInfos: newState});
         }
+		this.generalNotesRef = gameDatabase.ref(DATA_MODEL.NOTES.name+"/"+scenarioId+"/"+ALL_CHARACTERS_ID);
         this.personnalNotesRef = gameDatabase.ref(DATA_MODEL.NOTES.name+"/"+scenarioId+"/"+characterId);
         this.updateGeneralNotes = (snapshot) => {
             const newState = snapshot.val() && Object.values(snapshot.val());
