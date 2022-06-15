@@ -23,7 +23,7 @@ class GameMaster extends PureComponent {
         this.charactersRef = gameDatabase.ref(DATA_MODEL.CHARACTERS.name);
 		this.updateScenarios = (snapshot)  => { this.setState({ scenarios: objectToArray(snapshot.val()) }); }
         this.updateCharacters = (snapshot)  => { this.setState({ characters: snapshot.val() && Object.values(objectToArray(snapshot.val())) }); }
-        this.generalNotesRef = gameDatabase.ref(DATA_MODEL.NOTES.name+"/"+ALL_CHARACTERS_ID);
+        this.generalNotesRef = gameDatabase.ref(DATA_MODEL.NOTES.name+"/"+scenarioId+"/"+ALL_CHARACTERS_ID);
         this.updateGeneralNotes = (snapshot) => {
             const newState = snapshot.val() && Object.values(snapshot.val());
             this.setState({generalNotes: newState});
@@ -48,7 +48,7 @@ class GameMaster extends PureComponent {
         return (
             <div className="game-master" >
                 <span className="intro narrative">Bienvenu grand maître du jeu du scénario "{scenarioId}"! Ici tu gardera un oeil sur tous les personnages jouables</span>
-                <GeneralNotesComponent notes={generalNotes} editorCharacter={GM_NAME} onChange={(value) => updateNotes(value, ALL_CHARACTERS_ID) } />
+                <GeneralNotesComponent notes={generalNotes} editorCharacter={GM_NAME} onChange={(value) => updateNotes(value, scenarioId, ALL_CHARACTERS_ID) } />
                 <div className="characters-overview">
                     {scenariosCharacters?.map((character) => (
                         <CharacterOverview key={character.Id} character={character} />
