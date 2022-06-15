@@ -413,7 +413,7 @@
       "MaxHP": 10,
       "Money": 2800,
       "Name": "Simae",
-      "Notes": "Prestidigitation : Limitée à des spectateurs ayant le même angle de vue.\nL'épée courte, l'arc court, l'armure de cuir et le sac de voyage sont resté dans la chambre de l'auberge.\nLes gardes ont pris ma besace.\n",
+      "Notes": "Prestidigitation : Limitée à des spectateurs ayant le même angle de vue.\n",
       "Objects": [
         {
           "Id": "Un flacon de verre vide qui sent le parfum lorsqu'il est ouvert",
@@ -677,6 +677,7 @@
       ],
       "Money": 950,
       "Name": "Sullivan Byrne",
+      "Notes": "",
       "Objects": [
         {
           "Id": "Ustensiles de cuisinier",
@@ -733,6 +734,22 @@
           "Content": "-2",
           "Description": "Blessure au torse",
           "Name": "CON"
+        }
+      ]
+    },
+    "Préfabriqué": {
+      "*": [
+        {
+          "Content": "Arrivée des trois personnage dans le petit village de Fial qui se prépare à la fête des semailles célébrant le début du printemps.\n-Sullivan Byrne, apprenti ensorceleur\n-Bernard Saindoux, cultiste de ... toujours prêt à aider son prochain\n-Méreus, Homme-Lion solitaire à l'allure impressionnante et intriguante"
+        },
+        {
+          "Content": "Après une journée de préparatifs, une soirée d'animations diverses démarre dans la bonne humeur et la consommation d'alcool sans modération.\nDe multiples jeux font perdre quelques pièces à certains, gagner quelques pièces à d'autres.\nSullivan fait la connaissance de Bernard qui, croyant que le jeune homme avait été tué par un lutteur de spectacle, s'est précipité pour le venger, essuyant malheureusement lui aussi une défaite non sans opposer une solide résistance."
+        },
+        {
+          "Content": "La soudaine attaque d'une horde de gobelins met un terme à la fête, ainsi qu'à l'ivresse des plus bons vivants de nos héros.\nSous l'impulsion du courageux et ventru Bernad, Méreus et Sullivan l'accompagnent à la recherche d'éventuels blessés dans le village, tandis que la majorité des villageois se sont réfugié et enfermés dans les différentes habitations et la forge de Thorne."
+        },
+        {
+          "Content": "Après une prudente inspection, la patrouille improvisée conclue que les gobelins semblent avoir effectué un simple raid de pillage pour s'emparer des vivres amassées pour la fête, en ne faisant heureusement aucune victime.\nMais en poursuivant la piste des gobelins, ils s'aperçoivent avec stupeur et effroi que ..., la fille de Thorne a été enlevée.\nDésormais compagnons d'aventure malgré eux, nos trois héros décident d'une seule voix de partir à la poursuite des gobelins pour délivrer la jeune malheureuse."
         }
       ]
     },

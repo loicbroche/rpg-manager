@@ -232,7 +232,6 @@ var addReactTooltip = (rootElement, element, tooltipValue) => {
 }
 
 export const createReactTooltips = (rootElement=document, observeChanges=true) => {
-	/*
 	var tooltipCreatedNb = 0;
 	if (rootElement && rootElement.querySelectorAll) {
 		if (observeChanges) {
@@ -253,5 +252,4 @@ export const createReactTooltips = (rootElement=document, observeChanges=true) =
 		}
 	}
 	return tooltipCreatedNb;
-	*/
 };

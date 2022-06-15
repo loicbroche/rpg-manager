@@ -10,7 +10,6 @@ import { updateCharacterCaracteristic, insertCharacterElement, deleteCharacterEl
 import { updateNotes, ALL_CHARACTERS_ID } from 'database/PersistNotes';
 import { getChargeCapacity, getSatchelCapacity } from 'rules/Character.rules'
 import { DESKTOP_MIN_WIDTH } from 'rules/Navigation.rules'
-import { createReactTooltips } from 'Tools'
 
 import './Character.css'
 import Skills from './stats/Skills'
@@ -135,8 +134,8 @@ class Character extends PureComponent {
         this.generalNotesRef.on('value', this.updateGeneralNotes);
         this.personnalNotesRef.on('value', this.updatePersonnalNotes);
 		window.addEventListener('resize', this.handleWindowSizeChange);
-		const characterElement = document.getElementById("character");
-			createReactTooltips(characterElement);
+		//const characterElement = document.getElementById("character");
+		//createReactTooltips(characterElement);
     }
 
     componentWillUnmount() {
@@ -153,7 +152,6 @@ class Character extends PureComponent {
   
     render() {
 		const { width, scenarioId } = this.state;
-		console.log("scenarioId : ", scenarioId);
         const { caracteristics, weaponsMap, armorsMap, racesMap, subRacesMap} = this.props;
         const { Name, SubRace: subRaceId, Gender, Class: classId, Specialisation, FightStyles, Historic: historicId, History, Skills: masterSkills,
                 XP, HP, MaxHP, Specials, SpellsLocations, Armor, Shield, Weapon, DistanceWeapon, MasterWeapons, MasterArmors, MasterObjects, Alterations,

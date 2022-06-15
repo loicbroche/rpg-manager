@@ -20,8 +20,9 @@ class PersonnalNotesComponent extends PureComponent {
   }
 
   static getDerivedStateFromProps(nextProps, prevState)  {
+	const { changed } = prevState;
     PersonnalNotesComponent.autosizeAndSave(null);
-	return ({ personalNotes: nextProps.personalNotes })
+	return ((changed&&{})||{ personalNotes: nextProps.personalNotes })
   }
 
   static autosizeAndSave(event) {

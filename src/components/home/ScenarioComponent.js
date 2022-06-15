@@ -58,7 +58,7 @@ class ScenarioComponent extends PureComponent {
 				</Link>
 				{scenario.Characters && Object.values(scenario.Characters).map((characterId) => (
 					<div key={characterId} className="scenario-item activable character">
-					  <CharacterMenuItem id={characterId} scenarioId={scenario.Id} name={characterId} scenarioId={scenario.Id} onRemove={deleteCharacter} />
+					  <CharacterMenuItem id={characterId} name={characterId} scenarioId={scenario.Id} onRemove={deleteCharacter} />
 					</div>
 					))
 				}
