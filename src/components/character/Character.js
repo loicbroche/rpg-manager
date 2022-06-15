@@ -46,8 +46,10 @@ class Character extends PureComponent {
     constructor (props) {
       super(props);
       const characterId = this.props.match.params.characterId;
+	  const scenarioId = this.props.match.params.scenarioId;
       this.state = {
 		  width: window.innerWidth,
+		  scenarioId: scenarioId,
           characterInfos: {
             Id: characterId,
             Name: null,
@@ -116,8 +118,7 @@ class Character extends PureComponent {
 
           this.setState({characterInfos: newState});
         }
-        this.generalNotesRef = gameDatabase.ref(DATA_MODEL.NOTES.name+"/"+ALL_CHARACTERS_ID);
-        this.personnalNotesRef = gameDatabase.ref(DATA_MODEL.NOTES.name+"/"+characterId);
+        this.personnalNotesRef = gameDatabase.ref(DATA_MODEL.NOTES.name+"/"+scenarioId+"/"+characterId);
         this.updateGeneralNotes = (snapshot) => {
             const newState = snapshot.val() && Object.values(snapshot.val());
             this.setState({generalNotes: newState});
@@ -150,7 +151,8 @@ class Character extends PureComponent {
 
   
     render() {
-		const { width } = this.state;
+		const { width, scenarioId } = this.state;
+		console.log("scenarioId : ", scenarioId);
         const { caracteristics, weaponsMap, armorsMap, racesMap, subRacesMap} = this.props;
         const { Name, SubRace: subRaceId, Gender, Class: classId, Specialisation, FightStyles, Historic: historicId, History, Skills: masterSkills,
                 XP, HP, MaxHP, Specials, SpellsLocations, Armor, Shield, Weapon, DistanceWeapon, MasterWeapons, MasterArmors, MasterObjects, Alterations,
@@ -185,7 +187,7 @@ class Character extends PureComponent {
                                         onClickElement={(elementName, value) => { this.toggleElement(elementName, value); }}
 										expendable={!isMobile}
 										defaultExtended={isMobile}/>;
-		const flyingNotesComponent = <FlyingNotesComponent notes={personnalNotes} onNotesChange={(value) =>  updateNotes(value, Name) } />;
+		const flyingNotesComponent = <FlyingNotesComponent notes={personnalNotes} onNotesChange={(value) =>  updateNotes(value, scenarioId, Name) } />;
 		const raceSelector = <RaceSelector   subRaceId={subRaceId}
                                         gender={Gender}
                                         onRaceChange={(value) =>{ this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.SUB_RACE.name, value);}}
