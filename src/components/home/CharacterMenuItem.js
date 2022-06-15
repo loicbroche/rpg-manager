@@ -10,10 +10,10 @@ const deleteImage = require('images/delete-character-icone.png');
 
 class CharacterMenuItem extends PureComponent { 
   render() {
-    const { name } = this.props;
+    const { name, scenarioId } = this.props;
     return (
       <div className="character-menu-item">
-        <Link to={`${ROUTE_CHARACTER}/${name}`} title={`Accéder à la fiche personnage de ${name}`}>
+        <Link to={`${ROUTE_CHARACTER}/${scenarioId}/${name}`} title={`Accéder à la fiche personnage de ${name}`}>
           {name}
         </Link>
         <button className="delete-button" title={`Supprimer la fiche personnage de ${name}`}
