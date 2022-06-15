@@ -293,7 +293,7 @@ class Character extends PureComponent {
                                     classId={classId}
                                     historicId={historicId}
                                     onClick={(objectId) => { this.toggleElement(DATA_MODEL.CHARACTERS.columns.MASTER_OBJECTS.name, objectId) }} />;
-		const generalNotesComponent = <GeneralNotesComponent notes={generalNotes} editorCharacter={Name} onChange={(value) => updateNotes(value, ALL_CHARACTERS_ID) } />;
+		const generalNotesComponent = <GeneralNotesComponent notes={generalNotes} editorCharacter={Name} onChange={(value) => updateNotes(value, scenarioId, ALL_CHARACTERS_ID) } />;
 		const personalNotesComponent = <PersonnalNotesComponent personalNotes={Notes} onPersonalNotesChange={(value) =>  this.updateCaracteristic(DATA_MODEL.CHARACTERS.columns.NOTES.name, value) }  />;
 
 		const desktopLayout = (
