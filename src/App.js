@@ -50,7 +50,7 @@ class App extends Component {
 					  render={props => ( <span>Vision maître du jeu</span> )}
 					/>
 					<Route
-					  path={`${ROUTE_CHARACTER}/:characterId`}
+					  path={`${ROUTE_CHARACTER}/:scenarioId/:characterId`}
 					  render={props => ( <span>Fiche personnage de {props.match.params.characterId}</span> )}
 					/>
 				</Switch>
@@ -72,7 +72,7 @@ class App extends Component {
               render={props => ( <Page {...props} component={GameMaster} title="Maître du jeu - JdR Manager" /> )}
             />
             <Route
-              path={`${ROUTE_CHARACTER}/:characterId`}
+              path={`${ROUTE_CHARACTER}/:scenarioId/:characterId`}
               render={props => ( <Page {...props} component={Character} title={`Fiche personnage de ${props.match.params.characterId} - JdR Manager`} /> )}
             />
             <Route
