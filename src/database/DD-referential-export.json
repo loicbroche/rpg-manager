@@ -4983,7 +4983,7 @@
       "Code" : "Vague de chaos",
       "Description" : "À partir du niveau 1, vous pouvez manipuler les forces du hasard et du chaos pour gagner l'avantage sur un jet d'attaque, un jet de caractéristique ou un jet de sauvegarde. Lorsque vous le faites, vous devez terminer un repos long avant de pouvoir l'utiliser à nouveau.  Tant que vous n'avez pas récupéré l'usage de cette capacité, si vous lancez un sort d'ensorceleur de niveau 1 ou plus, le MD peut vous demander de faire un jet de Sursaut de magie sauvage (d100). Quel qu'en soit le résultat, vous récupérez ensuite cette capacité.",
       "Specialisation" : "WILD_MAGIC",
-      "UseNumber" : -1
+      "UseNumber" : 1
     },
     "WILY-Amélioration de caractéristiques" : {
       "Class" : "WILY",
