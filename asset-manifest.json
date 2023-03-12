@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/rpg-manager/static/css/main.7056c662.chunk.css",
-    "main.js": "/rpg-manager/static/js/main.7c899d60.chunk.js",
-    "main.js.map": "/rpg-manager/static/js/main.7c899d60.chunk.js.map",
+    "main.js": "/rpg-manager/static/js/main.e0ce8e06.chunk.js",
+    "main.js.map": "/rpg-manager/static/js/main.e0ce8e06.chunk.js.map",
     "runtime-main.js": "/rpg-manager/static/js/runtime-main.6e516dae.js",
     "runtime-main.js.map": "/rpg-manager/static/js/runtime-main.6e516dae.js.map",
     "static/css/2.7d86e4e7.chunk.css": "/rpg-manager/static/css/2.7d86e4e7.chunk.css",
     "static/js/2.1f9d4bf4.chunk.js": "/rpg-manager/static/js/2.1f9d4bf4.chunk.js",
     "static/js/2.1f9d4bf4.chunk.js.map": "/rpg-manager/static/js/2.1f9d4bf4.chunk.js.map",
     "index.html": "/rpg-manager/index.html",
-    "precache-manifest.66f12615dea0a717c90abcda56965ffb.js": "/rpg-manager/precache-manifest.66f12615dea0a717c90abcda56965ffb.js",
+    "precache-manifest.02a5bc5c903f12978d104e9a60ce2a61.js": "/rpg-manager/precache-manifest.02a5bc5c903f12978d104e9a60ce2a61.js",
     "service-worker.js": "/rpg-manager/service-worker.js",
     "static/css/2.7d86e4e7.chunk.css.map": "/rpg-manager/static/css/2.7d86e4e7.chunk.css.map",
     "static/css/main.7056c662.chunk.css.map": "/rpg-manager/static/css/main.7056c662.chunk.css.map",
@@ -248,6 +248,6 @@
     "static/css/2.7d86e4e7.chunk.css",
     "static/js/2.1f9d4bf4.chunk.js",
     "static/css/main.7056c662.chunk.css",
-    "static/js/main.7c899d60.chunk.js"
+    "static/js/main.e0ce8e06.chunk.js"
   ]
 }
